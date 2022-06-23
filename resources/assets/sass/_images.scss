@@ -1,0 +1,174 @@
+.image-background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image--logo {
+  width: 400px;
+  opacity: 0;
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+}
+
+.courses__link--icon {
+  width: 25px;
+}
+
+.nav--icon {
+  margin-right: 10px;
+  width: 23px;
+}
+
+.nav--icon-svg {
+  height: 23px;
+  margin-right: 10px;
+  width: 26px;
+}
+
+.featured__book--image {
+  position: absolute;
+  right: 12%;
+  top: 50%;
+  transform: translate(0, -50%);
+  @include media-breakpoint-up(lg) {
+    width: 30%;
+  }
+  @include media-breakpoint-between(sm, md) {
+    width: 25%;
+  }
+  @include media-breakpoint-down(xs) {
+    right: 10%;
+    width: 30%;
+  }
+}
+
+.image--featured {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.favorites-card__image {
+  border-radius: 0;
+  height: 255px;
+  object-fit: cover;
+}
+
+.image--article.image--article.image--article.image--article {
+  height: 250px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.image--videos-carousel {
+  object-fit: cover;
+  width: 100%;
+  @include media-breakpoint-up(md) {
+    height: 600px;
+  }
+  @include media-breakpoint-down(sm) {
+    height: 200px;
+  }
+}
+
+.image--videos {
+  height: 250px;
+}
+
+.image--videos-featured,
+.image--categories-featured,
+.image--categories-popular,
+.image--categories-culture,
+.image--education-featured,
+.image--rich-single {
+  height: 400px;
+}
+
+.image--rich-single {
+  @include media-breakpoint-up(md) {
+    height: 600px;
+  }
+}
+
+.image--categories-culture {
+  @include media-breakpoint-up(md) {
+    height: 350px;
+  }
+}
+
+.register--icon {
+
+  &:hover, &:focus, &:active, &:visited {
+    text-decoration: none
+  }
+
+  i {
+    color: $brand-danger;
+    font-size: $font-size-large * 2;
+  }
+}
+
+.education__exhibitors--image {
+  border: 10px solid $brand-danger;
+}
+
+.image--education-include {
+  width: 45px;
+}
+
+.featured__submenu-socials img {
+  display: inline-block !important;
+  height: 1rem !important;
+  width: initial !important;
+}
+
+.education--list img {
+  @include media-breakpoint-up(sm) {
+    height: 2rem;
+  }
+  @include media-breakpoint-down(xs) {
+    height: 1.5rem;
+    margin-bottom: $spacer / 2;
+  }
+}
+
+.comments--user {
+  background-color: darken($gray-lighter, 15%);
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.collaborator__container > div,
+.collaborator__content {
+  height: 600px;
+}
+
+.image-collaborator {
+  height: 150px;
+  object-fit: cover;
+  width: 150px;
+}
+
+.image--profile-photo {
+  height: 130px;
+  width: 130px;
+}
+
+.image--profile-change {
+  height: 110px;
+  width: 110px;
+}
+
+.image--profile-photo, .image--profile-change {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.modal--special img {
+  border-radius: 10px;
+  width: 100%;
+}

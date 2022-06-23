@@ -1,0 +1,157 @@
+$color: #FF6161;
+$color-lighten: lighten( $color, 10% );
+
+$check-icon : "\e007";
+$check-icon-half : "\e006";
+
+$price-icon : "\e003";
+$price-icon-half : "\e002";
+
+$star-icon : "\e001";
+$star-icon-half : "\e000";
+
+.check-rating {
+    overflow: auto;
+    display: inline-block;
+
+    & > input {
+        display: none;
+    }
+
+    & > label {
+        color: #ddd;
+        float: right;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        &:before {
+            margin-left: 5px;
+            font-size: 1.5em;
+            font-family: queridodinero;
+            display: inline-block;
+            content: $check-icon;
+        }
+    }
+
+    & > .half:before {
+        content: $check-icon-half;
+        position: absolute;
+    }
+
+    &.check-rating-lg > label:before { font-size: 1.33em !important; }
+    &.check-rating-2x > label:before { font-size: 2em !important; }
+    &.check-rating-3x > label:before { font-size: 3em !important; }
+    &.check-rating-4x > label:before { font-size: 4em !important; }
+    &.check-rating-5x > label:before { font-size: 5em !important; }
+}
+
+.check-rating > input:checked ~ label,
+.check-rating:not(:checked) > label:hover,
+.check-rating:not(:checked) > label:hover ~ label {
+    color: $color;
+}
+
+.check-rating > input:checked + label:hover,
+.check-rating > input:checked ~ label:hover,
+.check-rating > label:hover ~ input:checked ~ label,
+.check-rating > input:checked ~ label:hover ~ label {
+    color: $color-lighten;
+}
+
+.price-rating {
+    overflow: auto;
+    display: inline-block;
+
+    & > input {
+        display: none;
+    }
+
+    & > label {
+        color: #ddd;
+        float: right;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        &:before {
+            margin-left: 5px;
+            font-size: 1.5em;
+            font-family: queridodinero;
+            display: inline-block;
+            content: $price-icon;
+        }
+    }
+
+    & > .half:before {
+        content: $price-icon-half;
+        position: absolute;
+    }
+
+    &.price-rating-lg > label:before { font-size: 1.33em !important; }
+    &.price-rating-2x > label:before { font-size: 2em !important; }
+    &.price-rating-3x > label:before { font-size: 3em !important; }
+    &.price-rating-4x > label:before { font-size: 4em !important; }
+    &.price-rating-5x > label:before { font-size: 5em !important; }
+}
+
+.price-rating > input:checked ~ label,
+.price-rating:not(:checked) > label:hover,
+.price-rating:not(:checked) > label:hover ~ label {
+    color: $color;
+}
+
+.price-rating > input:checked + label:hover,
+.price-rating > input:checked ~ label:hover,
+.price-rating > label:hover ~ input:checked ~ label,
+.price-rating > input:checked ~ label:hover ~ label {
+    color: $color-lighten;
+}
+
+.star-rating {
+    overflow: auto;
+    display: inline-block;
+
+    & > input {
+        display: none;
+    }
+
+    & > label {
+        color: #ddd;
+        float: right;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        &:before {
+            margin-left: 5px;
+            font-size: 1.5em;
+            font-family: queridodinero;
+            display: inline-block;
+            content: $star-icon;
+        }
+    }
+
+    & > .half:before {
+        content: $star-icon-half;
+        position: absolute;
+    }
+
+    &.star-rating-lg > label:before { font-size: 1.33em !important; }
+    &.star-rating-2x > label:before { font-size: 2em !important; }
+    &.star-rating-3x > label:before { font-size: 3em !important; }
+    &.star-rating-4x > label:before { font-size: 4em !important; }
+    &.star-rating-5x > label:before { font-size: 5em !important; }
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.star-rating > input:checked ~ label, /* show gold star when clicked */
+.star-rating:not(:checked) > label:hover, /* hover current star */
+.star-rating:not(:checked) > label:hover ~ label {
+    color: $color;
+} /* hover previous stars in list */
+
+.star-rating > input:checked + label:hover, /* hover current star when changing rating */
+.star-rating > input:checked ~ label:hover,
+.star-rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.star-rating > input:checked ~ label:hover ~ label {
+    color: $color-lighten;
+}

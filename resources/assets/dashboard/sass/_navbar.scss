@@ -1,0 +1,37 @@
+$navbar-height: 58px;
+$nav-scroller-height: 39px;
+
+.nav-scroller {
+    margin-top: $navbar-height;
+    height: $nav-scroller-height;
+    overflow-y: hidden;
+
+    .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        text-align: center;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.nav-underline {
+    .nav-link {
+        font-size: 0.9rem;
+        color: #6c757d;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+        }
+
+        &.active,
+        &:active {
+            font-weight: 500;
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+        }
+    }
+}

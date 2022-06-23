@@ -1,0 +1,104 @@
+[
+    {
+        "name": "Taller de finanzas personales",
+        "code": "personal",
+        "exercises": [
+            {
+                "name": "Define tus metas",
+                "image": "/images/background/blue.png",
+                "slug": "mis-metas",
+                "route": "exercises.goals.show"
+            },
+            {
+                "name": "Mi presupuesto mensual",
+                "image": "/images/background/red.png",
+                "slug": "mi-presupuesto-mensual",
+                "route": "exercises.budget.show"
+            },
+            {
+                "name": "Mi deuda mensual",
+                "image": "/images/background/green.png",
+                "slug": "mi-deuda-mensual",
+                "route": "exercises.debt.show"
+            },
+            {
+                "name": "¿Cuánto gastarán tus dependientes en 10 años?",
+                "image": "/images/background/orange.png",
+                "slug": "mis-dependientes",
+                "route": "exercises.dependant.show"
+            },
+            {
+                "name": "¿Con cuánto vivirás en 30 años?",
+                "image": "/images/background/blue.png",
+                "slug": "con-cuanto-vivire",
+                "route": "exercises.amount.show"
+            }
+        ]
+    },
+    {
+        "name": "Taller de inversiones",
+        "code": "investment",
+        "exercises": [
+            {
+                "name": "¿Cómo me veo en el futuro?",
+                "image": "/images/background/orange.png",
+                "slug": "mi-yo-del-futuro",
+                "route": "exercises.future.show"
+            },
+            {
+                "name": "Define tus metas",
+                "image": "/images/background/blue.png",
+                "slug": "mis-metas",
+                "route": "exercises.goals.show"
+            },
+            {
+                "name": "Mi perfil de inversionista",
+                "image": "/images/background/green.png",
+                "slug": "mi-perfil-de-inversionista",
+                "route": "exercises.profile.show"
+            },
+            {
+                "name": "Reto Inversión",
+                "image": "/images/background/yellow.png",
+                "slug": "reto",
+                "route": "exercises.reto.show"
+            }
+        ]
+    },
+    {
+        "name": "Taller de emprendedores",
+        "code": "entrepreneurship",
+        "exercises": [
+            {
+                "name": "Inversión inicial",
+                "image": "/images/background/green.png",
+                "slug": "inversion-inicial",
+                "route": "exercises.initialinvestment.edit"
+            },
+            {
+                "name": "Balance general",
+                "image": "/images/background/blue.png",
+                "slug": "balance-general",
+                "route": "exercises.balance.edit"
+            },
+            {
+                "name": "Estado de resultados",
+                "image": "/images/background/red.png",
+                "slug": "estado-de-resultados",
+                "route": "exercises.incomestatement.edit"
+            },
+            {
+                "name": "Flujo de efectivo",
+                "image": "/images/background/orange.png",
+                "slug": "flujo-de-efectivo",
+                "route": "exercises.cashflow.edit"
+            },
+            {
+                "name": "Mi sueldo",
+                "image": "/images/background/green.png",
+                "slug": "mi-sueldo",
+                "route": "exercises.salary.edit"
+            }
+        ]
+    }
+]

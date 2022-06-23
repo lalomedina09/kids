@@ -1,0 +1,41 @@
+@charset 'utf-8';
+
+@import 'variables';
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+* {
+    text-align: left;
+}
+
+blockquote {
+    border-left: 2px solid;
+    color: $brand-danger;
+    font-weight: 500;
+    margin: 30px 0;
+    padding: 10px 0 10px 25px;
+    font-size: 1.5rem;
+}
+
+iframe {
+    width: 100%;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+}
+
+img {
+    display: block;
+    margin: 40px auto;
+    @extend .img-fluid;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $brand-danger;
+    font-weight: 700;
+    margin: 30px 15px;
+    @include media-breakpoint-up(md) {
+        margin: 50px 0;
+    }
+}

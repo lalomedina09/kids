@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="150"
+   height="50"
+   viewBox="0 0 39.6875 13.229167"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (unknown)"
+   sodipodi:docname="products.svg">
+  <defs
+     id="defs2">
+    <polygon
+       points="100,5.843 130.592,67.828 198.998,77.763 149.5,126.022 161.184,194.157 100,161.983 38.816,194.157 50.5,126.022 1.002,77.763 69.408,67.828 "
+       id="SVGID_1_" />
+    <rect
+       height="4135.9741"
+       width="11783.361"
+       y="-1084.485"
+       x="-4036.792"
+       id="SVGID_3_" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="78.066064"
+     inkscape:cy="162.94886"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="969"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     units="px" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-283.77083)">
+    <g
+       id="g136"
+       transform="matrix(0.06609797,0,0,0.06949629,0.00478614,283.44329)">
+      <g
+         id="g134">
+        <defs
+           id="defs109">
+          <polygon
+             points="38.816,194.157 50.5,126.022 1.002,77.763 69.408,67.828 100,5.843 130.592,67.828 198.998,77.763 149.5,126.022 161.184,194.157 100,161.983 "
+             id="polygon148" />
+        </defs>
+        <use
+           id="use111"
+           style="overflow:visible"
+           xlink:href="#SVGID_1_"
+           x="0"
+           y="0"
+           width="100%"
+           height="100%" />
+        <clipPath
+           id="SVGID_2_">
+          <use
+             id="use113"
+             style="overflow:visible"
+             xlink:href="#SVGID_1_"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+        </clipPath>
+        <g
+           id="g130"
+           clip-path="url(#SVGID_2_)"
+           class="st0">
+          <g
+             id="g128">
+            <defs
+               id="defs117">
+              <rect
+                 height="4135.9741"
+                 width="11783.361"
+                 y="-1084.485"
+                 x="-4036.792"
+                 id="rect154" />
+            </defs>
+            <use
+               id="use119"
+               style="overflow:visible"
+               xlink:href="#SVGID_3_"
+               x="0"
+               y="0"
+               width="100%"
+               height="100%" />
+            <clipPath
+               id="SVGID_4_">
+              <use
+                 id="use121"
+                 style="overflow:visible"
+                 xlink:href="#SVGID_3_"
+                 x="0"
+                 y="0"
+                 width="100%"
+                 height="100%" />
+            </clipPath>
+            <rect
+               id="rect124"
+               clip-path="url(#SVGID_4_)"
+               height="327.104"
+               width="336.78799"
+               class="st1"
+               y="-43.551998"
+               x="-48.394001"
+               style="stroke:#ffffff;stroke-miterlimit:10" />
+            <use
+               id="use126"
+               style="overflow:visible;fill:none;stroke:#ffffff;stroke-miterlimit:10"
+               xlink:href="#SVGID_3_"
+               x="0"
+               y="0"
+               width="100%"
+               height="100%" />
+          </g>
+        </g>
+        <use
+           id="use132"
+           style="overflow:visible;fill:none;stroke:#ffffff;stroke-miterlimit:10"
+           xlink:href="#SVGID_1_"
+           x="0"
+           y="0"
+           width="100%"
+           height="100%" />
+      </g>
+    </g>
+    <g
+       id="g222"
+       transform="matrix(0.05902904,0,0,0.06713916,13.940777,283.67146)">
+      <g
+         id="g220">
+        <path
+           id="path218"
+           d="m 112.997,175.044 v 19.982 c 0,1.93 -1.605,3.495 -3.584,3.495 H 93.305 c -1.979,0 -3.584,-1.565 -3.584,-3.495 v -19.353 c -21.498,-1.173 -42.187,-6.907 -55.26,-14.991 -1.558,-0.963 -2.139,-2.898 -1.329,-4.514 l 9.673,-19.323 c 0.917,-1.832 3.237,-2.524 5.027,-1.471 11.39,6.699 26.64,11.503 41.89,12.839 V 113.207 C 63.886,107.547 35.021,99.792 35.021,69.815 35.021,47.596 52.944,28.523 89.722,24.748 V 4.975 c 0,-1.93 1.605,-3.495 3.584,-3.495 h 16.108 c 1.98,0 3.584,1.565 3.584,3.495 v 19.353 c 16.131,1.164 31.865,4.832 44.263,11.169 1.692,0.865 2.442,2.831 1.673,4.536 l -8.803,19.507 c -0.825,1.829 -3.038,2.575 -4.883,1.706 -10.786,-5.078 -21.708,-8.108 -32.249,-9.247 v 35.635 c 25.839,5.449 54.236,13.207 54.236,42.761 -0.002,21.801 -17.692,40.665 -54.238,44.649 z M 89.721,82.393 V 52.627 c -12.337,2.515 -17.225,8.595 -17.225,15.513 0,7.335 6.983,11.318 17.225,14.253 z m 40.036,50.518 c 0,-7.338 -6.751,-11.321 -16.76,-14.464 v 28.926 c 11.639,-2.306 16.76,-7.755 16.76,-14.462 z"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       id="YBVP7P.tif"
+       transform="matrix(0.06868762,0,0,0.06928079,26.204189,283.45733)">
+      <g
+         id="g286">
+        <path
+           id="path284"
+           d="M 75.91,176.38 C 51.691,152.886 27.659,129.573 3.7,106.331 13.861,96.335 23.717,86.638 33.926,76.595 c 13.596,12.86 27.619,26.123 42.001,39.726 30.342,-31.089 60.524,-62.015 90.472,-92.701 9.977,10.037 19.736,19.854 29.9,30.08 C 156.62,94.134 116.411,135.108 75.91,176.38 Z"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+  </g>
+  <style
+     id="style106"
+     type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+	.st1{clip-path:url(#SVGID_4_);stroke:#FFFFFF;stroke-miterlimit:10;}
+</style>
+</svg>

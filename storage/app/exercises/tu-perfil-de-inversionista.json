@@ -1,0 +1,135 @@
+{
+    "name": "Tu perfil de inversionista",
+    "version": "0.1",
+    "type": "quiz",
+    "content": {
+        "sections": [
+            {
+                "name": "Paso 1: Plazo",
+                "questions": [
+                    {
+                        "type": "weighted_choice",
+                        "text": "Planeo retirar mi inversión en ...",
+                        "answers": [
+                            {
+                                "text": "Menos de 2 años",
+                                "value": 1
+                            },
+                            {
+                                "text": "Entre 2 y 10 años",
+                                "value": 3
+                            },
+                            {
+                                "text": "Más de 10 años",
+                                "value": 5
+                            }
+                        ]
+                    },
+                    {
+                        "type": "weighted_choice",
+                        "text": "Al momento de retirar mi dinero, me lo gastaré ...",
+                        "answers": [
+                            {
+                                "text": "Todo en menos de 2 años",
+                                "value": 0
+                            },
+                            {
+                                "text": "Entre 2 y 8 años",
+                                "value": 2
+                            },
+                            {
+                                "text": "Más de 8 años",
+                                "value": 4
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Paso 2: Riesgo",
+                "questions": [
+                    {
+                        "type": "weighted_choice",
+                        "text": "¿Qué tanto conozco las inversiones?",
+                        "answers": [
+                            {
+                                "text": "Casi nada",
+                                "value": 1
+                            },
+                            {
+                                "text": "Algunas cosas",
+                                "value": 3
+                            },
+                            {
+                                "text": "Soy experto",
+                                "value": 5
+                            }
+                        ]
+                    },
+                    {
+                        "type": "weighted_choice",
+                        "text": "Cuando invierto mi dinero:",
+                        "answers": [
+                            {
+                                "text": "Me preocupo de no perder valor",
+                                "value": 0
+                            },
+                            {
+                                "text": "Me preocupo igual por no perder que por ganar",
+                                "value": 3
+                            },
+                            {
+                                "text": "Me preocupo más por ganar",
+                                "value": 5
+                            }
+                        ]
+                    },
+                    {
+                        "type": "weighted_choice",
+                        "text": "¿Qué es lo más riesgoso en lo que has invertido?",
+                        "answers": [
+                            {
+                                "text": "Cetes, pagarés bancarios, fondos de deuda",
+                                "value": 1
+                            },
+                            {
+                                "text": "Acciones, fondos de renta variable",
+                                "value": 3
+                            },
+                            {
+                                "text": "ETFs, Bitcoins, fondos internacionales",
+                                "value": 5
+                            },
+                            {
+                                "text": "Nunca he invertido",
+                                "value": 0
+                            }
+                        ]
+                    },
+                    {
+                        "type": "weighted_choice",
+                        "text": "Imagina que en los últimos 3 meses el IPC (Bolsa de Valores) perdió el 20%, y una acción también perdió el 20% de su valor. ¿Qué harías?",
+                        "answers": [
+                            {
+                                "text": "Vendo mis acciones",
+                                "value": 0
+                            },
+                            {
+                                "text": "Vendo algunas de mis acciones",
+                                "value": 1
+                            },
+                            {
+                                "text": "No hago nada",
+                                "value": 3
+                            },
+                            {
+                                "text": "Compro más acciones",
+                                "value": 5
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

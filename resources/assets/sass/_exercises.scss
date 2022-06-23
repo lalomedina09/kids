@@ -1,0 +1,22 @@
+[data-mutable] {
+    cursor: pointer;
+}
+
+#exercises-wrapper {
+    padding: 100px 0;
+}
+
+#exercise-action {
+    font-size: 25px;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    z-index: 9999;
+}

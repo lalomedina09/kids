@@ -1,0 +1,65 @@
+div.qd-searchbox {
+    & > .form-group {
+        margin-bottom: 10px;
+    }
+
+    & > .searchbox-selected {
+        overflow: auto;
+
+        & > span {
+            margin-right: 5px;
+            font-size: 1rem;
+            float: left;
+
+            & > span {
+                margin-left: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.searchbox-results {
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.qd-searchbox-card {
+    padding: 10px !important;
+    min-height: 60px;
+    overflow: hidden;
+    border: 0px;
+
+    & > .content {
+        & > p {
+            margin: 0;
+            padding: 0;
+
+            &.name {
+                font-size: 12px;
+                font-weight: bold;
+            }
+
+            &.email {
+                font-size: 11px;
+                color: gray;
+            }
+        }
+    }
+
+    & > .photo {
+        margin-right: 10px;
+        height: 40px;
+        width: 40px;
+    }
+}
+
+.popover {
+    max-width: 302px !important;
+}
+
+.popover-body.searchbox {
+    padding: 0;
+    min-width: 300px;
+}

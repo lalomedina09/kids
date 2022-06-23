@@ -1,0 +1,83 @@
+
+@font-face {
+  font-family: "queridodinero";
+  src:url("../fonts/queridodinero.eot");
+  src:url("../fonts/queridodinero.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/queridodinero.woff") format("woff"),
+    url("../fonts/queridodinero.ttf") format("truetype"),
+    url("../fonts/queridodinero.svg#queridodinero") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "queridodinero" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.qd:before {
+  font-family: "queridodinero" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.qd {
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  color: #939ca5;
+  color: inherit;
+  font-size: 16px;
+}
+
+.qd-xs { font-size: 0.8rem; }
+.qd-sm { font-size: 0.9rem; }
+.qd-md { font-size: 1.33rem; }
+.qd-lg { font-size: 1.66rem; }
+.qd-xl { font-size: 2rem; }
+.qd-2x { font-size: 3rem; }
+.qd-3x { font-size: 3.5rem; }
+.qd-4x { font-size: 4rem; }
+
+.qd.qd-star-o:before {
+  content: "\e000";
+}
+.qd.qd-star:before {
+  content: "\e001";
+}
+.qd.qd-price-o:before {
+  content: "\e002";
+}
+.qd.qd-price:before {
+  content: "\e003";
+}
+.qd.qd-heart-o:before {
+  content: "\e004";
+}
+.qd.qd-heart:before {
+  content: "\e005";
+}
+.qd.qd-check-o:before {
+  content: "\e006";
+}
+.qd.qd-check:before {
+  content: "\e007";
+}
+.qd.qd-badge-heart:before {
+  content: "\e008";
+}

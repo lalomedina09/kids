@@ -1,0 +1,326 @@
+/*
+|--------------------------------------------------------------------------
+| Custom Checkbox And Radio Buttons
+|--------------------------------------------------------------------------
+*/
+
+$custom-control-indicator-bg:               $input-bg;
+$custom-control-indicator-border:           $brand-danger;
+
+$custom-control-indicator-checked-bg:       $brand-danger;
+$custom-control-indicator-checked-border:   $brand-danger;
+$custom-control-indicator-active-bg:        lighten($brand-danger, 15%);
+$custom-control-indicator-active-border:    lighten($brand-danger, 15%);
+$custom-control-indicator-disabled-bg:      darken($input-bg, 5%);
+$custom-control-indicator-disabled-border:  $custom-control-indicator-border;
+
+.custom-control input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  display: none;
+}
+
+.custom-control-indicator {
+  background-clip: padding-box;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 75% 75%;
+  border: 1px solid $custom-control-indicator-border;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.075);
+  cursor: pointer;
+  display: block;
+  height: 18px;
+  width:  18px;
+  left: 0;
+  top: 2px;
+  position: absolute !important;
+  text-align: center;
+  user-select: none;
+}
+
+/* Focus */
+.custom-control input:focus ~ .custom-control-indicator {
+  box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
+}
+
+/* Checked state */
+.custom-control input:checked ~ .custom-control-indicator {
+  background-color: $custom-control-indicator-checked-bg;
+  border-color: $custom-control-indicator-checked-border;
+  box-shadow: none;
+}
+
+/* Active */
+.custom-control input:active ~ .custom-control-indicator {
+  background-color: $custom-control-indicator-active-bg;
+  border-color: $custom-control-indicator-active-border;
+  box-shadow: none;
+}
+
+// Disabled
+.custom-control input:disabled ~ .custom-control-indicator {
+  background-color: $custom-control-indicator-disabled-bg;
+  border-color: $custom-control-indicator-disabled-border;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.custom-checkbox .custom-control-indicator {
+  border-radius: .33rem;
+}
+
+.custom-checkbox input:checked ~ .custom-control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+}
+
+.custom-radio .custom-control-indicator {
+  border-radius: 50%;
+  position: relative;
+}
+
+.custom-radio input:checked ~ .custom-control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);
+}
+
+.qd-select {
+  position: relative;
+  background-color: $brand-danger;
+  color: black;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    margin: auto;
+    border-style: solid;
+    border-width: 8px 5px 0 5px;
+    border-color: black transparent transparent transparent;
+    pointer-events: none;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    pointer-events: none;
+  }
+
+  select {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    padding: 10px 30px 10px 10px;
+    text-indent: 5px;
+
+    // Disable default styling
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+
+    // Disable ugly ass outline on firefox
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #000;
+    }
+
+    // Disable default arrow on IE 11+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
+  span.select2-selection {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    background: $brand-danger;
+    height: 100%;
+    width: 100%;
+
+    span.select2-selection__rendered {
+      line-height: 64px;
+      color: black;
+    }
+
+    span.select2-selection__arrow {
+      display: none;
+    }
+  }
+}
+
+/* Remove background yellow from Chrome (all inputs) */
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 600s ease-in-out 0s;
+}
+
+.form-search {
+  @include media-breakpoint-up(md) {
+    margin-left: 10%;
+    width: 80%;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  button {
+    padding: 10px;
+    background-color: $gray-lighter;
+    z-index: 0 !important;
+
+    &:hover {
+      background-color: $gray-lighter;
+    }
+  }
+
+  .input-group-prepend .btn {
+    z-index: 0;
+  }
+
+  input {
+    background-color: $gray-lighter;
+    border: none;
+    border-radius: 0;
+    height: 64px;
+
+    @include media-breakpoint-down(xs) {
+      font-size: $font-size-small;
+    }
+
+    &:focus {
+      background-color: $gray-lighter;
+    }
+  }
+}
+
+.form-custom {
+  .form-group {
+    margin-bottom: 30px;
+  }
+
+  label {
+    margin: 0;
+    width: 100%;
+  }
+
+  input:not(.btn) {
+    background-color: transparent;
+    border-bottom: 1px solid $brand-primary-light;
+    border-left: none;
+    border-radius: 0;
+    border-right: none;
+    border-top: none;
+    color: $brand-danger;
+    outline: none;
+    padding: 5px 0;
+    width: 100%;
+
+    &:focus {
+      box-shadow: none;
+      background-color: transparent;
+      color: $brand-danger;
+    }
+
+    &:hover, &:focus, &:active, &:visited {
+      border-bottom: 1px solid $brand-danger;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  select,
+  textarea {
+    background-color: transparent;
+    border-radius: 0;
+    border: 1px solid $brand-primary-light;
+    color: $brand-danger;
+    outline: none;
+    padding: 5px;
+    width: 100%;
+
+    &:hover, &:focus, &:active, &:visited {
+      box-shadow: none;
+      background-color: transparent;
+      color: $brand-danger;
+    }
+  }
+
+  input[type=checkbox] {
+    width: initial;
+    padding: initial;
+    margin-bottom: initial;
+  }
+
+  input:-webkit-autofill {
+    -webkit-text-fill-color: $brand-danger !important;
+  }
+}
+
+.form-modal {
+  color: $gray-lighter;
+  font-size: $font-size-small;
+  @include media-breakpoint-up(lg) {
+    padding: 0 $spacer * 3;
+  }
+}
+
+input[type="search"]:focus {
+  z-index: 1 !important;
+}
+
+#register-wrapper {
+    overflow: hidden;
+}
+
+#register-form {
+    width: 200%;
+    overflow: auto;
+    position: relative;
+    left: 0%;
+    transition: left 1s ease;
+}
+
+#register-form.active {
+    left: -100%
+}
+
+#register-form .form-modal {
+    padding: initial;
+}
+
+#register-general {
+    float: left;
+}
+
+#register-interests {
+    float: right;
+}
+
+#register-general, #register-interests {
+    padding: 0 60px;
+    width: 50%;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+}

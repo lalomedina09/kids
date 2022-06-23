@@ -1,0 +1,38 @@
+@charset 'utf-8';
+
+@import 'variables';
+
+@import '~animate.css/animate.min.css';
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~font-awesome/scss/font-awesome';
+@import '~sweetalert/dev/sweetalert';
+@import '~toastr/toastr';
+
+@import 'mixins';
+
+@import 'general';
+
+@import 'blockquotes';
+@import 'box';
+@import 'buttons';
+@import 'carousel';
+@import 'exercises';
+@import 'forms';
+@import 'images';
+@import 'links';
+@import 'lists';
+@import 'rating';
+@import 'titles';
+@import 'type';
+
+@import 'regions/articles';
+@import 'regions/featured';
+@import 'regions/footer';
+@import 'regions/modals';
+@import 'regions/navbar';
+@import 'regions/search';
+@import 'regions/videos';
+
+@import 'pages';
+
+@import 'font';

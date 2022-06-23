@@ -1,0 +1,158 @@
+/*
+|--------------------------------------------------------------------------
+| Grid
+|--------------------------------------------------------------------------
+*/
+
+$grid-columns:                         12;
+$grid-gutter-width:                    30px;
+
+/*
+|--------------------------------------------------------------------------
+| Colors
+|--------------------------------------------------------------------------
+*/
+
+$brand-primary:                        #262525;
+$brand-primary-light:                  #9B9B9B;
+$brand-secondary:                      #4FD7DB;
+$brand-danger:                         #FF6161;
+$brand-danger-dark:                    #CC4243;
+$brand-danger-darker:                  #623838;
+$brand-light:                          #D8D8D8;
+
+$gray-base:                            #000;
+$gray-darker:                          lighten($gray-base, 13.5%); // #222
+$gray-dark:                            lighten($gray-base, 20%);   // #333
+$gray:                                 lighten($gray-base, 33.5%); // #555
+$gray-light:                           lighten($gray-base, 46.7%); // #777
+$gray-lighter:                         lighten($gray-base, 93.5%); // #eee
+
+$input-color:                          $gray;
+$input-border:                         #CCC;
+$input-bg:                             #FFF;
+$input-bg-disabled:                    $gray-lighter;
+
+$btn-secondary-color:                  #FFF;
+$btn-secondary-bg:                     $brand-secondary;
+$btn-secondary-border:                 darken($btn-secondary-bg, 5%);
+
+$custom-select-color:                  $input-color;
+$custom-select-bg:                     $input-bg;
+$custom-select-disabled-bg:            $input-bg-disabled;
+
+$brand-facebook:                       #3B5998;
+$brand-facebook-dark:                  darken($brand-facebook, 5%);
+
+$brand-messenger:                      #0084FF;
+$brand-messenger-dark:                  darken($brand-messenger, 5%);
+
+$brand-twitter:                        #1DA1F2;
+$brand-twitter-dark:                   darken($brand-twitter, 5%);
+
+/*
+|--------------------------------------------------------------------------
+| Icons
+|--------------------------------------------------------------------------
+*/
+
+// override font path from node_modules/font-awesome/scss/_variables.scss
+$fa-font-path:                         "~font-awesome/fonts";
+
+/*
+|--------------------------------------------------------------------------
+| Typography
+|--------------------------------------------------------------------------
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900');
+
+$font-family-sans-serif:               'Montserrat', sans-serif;
+$font-family-base:                     $font-family-sans-serif;
+$font-weight-base:                     500;
+$text-color:                           $brand-primary;
+
+$font-size-base:                       1rem;
+$font-size-large:                      1.25rem;
+$font-size-small:                      0.85rem;
+$font-size-x-small:                    ($font-size-small - 0.15);
+
+$link-color:                           $brand-danger;
+$link-hover-color:                     darken($link-color, 15%);
+$link-hover-decoration:                underline;
+
+$btn-font-weight:                      700;
+
+$input-color:                          $text-color;
+$input-border:                         $brand-primary;
+$input-border-focus:                   $brand-primary-light;
+$input-color-placeholder:              lighten($text-color, 30%);
+
+$headings-font-family:                 'Montserrat', sans-serif;
+$headings-font-weight:                 600;
+$headings-line-height:                 1.1;
+$headings-color:                       $brand-primary;
+
+$blockquote-border-color:              $brand-primary-light;
+
+/*
+|--------------------------------------------------------------------------
+| Navbar
+|--------------------------------------------------------------------------
+*/
+
+$navbar-height:                        120px;
+$navbar-margin-bottom:                 0px;
+$navbar-border-radius:                 0px;
+$navbar-default-color:                 #777;
+
+// Navbar inverse
+$navbar-inverse-bg:                    $brand-primary;
+$navbar-inverse-border:                darken($brand-primary, 5%);
+
+// Navbar inverse links
+$navbar-inverse-link-color:            $gray-lighter;
+$navbar-inverse-link-hover-color:      $brand-secondary;
+
+/*
+|--------------------------------------------------------------------------
+| Spacing
+|--------------------------------------------------------------------------
+*/
+
+$spacer:                               20px;
+$spacer-x:                             $spacer;
+$spacer-y:                             $spacer;
+
+/*
+|--------------------------------------------------------------------------
+| Panels
+|--------------------------------------------------------------------------
+*/
+
+$panel-border-radius:                  0px;
+$panel-default-border:                 #eee;
+$panel-default-heading-bg:             white;
+$panel-footer-bg:                      white;
+$panel-default-text:                   $text-color;
+
+/*
+|--------------------------------------------------------------------------
+| Containers
+|--------------------------------------------------------------------------
+*/
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 800px,
+  lg: 1000px,
+  xl: 1300px
+);
+
+$container-max-widths: (
+  sm: 600px,
+  md: 800px,
+  lg: 1000px,
+  xl: 1300px
+);

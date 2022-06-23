@@ -1,0 +1,79 @@
+@import "~flexslider/flexslider.css";
+
+.slider-item,
+.carousel-custom-items {
+  display: flex;
+  right: 15px;
+  top: -65px;
+  @include media-breakpoint-up(md) {
+    position: absolute;
+  }
+}
+
+.slider-item ol li a,
+.carousel-custom-items__bullets li {
+  border: 2px solid $brand-primary-light;
+  height: 9px;
+  width: 9px;
+}
+
+.slider {
+  margin: 0;
+  @include media-breakpoint-down(sm) {
+    padding: 0 50px;
+  }
+}
+
+.slider-item {
+  @include media-breakpoint-down(sm) {
+
+    &__prev,
+    &__next {
+      position: absolute;
+      top: 50%
+    }
+
+    &__prev {
+      left: 15px;
+    }
+
+    &__next {
+      right: 15px;
+    }
+  }
+
+  &__bullets {
+    margin: 0 10px;
+
+    ol {
+      align-items: center;
+      display: inherit;
+      position: static;
+
+      li {
+        margin: 0 2px;
+
+        a {
+          background:none;
+          box-shadow: none;
+
+          &.flex-active {
+            background: $brand-light;
+          }
+        }
+      }
+    }
+  }
+}
+
+.carousel-custom-items__bullets {
+  margin: 0;
+  padding: 0 25px;
+  position: static;
+
+  li {
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 2px;
+  }
+}

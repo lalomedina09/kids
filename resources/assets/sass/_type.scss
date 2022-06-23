@@ -1,0 +1,55 @@
+.text-primary {
+  color: $brand-primary !important;
+}
+
+.text-light {
+  color: $brand-primary-light !important;
+}
+
+.text-secondary {
+  color: $brand-secondary !important;
+}
+
+.text-danger {
+  color: $brand-danger !important;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.text-bold { font-weight: bold; }
+.text-underline { text-decoration: underline; }
+.text-initial { text-transform: initial !important; }
+.text-small { font-size: $font-size-small; }
+.text-xsmall { font-size: $font-size-small - .15; }
+.text-base { font-size: $font-size-base; }
+.text-large { font-size: $font-size-large; }
+.text-xlarge { font-size: $font-size-large + .15; }
+
+.font-size-xs { font-size: 0.8rem; }
+.font-size-sm { font-size: 0.9rem; }
+.font-size-md { font-size: 1.33rem; }
+.font-size-lg { font-size: 1.66rem; }
+.font-size-xl { font-size: 2rem; }
+.font-size-2x { font-size: 3rem; }
+.font-size-3x { font-size: 3.5rem; }
+.font-size-4x { font-size: 4rem; }
+
+.font-weight-lighter { font-weight: 400; }
+
+.help-block {
+  font-size: $font-size-small;
+  font-weight: 200;
+  color: $brand-primary;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.list-spaced {
+  > li, > dd {
+    margin-bottom: 10px;
+  }
+}

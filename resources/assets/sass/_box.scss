@@ -1,0 +1,46 @@
+.box {
+  @include media-breakpoint-up(md) {
+    padding: $spacer-y * 2.5 0;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: $spacer-y * 1.5 0;
+  }
+}
+
+.box-primary {
+  background-color: $brand-primary;
+}
+
+.box-gray {
+  background-color: $gray-lighter;
+}
+
+.box-secondary {
+  background-color: $brand-secondary;
+}
+
+.box-danger {
+  background-color: $brand-danger;
+}
+
+.box-border-primary {
+  @include media-breakpoint-up(md) {
+    border: $spacer * 1.5 solid $brand-primary;
+  }
+  @include media-breakpoint-down(sm) {
+    border: $spacer / 1.5 solid $brand-primary;
+  }
+}
+
+.box-border-right {
+  @include media-breakpoint-up(md) {
+    border-right: 1px solid $brand-primary;
+  }
+  @include media-breakpoint-down(sm) {
+    border-bottom: 1px solid $brand-primary;
+  }
+}
+
+.box-min-height {
+  min-height: 65vh;
+}

@@ -1,0 +1,39 @@
+.quote {
+  padding-bottom: $spacer * 5 !important;
+  padding-top: $spacer * 5 !important;
+}
+
+.quote__container p:not(:first-of-type) {
+  color: white;
+  font-size: $font-size-large + .3;
+  font-weight: bold;
+}
+
+.single-featured__blockquote {
+  border-left: 2px solid;
+  color: $brand-danger;
+  font-weight: 500;
+  margin: 20px 0 0 0;
+  padding: 10px 25px;
+  @include media-breakpoint-up(md) {
+  	font-size: $h2-font-size;
+  	margin: 50px 25px 0 25px;
+  }
+}
+
+.single__content blockquote {
+  border-left: 2px solid;
+  color: $brand-danger;
+  font-weight: 500;
+  margin: 30px 0;
+  padding: 10px 0 10px 25px;
+  font-size: 1.5rem;
+
+  * {
+    text-align: left;
+  }
+
+  iframe {
+    width: 100%;
+  }
+}

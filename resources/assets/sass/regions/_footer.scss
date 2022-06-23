@@ -1,0 +1,49 @@
+/*
+|--------------------------------------------------------------------------
+| Footer styles
+|--------------------------------------------------------------------------
+*/
+
+.footer {
+  background-color: $brand-primary;
+  @include media-breakpoint-down(sm) {
+    .footer__copyright {
+      text-align: center;
+    }
+  }
+
+  .footer__sitemap {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  hr {
+    @include media-breakpoint-down(sm) {
+      margin-top: 0;
+    }
+  }
+
+  .footer__content {
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+    @include media-breakpoint-down(md) {
+
+      > div {
+        margin: 20px 0 10px 0;
+      }
+
+      .footer__links > div {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+  }
+}
