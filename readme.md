@@ -50,3 +50,14 @@ The redis server doesn't allow external connections, so in order to connect to t
   - Host: 127.0.0.1
   - Port: 6379
   - Password: *It doesn't have a password*
+
+## Config .env local
+    - #SESSION_DOMAIN=
+    - SESSION_SECURE_COOKIE=false
+    - SESSION_HTTP_ONLY_COOKIE=false
+
+## DataBase Import with cmd 
+    - mysql -h localhost -u root nameDataBase < C:\qd-db\junio\test.bak
+
+## Download and add project files 
+    - https://drive.google.com/drive/folders/1vVXTKkWpu32wC7kNm2uC58SnZ-r595Sr
