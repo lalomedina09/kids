@@ -91,4 +91,14 @@ class PagesController extends Controller
 
         return view('pages.index', ['page' => $page]);
     }
+
+    /**
+     * Display the content page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function cs_qdplay(): View
+    {
+        return view('pages.comming-s-qdplay');
+    }
 }

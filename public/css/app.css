@@ -19281,6 +19281,97 @@ a:active {
   text-transform: none;
 }
 
+/* - - - - - - - - - - - Autor: Eulalio Medina Barragan - - - - - - - -*/
+
+
+/* - - - - - - Dispositivos pequeños iphone. huawei p30, - - - - - -  -*/
+
+@media (min-width: 360px) {
+    .banner-commingsoon-qdplay {
+        background-image: url("/images/landing/comming-soon/qdplay-proximamente.png");
+        height: 25%;
+        background-position: center;
+        background-size: cover;
+        padding: 28% 0%;
+    }
+}
+
+
+/* - - - - - - Dispositivos medianos ipad, tablets*/
+
+@media (min-width: 576px) {
+    .banner-commingsoon-qdplay {
+        background-image: url("/images/landing/comming-soon/qdplay-proximamente.png");
+        height: 40%;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+
+/* - - - - - - Dispositivos medianos tablets grandes */
+
+@media (min-width: 768px) {
+    .banner-commingsoon-qdplay {
+        background-image: url("/images/landing/comming-soon/qdplay-proximamente.png");
+        height: 40%;
+        background-position: center;
+        background-size: cover;
+        padding: 28% 0%;
+    }
+}
+
+
+/* - - - - - - Dispositivos medianos laptos medianes */
+
+@media (min-width: 800px) {
+    .banner-commingsoon-qdplay {
+        background-image: url("/images/landing/comming-soon/qdplay-proximamente.png");
+        height: 35%;
+        background-position: center;
+        background-size: cover;
+        padding: 28% 0%;
+    }
+}
+
+
+/* - - - - - - Dispositivos semi-grandes laptosgrandes */
+
+@media (min-width: 992px) {
+    .banner-commingsoon-qdplay {
+        background-image: url("/images/landing/comming-soon/qdplay-proximamente.png");
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+
+/* - - - - - - Dispositivos grandes pc escritorio. monitores, mac-pro*/
+
+@media (min-width: 1200px) {
+    .banner-commingsoon-qdplay {
+        background-image: url("/images/landing/comming-soon/qdplay-proximamente.png");
+        height: 115%;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+
+/* - - - - - - Dispositivos grandes tv*/
+
+@media (min-width: 1280px) {
+    .banner-commingsoon-qdplay {
+        background-image: url("/images/landing/comming-soon/qdplay-proximamente.png");
+        height: 70%;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+
+/* - - - - - - Fin de media queries separados por comentarios con nombre de dispositivos preparados*/
 
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIvY3NzL2FwcC5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
