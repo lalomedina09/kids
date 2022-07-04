@@ -146,6 +146,9 @@ Route::get('/descargas-libro.html', function () {
     return redirect()->route('pages.show', ['slug' => 'descargas-libro']);
 });
 
+Route::get('/qdplay')
+    ->uses('PagesController@cs_qdplay')
+    ->name('qdplay');
 /*
 |--------------------------------------------------------------------------
 | Articles
@@ -250,7 +253,7 @@ Route::prefix('talleres')
             ->uses('PaymentController2@payWithPayPal')
             ->name('courses.payWithPayPal')
             ->middleware(['auth']);
-        
+
         Route::post('/{slug}/comprar')
             ->uses('CourseController@buy')
             ->name('courses.buy')
