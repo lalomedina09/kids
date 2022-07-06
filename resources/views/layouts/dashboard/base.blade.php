@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="{{ mix('css/vendor/datetimepicker.css') }}">
         <link rel="stylesheet" href="{{ mix('css/vendor/datatables.css') }}">
 
+        <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+
         @stack('styles')
         @stack('styles-inline')
     </head>
@@ -37,6 +39,10 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     @if (config()->has('money.modules'))
                         <ul class="navbar-nav mr-auto">
+                            <li class="nav-item {{ active_class('dashboard') }}">
+                                <a class="nav-link" href="{{ route('dashboard.index') }}">@lang('Start')</a>
+                            </li>
+
                             @foreach (config()->get('money.modules') as $module)
                                 @can($module['permission'])
                                     <li class="nav-item {{ active_class($module['pattern']) }}">
@@ -54,6 +60,12 @@
                             @can('blog.users.index')
                                 <li class="nav-item {{ active_class('dashboard/admin*') }}">
                                     <a class="nav-link" href="{{ route('dashboard.users.index') }}">@lang('Administration')</a>
+                                </li>
+                            @endcan
+                            @can('parameters.prices.rating')
+                                <li class="nav-item {{ active_class('dashboard/parameters*') }}">
+                                    <a class="nav-link" href="{{ route('dashboard.parameters.prices.rating') }}">
+                                        @lang('Parameters')</a>
                                 </li>
                             @endcan
                         </ul>
