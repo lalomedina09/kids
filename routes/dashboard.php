@@ -684,7 +684,21 @@ Route::prefix('administration')
     });
 
 
-
+Route::prefix('parameters')
+    ->group(function () {
+        // Parameters Marketplace
+        Route::prefix('prices')
+            ->group(function () {
+                Route::get('/rating')
+                    ->uses('ParameterController@price_rating_show')
+                    ->name('parameters.prices.rating')
+                    ->middleware(['permission:blog.parameters.price.rating.show']);
+                Route::post('/rating')
+                    ->uses('ParameterController@update')
+                    ->name('parameters.price.rate.update')
+                    ->middleware(['permission:blog.parameters.price.update']);
+    });
+});
 // Categories
 /*
 $router->resource('categories', 'CategoriesController', ['as' => 'dashboard', 'except' => ['show', 'edit', 'update', 'destroy']]);
