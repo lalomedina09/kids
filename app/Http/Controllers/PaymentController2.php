@@ -18,6 +18,7 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Payment;
 use PayPal\Api\PaymentExecution;
 use App\Models\Course; //Se agrega modelo del curso para poder usar sus funciones
+use App\Models\Parameter;
 use QD\Marketplace\Models\{ Coupon, Order, OrderItem }; //Se agrega modelos de ordenes para crear registros
 use QD\Marketplace\Mail\Orders\Mailer;
 use App\Http\Requests\Courses\BuyRequest;
@@ -51,9 +52,11 @@ class PaymentController2 extends Controller
 
     public function payWithPayPal($cupon)
     {
+        //Revision 07 - Julio - 2022
+        //Uppdate for Autor Eulalio Medina Barragan
+        //Funcion para proceder con el pago
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
-
         //Obtencion precio curso
             $slug = "taller-online-inversion-para-principiantes";
             $course = Course::with('speakers', 'itineraries', 'content', 'contacts')
@@ -61,25 +64,33 @@ class PaymentController2 extends Controller
             ->whereSlug($slug)
             ->firstOrFail();
 
-            //$detalleCupon = Coupon::findOrFail($cupon);
+        //$detalleCupon = Coupon::findOrFail($cupon);
 
-            $porcentaje = $cupon / 100;
-            $dolar = 0.05;
-            $Conversion = 0;
-            $Conversion = $dolar * $course->price;
-            $descuento = $Conversion * $porcentaje;
-            $Conversion2 = $Conversion - $descuento;
-            $comision = $Conversion2 * 0.05;
-            $precioFinal = $Conversion2 + $comision + 0.30;
+        //Validación para conversion de precio del curso
+        //Estas variables se declaraban antes del 7 de julio del 2022
+        /*
+        $porcentaje = $cupon / 100;
+        $dollar = 0.05;
+        $conversion = 0;
+        $conversion = $dollar * $course->price;
+        $descuento = $conversion * $porcentaje;
+        $conversion2 = $conversion - $descuento;
+        $comision = $conversion2 * 0.05;
+        $precioFinal = $conversion2 + $comision + 0.30;
+        */
+
+        //Estas variables las mandare a una funcion para diferencie las divisas y evitar lineas extras
+        $dataPrice = $this->priceGetCurrency($course, $cupon);
+        //dd($dataPrice, 'array dataPrice');
         //Obtencion precio curso
-
+        #dd($dataPrice, 'dataPrice');
         //storage orden de compra
             $user = request()->user();
             $microtime = Date::now()->format('U');
             $order = new Order;
             $order->number = $microtime;
             $order->status = "order.paid";
-            $order->total = $precioFinal;
+            $order->total = $dataPrice['precioFinal'];
             $order->method = "paypal";
             //$order->expiration_date = $this->getExpirationDate();
             $order->user()->associate($user);
@@ -88,44 +99,43 @@ class PaymentController2 extends Controller
 
         //storage del item de la orden de compra
 
-            
-                $order_item = new OrderItem;
-                //$order_item->sku = $item->getSku();
-                $order_item->name = $course->title;
-                $order_item->description = $course->title;
-                $order_item->price = $Conversion;
-                $order_item->discount = $descuento;
-                $order_item->subtotal = $Conversion2;
-                $order_item->tax_factor = 4.0;
-                $order_item->after_taxes = $precioFinal;
-                $order_item->tax = $comision;
-                $order_item->quantity = 1.0;
-                $order_item->taxes = $comision + 0.30;
-                $order_item->savings = 0.00;
-                $order_item->total = $precioFinal;
-                $order_item->unit =  'qd:marketplace::units.service';
-                $order_item->order()->associate($order->id);
-                $order_item->itemable()->associate($course->id);
-                $order_item->coupon_id = 1;
-                $order_item->save();
+            $order_item = new OrderItem;
+            //$order_item->sku = $item->getSku();
+            $order_item->name = $course->title;
+            $order_item->description = $course->title;
+            $order_item->price = $dataPrice['conversion'];
+            $order_item->discount = $dataPrice['descuento'];
+            $order_item->subtotal = $dataPrice['conversion2'];
+            $order_item->tax_factor = 4.0;
+            $order_item->after_taxes = $dataPrice['precioFinal'];
+            $order_item->tax = $dataPrice['comision'];
+            $order_item->quantity = 1.0;
+            $order_item->taxes = $dataPrice['comision'] + 0.30;
+            $order_item->savings = 0.00;
+            $order_item->total = $dataPrice['precioFinal'];
+            $order_item->unit =  'qd:marketplace::units.service';
+            $order_item->order()->associate($order->id);
+            $order_item->itemable()->associate($course->id);
+            $order_item->coupon_id = 1;
+            $order_item->save();
 
-                Mailer::sendPaidOrderMail($order);
-            
+            Mailer::sendPaidOrderMail($order);
+
         //storage del item de la orden de comra
 
         //Condicionar paypal para dollares y para productos normales
-        
-        
+
             //$amount = new Amount();
             //$amount->setTotal($course->price);
             //$amount->setCurrency('MXN');
-        
+
         //Fin condicion
 
         $amount = new Amount();
-        $amount->setTotal($precioFinal);
-        $amount->setCurrency('USD');
+        $amount->setTotal($dataPrice['precioFinal']);
+        $amount->setCurrency($dataPrice['currency']);
 
+        //dd($amount);
         $transaction = new Transaction();
         $transaction->setAmount($amount);
         $transaction->setDescription($course->title);
@@ -169,7 +179,7 @@ class PaymentController2 extends Controller
         /** Execute the payment **/
         $result = $payment->execute($execution, $this->apiContext);
 
-        if ($result->getState() === 'approved') 
+        if ($result->getState() === 'approved')
         {
             $ordenes = Order::orderBy('id', 'DESC')->firstOrFail();
             $items = OrderItem::where('order_id', $ordenes->id)->firstOrFail();
@@ -186,5 +196,33 @@ class PaymentController2 extends Controller
 
         $status = 'Lo sentimos! El pago a través de PayPal no se pudo realizar.';
         return redirect('/results')->with(compact('status'));
+    }
+
+    public function priceGetCurrency($course, $cupon)
+    {
+
+        $data = array();
+
+        $currency_value = Parameter::where('code', 'dollar-to-currency-mxn')->first();
+        $dollar = $currency_value->_lft;
+        $data['currency'] = $course->currency;
+        $data['porcentaje'] = $cupon / 100;
+
+        #$data['conversion'] = 0;
+        #$dollar = 0.05;
+        #$data['conversion '] = $dollar * $course->price;
+
+        if ($course->currency == 'USD') {
+            $data['conversion'] = $course->price / $dollar;
+        } else {
+            $data['conversion'] = $course->price;
+        }
+
+        $data['descuento'] = $data['conversion'] * $data['porcentaje'];
+        $data['conversion2'] = $data['conversion'] - $data['descuento'];
+        $data['comision'] = $data['conversion2'] * 0.05;
+        $data['precioFinal'] = $data['conversion2'] + $data['comision'] + 0.30;
+
+        return $data;
     }
 }
