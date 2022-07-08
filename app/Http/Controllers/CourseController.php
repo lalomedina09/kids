@@ -52,19 +52,19 @@ class CourseController extends Controller
             ->published()
             ->whereSlug($slug)
             ->firstOrFail();
-         
+
         $coupon = Coupon::all();
 
         $fechaActual = date("Y-m-d");
 
         $dolar = 0.05;
         $Conversion = 0;
-
-        if($slug = "taller-online-inversion-para-principiantes")
+        //if $slug solo tenia un signo = entonces no estaba funcionando esta validacion le agregue otro =
+        if($slug == "taller-online-inversion-para-principiantes")
         {
             $Conversion = $dolar * $course->price;
         }
-        
+
         $request->seoable = $course;
         return view('courses.show')->with([
             'course' => $course,
@@ -78,7 +78,7 @@ class CourseController extends Controller
 
     public function getUsos()
     {
-       
+
             $id = $_GET['id'];
 
             try {
@@ -89,15 +89,15 @@ class CourseController extends Controller
                   $conteo = $ordenesUsos->count();
                   return $conteo;
                 }
-                else 
+                else
                 {
-                  return 0;  
+                  return 0;
                 }
               } catch (ModelNotFoundException $e) {
                 // Handle the error.
               }
-    
-            
+
+
     }
 
 
