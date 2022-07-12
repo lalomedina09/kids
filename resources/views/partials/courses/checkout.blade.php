@@ -1,52 +1,55 @@
 @push('scripts')
 <script type="text/javascript" >
     document.getElementById("coupon").addEventListener("keyup", function() {
-    var nameInput = document.getElementById('coupon').value;
-    if (nameInput != "") 
-    {
-        document.getElementById("enviaForm").disabled = true;
-        document.getElementById("para").hidden = false;
-        document.getElementById("alertas").hidden = true;
-    }
-    else if(nameInput == "")
-    {
-        document.getElementById("enviaForm").disabled = false;
-        document.getElementById("para").hidden = true;
-    }
-});
+        var nameInput = document.getElementById('coupon').value;
+        if (nameInput != "")
+        {
+            document.getElementById("enviaForm").disabled = true;
+            document.getElementById("para").hidden = false;
+            document.getElementById("alertas").hidden = true;
+        }
+        else if(nameInput == "")
+        {
+            document.getElementById("enviaForm").disabled = false;
+            document.getElementById("para").hidden = true;
+        }
+    });
 
-        //Pasar cupon al formulario
-       // window.onload = function() {
-        function enviarCupon() {
+    //Pasar cupon al formulario
+    // window.onload = function() {
+    function enviarCupon() {
         try
         {
-        const user = @json($coupon);
+            const user = @json($coupon);
 
-        var cajaCupon = $('#coupon').val();
+            var cajaCupon = $('#coupon').val();
+            var curso_id = $('#curso_id').val();
+            var codigo = user.filter(function (entry) {
+                return entry.code === cajaCupon;
+            });
 
-        var codigo = user.filter(function (entry) {
-            return entry.code === cajaCupon;
-        });
-         
-        var url = "{{ route('courses.payWithPayPal', ':descuento', ':curso') }}"; 
-        var descuento = 0;
-        if(codigo[0].discount)
-        {
+            var url = "{{ url('paypal/pay/:descuento/:curso_id', ) }}";
+            //alert('U-R-L-: ' + url);
+            var descuento = 0;
+            if(codigo[0].discount)
+            {
+                var descuento = codigo[0].discount;
+            }
+            //alert(descuento);
             var descuento = codigo[0].discount;
-        }
-        var descuento = codigo[0].discount;
-        url = url.replace(':descuento', codigo[0].discount);
-        url = url.replace(':curso', 0);
-        //url = url.replace(':id', codigo[0].id);
-        console.log(codigo[0].discount);
+            url = url.replace(':descuento', codigo[0].discount);
+            url = url.replace(':curso', curso_id);
+            //alert(url);
+            //url = url.replace(':id', codigo[0].id);
+            console.log(codigo[0].discount);
 
-        var a = document.getElementById('form-course');
-        a.action = url;
-        //a.action = '/paypal';
+            var a = document.getElementById('form-course');
+            a.action = url;
+            //a.action = '/paypal';
         }
-        catch(err) 
+        catch(err)
         {
-            var url = "{{ route('courses.payWithPayPal', ':descuento', ':curso') }}"; 
+            var url = "{{ url('courses.payWithPayPal', ':descuento', ':curso') }}";
             url = url.replace(':descuento', 0);
             url = url.replace(':curso', 0);
             //url = url.replace(':id', '');
@@ -56,13 +59,13 @@
         }
       }
    // }
-        //Pasar cupon al formulario
 
+//Pasar cupon al formulario
 var button1 = document.getElementById("validar");
 button1.addEventListener("click", function() {
   button1.dataset.clicked = "true";
-  
-  
+
+
   const user = @json($coupon);
 
   var cajaCupon = $('#coupon').val();
@@ -76,7 +79,7 @@ button1.addEventListener("click", function() {
   const fechaActual = @json($fechaActual);
 
     //Obtencion de variables
-    try 
+    try
     {
         var start_date = codigo[0].rules.start_date;
         var end_date = codigo[0].rules.end_date;
@@ -85,11 +88,11 @@ button1.addEventListener("click", function() {
         var idCupon = codigo[0].id;
 
     }
-    catch(err) 
+    catch(err)
     {
        console.log('error');
     }
-    
+
     //const cuponTest = @json($couponTest->order_items);
 
     if(!idCupon)
@@ -111,7 +114,7 @@ button1.addEventListener("click", function() {
     //        });
 
     //var usosCupon = $('#usosCupon').val();
-   
+
     //Obtencion de variables
 
     //test
@@ -129,13 +132,12 @@ button1.addEventListener("click", function() {
         }
     });
     return tmp;
-    }();    
+    }();
     //test
     console.log(usosCupon);
 
   if(codigo != "" && taller == idCurso)
   {
-    
     if(fechaActual <= end_date && fechaActual >= start_date){
         if(usosCupon < uses)
         {
@@ -162,8 +164,6 @@ button1.addEventListener("click", function() {
         document.getElementById("enviaForm").disabled = false;
         console.log("cupon fuera de fechas, lo sentimos");
     }
-
-    
     //console.log("exists");
     //console.log(start_date);
     //console.log(idCurso);
@@ -177,9 +177,6 @@ button1.addEventListener("click", function() {
     document.getElementById("enviaForm").disabled = false;
     console.log("not exists");
   }
-
-
-    
 });
 
 //document.getElementById("enviaForm").addEventListener("click", function() {
@@ -221,27 +218,32 @@ button1.addEventListener("click", function() {
         <div class="mt-5">
             <div class="text-center">
                 <p class="text-bold mb-2">@lang('Price'):</p>
-                @if($course->slug == 'taller-online-inversion-para-principiantes')         
-                <h2 class="text-danger text-bold">$ {{ $Conversion }} USD</h2>
+                @if($course->currency == 'USD')
+                {{--@if($course->slug == 'taller-online-inversion-para-principiantes')--}}
+                <h2 class="text-danger text-bold">$ {{ $Conversion }} {{ $course->currency}}</h2>
                 @else
                 <h2 class="text-danger text-bold">$ {{ $course->price }} MXN</h2>
                 @endif
-                
+
                 <p class="text-small">(Impuestos incluídos)</p>
             </div>
 
             <hr>
-            @if($course->slug != 'taller-online-inversion-para-principiantes')   
-            <form action="{{ route('courses.buy', [$course->slug]) }}" method="post" id="form-course" class="form-custom">
-            @else
-            <form onsubmit="enviarCupon()"  method="get" id="form-course" class="form-custom">
-            @endif
+            {{--@if($course->slug != 'taller-online-inversion-para-principiantes')
+                <!-- Este form aplica para tarjeta, oxxo, spei -->
+                <form action="{{ route('courses.buy', [$course->slug]) }}" method="post"
+                    id="form-course" class="form-custom">
+            @else--}}
+                <form onsubmit="enviarCupon()"  method="get" id="form-course" class="form-custom">
+                    este form debe estar disponible para cuando se selecione paypal
+                    <input type="text" id="curso_id" name="curso_id" value="{{ $course->id }}"  placeholder="id del curso">
+                    {{--@endif--}}
                 @csrf
 
                 <p class="text-uppercase text-center text-bold mb-4">
                     @lang('Select your payment method')
                 </p>
-                @if($course->slug != 'taller-online-inversion-para-principiantes')
+                {{--@if($course->slug != 'taller-online-inversion-para-principiantes')--}}
                 <div class="row mb-3">
                     <div class="col-xl-4 col-lg-4 col-12">
                         <div class="form-group mb-0">
@@ -309,7 +311,7 @@ button1.addEventListener("click", function() {
                         </ul>
                     </div>
                 </div>
-                @else
+                {{--@else--}}
 
                 <!-- Se argega paypal  -->
                 <div class="row mb-3">
@@ -329,20 +331,29 @@ button1.addEventListener("click", function() {
                       <a>Al seleccionar esta opción te redireccionaremos con el LOGIN oficial de PayPal</a>
                         <ul class="list">
                             <li>PayPal te redireccionará a tu cuenta y tarjeta preferida de pago</li>
-                            <li>PayPal cobrará una comisión adicional del 5% + 0.30 USD</li>
+                            <li>
+                                PayPal cobrará una comisión adicional del
+                                @if($course->currency == 'USD')
+                                    5% + USD 0.30
+                                @else
+                                    3.95% + MXN 4.00
+                                @endif
+                            </li>
+                            <!--<li> 5% </li>-->
+                            <!--Este era la comision anterior: 5% + 0.30 USD-->
                         </ul>
                     </div>
                 </div>
                <!--  fin de paypal -->
-               @endif
+               {{--@endif--}}
 
-              
+
 
                 <div class="form-group">
                     <div class="custom-control custom-checkbox">
                         <label>
                             <input type="checkbox" name="politics"
-                                id="politics" value="1">
+                                id="politics" value="1" required>
                             <label for="politics"
                                 class="form-control-label">
                                 He leído las <a href="{{ route('policies') }}" target="_blank">Políticas de Devoluciones</a>
@@ -353,7 +364,7 @@ button1.addEventListener("click", function() {
                 </div>
                 <!-- aplicar cupon -->
                 <div class="form-row justify-content-center">
-                <div class="form-group text-center col-xl-2 col-lg-2 col-12">
+                    <div class="form-group text-center col-xl-2 col-lg-2 col-12">
                     </div>
                     <div class="form-group text-center col-xl-4 col-lg-4 col-12">
                         <input type="text" id="coupon" name="coupon"  placeholder="Código de cupón">
@@ -372,7 +383,7 @@ button1.addEventListener("click", function() {
                 <div class="form-row justify-content-center">
                     <div class="form-group text-center rojo">
                         <p hidden="true" id="para" class="text-small">
-                        (*) primero aplica cupón para proseguir 
+                        (*) primero aplica cupón para proseguir
                         </p>
                     </div>
                 </div>
@@ -381,12 +392,12 @@ button1.addEventListener("click", function() {
                 <div class="form-row justify-content-center">
                     <div class="form-group text-center rojo">
                         <p hidden="true" id="alertas" class="text-small">
-                        
+
                         </p>
                     </div>
                 </div>
                 <!-- texto -->
-            
+
                 <!-- aplicar cupon -->
 
                 <div class="form-group">

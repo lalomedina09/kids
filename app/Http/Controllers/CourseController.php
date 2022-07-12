@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Courses\BuyRequest;
 use App\Models\Course;
 use App\Models\Category;
+use App\Models\Parameter;
 
 use QD\Marketplace\Implementations\CourseCouponValidatorRule;
 use QD\Marketplace\Helpers\Checkout;
@@ -59,10 +60,22 @@ class CourseController extends Controller
 
         $dolar = 0.05;
         $Conversion = 0;
+        //Comentare el codigo 8 de julio de 2022 se comenta por si ocupo regresarlo
+        /*
         //if $slug solo tenia un signo = entonces no estaba funcionando esta validacion le agregue otro =
         if($slug == "taller-online-inversion-para-principiantes")
         {
             $Conversion = $dolar * $course->price;
+        }
+        */
+
+        //Si en una semana no hay problemas entonces lo podemos borrar lo comentado hoy 8-7-2022
+        $currency_value = Parameter::where('code', 'dollar-to-currency-mxn')->first();
+        $dollar = $currency_value->_lft;
+        if ($course->currency == "USD") {
+            $Conversion = $course->price / $dollar;
+        }else{
+            $Conversion = $course->price;
         }
 
         $request->seoable = $course;
@@ -117,11 +130,14 @@ class CourseController extends Controller
         $user = request()->user();
         $payment_method = $request->input('payment');
 
+        #dd('linea 133 haber si llego aqui');
         $redirect = redirect()->route('courses.show', [$course->slug]);
+        //dd('pago con paypal llego aqui');
         $checkout = new Checkout($user, collect([$course]), $payment_method);
         if ($coupon_code = $request->input('coupon')) {
             $checkout->setCoupon($coupon_code);
         }
+        //dd('alaalal   biz biz biz biz biz biz', $course, $payment_method, 'linea 139');
         $checkout->placeOrder();
 
         return $checkout->getRedirect($redirect);

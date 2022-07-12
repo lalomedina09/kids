@@ -149,10 +149,11 @@
 
                         <p class="text-large mb-4">
                             <img src="{{ asset('images/education/price.svg') }}" class="image--education-include mr-3" alt="Extra">
-                            @if ($course->slug == 'taller-online-inversion-para-principiantes')
-                            {{ $Conversion }} USD
+                            @if($course->currency == 'USD')
+                                {{--@if ($course->slug == 'taller-online-inversion-para-principiantes')--}}
+                                {{ $Conversion }} {{ $course->currency}}
                             @else
-                            @money($course->price)
+                                @money($course->price)
                             @endif
                         </p>
                     </div>

@@ -50,11 +50,12 @@ class PaymentController2 extends Controller
 
     // ...
 
-    public function payWithPayPal($cupon)
+    public function payWithPayPal($cupon, $cursoid)
     {
         //Revision 07 - Julio - 2022
         //Uppdate for Autor Eulalio Medina Barragan
         //Funcion para proceder con el pago
+        dd('cupon: ', $cupon, 'id del curso: ','$cursoid');
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
         //Obtencion precio curso
@@ -89,7 +90,9 @@ class PaymentController2 extends Controller
             $microtime = Date::now()->format('U');
             $order = new Order;
             $order->number = $microtime;
-            $order->status = "order.paid";
+            $order->status = "order.pending_payment";
+            //Actualice este update superior porque marcaba que la orden estaba pagada y realmente empezaba a procesarce y
+            // lo correcto es que aun debiera estar como oendiente y marcarlo como pagado una vez procesado el pago
             $order->total = $dataPrice['precioFinal'];
             $order->method = "paypal";
             //$order->expiration_date = $this->getExpirationDate();
@@ -182,12 +185,13 @@ class PaymentController2 extends Controller
         if ($result->getState() === 'approved')
         {
             $ordenes = Order::orderBy('id', 'DESC')->firstOrFail();
+            $ordenes->update(['status' => 'order.paid']);
             $items = OrderItem::where('order_id', $ordenes->id)->firstOrFail();
 
             return view('qd:marketplace::checkout.confirmationPaypal', [
-                //'user' => $user,
+                'user' => $ordenes->user_id,
                 //'order' => $order
-                'user' => 100,
+                //'user' => 100,
                 'articulo' => $items->name,
                 'ordenId' => $ordenes->id
             ]);
@@ -210,18 +214,25 @@ class PaymentController2 extends Controller
 
         #$data['conversion'] = 0;
         #$dollar = 0.05;
+
+
         #$data['conversion '] = $dollar * $course->price;
 
         if ($course->currency == 'USD') {
             $data['conversion'] = $course->price / $dollar;
+            //precomision de paypal
+            $data['comision'] = ($data['conversion'] * 0.05)  + 0.30;
         } else {
             $data['conversion'] = $course->price;
+            $data['comision'] = (($data['conversion'] * 3.95) / 100) + 4;
+            //$data['comision'] = $data['conversion2'] * 0.06;
         }
 
         $data['descuento'] = $data['conversion'] * $data['porcentaje'];
         $data['conversion2'] = $data['conversion'] - $data['descuento'];
-        $data['comision'] = $data['conversion2'] * 0.05;
-        $data['precioFinal'] = $data['conversion2'] + $data['comision'] + 0.30;
+        //actualizo la comision deacuerdo a la tabla de MIRI que en porcentaje equivale al 6%
+        #$data['comision'] = $data['conversion2'] * 0.05;
+        $data['precioFinal'] = $data['conversion2'] + $data['comision'];
 
         return $data;
     }
