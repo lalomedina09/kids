@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Courses\BuyRequest;
 use App\Models\Course;
 use App\Models\Category;
+use App\Models\Parameter;
 
 use QD\Marketplace\Implementations\CourseCouponValidatorRule;
 use QD\Marketplace\Helpers\Checkout;
@@ -52,19 +53,31 @@ class CourseController extends Controller
             ->published()
             ->whereSlug($slug)
             ->firstOrFail();
-         
+
         $coupon = Coupon::all();
 
         $fechaActual = date("Y-m-d");
 
         $dolar = 0.05;
         $Conversion = 0;
-
-        if($slug = "taller-online-inversion-para-principiantes")
+        //Comentare el codigo 8 de julio de 2022 se comenta por si ocupo regresarlo
+        /*
+        //if $slug solo tenia un signo = entonces no estaba funcionando esta validacion le agregue otro =
+        if($slug == "taller-online-inversion-para-principiantes")
         {
             $Conversion = $dolar * $course->price;
         }
-        
+        */
+
+        //Si en una semana no hay problemas entonces lo podemos borrar lo comentado hoy 8-7-2022
+        $currency_value = Parameter::where('code', 'dollar-to-currency-mxn')->first();
+        $dollar = $currency_value->_lft;
+        if ($course->currency == "USD") {
+            $Conversion = $course->price / $dollar;
+        }else{
+            $Conversion = $course->price;
+        }
+
         $request->seoable = $course;
         return view('courses.show')->with([
             'course' => $course,
@@ -78,7 +91,7 @@ class CourseController extends Controller
 
     public function getUsos()
     {
-       
+
             $id = $_GET['id'];
 
             try {
@@ -89,15 +102,15 @@ class CourseController extends Controller
                   $conteo = $ordenesUsos->count();
                   return $conteo;
                 }
-                else 
+                else
                 {
-                  return 0;  
+                  return 0;
                 }
               } catch (ModelNotFoundException $e) {
                 // Handle the error.
               }
-    
-            
+
+
     }
 
 
@@ -117,11 +130,14 @@ class CourseController extends Controller
         $user = request()->user();
         $payment_method = $request->input('payment');
 
+
         $redirect = redirect()->route('courses.show', [$course->slug]);
+
         $checkout = new Checkout($user, collect([$course]), $payment_method);
         if ($coupon_code = $request->input('coupon')) {
             $checkout->setCoupon($coupon_code);
         }
+
         $checkout->placeOrder();
 
         return $checkout->getRedirect($redirect);

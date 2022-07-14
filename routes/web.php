@@ -250,9 +250,9 @@ Route::prefix('talleres')
             ->middleware(['auth']);
 
         Route::get('paypal/pay/{descuento}')
-            ->uses('PaymentController2@payWithPayPal')
-            ->name('courses.payWithPayPal')
-            ->middleware(['auth']);
+        ->uses('PaymentController2@payWithPayPal')
+        ->name('courses.payWithPayPal')
+        ->middleware(['auth']);
 
         Route::post('/{slug}/comprar')
             ->uses('CourseController@buy')
