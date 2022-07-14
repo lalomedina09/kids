@@ -50,20 +50,24 @@ class PaymentController2 extends Controller
 
     // ...
 
-    public function payWithPayPal($cupon, $cursoid)
+    public function payWithPayPal($cupon)
     {
         //Revision 07 - Julio - 2022
         //Uppdate for Autor Eulalio Medina Barragan
         //Funcion para proceder con el pago
-        dd('cupon: ', $cupon, 'id del curso: ','$cursoid');
+        $curso_id = $_GET['curso_id'];
+        #dd('textocupon: ', $cupon, 'texto id del curso: ', $curso_id);
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
         //Obtencion precio curso
-            $slug = "taller-online-inversion-para-principiantes";
+            #$slug = "taller-online-inversion-para-principiantes";
             $course = Course::with('speakers', 'itineraries', 'content', 'contacts')
             ->published()
-            ->whereSlug($slug)
+            #->whereSlug($slug)
+            ->where('id', $curso_id)
             ->firstOrFail();
+
+        #dd($course, 'variable de curso');
 
         //$detalleCupon = Coupon::findOrFail($cupon);
 
@@ -128,9 +132,9 @@ class PaymentController2 extends Controller
 
         //Condicionar paypal para dollares y para productos normales
 
-            //$amount = new Amount();
-            //$amount->setTotal($course->price);
-            //$amount->setCurrency('MXN');
+        //$amount = new Amount();
+        //$amount->setTotal($course->price);
+        //$amount->setCurrency('MXN');
 
         //Fin condicion
 

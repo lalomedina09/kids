@@ -249,10 +249,10 @@ Route::prefix('talleres')
             ->name('courses.getUsos')
             ->middleware(['auth']);
 
-        Route::get('paypal/pay/{descuento}/{curso_id}')
-            ->uses('PaymentController2@payWithPayPal')
-            ->name('courses.payWithPayPal')
-            ->middleware(['auth']);
+        Route::get('paypal/pay/{descuento}')
+        ->uses('PaymentController2@payWithPayPal')
+        ->name('courses.payWithPayPal')
+        ->middleware(['auth']);
 
         Route::post('/{slug}/comprar')
             ->uses('CourseController@buy')

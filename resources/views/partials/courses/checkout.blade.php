@@ -21,25 +21,20 @@
         try
         {
             const user = @json($coupon);
-
             var cajaCupon = $('#coupon').val();
-            var curso_id = $('#curso_id').val();
             var codigo = user.filter(function (entry) {
                 return entry.code === cajaCupon;
             });
 
-            var url = "{{ url('paypal/pay/:descuento/:curso_id', ) }}";
-            //alert('U-R-L-: ' + url);
+            var url = "{{ route('courses.payWithPayPal', ':descuento', ':curso') }}";
             var descuento = 0;
             if(codigo[0].discount)
             {
                 var descuento = codigo[0].discount;
             }
-            //alert(descuento);
             var descuento = codigo[0].discount;
             url = url.replace(':descuento', codigo[0].discount);
-            url = url.replace(':curso', curso_id);
-            //alert(url);
+            url = url.replace(':curso', 50);
             //url = url.replace(':id', codigo[0].id);
             console.log(codigo[0].discount);
 
@@ -48,19 +43,19 @@
             //a.action = '/paypal';
         }
         catch(err)
-        {
-            var url = "{{ url('courses.payWithPayPal', ':descuento', ':curso') }}";
-            url = url.replace(':descuento', 0);
-            url = url.replace(':curso', 0);
-            //url = url.replace(':id', '');
-            var a = document.getElementById('form-course');
-            a.action = url;
-            console.log('error action form');
-        }
-      }
+            {
+                var url = "{{ route('courses.payWithPayPal', ':descuento', ':curso') }}";
+                url = url.replace(':descuento', 0);
+                url = url.replace(':curso', 50);
+                //url = url.replace(':id', '');
+                var a = document.getElementById('form-course');
+                a.action = url;
+                console.log('error action form');
+            }
+    }
    // }
+        //Pasar cupon al formulario
 
-//Pasar cupon al formulario
 var button1 = document.getElementById("validar");
 button1.addEventListener("click", function() {
   button1.dataset.clicked = "true";
@@ -138,6 +133,7 @@ button1.addEventListener("click", function() {
 
   if(codigo != "" && taller == idCurso)
   {
+
     if(fechaActual <= end_date && fechaActual >= start_date){
         if(usosCupon < uses)
         {
@@ -146,12 +142,17 @@ button1.addEventListener("click", function() {
             document.getElementById("enviaForm").disabled = false;
             document.getElementById("para").hidden = true;
             document.getElementById("coupon").classList.add('form-control','is-valid');
+            let typomethod = $('#methodSelect').val();
+            console.log(typomethod+' metodo selecionado');
+            if (typomethod == 'paypal') {
+                $('#form-course').attr('onsubmit', enviarCupon());
+            }
         }
         else
         {
             //console.log(usosCupon);
             document.getElementById("para").hidden = true;
-            document.getElementById("alertas").innerHTML = "el cupón súpero su límite de usos!";
+            document.getElementById("alertas").innerHTML = "El cupón súpero su límite de usos!";
             document.getElementById("alertas").hidden = false;
             document.getElementById("enviaForm").disabled = false;
             console.log("el cupon supero su limite de usos");
@@ -159,11 +160,13 @@ button1.addEventListener("click", function() {
     }
     else{
         document.getElementById("para").hidden = true;
-        document.getElementById("alertas").innerHTML = "cupón fuera de fechas!";
+        document.getElementById("alertas").innerHTML = "Cupón fuera de fechas!";
         document.getElementById("alertas").hidden = false;
         document.getElementById("enviaForm").disabled = false;
         console.log("cupon fuera de fechas, lo sentimos");
     }
+
+
     //console.log("exists");
     //console.log(start_date);
     //console.log(idCurso);
@@ -171,12 +174,15 @@ button1.addEventListener("click", function() {
   }
   else
   {
-    document.getElementById("alertas").innerHTML = "el cupón no concuerda con nuestros registros!";
+    document.getElementById("alertas").innerHTML = "El cupón no concuerda con nuestros registros!";
     document.getElementById("para").hidden = true;
     document.getElementById("alertas").hidden = false;
     document.getElementById("enviaForm").disabled = false;
     console.log("not exists");
   }
+
+
+
 });
 
 //document.getElementById("enviaForm").addEventListener("click", function() {
@@ -191,7 +197,42 @@ button1.addEventListener("click", function() {
  // }
 //});
 
-
+/*- - - - - - - - - - - - - - - - - - - - - - - */
+    function formChange(src) {
+        let method_conekta = '{{ route('courses.buy', [$course->slug]) }}';
+        let slug = '{{ $course->slug }}';
+        //var form = $('#form-course').val();
+        //console.log(src.value+' '+slug+method_conekta);
+        if(src.value == 'paypal'){
+            //form.action('action', 'noononononono');
+            //$('#form-course').attr('action', '');
+            $('#form-course').removeAttr('action');
+            $('#form-course').attr('onsubmit', enviarCupon());
+            $('#form-course').attr('method', 'get');
+            $('#methodSelect').val('paypal');
+            console.log('metodo paypal');
+        }
+        if(src.value == 'spei' || src.value == 'oxxo_cash' || src.value == 'card')
+        {
+            $('#form-course').attr('action', method_conekta);
+            $('#form-course').attr('method', 'post');
+            $('#methodSelect').val(src.value);
+            console.log(src.value);
+        }/*
+        if(src.value == 'oxxo_cash')
+        {
+            $('#form-course').attr('action', method_conekta);
+            console.log('metodo oxxo_cash');
+            $('#form-course').attr('method', 'post');
+        }
+        if(src.value == 'card')
+        {
+            $('#form-course').attr('action', method_conekta);
+            console.log('metodo tarjeta');
+            $('#form-course').attr('method', 'post');
+        }*/
+    }
+/*- - - - - - - - - - - - - - - - - - - - - - - */
 
 </script>
 @endpush
@@ -229,15 +270,25 @@ button1.addEventListener("click", function() {
             </div>
 
             <hr>
-            {{--@if($course->slug != 'taller-online-inversion-para-principiantes')
+
+            {{--@if($course->slug != 'taller-online-inversion-para-principiantes')--}}
+            <form action="" method="" id="form-course" name="form-course" class="form-custom">
                 <!-- Este form aplica para tarjeta, oxxo, spei -->
-                <form action="{{ route('courses.buy', [$course->slug]) }}" method="post"
-                    id="form-course" class="form-custom">
-            @else--}}
-                <form onsubmit="enviarCupon()"  method="get" id="form-course" class="form-custom">
-                    este form debe estar disponible para cuando se selecione paypal
-                    <input type="text" id="curso_id" name="curso_id" value="{{ $course->id }}"  placeholder="id del curso">
-                    {{--@endif--}}
+                {{--
+                <form action="{{ route('courses.buy', [$course->slug]) }}" method=""
+                    id="form-course" name="form-course" class="form-custom">
+                    <span id="span-conekta">este formulario debe aparecer si se sleciona el formulario de metodos CONECKTA</span> <br>
+                --}}
+            {{--@else--}}
+                    {{--
+                    <form onsubmit="enviarCupon()"  method="get" id="form-course" class="form-custom">
+                    <br> <span id="span-paypal" >este form debe estar disponible para cuando se selecione paypal</span>
+
+
+                    --}}
+                {{--@endif--}}
+                <input type="text" id="methodSelect" name="methodSelect" placeholder="Método selecionado">
+                <input type="hidden" id="curso_id" name="curso_id" value="{{ $course->id }}"  placeholder="id del curso">
                 @csrf
 
                 <p class="text-uppercase text-center text-bold mb-4">
@@ -250,7 +301,7 @@ button1.addEventListener("click", function() {
                             <div class="custom-control custom-radio">
                                 <label>
                                     <span class="custom-control-description">Tarjeta de crédito / débito</span>
-                                    <input type="radio" name="payment" value="card" checked>
+                                    <input type="radio" name="payment" onchange="formChange(this);" id="payment" value="card">
                                     <span class="custom-control-indicator float-right"></span>
                                 </label>
                             </div>
@@ -272,7 +323,7 @@ button1.addEventListener("click", function() {
                             <div class="custom-control custom-radio">
                                 <label>
                                     <span class="custom-control-description">Tiendas OXXO</span>
-                                    <input type="radio" name="payment" value="oxxo_cash">
+                                    <input type="radio" name="payment" onchange="formChange(this);" id="payment" value="oxxo_cash">
                                     <span class="custom-control-indicator float-right"></span>
                                 </label>
                             </div>
@@ -295,7 +346,7 @@ button1.addEventListener("click", function() {
                             <div class="custom-control custom-radio">
                                 <label>
                                     <span class="custom-control-description">Transferencia SPEI</span>
-                                    <input type="radio" name="payment" value="spei">
+                                    <input type="radio" name="payment" onchange="formChange(this);" id="payment" value="spei">
                                     <span class="custom-control-indicator float-right"></span>
                                 </label>
                             </div>
@@ -320,7 +371,7 @@ button1.addEventListener("click", function() {
                             <div class="custom-control custom-radio">
                                 <label>
                                     <span class="custom-control-description">PAYPAL</span>
-                                    <input type="radio" name="payment" value="paypal" checked>
+                                    <input type="radio" name="payment" id="payment" onchange="formChange(this);" value="paypal">
                                     <span class="custom-control-indicator float-right"></span>
                                 </label>
                             </div>
