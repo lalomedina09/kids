@@ -216,26 +216,20 @@ class PaymentController2 extends Controller
         $data['currency'] = $course->currency;
         $data['porcentaje'] = $cupon / 100;
 
-        #$data['conversion'] = 0;
-        #$dollar = 0.05;
-
-
-        #$data['conversion '] = $dollar * $course->price;
-
         if ($course->currency == 'USD') {
-            $data['conversion'] = $course->price / $dollar;
+            $data['conversion'] = ($course->price / $dollar) ;
+            $conversion_con_descuento = $data['conversion'] * $data['porcentaje'];
             //precomision de paypal
-            $data['comision'] = ($data['conversion'] * 0.05)  + 0.30;
+            $data['comision'] = (($data['conversion'] - $conversion_con_descuento) * 0.05)  + 0.30;
         } else {
             $data['conversion'] = $course->price;
-            $data['comision'] = (($data['conversion'] * 3.95) / 100) + 4;
-            //$data['comision'] = $data['conversion2'] * 0.06;
+            $conversion_con_descuento = $data['conversion'] * $data['porcentaje'];
+            $data['comision'] = ((($data['conversion'] - $conversion_con_descuento) * 3.95) / 100) + 4;
         }
 
         $data['descuento'] = $data['conversion'] * $data['porcentaje'];
         $data['conversion2'] = $data['conversion'] - $data['descuento'];
-        //actualizo la comision deacuerdo a la tabla de MIRI que en porcentaje equivale al 6%
-        #$data['comision'] = $data['conversion2'] * 0.05;
+
         $data['precioFinal'] = $data['conversion2'] + $data['comision'];
 
         return $data;

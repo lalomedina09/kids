@@ -130,14 +130,14 @@ class CourseController extends Controller
         $user = request()->user();
         $payment_method = $request->input('payment');
 
-        #dd('linea 133 haber si llego aqui');
+
         $redirect = redirect()->route('courses.show', [$course->slug]);
-        //dd('pago con paypal llego aqui');
+
         $checkout = new Checkout($user, collect([$course]), $payment_method);
         if ($coupon_code = $request->input('coupon')) {
             $checkout->setCoupon($coupon_code);
         }
-        //dd('alaalal   biz biz biz biz biz biz', $course, $payment_method, 'linea 139');
+
         $checkout->placeOrder();
 
         return $checkout->getRedirect($redirect);
