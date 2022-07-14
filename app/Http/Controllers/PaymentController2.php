@@ -126,7 +126,7 @@ class PaymentController2 extends Controller
             $order_item->coupon_id = 1;
             $order_item->save();
 
-            Mailer::sendPaidOrderMail($order);
+            //Mailer::sendPaidOrderMail($order);
 
         //storage del item de la orden de comra
 
@@ -191,6 +191,8 @@ class PaymentController2 extends Controller
             $ordenes = Order::orderBy('id', 'DESC')->firstOrFail();
             $ordenes->update(['status' => 'order.paid']);
             $items = OrderItem::where('order_id', $ordenes->id)->firstOrFail();
+
+            Mailer::sendPaidOrderMail($ordenes);
 
             return view('qd:marketplace::checkout.confirmationPaypal', [
                 'user' => $ordenes->user_id,

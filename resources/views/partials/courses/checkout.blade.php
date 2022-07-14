@@ -287,7 +287,7 @@ button1.addEventListener("click", function() {
 
                     --}}
                 {{--@endif--}}
-                <input type="text" id="methodSelect" name="methodSelect" placeholder="Método selecionado">
+                <input type="hidden" id="methodSelect" name="methodSelect" placeholder="Método selecionado">
                 <input type="hidden" id="curso_id" name="curso_id" value="{{ $course->id }}"  placeholder="id del curso">
                 @csrf
 
