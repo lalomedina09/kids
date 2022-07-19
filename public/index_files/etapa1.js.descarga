@@ -1,0 +1,34 @@
+function t2() {
+	if (window.innerWidth < 800)
+		return 1;
+	if (window.innerWidth < 1000)
+		return 2;
+	
+	return 3;
+}
+
+$(window).resize(function() {
+	let c = t2();
+	flexslider.vars.minItems = c, flexslider.vars.maxItems = c;
+});
+
+$(window).ready(function() {
+	$(".flexslider2").each((function () {
+		$(this).flexslider({
+			animation: "slide",
+			animationSpeed: 400,
+			animationLoop: !1,
+			move: 1,
+			controlsContainer: $(this).find(".slider-item__bullets"),
+			customDirectionNav: $(this).find(".slider-item a"),
+			initDelay: $(this).find(".slider-item__bullets").attr("data-delay"),
+			itemWidth: 210,
+			itemMargin: 30,
+			minItems: t2(),
+			maxItems: t2(),
+			start: function (e) {
+				flexslider = e
+			}
+		})
+	}))
+});
