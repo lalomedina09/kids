@@ -1,7 +1,43 @@
 @extends('layouts.app')
 
+@if (app()->environment() === 'production')
+    @push('scripts-inline')
+        <script id="fbq-track-ViewContent">
+            fbq('track', 'ViewContent', {
+                content_ids: ['{{ $course->id }}'],
+                content_category: '{{ $course->category->present()->name }}',
+                content_name: '{{ $course->present()->title }} {{ $course->present()->readable_event_date }}',
+                content_type: 'course'
+            });
+            document.getElementById('fbq-track-ViewContent').remove();
+        </script>
+
+        <script id="fbq-track-InitiateCheckout">
+            (function () {
+                if (!window.fbq) return;
+                var btns = document.getElementsByClassName('btn-checkout');
+                if (btns.length <= 0) return;
+                for (var b = 0; b < btns.length; b++) {
+                    var $btn = btns[b];
+                    $btn.addEventListener('click', function (e) {
+                        fbq('track', 'InitiateCheckout', {
+                            content_ids: ['{{ $course->id }}'],
+                            content_category: '{{ $course->category->present()->name }}',
+                            content_name: '{{ $course->present()->title }} {{ $course->present()->readable_event_date }}',
+                            content_type: 'course',
+                            currency: 'MXN',
+                            num_items: 1
+                        });
+                    });
+                }
+            }());
+            document.getElementById('fbq-track-InitiateCheckout').remove();
+        </script>
+    @endpush
+@endif
 
 <style type="text/css">
+
         .postheader {
             background-image: url('index_files/experimento/pantalla-principal-movil.png');
             background-size: 100%;
@@ -104,8 +140,7 @@
             .postheader {
                 background-image: url('index_files/experimento/pantalla-principal-qdplay.png');
                 background-size: cover;
-                /*min-height: 1080px;*/
-                /*Actualice el min height porque la imagen no se veia completa*/
+
                 min-height: 750px;
             }
 
@@ -117,8 +152,7 @@
 
         @media (min-width: 1300px) {
             .postheader {
-                /*Actualice el min height porque la imagen no se veia completa*/
-                /*min-height: 1080px;*/
+
                 min-height: 750px;
             }
 
@@ -178,18 +212,28 @@
     <div class="backgroud-gray">
         @include('preQdplay.experiment-qdplay.components.index.benefits')
 
-    <section>
-        <div class="container" >
-            @include('preQdplay.experiment-qdplay.components.index.video-renta')
+        <section>
+            <div class="container" >
+                @include('preQdplay.experiment-qdplay.components.index.video-renta')
 
-            @include('preQdplay.experiment-qdplay.components.index.video-pareja')
+                @include('preQdplay.experiment-qdplay.components.index.video-pareja')
 
-            @include('preQdplay.experiment-qdplay.components.index.video-impuestos')
-        </div>
-    </section>
+                @include('preQdplay.experiment-qdplay.components.index.video-impuestos')
+            </div>
+        </section>
     </div>
 
     @include('preQdplay.experiment-qdplay.components.index.what-include')
+
+    @auth
+        @if ($buy == false)
+            @include('preQdplay.components.checkout')
+
+            @push('scripts')
+                <script type="text/javascript" src="{{ mix('js/courses/checkout.js') }}"></script>
+            @endpush
+        @endif
+    @endauth
 @endsection
 
 <script type="text/javascript" src="{{asset('index_files/manifest.js.descarga')}}"></script>

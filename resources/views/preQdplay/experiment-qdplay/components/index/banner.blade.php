@@ -20,13 +20,24 @@
                                 Estás en el lugar correcto. Este plan
                                 de cursos te dará los conocimientos
                                 necesarios para tener una buena
-                                relación con tu dinero.
+                                relación con tus impuestos, el mundo inmobiliario y tu pareja.
                             </p>
                         </div>
                         <div class="text-left mb-5 mt-4">
-                            <a href="" class="btn btn-pill bg-green-blue text-white font-size-md font-weight-normal font-weight-bold text-transform-none btn-rounded">
-                                Compra el plan <span class="text-black">por sólo $299 MXN</span>
-                            </a>
+                            @if ($buy == false)
+                                <a href="@auth # @else #login-modal @endauth"
+                                    class="btn btn-pill bg-green-blue text-white font-size-md font-weight-normal font-weight-bold text-transform-none btn-rounded"
+                                    @auth data-fullmodal="#modal-checkout" @else data-toggle="modal" @endauth>
+                                    Compra el paquete <span class="text-black">por sólo $299 MXN</span>
+                                </a>
+                            @else
+                                <a href="{{ url('qdplay/ver/1') }}"
+                                    class="btn btn-pill bg-green-blue text-white font-size-md font-weight-normal font-weight-bold text-transform-none btn-rounded"
+                                    target="_blank">Ver Curso 1</a>
+                            @endif
+                            <!--<a href="" class="btn btn-pill bg-green-blue text-white font-size-md font-weight-normal font-weight-bold text-transform-none btn-rounded">
+                                Compra el paquete <span class="text-black">por sólo $299 MXN</span>
+                            </a>-->
                         </div>
                     </div>
                 </div>

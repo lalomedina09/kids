@@ -275,6 +275,10 @@ Route::prefix('qdplay')
         Route::get('/')
             ->uses('PreQdPlayCourseController@index')
             ->name('qdplay.index');
+
+        Route::get('ver/{video}')
+            ->uses('PreQdPlayCourseController@show')
+            ->name('qdplay.show');
     });
 
 /*

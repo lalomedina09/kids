@@ -5,7 +5,7 @@
             <div class="col-md-6 text-center">
                 <img src="{{ asset('index_files/experimento/bajo-demanda.png')}}" alt="" class="mt-5" width="250px">
                 <p class="text-green">
-                    <b>3 cursos bajo demanda <br>
+                    <b>3 cursos pre-grabados <br>
                         <span class="text-white">aprende a tu ritmo</span>
                     </b>
                 </p>
