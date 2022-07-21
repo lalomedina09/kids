@@ -7,16 +7,6 @@
 @endif
 
 <style type="text/css">
-
-        .postheader {
-            background-image: url('index_files/experimento/pantalla-principal-movil.png');
-            background-size: 100%;
-            background-position-y: bottom;
-            background-color: #cdd1d4;
-            background-repeat: no-repeat;
-            min-height: 1280px;
-        }
-
         .title1 {
             font-size: 3.5rem;
         }
@@ -79,7 +69,82 @@
             max-width: 300px;
             padding: 0.1em 0;
         }
+        @media (min-width: 320px) {
+            .img-portada-video{
+                width: 280px;
+                display: block;
+                margin: auto;
+            }
 
+            .postheader {
+                background-color: #ffffff;
+                background-size: 100%;
+                background-position-y: bottom;
+                min-height: 930px;
+            }
+            .img-start-include{
+                display: none;
+            }
+            .img-movil-center
+            {
+                display: block;
+                margin: auto
+            }
+            /*
+            .postheader {
+            background-image: url('index_files/experimento/pantalla-principal-movil.png');
+            background-size: 100%;
+            background-position-y: bottom;
+            background-color: #cdd1d4;
+            background-repeat: no-repeat;
+            min-height: 1280px;
+        }
+            */
+        }
+
+        @media (min-width: 360px) {
+            .img-portada-video{
+                width: 280px;
+                display: block;
+                margin: auto;
+            }
+
+            .postheader {
+                background-color: #ffffff;
+                background-size: 100%;
+                background-position-y: bottom;
+                min-height: 960;
+            }
+
+            .img-start-include{
+                display: none;
+            }
+            .img-movil-center
+            {
+                display: block;
+                margin: auto
+            }
+        }
+
+        @media (min-width: 410px)
+        {
+            .postheader {
+                background-color: #ffffff;
+                background-size: 100%;
+                background-position-y: bottom;
+                min-height: 930px;
+            }
+
+            .img-start-include{
+                display: none;
+            }
+            .img-movil-center
+            {
+                display: block;
+                margin: auto
+            }
+
+        }
         @media (min-width: 600px) {
             .postheader {
                 min-height: 1080px;
@@ -87,6 +152,23 @@
 
             .prefooter {
                 padding-top: 0;
+            }
+
+            .img-portada-video{
+                width: 300px;
+
+            }
+            .postheader {
+            background-image: url('index_files/experimento/pantalla-principal-movil.png');
+            background-size: 100%;
+            background-position-y: bottom;
+            background-color: #cdd1d4;
+            background-repeat: no-repeat;
+            min-height: 1280px;
+            }
+            .img-start-include{
+                width: 30%;
+                text-align: left !important;
             }
         }
 
@@ -104,6 +186,17 @@
                 width: 330px;
 
             }
+            .postheader {
+            background-image: url('index_files/experimento/pantalla-principal-movil.png');
+            background-size: 100%;
+            background-position-y: bottom;
+            background-color: #cdd1d4;
+            background-repeat: no-repeat;
+            min-height: 1280px;
+            }
+            .img-start-include{
+                width: 30%;
+            }
         }
 
         @media (min-width: 1000px) {
@@ -117,6 +210,10 @@
             .prefooter {
                 padding: 5em 11em;
                 background-size: contain;
+            }
+
+            .img-start-include{
+                width: 50%;
             }
         }
 
@@ -167,10 +264,11 @@
         }
 
 
-    .margin-lateral {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
+        .margin-lateral {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
 </style>
 @section('content')
     <link href="{{asset('index_files/etapa1.css')}}" rel="stylesheet">

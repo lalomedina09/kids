@@ -7,22 +7,22 @@
             <div class="col-md-6 col-12 mt-3">
                 <div class="row mt-5">
                     <div class="col-md-1"></div>
-                    <div class="col-md-2 col-md-offset-1 text-right">
-                        <img src="{{ asset('index_files/experimento/start.png') }}" alt="" width="60%">
+                    <div class="col-md-2 text-right">
+                        <img src="{{ asset('index_files/experimento/start.png') }}" alt="" class="img-start-include">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <p class="font-weight-normal">
                                 3 cursos: <br>
                                 <b>pre-grabados</b>
-                            </p>
+                        </p>
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-1"></div>
-                    <div class="col-md-2 col-md-offset-1 text-right">
-                        <img src="{{ asset('index_files/experimento/start.png') }}" alt="" width="60%">
+                    <div class="col-md-2 text-right">
+                        <img src="{{ asset('index_files/experimento/start.png') }}" alt="" class="img-start-include">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <p class="font-weight-normal">
                                 Cada curso incluye: <br>
                                 <b>Recursos descargables</b>
@@ -31,10 +31,10 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-1"></div>
-                    <div class="col-md-2 col-md-offset-1 text-right">
-                        <img src="{{ asset('index_files/experimento/start.png') }}" alt="" width="60%">
+                    <div class="col-md-2 text-right">
+                        <img src="{{ asset('index_files/experimento/start.png') }}" alt="" class="img-start-include">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <p class="font-weight-normal">
                                 Acceso a la grabación <br>
                                 <b>durante 30 días</b>

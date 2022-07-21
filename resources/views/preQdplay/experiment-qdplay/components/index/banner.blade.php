@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-6 col-lg-6 col-12"></div>
                     <div class="col-sm-6 col-md-6 col-lg-6 col-12">
-                        <img src="{{ asset('index_files/2. visualizacion curso-05.png') }}" alt="QD Play" width="110">
+                        <img src="{{ asset('index_files/2. visualizacion curso-05.png') }}" alt="QD Play" class="img-movil-center" width="110">
 
                         <h1 class="mb-5 text-left font-weight-bold title-underline-left title-underline-b mt-3">
                             Comienza tu vida adulta <br>

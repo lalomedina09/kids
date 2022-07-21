@@ -2,7 +2,7 @@
 <div class="row mb-5" style="margin-left: 5%; margin-right: 5%;">
     <div class="col-md-12 text-left">
         <h2 style="margin-bottom: -2%;">
-            <span class="text-secondary">2.</span>
+            <span class="text-secondary">1.</span>
             <span class="text-white">Administra el dinero en pareja sin conflictos</span>
         </h2>
         <hr>

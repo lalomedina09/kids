@@ -11,7 +11,7 @@
         </p>
     </div>
 </div>
-<div class="row" style="margin-left: 5%; margin-right: 5%;">
+<div class="row mb-5" style="margin-left: 5%; margin-right: 5%;">
     <div class="col-md-6 mb-5">
         <a href="{{ url('qdplay/ver/3') }}" title="Curso Basico de Impuestos">
             <img src="{{ asset('index_files/experimento/basico-de-impuestos.png')}}" alt="Conoce los impuestos" class="img-portada-video">
@@ -26,7 +26,7 @@
             Miguel Cardona
         </p>
         <img src="{{ asset('index_files/experimento/tiempo.png') }}" alt="Tiempo curso" width="5%">
-        <span class="text-white">&nbsp;&nbsp;3 horas 48 minutos</span>
+        <span class="text-white mb-5">&nbsp;&nbsp;3 horas 48 minutos</span>
     </div>
 </div>
 

@@ -193,8 +193,8 @@
 
             .video-main-responsive
             {
-                width:640;
-                height:360;
+                width:700;
+                height:420;
             }
         }
 
