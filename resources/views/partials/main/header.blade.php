@@ -147,10 +147,10 @@
                 Talleres
             </a>
 
-            <a href="{{ route('qdplay.index') }}"
+            {{--<a href="{{ route('qdplay.index') }}"
                 class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
                 QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" class="" style="">
-            </a>
+            </a>--}}
 
             @if (config()->has('money.modules.advice'))
                 <a href="{{ route('qd.advice.advisors.index') }}"
