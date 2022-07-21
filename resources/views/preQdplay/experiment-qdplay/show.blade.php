@@ -282,7 +282,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="text-center mb-5 mt-4">
-                        @if ($statusBuy == false)
+                        @if ($statusBuy == 0)
                             <a href="@auth # @else #login-modal @endauth"
                                 class="btn btn-pill bg-green-blue text-white font-size-md font-weight-normal font-weight-bold text-transform-none btn-rounded"
                                 @auth data-fullmodal="#modal-checkout" @else data-toggle="modal" @endauth>
@@ -297,7 +297,7 @@
 
     {{-- --}}
     @auth
-        @if (count($statusBuy) == 0)
+        @if ($statusBuy == 0)
             @include('preQdplay.components.checkout')
 
             @push('scripts')

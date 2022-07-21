@@ -142,19 +142,20 @@ class PreQdPlayCourseController extends Controller
     public function getStatusBuyExpiration()
     {
         $now = Carbon::now()->format('Y-m-d h:i:s');
-        $getOrders = UserPackage::where('user_id', Auth::user()->id)
-            ->where('code', 'paquete-qdplay-3-cursos')
-            ->select('id')
-            ->get()
-            ->pluck('id')
-            ->toArray();
-
-        if(count($getOrders)>0)
+        if(Auth::user())
         {
+            $getOrders = UserPackage::where('user_id', Auth::user()->id)
+                ->where('code', 'paquete-qdplay-3-cursos')
+                ->select('id')
+                ->get()
+                ->pluck('id')
+                ->toArray();
 
-            return $orderspaid = Order::where('id', $getOrders)->where('status', 'order.paid')->get();
-
-
+            if (count($getOrders) > 0) {
+                return count($orderspaid = Order::where('id', $getOrders)->where('status', 'order.paid')->get());
+            } else {
+                return 0;
+            }
         }else{
             return 0;
         }
