@@ -22,6 +22,7 @@ class PreQdPlayCourseController extends Controller
     public function index()
     {
         $statusBuy = $this->getStatusBuyExpiration();
+        #dd($statusBuy);
         $coupon = Coupon::all();
         $fechaActual = date("Y-m-d");
 
@@ -146,13 +147,16 @@ class PreQdPlayCourseController extends Controller
         {
             $getOrders = UserPackage::where('user_id', Auth::user()->id)
                 ->where('code', 'paquete-qdplay-3-cursos')
-                ->select('id')
+                ->select('order_id')
                 ->get()
-                ->pluck('id')
+                ->pluck('order_id')
                 ->toArray();
 
             if (count($getOrders) > 0) {
-                return count($orderspaid = Order::where('id', $getOrders)->where('status', 'order.paid')->get());
+                #dd($getOrders);
+                $orderspaid = Order::where('id', $getOrders)->where('status', 'order.paid')->get();
+
+                return count($orderspaid);
             } else {
                 return 0;
             }
