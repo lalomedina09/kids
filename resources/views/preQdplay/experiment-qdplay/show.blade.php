@@ -49,28 +49,35 @@
         .title1 {
             font-size: 3.5rem;
         }
-
         .expositor-bg {
             position: absolute;
-            margin-top: 100px;
             left: 0;
-            background-color: hsl(98, 52%, 56%);
-            background-image: url("/index_files/experimento/fondo-asesor.png.png");
+            background-color: #80ca56;
+            background-image: url("/index_files/experimento/fondo-asesor.png");
             background-position-y: center;
             background-position-x: right;
             background-repeat: no-repeat;
             border-radius: 0 1000em 1000em 0;
             width: 100%;
-            height: 550px;
-        }
-
-        .expositor-padding {
-            padding-right: 20%;
-            height: 550px;
+            min-height: 575px;
         }
 
         .expositor-photo {
-            height: 290px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            height: 475px;
+        }
+
+        @media (min-width: 800px) {
+            .expositor-photo {
+                margin-right: 50px;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .expositor-bg {
+                width: 50%;
+            }
         }
 
         .carousel-inner {
@@ -149,7 +156,7 @@
 
         @media (min-width: 800px) {
             .expositor-bg {
-                width: 60%;
+                width: 45%;
                 margin-top: 0;
             }
 
@@ -275,7 +282,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="text-center mb-5 mt-4">
-                        @if ($buy == false)
+                        @if ($statusBuy == false)
                             <a href="@auth # @else #login-modal @endauth"
                                 class="btn btn-pill bg-green-blue text-white font-size-md font-weight-normal font-weight-bold text-transform-none btn-rounded"
                                 @auth data-fullmodal="#modal-checkout" @else data-toggle="modal" @endauth>
@@ -290,7 +297,7 @@
 
     {{-- --}}
     @auth
-        @if ($buy == false)
+        @if (count($statusBuy) == 0)
             @include('preQdplay.components.checkout')
 
             @push('scripts')

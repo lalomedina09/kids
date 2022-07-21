@@ -26,7 +26,7 @@
                 return entry.code === cajaCupon;
             });
 
-            var url = "{{ route('courses.payWithPayPal', ':descuento', ':curso') }}";
+            var url = "{{ route('preqdplay.payWithPayPal', ':descuento', ':curso') }}";
             var descuento = 0;
             if(codigo[0].discount)
             {
@@ -44,7 +44,7 @@
         }
         catch(err)
             {
-                var url = "{{ route('courses.payWithPayPal', ':descuento', ':curso') }}";
+                var url = "{{ route('preqdplay.payWithPayPal', ':descuento', ':curso') }}";
                 url = url.replace(':descuento', 0);
                 url = url.replace(':curso', 50);
                 //url = url.replace(':id', '');
@@ -163,8 +163,8 @@ button1.addEventListener("click", function() {
 
 /*- - - - - - - - - - - - - - - - - - - - - - - */
     function formChange(src) {
-        let method_conekta = '{{ route('courses.buy', ['qdplay']) }}';
-        let slug = 'qdplay';
+        let method_conekta = '{{ route('qdplay.buy', ['qdplay-paquete']) }}';
+        let slug = 'promoqdplay';
         //var form = $('#form-course').val();
         //console.log(src.value+' '+slug+method_conekta);
         if(src.value == 'paypal'){

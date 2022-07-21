@@ -51,6 +51,11 @@ p {
     width: 94%;
 }
 
+.icon-20 {
+    display: inline !important;
+    width: 25px !important;
+}
+
 .icon-25 {
     display: inline !important;
     height: 25px !important;

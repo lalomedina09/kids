@@ -25,7 +25,7 @@
                 preload="auto"
                 poster="{{ asset($data['url_poster'][$video]) }}"
                 class="video-main-responsive">
-            @if ($buy == false)
+            @if (count($statusBuy) == false)
                 <source src="{{ asset($data['url_video_intro'][$video]) }}" type="video/mp4" />
             @else
                 <source src="{{ asset($data['url_video_main'][$video]) }}" type="video/mp4" />

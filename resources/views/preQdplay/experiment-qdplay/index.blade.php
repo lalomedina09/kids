@@ -226,7 +226,7 @@
     @include('preQdplay.experiment-qdplay.components.index.what-include')
 
     @auth
-        @if ($buy == false)
+        @if(count($statusBuy) == 0)
             @include('preQdplay.components.checkout')
 
             @push('scripts')

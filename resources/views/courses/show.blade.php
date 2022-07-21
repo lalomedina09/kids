@@ -224,7 +224,7 @@
 
     @auth
         @if ($course->onlineSellEnabled())
-            @include('preQdplay.components.checkout')
+            @include('partials.courses.checkout')
 
             @push('scripts')
                 <script type="text/javascript" src="{{ mix('js/courses/checkout.js') }}"></script>

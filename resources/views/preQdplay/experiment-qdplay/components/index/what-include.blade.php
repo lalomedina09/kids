@@ -56,7 +56,7 @@
     </div>
 
     <div class="text-center mb-5 mt-4">
-         @if ($buy == false)
+         @if (count($statusBuy) == false)
             <a href="@auth # @else #login-modal @endauth"
                 class="btn btn-pill bg-green-blue text-white font-size-md font-weight-normal font-weight-bold text-transform-none btn-rounded"
                 @auth data-fullmodal="#modal-checkout" @else data-toggle="modal" @endauth>
@@ -65,7 +65,7 @@
         @else
             <a href="{{ url('qdplay/ver/1') }}"
                 class="btn btn-pill bg-green-blue text-white font-size-md font-weight-normal font-weight-bold text-transform-none btn-rounded"
-                target="_blank">Ver Curso 1</a>
+                target="_blank">Ver Curso 2</a>
         @endif
     </div>
 </section>
