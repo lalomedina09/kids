@@ -1,0 +1,216 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+
+
+/*
+    Created on : May 27, 2022, 2:04:24 PM
+    Author     : Saul, Eulalio
+*/
+
+@font-face {
+    font-family: 'MonserratExtraLigth';
+    src: url(/fonts/MontserratAlternates-ExtraLight.otf);
+}
+
+.bg-green-blue {
+    bagkground-color: #90d06b;
+    background-image: linear-gradient(to right, #90d06b, #01dacb);
+}
+
+.tag {
+    display: inline-block;
+    border-radius: 10px;
+    color: white;
+    padding: 0.2em 0.7em;
+}
+
+hr {
+    border-top: 2px solid #000;
+}
+
+h1 hr,
+hr.h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100px;
+}
+
+
+/*
+p {
+    font-family: "MonserratExtraLigth";
+}
+*/
+
+.vr-black {
+    position: absolute;
+    border-right: 2px solid black;
+    height: 150px;
+    width: 94%;
+}
+
+.icon-20 {
+    display: inline !important;
+    width: 25px !important;
+}
+
+.icon-25 {
+    display: inline !important;
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.icon-30 {
+    display: inline !important;
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.icon-40 {
+    display: inline !important;
+    height: 40px !important;
+    width: 40px !important;
+}
+
+.text-green {
+    color: #81cc56;
+}
+
+.text-blue {
+    color: #00ddcf;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-green-blue {
+    background: #81cc56;
+    background: linear-gradient(to right, #81cc56 0%, #00ddcf 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.bg-green {
+    background-color: #81cc56;
+}
+
+.bg-blue {
+    background-color: #00ddcf;
+}
+
+.form-control-underline {
+    border-width: 0 0 1px 0 !important;
+    border-radius: 0 !important;
+    height: auto !important;
+}
+
+.btn-rounded {
+    border-radius: 1em !important;
+}
+
+.table-minimal th {
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.table-minimal td {
+    border-right: 1px solid #bbbbbb;
+}
+
+.table-minimal tr td:last-child {
+    border-right-width: 0;
+}
+
+.flexslider2 {
+    position: relative;
+    padding: 0 40px;
+}
+
+.flexslider2 .slider-item {
+    position: absolute;
+    left: -2%;
+    top: 200px;
+    right: 0;
+    width: 104%;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+@media (min-width: 800px) {
+    .flexslider2 .slider-item {
+        left: 0;
+        width: 100%;
+    }
+}
+
+.flexslider2 .slider-item__bullets {
+    visibility: hidden;
+}
+
+.text-black {
+    color: #000000;
+}
+
+.text-transform-none {
+    text-transform: none;
+}
+
+.backgroud-gray {
+    background-color: #333334;
+}
+
+hr {
+    border-top: 2px solid #918a8a;
+}
+
+.img-center {
+    display: block;
+    margin: auto;
+}
+
+.title-underline-blue {
+    position: relative;
+    border-color: #1fcec0;
+}
+
+.title-underline-blue:before {
+    content: "";
+    border-top: 3px solid;
+    height: 3px;
+    width: 120px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: #1fcec0;
+}
+
+.title-underline-blue-t:before {
+    top: -20px;
+}
+
+.title-underline-blue-b:before {
+    bottom: -20px;
+}
+
+.title-underline-blue-danger:before {
+    border-color: #1fcec0;
+}
+
+
+/*linea alineada a la izquierda  title-underline-left*/
+
+.title-underline-left {
+    position: relative;
+}
+
+.title-underline-left:before {
+    content: "";
+    border-top: 3px solid;
+    height: 3px;
+    width: 120px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}

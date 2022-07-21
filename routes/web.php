@@ -266,6 +266,33 @@ Route::prefix('talleres')
 
 /*
 |--------------------------------------------------------------------------
+| QD-PLAY Promotions
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('qdplay')
+    ->group(function () {
+        Route::get('/')
+            ->uses('PreQdPlayCourseController@index')
+            ->name('qdplay.index');
+
+        Route::get('ver/{video}')
+            ->uses('PreQdPlayCourseController@show')
+            ->name('qdplay.show');
+
+        Route::get('paypal/pay/{descuento}')
+        ->uses('PaypalPreqdplayController@payWithPayPal')
+        ->name('preqdplay.payWithPayPal')
+        ->middleware(['auth']);
+
+    Route::post('/{slug}/comprar')
+        ->uses('PreQdPlayCourseController@buy')
+        ->name('qdplay.buy')
+        ->middleware(['auth']);
+    });
+
+/*
+|--------------------------------------------------------------------------
 | Profile
 |--------------------------------------------------------------------------
 */

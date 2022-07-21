@@ -40,6 +40,13 @@
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="{{ route('qdplay.index') }}"
+                            class="header__menu-link">
+                            QDPlay
+                        </a>
+                    </li>
+
                     @if (config()->has('money.modules.advice'))
                         <li class="nav-item">
                             <a href="{{ route('qd.advice.advisors.index') }}"
@@ -139,6 +146,11 @@
                 class="nav-link header__navigation-link {{ active_class('talleres*') }}">
                 Talleres
             </a>
+
+            {{--<a href="{{ route('qdplay.index') }}"
+                class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
+                QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" class="" style="">
+            </a>--}}
 
             @if (config()->has('money.modules.advice'))
                 <a href="{{ route('qd.advice.advisors.index') }}"
