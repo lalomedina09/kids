@@ -1,4 +1,4 @@
-<div class="row mb-5" style="margin-left: 5%; margin-right: 5%;">
+<div class="row mb-5">
     <div class="col-md-12 text-left">
         <h2 style="margin-bottom: -2%;" class="mt-3">
             <span class="text-secondary">2.</span>
@@ -11,7 +11,7 @@
         </p>
     </div>
 </div>
-<div class="row" style="margin-left: 5%; margin-right: 5%;">
+<div class="row">
     <div class="col-md-6 mb-5">
         <a href="{{ url('qdplay/ver/2') }}" title="Curso Finanzas en Pareja">
             <img src="{{ asset('index_files/experimento/finanzas-en-pareja-repro.png')}}" alt="Finanzas en pareja" class="img-portada-video">
