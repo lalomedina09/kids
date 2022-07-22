@@ -21,7 +21,7 @@
             @foreach ($list as $tema)
                 @if ($tema)
                     <div class="row">
-                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right div-contador-tema">
                             <p class="font-weight-bold font-size-xl">
                                 <span class="text-green">{{ $contador++}} - </span>
                             </p>
