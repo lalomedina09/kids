@@ -2,7 +2,7 @@
 
 @if (app()->environment() === 'production')
     @push('scripts-inline')
-
+        @include('preQdplay.components.fb-convercion')
     @endpush
 @endif
 
