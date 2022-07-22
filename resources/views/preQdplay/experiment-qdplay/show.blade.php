@@ -89,8 +89,8 @@
         @media (min-width: 360px) {
         .video-main-responsive
             {
-                width:270;
-                height:180;
+                width:430px;
+                height:250px;
             }
         }
 

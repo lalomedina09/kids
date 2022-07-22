@@ -1,8 +1,8 @@
 
 <div class="row mb-5" style="margin-left: 5%; margin-right: 5%;">
     <div class="col-md-12 text-left">
-        <h2 style="margin-bottom: -2%;">
-            <span class="text-secondary">2.</span>
+        <h2 style="margin-bottom: -2%;" class="mt-3">
+            <span class="text-secondary">1.</span>
             <span class="text-white">¡Ya no rentes! Mejor invierte en tu patrimonio</span>
         </h2>
         <hr>

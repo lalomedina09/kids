@@ -1,6 +1,6 @@
 <div class="row mb-5" style="margin-left: 5%; margin-right: 5%;">
     <div class="col-md-12 text-left">
-        <h2 style="margin-bottom: -2%;">
+        <h2 style="margin-bottom: -2%;" class="mt-3">
             <span class="text-secondary">3.</span>
             <span class="text-white">Conoce lo básico de los impuestos</span>
         </h2>
@@ -17,7 +17,7 @@
             <img src="{{ asset('index_files/experimento/basico-de-impuestos-repro.png')}}" alt="Conoce los impuestos" class="img-portada-video">
         </a>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 mb-5">
         <h1 class="mb-5 text-left font-weight-bold title-underline-blue title-underline-b mt-3 text-white">
             Impuestos<br>
             para Mortales

@@ -21,15 +21,15 @@
             @foreach ($list as $tema)
                 @if ($tema)
                     <div class="row">
-                    <div class="col-md-1 text-right">
-                        <p class="font-weight-bold font-size-xl">
-                            <span class="text-green">{{ $contador++}} - </span>
-                        </p>
-                    </div>
-                    <div class="col-md-11 text-left">
-                        <p class="font-weight-bold font-size-xl">
-                                {{ $tema }}
-                                <!--<img src="{{ asset('/index_files/experimento/security.png') }}" alt="*" class="icon-20">-->
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                            <p class="font-weight-bold font-size-xl">
+                                <span class="text-green">{{ $contador++}} - </span>
+                            </p>
+                        </div>
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 text-left">
+                            <p class="font-weight-bold font-size-xl">
+                                    {{ $tema }}
+                                    <!--<img src="{{ asset('/index_files/experimento/security.png') }}" alt="*" class="icon-20">-->
                             </p>
                         </div>
                     </div>

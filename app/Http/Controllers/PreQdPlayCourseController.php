@@ -54,9 +54,9 @@ class PreQdPlayCourseController extends Controller
                 '3' => 'Conceptos básicos de impuestos',
             ),
             'url_poster' => array(
-                '1' => 'index_files/experimento/guia-comprar-casa.png',
-                '2' => 'index_files/experimento/finanzas-en-pareja.png',
-                '3' => 'index_files/experimento/basico-de-impuestos.png',
+                '1' => 'index_files/experimento/guia-comprar-casa-repro.png',
+                '2' => 'index_files/experimento/finanzas-en-pareja-repro.png',
+                '3' => 'index_files/experimento/basico-de-impuestos-repro.png',
             ),
             'url_video_intro' => array(
                 '1' => 'storage/media-qdplay/intro-segunda-inversion.mp4',

@@ -220,7 +220,7 @@
         @media (min-width: 1300px) {
             .postheader {
 
-                min-height: 750px;
+                min-height: 820px;
             }
 
             .title1 {
