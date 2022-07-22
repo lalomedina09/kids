@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-12">
-                <img src="{{ asset('index_files/1. pantalla principal imagenes-06.png') }}" alt="" width="70%">
+                <img src="{{ asset('index_files/1. pantalla principal imagenes-06.png') }}" alt="" width="70%" class="img-movil-center">
             </div>
         </div>
     </div>
