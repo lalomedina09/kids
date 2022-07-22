@@ -235,7 +235,7 @@
 
     {{-- --}}
     <div class="container">
-        <div style="margin-left: 5%; margin-right: 5%;">
+        <div style="margin-left: 1%; margin-right: 1%;">
 
             @include('preQdplay.experiment-qdplay.components.show.video-principal')
             {{--@include('preQdplay.experiment-qdplay.components.show.video-principal')--}}
