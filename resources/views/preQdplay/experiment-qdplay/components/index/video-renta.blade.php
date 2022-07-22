@@ -1,5 +1,5 @@
 
-<div class="row mb-5" style="margin-left: 5%; margin-right: 5%;">
+<div class="row mb-5">
     <div class="col-md-12 text-left">
         <h2 style="margin-bottom: -2%;" class="mt-3">
             <span class="text-secondary">1.</span>
@@ -12,7 +12,7 @@
         </p>
     </div>
 </div>
-<div class="row" style="margin-left: 5%; margin-right: 5%;">
+<div class="row">
     <div class="col-sm6 col-md-6 col-lg-6 mb-5">
         <a href="{{ url('qdplay/ver/1') }}" title="Curso Guia para Comprar Casa">
             <img src="{{ asset('index_files/experimento/guia-comprar-casa-repro.png')}}" alt="Guia comprar casa" class="img-portada-video">
