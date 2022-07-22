@@ -13,18 +13,28 @@
         </div>
         <hr class="h1">
         <div id="mas-lecciones" class="">
-            <p class="font-weight-bold font-size-xl">
-                @php
-                    $list = explode("###", $data['temario'][$video]);
-                    $contador = 1;
-                @endphp
-                @foreach ($list as $tema)
-                    @if ($tema)
-                        <span class="text-green">{{ $contador++}} - </span> {{ $tema }} <br>
-                    @endif
-                @endforeach
-                <!--<img src="{{ asset('/index_files/experimento/security.png') }}" alt="*" class="icon-20">-->
-            </p>
+
+            @php
+                $list = explode("###", $data['temario'][$video]);
+                $contador = 1;
+            @endphp
+            @foreach ($list as $tema)
+                @if ($tema)
+                    <div class="row">
+                    <div class="col-md-1 text-right">
+                        <p class="font-weight-bold font-size-xl">
+                            <span class="text-green">{{ $contador++}} - </span>
+                        </p>
+                    </div>
+                    <div class="col-md-11 text-left">
+                        <p class="font-weight-bold font-size-xl">
+                                {{ $tema }}
+                                <!--<img src="{{ asset('/index_files/experimento/security.png') }}" alt="*" class="icon-20">-->
+                            </p>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
           <hr>
         </div>
       </section>
