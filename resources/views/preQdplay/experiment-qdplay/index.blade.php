@@ -104,7 +104,7 @@
 
         @media (min-width: 360px) {
             .img-portada-video{
-                width: 280px;
+                width: 300px;
                 display: block;
                 margin: auto;
             }
@@ -155,7 +155,7 @@
             }
 
             .img-portada-video{
-                width: 300px;
+                width: 520px;
 
             }
             .postheader {

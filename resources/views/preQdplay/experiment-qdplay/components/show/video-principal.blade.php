@@ -35,6 +35,26 @@
             <!--Tu navegador no soporta HTML5 Video-->
             Actualiza tu navegador o intenta abrir la pagina en Google Chrome
         </video>
+        <div class="row">
+            <div class="col-md-6 col-12 text-left">
+                @if ($video == 2 || $video == 3)
+                @php $ant = $video-1; @endphp
+                    <a href="{{ url('qdplay/ver/'.$ant) }}" class="text-dark font-weight-bold font-size-lg text-underline">
+                        <img src="{{ asset('index_files/experimento/anterior.png') }}" class="icon-30" alt="&lt;">
+                        Anterior
+                    </a>
+                @endif
+            </div>
+            <div class="col-md-6 col-12 text-right">
+                @if ($video == 1 || $video == 2)
+                    @php $next = $video+1; @endphp
+                    <a href="{{ url('qdplay/ver/'.$next) }}" class="text-dark font-weight-bold font-size-lg text-underline">
+                        Siguiente
+                        <img src="{{ asset('index_files/experimento/siguiente.png') }}" class="icon-30" alt="&gt;">
+                    </a>
+                @endif
+            </div>
+        </div>
         <hr>
     </div>
 </section>

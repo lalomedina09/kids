@@ -14,7 +14,7 @@
 <div class="row" style="margin-left: 5%; margin-right: 5%;">
     <div class="col-md-6 mb-5">
         <a href="{{ url('qdplay/ver/2') }}" title="Curso Finanzas en Pareja">
-            <img src="{{ asset('index_files/experimento/finanzas-en-pareja.png')}}" alt="Finanzas en pareja" class="img-portada-video">
+            <img src="{{ asset('index_files/experimento/finanzas-en-pareja-repro.png')}}" alt="Finanzas en pareja" class="img-portada-video">
         </a>
     </div>
     <div class="col-sm6 col-md-6 col-lg-6">

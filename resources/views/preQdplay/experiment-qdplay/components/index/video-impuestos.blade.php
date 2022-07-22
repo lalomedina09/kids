@@ -14,7 +14,7 @@
 <div class="row mb-5" style="margin-left: 5%; margin-right: 5%;">
     <div class="col-md-6 mb-5">
         <a href="{{ url('qdplay/ver/3') }}" title="Curso Basico de Impuestos">
-            <img src="{{ asset('index_files/experimento/basico-de-impuestos.png')}}" alt="Conoce los impuestos" class="img-portada-video">
+            <img src="{{ asset('index_files/experimento/basico-de-impuestos-repro.png')}}" alt="Conoce los impuestos" class="img-portada-video">
         </a>
     </div>
     <div class="col-md-6">

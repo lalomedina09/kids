@@ -15,7 +15,7 @@
 <div class="row" style="margin-left: 5%; margin-right: 5%;">
     <div class="col-sm6 col-md-6 col-lg-6 mb-5">
         <a href="{{ url('qdplay/ver/1') }}" title="Curso Guia para Comprar Casa">
-            <img src="{{ asset('index_files/experimento/guia-comprar-casa.png')}}" alt="Guia comprar casa" class="img-portada-video">
+            <img src="{{ asset('index_files/experimento/guia-comprar-casa-repro.png')}}" alt="Guia comprar casa" class="img-portada-video">
         </a>
     </div>
     <div class="col-md-6">
