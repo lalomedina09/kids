@@ -59,9 +59,9 @@ class PreQdPlayCourseController extends Controller
                 '3' => 'index_files/experimento/basico-de-impuestos-repro.png',
             ),
             'url_video_intro' => array(
-                '1' => 'storage/media-qdplay/intro-segunda-inversion.mp4',
-                '2' => 'storage/media-qdplay/intro-segunda-inversion.mp4',
-                '3' => 'storage/media-qdplay/intro-segunda-inversion.mp4',
+                '1' => 'storage/media-qdplay/intro-casa.mp4',
+                '2' => 'storage/media-qdplay/intro-parejas.mp4',
+                '3' => 'storage/media-qdplay/intro-impuestos.mp4',
             ),
             'url_video_main' => array(
                 '1' => 'storage/media-qdplay/1-casa.mp4',
