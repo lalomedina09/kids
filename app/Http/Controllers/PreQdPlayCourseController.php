@@ -33,7 +33,7 @@ class PreQdPlayCourseController extends Controller
     {
         $data = $this->arrayVideo();
         $description = explode("$$$", $data['description_asesor'][2]);
-        #dd(count($description));
+
         $statusBuy = $this->getStatusBuyExpiration();
         $coupon = Coupon::all();
         $fechaActual = date("Y-m-d");
@@ -76,9 +76,26 @@ class PreQdPlayCourseController extends Controller
                 '3' => '###Conceptos básicos de impuestos###Regulación y herramientas electrónicas fiscales###El Régimen en las Personas Físicas y Morales###Los CFDI´s ¿Qué son las facturas? ¿Qué trae adentro?###Primeros pasos para darte de alta en Hacienda',
             ),
             'descargables' => array(
-                '1' => null,
-                '2' => null,
-                '3' => null,
+                '1' => [
+                            0 => 'Puntos Importantes',
+                            1 => 'Ejercicios',
+                        ],
+                '2' => [
+                            0 => 'Puntos Importantes',
+                    ],
+                '3' => [
+                            0 => 'Actividades económicas',
+                            1 => 'Catálogo de llenado CFDI',
+                            2 => 'Catálogo régimen y tipo de sociedades',
+                            3 => 'Personas físicas con actividad empresarial y profesional',
+                            4 => 'Tabla ISR Persona Física',
+                            5 => 'Tipos de Impuestos',
+                        ],
+            ),
+            'descargables_url' => array(
+                '1' => '/index_files/experimento/descargables-taller-1.zip',
+                '2' => '/index_files/experimento/Puntos-importantes-del-Taller-Finanzas-en-Pareja.pdf',
+                '3' => '/index_files/experimento/curso-impuestos.zip',
             ),
             'lo_que_aprenderas' => array(
                 '1' => 'Al finalizar el taller sabrás lo que debes evaluar antes de comprar tu primera casa,

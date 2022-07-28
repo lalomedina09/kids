@@ -12,14 +12,17 @@
         <div class="col-md-6 col-12">
             @if ($data['descargables'][$video] != null)
                 <ul class="font-weight-bold font-size-xl">
-                    <li class="mt-4"><a href="#####" class="text-dark">
-                        Nombre de descargable</a>
-                    </li>
-                    <li class="mt-4"><a href="#####" class="text-dark">
-                        Nombre de descargable</a>
-                    </li>
+                    @foreach ($data['descargables'][$video] as $item)
+                        <li class="mt-4">
+                            <a href="#####" class="text-dark">
+                                {{ $item }}
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
-                <a href="#####" class="btn btn-dark btn-pill font-weight-light font-size-md mt-5">Descargar</a>
+                <a href="{{ $data['descargables_url'][$video] }}" class="btn btn-dark btn-pill font-weight-light font-size-md mt-5">
+                    Descargar
+                </a>
             @else
             <p class="font-weight-bold font-size-xl">
                 Este curso no necesita de complementos para descargar
