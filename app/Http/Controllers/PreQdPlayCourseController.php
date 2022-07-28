@@ -32,6 +32,8 @@ class PreQdPlayCourseController extends Controller
     public function show($video)
     {
         $data = $this->arrayVideo();
+        $description = explode("$$$", $data['description_asesor'][2]);
+        #dd(count($description));
         $statusBuy = $this->getStatusBuyExpiration();
         $coupon = Coupon::all();
         $fechaActual = date("Y-m-d");
@@ -89,14 +91,29 @@ class PreQdPlayCourseController extends Controller
                 detectar errores y oportunidades de mejora en tu régimen fiscal.',
             ),
             'foto_perfil' => array(
-                '1' => '/index_files/experimento/karen-vega.png',
-                '2' => '/index_files/experimento/ludivina.png',
+                '1' => '/index_files/experimento/ludivina.png',
+                '2' => '/index_files/experimento/karen-vega.png',
                 '3' => '/index_files/experimento/miguel.png',
             ),
             'link_asesor' => array(
                 '1' => 'asesores/Karen_Vega',
                 '2' => 'asesores/LudiCordoba',
                 '3' => null,
+            ),
+            'name_asesor' => array(
+                '1' => 'Ludivina Córdoba Delgado',
+                '2' => 'Karen Vega',
+                '3' => 'Miguel Cardona',
+            ),
+            'speciality_asesor' => array(
+                '1' => 'ASESOR FINANCIERO Y BANCARIO',
+                '2' => 'AMANTE DE LAS FINANZAS Y APASIONADA DE LOS NÚMEROS.',
+                '3' => 'EXPOSITOR',
+            ),
+            'description_asesor' => array(
+                '1' => 'Lic. en Negocios Internacionales por la Universidad Anáhuac con Master en Dirección Estratégica por la U. Francisco de Vitoria (Madrid). Co-fundadora de Making Makers, plataforma ed-tech para acelerar tus habilidades profesionales en Finanzas, Marketing y Liderazgo.',
+                '2' => 'Fiel creyente de que las finanzas pueden aprenderse de forma fácil e incluso divertida con el objetivo de siempre poder usarlas a nuestro favor.$$$Licenciada en Administración, Contaduría y Finanzas, con diferentes cursos y diplomados enfocados a diversos aspectos de las Finanzas.$$$Cuenta con más de 10 años de experiencia laboral en el área de Finanzas y actualmente también es host del podcast Dinero entre Amigas.$$$Está convencida de que la mejor manera de apoyar al mundo es compartiendo y por eso le encanta impartir pláticas, talleres y asesorías sobre temas financieros que ayuden a las personas a mejorar su situación actual para que puedan cumplir sus metas.',
+                '3' => 'Miguel Cardona es Contador Público de la UANL. Cuenta con un MBA del IPADE.$$$ A lo largo de más de 20 años de carrera ha trabajado en varias compañías en diferentes posiciones de las cuales ha adquirido experiencia en contabilidad, contraloría, tesorería, planeación financiera, y auditorias en empresas como Axtel, Alestra, Sisamex, Laboratorios Griffith & PwC',
             ),
         );
 
