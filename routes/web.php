@@ -568,3 +568,4 @@ Route::get('/{slug}')
 // Rutas para PayPal
 //Route::get('/paypal/pay', 'PaymentController2@payWithPayPal');
 Route::get('/paypal/status', 'PaymentController2@payPalStatus');
+Route::get('/paypal/failed', 'PaymentController2@paypalFailed');

@@ -107,7 +107,7 @@ class PaypalPreqdplayController extends Controller
 
         if (!$paymentId || !$payerId || !$token) {
             $status = 'Lo sentimos! El pago a través de PayPal no se pudo realizar.';
-            return redirect('/paypal/failed')->with(compact('status'));
+            return redirect()->back()->with(compact('status'));
         }
 
         $payment = Payment::get($paymentId, $this->apiContext);

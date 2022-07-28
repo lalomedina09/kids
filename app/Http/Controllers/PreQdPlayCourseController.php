@@ -44,9 +44,9 @@ class PreQdPlayCourseController extends Controller
         return $videoData = array(
             'video' => 1,
             'title_principal' => array(
-                                    '1' => 'Guía para comprar tu primera casa',
-                                    '2' => 'Finanzas en Pareja',
-                                    '3' => 'Impuestos para Mortales',
+                '1' => 'Guía para comprar tu primera casa',
+                '2' => 'Finanzas en Pareja',
+                '3' => 'Impuestos para Mortales',
                                 ),
             'title_video' => array(
                 '1' => '¿Cómo funciona el mundo inmobiliario?',
@@ -153,9 +153,7 @@ class PreQdPlayCourseController extends Controller
                 ->toArray();
 
             if (count($getOrders) > 0) {
-                #dd($getOrders);
-                $orderspaid = Order::where('id', $getOrders)->where('status', 'order.paid')->get();
-
+                $orderspaid = Order::whereIn('id', $getOrders)->where('status', 'order.paid')->get();
                 return count($orderspaid);
             } else {
                 return 0;

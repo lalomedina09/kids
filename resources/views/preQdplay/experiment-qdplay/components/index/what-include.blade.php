@@ -65,7 +65,7 @@
         @else
             <a href="{{ url('qdplay/ver/1') }}"
                 class="btn btn-pill bg-green-blue text-white font-size-md font-weight-normal font-weight-bold text-transform-none btn-rounded"
-                target="_blank">Ver Curso 2</a>
+                target="_blank">Ver Curso</a>
         @endif
     </div>
 </section>

@@ -236,4 +236,9 @@ class PaymentController2 extends Controller
 
         return $data;
     }
+
+    public function paypalFailed()
+    {
+        return view('status.paypal');
+    }
 }
