@@ -35,6 +35,7 @@
             <!--Tu navegador no soporta HTML5 Video-->
             Actualiza tu navegador o intenta abrir la pagina en Google Chrome
         </video>
+        <iframe src="https://drive.google.com/file/d/1fDORbxd88pJEIHAcwx_Lg4kmDoZDcUZl/preview" width="700" height="480" allow="autoplay"></iframe>
         <div class="row">
             <div class="col-md-6 col-12 text-left">
                 @if ($video == 2 || $video == 3)
