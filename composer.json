@@ -31,6 +31,7 @@
         "bugsnag/bugsnag-laravel": "2.15.*",
         "conekta/conekta-php": "^4.0",
         "doctrine/dbal": "^2.9",
+        "facebook/php-business-sdk": "*",
         "fideloper/proxy": "^4.0",
         "google/recaptcha": "^1.2",
         "guzzlehttp/guzzle": "6.3",
