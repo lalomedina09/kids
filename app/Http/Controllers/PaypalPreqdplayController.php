@@ -17,6 +17,7 @@ use PayPal\Api\Transaction;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Payment;
 use PayPal\Api\PaymentExecution;
+use App\Services\FacebookApiConversion\PaymentService;
 use App\Models\Course; //Se agrega modelo del curso para poder usar sus funciones
 use App\Models\Parameter;
 use QD\Marketplace\Models\{ Coupon, Order, OrderItem }; //Se agrega modelos de ordenes para crear registros
@@ -125,11 +126,14 @@ class PaypalPreqdplayController extends Controller
             $items = OrderItem::where('order_id', $order->id)->firstOrFail();
 
             Mailer::sendPaidOrderMail($order);
+            $name = 'Paquete QDPlay 3 Cursos';
+            $fb_pixel_data = $this->facebookApiPurchase($name, $request);
 
             return view('qd:marketplace::checkout.confirmationPaypal', [
                 'user' => $order->user_id,
                 'articulo' => $items->name,
-                'ordenId' => $order->id
+                'ordenId' => $order->id,
+                'fb_pixel_data' => $fb_pixel_data
             ]);
             //orden de compra
         }
@@ -140,7 +144,6 @@ class PaypalPreqdplayController extends Controller
 
     public function priceGetCurrency()
     {
-
         $data = array();
 
         $data['currency'] = 'MXN';
@@ -206,5 +209,20 @@ class PaypalPreqdplayController extends Controller
     {
         $userPackage = UserPackage::where('user_id', Auth::user()->id)->where('code', '')->first();
         $userPackage->delete();
+    }
+
+    public function facebookApiPurchase($name, $request)
+    {
+        $fbcapi = new PaymentService($request);
+        $data = array(
+            'name' => $name.'Compra por Paypal',
+            'price' => '299.00',
+            'numItems' => 1,
+            'content_type' => 'Producto',
+        );
+
+        $fbcapi->emit(PaymentService::PURCHASE, $data, null);
+
+        return $fbcapi->getDeduplicationData();
     }
 }

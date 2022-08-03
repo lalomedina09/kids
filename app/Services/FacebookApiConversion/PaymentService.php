@@ -12,17 +12,17 @@ use FacebookAds\Object\ServerSide\UserData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class AddDataPaymentService
+class PaymentService
 {
-    const INITIATE_CHECKOUT = 'InitiateCheckout';
+    const PURCHASE = 'Purchase';
 
     protected $access_token;
     protected $pixel_id;
     protected $request;
     protected $event_name;
     protected $event_id;
-    protected $content_category;
-    protected $content_ids;
+    #protected $content_category;
+    #protected $content_ids;
     protected $contents;
     protected $currency;
     protected $num_items;
@@ -31,12 +31,13 @@ class AddDataPaymentService
 
     public function __construct(Request $request, $access_token = null, $pixel_id = null)
     {
+        dd('linea 34');
         $this->request = $request;
         $this->access_token = $access_token ?: env('FACEBOOK_CONVERSIONS_API_ACCESS_TOKEN');
         $this->pixel_id = $pixel_id ?: env('FACEBOOK_PIXEL_ID');
     }
 
-    public function emit($event_name = 'InitiateCheckout', $data = null, $event_id = null, $use_referer_as_url = false, $get_value = null)
+    public function emit($event_name = 'Purchase', $data = null, $event_id = null, $use_referer_as_url = false, $get_value = null)
     {
         if (!$this->access_token) {
             return;
