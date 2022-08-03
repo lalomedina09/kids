@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\FacebookApiConversion\ViewContentService;
+use App\Services\FacebookApiConversion\AddDataPaymentService;
+use App\Services\FacebookApiConversion\PaymentService;
 
 use App\Http\Requests\Courses\BuyRequest;
 use App\Models\Course;
@@ -19,26 +22,27 @@ use DB;
 
 class PreQdPlayCourseController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $statusBuy = $this->getStatusBuyExpiration();
-        #dd($statusBuy);
         $coupon = Coupon::all();
         $fechaActual = date("Y-m-d");
 
-        return view('preQdplay.experiment-qdplay.index', compact('statusBuy','coupon', 'fechaActual'));
+        $fb_pixel_data = $this->facebookApiDataCustom("QD-Play Paquete 3 cursos inicio", $request);
+
+        return view('preQdplay.experiment-qdplay.index', compact('statusBuy','coupon', 'fechaActual', 'fb_pixel_data'));
     }
 
-    public function show($video)
+    public function show(Request $request, $video)
     {
         $data = $this->arrayVideo();
-        $description = explode("$$$", $data['description_asesor'][2]);
 
         $statusBuy = $this->getStatusBuyExpiration();
         $coupon = Coupon::all();
         $fechaActual = date("Y-m-d");
+        $fb_pixel_data = $this->facebookApiDataCustom($data['title_principal'][$video], $request);
 
-        return view('preQdplay.experiment-qdplay.show', compact('video', 'data', 'statusBuy', 'coupon', 'fechaActual'));
+        return view('preQdplay.experiment-qdplay.show', compact('video', 'data', 'statusBuy', 'coupon', 'fechaActual', 'fb_pixel_data'));
     }
 
     public function arrayVideo()
@@ -136,25 +140,17 @@ class PreQdPlayCourseController extends Controller
 
     }
 
-    /**
-     * Buy a course.
-     *
-     * @param  string  $slug
-     * @param  \App\Http\Requests\Courses\BuyRequest  $request
-     * @return \Illuminate\View\View
-     */
     public function buy($package, BuyRequest $request)
     {
-
+        $user = request()->user();
         $collection = Course::whereSlug('paquete-qdplay-3-cursos')
             ->firstOrFail();
 
-        $user = request()->user();
+        $fb_pixel_data = $this->facebookApiAddPayment("Paquete QDPlay 3 Cursos", $request);
         $payment_method = $request->input('payment');
 
-        $redirect = redirect()->route('qdplay.index');
-
-        $checkout = new CheckoutPackage($user, collect([$collection]), $payment_method);
+        $redirect = redirect()->route('qdplay.index')->with("fb_pixel_data", $fb_pixel_data);
+        $checkout = new CheckoutPackage($user, collect([$collection]), $payment_method, $request, $fb_pixel_data);
 
         $checkout->placeOrder();
 
@@ -197,4 +193,41 @@ class PreQdPlayCourseController extends Controller
         }
     }
 
+    public function facebookApiDataCustom($name, $request)
+    {
+        $fbcapi = new ViewContentService($request);
+        $fbcapi->emit(ViewContentService::VIEW_CONTENT, $name, null);
+
+        return $fbcapi->getDeduplicationData();
+    }
+
+    public function facebookApiAddPayment($name, $request)
+    {
+        $fbcapi = new AddDataPaymentService($request);
+        $data = array('name' => $name,
+                    'price' => '299.00',
+                    'numItems' => 1,
+                    'content_type' => 'Producto',
+                );
+
+        $fbcapi->emit(AddDataPaymentService::INITIATE_CHECKOUT, $data, null);
+
+        return $fbcapi->getDeduplicationData();
+    }
+
+    public function facebookApiPurchase($name, $request)
+
+    {
+        $fbcapi = new PaymentService($request);
+        $data = array(
+            'name' => $name,
+            'price' => '299.00',
+            'numItems' => 1,
+            'content_type' => 'Producto',
+        );
+
+        $fbcapi->emit(PaymentService::PURCHASE, $data, null);
+
+        return $fbcapi->getDeduplicationData();
+    }
 }
