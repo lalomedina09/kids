@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\FacebookConversionsApiService;
 
 use App\Http\Requests\Courses\BuyRequest;
 use App\Models\Course;
@@ -19,26 +20,26 @@ use DB;
 
 class PreQdPlayCourseController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $statusBuy = $this->getStatusBuyExpiration();
-        #dd($statusBuy);
         $coupon = Coupon::all();
         $fechaActual = date("Y-m-d");
 
-        return view('preQdplay.experiment-qdplay.index', compact('statusBuy','coupon', 'fechaActual'));
+        $fb_pixel_data = $this->facebookApiDataCustom("QD-Play Paquete 3 cursos inicio", $request);
+        return view('preQdplay.experiment-qdplay.index', compact('statusBuy','coupon', 'fechaActual', 'fb_pixel_data'));
     }
 
-    public function show($video)
+    public function show(Request $request, $video)
     {
         $data = $this->arrayVideo();
-        $description = explode("$$$", $data['description_asesor'][2]);
 
         $statusBuy = $this->getStatusBuyExpiration();
         $coupon = Coupon::all();
         $fechaActual = date("Y-m-d");
+        $fb_pixel_data = $this->facebookApiDataCustom($data['title_principal'][$video], $request);
 
-        return view('preQdplay.experiment-qdplay.show', compact('video', 'data', 'statusBuy', 'coupon', 'fechaActual'));
+        return view('preQdplay.experiment-qdplay.show', compact('video', 'data', 'statusBuy', 'coupon', 'fechaActual', 'fb_pixel_data'));
     }
 
     public function arrayVideo()
@@ -136,13 +137,6 @@ class PreQdPlayCourseController extends Controller
 
     }
 
-    /**
-     * Buy a course.
-     *
-     * @param  string  $slug
-     * @param  \App\Http\Requests\Courses\BuyRequest  $request
-     * @return \Illuminate\View\View
-     */
     public function buy($package, BuyRequest $request)
     {
 
@@ -197,4 +191,11 @@ class PreQdPlayCourseController extends Controller
         }
     }
 
+    public function facebookApiDataCustom($name, $request)
+    {
+        $fbcapi = new FacebookConversionsApiService($request);
+        $fbcapi->emit(FacebookConversionsApiService::VIEW_CONTENT, $name, null);
+
+        return $fbcapi->getDeduplicationData();
+    }
 }
