@@ -6,28 +6,28 @@ use Illuminate\View\View;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\SaveCategoryRequest;
-use App\Models\{ Category, VideoCategory };
+#use App\Models\{ Category, VideoCategory };
+use App\Models\Category;
 
 class CategoriesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\View\View
-     */
+
     public function index() : View
     {
-        $categories = Category::get();
-        $videoCategories = VideoCategory::get();
+        $categories = Category::where('parent_id', 2)->get();
 
-        return view('dashboard.categories.index', compact('categories', 'videoCategories'));
+        return view('dashboard.categories.index', compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\View\View
-     */
+    public function show($id)
+    {
+        $category = Category::where('parent_id', $id)->first();
+
+        return view('dashboard.categories.show')->with([
+            'category' => $category
+        ]);
+    }
+
     public function create() : View
     {
         $category = new Category;
@@ -35,12 +35,6 @@ class CategoriesController extends Controller
         return view('dashboard.categories.create', compact('category'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\SaveCategoryRequest  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function store(SaveCategoryRequest $request) : RedirectResponse
     {
         $category = Category::create($request->all());
@@ -50,12 +44,6 @@ class CategoriesController extends Controller
             ->with('success', 'La categoría se creo correctamente');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\View\View
-     */
     public function edit($id) : View
     {
         $category = Category::find($id);
@@ -63,13 +51,6 @@ class CategoriesController extends Controller
         return view('dashboard.categories.edit', compact('category'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @param  \App\Http\Requests\SaveCategoryRequest  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function update($id, SaveCategoryRequest $request) : RedirectResponse
     {
         Category::find($id)->update($request->all());
@@ -79,16 +60,9 @@ class CategoriesController extends Controller
             ->with('success', 'Se guardaron los cambios correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function destroy($id) : RedirectResponse
     {
         $category = Category::find($id);
-
         $category->delete();
 
         return redirect()
@@ -99,12 +73,6 @@ class CategoriesController extends Controller
             ]);
     }
 
-    /**
-     * Restore the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function restore($id) : RedirectResponse
     {
         Category::withTrashed()->find($id)->restore();
@@ -114,11 +82,6 @@ class CategoriesController extends Controller
             ->with('success', 'Se restableció la categoría');
     }
 
-    /**
-     * Archive for the trashed elements.
-     *
-     * @return \Illuminate\View\View
-     */
     public function trashed() : View
     {
         $categories = Category::onlyTrashed()->latest('deleted_at')->get();

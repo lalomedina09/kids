@@ -4,19 +4,20 @@
 
     @include('dashboard.categories.partials._header',
                 [
-                    'subtitle' => 'Categorías » Principales',
-                    'subcategory' => false
+                    'subtitle' => 'Categorías » '.$category->name,
+                    'subcategory' => true
                 ]
             )
 
     @include('partials.dashboard.messages')
 
-    <h4>Categorías Principales</h4>
-
+    <h4>
+        Subcategorías {{ $category->present()->name }}
+    </h4>
     @include('dashboard.categories.partials._table',
             [
-                'categories' => $categories,
-                'subcategory' => false
+                'categories' => $category->getManyChilds($category->parent_id),
+                'subcategory' => true
             ]
     )
 

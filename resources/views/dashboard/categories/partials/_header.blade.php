@@ -1,18 +1,25 @@
 <div class="row mb-5">
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-12">
-        <h3>{{ $subtitle ?? '' }}</h3>
+        <h3>
+            <a href="{{ route('dashboard.categories.index') }}">
+                {{ $subtitle ?? '' }}
+            </a>
+        </h3>
     </div>
 
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-4 col-12">
         <div class="btn-group float-right">
             <a href="{{ route('dashboard.categories.create') }}" class="btn btn-outline-primary">
-                <span class="fa fa-plus"></span> Nuevo para artículos
+                <i class="lni lni-plus"></i>
+                Categoria Principal
             </a>
-            <a href="{{ route('dashboard.video.categories.create') }}" class="btn btn-outline-primary">
-                <span class="fa fa-plus"></span> Nuevo para videos
+            <a href="{{-- route('video.categories.create') --}}" class="btn btn-outline-primary">
+                <i class="lni lni-plus"></i>
+                Subcategoria
             </a>
              <a href="{{ route('dashboard.categories.trashed') }}" class="btn btn-outline-primary">
-                <span class="fa fa-trash"></span> Papelera
+                <i class="lni lni-trash-can"></i>
+                Papelera
             </a>
         </div>
     </div>

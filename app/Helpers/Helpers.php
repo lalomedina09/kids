@@ -141,4 +141,9 @@ class Helpers
 
         return response()->json($response, $code);
     }
+
+    public function pruebaLalo()
+    {
+        return "lalo-lalo";
+    }
 }

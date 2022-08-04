@@ -44,7 +44,7 @@
         </a>
     @endcan
 
-    @if(false)
+    @can('blog.categories.index')
         <a href="{{ route('dashboard.categories.index') }}"
             class="nav-link {{ active_class('dashboard/administration/categories*') }}">
             Categorías

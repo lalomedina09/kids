@@ -681,6 +681,46 @@ Route::prefix('administration')
                     ->name('landings.show')
                     ->middleware(['permission:blog.landings.show']);
             });
+
+        // Categories
+        Route::prefix('categories')
+            ->group(function () {
+                Route::get('/')
+                    ->uses('CategoriesController@index')
+                    ->name('categories.index')
+                    ->middleware(['permission:blog.categories.index']);
+
+                Route::get('/{id}')
+                    ->uses('CategoriesController@show')
+                    ->name('categories.show')
+                    ->middleware(['permission:blog.categories.show']);
+
+                Route::get('/trashed')
+                    ->uses('CategoriesController@trashed')
+                    ->name('categories.trashed')
+                    ->middleware(['permission:blog.categories.index']);
+
+                Route::get('/create')
+                    ->uses('CategoriesController@create')
+                    ->name('categories.create')
+                    ->middleware(['permission:blog.categories.create']);
+
+                Route::post('/')
+                    ->uses('CategoriesController@store')
+                    ->name('categories.store')
+                    ->middleware(['permission:blog.categories.create']);
+
+                Route::get('/edit')
+                    ->uses('CategoriesController@edit')
+                    ->name('categories.edit')
+                    ->middleware(['permission:blog.categories.update']);
+
+                Route::get('/destroy')
+                    ->uses('CategoriesController@destroy')
+                    ->name('categories.destroy')
+                    ->middleware(['permission:blog.categories.delete']);
+            });
+
     });
 
 
@@ -699,6 +739,7 @@ Route::prefix('parameters')
                     ->middleware(['permission:blog.parameters.price.update']);
     });
 });
+
 // Categories
 /*
 $router->resource('categories', 'CategoriesController', ['as' => 'dashboard', 'except' => ['show', 'edit', 'update', 'destroy']]);
