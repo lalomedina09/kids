@@ -19,7 +19,7 @@
                     Subcategoria
                 </a>
             @endif
-             <a href="{{ route('dashboard.categories.trashed') }}" class="btn btn-outline-primary">
+            <a href="{{ route('dashboard.categories.trashed') }}" class="btn btn-outline-primary">
                 <i class="lni lni-trash-can"></i>
                 Papelera
             </a>

@@ -8,7 +8,6 @@ use Illuminate\Http\{Request, Response};
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\SaveCategoryRequest;
 use Illuminate\Support\Str;
-#use App\Models\{ Category, VideoCategory };
 use App\Models\Category;
 
 class CategoriesController extends Controller
@@ -23,7 +22,7 @@ class CategoriesController extends Controller
 
     public function show($id)
     {
-        $category = Category::where('parent_id', $id)->first();
+        $category = Category::where('id', $id)->first();
 
         return view('dashboard.categories.show')->with([
             'category' => $category
@@ -33,8 +32,10 @@ class CategoriesController extends Controller
     public function create($id) : View
     {
         $category = new Category;
+        $parent_id = $id;
+        $categories = Category::where('parent_id',2)->pluck('name', 'id')->toArray();
 
-        return view('dashboard.categories.create', compact('category'));
+        return view('dashboard.categories.create', compact('parent_id', 'category', 'categories'));
     }
 
     public function store(SaveCategoryRequest $request) : RedirectResponse
@@ -55,8 +56,10 @@ class CategoriesController extends Controller
     public function edit($id) : View
     {
         $category = Category::findOrFail($id);
+        $parent_id = $category->parent_id;
+        $categories = Category::where('parent_id',2)->pluck('name', 'id')->toArray();
 
-        return view('dashboard.categories.edit', compact('category'));
+        return view('dashboard.categories.edit', compact('parent_id', 'category', 'categories'));
     }
 
     public function update($id, SaveCategoryRequest $request) : RedirectResponse
@@ -64,7 +67,7 @@ class CategoriesController extends Controller
         Category::find($id)->update($request->all());
 
         return redirect()
-            ->route('dashboard.categories.edit', $id)
+            ->route('dashboard.categories.show', $id)
             ->with('success', 'Se guardaron los cambios correctamente');
     }
 
@@ -93,9 +96,9 @@ class CategoriesController extends Controller
     public function trashed() : View
     {
         $categories = Category::onlyTrashed()->latest('deleted_at')->get();
-        $videoCategories = VideoCategory::onlyTrashed()->latest('deleted_at')->get();
+        #$videoCategories = VideoCategory::onlyTrashed()->latest('deleted_at')->get();
 
-        return view('dashboard.categories.trashed', compact('categories', 'videoCategories'));
+        return view('dashboard.categories.trashed', compact('categories'));
     }
 
     public function searchCategorySlug($name)
@@ -111,20 +114,25 @@ class CategoriesController extends Controller
         $_slug = Str::slug($request->name);
 
         $searchSlug = Category::where('slug', $_slug)->first();
-        $category = ($searchSlug) ? true : false ;
+        $exist = ($searchSlug == $_slug) ? $_slug+'-' : $_slug ;
 
         return response()->json([
                 'slug' => $_slug,
-                'category' => $category
             ]);
     }
 
     public function searchCode(Request $request)
     {
         $_code = $request->code;
+        $_action = $request->action;
 
         $searchCode = Category::where('code', $_code)->first();
-        $code = ($searchCode) ? $_code.'1' : $_code ;
+
+        if ($_action != 'update') {
+            $code = ($searchCode) ? $_code.'1' : $_code ;
+        }else{
+            $code = $_code;
+        }
 
         return response()->json([
                 'code' => Str::slug($code)

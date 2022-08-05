@@ -22,7 +22,7 @@
                     ] ) !!}
             </div>
             <div class="form-group col-md-6">
-                {!! Form::label('text', 'Codigo Unico*', ['class' => 'fomr-control']) !!}
+                {!! Form::label('text', 'Codigo Unico* (palabra en ingles)', ['class' => 'fomr-control']) !!}
                 {!! Form::text('code', null,
                     [
                         'class' => 'form-control',
@@ -34,19 +34,26 @@
                 {!! Form::label('text', 'Categoria Principal', ['class' => 'fomr-control']) !!}
 
                 @php
-                    $readonly = ($action == 'update') ? true : false ;
+                    $readonly = ($parent_id == 2) ? true : false ;
                 @endphp
 
-                {!! Form::text('parent_id', null,
-                    [
-                    'class' => 'form-control',
-                    'readonly' => $readonly,
-                    'placeholder' => 'Categoria Padre',
-                    ])
-                !!}
-                <div id="contentLoading"></div>
+                @if ($parent_id == 2)
+                    {!! Form::text('parent_id', $parent_id,
+                        [
+                        'class' => 'form-control',
+                        'readonly' => $readonly,
+                        'placeholder' => 'Categoria Padre',
+                        ])
+                    !!}
+                @else
+                    {!! Form::select('parent_id', $categories, null,
+                        [
+                            'class'=>'form-control',
+                            'readonly' => $readonly,
+                        ])
+                    !!}
+                @endif
             </div>
-
         </div>
     </div>
 
@@ -61,7 +68,10 @@
                     id="btn-send-form"
                     onclick="ajaxSendFormCategory();"
                     value="{{ $btn ?? 'Crear' }}">
+
+                <div id="contentLoading"></div>
             </div>
+            <input type="hidden" name="action" id="action" value="{{ $action }}">
         </div>
     </div>
 
@@ -75,6 +85,8 @@
         let url = "{{ route('dashboard.categories.searchSlug')}}";
         let token = $('#token').val();
         let name = $('#name').val();
+        let typeAction = $('#action').val();
+        $('#btn-send-form').attr('disabled', true);
         //let code = $('#code').val();
 
         if (name != '') {
@@ -83,32 +95,40 @@
                 name: name
             },
             function(data){
-                console.log(data);
                 $("#slug").val(data.slug);
-                //$("#code").val(data.code);
+                $('#btn-send-form').attr('disabled', false);
             });
         }
     }
 
     function ajaxSendFormCategory() {
-
         let url = "{{ route('dashboard.categories.searchcodeCategory')}}";
         let token = $('#token').val();
         let code = $('#code').val();
-        alert('piki piki ');
+        let action = $('#action').val();
+
+
         if (code != '') {
-            $('#contentLoading').html('<div class="loading"><img src ="/images/preload-gif.jpg" width="50px" alt="loading" /><br/><p>Espera....</p></div>');
+            $('#contentLoading').html('<div class="loading"><img src ="/images/preload-gif.jpg" width="70px" alt="loading" /><br/><p>Espera....</p></div>');
             $.post(url, {
                 _token: token,
                 code: code,
+                action: action,
             },
             function(data){
                 console.log(data);
                 $("#code").val(data.code);
-                alert('no solicito nada al servidor');
                 $('#formCategory').submit();
             });
+        }else{
+            alert('Los campos son obligatorios');
         }
     }
-
+    /*
+    if (username && password) {
+                $('#submitButton').attr('disabled', false);
+            } else {
+                $('#submitButton').attr('disabled', true);
+            }
+    */
 </script>

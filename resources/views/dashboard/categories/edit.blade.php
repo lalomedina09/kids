@@ -3,7 +3,7 @@
 @section('dashboard-content')
 
     @include('dashboard.categories.partials._header', [
-            'subtitle' => 'Categorías » Editar',
+            'subtitle' => 'Categorías',
             'categoryId' => 0
         ])
 
@@ -23,6 +23,7 @@
                     [
                         'btn' => 'Actualizar',
                         'action' => 'update',
+                        'parent_id' => $parent_id,
                     ])
 
             {!! Form::close() !!}

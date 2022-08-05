@@ -4,7 +4,7 @@
 
     @include('dashboard.categories.partials._header',
                 [
-                    'subtitle' => 'Categorías » Principales',
+                    'subtitle' => 'Categorías',
                     'subcategory' => false,
                     'categoryId' => 0
                 ]

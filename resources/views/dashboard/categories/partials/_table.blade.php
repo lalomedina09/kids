@@ -1,3 +1,4 @@
+@if (count($categories)>0)
 <div class="table-responsive">
     <table class="table table-hover table-bordered">
         <thead>
@@ -29,8 +30,8 @@
             </tr>
         </tfoot>
         <tbody>
-
             @foreach($categories as $category)
+
                 <tr>
                     <td>{{ $category->id }}</td>
                     <td>{{ $category->present()->name }}</td>
@@ -62,3 +63,9 @@
         </tbody>
     </table>
 </div>
+
+@else
+    <div class="col-md-12">
+        <p>Comienza agregar subcategorias</p>
+    </div>
+@endif

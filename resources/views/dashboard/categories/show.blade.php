@@ -4,12 +4,12 @@
 
     @include('dashboard.categories.partials._header',
                 [
-                    'subtitle' => 'Categorías » '.$category->name,
+                    'subtitle' => 'Categorías',
                     'subcategory' => true,
                     'categoryId' => $category->id
                 ]
             )
-
+{{-- dd($category->name) ----}}
     @include('partials.dashboard.messages')
 
     <h4>
@@ -17,7 +17,7 @@
     </h4>
     @include('dashboard.categories.partials._table',
             [
-                'categories' => $category->getManyChilds($category->parent_id),
+                'categories' => $category->getManyChilds($category->id),
                 'subcategory' => true
             ]
     )

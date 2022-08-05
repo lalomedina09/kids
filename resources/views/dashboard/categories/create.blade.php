@@ -3,7 +3,7 @@
 @section('dashboard-content')
 
     @include('dashboard.categories.partials._header', [
-            'subtitle' => 'Categorías » Nuevo',
+            'subtitle' => 'Categorías',
             'categoryId' => 0
         ])
 
@@ -23,6 +23,7 @@
                     [
                         'btn' => 'Crear',
                         'action' => 'create',
+                        'parent_id' => $parent_id
                     ])
 
             {!! Form::close() !!}
