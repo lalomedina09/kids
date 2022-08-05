@@ -37,7 +37,9 @@
                     <td>{{ $category->present()->slug }}</td>
                     <td>{{ $category->present()->code }}</td>
                     {{--<td>{{ number_format($category->articles->count()) }}</td>--}}
-                    <td>{{ number_format($category->getManyChilds($category->id)->count()) }}</td>
+                    @if(!$subcategory)
+                        <td>{{ number_format($category->getManyChilds($category->id)->count()) }}</td>
+                    @endif
                     <td>{{ $category->getDateHuman($category->updated_at) }}</td>
                     <td class="text-center">
                         <a href="{{ route('dashboard.categories.edit', $category->id) }}" class="btn btn-sm btn-outline-warning">

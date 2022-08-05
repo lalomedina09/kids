@@ -5,7 +5,8 @@
     @include('dashboard.categories.partials._header',
                 [
                     'subtitle' => 'Categorías » '.$category->name,
-                    'subcategory' => true
+                    'subcategory' => true,
+                    'categoryId' => $category->id
                 ]
             )
 

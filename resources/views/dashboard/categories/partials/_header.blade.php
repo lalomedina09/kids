@@ -9,14 +9,16 @@
 
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-4 col-12">
         <div class="btn-group float-right">
-            <a href="{{ route('dashboard.categories.create') }}" class="btn btn-outline-primary">
+            <a href="{{ route('dashboard.categories.create', 2) }}" class="btn btn-outline-primary">
                 <i class="lni lni-plus"></i>
                 Categoria Principal
             </a>
-            <a href="{{-- route('video.categories.create') --}}" class="btn btn-outline-primary">
-                <i class="lni lni-plus"></i>
-                Subcategoria
-            </a>
+            @if ($categoryId != 0)
+                <a href="{{ route('dashboard.categories.create', $categoryId) }}" class="btn btn-outline-primary">
+                    <i class="lni lni-plus"></i>
+                    Subcategoria
+                </a>
+            @endif
              <a href="{{ route('dashboard.categories.trashed') }}" class="btn btn-outline-primary">
                 <i class="lni lni-trash-can"></i>
                 Papelera

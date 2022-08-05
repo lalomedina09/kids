@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\View\View;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\{Request, Response};
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\SaveCategoryRequest;
+use Illuminate\Support\Str;
 #use App\Models\{ Category, VideoCategory };
 use App\Models\Category;
 
@@ -28,7 +30,7 @@ class CategoriesController extends Controller
         ]);
     }
 
-    public function create() : View
+    public function create($id) : View
     {
         $category = new Category;
 
@@ -37,7 +39,13 @@ class CategoriesController extends Controller
 
     public function store(SaveCategoryRequest $request) : RedirectResponse
     {
-        $category = Category::create($request->all());
+
+        $category = new Category;
+        $category->name = $request->name;
+        $category->slug = $request->slug;
+        $category->code = $request->code;
+        $category->parent_id = $request->parent_id;
+        $category->save();
 
         return redirect()
             ->route('dashboard.categories.index')
@@ -46,7 +54,7 @@ class CategoriesController extends Controller
 
     public function edit($id) : View
     {
-        $category = Category::find($id);
+        $category = Category::findOrFail($id);
 
         return view('dashboard.categories.edit', compact('category'));
     }
@@ -89,4 +97,45 @@ class CategoriesController extends Controller
 
         return view('dashboard.categories.trashed', compact('categories', 'videoCategories'));
     }
+
+    public function searchCategorySlug($name)
+    {
+        $slug = Str::slug($name);
+        $category = Category::where('slug', $slug)->first();
+
+        return $data = ($category) ? true : false ;
+    }
+
+    public function searchSlug(Request $request)
+    {
+        $_slug = Str::slug($request->name);
+
+        $searchSlug = Category::where('slug', $_slug)->first();
+        $category = ($searchSlug) ? true : false ;
+
+        return response()->json([
+                'slug' => $_slug,
+                'category' => $category
+            ]);
+    }
+
+    public function searchCode(Request $request)
+    {
+        $_code = $request->code;
+
+        $searchCode = Category::where('code', $_code)->first();
+        $code = ($searchCode) ? $_code.'1' : $_code ;
+
+        return response()->json([
+                'code' => Str::slug($code)
+            ]);
+    }
+
+    /*public function show_modal($id)
+    {
+        $product = Product::where('id', $id)->first();
+
+        $view = view('templates.support.download-center.ajax.custom-licence.form', compact('product'))->render();
+        return response()->json(['view' => $view]);
+    }*/
 }

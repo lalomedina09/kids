@@ -700,7 +700,7 @@ Route::prefix('administration')
                     ->name('categories.trashed')
                     ->middleware(['permission:blog.categories.index']);
 
-                Route::get('/create')
+                Route::get('/create/{id}')
                     ->uses('CategoriesController@create')
                     ->name('categories.create')
                     ->middleware(['permission:blog.categories.create']);
@@ -710,15 +710,31 @@ Route::prefix('administration')
                     ->name('categories.store')
                     ->middleware(['permission:blog.categories.create']);
 
-                Route::get('/edit')
+                Route::get('/edit/{id}')
                     ->uses('CategoriesController@edit')
                     ->name('categories.edit')
+                    ->middleware(['permission:blog.categories.update']);
+
+                Route::patch('/update/{id}')
+                    ->uses('CategoriesController@update')
+                    ->name('categories.update')
                     ->middleware(['permission:blog.categories.update']);
 
                 Route::get('/destroy')
                     ->uses('CategoriesController@destroy')
                     ->name('categories.destroy')
                     ->middleware(['permission:blog.categories.delete']);
+
+                Route::post('/search-slug')
+                    ->uses('CategoriesController@searchSlug')
+                    ->name('categories.searchSlug')
+                    ->middleware(['permission:blog.categories.create']);
+
+                Route::post('/search-code')
+                    ->uses('CategoriesController@searchCode')
+                    ->name('categories.searchcodeCategory')
+                    ->middleware(['permission:blog.categories.create']);
+
             });
 
     });
