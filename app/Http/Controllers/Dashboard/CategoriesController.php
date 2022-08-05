@@ -4,91 +4,76 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\View\View;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\{Request, Response};
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\SaveCategoryRequest;
-use App\Models\{ Category, VideoCategory };
+use Illuminate\Support\Str;
+use App\Models\Category;
 
 class CategoriesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\View\View
-     */
+
     public function index() : View
     {
-        $categories = Category::get();
-        $videoCategories = VideoCategory::get();
+        $categories = Category::where('parent_id', 2)->get();
 
-        return view('dashboard.categories.index', compact('categories', 'videoCategories'));
+        return view('dashboard.categories.index', compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function create() : View
+    public function show($id)
+    {
+        $category = Category::where('id', $id)->first();
+
+        return view('dashboard.categories.show')->with([
+            'category' => $category
+        ]);
+    }
+
+    public function create($id) : View
     {
         $category = new Category;
+        $parent_id = $id;
+        $categories = Category::where('parent_id',2)->pluck('name', 'id')->toArray();
 
-        return view('dashboard.categories.create', compact('category'));
+        return view('dashboard.categories.create', compact('parent_id', 'category', 'categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\SaveCategoryRequest  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function store(SaveCategoryRequest $request) : RedirectResponse
     {
-        $category = Category::create($request->all());
+
+        $category = new Category;
+        $category->name = $request->name;
+        $category->slug = $request->slug;
+        $category->code = $request->code;
+        $category->parent_id = $request->parent_id;
+        $category->save();
 
         return redirect()
             ->route('dashboard.categories.index')
             ->with('success', 'La categoría se creo correctamente');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\View\View
-     */
     public function edit($id) : View
     {
-        $category = Category::find($id);
+        $category = Category::findOrFail($id);
+        $parent_id = $category->parent_id;
+        $categories = Category::where('parent_id',2)->pluck('name', 'id')->toArray();
 
-        return view('dashboard.categories.edit', compact('category'));
+        return view('dashboard.categories.edit', compact('parent_id', 'category', 'categories'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @param  \App\Http\Requests\SaveCategoryRequest  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function update($id, SaveCategoryRequest $request) : RedirectResponse
     {
         Category::find($id)->update($request->all());
 
         return redirect()
-            ->route('dashboard.categories.edit', $id)
+            ->route('dashboard.categories.show', $id)
             ->with('success', 'Se guardaron los cambios correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function destroy($id) : RedirectResponse
     {
         $category = Category::find($id);
-
         $category->delete();
 
         return redirect()
@@ -99,12 +84,6 @@ class CategoriesController extends Controller
             ]);
     }
 
-    /**
-     * Restore the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function restore($id) : RedirectResponse
     {
         Category::withTrashed()->find($id)->restore();
@@ -114,16 +93,57 @@ class CategoriesController extends Controller
             ->with('success', 'Se restableció la categoría');
     }
 
-    /**
-     * Archive for the trashed elements.
-     *
-     * @return \Illuminate\View\View
-     */
     public function trashed() : View
     {
         $categories = Category::onlyTrashed()->latest('deleted_at')->get();
-        $videoCategories = VideoCategory::onlyTrashed()->latest('deleted_at')->get();
+        #$videoCategories = VideoCategory::onlyTrashed()->latest('deleted_at')->get();
 
-        return view('dashboard.categories.trashed', compact('categories', 'videoCategories'));
+        return view('dashboard.categories.trashed', compact('categories'));
     }
+
+    public function searchCategorySlug($name)
+    {
+        $slug = Str::slug($name);
+        $category = Category::where('slug', $slug)->first();
+
+        return $data = ($category) ? true : false ;
+    }
+
+    public function searchSlug(Request $request)
+    {
+        $_slug = Str::slug($request->name);
+
+        $searchSlug = Category::where('slug', $_slug)->first();
+        $exist = ($searchSlug == $_slug) ? $_slug+'-' : $_slug ;
+
+        return response()->json([
+                'slug' => $_slug,
+            ]);
+    }
+
+    public function searchCode(Request $request)
+    {
+        $_code = $request->code;
+        $_action = $request->action;
+
+        $searchCode = Category::where('code', $_code)->first();
+
+        if ($_action != 'update') {
+            $code = ($searchCode) ? $_code.'1' : $_code ;
+        }else{
+            $code = $_code;
+        }
+
+        return response()->json([
+                'code' => Str::slug($code)
+            ]);
+    }
+
+    /*public function show_modal($id)
+    {
+        $product = Product::where('id', $id)->first();
+
+        $view = view('templates.support.download-center.ajax.custom-licence.form', compact('product'))->render();
+        return response()->json(['view' => $view]);
+    }*/
 }

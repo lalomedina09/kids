@@ -18,7 +18,9 @@
         <link rel="stylesheet" href="{{ mix('css/dashboard.css') }}">
         <link rel="stylesheet" href="{{ mix('css/vendor/datetimepicker.css') }}">
         <link rel="stylesheet" href="{{ mix('css/vendor/datatables.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
 
         @stack('styles')
@@ -86,6 +88,7 @@
             @yield('dashboard-content')
         </div>
 
+        <input type="hidden" name="_token" id="token" value="{{ csrf_token()}}">
         <script type="text/javascript" src="{{ asset('i18n?v='.config('money.app.subversion')) }}"></script>
         <script type="text/javascript" src="{{ mix('js/manifest.js') }}"></script>
         <script type="text/javascript" src="{{ mix('js/vendor.js') }}"></script>

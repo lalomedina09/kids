@@ -681,6 +681,62 @@ Route::prefix('administration')
                     ->name('landings.show')
                     ->middleware(['permission:blog.landings.show']);
             });
+
+        // Categories
+        Route::prefix('categories')
+            ->group(function () {
+                Route::get('/')
+                    ->uses('CategoriesController@index')
+                    ->name('categories.index')
+                    ->middleware(['permission:blog.categories.index']);
+
+                Route::get('/{id}')
+                    ->uses('CategoriesController@show')
+                    ->name('categories.show')
+                    ->middleware(['permission:blog.categories.show']);
+
+                Route::get('/trashed')
+                    ->uses('CategoriesController@trashed')
+                    ->name('categories.trashed')
+                    ->middleware(['permission:blog.categories.index']);
+
+                Route::get('/create/{id}')
+                    ->uses('CategoriesController@create')
+                    ->name('categories.create')
+                    ->middleware(['permission:blog.categories.create']);
+
+                Route::post('/')
+                    ->uses('CategoriesController@store')
+                    ->name('categories.store')
+                    ->middleware(['permission:blog.categories.create']);
+
+                Route::get('/edit/{id}')
+                    ->uses('CategoriesController@edit')
+                    ->name('categories.edit')
+                    ->middleware(['permission:blog.categories.update']);
+
+                Route::patch('/update/{id}')
+                    ->uses('CategoriesController@update')
+                    ->name('categories.update')
+                    ->middleware(['permission:blog.categories.update']);
+
+                Route::get('/destroy')
+                    ->uses('CategoriesController@destroy')
+                    ->name('categories.destroy')
+                    ->middleware(['permission:blog.categories.delete']);
+
+                Route::post('/search-slug')
+                    ->uses('CategoriesController@searchSlug')
+                    ->name('categories.searchSlug')
+                    ->middleware(['permission:blog.categories.create']);
+
+                Route::post('/search-code')
+                    ->uses('CategoriesController@searchCode')
+                    ->name('categories.searchcodeCategory')
+                    ->middleware(['permission:blog.categories.create']);
+
+            });
+
     });
 
 
@@ -699,6 +755,7 @@ Route::prefix('parameters')
                     ->middleware(['permission:blog.parameters.price.update']);
     });
 });
+
 // Categories
 /*
 $router->resource('categories', 'CategoriesController', ['as' => 'dashboard', 'except' => ['show', 'edit', 'update', 'destroy']]);

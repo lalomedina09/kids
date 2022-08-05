@@ -13,7 +13,7 @@
 - Node
 - Vue.js
 - Node.js
-
+- Line Icons https://lineicons.com/icons/
 ## Database setup
 
 All the tables and rows required for the platform to work can be obtained running the database migrations and tables seeders with the following command:

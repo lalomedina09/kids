@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use Carbon\Carbon;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -287,4 +288,18 @@ class Category extends Model
         return $this->morphedByMany(Video::class, 'taggable');
     }
 
+    /**
+     * Return the childs if it has a parent
+     * @param  string|int  $parent_id
+     * @return \App\Models\Category
+     */
+    public static function getManyChilds($parent_id)
+    {
+        return self::where('parent_id', $parent_id)->get();
+    }
+
+    public function getDateHuman($date)
+    {
+        return $newDate = Carbon::parse($date)->diffForHumans();
+    }
 }
