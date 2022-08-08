@@ -50,7 +50,7 @@
 
     <div class="text-center mb-5">
         <p>
-            Puedes mandar tus preguntas a <b><span class="text-secondary">miriam</span>@queridodinero </b><br>
+            Puedes mandar tus preguntas a <b><span class="text-secondary">miriam</span>@queridodinero.com </b><br>
             y se te contestarán en un plazo de <b>72 hrs.</b>
         </p>
     </div>
