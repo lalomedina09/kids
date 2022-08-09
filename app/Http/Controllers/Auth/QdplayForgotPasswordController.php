@@ -48,7 +48,7 @@ class QdplayForgotPasswordController extends Controller
     {
         $request->validate([
             'email' => 'required|email|exists:users',
-            //'g-recaptcha-response' => 'required|recaptcha'
+            'g-recaptcha-response' => 'required|recaptcha'
         ]);
 
         $user = User::where('email',$request->email)->first();

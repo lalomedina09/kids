@@ -99,7 +99,7 @@ Route::prefix('password')
         //- - - - - - - - - - - - - - - - QD P L A Y- - - - - - - - - - - - - - - - - //
         Route::get('/qdplay/reset')
             ->uses('QdplayForgotPasswordController@showLinkRequestForm')
-            ->name('qdplay.password.request');
+            ->name('password.qdplay.request');
 
         Route::post('/qdplay/email')
             ->uses('QdplayForgotPasswordController@submitForgetPasswordForm')
