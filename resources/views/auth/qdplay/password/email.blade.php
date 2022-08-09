@@ -13,7 +13,7 @@
             <p class="text-danger text-uppercase text-center mb-1">Parece que olvidaste algo</p>
             <h4 class="modal__title text-uppercase text-center mb-5">Restablecer contraseña</h4>
 
-            <form action="{{ route('password.email') }}" method="POST"
+            <form action="{{ route('password.qdplay.email') }}" method="POST"
                 id="form-email" class="form-custom form-modal">
                 @csrf
 

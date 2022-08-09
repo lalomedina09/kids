@@ -96,15 +96,14 @@ Route::prefix('password')
         Route::post('/reset')
             ->uses('ResetPasswordController@reset');
 
-        //- - - - - - - - - - - - - QD P L A Y- - - - - - - - - - - - - - - - - - -//
+        //- - - - - - - - - - - - - - - - QD P L A Y- - - - - - - - - - - - - - - - - //
         Route::get('/qdplay/reset')
             ->uses('QdplayForgotPasswordController@showLinkRequestForm')
             ->name('qdplay.password.request');
 
-        Route::post('/email')
-            ->uses('ForgotPasswordController@sendResetLinkEmail')
-            ->name('password.email');
-        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -//
+        Route::post('/qdplay/email')
+            ->uses('QdplayForgotPasswordController@submitForgetPasswordForm')
+            ->name('password.qdplay.email');
     });
 
 /*
