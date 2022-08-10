@@ -86,6 +86,7 @@
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Roles</th>
                     <th>Permisos</th>
@@ -95,6 +96,11 @@
             <tbody>
                 @foreach($users as $user)
                     <tr>
+                        <td>
+                            <a href="{{ route('dashboard.authorization.show', [$user->id]) }}">
+                                {{ $user->id }}
+                            </a>
+                        </td>
                         <td>
                             <a href="{{ route('dashboard.authorization.show', [$user->id]) }}">
                                 {{ $user->present()->full_name }}

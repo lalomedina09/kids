@@ -152,7 +152,8 @@ class AuthorizationController extends Controller
             ->with(['roles', 'permissions'])
             ->withCount('roles')
             ->withCount('permissions')
-            ->orderBy('roles_count', 'desc');
+            #->orderBy('roles_count', 'desc');
+            ->orderBy('id', 'desc');
 
         if (array_has($filters, 'name') && $filters['name'] && strlen($filters['name']) >= 3) {
             $name_filter = '%'.$filters['name'].'%';
