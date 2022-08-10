@@ -17,6 +17,7 @@ use PayPal\Api\Transaction;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Payment;
 use PayPal\Api\PaymentExecution;
+use App\Services\FacebookApiConversion\AddDataPaymentService;
 use App\Services\FacebookApiConversion\PaymentService;
 use App\Models\Course; //Se agrega modelo del curso para poder usar sus funciones
 use App\Models\Parameter;
@@ -127,13 +128,15 @@ class PaypalPreqdplayController extends Controller
 
             Mailer::sendPaidOrderMail($order);
             $name = 'Paquete QDPlay 3 Cursos';
-            $fb_pixel_data = $this->facebookApiPurchase($name, $request);
+            $fb_pixel_data = $this->facebookApiAddPayment("Paquete QDPlay 3 Cursos", $request);
+            $fb_pixel_data_purchase = $this->facebookApiPurchase($name, $request);
 
             return view('qd:marketplace::checkout.confirmationPaypal', [
                 'user' => $order->user_id,
                 'articulo' => $items->name,
                 'ordenId' => $order->id,
-                'fb_pixel_data' => $fb_pixel_data
+                'fb_pixel_data' => $fb_pixel_data,
+                'fb_pixel_data_purchase' => $fb_pixel_data_purchase
             ]);
             //orden de compra
         }
@@ -211,11 +214,26 @@ class PaypalPreqdplayController extends Controller
         $userPackage->delete();
     }
 
+    public function facebookApiAddPayment($name, $request)
+    {
+        $fbcapi = new AddDataPaymentService($request);
+        $data = array(
+            'name' => $name,
+            'price' => '299.00',
+            'numItems' => 1,
+            'content_type' => 'Producto',
+        );
+
+        $fbcapi->emit(AddDataPaymentService::INITIATE_CHECKOUT, $data, null);
+
+        return $fbcapi->getDeduplicationData();
+    }
+
     public function facebookApiPurchase($name, $request)
     {
         $fbcapi = new PaymentService($request);
         $data = array(
-            'name' => $name.'Compra por Paypal',
+            'name' => $name,
             'price' => '299.00',
             'numItems' => 1,
             'content_type' => 'Producto',

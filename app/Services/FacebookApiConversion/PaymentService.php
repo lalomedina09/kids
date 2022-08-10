@@ -31,7 +31,6 @@ class PaymentService
 
     public function __construct(Request $request, $access_token = null, $pixel_id = null)
     {
-        dd('linea 34');
         $this->request = $request;
         $this->access_token = $access_token ?: env('FACEBOOK_CONVERSIONS_API_ACCESS_TOKEN');
         $this->pixel_id = $pixel_id ?: env('FACEBOOK_PIXEL_ID');

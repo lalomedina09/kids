@@ -152,9 +152,11 @@ class PreQdPlayCourseController extends Controller
         $redirect = redirect()->route('qdplay.index')->with("fb_pixel_data", $fb_pixel_data);
         $checkout = new CheckoutPackage($user, collect([$collection]), $payment_method, $request, $fb_pixel_data);
 
+        $fb_pixel_data_purchase = $this->facebookApiPurchase("Paquete QDPlay 3 Cursos", $request);
+
         $checkout->placeOrder();
 
-        return $checkout->getRedirect($redirect);
+        return $checkout->getRedirect($redirect, $fb_pixel_data_purchase);
     }
 
     public function createCollection()
@@ -216,7 +218,6 @@ class PreQdPlayCourseController extends Controller
     }
 
     public function facebookApiPurchase($name, $request)
-
     {
         $fbcapi = new PaymentService($request);
         $data = array(
