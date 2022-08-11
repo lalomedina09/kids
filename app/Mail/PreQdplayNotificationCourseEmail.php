@@ -28,7 +28,7 @@ class PreQdplayNotificationCourseEmail extends Mailable
      */
     public function build()
     {
-        $subject = 'Gracias por tu compra Instrucciones';
+        $subject = 'Instrucciones posteriormente al recibir el pago';
 
         return $this->subject($subject)
             ->to($this->user->email, $this->user->fullname)
