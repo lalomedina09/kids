@@ -585,3 +585,6 @@ Route::get('/{slug}')
 //Route::get('/paypal/pay', 'PaymentController2@payWithPayPal');
 Route::get('/paypal/status', 'PaymentController2@payPalStatus');
 Route::get('/paypal/failed', 'PaymentController2@paypalFailed');
+
+Route::get('/preqdplay/paypal/status', 'PaypalPreqdplayController@payPalStatus');
+Route::get('/preqdplay/paypal/failed', 'PaypalPreqdplayController@paypalFailed');

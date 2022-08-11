@@ -17,8 +17,11 @@ use PayPal\Api\Transaction;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Payment;
 use PayPal\Api\PaymentExecution;
+
 use App\Services\FacebookApiConversion\AddDataPaymentService;
 use App\Services\FacebookApiConversion\PaymentService;
+use App\Mail\PreQdplayNotificationCourseEmail;
+
 use App\Models\Course; //Se agrega modelo del curso para poder usar sus funciones
 use App\Models\Parameter;
 use QD\Marketplace\Models\{ Coupon, Order, OrderItem }; //Se agrega modelos de ordenes para crear registros
@@ -27,9 +30,12 @@ use App\Http\Requests\Courses\BuyRequest;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Config;
 use App\Models\UserPackage;
+use App\Models\User;
+use Mail;
 use Auth;
 use Redirect;
 use URL;
+
 use Carbon\Carbon;
 use Date;
 
@@ -76,12 +82,12 @@ class PaypalPreqdplayController extends Controller
         $amount->setTotal($dataPrice['precioFinal']);
         $amount->setCurrency($dataPrice['currency']);
 
-        //dd($amount);
+
         $transaction = new Transaction();
         $transaction->setAmount($amount);
         $transaction->setDescription('Paquete QDPLAY 3 Cursos');
 
-        $callbackUrl = url('/paypal/status');
+        $callbackUrl = url('preqdplay/paypal/status');
 
         $redirectUrls = new RedirectUrls();
         $redirectUrls->setReturnUrl($callbackUrl)
@@ -123,6 +129,8 @@ class PaypalPreqdplayController extends Controller
         if ($result->getState() === 'approved')
         {
             $order = Order::orderBy('id', 'DESC')->firstOrFail();
+            $user = User::where('id', $order->user_id)->first();
+
             $order->update(['status' => 'order.paid']);
             $items = OrderItem::where('order_id', $order->id)->firstOrFail();
 
@@ -130,6 +138,8 @@ class PaypalPreqdplayController extends Controller
             $name = 'Paquete QDPlay 3 Cursos';
             $fb_pixel_data = $this->facebookApiAddPayment("Paquete QDPlay 3 Cursos", $request);
             $fb_pixel_data_purchase = $this->facebookApiPurchase($name, $request);
+
+            Mail::to($user->email)->send(new PreQdplayNotificationCourseEmail($user));
 
             return view('qd:marketplace::checkout.confirmationPaypal', [
                 'user' => $order->user_id,
