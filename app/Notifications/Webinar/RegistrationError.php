@@ -50,12 +50,17 @@ class RegistrationError extends Notification implements ShouldQueue
      */
     public function toMail($notifiable) : MailMessage
     {
-        return (new MailMessage)
-            ->subject('Ocurrió un problema al registrar un usuario al taller o streaming en línea')
-            ->view('emails.webinar.error', [
-                'user' => $this->user,
-                'course' => $this->course,
-                'error_message' => $this->error_message
-            ]);
+        //Validacion temporal para que no envie este error en la compra del
+        // paquete de qdplay que toma referencia de webinar
+        if($this->course->id != 51){
+            return (new MailMessage)
+                ->subject('Ocurrió un problema al registrar un usuario al taller o streaming en línea')
+                ->view('emails.webinar.error', [
+                    'user' => $this->user,
+                    'course' => $this->course,
+                    'error_message' => $this->error_message
+                ]);
+
+        }
     }
 }
