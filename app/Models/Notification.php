@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-#use Illuminate\Database\Eloquent\Relations\{HasMany, BelongsTo, BelongsToMany, MorphMany};
-class UserPackage extends Model
+class Notifications extends Model
 {
     //
     use SoftDeletes;
@@ -16,7 +15,7 @@ class UserPackage extends Model
      *
      * @var string
      */
-    protected $table = 'user_packages';
+    protected $table = 'notifications';
 
     /**
      * The attributes that are guarded.
@@ -24,7 +23,7 @@ class UserPackage extends Model
      * @var array
      */
     protected $guarded = [
-        'id', 'user_id', 'order_id'
+        'id', 'user_id'
     ];
 
     /**
@@ -33,7 +32,7 @@ class UserPackage extends Model
      * @var array
      */
     protected $fillable = [
-        'code'
+        'type', 'status', 'subject', 'description'
     ];
 
     /**
@@ -54,11 +53,9 @@ class UserPackage extends Model
         'created_at', 'updated_at', 'deleted_at'
     ];
 
-    public static function getPriceRating($data_field = 'code', $data_key)
+    /*public static function getPriceRating($data_field = 'code', $data_key)
     {
         return self::where('code', 'price-rating')
             ->first();
-    }
-
-
+    }*/
 }
