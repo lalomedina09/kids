@@ -180,6 +180,13 @@
                 class="nav-link header__navigation-link">
                 Libro
             </a>
+            @auth
+                @if (config()->has('money.modules.marketplace'))
+                    <a href="{{ route('qd.marketplace.orders.index') }}" class="nav-link header__navigation-link">
+                        Mis compras
+                    </a>
+                @endif
+            @endauth
         </nav>
 
         <ul class="nav">
