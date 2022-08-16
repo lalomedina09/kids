@@ -6,6 +6,10 @@
                     <div class="col-sm-3">
                         <h4 class="text-secondary mb-3">Por categoría</h4>
                         <ul class="list-unstyled list-inline mb-0">
+                            @php
+                                $categories = App\Models\Category::whereIn('id', ['4', '5', '6', '7', '8', '9'])->get();
+                            @endphp
+
                             @foreach($categories as $category)
                             <li class="mb-1">
                                 <a href="{{ route('articles.category.index', $category) }}" class="link-white">{{ $category->present()->name }}</a>

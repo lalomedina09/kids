@@ -11,6 +11,11 @@
                 <h6 class="header__menu-title">Temas</h6>
 
                 <ul class="navbar-nav header__menu-list">
+                    <!-- Categorias fijas que ya tienen articulos-->
+                    @php
+                        $categories = App\Models\Category::whereIn('id', ['4', '5', '6', '7', '8', '9'])->get();
+                    @endphp
+
                     @foreach($categories as $category)
                         <li class="nav-item">
                             <a href="{{ route('articles.category.index', $category) }}"
