@@ -214,6 +214,11 @@
 
                         @if (config()->has('money.modules.marketplace'))
                             <div class="dropdown-divider header__dropdown-divider"></div>
+                            <a href="{{ url('/perfil#asesorias') }}"
+                                class="dropdown-item header__buttons header__dropdown-buttons">
+                                Mis asesorias
+                            </a>
+
                             <a href="{{ route('qd.marketplace.orders.index') }}"
                                 class="dropdown-item header__buttons header__dropdown-buttons">
                                 Mis compras
