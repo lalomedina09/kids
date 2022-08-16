@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Reschedules extends Model
+class Reschedule extends Model
 {
     //
     use SoftDeletes;
@@ -58,4 +58,17 @@ class Reschedules extends Model
         return self::where('code', 'price-rating')
             ->first();
     }*/
+
+
+    public const STATUS = [
+        1 => 'Pregenerado',
+        2 => 'Solicitada',
+        3 => 'Aprobada',
+        4 => 'Cancelada',
+        ];
+
+    public function notifications()
+    {
+        return $this->morphOne('App\Models\Notifications', 'notificationsable');
+    }
 }

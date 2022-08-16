@@ -13,6 +13,7 @@ class CreateReschedulesTable extends Migration
      */
     public function up()
     {
+        //tabla para re - agendar
         Schema::create('reschedules', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('status')->nullable();

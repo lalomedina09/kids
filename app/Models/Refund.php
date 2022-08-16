@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Notification extends Model
+class Refund extends Model
 {
+    //
     //
     use SoftDeletes;
 
@@ -15,7 +16,7 @@ class Notification extends Model
      *
      * @var string
      */
-    protected $table = 'notifications';
+    protected $table = 'refunds';
 
     /**
      * The attributes that are guarded.
@@ -23,7 +24,7 @@ class Notification extends Model
      * @var array
      */
     protected $guarded = [
-        'id', 'user_id'
+        'id', 'user_id', 'order_id'
     ];
 
     /**
@@ -32,7 +33,7 @@ class Notification extends Model
      * @var array
      */
     protected $fillable = [
-        'type', 'status', 'subject', 'description'
+        'status', 'description'
     ];
 
     /**
@@ -53,23 +54,6 @@ class Notification extends Model
         'created_at', 'updated_at', 'deleted_at'
     ];
 
-    public const TYPECHANEL = [
-        1 => 'Email',
-        2 => 'WhatsApp',
-        3 => 'Plataforma',
-        4 => 'SMS',
-    ];
-
-    public const STATUS = [
-        1 => 'Enviado',
-        2 => 'Recibido',
-        3 => 'Visto',
-    ];
-
-    public function notifications()
-    {
-        return $this->morphTo();
-    }
     /*public static function getPriceRating($data_field = 'code', $data_key)
     {
         return self::where('code', 'price-rating')

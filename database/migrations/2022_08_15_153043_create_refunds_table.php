@@ -13,12 +13,13 @@ class CreateRefundsTable extends Migration
      */
     public function up()
     {
+        //tabla para para devoluciones
         Schema::create('refunds', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('status')->nullable();
             $table->integer('user_id')->nullable()->unsigned()->index();
             $table->integer('order_id')->nullable()->unsigned()->index();
-            $table->integer('type_user')->nullable();//1 = asesor || 0 = usuario asesorado
+            #$table->integer('type_user')->nullable();//1 = asesor || 0 = usuario asesorado
             $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
