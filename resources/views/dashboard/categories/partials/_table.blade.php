@@ -7,6 +7,7 @@
                 <th>Nombre</th>
                 <th>Slug</th>
                 <th>Codigo</th>
+                <th>Exclusivo</th>
                 @if(!$subcategory)
                     <!--<th>Artículos</th>-->
                     <th>Sub categorías</th>
@@ -21,6 +22,7 @@
                 <th>Nombre</th>
                 <th>Slug</th>
                 <th>Codigo</th>
+                <th>Exclusivo</th>
                 @if(!$subcategory)
                     <!--<th>Artículos</th>-->
                     <th>Sub categorías</th>
@@ -37,6 +39,13 @@
                     <td>{{ $category->present()->name }}</td>
                     <td>{{ $category->present()->slug }}</td>
                     <td>{{ $category->present()->code }}</td>
+                    <td>
+                        @if ($category->code == 1)
+                            Qdplay
+                        @else
+                            Generico
+                        @endif
+                    </td>
                     {{--<td>{{ number_format($category->articles->count()) }}</td>--}}
                     @if(!$subcategory)
                         <td>{{ number_format($category->getManyChilds($category->id)->count()) }}</td>
