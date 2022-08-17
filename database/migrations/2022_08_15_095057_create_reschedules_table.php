@@ -21,6 +21,8 @@ class CreateReschedulesTable extends Migration
             $table->integer('advice_id')->nullable()->unsigned()->index();
             $table->integer('type_user')->nullable();//1 = asesor || 0 = usuario asesorado
             $table->text('description')->nullable();
+            $table->datetime('current_date')->nullable();
+            $table->datetime('new_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

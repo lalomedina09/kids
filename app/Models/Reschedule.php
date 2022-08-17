@@ -32,7 +32,7 @@ class Reschedule extends Model
      * @var array
      */
     protected $fillable = [
-        'status', 'type_user', 'description'
+        'status', 'type_user', 'description', 'current_date', 'new_date'
     ];
 
     /**
@@ -65,7 +65,12 @@ class Reschedule extends Model
         2 => 'Solicitada',
         3 => 'Aprobada',
         4 => 'Cancelada',
-        ];
+    ];
+
+    public const TYPEUSER = [
+            1 => 'Asesor',
+            2 => 'Cliente',
+    ];
 
     public function notifications()
     {
