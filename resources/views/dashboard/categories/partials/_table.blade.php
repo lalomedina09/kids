@@ -40,7 +40,7 @@
                     <td>{{ $category->present()->slug }}</td>
                     <td>{{ $category->present()->code }}</td>
                     <td>
-                        @if ($category->code == 1)
+                        @if ($category->exclusive == 1)
                             Qdplay
                         @else
                             Generico
