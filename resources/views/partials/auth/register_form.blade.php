@@ -80,35 +80,6 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="state" class="text-uppercase">* @lang('State')</label>
-                                <select name="state"
-                                    id="user-state" class="form-control">
-                                    @foreach (cache()->get('states.json') as $state)
-                                        <option value="{{ $state->name }}">{{ $state->name }}</option>
-                                    @endforeach
-                                </select>
-
-                                @if ($errors->has('state'))
-                                    <span class="small text-danger">{{ $errors->first('state') }}</span>
-                                @endif
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="birthdate" class="text-uppercase">* @lang('Birth Date')</label>
-                                <input type="date" name="birthdate"
-                                    id="user-birthdate" class="form-control datetimepicker-input"
-                                    data-target="#user-birthdate" data-toggle="datetimepicker">
-
-                                @if ($errors->has('birthdate'))
-                                    <span class="small text-danger">{{ $errors->first('birthdate') }}</span>
-                                @endif
-                            </div>
 
                             <div class="form-group">
                                 <div class="d-block">
@@ -132,6 +103,57 @@
 
                                 @if ($errors->has('gender'))
                                     <span class="small text-danger">{{ $errors->first('gender') }}</span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="countrycode" class="text-uppercase">* @lang('Country Code') </label>
+                                <select name="countrycode"
+                                    id="user-countrycode" class="form-control">
+                                    @foreach (cache()->get('countries.json') as $country)
+                                        <option value="{{ $country->dial_code }}">{{ $country->name }} {{ $country->dial_code }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('countrycode'))
+                                    <span class="small text-danger">{{ $errors->first('countrycode') }}</span>
+                                @endif
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsapp" class="text-uppercase">* @lang('Whatsapp')</label>
+                                <input type="text" name="whatsapp" class="form-control">
+
+                                @if ($errors->has('whatsapp'))
+                                    <span class="small text-danger">{{ $errors->first('whatsapp') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state" class="text-uppercase">* @lang('State')</label>
+                                <select name="state"
+                                    id="user-state" class="form-control">
+                                    @foreach (cache()->get('states.json') as $state)
+                                        <option value="{{ $state->name }}">{{ $state->name }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('state'))
+                                    <span class="small text-danger">{{ $errors->first('state') }}</span>
+                                @endif
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="birthdate" class="text-uppercase">* @lang('Birth Date')</label>
+                                <input type="date" name="birthdate"
+                                    id="user-birthdate" class="form-control datetimepicker-input"
+                                    data-target="#user-birthdate" data-toggle="datetimepicker">
+
+                                @if ($errors->has('birthdate'))
+                                    <span class="small text-danger">{{ $errors->first('birthdate') }}</span>
                                 @endif
                             </div>
 

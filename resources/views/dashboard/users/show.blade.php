@@ -26,6 +26,10 @@
                         {{ $user->present()->email }}
                     </li>
                     <li class="list-group-item">
+                        <span class="font-weight-bold">WhatsApp:</span>
+                        {{ $user->getMeta('blog', 'countrycode') }} {{  $user->getMeta('blog', 'whatsapp') }}
+                    </li>
+                    <li class="list-group-item">
                         <span class="font-weight-bold">Género:</span>
                         {{ $user->present()->gender }}
                     </li>

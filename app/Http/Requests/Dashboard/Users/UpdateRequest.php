@@ -30,13 +30,20 @@ class UpdateRequest extends FormRequest
                 $valid_states = $states->pluck('name')->toArray();
                 $extra_valid_states = implode(',', $valid_states);
 
+                //valid countries codigo del pais
+                $countries = cache()->get('countries.json');
+                $valid_countries = $countries->pluck('dial_code')->toArray();
+                $extra_valid_countries = implode(',', $valid_countries);
+
                 return [
                     'name' => 'required|string|min:1|max:255',
                     'last_name' => 'required|string|min:1|max:255',
                     'profile_photo' => 'nullable|image|max:2000',
                     'state' => 'required|string|in:' . $extra_valid_states,
+                    'countrycode' => 'required|string|in:' . $extra_valid_countries,
                     'birthdate' => 'nullable|date_format:Y-m-d',
-                    'gender' => 'required|string|in:male,female'
+                    'gender' => 'required|string|in:male,female',
+                    'whatsapp' => 'required|digits:10',
                 ];
 
             case 'personal':
