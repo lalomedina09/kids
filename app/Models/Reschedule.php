@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use Carbon\Carbon;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -61,7 +62,7 @@ class Reschedule extends Model
 
 
     public const STATUS = [
-        1 => 'Pregenerado',
+        1 => 'Por Generar',
         2 => 'Solicitada',
         3 => 'Aprobada',
         4 => 'Cancelada',
@@ -75,5 +76,15 @@ class Reschedule extends Model
     public function notifications()
     {
         return $this->morphOne('App\Models\Notifications', 'notificationsable');
+    }
+
+    public function getDateHuman($date)
+    {
+        return $newDate = Carbon::parse($date)->diffForHumans();
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 }

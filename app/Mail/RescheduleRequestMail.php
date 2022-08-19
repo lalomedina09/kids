@@ -11,17 +11,23 @@ class RescheduleRequestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $advice;
     protected $user;
     protected $typeUser;
     protected $subject;
+    protected $reschedule;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($advice, $user, $typeUser, $subject)
+    public function __construct($advice, $user, $typeUser, $subject, $reschedule)
     {
-        //
+        $this->advice = $advice;
+        $this->user = $user;
+        $this->typeUser = $typeUser;
+        $this->subject = $subject;
+        $this->reschedule = $reschedule;
     }
 
     /**

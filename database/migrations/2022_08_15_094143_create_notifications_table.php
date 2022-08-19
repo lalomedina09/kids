@@ -18,6 +18,7 @@ class CreateNotificationsTable extends Migration
             $table->integer('type')->nullable();
             $table->integer('status')->nullable();
             $table->string('subject')->nullable();
+            $table->string('url')->nullable();
             $table->text('description')->nullable();
             $table->integer('user_id')->nullable()->unsigned()->index();
             $table->morphs('notificationsable');

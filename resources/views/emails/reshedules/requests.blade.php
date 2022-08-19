@@ -14,17 +14,23 @@
                 @else
                     tu cliente
                 @endif
-                solicito reagendar la asesoria que ya estaba programada para
+                <br>
+                Solicito reagendar la asesoria que ya estaba programada para {{ $advice->present()->given_at }} a la nueva fecha
+                {{ $advice->present()->given_at }}
+
+                <br>
+                El motivo para reagendar la asesoria es el siguiente
+                {{ $reschedule->description }}
             </p>
 
             <p style="margin-bottom:40px;">
-                ¡Ingresa a la plataforma para que le des seguimiento a la solicitud!
+                ¡Ingresa a la plataforma para que aceptes la nueva fecha!
             </p>
 
             <p style="text-align:center;margin-bottom:40px;">
                 <a href="{{ url('/qdplay') }}"
                     style="font-weight:bold;color:white;background-color:#0e0d0d;padding:15px 30px;display:inline-block;text-decoration:none;border-radius:5px;">
-                    Ver cursos
+                    Ver Solicitud
                 </a>
             </p>
 
