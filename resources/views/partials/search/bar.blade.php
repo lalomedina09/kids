@@ -20,6 +20,10 @@
                 <div class="input-group-prepend qd-select">
                     <select name="c" class="select2">
                         <option value="">@lang('All categories')</a>
+                        @php
+                            $categories = App\Models\Category::whereIn('id', ['4', '5', '6', '7', '8', '9'])->get();
+                        @endphp
+
                         @foreach($categories as $category)
                             <option value="{{ $category->slug }}" {{ ($search_category === $category->slug) ? 'selected="selected"' : '' }}>{{ $category->present()->name }}</a>
                         @endforeach
