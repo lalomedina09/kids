@@ -165,6 +165,10 @@ Route::get('/descargas-libro.html', function () {
 Route::get('/qdplay')
     ->uses('PagesController@cs_qdplay')
     ->name('qdplay');
+
+Route::get('/registro-qdplay-empresas')
+    ->uses('PagesController@landing_qdplay_companies')
+    ->name('register-qdplay-companies');
 /*
 |--------------------------------------------------------------------------
 | Articles
