@@ -36,16 +36,16 @@
                     <li class="nav-item">
                         <a href="{{ route('courses.index') }}"
                             class="header__menu-link">
-                            Talleres
+                            Talleres Personalizados
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a href="{{ route('qdplay.index') }}"
                             class="header__menu-link">
                             QDPlay
                         </a>
-                    </li>
+                    </li>-->
 
                     @if (config()->has('money.modules.advice'))
                         <li class="nav-item">
@@ -55,7 +55,7 @@
                             </a>
                         </li>
                     @endif
-
+                    {{--
                     @if (config()->has('money.modules.products'))
                         <li class="nav-item">
                             <a href="{{ route('qd.products.products.index') }}"
@@ -70,7 +70,7 @@
                             class="header__menu-link">
                             Libro
                         </a>
-                    </li>
+                    </li>--}}
                 </ul>
 
                 <div class="d-none d-lg-block header__menu-footer">
@@ -135,6 +135,13 @@
         </a>
 
         <nav class="nav d-none d-lg-flex header__navigation">
+            <!--<a href="#" title="Proximamente"
+                class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
+                QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" class="" style="">
+            </a>-->
+            <a href="/" class="nav-link header__navigation-link {{ active_class('descargas*') }}">
+                Inicio
+            </a>
             @if (config()->has('money.modules.blog'))
                 <a href="{{ route('blog') }}"
                     class="nav-link header__navigation-link {{ active_class('articles*') }}">
@@ -144,7 +151,7 @@
 
             <a href="{{ route('courses.index') }}"
                 class="nav-link header__navigation-link {{ active_class('talleres*') }}">
-                Talleres
+                Talleres Personalizados
             </a>
 
             {{--<a href="{{ route('qdplay.index') }}"
@@ -159,14 +166,18 @@
                 </a>
             @endif
 
-            @if (config()->has('money.modules.products'))
+            <a href="{{ route('contact') }}"
+                class="nav-link header__navigation-link {{ active_class('descargas*') }}">
+                Contacto
+            </a>
+            {{--@if (config()->has('money.modules.products'))
                 <a href="{{ route('qd.products.products.index') }}"
                     class="nav-link header__navigation-link {{ active_class('productos*') }}">
                     Productos
                 </a>
-            @endif
+            @endif--}}
 
-            <a href="{{ route('downloads.index') }}"
+            <!--<a href="{{ route('downloads.index') }}"
                 class="nav-link header__navigation-link {{ active_class('descargas*') }}">
                 Descargas
             </a>
@@ -174,7 +185,7 @@
             <a href="{{ config('money.url.store') }}"
                 class="nav-link header__navigation-link">
                 Libro
-            </a>
+            </a>-->
         </nav>
 
         <ul class="nav">
@@ -184,16 +195,26 @@
                 </a>
             </li>
             @auth
+                {{--{{ getNotificationsMenu() }}
                 <li class="nav-item nav-item-search d-none d-sm-inline">
-                    <a href="#" id="nav--search" data-fullmodal="#modal-search">
-                        <img src="{{ asset('images/icons/notification-red-circle.svg') }}" class="mb-5px" alt="Notification icon">
+                    <a href="{{route('notification.index')}}" id="nav--search">
+                        <img
+                            @if(getNotificationsMenu() ==0)
+                                src="{{ asset('images/icons/notification-red.svg') }}"
+                            @else
+                                src="{{ asset('images/icons/notification-red-circle.svg') }}"
+                            @endif
+                            class="mb-5px"
+                            alt="Notification icon">
                     </a>
-                </li>
-                <li class="nav-item nav-item-search d-none d-sm-inline">
-                    <a href="#" id="nav--search" data-fullmodal="#modal-search">
-                        <img src="{{ asset('images/icons/order-red-circle.svg') }}" class="mb-5px" alt="Order icon">
-                    </a>
-                </li>
+                </li>--}}
+                @if(config()->has('money.modules.marketplace'))
+                    <li class="nav-item nav-item-search d-none d-sm-inline">
+                        <a href="{{ route('qd.marketplace.orders.index') }}" id="nav--search">
+                            <img src="{{ asset('images/icons/order-red.svg') }}" class="mb-5px" alt="Order icon">
+                        </a>
+                    </li>
+                @endif
             @endauth
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle header__buttons header__buttons--last"
@@ -236,10 +257,10 @@
                         </a>
 
                         <div class="dropdown-divider header__dropdown-divider"></div>
-                            <a href="#"
+                            <!--<a href="#"
                                 class="dropdown-item header__buttons header__dropdown-buttons">
                                 Notificaciones
-                            </a>
+                            </a>-->
                         @if (config()->has('money.modules.marketplace'))
                             <a href="{{ url('/perfil#asesorias') }}"
                                 class="dropdown-item header__buttons header__dropdown-buttons">

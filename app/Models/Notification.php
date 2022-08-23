@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -54,16 +55,15 @@ class Notification extends Model
     ];
 
     public const TYPECHANEL = [
-        1 => 'Email',
+        1 => 'Mail',
         2 => 'WhatsApp',
-        3 => 'Plataforma',
+        3 => 'Web',
         4 => 'SMS',
     ];
 
     public const STATUS = [
-        1 => 'Enviado',
-        2 => 'Recibido',
-        3 => 'Visto',
+        0 => 'No leido',
+        1 => 'Leido',
     ];
 
     public function notifications()
@@ -75,4 +75,9 @@ class Notification extends Model
         return self::where('code', 'price-rating')
             ->first();
     }*/
+
+    public function getDateHuman($date)
+    {
+        return $newDate = Carbon::parse($date)->diffForHumans();
+    }
 }

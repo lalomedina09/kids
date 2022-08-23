@@ -63,9 +63,10 @@ class Reschedule extends Model
 
     public const STATUS = [
         1 => 'Por Generar',
-        2 => 'Solicitada',
+        2 => 'Solicita Reagendar',
+        3 => 'Re-agendada',
         3 => 'Aprobada',
-        4 => 'Cancelada',
+        4 => 'Rechazada',
     ];
 
     public const TYPEUSER = [

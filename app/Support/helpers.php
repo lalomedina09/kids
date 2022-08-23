@@ -1,5 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use App\Models\Notification;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Carbon\Carbon;
+
 if (! function_exists('active_class')) {
     /**
      * @param  string  $pattern
@@ -47,4 +53,15 @@ if (! function_exists('format_value')) {
                 return $value;
         }
     }
+}
+
+function getNotificationsMenu()
+{
+    $notifications = Notification::where('user_id', Auth::user()->id)
+                    ->where('status', 0)
+                    ->where('type', 3)
+                    ->get();
+    return count($notifications);
+
+    #$notifications = Auth::user()->notificationsTypeWeb;
 }
