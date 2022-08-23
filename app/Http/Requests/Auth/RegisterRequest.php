@@ -33,6 +33,11 @@ class RegisterRequest extends FormRequest
         $valid_interests = $interests->pluck('id')->toArray();
         $extra_valid_interests = implode(',', $valid_interests);
 
+        //valid countries codigo del pais
+        $countries = cache()->get('countries.json');
+        $valid_countries = $countries->pluck('dial_code')->toArray();
+        $extra_valid_countries = implode(',', $valid_countries);
+
         return [
             'name' => 'required|string|min:1|max:255',
             'last_name' => 'required|string|min:1|max:255',
@@ -40,11 +45,13 @@ class RegisterRequest extends FormRequest
             'password' => 'required|min:8|max:100|confirmed',
             'password_confirmation' => 'required|min:8|max:100',
             'state' => 'required|string|in:' . $extra_valid_states,
+            'countrycode' => 'required|string|in:' . $extra_valid_countries,
             'birthdate' => 'nullable|date_format:Y-m-d',
             'gender' => 'required|string|in:male,female',
+            'whatsapp' => 'required|digits:10',
             'interests' => 'sometimes|array',
             'interests.*' => 'integer|exists:categories,id|in:' . $extra_valid_interests,
-            'g-recaptcha-response' => 'required|recaptcha'
+            //'g-recaptcha-response' => 'required|recaptcha'
         ];
     }
 

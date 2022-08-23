@@ -51,6 +51,32 @@
                     @endif
                 </div>
             </div>
+            <!-- En agosto 2022 agregamos el item de wpp -->
+            <div class="col-xl-6 col-lg-6 col-12">
+                <div class="form-group">
+                    <label for="countrycode" class="control-label text-uppercase">* @lang('Country Code')</label>
+                    <select name="countrycode" class="form-control" required="required">
+                        @foreach (cache()->get('countries.json') as $countrycode)
+                            <option value="{{ $countrycode->dial_code }}" {{ ($user->getMeta('blog', 'countrycode') == $countrycode->dial_code) ? 'selected' : '' }}>
+                                 {{ $countrycode->name }} {{ $countrycode->dial_code }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('countrycode'))
+                        <span class="small text-danger">{{ $errors->first('countrycode') }}</span>
+                    @endif
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-12">
+                <div class="form-group">
+                    <label for="whatsapp" class="control-label text-uppercase">* @lang('Whatsapp')</label>
+                    <input type="text" name="whatsapp" required="required"
+                        id="user-whatsapp" class="form-control" data-target="#user-whatsapp" value="{{ $user->getMeta('blog', 'whatsapp') }}">
+                    @if ($errors->has('whatsapp'))
+                        <span class="small text-danger">{{ $errors->first('whatsapp') }}</span>
+                    @endif
+                </div>
+            </div>
 
             <div class="col-xl-6 col-lg-6 col-12">
                 <label for="gender" class="text-uppercase mb-3">* @lang('Gender')</label>

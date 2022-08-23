@@ -57,6 +57,7 @@ class ProfileController extends Controller
                 return $item->end_date->lt($now);
             })
         ];
+        #$user_whatsapp = ($user->hasMeta('blog', 'whatsapp')) ? $user->getMeta('blog', 'whatsapp') : 0;
 
         $user_education = ($user->hasMeta('blog', 'education')) ? $user->getMeta('blog', 'education') : [];
         $user_profession = ($user->hasMeta('blog', 'profession')) ? $user->getMeta('blog', 'profession') : [];
@@ -78,7 +79,8 @@ class ProfileController extends Controller
             'recurrent' => optional($user->calendar)->recurrent_days,
             'weekdays' => Calendar::getValidRecurrentWeekdays(),
             'hours' => $recurrent_valid_hours,
-            'durations' => Calendar::getValidRecurrentDurations()
+            'durations' => Calendar::getValidRecurrentDurations(),
+            #'user_whatsapp' => $user_whatsapp
         ]);
     }
 
@@ -92,7 +94,7 @@ class ProfileController extends Controller
     public function update($section, UpdateRequest $request)
     {
         $redirect_url = route('profile.edit');
-
+        //dd($request->all());
         $user = request()->user();
         $params = $request->all();
 

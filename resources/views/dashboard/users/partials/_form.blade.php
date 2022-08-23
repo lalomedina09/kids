@@ -33,6 +33,24 @@
         </div>
 
         <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label for="countrycode" class="control-label">@lang('Country Code'):</label>
+            <select name="countrycode" class="form-control" id="user-countrycode">
+                @foreach (cache()->get('countries.json') as $country)
+                    <option value="{{ $country->dial_code }}" {{ ($user->getMeta('blog', 'countrycode') == $country->dial_code) ? 'selected' : '' }}>
+                        {{ $country->name }} {{ $country->dial_code }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+            <label for="whatsapp" class="control-label">@lang('Whatsapp'): (@lang('Ten Digits'))</label>
+            <input type="text" name="whatsapp" class="form-control" placeholder="8122009944" required="required" value="{{ $user->whatsapp }}">
+        </div>
+
+
+
+        <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
             <label for="user-birthdate" class="control-label">@lang('Birth Date'):</label>
             <input type="date" name="birthdate"
                 id="user-birthdate" class="form-control datetimepicker-input"

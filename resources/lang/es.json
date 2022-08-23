@@ -213,5 +213,9 @@
     "Municipality": "Municipio",
     "Coupon code": "Código de cupón",
     "Apply coupon": "Aplicar cupón",
-    "Invalid coupon code": "Código de cupón inválido"
+    "Invalid coupon code": "Código de cupón inválido",
+    "Whatsapp": "Whatsapp",
+    "Country Code": "Codigo de tu pais",
+    "Ten Digits": "10 Digitos",
+    "List Notifications": "Lista de notificaciones"
 }

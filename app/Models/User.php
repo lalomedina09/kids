@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -379,4 +380,15 @@ class User extends Authenticatable implements HasMedia
         return $this->hasMany(Video::class, 'author_id');
     }
 
+    public function notificationsTypeWeb()
+    {
+        return $this->hasMany(\App\Models\Notification::class, 'user_id', 'id')
+                    ->where('type', 3)
+                    ->orderBy('id', 'desc');
+    }
+
+    public function getDateHuman($date)
+    {
+        return $newDate = Carbon::parse($date)->diffForHumans();
+    }
 }

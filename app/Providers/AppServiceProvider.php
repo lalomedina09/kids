@@ -99,7 +99,8 @@ class AppServiceProvider extends ServiceProvider
             'bank_names.json' => storage_path('app/json'),
             'payment_methods.json' => storage_path('app/cfdi'),
             'payment_types.json' => storage_path('app/cfdi'),
-            'usage.json' => storage_path('app/cfdi')
+            'usage.json' => storage_path('app/cfdi'),
+            'countries.json' => storage_path('app/json'),
         ];
 
         foreach ($files as $filename => $filepath) {

@@ -77,7 +77,7 @@
         ga('send', 'pageview');
     </script>
 @endif
-
+<input type="hidden" name="_token" id="token" value="{{ csrf_token()}}">
 <script type="text/javascript" src="{{ asset('i18n?v='.config('money.app.subversion')) }}"></script>
 <script type="text/javascript" src="{{ mix('js/manifest.js') }}"></script>
 <script type="text/javascript" src="{{ mix('js/vendor.js') }}"></script>

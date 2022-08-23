@@ -76,7 +76,7 @@ class UserMetadata extends Model
         'blog' => [
             'gender', 'birthdate', 'phone', 'state',
             'username', 'job', 'bio', 'video',
-            'facebook', 'twitter', 'instagram', 'youtube', 'skype', 'whatsapp',
+            'facebook', 'twitter', 'instagram', 'youtube', 'skype', 'whatsapp','countrycode',
             'education', 'profession', 'certifications', 'specialization', 'premium',
             'clabe',
             'tax_name','tax_number','tax_address','tax_address_number','tax_zipcode','tax_settlement'

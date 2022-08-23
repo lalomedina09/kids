@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-#use Illuminate\Database\Eloquent\Relations\{HasMany, BelongsTo, BelongsToMany, MorphMany};
-class UserPackage extends Model
+class Refund extends Model
 {
+    //
     //
     use SoftDeletes;
 
@@ -16,7 +16,7 @@ class UserPackage extends Model
      *
      * @var string
      */
-    protected $table = 'user_packages';
+    protected $table = 'refunds';
 
     /**
      * The attributes that are guarded.
@@ -33,7 +33,7 @@ class UserPackage extends Model
      * @var array
      */
     protected $fillable = [
-        'code'
+        'status', 'description'
     ];
 
     /**
@@ -54,11 +54,9 @@ class UserPackage extends Model
         'created_at', 'updated_at', 'deleted_at'
     ];
 
-    public static function getPriceRating($data_field = 'code', $data_key)
+    /*public static function getPriceRating($data_field = 'code', $data_key)
     {
         return self::where('code', 'price-rating')
             ->first();
-    }
-
-
+    }*/
 }
