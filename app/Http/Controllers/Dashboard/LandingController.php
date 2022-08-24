@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\{ Request, Response };
 
 use App\Models\Landing;
+use App\Models\Lead;
 
 use DB;
 
@@ -51,6 +52,18 @@ class LandingController extends Controller
         ]);
     }
 
+    public function customShow($custom_page)
+    {
+        $results = Landing::all();
+        $leads = Lead::where('form', $custom_page)->get();
+
+        return view('dashboard.landings.custom_show')->with([
+            'pages' => $this->getPages(),
+            'custom_page' => $custom_page,
+            'leads' => $leads,
+            'results' => $results
+        ]);
+    }
     /*
     |--------------------------------------------------------------------------
     | Private methods

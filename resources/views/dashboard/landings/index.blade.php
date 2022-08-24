@@ -9,11 +9,16 @@
     </div>
 
     <ul class="nav nav-tabs mb-4">
+
         @foreach ($pages as $p)
             <a href="{{ route('dashboard.landings.show', [$p]) }}"
                 class="nav-item nav-link"
             >{{ $p }}</a>
         @endforeach
+
+        <a href="{{ route('dashboard.landings.custom.show', ['registro-qd-play']) }}" class="nav-item nav-link">
+            Registro QD Play
+        </a>
     </ul>
 
     <div class="alert alert-default">

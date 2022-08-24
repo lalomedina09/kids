@@ -9,9 +9,9 @@
 
             <ul class="list-group">
                 <li class="list-group-item">
-                    Reagendar asesoria <br>
-                    * <br>
-                    * <br>
+                    Reagendar asesoria(En proceso) <br>
+                    *Pagina de Notificaciones (En Proceso) <br>
+                    *Boton de acces directo a ver ordenes de compra <br>
                 </li>
                 <li class="list-group-item">
                     Administracion de categorias en la pestaña de Administración <br>

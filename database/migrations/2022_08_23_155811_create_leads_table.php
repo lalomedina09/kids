@@ -17,6 +17,7 @@ class CreateLeadsTable extends Migration
             $table->increments('id');
             $table->integer('type')->nullable();
             $table->integer('status')->nullable();
+            $table->integer('synced')->nullable();
 
             $table->string('name')->nullable();
             $table->string('last_name')->nullable();

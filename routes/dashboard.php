@@ -680,7 +680,12 @@ Route::prefix('administration')
                     ->uses('LandingController@show')
                     ->name('landings.show')
                     ->middleware(['permission:blog.landings.show']);
-            });
+
+                Route::get('/custom/{custom_page}')
+                    ->uses('LandingController@customShow')
+                    ->name('landings.custom.show')
+                    ->middleware(['permission:blog.landings.show']);
+                });
 
         // Categories
         Route::prefix('categories')
