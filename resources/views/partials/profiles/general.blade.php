@@ -70,7 +70,7 @@
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="form-group">
                     <label for="whatsapp" class="control-label text-uppercase">* @lang('Whatsapp')</label>
-                    <input type="text" name="whatsapp" required="required"
+                    <input type="text" name="whatsapp"
                         id="user-whatsapp" class="form-control" data-target="#user-whatsapp" value="{{ $user->getMeta('blog', 'whatsapp') }}">
                     @if ($errors->has('whatsapp'))
                         <span class="small text-danger">{{ $errors->first('whatsapp') }}</span>

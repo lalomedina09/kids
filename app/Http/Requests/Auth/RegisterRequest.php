@@ -45,13 +45,13 @@ class RegisterRequest extends FormRequest
             'password' => 'required|min:8|max:100|confirmed',
             'password_confirmation' => 'required|min:8|max:100',
             'state' => 'required|string|in:' . $extra_valid_states,
-            'countrycode' => 'required|string|in:' . $extra_valid_countries,
+            'countrycode' => 'nullable|string|in:' . $extra_valid_countries,
             'birthdate' => 'nullable|date_format:Y-m-d',
-            'gender' => 'required|string|in:male,female',
-            'whatsapp' => 'required|digits:10',
+            #'gender' => 'required|string|in:male,female',
+            'whatsapp' => 'nullable|digits:10',
             'interests' => 'sometimes|array',
             'interests.*' => 'integer|exists:categories,id|in:' . $extra_valid_interests,
-            //'g-recaptcha-response' => 'required|recaptcha'
+            'g-recaptcha-response' => 'required|recaptcha'
         ];
     }
 

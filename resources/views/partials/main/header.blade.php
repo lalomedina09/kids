@@ -192,7 +192,7 @@
                 Libro
 
             </a>-->
-            
+
             @auth
                 @if (config()->has('money.modules.marketplace'))
                     <a href="{{ route('qd.marketplace.orders.index') }}" class="nav-link header__navigation-link">
@@ -225,7 +225,7 @@
                 </li>--}}
                 @if(config()->has('money.modules.marketplace'))
                     <li class="nav-item nav-item-search d-none d-sm-inline">
-                        <a href="{{ route('qd.marketplace.orders.index') }}" id="nav--search">
+                        <a href="{{ route('qd.marketplace.orders.index') }}" id="nav--search" title="Mis Compras">
                             <img src="{{ asset('images/icons/order-red.svg') }}" class="mb-5px" alt="Order icon">
                         </a>
                     </li>
@@ -251,23 +251,20 @@
                 <div class="dropdown-menu header__dropdown">
                     @auth
                         @can('blog.dashboard.show')
-                            <a href="/dashboard"
-                                class="dropdown-item header__buttons header__dropdown-buttons">
+                            <a href="/dashboard" class="dropdown-item header__buttons header__dropdown-buttons">
                                 Dashboard
                             </a>
 
                             <div class="dropdown-divider header__dropdown-divider"></div>
                         @endcan
 
-                        <a href="{{ route('profile.edit') }}"
-                            class="dropdown-item header__buttons header__dropdown-buttons">
+                        <a href="{{ route('profile.edit') }}" class="dropdown-item header__buttons header__dropdown-buttons">
                             Perfil
                         </a>
 
                         <div class="dropdown-divider header__dropdown-divider"></div>
 
-                        <a href="{{ route('exercises.index') }}"
-                            class="dropdown-item header__buttons header__dropdown-buttons">
+                        <a href="{{ route('exercises.index') }}" class="dropdown-item header__buttons header__dropdown-buttons">
                             Ejercicios
                         </a>
 
@@ -277,12 +274,11 @@
                                 Notificaciones
                             </a>-->
                         @if (config()->has('money.modules.marketplace'))
-                            <a href="{{ url('/perfil#asesorias') }}"
-                                class="dropdown-item header__buttons header__dropdown-buttons">
+                            <a href="{{ url('/perfil#asesorias') }}" class="dropdown-item header__buttons header__dropdown-buttons">
                                 Mis asesorias
                             </a>
 
-                            <a href="{{ route('qd.marketplace.orders.index') }}"
+                            <a href="{{ route('qd.marketplace.orders.index') }}" title="Mis Compras"
                                 class="dropdown-item header__buttons header__dropdown-buttons">
                                 Mis compras
                             </a>
@@ -290,8 +286,7 @@
 
                         <div class="dropdown-divider header__dropdown-divider"></div>
 
-                        <a href="{{ route('logout') }}"
-                            class="dropdown-item header__buttons header__dropdown-buttons">
+                        <a href="{{ route('logout') }}" class="dropdown-item header__buttons header__dropdown-buttons">
                             Cerrar sesión
                         </a>
                     @endauth

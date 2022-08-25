@@ -65,3 +65,13 @@ function getNotificationsMenu()
 
     #$notifications = Auth::user()->notificationsTypeWeb;
 }
+
+function getCustomDateHuman($date)
+{
+    if($date)
+    {
+        return $newDate = Carbon::parse($date)->diffForHumans();
+    }else{
+        return 'No Disponible';
+    }
+}
