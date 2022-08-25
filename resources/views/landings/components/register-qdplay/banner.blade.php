@@ -19,36 +19,7 @@
 
                         <img src="images/qdplay/registro-empresas/portada.png" alt="Img portada para version movil" class="w-100 text-md-left d-movil-show img-align-left">
 
-                        <form action="index.php" class="movil-form-center">
-							<div class="row pl-2 pt-2 pb-3">
-								<div class="col-12 padding-custom-regis-qdp">
-                                    <input type="text" placeholder="Nombre (s)" class="form-control form-control-lg">
-                                </div>
-
-								<div class="col-12 padding-custom-regis-qdp">
-                                    <input type="text" placeholder="Apellido (s)" class="form-control form-control-lg">
-                                </div>
-
-								<div class="col-12 padding-custom-regis-qdp">
-                                    <input type="email" placeholder="E-mail de trabajo" class="form-control form-control-lg">
-                                </div>
-
-								<div class="col-12 padding-custom-regis-qdp">
-                                    <input type="tel" placeholder="Celular" class="form-control form-control-lg">
-                                </div>
-
-                                <div class="col-12 padding-custom-regis-qdp">
-                                    <input type="text" placeholder="Nombre de la empresa" class="form-control form-control-lg">
-                                </div>
-
-								<div class="col-12 text-center padding-custom-regis-qdp">
-                                    <button type="submit" data-toggle="modal" data-target="#login-modal" class="btn btn-pill btn-dark text-uppercase font-weight-bold p-3 p-lg-3 mb-2">
-							            MAS INFORMACIÓN
-						            </button>
-									<!--<input type="submit" value="Enviar" class="tag border-0 p-2 p-lg-3 bg-green-blue text-white text-uppercase">-->
-								</div>
-							</div>
-						</form>
+                        @include('landings.components.register-qdplay.form')
                         <!--------------------------------------------------------->
 					</div>
 				</div>

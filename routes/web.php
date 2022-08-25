@@ -166,9 +166,17 @@ Route::get('/qdplay')
     ->uses('PagesController@cs_qdplay')
     ->name('qdplay');
 
-Route::get('/registro-qdplay-empresas')
-    ->uses('PagesController@landing_qdplay_companies')
-    ->name('register-qdplay-companies');
+Route::prefix('/registro-qdplay-empresas')
+->group(function () {
+    Route::get('/')
+    ->uses('Landing\QdplayEmpresasController@show')
+    ->name('register.qdplay.show');
+
+    Route::post('/')
+    ->uses('Landing\QdplayEmpresasController@store')
+    ->name('register.qdplay.store');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Articles
