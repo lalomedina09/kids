@@ -110,7 +110,7 @@
 
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label for="countrycode" class="text-uppercase">* @lang('Country Code') </label>
+                                <label for="countrycode" class="text-uppercase"> @lang('Country Code') </label>
                                 <select name="countrycode"
                                     id="user-countrycode" class="form-control">
                                     @foreach (cache()->get('countries.json') as $country)
@@ -123,7 +123,7 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label for="whatsapp" class="text-uppercase">* @lang('Whatsapp')</label>
+                                <label for="whatsapp" class="text-uppercase"> @lang('Whatsapp')</label>
                                 <input type="text" name="whatsapp" class="form-control">
 
                                 @if ($errors->has('whatsapp'))

@@ -62,10 +62,10 @@ class UpdateRequest extends FormRequest
                     'last_name' => 'required|string|min:1|max:255',
                     'profile_photo' => 'nullable|image|max:2000',
                     'state' => 'required|string|in:' . $extra_valid_states,
-                    'countrycode' => 'required|string|in:' . $extra_valid_countries,
+                    'countrycode' => 'nullable|string|in:' . $extra_valid_countries,
                     'birthdate' => 'nullable|date_format:Y-m-d',
                     'gender' => 'required|string|in:male,female',
-                    'whatsapp' => 'required|digits:10'
+                    'whatsapp' => 'nullable|digits:10'
                 ];
 
             case 'interests':
