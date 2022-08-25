@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
-
 use Illuminate\Http\{ Request, Response };
-
+use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\LeadsExport;
 use App\Models\Landing;
 use App\Models\Lead;
 
@@ -63,6 +63,11 @@ class LandingController extends Controller
             'leads' => $leads,
             'results' => $results
         ]);
+    }
+
+    public function exportDataLanding($form)
+    {
+        return Excel::download(new LeadsExport($form), 'leads.xlsx');
     }
     /*
     |--------------------------------------------------------------------------
