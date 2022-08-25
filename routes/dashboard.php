@@ -687,6 +687,12 @@ Route::prefix('administration')
                     ->middleware(['permission:blog.landings.show']);
                 });
 
+                Route::get('/export/{form}')
+                    ->uses('LandingController@exportDataLanding')
+                    ->name('landings.export.results')
+                    ->middleware(['permission:blog.landings.show']);
+
+
         // Categories
         Route::prefix('categories')
             ->group(function () {

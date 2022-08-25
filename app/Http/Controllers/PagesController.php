@@ -102,8 +102,4 @@ class PagesController extends Controller
         return view('pages.comming-s-qdplay');
     }
 
-    public function landing_qdplay_companies(): View
-    {
-        return view('landings.register-qdplay');
-    }
 }

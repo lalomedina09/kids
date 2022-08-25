@@ -16,7 +16,7 @@
             >{{ $p }}</a>
         @endforeach
 
-        <a href="{{ route('dashboard.landings.custom.show', ['registro-qd-play']) }}" class="nav-item nav-link">
+        <a href="{{ route('dashboard.landings.custom.show', ['registro-qdplay-empresas']) }}" class="nav-item nav-link">
             Registro QD Play
         </a>
     </ul>

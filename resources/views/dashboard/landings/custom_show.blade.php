@@ -7,7 +7,7 @@
             <h3>Paginas » {{ $custom_page }}</h3>
         </div>
     </div>
-
+    @php $pageCustom = "registro-qdplay-empresas" @endphp
     <ul class="nav nav-tabs mb-4">
         @foreach ($pages as $p)
             <a href="{{ route('dashboard.landings.show', [$p]) }}"
@@ -15,50 +15,50 @@
             >{{ $p }}</a>
         @endforeach
 
-        <a href="{{ route('dashboard.landings.custom.show', ['registro-qd-play']) }}" class="nav-item nav-link">
+        <a href="{{ route('dashboard.landings.custom.show', [$pageCustom]) }}" class="nav-item nav-link">
             Registro QD Play
         </a>
     </ul>
 
     <div class="table-responsive">
+        <div class="text-right">
+            <a class="btn btn-success" href="{{ route('dashboard.landings.export.results', [$pageCustom]) }}">
+                Exportar resultados Excel
+            </a>
+            <br>
+        </div>
+        <br>
         <table class="table table-hover table-bordered" data-order='[[ 2, "desc" ]]'>
             <thead>
                 <tr>
                     <th>Nombre</th>
                     <th>Email Empresarial</th>
-                    <th>Correo</th>
                     <th>Celular</th>
-                    <th>Telefono</th>
 
                     <th>Empresa</th>
                     <th>Intereses</th>
                     <th>Fecha de registro</th>
                 </tr>
             </thead>
-            <tfoot>
+            <!--<tfoot>
                 <tr>
                     <th>Nombre</th>
                     <th>Email Empresarial</th>
-                    <th>Correo</th>
                     <th>Celular</th>
-                    <th>Telefono</th>
 
                     <th>Empresa</th>
                     <th>Intereses</th>
                     <th>Fecha de registro</th>
                 </tr>
-            </tfoot>
+            </tfoot>-->
             <tbody>
                 @foreach($leads as $lead)
                     <tr>
                         <td class="small"> {{ $lead->name}} {{ $lead->last_name}} </td>
-                        <td>{{ $lead->mail_corporate }}</td>
-                        <td>{{ $lead->mail_personal }}</td>
-                        <td>{{ $lead->movil }}</td>
-                        <td>{{ $lead->telephone }}</td>
-
-                        <td>{{ $lead->company }}</td>
-                        <td>{{ $lead->interests }}</td>
+                        <td class="small">{{ $lead->mail_corporate }}</td>
+                        <td class="small">{{ $lead->movil }}</td>
+                        <td class="small">{{ $lead->company }}</td>
+                        <td class="small">{{ $lead->interests }}</td>
 
                         <td class="small" data-order="">{{ getCustomDateHuman($lead->created_at) }}</td>
                     </tr>
