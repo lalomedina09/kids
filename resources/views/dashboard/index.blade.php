@@ -9,23 +9,24 @@
 
             <ul class="list-group">
                 <li class="list-group-item">
-                    Reagendar asesoria(En proceso) <br>
+                    *Landing de Registros Qdplay Empresas <br>
+                    *Fecha de ultima actualizacion en los articulos publicados <br>
+                    *Boton de descarga Excel en resultados de las landings <br>
+                    *Agregue columnas en los resultados de landing para que se vea mas ordenada la información
+                </li>
+                <li class="list-group-item">
+                    *Reagendar asesoria (En proceso) <br>
                     *Pagina de Notificaciones (En Proceso) <br>
                     *Boton de acces directo a ver ordenes de compra <br>
                 </li>
                 <li class="list-group-item">
-                    Administracion de categorias en la pestaña de Administración <br>
+                    *Administracion de categorias en la pestaña de Administración <br>
                     *Agrega <br>
                     *Actualiza <br>
                     *Desactiva <br>
                 </li>
                 <li class="list-group-item">
                     *Parametros > Precios > rating de precios<br>
-                    * <br>
-                </li>
-                <li class="list-group-item">
-                    * <br>
-                    * <br>
                 </li>
             </ul>
         </div>
