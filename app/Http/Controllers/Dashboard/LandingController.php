@@ -6,6 +6,8 @@ use Illuminate\Http\{ Request, Response };
 use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\LeadsExport;
+use App\Exports\LandingExport;
+
 use App\Models\Landing;
 use App\Models\Lead;
 
@@ -45,11 +47,18 @@ class LandingController extends Controller
     public function show($page)
     {
         $results = Landing::where('page', $page)->get();
+        $columns = Landing::where('page', $page)->first();
         return view('dashboard.landings.show')->with([
             'pages' => $this->getPages(),
             'page' => $page,
-            'results' => $results
+            'results' => $results,
+            'columns' => $columns
         ]);
+    }
+
+    public function exportResultsLanding($page)
+    {
+        return Excel::download(new LandingExport($page), $page.'.xlsx');
     }
 
     public function customShow($custom_page)
@@ -67,8 +76,10 @@ class LandingController extends Controller
 
     public function exportDataLanding($form)
     {
-        return Excel::download(new LeadsExport($form), 'leads.xlsx');
+        return Excel::download(new LeadsExport($form), 'Registros-Qdplay-Empresas.xlsx');
     }
+
+
     /*
     |--------------------------------------------------------------------------
     | Private methods

@@ -13,6 +13,7 @@
                     <th>Título</th>
                     <th>Categorías</th>
                     <th>Autor</th>
+                    <th>Actualizado</th>
                     <th>Publicado</th>
                     <th>Acciones</th>
                 </tr>
@@ -22,6 +23,7 @@
                     <th>Título</th>
                     <th>Categorías</th>
                     <th>Autor</th>
+                    <th>Actualizado</th>
                     <th>Publicado</th>
                     <th>Acciones</th>
                 </tr>
@@ -42,6 +44,7 @@
                             </ul>
                         </td>
                         <td class="small">{{ $article->author->full_name }}</td>
+                        <td class="small" data-order="{{ optional($article->updated_at)->timestamp }}">{{ $article->present()->updated_at }}</td>
                         <td class="small" data-order="{{ optional($article->published_at)->timestamp }}">{{ $article->present()->published_at }}</td>
                         <td>
                             <a href="{{ route('dashboard.articles.edit', $article->id) }}" class="btn btn-sm btn-outline-primary">@lang('Edit')</a>

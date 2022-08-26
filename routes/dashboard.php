@@ -681,6 +681,11 @@ Route::prefix('administration')
                     ->name('landings.show')
                     ->middleware(['permission:blog.landings.show']);
 
+                Route::get('/exportResults/{page}')
+                    ->uses('LandingController@exportResultsLanding')
+                    ->name('landings.export.results.excel')
+                    ->middleware(['permission:blog.landings.show']);
+
                 Route::get('/custom/{custom_page}')
                     ->uses('LandingController@customShow')
                     ->name('landings.custom.show')

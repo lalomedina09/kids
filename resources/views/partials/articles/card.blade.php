@@ -4,7 +4,7 @@
     <a href="{{ route('articles.show', [$article]) }}" class="d-block">
         <img src="{{ $article->present()->featured_image }}" class="image--article" alt="Article">
         <p class="article--date mb-3">
-            {{ $article->present()->published_at }} | @if ($article->isGuestContent()) {{ $article->owner->full_name }} por: @endif {{ $article->author->full_name }}
+            {{-- $article->present()->published_at --}} {{ $article->present()->updated_at }} | @if ($article->isGuestContent()) {{ $article->owner->full_name }} por: @endif {{ $article->author->full_name }}
         </p>
     </a>
 

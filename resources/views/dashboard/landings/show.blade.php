@@ -14,13 +14,24 @@
                 class="nav-item nav-link {{ $p == $page ? 'active' : '' }}"
             >{{ $p }}</a>
         @endforeach
+
+
     </ul>
 
     <div class="table-responsive">
+        <div class="text-right">
+            <a class="btn btn-success" href="{{ route('dashboard.landings.export.results.excel', [$page]) }}">
+                Exportar resultados Excel
+            </a>
+            <br>
+        </div>
+        <br>
         <table class="table table-hover table-bordered" data-order='[[ 2, "desc" ]]'>
             <thead>
                 <tr>
-                    <th>Informacion registrada</th>
+                    @foreach ($columns->fields as $field => $item)
+                        <th>{{ $field }}</th>
+                    @endforeach
                     <th>Estado</th>
                     <th>Fecha de registro</th>
                     <th>Acciones</th>
@@ -28,7 +39,9 @@
             </thead>
             <tfoot>
                 <tr>
-                    <th>Informacion registrada</th>
+                    @foreach ($columns->fields as $field => $item)
+                        <th>{{ $field }}</th>
+                    @endforeach
                     <th>Estado</th>
                     <th>Fecha de registro</th>
                     <th>Acciones</th>
@@ -37,13 +50,20 @@
             <tbody>
                 @foreach($results as $result)
                     <tr>
-                        <td class="small">
+                        {{--<td class="small">
                             <ul class="m-0 pl-3">
                                 @foreach ($result->fields as $field => $value)
                                     <li><strong>{{ $field }}</strong>: {{ $value }}</li>
                                 @endforeach
                             </ul>
-                        </td>
+                        </td>--}}
+                        @foreach ($result->fields as $field => $value)
+                            @if ($field == "Tipo")
+
+                            @else
+                                <td>{{ $value }}</td>
+                            @endif
+                        @endforeach
                         <td>
                             @if ($result->synced)
                                 <span class="badge badge-success">Sincronizado</span>
