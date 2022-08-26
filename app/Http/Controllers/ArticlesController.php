@@ -26,7 +26,7 @@ class ArticlesController extends Controller
             ->each(function ($category) {
                 $category->load(['articles' => function ($query) {
                     return $query->recent()
-                        ->select('id', 'title', 'slug', 'author_id', 'published_at')
+                        ->select('id', 'title', 'slug', 'author_id', 'published_at', 'updated_at')
                         ->limit(12);
                 }]);
             });

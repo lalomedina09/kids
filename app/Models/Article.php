@@ -29,7 +29,7 @@ class Article extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'body', 'excerpt', 'author_id', 'published_at'
+        'title', 'body', 'excerpt', 'author_id', 'published_at', 'updated_at'
     ];
 
     /**
@@ -38,7 +38,7 @@ class Article extends Model
      * @var array
      */
     protected $dates = [
-        'published_at', 'deleted_at'
+        'published_at', 'updated_at', 'deleted_at'
     ];
 
     /**

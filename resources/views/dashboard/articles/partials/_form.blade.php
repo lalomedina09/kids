@@ -182,6 +182,19 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Ultima Actualización
+                    </div>
+
+                    <div class="card-body">
+                        <p>
+                            <span class="font-weight-bold">Actualizado:</span> {{ $article->present()->updated_at }}
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     @endcan
 @endif
