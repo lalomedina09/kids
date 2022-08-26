@@ -21,9 +21,7 @@
                 </li>
                 <li class="list-group-item">
                     *Administracion de categorias en la pestaña de Administración <br>
-                    *Agrega <br>
-                    *Actualiza <br>
-                    *Desactiva <br>
+                    *Agrega *Actualiza  *Desactiva
                 </li>
                 <li class="list-group-item">
                     *Parametros > Precios > rating de precios<br>
