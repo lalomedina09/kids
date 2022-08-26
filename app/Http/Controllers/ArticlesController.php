@@ -75,7 +75,7 @@ class ArticlesController extends Controller
         $category = Category::where('slug', $slug)->firstOrFail();
 
         $articles = $category->articles()
-            ->select('id', 'title', 'slug', 'author_id', 'published_at')
+            ->select('id', 'title', 'slug', 'author_id', 'published_at', 'updated_at')
             ->recent()
             ->get();
 
@@ -96,7 +96,7 @@ class ArticlesController extends Controller
         $category = Category::where('slug', $slug)->firstOrFail();
 
         $articles = $category->tagged_articles()
-            ->select('id', 'title', 'slug', 'author_id', 'published_at')
+            ->select('id', 'title', 'slug', 'author_id', 'published_at', 'updated_at')
             ->recent()
             ->get();
 
