@@ -9,34 +9,16 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-12">
-            <p class="text-center">
+            <h3 class="text-center">
                 @lang('List Notifications'):
-            </p>
+            </h3>
 
             <div class="col-md-12">
-                @if (count($notifications)>0)
+                @if ($notifications)
+                        <hr>
                     @foreach($notifications as $item)
-                        <div class="row">
-                            <div class="col-md-1 text-center">
-                                @if ($item->status == 1)
-                                <!-- Leido -->
-                                    <a href="#" onclick="updateStatusNotification({{ $item->status }})">
-                                        <i class="lni lni-smile"></i>
-                                    </a>
-                                @else
-                                <!-- No Leido -->
-                                    <a href="#" onclick="updateStatusNotification({{ $item->status }})">
-                                        <i class="lni lni-checkmark"></i>
-                                    </a>
-                                @endif
-                            </div>
-                            <div class="col-md-11">
-                                {{ $item->getDateHuman($item->created_at) }} <br>
-                                <b>{{ $item->subject }}</b>
-                                <br>
-                                {{ $item->description }} <br>
-                                @if($item->url) <a href="{{ url($item->url) }}">Ver más</a> @endif
-                            </div>
+                        <div class="row" id="not_item_{{ $item->id }}">
+                            @include('notifications.components.item', ['item' => $item])
                         </div>
                         <hr>
                     @endforeach

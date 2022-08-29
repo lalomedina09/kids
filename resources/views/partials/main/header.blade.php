@@ -172,6 +172,7 @@
                 class="nav-link header__navigation-link {{ active_class('descargas*') }}">
                 Contacto
             </a>
+
             {{--@if (config()->has('money.modules.products'))
                 <a href="{{ route('qd.products.products.index') }}"
                     class="nav-link header__navigation-link {{ active_class('productos*') }}">
