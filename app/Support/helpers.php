@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+
 use App\Models\Notification;
+use App\Models\Category;
+
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Carbon\Carbon;
@@ -74,4 +77,10 @@ function getCustomDateHuman($date)
     }else{
         return 'No Disponible';
     }
+}
+
+function getCategoriesQD()
+{
+    return $categories = Category::whereIn('id', ['4', '5', '6', '7', '8', '9'])
+    ->get();
 }

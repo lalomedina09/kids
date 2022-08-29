@@ -11,12 +11,9 @@
                 <h6 class="header__menu-title">Temas</h6>
 
                 <ul class="navbar-nav header__menu-list">
-                    <!-- Categorias fijas que ya tienen articulos-->
-                    @php
-                        $categories = App\Models\Category::whereIn('id', ['4', '5', '6', '7', '8', '9'])->get();
-                    @endphp
+                    {{-- Lista de categorias viene del archivo helpers.php--}}
 
-                    @foreach($categories as $category)
+                    @foreach(getCategoriesQD() as $category)
                         <li class="nav-item">
                             <a href="{{ route('articles.category.index', $category) }}"
                                 class="header__menu-link">
@@ -206,27 +203,21 @@
         <ul class="nav">
             <li class="nav-item nav-item-search d-none d-sm-inline">
                 <a href="#" id="nav--search" data-fullmodal="#modal-search">
-                    <img src="{{ asset('images/icons/lupa.svg') }}" class="mb-5px" alt="search icon">
+                    <img src="{{ asset('images/icons/search.svg') }}" class="mb-5px" alt="search icon">
                 </a>
             </li>
             @auth
-                {{--{{ getNotificationsMenu() }}
-                <li class="nav-item nav-item-search d-none d-sm-inline">
-                    <a href="{{route('notification.index')}}" id="nav--search">
-                        <img
-                            @if(getNotificationsMenu() ==0)
-                                src="{{ asset('images/icons/notification-red.svg') }}"
-                            @else
-                                src="{{ asset('images/icons/notification-red-circle.svg') }}"
-                            @endif
-                            class="mb-5px"
-                            alt="Notification icon">
-                    </a>
-                </li>--}}
+                @if(getNotificationsMenu() > 0)
+                    <li class="nav-item nav-item-search d-none d-sm-inline">
+                        <a href="{{route('notification.index')}}" id="nav--search">
+                            <img src="{{ asset('images/icons/notification.svg') }}" class="mb-5px" alt="Notification Icon">
+                        </a>
+                    </li>
+                @endif
                 @if(config()->has('money.modules.marketplace'))
                     <li class="nav-item nav-item-search d-none d-sm-inline">
                         <a href="{{ route('qd.marketplace.orders.index') }}" id="nav--search" title="Mis Compras">
-                            <img src="{{ asset('images/icons/order-red.svg') }}" class="mb-5px" alt="Order icon">
+                            <img src="{{ asset('images/icons/order.svg') }}" class="mb-5px" alt="Order Icon">
                         </a>
                     </li>
                 @endif
@@ -242,10 +233,7 @@
 
                     @auth
                         <span class="text-small d-none d-xl-inline-block">Hola, {{ auth()->user()->name }}</span>
-                        <!-- Aquí va la imagen de perfil del usuario -->
                     @endauth
-                    <!--<i class="lni lni-user"></i><i class="lni lni-menu"></i>-->
-                    <!--<img src="{{ asset('images/user.svg') }}" alt="user icon" class="svg">-->
                 </a>
 
                 <div class="dropdown-menu header__dropdown">
@@ -269,10 +257,10 @@
                         </a>
 
                         <div class="dropdown-divider header__dropdown-divider"></div>
-                            <!--<a href="#"
+                            <a href="{{route('notification.index')}}"
                                 class="dropdown-item header__buttons header__dropdown-buttons">
                                 Notificaciones
-                            </a>-->
+                            </a>
                         @if (config()->has('money.modules.marketplace'))
                             <a href="{{ url('/perfil#asesorias') }}" class="dropdown-item header__buttons header__dropdown-buttons">
                                 Mis asesorias
