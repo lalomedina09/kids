@@ -194,7 +194,31 @@
                         </p>
                     </div>
                 </div>
+                <!-- update slug -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Actualizar Url del articulo
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('dashboard.articles.updateslug', [$article->id]) }}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="slug" class="form-label">
+                                    Url actual:
+                                    <a href="{{ route('articles.show', [$article->slug]) }}" target="_blank">
+                                        {{ $article->slug }}
+                                    </a>
+                                </label>
+                                <br><br>
+                                <label for="slug" class="form-label">Nueva Url:</label>
+                                {!! Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'Nueva Url'] ) !!}
+                            </div>
+                            <input class="btn btn-primary btn-block" type="submit" value="Actualizar">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     @endcan
 @endif
+
