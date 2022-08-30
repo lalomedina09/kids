@@ -32,7 +32,7 @@
                 @foreach($articles as $article)
                     <tr>
                         <td class="small">
-                            <a href="{{ route('articles.show', [$article->slug]) }}">
+                            <a href="{{ route('articles.show', [$article->slug]) }}" target="_blank">
                                 {{ $article->present()->title }}
                             </a>
                         </td>

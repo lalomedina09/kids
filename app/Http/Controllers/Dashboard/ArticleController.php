@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+//use App\Http\Controllers\Dashboard\UserLogController;
 
 use Illuminate\Http\{ Request, Response };
 
 use App\Http\Requests\Dashboard\Articles\{ PublishRequest, StoreRequest, UpdateRequest };
 use App\Models\Article;
 use App\Repositories\ArticleRepository;
-
+use Illuminate\Support\Str;
 class ArticleController extends Controller
 {
 
@@ -205,6 +206,38 @@ class ArticleController extends Controller
             ->with('success', 'El artículo se envió a borrador');
     }
 
+    public function updateSlug($article_id, Request $request)
+    {
+        $slug = Str::slug($request->slug);
+
+        $searchSlug  = Article::where('slug', $slug)->first();
+
+        if(!$searchSlug){
+            $article  = Article::where('id', $article_id)->first();
+            $article->slug = $slug;
+            $article->update();
+
+            $array = [
+                'move' => 3,
+                'description' => 'Actualizacion de url del articulo',
+                'userlogsable_type' => get_class($article),
+                'userlogsable_id' => $article->id,
+            ];
+
+            $this->createUserLog($array);
+
+            $status = 'success';
+            $msj = 'Actualizaste correctamente la Url del articulo:   '.$article->title;
+        }else{
+            $status = 'error';
+            $msj = 'La URL ya existe no se puede repetir, intenta con otro nombre';
+        }
+
+        return redirect()
+        ->route('dashboard.articles.index')
+            ->with($status, $msj);
+
+    }
     /*
     |--------------------------------------------------------------------------
     | Private methods

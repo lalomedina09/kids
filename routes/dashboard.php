@@ -54,6 +54,11 @@ Route::prefix('blog')
                             ->name('articles.update')
                             ->middleware(['permission:blog.articles.update']);
 
+                        Route::post('/update-slug')
+                            ->uses('ArticleController@updateSlug')
+                            ->name('articles.updateslug')
+                            ->middleware(['permission:blog.articles.update']);
+
                         Route::delete('/')
                             ->uses('ArticleController@destroy')
                             ->name('articles.destroy')

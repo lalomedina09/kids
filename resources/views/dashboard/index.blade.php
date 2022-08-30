@@ -9,6 +9,9 @@
 
             <ul class="list-group">
                 <li class="list-group-item">
+                    *Actualizacion de Url en los articulos
+                </li>
+                <li class="list-group-item">
                     *Landing de Registros Qdplay Empresas <br>
                     *Fecha de ultima actualizacion en los articulos publicados <br>
                     *Boton de descarga Excel en resultados de las landings <br>
@@ -16,7 +19,7 @@
                 </li>
                 <li class="list-group-item">
                     *Reagendar asesoria (En proceso) <br>
-                    *Pagina de Notificaciones (En Proceso) <br>
+                    *Pagina de Notificaciones <br>
                     *Boton de acces directo a ver ordenes de compra <br>
                 </li>
                 <li class="list-group-item">

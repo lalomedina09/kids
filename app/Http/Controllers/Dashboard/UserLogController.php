@@ -1,19 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\Controller;
 use App\Models\UserLog;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-
-class Controller extends BaseController
+class UserLogController extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
+    //
     public function createUserLog($array)
     {
         $data = new UserLog;
@@ -23,7 +19,6 @@ class Controller extends BaseController
         $data->userlogsable_type = $array['userlogsable_type'];
         $data->userlogsable_id = $array['userlogsable_id'];
 
-        $data->save();
         return $data;
     }
 }
