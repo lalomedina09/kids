@@ -13,7 +13,7 @@ use App\Models\Presenters\ArticlePresenter;
 use App\Models\Traits\{ Bookmarkable as BookmarkTrait, Likeable as LikeTrait, Viewable as ViewTrait };
 use App\Models\Traits\{ Authorable, Categorizable, Hashable, Interactable, Searchable, Taggable };
 use App\Models\Traits\{ Excludable, Presentable, Publishable, Sluggable, TranslatesDates };
-
+use Carbon\Carbon;
 class Article extends Model
               implements Bookmarkable, HasMedia, Likeable, Viewable
 {
@@ -154,4 +154,5 @@ class Article extends Model
         $this->addMedia($file)->toMediaCollection('featured_image', config('money.filesystem.disk'));
         $this->save();
     }
+
 }

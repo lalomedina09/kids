@@ -77,8 +77,12 @@
                                     <span class="text-bold text-danger">{{ $article->author->full_name }}</span>
                                 </p>
                             </a>
-                            {{--<p class="small text-muted">{{ $article->present()->published_at }}</p>--}}
-                            <p class="small text-muted">{{ $article->present()->updated_at }}</p>
+                            <p class="small text-muted">{{ $article->present()->published_at }}</p>
+                            {{--<p class="small text-muted">{{ $article->present()->updated_at }}</p>--}}
+                            <!--<p class="small text-muted">
+                                {{-- getDateSpanish($article->updated_at) --}}
+                            </p>-->
+
                         </div>
                     </div>
                 </div>
