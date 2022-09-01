@@ -232,6 +232,10 @@
 
                     @auth
                         <span class="text-small d-none d-xl-inline-block">Hola, {{ auth()->user()->name }}</span>
+                             <img src="{{ auth()->user()->present()->profile_photo }}"
+                                    class="rounded-circle"
+                                    width="40px"
+                                    alt="{{ auth()->user()->name }}">
                     @endauth
                 </a>
 

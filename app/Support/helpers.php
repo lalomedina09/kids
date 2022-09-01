@@ -133,9 +133,7 @@ function getDateSpanish($date)
     $days = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado");
     $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
-    //dd($newDate->dayOfWeek, 'dia de la semana ');
     $day = $days[($newDate->dayOfWeek)];
-    //dd($day);
     $mes = $meses[($newDate->format('n')) - 1];
 
     return $dateFormat = $day.', '.$newDate->format('d') . ' de ' . $mes . ' de ' . $newDate->format('Y');
