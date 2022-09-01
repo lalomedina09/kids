@@ -20,7 +20,7 @@
                 </p>
             @endif
 
-            @if( $course->present()->url == "http://prod.querido-dinero.develop/talleres/paquete-qdplay-3-cursos")
+            @if( $course->present()->url == "https://www.queridodinero.com/talleres/paquete-qdplay-3-cursos")
                 <a href="{{ url('/qdplay') }}" class="btn btn-dark btn-pill btn-xl">@lang('More')</a>
             @else
                 <a href="{{ $course->present()->url }}" class="btn btn-dark btn-pill btn-xl">@lang('More')</a>
