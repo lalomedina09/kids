@@ -11,8 +11,12 @@
 @section('content')
     <link href="{{asset('index_files/etapa1.css')}}" rel="stylesheet">
     <link href="{{asset('index_files/app.css')}}" rel="stylesheet">
-
-
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <style>
+        .mb-5px{
+            margin-top: 15px;
+        }
+    </style>
     @include('preQdplay.experiment-qdplay.components.index.banner')
 
     <div class="backgroud-gray">

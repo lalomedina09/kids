@@ -153,7 +153,7 @@
 
             <a href="{{ route('courses.index') }}"
                 class="nav-link header__navigation-link {{ active_class('talleres*') }}">
-                Talleres Personalizados
+                Talleres
             </a>
 
             {{--<a href="{{ route('qdplay.index') }}"
