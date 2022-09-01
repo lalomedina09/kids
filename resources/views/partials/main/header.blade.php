@@ -232,10 +232,13 @@
 
                     @auth
                         <span class="text-small d-none d-xl-inline-block">Hola, {{ auth()->user()->name }}</span>
-                             <img src="{{ auth()->user()->present()->profile_photo }}"
+                            @if (auth()->user()->present()->profile_photo)
+                                <img src="{{ auth()->user()->present()->profile_photo }}"
                                     class="rounded-circle"
                                     width="40px"
+                                    height="40px"
                                     alt="{{ auth()->user()->name }}">
+                            @endif
                     @endauth
                 </a>
 
