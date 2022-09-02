@@ -139,3 +139,13 @@ function getDateSpanish($date)
     return $dateFormat = $day.', '.$newDate->format('d') . ' de ' . $mes . ' de ' . $newDate->format('Y');
 
 }
+
+function divDate($date, $type)
+{
+    $date = explode("a las", $date);
+    if($type == 'day'){
+        return $date[0];
+    }else{
+        return $date[1];
+    }
+}

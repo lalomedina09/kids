@@ -23,6 +23,11 @@ class Mailer
     {
         Mail::send(new NotificationForAdvisor($dataNotification, $user, $newReschedule));
     }
+
+    public static function sendMailLastStatus($dataNotification, $user, $newReschedule)
+    {
+        Mail::send(new NotificationStatusReschedule($dataNotification, $user, $newReschedule));
+    }
     /*
     public static function sendUnsubscriptionMail($newsletter)
     {

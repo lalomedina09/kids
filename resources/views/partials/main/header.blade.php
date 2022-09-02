@@ -208,11 +208,19 @@
                 </a>
             </li>
             @auth
-                <li class="nav-item nav-item-search d-none d-sm-inline">
-                    <a href="{{route('notification.index')}}" id="nav--search">
-                        <img src="{{ asset('images/icons/notification.svg') }}" class="mb-5px" alt="Notification Icon">
-                    </a>
-                </li>
+                @if (getNotificationsMenu() > 0)
+                    <li class="nav-item nav-item-search d-none d-sm-inline">
+                        <a href="{{route('notification.index')}}" id="nav--search">
+                            <img src="{{ asset('images/icons/notification-circle.png') }}" class="mb-5px" width="25px" alt="Notification Icon Alert">
+                        </a>
+                    </li>
+                @else
+                    <li class="nav-item nav-item-search d-none d-sm-inline">
+                        <a href="{{route('notification.index')}}" id="nav--search">
+                            <img src="{{ asset('images/icons/notification.svg') }}" class="mb-5px" alt="Notification Icon Dont Alert">
+                        </a>
+                    </li>
+                @endif
                 @if(config()->has('money.modules.marketplace'))
                     <li class="nav-item nav-item-search d-none d-sm-inline">
                         <a href="{{ route('qd.marketplace.orders.index') }}" id="nav--search" title="Mis Compras">

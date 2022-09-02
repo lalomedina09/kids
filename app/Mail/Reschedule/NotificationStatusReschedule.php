@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Mail\Reschedule;
 
 use Illuminate\Bus\Queueable;
@@ -7,7 +6,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class NotificationForAdvised extends Mailable
+class NotificationStatusReschedule extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -34,9 +33,10 @@ class NotificationForAdvised extends Mailable
     public function build()
     {
         $subject = $this->dataNotification['subject'];
+
         return $this->subject($subject)
-        ->to($this->dataNotification['advised']->email, $this->dataNotification['advised']->fullname)
-            ->view('emails.reschedules.notification-for-advised')
+            ->to($this->dataNotification['advised']->email, $this->dataNotification['advised']->fullname)
+            ->view('emails.reschedules.status-accept-decline')
             ->with([
                 'dataNotification' => $this->dataNotification,
                 'user' => $this->user,
