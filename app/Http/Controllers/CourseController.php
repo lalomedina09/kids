@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\Courses\BuyRequest;
+use App\Models\Lead;
 use App\Models\Course;
 use App\Models\Category;
 use App\Models\Parameter;
@@ -60,22 +61,16 @@ class CourseController extends Controller
 
         $dolar = 0.05;
         $Conversion = 0;
-        //Comentare el codigo 8 de julio de 2022 se comenta por si ocupo regresarlo
-        /*
-        //if $slug solo tenia un signo = entonces no estaba funcionando esta validacion le agregue otro =
-        if($slug == "taller-online-inversion-para-principiantes")
-        {
-            $Conversion = $dolar * $course->price;
-        }
-        */
 
-        //Si en una semana no hay problemas entonces lo podemos borrar lo comentado hoy 8-7-2022
         $currency_value = Parameter::where('code', 'dollar-to-currency-mxn')->first();
-        $dollar = $currency_value->_lft;
-        if ($course->currency == "USD") {
-            $Conversion = $course->price / $dollar;
-        }else{
-            $Conversion = $course->price;
+        if($currency_value)
+        {
+            $dollar = $currency_value->_lft;
+            if ($course->currency == "USD") {
+                $Conversion = $course->price / $dollar;
+            }else{
+                $Conversion = $course->price;
+            }
         }
 
         $request->seoable = $course;
@@ -168,5 +163,34 @@ class CourseController extends Controller
             'categories',
             'page'
         ));
+    }
+
+    public function registerFormContact(Request $request)
+    {
+        $params = $request->validate([
+            'name' => 'required|string|min:1|max:255',
+            'last_name' => 'required|string|min:1|max:255',
+            'mail_corporate' => 'required|email|min:1|max:255',
+            'movil' => 'required|digits:10',
+            'company' => 'required|string|min:1|max:255',
+            #'g-recaptcha-response' => 'required|recaptcha'
+        ]);
+
+        array_forget($params, 'g-recaptcha-response');
+
+        $lead = new Lead;
+        $lead->type = 1;
+        $lead->status = 0;
+        $lead->name = $request->name;
+        $lead->last_name = $request->last_name;
+        $lead->mail_corporate = $request->mail_corporate;
+        $lead->movil = $request->movil;
+        $lead->company = $request->company;
+        $lead->interests = $request->interests;
+        $lead->form = $request->form;
+        $lead->url = $request->url();
+        $lead->save();
+
+        return redirect()->back()->with('success', 'Gracias, Pronto nos pondremos en contacto contigo');
     }
 }

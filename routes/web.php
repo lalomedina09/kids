@@ -95,7 +95,7 @@ Route::prefix('password')
 
         Route::post('/reset')
             ->uses('ResetPasswordController@reset');
-        //- - - -- - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
         //- - - - - - - - - - - - - - - - QD P L A Y- - - - - - - - - - - - - - - - - //
         Route::get('/qdplay/reset')
             ->uses('QdplayForgotPasswordController@showLinkRequestForm')
@@ -290,6 +290,11 @@ Route::prefix('talleres')
         Route::get('/categorias/{slug}')
             ->uses('CourseController@byCategory')
             ->name('courses.category.index');
+
+        Route::post('/register/form')
+            ->uses('CourseController@registerFormContact')
+            ->name('courses.register.form');
+
     });
 
 /*

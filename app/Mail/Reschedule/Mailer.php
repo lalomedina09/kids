@@ -28,6 +28,11 @@ class Mailer
     {
         Mail::send(new NotificationStatusReschedule($dataNotification, $user, $newReschedule));
     }
+
+    public static function createNotificationRefund()
+    {
+        Mail::send(new NotificationRefundReschedule($dataNotification, $user));
+    }
     /*
     public static function sendUnsubscriptionMail($newsletter)
     {

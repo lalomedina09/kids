@@ -15,8 +15,13 @@
             >{{ $p }}</a>
         @endforeach
 
-        <a href="{{ route('dashboard.landings.custom.show', [$pageCustom]) }}" class="nav-item nav-link">
+        <a href="{{ route('dashboard.landings.custom.show', ['registro-qdplay-empresas']) }}"
+            class="nav-item nav-link {{ "registro-qdplay-empresas" == $custom_page ? 'active' : '' }}">
             Registro QD Play
+        </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['finanzas-personales-para-empleados']) }}"
+            class="nav-item nav-link {{ "finanzas-personales-para-empleados" == $custom_page ? 'active' : '' }}">
+            Curso Finanzas Personales
         </a>
     </ul>
 
