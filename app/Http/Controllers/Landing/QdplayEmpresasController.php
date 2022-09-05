@@ -43,17 +43,19 @@ class QdplayEmpresasController extends Controller
 
         array_forget($params, 'g-recaptcha-response');
 
-            $landing = new Lead;
-            $landing->name = $request->name;
-            $landing->last_name = $request->last_name;
-            $landing->mail_corporate = $request->mail_corporate;
-            $landing->movil = $request->movil;
-            $landing->company = $request->company;
+            $lead = new Lead;
+            $lead->type = 1;
+            $lead->status = 0;
+            $lead->name = $request->name;
+            $lead->last_name = $request->last_name;
+            $lead->mail_corporate = $request->mail_corporate;
+            $lead->movil = $request->movil;
+            $lead->company = $request->company;
 
-            $landing->interests = 'QD Play para empresas';
-            $landing->form = 'registro-qdplay-empresas';
-            $landing->url = $request->url();
-            $landing->save();
+            $lead->interests = 'QD Play para empresas';
+            $lead->form = 'registro-qdplay-empresas';
+            $lead->url = $request->url();
+            $lead->save();
 
         return redirect()->back()->with('success', 'Gracias, Pronto nos pondremos en contacto contigo');
     }

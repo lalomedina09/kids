@@ -105,9 +105,11 @@ function legendsReschedule($reschedule)
         case 3:
             if ($user_current == $user_id)
             {
-                return 'Re agendaste la asesoria, espera que tu asesor acepte o rechace la nueva fecha';
+                return 'Re agendaste la asesoria, espera que tu asesor acepte o rechace la nueva fecha, 
+                Si tu asesor no cambia el status tu asesoría se llevara acabo en la nueva fecha que elegiste';
             }else{
-                return 'Tu cliente Re-agendo la asesoria, acepta o rechaza la fecha, desde el botón de Re agendar';
+                return 'Tu cliente Re-agendo la asesoria, acepta o rechaza la fecha, desde el botón de Re agendar,
+                Si no actualizas el estatus el evento se llevara acabo en la nueva fecha solicitada por tu cliente';
             }
         case 4:
             if ($user_current == $user_id){
@@ -119,7 +121,13 @@ function legendsReschedule($reschedule)
             if ($user_current == $user_id) {
                 return 'Rechazaste la solicitud de tu cliente para Re agendar';
             } else {
-                return 'Tu solicitud fue rechazada por el asesor';
+                return 'Tu solicitud fue rechazada por el asesor, solicita la devolución de tu asesoria ';
+            }
+        case 6:
+            if ($user_current == $user_id) {
+                return 'Solicitaste la devolución de la asesoria';
+            } else {
+                return 'Tu cliente solicito la devolución de la asesoria ';
             }
         default:
             return null;

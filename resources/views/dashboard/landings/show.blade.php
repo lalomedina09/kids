@@ -14,8 +14,14 @@
                 class="nav-item nav-link {{ $p == $page ? 'active' : '' }}"
             >{{ $p }}</a>
         @endforeach
-
-
+        <a href="{{ route('dashboard.landings.custom.show', ['registro-qdplay-empresas']) }}"
+            class="nav-item nav-link {{ "registro-qdplay-empresas" == $page ? 'active' : '' }}">
+            Registro QD Play
+        </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['finanzas-personales-para-empleados']) }}"
+            class="nav-item nav-link {{ "finanzas-personales-para-empleados" == $page ? 'active' : '' }}">
+            Curso Finanzas Personales
+        </a>
     </ul>
 
     <div class="table-responsive">

@@ -210,8 +210,8 @@
             @auth
                 @if (getNotificationsMenu() > 0)
                     <li class="nav-item nav-item-search d-none d-sm-inline">
-                        <a href="{{route('notification.index')}}" id="nav--search">
-                            <img src="{{ asset('images/icons/notification-circle.png') }}" class="mb-5px" width="25px" alt="Notification Icon Alert">
+                        <a href="{{route('notification.index')}}" id="" >
+                            <img src="{{ asset('images/icons/notification-circle.png') }}" class="mb-5px"  alt="Notification Icon Alert" width="25px">
                         </a>
                     </li>
                 @else
