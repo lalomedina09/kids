@@ -46,7 +46,7 @@
             @endif
         </div>
 
-        <div class="col-12 padding-custom-regis-qdp text-left">
+        <div class="col-12 padding-custom-regis-qdp text-center mt-3 mb-3">
             <div class="g-recaptcha" data-theme="dark" data-sitekey="{{ config('money.recaptcha.key') }}"></div>
 
             @if ($errors->has('g-recaptcha-response'))
