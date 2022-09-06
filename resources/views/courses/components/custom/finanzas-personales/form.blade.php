@@ -32,7 +32,7 @@
 
         <div class="col-12 padding-custom-regis-qdp text-left">
             <label for="name" class="text-left">Celular:</label>
-            <input type="tel" name="movil" placeholder="Celular" class="form-control form-control-lg" required="required">
+            <input type="tel" name="movil" class="form-control form-control-lg" required="required">
             @if ($errors->has('movil'))
                 <span class="small text-danger">{{ $errors->first('movil') }}</span>
             @endif

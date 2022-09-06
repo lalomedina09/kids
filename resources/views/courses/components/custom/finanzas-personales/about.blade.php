@@ -8,7 +8,7 @@
             <div class="col-md-6 col-12 image-background mt-3" style="background-image: url(&#39;{{ asset('images/courses/finanzas-personales-empleados/pijama-sobre-curso.png') }}&#39;);">
                 <div class="row mt-5">
                     <div class="col-md-10 mb-5">
-                        <h2 class="mb-3 pt-3 text-left text-white font-weight-normal title-underline title-underline-b title-underline-left-black">
+                        <h2 class="mb-3 pt-3 text-white font-weight-normal title-underline title-underline-b title-underline-left-black banner-title-course">
                             <span class="font-weight-bold">Sobre este curso</span>
                         </h2>
                         <br>
@@ -33,7 +33,7 @@
                         <img src="{{ asset('images/courses/finanzas-personales-empleados/virtual.png') }}" alt="Curso Virtual" width="8%" class="img-movil-center">
                         <span class="font-weight-normal text-white">Virtual</span>
                         <br><br>
-                        <img src="{{ asset('images/courses/finanzas-personales-empleados/presencial.png') }}" alt="Curso Presencial" width="5%" class="img-movil-center" 
+                        <img src="{{ asset('images/courses/finanzas-personales-empleados/presencial.png') }}" alt="Curso Presencial" width="5%" class="img-movil-center"
                             style="margin-left: 7px; margin-right: 6px;">
                         <span class="font-weight-normal text-white">Presencial</span>
                     </div>
