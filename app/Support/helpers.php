@@ -98,28 +98,28 @@ function legendsReschedule($reschedule)
         case 2:
             if($user_current == $user_id)
             {
-                return 'Sugeriste a tu cliente cambiar la fecha de asesoría';
+                return 'Sugeriste a tu asesorado cambiar la fecha de asesoría';
             }else {
                 return 'Tu asesor te sugiere Re-agendar la asesoria, elige la nueva fecha desde el botón de Re agendar';
             }
         case 3:
             if ($user_current == $user_id)
             {
-                return 'Re agendaste la asesoria, espera que tu asesor acepte o rechace la nueva fecha, 
+                return 'Re agendaste la asesoria, espera que tu asesor acepte o rechace la nueva fecha,
                 Si tu asesor no cambia el status tu asesoría se llevara acabo en la nueva fecha que elegiste';
             }else{
-                return 'Tu cliente Re-agendo la asesoria, acepta o rechaza la fecha, desde el botón de Re agendar,
-                Si no actualizas el estatus el evento se llevara acabo en la nueva fecha solicitada por tu cliente';
+                return 'Tu asesorado Re-agendo la asesoria, acepta o rechaza la fecha, desde el botón de Re agendar,
+                Si no actualizas el estatus el evento se llevara acabo en la nueva fecha solicitada por tu asesorado';
             }
         case 4:
             if ($user_current == $user_id){
-                return 'Aprobabaste la nueva fecha que eligio tu cliente';
+                return 'Aprobabaste la nueva fecha que eligio tu asesorado';
             }else{
                 return 'Tu solicitud fue aprobada por tu asesor';
             }
         case 5:
             if ($user_current == $user_id) {
-                return 'Rechazaste la solicitud de tu cliente para Re agendar';
+                return 'Rechazaste la solicitud de tu asesorado para Re agendar';
             } else {
                 return 'Tu solicitud fue rechazada por el asesor, solicita la devolución de tu asesoria ';
             }
@@ -127,7 +127,7 @@ function legendsReschedule($reschedule)
             if ($user_current == $user_id) {
                 return 'Solicitaste la devolución de la asesoria';
             } else {
-                return 'Tu cliente solicito la devolución de la asesoria ';
+                return 'Tu asesorado solicito la devolución de la asesoria ';
             }
         default:
             return null;
@@ -135,7 +135,7 @@ function legendsReschedule($reschedule)
 }
 
 
-function getDateSpanish($date)
+function getDateSpanish($date, $time)
 {
     $newDate = Carbon::parse($date);
     $days = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado");
@@ -144,8 +144,14 @@ function getDateSpanish($date)
     $day = $days[($newDate->dayOfWeek)];
     $mes = $meses[($newDate->format('n')) - 1];
 
-    return $dateFormat = $day.', '.$newDate->format('d') . ' de ' . $mes . ' de ' . $newDate->format('Y');
+    $_date = $day . ', ' . $newDate->format('d') . ' de ' . $mes . ' de ' . $newDate->format('Y');
+    $getTime = $newDate->format('g:i A');
 
+    if($time){
+        return $_date.' a las '.$getTime;
+    }else{
+        return $_date;
+    }
 }
 
 function divDate($date, $type)
@@ -156,4 +162,9 @@ function divDate($date, $type)
     }else{
         return $date[1];
     }
+}
+
+function getMyAdvices()
+{
+    return 12;
 }

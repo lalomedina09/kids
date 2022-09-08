@@ -10,7 +10,7 @@
             <p style="margin-bottom:10px; text-align:left;">
                 Tu cliente <b>{{ $user->fullname }}</b>
                 <br><br>
-                Solicito reagendar la asesoria a la nueva fecha {{ $newReschedule->new_date }}
+                Solicito reagendar la asesoria a la nueva fecha {{ getDateSpanish($newReschedule->new_date, $time=true) }}
 
                 <br>
                 El motivo para reagendar la asesoria es el siguiente

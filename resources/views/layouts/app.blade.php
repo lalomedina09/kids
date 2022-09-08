@@ -14,5 +14,5 @@
 
 @include('partials.main.scripts')
 @include('partials.main.messages')
-
+@include('partials.modals.adviceStatus')
 @endsection

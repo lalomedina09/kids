@@ -7,7 +7,7 @@
         <!--</a>-->
     @else
     <!-- No Leido -->
-        <a href="#" class="btn btn-danger mt-3" onclick="updateStatusNotification({{ $item->id }}, 1)" title="Marcar como leido" >
+        <a href="#" class="btn btn-dark btn-pill btn-xs mt-3" onclick="updateStatusNotification({{ $item->id }}, 1)" title="Marcar como leido" >
             Marcar como leido
             <!--<i class="lni lni-smile" style="margin-top: 45%; font-size: 40px; font-weight: 900;"></i>-->
         </a>

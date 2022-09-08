@@ -311,6 +311,10 @@ Route::prefix('notifications')
     Route::post('/updateStatus')
         ->uses('NotificationController@updateStatus')
         ->name('notification.update.status');
+
+    Route::post('/adviseds')
+        ->uses('NotificationController@adviseds')
+        ->name('notification.get.adviseds');
     /*
     Route::get('ver/{video}')
         ->uses('PreQdPlayCourseController@show')
