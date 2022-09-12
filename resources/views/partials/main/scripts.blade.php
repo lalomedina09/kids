@@ -88,28 +88,7 @@
 
 @auth
     <script type="text/javascript" src="{{ asset('js/notifications/get_advices.js') }}"></script>
-    <script>
-        /*
-        $(document).ready(function () {
-
-            let url = '/notifications/advices';
-            let token = $('#token').val();
-            //console.log('empieza a buscar asesorias');
-            $.post(url, {
-                    _token: token
-                    //id: id,
-                    //status: status,
-                },
-                function(data) {
-                    console.log(data);
-                    //$("#not_item_" + id).empty();
-                    //$("#not_item_" + id).html(data.view);
-                    //console.log('debio agregar la info al interior deldiv');
-                    console.log('cacacacasadododod');
-                    //$('#getAdvicesPending').modal('toggle')
-                });
-        });*/
-    </script>
+    <script type="text/javascript" src="{{ asset('js/reschedules/main.js') }}"></script>
 @endauth
 
 @stack('scripts')

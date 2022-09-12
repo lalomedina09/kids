@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reschedule;
 use App\Models\Notification;
 use QD\Advice\Models\Advice;
 use QD\Marketplace\Models\{Order, OrderItem};
@@ -37,30 +38,24 @@ class NotificationController extends Controller
 
     public function adviseds(Request $request)
     {
-        #$pre_show = $this->getSessionModalAdviseds();
-
         $user = $request->user();
         $now = Date::now();
         $typeUser = (Auth::user()->hasProfileRoles()) ? 'advisor_id' : 'advised_id' ;
         $fileModal = (Auth::user()->hasProfileRoles()) ? 'content_advisor' : 'content_advised';
 
         $advice = $this->getAdvisedCurrent($typeUser, $user, $now);
+        $reschedule = $this->searchReschedule($advice);
+
         $paid = ($advice) ? $this->getStatusPaid($advice->id) : false ;
         $show = ($paid) ? true : false ;
 
         if($show){
-            //dd('Es verdadero y mostramos la ventana modal');
-            //Buscamos si la ventana modal ya la mostramos
-            #$searchModalShow = $this->getSessionModalAdviseds($advice);
             $show = ($this->getSessionModalAdviseds($advice) == false) ? true : false ;
-            //dd($this->getSessionModalAdviseds($advice));
         }else{
             $show = false;
         }
 
-        //dd($show, $session);
-
-        $view = view('partials.modals.advice.'.$fileModal, compact('paid', 'advice', 'user'))->render();
+        $view = view('partials.modals.advice.'.$fileModal, compact('paid', 'advice', 'user', 'reschedule'))->render();
         return response()->json([
             'view' => $view,
             'show' => $show
@@ -88,9 +83,8 @@ class NotificationController extends Controller
     private function getSessionModalAdviseds($advice)
     {
         $nameModal = 'modal_advice_'.$advice->id;
-        Session::forget($nameModal);
         $get_data = (session()->has($nameModal)) ? true : false ;
-
+        Session::forget($nameModal);
         if($get_data == false)
         {
             $set_session = Session::put($nameModal, true);
@@ -100,5 +94,14 @@ class NotificationController extends Controller
             return true;
         }
 
+    }
+
+    private function searchReschedule($advice)
+    {
+        if ($advice) {
+            return $reschedule = Reschedule::where('advice_id', $advice->id)->orderBy('id', 'desc')->first();
+        }else{
+            $reschedule = null;
+        }
     }
 }

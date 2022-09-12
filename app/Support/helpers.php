@@ -98,9 +98,9 @@ function legendsReschedule($reschedule)
         case 2:
             if($user_current == $user_id)
             {
-                return 'Sugeriste a tu asesorado cambiar la fecha de asesoría';
-            }else {
                 return 'Tu asesor te sugiere Re-agendar la asesoria, elige la nueva fecha desde el botón de Re agendar';
+            }else {
+                return 'Sugeriste a tu asesorado cambiar la fecha de asesoría';
             }
         case 3:
             if ($user_current == $user_id)
@@ -113,21 +113,27 @@ function legendsReschedule($reschedule)
             }
         case 4:
             if ($user_current == $user_id){
-                return 'Aprobabaste la nueva fecha que eligio tu asesorado';
-            }else{
                 return 'Tu solicitud fue aprobada por tu asesor';
+            }else{
+                return 'Aprobabaste la nueva fecha que eligio tu asesorado';
             }
         case 5:
             if ($user_current == $user_id) {
-                return 'Rechazaste la solicitud de tu asesorado para Re agendar';
+                return 'Tu solicitud fue rechazada por el asesor, revisa las políticas de devoluciones y solicita la devolución de tu asesoría ';
             } else {
-                return 'Tu solicitud fue rechazada por el asesor, solicita la devolución de tu asesoria ';
+                return 'Rechazaste la solicitud de tu asesorado para Re agendar';
             }
         case 6:
             if ($user_current == $user_id) {
                 return 'Solicitaste la devolución de la asesoria';
             } else {
                 return 'Tu asesorado solicito la devolución de la asesoria ';
+            }
+        case 7:
+            if ($user_current == $user_id) {
+                return 'Asesor hizo reporte que no llegaste a la asesoría y ya no esta disponible para reagendar';
+            } else {
+                return 'Asesorado no se presento y bloqueaste la opcion de re agendar';
             }
         default:
             return null;

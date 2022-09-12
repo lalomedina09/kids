@@ -333,6 +333,26 @@ Route::prefix('notifications')
 
 /*
 |--------------------------------------------------------------------------
+| Reschedules
+|--------------------------------------------------------------------------
+*/
+Route::prefix('reschedules')
+    ->group(function () {
+    Route::post('/show-modal/block')
+        ->uses('ReschedulesController@modalBlockReschedule')
+        ->name('reschedules.modal.block')
+        ->middleware(['auth']);
+
+    Route::post('/show-modal/block/store')
+        ->uses('ReschedulesController@storeBlockReschedule')
+        ->name('reschedules.modal.block.store')
+        ->middleware(['auth']);
+    });
+
+
+
+/*
+|--------------------------------------------------------------------------
 | QD-PLAY Promotions
 |--------------------------------------------------------------------------
 */
