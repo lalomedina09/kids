@@ -29,7 +29,7 @@ class QdplayResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = 'password/qdplay/send/reset';
 
     /**
      * Create a new controller instance.
@@ -85,7 +85,7 @@ class QdplayResetPasswordController extends Controller
 
         DB::table('password_resets')->where(['email' => $request->email])->delete();
 
-        return redirect('password/qdplay/send/reset');
+        return redirect('/');
     }
 
     public function resetSendSuccess()
