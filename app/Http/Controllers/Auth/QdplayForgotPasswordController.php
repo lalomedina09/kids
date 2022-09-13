@@ -63,7 +63,7 @@ class QdplayForgotPasswordController extends Controller
 
         Mail::to($user->email)->send(new QdplayCustomResetPasswordEmail($user, $token));
 
-        return redirect('/')->with('status', 'Correo de recuperacion enviado correctamente');
+        return redirect('/qdplay/send/reset');
     }
 
 }
