@@ -124,6 +124,10 @@ Route::prefix('password')
 
         Route::post('/qdplay/reset')
             ->uses('QdplayResetPasswordController@reset');
+
+        Route::get('/qdplay/send/reset')
+            ->uses('QdplayResetPasswordController@resetSendSuccess')
+            ->name('password.qdplay.reset.send');
     });
 
 /*

@@ -6,9 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use App\Models\User;
-#use Illuminate\Support\Str;
-#use Carbon\Carbon;
-#use Mail;
 use Hash;
 use DB;
 
@@ -88,6 +85,11 @@ class QdplayResetPasswordController extends Controller
 
         DB::table('password_resets')->where(['email' => $request->email])->delete();
 
-        return redirect('/')->with('status', 'Tu password ha sido actualizado con exito!');
+        return redirect('password/qdplay/send/reset');
+    }
+
+    public function resetSendSuccess()
+    {
+        return view('auth.qdplay.password.resetMsgSucees');
     }
 }

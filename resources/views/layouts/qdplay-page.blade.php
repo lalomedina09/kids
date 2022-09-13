@@ -1,6 +1,7 @@
 @extends('layouts.qdplay.app')
 
 @section('content')
+
 <style>
     .bg-green-blue {
         bagkground-color: #90d06b;
