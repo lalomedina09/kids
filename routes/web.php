@@ -42,6 +42,7 @@ Route::get('i18n')
 Route::prefix('iniciar-sesion')
     ->namespace('Auth')
     ->group(function () {
+        //login QD
         Route::get('/')
             ->uses('LoginController@showLoginForm')
             ->name('login');
@@ -49,6 +50,18 @@ Route::prefix('iniciar-sesion')
         Route::post('/')
             ->uses('LoginController@login');
     });
+
+Route::prefix('qdplay-login')
+->namespace('Auth')
+->group(function () {
+    //login QD Play
+    Route::get('/')
+        ->uses('QdplayLoginController@showLoginForm')
+        ->name('qdplay-login');
+
+    Route::post('/')
+        ->uses('LoginController@login');
+});
 
 Route::any('cerrar-sesion')
     ->uses('Auth\LoginController@logout')
@@ -96,7 +109,7 @@ Route::prefix('password')
         Route::post('/reset')
             ->uses('ResetPasswordController@reset');
 
-        //- - - - - - - - - - - - - - - - QD P L A Y- - - - - - - - - - - - - - - - - //
+        //QD Play
         Route::get('/qdplay/reset')
             ->uses('QdplayForgotPasswordController@showLinkRequestForm')
             ->name('password.qdplay.request');

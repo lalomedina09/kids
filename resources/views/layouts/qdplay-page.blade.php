@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.qdplay.app')
 
 @section('content')
 <style>
