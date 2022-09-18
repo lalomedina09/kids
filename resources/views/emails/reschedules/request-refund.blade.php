@@ -6,20 +6,23 @@
     <tr>
         <td colspan=2 style="vertical-align:middle;text-align:center;">
             <p style="margin-bottom:10px; text-align:left;">¡Hola!
-                <br>el asesorado {{ $advice->advised->present()->fullname }}
+                <br>El asesorado <b>{{ $advice->advised->present()->fullname }}</b>
             </p>
 
             <p style="margin-bottom:10px; text-align:left;">
                 {{ $dataNotification['description'] }}
             </p>
 
-            <p style="text-align:center;margin-bottom:40px;">
-                <a href="{{ url('/perfil#asesorias') }}"
-                    style="font-weight:bold;color:white;background-color:#0e0d0d;padding:15px 30px;display:inline-block;text-decoration:none;border-radius:5px;">
-                    Ir a mi perfil
-                </a>
+            <p style="margin-bottom:10px; text-align:left;">
+                La siguiente Orden de compra : <b>{{ $refund->order_id }} </b> esta relacionada a la asesoria que se le solicita la devolución
             </p>
 
+            <p style="text-align:center;margin-bottom:40px;">
+                <a href="{{ url('/dashboard/marketplace/orders/'. $refund->order_id) }}"
+                    style="font-weight:bold;color:white;background-color:#0e0d0d;padding:15px 30px;display:inline-block;text-decoration:none;border-radius:5px;">
+                    Ver orden de compra
+                </a>
+            </p>
         </td>
 
         <tr height="20px"></tr>
@@ -28,10 +31,6 @@
         </tr>
         <tr height="20px"></tr>
 
-        <!--<td colspan=2 style="vertical-align:middle;text-align:center;">
-            <p style="margin-bottom:10px;">Si tienes problemas dando clic en el botón, copia y pega esta URL en tu navegador:</p>
-            <p>{{ url('/perfil#asesorias') }}</p>
-        </td>-->
     </tr>
 @endsection
 

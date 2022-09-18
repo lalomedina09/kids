@@ -29,9 +29,9 @@ class Mailer
         Mail::send(new NotificationStatusReschedule($dataNotification, $user, $newReschedule));
     }
 
-    public static function createNotificationRefund($dataNotification, $advice, $user)
+    public static function createNotificationRefund($dataNotification, $advice, $user, $refund)
     {
-        Mail::send(new NotificationRefundReschedule($dataNotification, $advice, $user));
+        Mail::send(new NotificationRefundReschedule($dataNotification, $advice, $user, $refund));
     }
 
     public static function sendMailNotificationBlockReschedule($dataNotification, $advice)

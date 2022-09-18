@@ -22,3 +22,20 @@
         </a>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <p class="small text-danger text-center">
+            ¿Tu asesor no se presentó a la asesoría? <br>
+            <span class="text-white">
+                De acuerdo con <b>nuestras políticas</b>, sí te presentaste a la asesoría y tu asesor no se
+                presentó es tu <b>derecho de solicitar</b> una devolución.
+            </span>
+        </p>
+        <a href="{{ route('qd.advice.advice.refund.index', [$advice->hashid]) }}"
+            class="btn btn-pill btn-white animated tada mb-3"
+            target="_blank">
+            Solicitar devolución
+        </a>
+    </div>
+</div>

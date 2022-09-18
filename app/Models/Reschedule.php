@@ -68,7 +68,9 @@ class Reschedule extends Model
         4 => 'Aprobada',
         5 => 'Rechazada',
         6 => 'Reembolso',
-        7 => 'Asesorado No se presento',
+        7 => 'Asesor Bloquea Reagendar',
+        8 => 'After Asesoria Asesor Quiere ofrecer Reagendar',
+        9 => 'After Asesoria Asesor Envio Propuesta Reagendar',
     ];
     //Status = 7 = Asesorado no se presento y asesor hizo cliek en no quiero reagendar
     public const TYPEUSER = [

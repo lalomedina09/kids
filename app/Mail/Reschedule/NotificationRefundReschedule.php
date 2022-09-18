@@ -13,17 +13,19 @@ class NotificationRefundReschedule extends Mailable
     protected $dataNotification;
     protected $user;
     protected $advice;
+    protected $refund;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($dataNotification, $advice, $user)
+    public function __construct($dataNotification, $advice, $user, $refund)
     {
         $this->dataNotification = $dataNotification;
         $this->user = $user;
         $this->advice = $advice;
+        $this->refund = $refund;
     }
 
     /**
@@ -42,7 +44,8 @@ class NotificationRefundReschedule extends Mailable
             ->with([
                 'dataNotification' => $this->dataNotification,
                 'user' => $this->user,
-                'advice' => $this->advice
+                'advice' => $this->advice,
+                'refund' => $this->refund
             ]);
     }
 }

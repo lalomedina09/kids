@@ -36,7 +36,7 @@
         <p class="small text-danger">
             ¿Deseas ofrecer la opción de reagendar? <br>
         </p>
-        <a href="{{ route('qd.advice.advice.reschedule.request', [$advice->hashid]) }}" class="btn btn btn-pill btn-danger mr-5">
+        <a href="{{ route('qd.advice.advice.reschedule.after.option.reschedule', [$advice->hashid]) }}" class="btn btn btn-pill btn-danger mr-5">
             Si
         </a>
         <button  class="btn btn btn-pill btn-white" onclick="AdvisorBlockReschedule({{$advice->id}});">

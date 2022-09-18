@@ -47,6 +47,7 @@ class NotificationController extends Controller
         $reschedule = $this->searchReschedule($advice);
 
         $paid = ($advice) ? $this->getStatusPaid($advice->id) : false ;
+
         $show = ($paid) ? true : false ;
 
         if($show){
@@ -54,7 +55,6 @@ class NotificationController extends Controller
         }else{
             $show = false;
         }
-
         $view = view('partials.modals.advice.'.$fileModal, compact('paid', 'advice', 'user', 'reschedule'))->render();
         return response()->json([
             'view' => $view,
@@ -65,8 +65,7 @@ class NotificationController extends Controller
     private function getStatusPaid($advice_id)
     {
         $orderItem = OrderItem::where('itemable_type', "advice")->where('itemable_id', $advice_id)->first();
-        $order = Order::where('id', $orderItem->id)->where('status', "order.paid")->first();
-
+        $order = Order::where('id', $orderItem->order_id)->where('status', "order.paid")->first();
         return $status = ($order) ? true : false ;
     }
 
@@ -84,7 +83,7 @@ class NotificationController extends Controller
     {
         $nameModal = 'modal_advice_'.$advice->id;
         $get_data = (session()->has($nameModal)) ? true : false ;
-        //Session::forget($nameModal);
+        Session::forget($nameModal);
         if($get_data == false)
         {
             $set_session = Session::put($nameModal, true);
