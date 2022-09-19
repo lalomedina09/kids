@@ -18,7 +18,11 @@
 
         <a href="{{ route('dashboard.landings.custom.show', ['registro-qdplay-empresas']) }}"
             class="nav-item nav-link">
-            Registro QD Play
+            Registro QD Play Empresas
+        </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['registro-qdplay-personas-fisicas']) }}"
+            class="nav-item nav-link">
+            Registro QD Play Personas Fis..
         </a>
         <a href="{{ route('dashboard.landings.custom.show', ['finanzas-personales-para-empleados']) }}"
             class="nav-item nav-link">
