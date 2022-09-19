@@ -10,19 +10,16 @@
 
 @section('content')
 
-    @include('landings.components.register-qdplay.styles')
-
     <!-- estilo utilizado para las landings relacionadas a qdplay -->
     <link href="{{asset('index_files/etapa1.css')}}" rel="stylesheet">
     <link href="{{asset('index_files/app.css')}}" rel="stylesheet">
+    @include('landings.components.register-qdplay-personas-fisicas.styles')
 
-    @include('landings.components.register-qdplay.banner')
+    @include('landings.components.register-qdplay-personas-fisicas.banner')
 
-    @include('landings.components.register-qdplay.benefits')
+    @include('landings.components.register-qdplay-personas-fisicas.benefits')
 
-    @include('landings.components.register-qdplay.companies')
-
-    @include('landings.components.register-qdplay.ilustration')
+    @include('landings.components.register-qdplay-personas-fisicas.ilustration')
 
 @endsection
 
