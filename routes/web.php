@@ -194,6 +194,16 @@ Route::prefix('/registro-qdplay-empresas')
     ->name('register.qdplay.store');
 });
 
+Route::prefix('/registro-qdplay-personas-fisicas')
+->group(function () {
+    Route::get('/')
+        ->uses('Landing\QdplayPersonasFisicasController@show')
+        ->name('register.qdplay.personas.fisicas.show');
+
+    Route::post('/')
+        ->uses('Landing\QdplayPersonasFisicasController@store')
+        ->name('register.qdplay.personas.fisicas.store');
+});
 /*
 |--------------------------------------------------------------------------
 | Articles
