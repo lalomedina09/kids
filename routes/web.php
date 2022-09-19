@@ -194,7 +194,7 @@ Route::prefix('/registro-qdplay-empresas')
     ->name('register.qdplay.store');
 });
 
-Route::prefix('/registro-qdplay-personas-fisicas')
+Route::prefix('/registro-qdplay-individual')
 ->group(function () {
     Route::get('/')
         ->uses('Landing\QdplayPersonasFisicasController@show')
