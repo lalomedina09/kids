@@ -1,7 +1,10 @@
 <div class="image-background mb-5 p-3">
     <div class="container text-center">
         <section>
-            <h1 class="mb-5 pt-3 text-center font-weight-normal title-underline title-underline-b">Beneficios para <span class="font-weight-bold">tu empresa</span></h1>
+            <h1 class="mb-5 pt-3 text-center font-weight-normal title-underline title-underline-b">
+                Aprende a administrar las finanzas personales desde cero, <br>
+                 <span class="font-weight-bold">no necesitas conocimientos previos</span>
+            </h1>
 
             <div class="row pb-3">
                 <div class="col-md-4 col-sm-6 col-12">
