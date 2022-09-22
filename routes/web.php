@@ -23,6 +23,11 @@ Route::any('test')
     ->uses('HomeController@test')
     ->name('test');
 
+//ruta de prueba antes de integrar con el paquete de asesorias
+Route::get('test/service/calendar')
+    ->uses('TestingController@dispatchService')
+    ->name('qdplay.show');
+
 /*
 |--------------------------------------------------------------------------
 | Localization
