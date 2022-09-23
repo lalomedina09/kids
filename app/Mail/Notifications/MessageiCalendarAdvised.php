@@ -27,7 +27,7 @@ class MessageiCalendarAdvised extends Mailable
     {
         return $this->to($this->userEmail)
             ->subject("Querido Dinero - Asesoría Programada #ID" . $this->advice->id)
-            ->markdown('emails.Calendar.invite')
+            ->markdown('emails.calendar.invite')
             ->attachData($this->calendar->get(), 'invite.ics', [
                 'mime' => 'text/calendar; charset=UTF-8; method=REQUEST',
             ]);

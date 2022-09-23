@@ -11,10 +11,11 @@ class TestingController extends Controller
     //
     public function dispatchService()
     {
-        //Ejemplo para iniciar servicio
-        $user = User::where('id', 14542)->first();
+        //Inicializamos el servicio
         $advice = Advice::where('id', 569)->first();
+        #dd($advice->duration);
+        #dd($advice->advised->email);
 
-        $calendar = new CalendarService($advice, $user);
+        $calendar = new CalendarService($advice);
     }
 }

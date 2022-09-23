@@ -18,7 +18,7 @@
         <meta itemprop="addressLocality" content="San Francisco"/>
         <meta itemprop="addressRegion" content="CA"/>
         <meta itemprop="postalCode" content="94107"/>
-        <meta itemprop="addressCountry" content="US"/>
+        <meta itemprop="addressCountry" content="MX"/>
       </div>
     </div>
   </div>
