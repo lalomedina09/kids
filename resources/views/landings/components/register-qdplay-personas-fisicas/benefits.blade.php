@@ -3,7 +3,7 @@
         <section>
             <h1 class="mb-5 pt-3 text-center font-weight-normal title-underline title-underline-b">
                 Aprende a administrar las finanzas personales desde cero, <br>
-                 <span class="font-weight-bold">no necesitas conocimientos previos</span>
+                <span class="font-weight-bold">no necesitas conocimientos previos</span>
             </h1>
 
             <div class="row pb-3">
