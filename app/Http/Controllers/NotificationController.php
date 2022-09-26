@@ -42,6 +42,7 @@ class NotificationController extends Controller
         $now = Date::now();
         $typeUser = (Auth::user()->hasProfileRoles()) ? 'advisor_id' : 'advised_id' ;
         $fileModal = (Auth::user()->hasProfileRoles()) ? 'content_advisor' : 'content_advised';
+        $msjConsole = null;
 
         $advice = $this->getAdvisedCurrent($typeUser, $user, $now);
         $reschedule = $this->searchReschedule($advice);
@@ -52,13 +53,16 @@ class NotificationController extends Controller
 
         if($show){
             $show = ($this->getSessionModalAdviseds($advice) == false) ? true : false ;
+            //$msjConsole = "Busco session",
         }else{
+            //$msjConsole = "Busco session",
             $show = false;
         }
         $view = view('partials.modals.advice.'.$fileModal, compact('paid', 'advice', 'user', 'reschedule'))->render();
         return response()->json([
             'view' => $view,
-            'show' => $show
+            'show' => $show,
+            'msjConsole' => $msjConsole,
         ]);
     }
 
