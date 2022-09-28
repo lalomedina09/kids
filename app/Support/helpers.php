@@ -174,3 +174,21 @@ function getMyAdvices()
 {
     return 12;
 }
+
+function showBtnVideoCall($_start, $_end)
+{
+    $start = Carbon::parse($_start);
+    $end = Carbon::parse($_end);
+
+    $now = Carbon::now();
+    $nowSub = Carbon::now()->subMinutes(10);
+    $nowAdd = Carbon::now()->addMinutes(10);
+
+    if($start->format('Y-m-d') == $now->format('Y-m-d')){
+        if($nowSub < $end){
+            return true;
+        }
+    }else{
+        return false;
+    }
+}

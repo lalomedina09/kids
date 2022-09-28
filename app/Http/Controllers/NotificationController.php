@@ -53,9 +53,9 @@ class NotificationController extends Controller
 
         if($show){
             $show = ($this->getSessionModalAdviseds($advice) == false) ? true : false ;
-            //$msjConsole = "Busco session",
+            $msjConsole = "Encontro asesoria pagada , Busco si ya mostro la ventana modal, si encuentra una session entonces no mostrara";
         }else{
-            //$msjConsole = "Busco session",
+            $msjConsole = "No encontro asesoria pagada -- asesoria:" . $advice;
             $show = false;
         }
         $view = view('partials.modals.advice.'.$fileModal, compact('paid', 'advice', 'user', 'reschedule'))->render();

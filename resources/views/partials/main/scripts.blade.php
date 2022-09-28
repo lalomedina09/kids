@@ -89,6 +89,7 @@
 @auth
     <script type="text/javascript" src="{{ asset('js/notifications/get_advices.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/reschedules/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/advices/userConnected.js') }}"></script>
 @endauth
 
 @stack('scripts')

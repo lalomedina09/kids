@@ -11,7 +11,8 @@
 </div>
 <div class="row">
     <div class="col-md-12 text-center">
-        <a href="{{ $advice->videocall_url }}" class="btn btn-pill btn-danger animated tada" title="{{ $advice->videocall_url }}">
+        <!-- href="{{-- $advice->videocall_url --}}" -->
+        <a href="#" onclick="registerUserConnected('{{$advice->id}}', '{{$advice->videocall_url}}');" class="btn btn-pill btn-danger animated tada" title="{{ $advice->videocall_url }}">
             Unirme a la asesoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
         </a>
     </div>
