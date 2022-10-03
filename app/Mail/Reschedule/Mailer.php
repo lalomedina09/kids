@@ -29,7 +29,7 @@ class Mailer
         Mail::send(new NotificationStatusReschedule($dataNotification, $user, $newReschedule));
     }
 
-    public static function createNotificationRefund($dataNotification, $advice, $user, $refund)
+    public static function createNotificationStaffRefund($dataNotification, $advice, $user, $refund)
     {
         Mail::send(new NotificationRefundReschedule($dataNotification, $advice, $user, $refund));
     }
@@ -38,10 +38,9 @@ class Mailer
     {
         Mail::send(new NotificationBlockReschedule($dataNotification, $advice));
     }
-    /*
-    public static function sendUnsubscriptionMail($newsletter)
+
+    public static function createNotificationAdvisorRefund($dataNotification, $advice)
     {
-        $mailable = new Unsubscribe($newsletter);
-        Mail::queue($mailable);
-    }*/
+        Mail::send(new NotificationAdvisorRefundReschedule($dataNotification, $advice));
+    }
 }

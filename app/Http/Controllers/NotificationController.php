@@ -87,11 +87,11 @@ class NotificationController extends Controller
     {
         $nameModal = 'modal_advice_'.$advice->id;
         $get_data = (session()->has($nameModal)) ? true : false ;
-        Session::forget($nameModal);
         if($get_data == false)
         {
             $set_session = Session::put($nameModal, true);
             $get = Session::get($nameModal);
+            Session::forget($nameModal);
             return false;
         }else{
             return true;

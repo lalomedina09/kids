@@ -63,12 +63,33 @@
                     @break
                 @case(7)
                     <p class="small mb-1 text-center">
-                        Hola bloqueaste la opcion de reagendar a tu asesorado {{ $advice->advised->fullname }}
+                        Hola bloqueaste la opcion de reagendar a tu asesorado <span class="text-danger">{{ $advice->advised->fullname }}</span>
                         para llevar acabo esta asesoría
                     </p>
                     @break
+                @case(8)
+                    <p class="small mb-1 text-center">
+                        ¿Tienes pensado ofrecer la oportunidad de reagendar la asesoría a
+                        <span class="text-danger">
+                            {{ $advice->advised->fullname }}
+                        </span> ?
+                    </p>
+                    <a href="{{ route('qd.advice.advice.reschedule.after.option.reschedule', [$advice->hashid]) }}" class="btn btn btn-pill btn-danger mr-5">
+                        Ofrecer reagendar
+                    </a>
+                    @break
+                @case(9)
+                    <p class="small mb-1 text-center">
+                        Le enviaste la opción de reagendar asesoría a tu asesorado
+                        <span class="text-danger">
+                            {{ $advice->advised->fullname }}
+                        </span>
+                        <span class="text-danger"> espera que elija </span> una nueva fecha
+                    </p>
+                    @break
+                <!-- por default llego en las acciones del asesor -->
                 @default
-                        <!--  default -->
+                <!--  default -->
             @endswitch
         </div>
     </div>

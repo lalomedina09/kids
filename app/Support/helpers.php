@@ -177,17 +177,40 @@ function getMyAdvices()
 
 function showBtnVideoCall($_start, $_end)
 {
-    $start = Carbon::parse($_start);
+    $start = Carbon::parse($_start)->subMinutes(15);
     $end = Carbon::parse($_end);
 
-    $now = Carbon::now();
-    $nowSub = Carbon::now()->subMinutes(10);
-    $nowAdd = Carbon::now()->addMinutes(10);
+    $current = Carbon::now();
+    $nowSub = Carbon::now();
+    #->subMinutes(10);
+    $nowAdd = Carbon::now();
+    #->addMinutes(10);
 
-    if($start->format('Y-m-d') == $now->format('Y-m-d')){
-        if($nowSub < $end){
+    if($start->format('Y-m-d') == $current->format('Y-m-d')){
+        if($current >= $start){
             return true;
+        }else{
+            return false;
         }
+    }
+}
+
+function getSubMinutesTime($date)
+{
+    $hour = Carbon::parse($date)->subMinutes(15)->format('H:i A');
+    return $hour;
+}
+
+function diferenceHoursStartToCurrent($date, $hours)
+{
+    $now = Carbon::now();
+    $date = Carbon::parse($date);
+
+    $hoursDiff = $date->diffInHours($now);
+
+    if($hoursDiff >= $hours)
+    {
+        return true;
     }else{
         return false;
     }
