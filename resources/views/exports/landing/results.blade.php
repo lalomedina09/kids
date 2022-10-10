@@ -24,7 +24,9 @@
                     <span class="badge badge-danger">No sincronizado</span>
                 @endif
             </td>
-            <td></td>
+            <td>
+                {{ $result->created_at }}
+            </td>
         </tr>
     @endforeach
     </tbody>
