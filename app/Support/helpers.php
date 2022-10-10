@@ -105,7 +105,7 @@ function legendsReschedule($reschedule)
         case 3:
             if ($user_current == $user_id)
             {
-                return 'Re agendaste la asesoria, espera que tu asesor acepte o rechace la nueva fecha, 
+                return 'Re agendaste la asesoria, espera que tu asesor acepte o rechace la nueva fecha,
                 Si tu asesor no cambia el status tu asesoría se llevara acabo en la nueva fecha que elegiste';
             }else{
                 return 'Tu cliente Re-agendo la asesoria, acepta o rechaza la fecha, desde el botón de Re agendar,
@@ -156,4 +156,9 @@ function divDate($date, $type)
     }else{
         return $date[1];
     }
+}
+
+function onlyDate($date)
+{
+    return $newFormat = Carbon::parse($date)->format('Y-m-d');
 }

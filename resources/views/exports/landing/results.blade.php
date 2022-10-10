@@ -25,7 +25,7 @@
                 @endif
             </td>
             <td>
-                {{ $result->created_at }}
+                {{ onlyDate($result->created_at) }}
             </td>
         </tr>
     @endforeach
