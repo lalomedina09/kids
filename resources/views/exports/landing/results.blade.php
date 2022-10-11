@@ -5,7 +5,9 @@
             <th>{{ $field }}</th>
         @endforeach
         <th>Estado</th>
-        <th>Fecha Registro</th>
+        <th>Año de registro</th>
+        <th>Mes de registro</th>
+        <th>Día de registro</th>
     </tr>
     </thead>
     <tbody>
@@ -24,9 +26,9 @@
                     <span class="badge badge-danger">No sincronizado</span>
                 @endif
             </td>
-            <td>
-                {{ onlyDate($result->created_at) }}
-            </td>
+            <td>{!! date('Y', strtotime($result->created_at)) !!}</td>
+            <td>{!! date('M', strtotime($result->created_at)) !!}</td>
+            <td>{!! date('d', strtotime($result->created_at)) !!}</td>
         </tr>
     @endforeach
     </tbody>
