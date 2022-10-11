@@ -7,7 +7,9 @@
         <th>Celular</th>
         <th>Empresa</th>
         <th>Formulario</th>
-        <th>Fecha Registro</th>
+        <th>Año de registro</th>
+        <th>Mes de registro</th>
+        <th>Día de registro</th>
     </tr>
     </thead>
     <tbody>
@@ -19,7 +21,9 @@
             <td>{{ $lead->movil }}</td>
             <td>{{ $lead->company }}</td>
             <td>{{ $lead->form }}</td>
-            <td>{{ $lead->created_at }}</td>
+            <td>{!! date('Y', strtotime($lead->created_at)) !!}</td>
+            <td>{!! date('M', strtotime($lead->created_at)) !!}</td>
+            <td>{!! date('d', strtotime($lead->created_at)) !!}</td>
         </tr>
     @endforeach
     </tbody>
