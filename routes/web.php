@@ -142,7 +142,9 @@ Route::prefix('password')
 */
 
 Route::get('/')
-    ->uses('HomeController@index')
+    #->uses('HomeController@index')
+    #->name('home');
+    ->uses('HomeController@blog')
     ->name('home');
 
 Route::get('/busqueda')

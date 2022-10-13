@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\{ Category, Course, Podcast, Search, Video };
+use App\Models\{ Category, Course, Podcast, Search, Video, Article};
 
 class SearchController extends Controller
 {
@@ -23,11 +23,10 @@ class SearchController extends Controller
     public function index(Request $request)
     {
         $search_query = ($request->input('q', '')) ?: '';
-        $search_category = ($request->filled('c')) ? $request->input('c') : null;
+        $search_category = ($request->filled('category')) ? $request->input('category') : null;
 
         $articles_by_category_closure = function ($query) use ($search_query) {
-            $query->recent()
-                ->fullTextSearch($search_query);
+            $query->recent()->fullTextSearch('a');
         };
 
         $category_closure = function ($category_query) use ($search_category) {
@@ -38,10 +37,24 @@ class SearchController extends Controller
             $query->whereHas('categories', $category_closure);
         };
 
-        $articles = Category::whereHas('articles', $articles_by_category_closure)
-            ->with(['articles' => $articles_by_category_closure])
-            ->when($search_category, $category_closure)
-            ->get();
+        if($search_category != null && $search_query == ''){
+            $category = Category::where('slug', $search_category)->firstOrFail();
+            //Query temporal para que funcione el buscador de inicio blog pero hay que modificarlo
+            //porque no es lo optimo 13 e oct del 2022
+            $articles = Article::getCategories()->where('slug', $search_category)
+            ->each(function ($category) {
+                $category->load(['articles' => function ($query) {
+                    return $query->recent()
+                        ->select('id', 'title', 'slug', 'author_id', 'published_at', 'updated_at')
+                        ->limit(12);
+                }]);
+            });
+        }else{
+            $articles = Category::whereHas('articles', $articles_by_category_closure)
+                ->with(['articles' => $articles_by_category_closure])
+                ->when($search_category, $category_closure)
+                ->get();
+        }
 
         $podcasts = Podcast::when($search_category, $search_category_closure)
             ->recent()
@@ -55,11 +68,11 @@ class SearchController extends Controller
 
         $courses = Course::fullTextSearch($search_query)
             ->get();
-
+        //dd($search_category);
         return view('search.index')->with([
             'search' => [
                 'q' => $search_query,
-                'c' => $search_category
+                'category' => $search_category
             ],
             'articles' => $articles,
             'videos' => $videos,
