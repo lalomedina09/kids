@@ -4,6 +4,7 @@
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Correo Empresa</th>
+        <th>Correo Personal</th>
         <th>Celular</th>
         <th>Empresa</th>
         <th>Formulario</th>
@@ -18,6 +19,7 @@
             <td>{{ $lead->name }}</td>
             <td>{{ $lead->last_name }}</td>
             <td>{{ $lead->mail_corporate }}</td>
+            <td>{{ $lead->mail_personal }}</td>
             <td>{{ $lead->movil }}</td>
             <td>{{ $lead->company }}</td>
             <td>{{ $lead->form }}</td>

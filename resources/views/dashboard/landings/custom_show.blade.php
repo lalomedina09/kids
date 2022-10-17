@@ -41,10 +41,13 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Email Empresarial</th>
-                    <th>Celular</th>
+                    @if($custom_page != "registro-qdplay-personas-fisicas")
+                        <th>Email Empresarial</th>
+                        <th>Celular</th>
+                        <th>Empresa</th>
+                    @endif
+                    <th>Email Personal</th>
 
-                    <th>Empresa</th>
                     <th>Intereses</th>
                     <th>Fecha de registro</th>
                 </tr>
@@ -64,9 +67,12 @@
                 @foreach($leads as $lead)
                     <tr>
                         <td class="small"> {{ $lead->name}} {{ $lead->last_name}} </td>
+                        @if($custom_page != "registro-qdplay-personas-fisicas")
                         <td class="small">{{ $lead->mail_corporate }}</td>
                         <td class="small">{{ $lead->movil }}</td>
                         <td class="small">{{ $lead->company }}</td>
+                        @endif
+                        <td class="small">{{ $lead->mail_personal }}</td>
                         <td class="small">{{ $lead->interests }}</td>
 
                         <td class="small" data-order="">{{ getCustomDateHuman($lead->created_at) }}</td>
