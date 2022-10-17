@@ -7,7 +7,8 @@
             <h3>Paginas » {{ $custom_page }}</h3>
         </div>
     </div>
-    @php $pageCustom = "registro-qdplay-empresas" @endphp
+    @php //$pageCustom = "registro-qdplay-empresas"
+    @endphp
     <ul class="nav nav-tabs mb-4">
         @foreach ($pages as $p)
             <a href="{{ route('dashboard.landings.show', [$p]) }}"
@@ -31,7 +32,7 @@
 
     <div class="table-responsive">
         <div class="text-right">
-            <a class="btn btn-success" href="{{ route('dashboard.landings.export.results', [$pageCustom]) }}">
+            <a class="btn btn-success" href="{{ route('dashboard.landings.export.results', [$custom_page]) }}">
                 Exportar resultados Excel
             </a>
             <br>
