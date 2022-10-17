@@ -47,7 +47,7 @@ class QdplayPersonasFisicasController extends Controller
         $lead->status = 0;
         $lead->name = $request->name;
         $lead->last_name = $request->last_name;
-        $lead->mail = $request->mail;
+        $lead->mail_personal = $request->mail;
         #$lead->movil = $request->movil;
         #$lead->company = $request->company;
 
