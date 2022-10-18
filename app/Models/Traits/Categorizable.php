@@ -16,7 +16,7 @@ trait Categorizable
      */
     public static function getCategories()
     {
-        Category::get(self::CATEGORIES_CLASS)->where('exclusive', '!=', 1);
+        return Category::get(self::CATEGORIES_CLASS)->where('exclusive', '!=', 1);
     }
 
     /*
