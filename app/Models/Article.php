@@ -29,7 +29,7 @@ class Article extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'body', 'excerpt', 'author_id', 'published_at', 'updated_at'
+        'title', 'body', 'excerpt', 'author_id', 'site', 'published_at', 'updated_at'
     ];
 
     /**

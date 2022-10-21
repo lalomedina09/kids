@@ -35,7 +35,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = $this->query()
-            ->select('id', 'title', 'slug', 'author_id', 'published_at', 'updated_at')
+            ->select('id', 'title', 'slug', 'author_id', 'site', 'published_at', 'updated_at')
             ->without(['media'])
             ->get();
         return view('dashboard.articles.index')->with([

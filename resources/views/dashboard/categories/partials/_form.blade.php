@@ -22,6 +22,14 @@
                     ] ) !!}
             </div>
             <div class="form-group col-md-6">
+                {!! Form::label('text', 'Traducción*') !!}
+                {!! Form::text('translate_en', null, [
+                    'class' => 'form-control',
+                    'id' => 'translate_en',
+                    'placeholder' => 'Traducción en ingles'
+                    ]) !!}
+            </div>
+            <div class="form-group col-md-6">
                 {!! Form::label('text', 'Codigo Unico* (palabra en ingles)') !!}
                 {!! Form::text('code', null,
                     [
