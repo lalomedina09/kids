@@ -25,6 +25,7 @@ class SaveCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:2|max:255',
+            'translate_en' => 'required|string|min:2|max:255',
             'slug' => 'required|string|min:2|max:255',
             'code' => 'required|string|min:2|max:255',
             'parent_id' => 'required',
