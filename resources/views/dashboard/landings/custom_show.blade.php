@@ -7,7 +7,8 @@
             <h3>Paginas » {{ $custom_page }}</h3>
         </div>
     </div>
-    @php $pageCustom = "registro-qdplay-empresas" @endphp
+    @php //$pageCustom = "registro-qdplay-empresas"
+    @endphp
     <ul class="nav nav-tabs mb-4">
         @foreach ($pages as $p)
             <a href="{{ route('dashboard.landings.show', [$p]) }}"
@@ -31,7 +32,7 @@
 
     <div class="table-responsive">
         <div class="text-right">
-            <a class="btn btn-success" href="{{ route('dashboard.landings.export.results', [$pageCustom]) }}">
+            <a class="btn btn-success" href="{{ route('dashboard.landings.export.results', [$custom_page]) }}">
                 Exportar resultados Excel
             </a>
             <br>
@@ -40,33 +41,35 @@
         <table class="table table-hover table-bordered" data-order='[[ 2, "desc" ]]'>
             <thead>
                 <tr>
+                    @if($custom_page != "registro-qdplay-personas-fisicas")
+                        <th>Nombre</th>
+                        <th>Email Empresarial</th>
+                        <th>Celular</th>
+                        <th>Empresa</th>
+                    @else
                     <th>Nombre</th>
-                    <th>Email Empresarial</th>
-                    <th>Celular</th>
+                    <th>Apellidos</th>
+                    <th>Email Personal</th>
+                    @endif
 
-                    <th>Empresa</th>
                     <th>Intereses</th>
                     <th>Fecha de registro</th>
                 </tr>
             </thead>
-            <!--<tfoot>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Email Empresarial</th>
-                    <th>Celular</th>
 
-                    <th>Empresa</th>
-                    <th>Intereses</th>
-                    <th>Fecha de registro</th>
-                </tr>
-            </tfoot>-->
             <tbody>
                 @foreach($leads as $lead)
                     <tr>
+                        @if($custom_page != "registro-qdplay-personas-fisicas")
                         <td class="small"> {{ $lead->name}} {{ $lead->last_name}} </td>
                         <td class="small">{{ $lead->mail_corporate }}</td>
                         <td class="small">{{ $lead->movil }}</td>
                         <td class="small">{{ $lead->company }}</td>
+                        @else
+                        <td class="small">{{ $lead->name}}</td>
+                        <td class="small">{{ $lead->last_name}} </td>
+                        <td class="small">{{ $lead->mail_personal }}</td>
+                        @endif
                         <td class="small">{{ $lead->interests }}</td>
 
                         <td class="small" data-order="">{{ getCustomDateHuman($lead->created_at) }}</td>

@@ -13,6 +13,7 @@
                     <th>Título</th>
                     <th>Categorías</th>
                     <th>Autor</th>
+                    <th>Sitio</th>
                     <th>Actualizado</th>
                     <th>Publicado</th>
                     <th>Acciones</th>
@@ -23,6 +24,7 @@
                     <th>Título</th>
                     <th>Categorías</th>
                     <th>Autor</th>
+                    <th>Sitio</th>
                     <th>Actualizado</th>
                     <th>Publicado</th>
                     <th>Acciones</th>
@@ -44,6 +46,13 @@
                             </ul>
                         </td>
                         <td class="small">{{ $article->author->full_name }}</td>
+                        <td class="small">
+                            @if ($article->site == "dear-money.com")
+                                <span class="text-primary">dear-money.com</span>
+                            @else
+                                <span class="text-danger">queridodinero.com</span>
+                            @endif
+                        </td>
                         <td class="small" data-order="{{ optional($article->updated_at)->timestamp }}">{{ $article->present()->updated_at }}</td>
                         <td class="small" data-order="{{ optional($article->published_at)->timestamp }}">{{ $article->present()->published_at }}</td>
                         <td>

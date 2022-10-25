@@ -43,6 +43,7 @@ class CategoriesController extends Controller
 
         $category = new Category;
         $category->name = $request->name;
+        $category->translate_en = $request->translate_en;
         $category->slug = $request->slug;
         $category->code = $request->code;
         $category->parent_id = $request->parent_id;

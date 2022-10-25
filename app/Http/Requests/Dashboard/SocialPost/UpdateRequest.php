@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Dashboard\SocialPost;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SaveCategoryRequest extends FormRequest
+use App\Models\SocialPost;
+
+class UpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +15,7 @@ class SaveCategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return $this->user()->can('blog.articles.update');
     }
 
     /**
@@ -23,12 +25,13 @@ class SaveCategoryRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
-            'name' => 'required|string|min:2|max:255',
-            'translate_en' => 'required|string|min:2|max:255',
-            'slug' => 'required|string|min:2|max:255',
+            'red_social' => 'required|string|min:2|max:255',
+            'type' => 'required|string',
             'code' => 'required|string|min:2|max:255',
-            'parent_id' => 'required',
+            'site' => 'required|string|min:2|max:255',
+            'description' => 'required|string|min:2|max:255'
         ];
     }
 }

@@ -1,7 +1,7 @@
 @php
     $searching = (isset($search) && is_array($search));
     $search_query = ($searching && array_has($search, 'q')) ? $search['q'] : null;
-    $search_category = ($searching && array_has($search, 'c')) ? $search['c'] : null;
+    $search_category = ($searching && array_has($search, 'category')) ? $search['category'] : null;
 @endphp
 
 @push('styles')
@@ -18,7 +18,7 @@
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-prepend qd-select">
-                    <select name="c" class="select2">
+                    <select name="category" class="select2">
                         <option value="">@lang('All categories')</a>
                         @php
                             $categories = App\Models\Category::whereIn('id', ['4', '5', '6', '7', '8', '9'])->get();

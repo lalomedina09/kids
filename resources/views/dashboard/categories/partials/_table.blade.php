@@ -1,56 +1,42 @@
 @if (count($categories)>0)
 <div class="table-responsive">
-    <table class="table table-hover table-bordered">
+    <!--<table class="table table-hover table-bordered">-->
+        <table class="table table-hover table-bordered" data-order='[[ 2, "desc" ]]'>
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nombre</th>
+                <th>Traducción</th>
                 <th>Slug</th>
                 <th>Codigo</th>
                 <th>Exclusivo</th>
                 @if(!$subcategory)
-                    <!--<th>Artículos</th>-->
                     <th>Sub categorías</th>
                 @endif
                 <th>Actualizado</th>
                 <th>Acciones</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Slug</th>
-                <th>Codigo</th>
-                <th>Exclusivo</th>
-                @if(!$subcategory)
-                    <!--<th>Artículos</th>-->
-                    <th>Sub categorías</th>
-                @endif
-                <th>Actualizado</th>
-                <th>Acciones</th>
-            </tr>
-        </tfoot>
         <tbody>
             @foreach($categories as $category)
 
                 <tr>
-                    <td>{{ $category->id }}</td>
-                    <td>{{ $category->present()->name }}</td>
-                    <td>{{ $category->present()->slug }}</td>
-                    <td>{{ $category->present()->code }}</td>
-                    <td>
+                    <td class="small">{{ $category->id }}</td>
+                    <td class="small">{{ $category->present()->name }}</td>
+                    <td class="small">{{ $category->present()->translate_en }}</td>
+                    <td class="small">{{ $category->present()->slug }}</td>
+                    <td class="small">{{ $category->present()->code }}</td>
+                    <td class="small">
                         @if ($category->exclusive == 1)
                             Qdplay
                         @else
                             Generico
                         @endif
                     </td>
-                    {{--<td>{{ number_format($category->articles->count()) }}</td>--}}
                     @if(!$subcategory)
-                        <td>{{ number_format($category->getManyChilds($category->id)->count()) }}</td>
+                        <td class="small">{{ number_format($category->getManyChilds($category->id)->count()) }}</td>
                     @endif
-                    <td>{{ $category->getDateHuman($category->updated_at) }}</td>
+                    <td class="small">{{ $category->getDateHuman($category->updated_at) }}</td>
                     <td class="text-center">
                         <a href="{{ route('dashboard.categories.edit', $category->id) }}" class="btn btn-sm btn-outline-warning">
                             <i class="lni lni-pencil"></i>

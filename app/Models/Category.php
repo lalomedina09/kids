@@ -45,7 +45,7 @@ class Category extends Model
      * @var array
      */
     protected $fillable = [
-        'exclusive', 'name', ' slug', 'code', 'lang'
+        'exclusive', 'name', 'translate_en', ' slug', 'code', 'lang'
     ];
 
     /**
@@ -237,7 +237,9 @@ class Category extends Model
      */
     public function articles()
     {
-        return $this->morphedByMany(Article::class, 'categorizable');
+        //Retornamos los articulos no relacionados a dear money
+        return $this->morphedByMany(Article::class, 'categorizable')
+        ->where('site', '!=', "dear-money.com");
     }
 
     /**
@@ -269,7 +271,8 @@ class Category extends Model
      */
     public function tagged_articles()
     {
-        return $this->morphedByMany(Article::class, 'taggable');
+        return $this->morphedByMany(Article::class, 'taggable')
+            ->where('site', "dear-money.com");
     }
 
     /**

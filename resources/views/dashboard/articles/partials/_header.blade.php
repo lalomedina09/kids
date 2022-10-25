@@ -10,6 +10,9 @@
                     <span class="fa fa-arrow-right"></span> Ir al artículo
                 </a>
             @endisset
+            <a href="{{ route('dashboard.social-post.index') }}" class="btn btn-outline-primary">
+                <span class="fa fa-plus"></span> Post Instagram
+            </a>
             <a href="{{ route('dashboard.articles.create') }}" class="btn btn-outline-primary">
                 <span class="fa fa-plus"></span> Nuevo
             </a>
