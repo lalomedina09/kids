@@ -65,7 +65,7 @@
 
             @include('dashboard.articles.components.form.autor')
 
-            @include('dashboard.articles.components.form.site')
+            {{--@include('dashboard.articles.components.form.site')--}}
         </div>
     </div>
 {!! Form::close() !!}

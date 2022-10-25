@@ -13,4 +13,41 @@
         <label for="excerpt" class="form-label">Extracto del artículo:</label>
         {!! Form::textarea('excerpt', null, ['class' => 'form-control', 'rows' => 5, 'data-label' => 'letters', 'data-limit' => 156] ) !!}
     </div>
+
+    <!--<div class="row">
+        <div class="col-md-8">
+
+        </div>
+    </div>-->
+    <div class="card mt-5">
+        <div class="card-header">
+            Sitio en el que estará disponible el articulo |  Código Post de Instagram para mostar imagen
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="title" class="form-label">Elige el sitio origen:</label>
+                        <select class="form-control" name="site" required="required">
+                            <!--<option value="" {{ ($article->site === "") ? 'selected="selected"' : '' }}>Elige el sitio</option>-->
+                            <option value="queridodinero.com" {{ ($article->site === "queridodinero.com") ? 'selected="selected"' : '' }}>queridodinero.com</option>
+                            <option value="dear-money.com" {{ ($article->site === "dear-money.com") ? 'selected="selected"' : '' }}>dear-money.com</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="code_instagram" class="form-label">Código de Instagram:</label>
+                        {!! Form::text('code_instagram', null, ['class' => 'form-control', 'placeholder' => 'Código del post'] ) !!}
+                    </div>
+                    <br>
+                    Ejemplo de como obtener el código
+                    <img width="100%" src="/images/static/dashboard/articles/referencia-instagram-codigo.png" alt="Imagen referencia de poner código">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
