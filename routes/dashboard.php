@@ -80,6 +80,52 @@ Route::prefix('blog')
                             ->middleware(['permission:blog.articles.publish']);
                     });
             });
+        // Social Post
+        Route::prefix('social-post')
+            ->group(function () {
+                Route::get('/')
+                    ->uses('SocialPostController@index')
+                    ->name('social-post.index')
+                    ->middleware(['permission:blog.articles.index']);
+
+                /*Route::get('/trashed')
+                ->uses('SocialPostController@trashed')
+                ->name('social-post.trashed')
+                ->middleware(['permission:blog.articles.index']);*/
+
+                Route::get('/create')
+                ->uses('SocialPostController@create')
+                ->name('social-post.create')
+                ->middleware(['permission:blog.articles.create']);
+
+                Route::post('/')
+                ->uses('SocialPostController@store')
+                ->name('social-post.store')
+                ->middleware(['permission:blog.articles.create']);
+
+                Route::prefix('{post_id}')
+                ->group(function () {
+                    Route::get('/')
+                        ->uses('SocialPostController@edit')
+                        ->name('social-post.edit')
+                        ->middleware(['permission:blog.articles.update']);
+
+                    Route::patch('/')
+                    ->uses('SocialPostController@update')
+                        ->name('social-post.update')
+                        ->middleware(['permission:blog.articles.update']);
+
+                    Route::delete('/')
+                    ->uses('SocialPostController@destroy')
+                        ->name('social-post.destroy')
+                        ->middleware(['permission:blog.articles.delete']);
+                    /*
+                    Route::post('/')
+                    ->uses('SocialPostController@restore')
+                        ->name('social-post.restore')
+                        ->middleware(['permission:blog.articles.delete']);*/
+                });
+        });
 
         // Videos
         Route::prefix('videos')
