@@ -21,7 +21,7 @@
     </div>-->
     <div class="card mt-5">
         <div class="card-header">
-            Sitio en el que estará disponible el articulo |  Código Post de Instagram para mostar imagen
+            Sitio en el que estará disponible el articulo <!--|  Código Post de Instagram para mostar imagen-->
         </div>
 
         <div class="card-body">
@@ -37,13 +37,10 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div class="form-group" style="display: none">
                         <label for="code_instagram" class="form-label">Código de Instagram:</label>
                         {!! Form::text('code_instagram', null, ['class' => 'form-control', 'placeholder' => 'Código del post'] ) !!}
                     </div>
-                    <br>
-                    Ejemplo de como obtener el código
-                    <img width="100%" src="/images/static/dashboard/articles/referencia-instagram-codigo.png" alt="Imagen referencia de poner código">
                 </div>
             </div>
         </div>
