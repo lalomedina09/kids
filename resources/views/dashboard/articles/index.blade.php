@@ -5,7 +5,9 @@
     @include('dashboard.articles.partials._header', ['subtitle' => 'Artículos » Todo'])
 
     @include('partials.dashboard.messages')
-
+    @php
+    $site = "https://dear-money.com/articles/";
+    @endphp
     <div class="table-responsive">
         <table class="table table-hover table-bordered" data-order='[[ 3, "desc" ]]'>
             <thead>
@@ -34,9 +36,15 @@
                 @foreach($articles as $article)
                     <tr>
                         <td class="small">
-                            <a href="{{ route('articles.show', [$article->slug]) }}" target="_blank">
-                                {{ $article->present()->title }}
-                            </a>
+                            @if ($article->site == "dear-money.com")
+                                <a href="{{ $site . $article->slug }}" target="_blank">
+                                    <span class="text-primary">{{ $article->present()->title }}</span>
+                                </a>
+                            @else
+                                <a href="{{ route('articles.show', [$article->slug]) }}" target="_blank">
+                                    <span class="text-danger">{{ $article->present()->title }}</span>
+                                </a>
+                            @endif
                         </td>
                         <td class="small">
                             <ul class="p-2">
