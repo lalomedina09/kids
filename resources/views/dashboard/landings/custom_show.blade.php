@@ -38,9 +38,10 @@
             <br>
         </div>
         <br>
-        <table class="table table-hover table-bordered" data-order='[[ 2, "desc" ]]'>
+        <table class="table table-hover table-bordered" data-order='[[ 0, "asc" ]]'>
             <thead>
                 <tr>
+                    <th>Num</th>
                     @if($custom_page != "registro-qdplay-personas-fisicas")
                         <th>Nombre</th>
                         <th>Email Empresarial</th>
@@ -58,8 +59,10 @@
             </thead>
 
             <tbody>
+                @php $count = 1; @endphp
                 @foreach($leads as $lead)
                     <tr>
+                        <td>{{ $count++ }}</td>
                         @if($custom_page != "registro-qdplay-personas-fisicas")
                         <td class="small"> {{ $lead->name}} {{ $lead->last_name}} </td>
                         <td class="small">{{ $lead->mail_corporate }}</td>

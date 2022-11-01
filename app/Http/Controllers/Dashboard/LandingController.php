@@ -46,7 +46,7 @@ class LandingController extends Controller
      */
     public function show($page)
     {
-        $results = Landing::where('page', $page)->get();
+        $results = Landing::where('page', $page)->orderBy('id', 'desc')->get();
         $columns = Landing::where('page', $page)->first();
         return view('dashboard.landings.show')->with([
             'pages' => $this->getPages(),
@@ -64,7 +64,7 @@ class LandingController extends Controller
     public function customShow($custom_page)
     {
         $results = Landing::all();
-        $leads = Lead::where('form', $custom_page)->get();
+        $leads = Lead::where('form', $custom_page)->orderBy('id', 'desc')->get();
 
         return view('dashboard.landings.custom_show')->with([
             'pages' => $this->getPages(),

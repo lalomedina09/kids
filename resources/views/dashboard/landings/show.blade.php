@@ -36,9 +36,10 @@
             <br>
         </div>
         <br>
-        <table class="table table-hover table-bordered" data-order='[[ 2, "desc" ]]'>
+        <table class="table table-hover table-bordered" data-order='[[ 0, "asc" ]]'>
             <thead>
                 <tr>
+                    <th>Num</th>
                     @foreach ($columns->fields as $field => $item)
                         <th>{{ $field }}</th>
                     @endforeach
@@ -49,6 +50,7 @@
             </thead>
             <tfoot>
                 <tr>
+                    <th>Num</th>
                     @foreach ($columns->fields as $field => $item)
                         <th>{{ $field }}</th>
                     @endforeach
@@ -58,8 +60,10 @@
                 </tr>
             </tfoot>
             <tbody>
+                @php $count = 1; @endphp
                 @foreach($results as $result)
                     <tr>
+                        <td>{{ $count++ }}</td>
                         {{--<td class="small">
                             <ul class="m-0 pl-3">
                                 @foreach ($result->fields as $field => $value)
