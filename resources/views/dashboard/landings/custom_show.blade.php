@@ -53,8 +53,8 @@
                     <th>Email Personal</th>
                     @endif
 
-                    <th>Intereses</th>
                     <th>Fecha de registro</th>
+                    <th>Intereses</th>
                 </tr>
             </thead>
 
@@ -64,18 +64,17 @@
                     <tr>
                         <td>{{ $count++ }}</td>
                         @if($custom_page != "registro-qdplay-personas-fisicas")
-                        <td class="small"> {{ $lead->name}} {{ $lead->last_name}} </td>
-                        <td class="small">{{ $lead->mail_corporate }}</td>
-                        <td class="small">{{ $lead->movil }}</td>
-                        <td class="small">{{ $lead->company }}</td>
+                            <td class="small"> {{ $lead->name}} {{ $lead->last_name}} </td>
+                            <td class="small">{{ $lead->mail_corporate }}</td>
+                            <td class="small">{{ $lead->movil }}</td>
+                            <td class="small">{{ $lead->company }}</td>
                         @else
-                        <td class="small">{{ $lead->name}}</td>
-                        <td class="small">{{ $lead->last_name}} </td>
-                        <td class="small">{{ $lead->mail_personal }}</td>
+                            <td class="small">{{ $lead->name}}</td>
+                            <td class="small">{{ $lead->last_name}} </td>
+                            <td class="small">{{ $lead->mail_personal }}</td>
                         @endif
+                        <td class="small">{{ getCustomDateHuman($lead->created_at) }}</td>
                         <td class="small">{{ $lead->interests }}</td>
-
-                        <td class="small" data-order="">{{ getCustomDateHuman($lead->created_at) }}</td>
                     </tr>
                 @endforeach
             </tbody>

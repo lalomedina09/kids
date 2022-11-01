@@ -43,8 +43,8 @@
                     @foreach ($columns->fields as $field => $item)
                         <th>{{ $field }}</th>
                     @endforeach
-                    <th>Estado</th>
                     <th>Fecha de registro</th>
+                    <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -54,8 +54,8 @@
                     @foreach ($columns->fields as $field => $item)
                         <th>{{ $field }}</th>
                     @endforeach
-                    <th>Estado</th>
                     <th>Fecha de registro</th>
+                    <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
             </tfoot>
@@ -78,6 +78,7 @@
                                 <td>{{ $value }}</td>
                             @endif
                         @endforeach
+                        <td class="small" data-order="{{ optional($result->created_at)->timestamp }}">{{ $result->present()->created_at }}</td>
                         <td>
                             @if ($result->synced)
                                 <span class="badge badge-success">Sincronizado</span>
@@ -85,7 +86,6 @@
                                 <span class="badge badge-danger">No sincronizado</span>
                             @endif
                         </td>
-                        <td class="small" data-order="{{ optional($result->created_at)->timestamp }}">{{ $result->present()->created_at }}</td>
                         <td>
 
                         </td>
