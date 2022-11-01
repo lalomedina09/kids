@@ -73,7 +73,10 @@
                             <td class="small">{{ $lead->last_name}} </td>
                             <td class="small">{{ $lead->mail_personal }}</td>
                         @endif
-                        <td class="small">{{ getCustomDateHuman($lead->created_at) }}</td>
+                        <td class="small">
+                            {{-- getCustomDateHuman($lead->created_at) --}}
+                            {{ $lead->created_at }}
+                        </td>
                         <td class="small">{{ $lead->interests }}</td>
                     </tr>
                 @endforeach

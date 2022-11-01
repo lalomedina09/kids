@@ -78,7 +78,10 @@
                                 <td>{{ $value }}</td>
                             @endif
                         @endforeach
-                        <td class="small" data-order="{{ optional($result->created_at)->timestamp }}">{{ $result->present()->created_at }}</td>
+                        <td class="small">{{-- data-order="{{ optional($result->created_at)->timestamp }}" --}}
+                            {{-- $result->present()->created_at --}}
+                            {{ $result->created_at }}
+                        </td>
                         <td>
                             @if ($result->synced)
                                 <span class="badge badge-success">Sincronizado</span>
