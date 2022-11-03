@@ -1,9 +1,13 @@
+<!--- Vista modal para los asesorados---->
 <div class="row">
     <div class="col-md-12">
         <p class="text-white text-uppercase text-center small">
             <span class="text-danger">Atención</span> <br> {{ $advice->advised->fullname }}
         </p>
-        <p class="small mb-1 text-center text-danger"><b>Proceso Reagendar:</b> <br> <br>
+        <p class="small mb-1 text-center text-danger">
+            <b>- - - - - - - - - - - - - -  - - - - - - - -</b>
+            <!--<b>Proceso Reagendar:</b>-->
+             <br> <br>
             {{-- legendsReschedule($reschedule) --}}
         </p>
 
@@ -22,7 +26,7 @@
                 @case(3)
                     <p class="small mb-1 text-center">
                         <b>Re agendaste</b> la asesoria, espera que tu asesor <b>acepte</b> o <b>rechace</b>
-                        la nueva fecha, Si tu asesor <b>no cambia el status</b> tu asesoría se llevara acabo en la nueva fecha que elegiste
+                        la nueva fecha, Si tu asesor <b>no cambia el status</b> tu asesoría se llevará acabo en la nueva fecha que elegiste
                         <span class="text-danger">
                             {{ $advice->present()->given_at }}
                         </span>
@@ -89,7 +93,7 @@
                 @case(7)
                     <p class="small mb-1 text-center">
                         Hola el asesor <span class="text-danger">{{ $advice->advisor->fullname }}</span>, <br>
-                        bloqueo la opcion de reagendar asesoría
+                        Bloqueo la opción de reagendar asesoría <br> ya que no te presentaste a tiempo a la asesoría
                     </p>
                     @break
                 @case(8)
@@ -109,9 +113,24 @@
                         Ver Solicitud del asesor
                     </a>
                     @break
-                <!--    en las acciones del asesorado -->
+                @case(10)
+                    <p class="small mb-1 text-center">
+                        Enviaste solicitud de actualiación de calendario a tu asesor
+                         <span class="text-danger">{{ $advice->advisor->fullname }}</span> , <br>
+                        Sino actualiza su agenda puedes solicitar la devolución
+                    </p>
+                    @break
+                @case(11)
+                    <p class="small mb-1 text-center">
+                        Hola tu asesor <span class="text-danger">{{ $advice->advisor->fullname }}</span> , <br>
+                        actualizo su calendario, revisa las fechas para que re agendes la asesoría
+                    </p>
+                    <br>
+                    <a href="{{ route('qd.advice.advice.reschedule.edit', [$advice->hashid]) }}" class="btn btn btn-pill btn-danger mr-5 animated tada">
+                        Re agendar
+                    </a>
+                    @break
                 @default
-                        <!--  default -->
             @endswitch
         </div>
     </div>

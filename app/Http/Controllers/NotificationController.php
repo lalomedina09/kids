@@ -53,7 +53,7 @@ class NotificationController extends Controller
 
         if($show){
             $show = ($this->getSessionModalAdviseds($advice) == false) ? true : false ;
-            $msjConsole = "Encontro asesoria pagada , Busco si ya mostro la ventana modal, si encuentra una session entonces no mostrara";
+            $msjConsole = "Encontro asesoría pagada , Busco si ya mostro la ventana modal, si encuentra una sessión entonces no mostrara";
         }else{
             $msjConsole = "No encontro asesoria pagada -- asesoria:" . $advice;
             $show = false;

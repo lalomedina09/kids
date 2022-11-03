@@ -1,9 +1,14 @@
+<!----- vista modal para el asesor--------->
 <div class="row">
     <div class="col-md-12">
         <p class="text-white text-uppercase text-center small">
-            <span class="text-danger">Atención</span> <br> {{ $advice->advised->fullname }}
+            <span class="text-danger">Atención</span> <br> {{ $advice->advisor->fullname }}
         </p>
-        <p class="small mb-1 text-center text-danger"><b>Proceso Reagendar:</b> <br> <br>
+        <p class="small mb-1 text-center text-danger">
+            <b>
+                - - - - - - - - - - - - - -  - - - - - - - -
+                <!--Proceso Reagendar:-->
+            </b> <br> <br>
             {{-- legendsReschedule($reschedule) --}}
         </p>
 
@@ -20,18 +25,23 @@
                     @break
                 @case(3)
                     <p class="small mb-1 text-center">
-                        Hola tu asesorado <b>Re-agendo</b> la asesoria, <b>acepta</b> o <b>rechaza</b> la fecha
-                        <span class="text-danger">
-                            {{ $advice->present()->given_at }}
-                        </span>
-                        desde el botón de ver solicitud.
-                        <br><br>
-                        <b>Si no actualizas el estatus</b>
-                        la asesoría se tomara como <span class="text-danger">confirmada</span> para la fecha solicitada por tu asesorado
+                            Hola tu asesorado <b>Re-agendo</b> la asesoria para hoy <br>
+                            <span class="text-danger">
+                                {{ $advice->present()->given_at }}
+                            </span>
+                            <br>
+                            Al no responder a tiempo la solicitud, se llevará acabo
+                            <br><br>
                     </p>
-                    <a href="{{ route('qd.advice.advice.reschedule.request', [$advice->hashid]) }}" class="btn btn btn-pill btn-danger mr-5">
-                        Ver solicitud
+                    <a href="{{ $advice->videocall_url }}" class="btn btn-pill btn-danger animated tada mb-3" title="{{ $advice->videocall_url }}">
+                        Acceso a la asesoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
                     </a>
+                    <br>
+                    @if ($advice->videocallHasPassword())
+                        <span class="small">
+                            <b>Contraseña de la videollamada:</b> {{ $advice->getVideocallPassword() }}
+                        </span>
+                    @endif
                     @break
                 @case(4)
                     <p class="small mb-1 text-center">
@@ -87,9 +97,27 @@
                         <span class="text-danger"> espera que elija </span> una nueva fecha
                     </p>
                     @break
-                <!-- por default llego en las acciones del asesor -->
+                @case(10)
+                    <p class="small mb-1 text-center">
+                        Tu asesorado
+                        <span class="text-danger">
+                            {{ $advice->advised->fullname }}
+                        </span> <br>
+                        Te envio una solicitud para que actualices tu calendario ya que no encontró
+                        fechas que se adapten a su agenda
+                        <span class="text-danger"> Msj: </span> {{ $reschedule->description }}
+                    </p>
+                    @break
+                @case(11)
+                    <p class="small mb-1 text-center">
+                        Enviaste notificación a <br>
+                        <span class="text-danger">
+                            {{ $advice->advised->fullname }}
+                        </span> <br>
+                        Para que vuelva a elegir una nueva fecha y re agende la asesoría
+                    </p>
+                    @break
                 @default
-                <!--  default -->
             @endswitch
         </div>
     </div>

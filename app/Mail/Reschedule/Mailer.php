@@ -43,4 +43,14 @@ class Mailer
     {
         Mail::send(new NotificationAdvisorRefundReschedule($dataNotification, $advice));
     }
+
+    public static function sendNotificationMoreDates($dataNotification, $advice)
+    {
+        Mail::send(new NotificationMoreDates($dataNotification, $advice));
+    }
+
+    public static function sendMailNotificationNewDates($dataNotification, $advice)
+    {
+        Mail::send(new NotificationNewDates($dataNotification, $advice));
+    }
 }
