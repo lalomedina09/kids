@@ -56,6 +56,7 @@
         "queridodinero/communications": "^0.1",
         "queridodinero/marketplace": "0.5.*",
         "queridodinero/products": "^0.1",
+        "spatie/icalendar-generator": "~1.0.6",
         "spatie/laravel-analytics": "3.6.*",
         "spatie/laravel-medialibrary": "7.5.*",
         "spatie/laravel-newsletter": "^4.2",

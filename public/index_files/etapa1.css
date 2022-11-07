@@ -170,6 +170,22 @@ hr {
     margin: auto;
 }
 
+.title-underline-black {
+    position: relative;
+    border-color: #000000;
+}
+
+.title-underline-black:before {
+    content: "";
+    border-top: 3px solid;
+    height: 3px;
+    width: 120px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: #000000;
+}
+
 .title-underline-blue {
     position: relative;
     border-color: #1fcec0;

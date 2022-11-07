@@ -43,7 +43,7 @@ class UpdateRequest extends FormRequest
                     'countrycode' => 'required|string|in:' . $extra_valid_countries,
                     'birthdate' => 'nullable|date_format:Y-m-d',
                     'gender' => 'required|string|in:male,female',
-                    'whatsapp' => 'required|digits:10',
+                    'whatsapp' => 'digits:10',
                 ];
 
             case 'personal':

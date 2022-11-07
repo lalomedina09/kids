@@ -232,4 +232,8 @@ function advicedateLastCurrent($last_reschedule)
     }else{
         return false;
     }
+
+function onlyDate($date)
+{
+    return $newFormat = Carbon::parse($date)->format('Y-m-d');
 }

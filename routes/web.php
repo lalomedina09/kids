@@ -23,6 +23,11 @@ Route::any('test')
     ->uses('HomeController@test')
     ->name('test');
 
+//ruta de prueba antes de integrar con el paquete de asesorias
+Route::get('test/service/calendar')
+    ->uses('TestingController@dispatchService')
+    ->name('qdplay.show');
+
 /*
 |--------------------------------------------------------------------------
 | Localization
@@ -42,6 +47,7 @@ Route::get('i18n')
 Route::prefix('iniciar-sesion')
     ->namespace('Auth')
     ->group(function () {
+        //login QD
         Route::get('/')
             ->uses('LoginController@showLoginForm')
             ->name('login');
@@ -49,6 +55,18 @@ Route::prefix('iniciar-sesion')
         Route::post('/')
             ->uses('LoginController@login');
     });
+
+Route::prefix('qdplay-login')
+->namespace('Auth')
+->group(function () {
+    //login QD Play
+    Route::get('/')
+        ->uses('QdplayLoginController@showLoginForm')
+        ->name('qdplay-login');
+
+    Route::post('/')
+        ->uses('LoginController@login');
+});
 
 Route::any('cerrar-sesion')
     ->uses('Auth\LoginController@logout')
@@ -96,7 +114,7 @@ Route::prefix('password')
         Route::post('/reset')
             ->uses('ResetPasswordController@reset');
 
-        //- - - - - - - - - - - - - - - - QD P L A Y- - - - - - - - - - - - - - - - - //
+        //QD Play
         Route::get('/qdplay/reset')
             ->uses('QdplayForgotPasswordController@showLinkRequestForm')
             ->name('password.qdplay.request');
@@ -111,6 +129,10 @@ Route::prefix('password')
 
         Route::post('/qdplay/reset')
             ->uses('QdplayResetPasswordController@reset');
+
+        Route::get('/qdplay/send/reset')
+            ->uses('QdplayResetPasswordController@resetSendSuccess')
+            ->name('password.qdplay.reset.send');
     });
 
 /*
@@ -120,7 +142,9 @@ Route::prefix('password')
 */
 
 Route::get('/')
-    ->uses('HomeController@index')
+    #->uses('HomeController@index')
+    #->name('home');
+    ->uses('HomeController@blog')
     ->name('home');
 
 Route::get('/busqueda')
@@ -177,6 +201,16 @@ Route::prefix('/registro-qdplay-empresas')
     ->name('register.qdplay.store');
 });
 
+Route::prefix('/registro-qdplay-individual')
+->group(function () {
+    Route::get('/')
+        ->uses('Landing\QdplayPersonasFisicasController@show')
+        ->name('register.qdplay.personas.fisicas.show');
+
+    Route::post('/')
+        ->uses('Landing\QdplayPersonasFisicasController@store')
+        ->name('register.qdplay.personas.fisicas.store');
+});
 /*
 |--------------------------------------------------------------------------
 | Articles

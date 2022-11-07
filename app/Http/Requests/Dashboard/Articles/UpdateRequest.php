@@ -39,6 +39,8 @@ class UpdateRequest extends FormRequest
             'body' => 'required|string',
             'excerpt' => 'required|string|min:1|max:156',
             'author_id' => 'sometimes|integer|exists:users,id',
+            'site' => 'required|string',
+            //'code_instagram' => 'string',
             'featured_image' => 'sometimes|image',
             'categories' => 'required|array',
             'categories.*' => 'integer|exists:categories,id|in:' . $extra_valid_categories,

@@ -3,7 +3,7 @@
     <div class="col-md-8">
         <div class="row">
             <div class="form-group col-md-6">
-                {!! Form::label('text', 'Nombre*', ['class' => 'form-control']) !!}
+                {!! Form::label('text', 'Nombre*') !!}
                 {!! Form::text('name', null, [
                     'class' => 'form-control',
                     'id' => 'name',
@@ -12,7 +12,7 @@
                     ]) !!}
             </div>
             <div class="form-group col-md-6">
-                {!! Form::label('text', 'Fijo*', ['class' => 'form-control']) !!}
+                {!! Form::label('text', 'Fijo*') !!}
                 {!! Form::text('slug', null,
                     [
                         'class' => 'form-control',
@@ -22,7 +22,15 @@
                     ] ) !!}
             </div>
             <div class="form-group col-md-6">
-                {!! Form::label('text', 'Codigo Unico* (palabra en ingles)', ['class' => 'form-control']) !!}
+                {!! Form::label('text', 'Traducción*') !!}
+                {!! Form::text('translate_en', null, [
+                    'class' => 'form-control',
+                    'id' => 'translate_en',
+                    'placeholder' => 'Traducción en ingles'
+                    ]) !!}
+            </div>
+            <div class="form-group col-md-6">
+                {!! Form::label('text', 'Codigo Unico* (palabra en ingles)') !!}
                 {!! Form::text('code', null,
                     [
                         'class' => 'form-control',
@@ -31,7 +39,7 @@
                     ] ) !!}
             </div>
             <div class="form-group col-md-6">
-                {!! Form::label('text', 'Categoria Principal', ['class' => 'form-control']) !!}
+                {!! Form::label('text', 'Categoria Principal') !!}
 
                 @php
                     $readonly = ($parent_id == 2) ? true : false ;

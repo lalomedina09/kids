@@ -7,7 +7,8 @@
             <h3>Paginas » {{ $custom_page }}</h3>
         </div>
     </div>
-    @php $pageCustom = "registro-qdplay-empresas" @endphp
+    @php //$pageCustom = "registro-qdplay-empresas"
+    @endphp
     <ul class="nav nav-tabs mb-4">
         @foreach ($pages as $p)
             <a href="{{ route('dashboard.landings.show', [$p]) }}"
@@ -17,7 +18,11 @@
 
         <a href="{{ route('dashboard.landings.custom.show', ['registro-qdplay-empresas']) }}"
             class="nav-item nav-link {{ "registro-qdplay-empresas" == $custom_page ? 'active' : '' }}">
-            Registro QD Play
+            Registro QD Play Empresas
+        </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['registro-qdplay-personas-fisicas']) }}"
+            class="nav-item nav-link {{ "registro-qdplay-personas-fisicas" == $custom_page ? 'active' : '' }}">
+            Registro QD Play Personas Fis..
         </a>
         <a href="{{ route('dashboard.landings.custom.show', ['finanzas-personales-para-empleados']) }}"
             class="nav-item nav-link {{ "finanzas-personales-para-empleados" == $custom_page ? 'active' : '' }}">
@@ -27,45 +32,52 @@
 
     <div class="table-responsive">
         <div class="text-right">
-            <a class="btn btn-success" href="{{ route('dashboard.landings.export.results', [$pageCustom]) }}">
+            <a class="btn btn-success" href="{{ route('dashboard.landings.export.results', [$custom_page]) }}">
                 Exportar resultados Excel
             </a>
             <br>
         </div>
         <br>
-        <table class="table table-hover table-bordered" data-order='[[ 2, "desc" ]]'>
+        <table class="table table-hover table-bordered" data-order='[[ 0, "asc" ]]'>
             <thead>
                 <tr>
+                    <th>Num</th>
+                    @if($custom_page != "registro-qdplay-personas-fisicas")
+                        <th>Nombre</th>
+                        <th>Email Empresarial</th>
+                        <th>Celular</th>
+                        <th>Empresa</th>
+                    @else
                     <th>Nombre</th>
-                    <th>Email Empresarial</th>
-                    <th>Celular</th>
+                    <th>Apellidos</th>
+                    <th>Email Personal</th>
+                    @endif
 
-                    <th>Empresa</th>
-                    <th>Intereses</th>
                     <th>Fecha de registro</th>
+                    <th>Intereses</th>
                 </tr>
             </thead>
-            <!--<tfoot>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Email Empresarial</th>
-                    <th>Celular</th>
 
-                    <th>Empresa</th>
-                    <th>Intereses</th>
-                    <th>Fecha de registro</th>
-                </tr>
-            </tfoot>-->
             <tbody>
+                @php $count = 1; @endphp
                 @foreach($leads as $lead)
                     <tr>
-                        <td class="small"> {{ $lead->name}} {{ $lead->last_name}} </td>
-                        <td class="small">{{ $lead->mail_corporate }}</td>
-                        <td class="small">{{ $lead->movil }}</td>
-                        <td class="small">{{ $lead->company }}</td>
+                        <td>{{ $count++ }}</td>
+                        @if($custom_page != "registro-qdplay-personas-fisicas")
+                            <td class="small"> {{ $lead->name}} {{ $lead->last_name}} </td>
+                            <td class="small">{{ $lead->mail_corporate }}</td>
+                            <td class="small">{{ $lead->movil }}</td>
+                            <td class="small">{{ $lead->company }}</td>
+                        @else
+                            <td class="small">{{ $lead->name}}</td>
+                            <td class="small">{{ $lead->last_name}} </td>
+                            <td class="small">{{ $lead->mail_personal }}</td>
+                        @endif
+                        <td class="small">
+                            {{-- getCustomDateHuman($lead->created_at) --}}
+                            {{ $lead->created_at }}
+                        </td>
                         <td class="small">{{ $lead->interests }}</td>
-
-                        <td class="small" data-order="">{{ getCustomDateHuman($lead->created_at) }}</td>
                     </tr>
                 @endforeach
             </tbody>
