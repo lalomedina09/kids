@@ -1,25 +1,28 @@
 @extends('layouts.email')
 
-@section('email-title', 'Estatus del cambio de fecha de tu asesoria')
+@section('email-title', 'Solicitud de fechas en calendario')
 
 @section('email-content')
     <tr>
         <td colspan=2 style="vertical-align:middle;text-align:center;">
-            <p style="margin-bottom:10px; text-align:left;">¡Hola <b>{{ $dataNotification['advised']->fullname }}</b> !</p>
+            <p style="margin-bottom:10px; text-align:left;">¡Hola!
+                <br>Tu asesorado
+                <b>
+                    {{ $dataNotification['advised']->name }}
+                    {{ $dataNotification['advised']->last_name }}
+                </b>
+            </p>
+            Envío solicitud para que actualices tu calendarío
 
             <p style="margin-bottom:10px; text-align:left;">
                 {{ $dataNotification['description'] }}
             </p>
-
+            <br><br>
             <p style="text-align:center;margin-bottom:40px;">
                 <a href="{{ url('/perfil#asesorias') }}"
                     style="font-weight:bold;color:white;background-color:#0e0d0d;padding:15px 30px;display:inline-block;text-decoration:none;border-radius:5px;">
-                    Ir a mi perfil
+                    Ver detalles de asesoría
                 </a>
-            </p>
-
-            <p style="margin-bottom:10px;">
-                Recuerda iniciar sesion
             </p>
         </td>
 
@@ -29,10 +32,5 @@
         </tr>
         <tr height="20px"></tr>
 
-        <td colspan=2 style="vertical-align:middle;text-align:center;">
-            <p style="margin-bottom:10px;">Si tienes problemas dando clic en el botón, copia y pega esta URL en tu navegador:</p>
-            <p>{{ url('/perfil#asesorias') }}</p>
-        </td>
     </tr>
 @endsection
-

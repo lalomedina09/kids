@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Mail\Reschedule;
 
 use Illuminate\Bus\Queueable;
@@ -6,46 +7,30 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class NotificationRefundReschedule extends Mailable
+class NotificationMoreDates extends Mailable
 {
     use Queueable, SerializesModels;
 
     protected $dataNotification;
-    protected $user;
     protected $advice;
-    protected $refund;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct($dataNotification, $advice, $user, $refund)
+    public function __construct($dataNotification, $advice)
     {
         $this->dataNotification = $dataNotification;
-        $this->user = $user;
         $this->advice = $advice;
-        $this->refund = $refund;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
         $subject = $this->dataNotification['subject'];
-        $emails = [env('QD_CONTACT_EMAIL')];
+        $emails = $this->dataNotification['advisor']->email;
 
         return $this->subject($subject)
             ->to($emails)
-            ->view('emails.refund.staff')
+            ->view('emails.reschedules.more-dates')
             ->with([
                 'dataNotification' => $this->dataNotification,
-                'user' => $this->user,
-                'advice' => $this->advice,
-                'refund' => $this->refund
+                'advice' => $this->advice
             ]);
     }
 }

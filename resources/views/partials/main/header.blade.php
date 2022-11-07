@@ -211,7 +211,7 @@
                 @if (getNotificationsMenu() > 0)
                     <li class="nav-item nav-item-search d-none d-sm-inline">
                         <a href="{{route('notification.index')}}" id="" >
-                            <img src="{{ asset('images/icons/notification-circle.png') }}" class="mb-5px"  alt="Notification Icon Alert" width="25px">
+                            <img src="{{ asset('images/icons/notification-circle.svg') }}" class="mb-5px" id="icon-notification-alert" alt="Notification Icon Alert" width="25px">
                         </a>
                     </li>
                 @else

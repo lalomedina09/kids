@@ -29,14 +29,28 @@ class Mailer
         Mail::send(new NotificationStatusReschedule($dataNotification, $user, $newReschedule));
     }
 
-    public static function createNotificationRefund()
+    public static function createNotificationStaffRefund($dataNotification, $advice, $user, $refund)
     {
-        Mail::send(new NotificationRefundReschedule($dataNotification, $user));
+        Mail::send(new NotificationRefundReschedule($dataNotification, $advice, $user, $refund));
     }
-    /*
-    public static function sendUnsubscriptionMail($newsletter)
+
+    public static function sendMailNotificationBlockReschedule($dataNotification, $advice)
     {
-        $mailable = new Unsubscribe($newsletter);
-        Mail::queue($mailable);
-    }*/
+        Mail::send(new NotificationBlockReschedule($dataNotification, $advice));
+    }
+
+    public static function createNotificationAdvisorRefund($dataNotification, $advice)
+    {
+        Mail::send(new NotificationAdvisorRefundReschedule($dataNotification, $advice));
+    }
+
+    public static function sendNotificationMoreDates($dataNotification, $advice)
+    {
+        Mail::send(new NotificationMoreDates($dataNotification, $advice));
+    }
+
+    public static function sendMailNotificationNewDates($dataNotification, $advice)
+    {
+        Mail::send(new NotificationNewDates($dataNotification, $advice));
+    }
 }

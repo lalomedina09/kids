@@ -345,6 +345,10 @@ Route::prefix('notifications')
     Route::post('/updateStatus')
         ->uses('NotificationController@updateStatus')
         ->name('notification.update.status');
+
+    Route::post('/adviseds')
+        ->uses('NotificationController@adviseds')
+        ->name('notification.get.adviseds');
     /*
     Route::get('ver/{video}')
         ->uses('PreQdPlayCourseController@show')
@@ -360,6 +364,26 @@ Route::prefix('notifications')
     ->name('qdplay.buy')
     ->middleware(['auth']);*/
 });
+
+/*
+|--------------------------------------------------------------------------
+| Reschedules
+|--------------------------------------------------------------------------
+*/
+Route::prefix('reschedules')
+    ->group(function () {
+    Route::post('/show-modal/block')
+        ->uses('ReschedulesController@modalBlockReschedule')
+        ->name('reschedules.modal.block')
+        ->middleware(['auth']);
+
+    Route::post('/show-modal/block/store')
+        ->uses('ReschedulesController@storeBlockReschedule')
+        ->name('reschedules.modal.block.store')
+        ->middleware(['auth']);
+    });
+
+
 
 /*
 |--------------------------------------------------------------------------
