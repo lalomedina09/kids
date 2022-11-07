@@ -89,52 +89,52 @@ function legendsReschedule($reschedule)
 {
     $status = $reschedule->status;
     $typeUser = $reschedule->type_user;
-    $user_id = $reschedule->user_id;
-    $user_current = Auth::user()->id;
+    $reschedule_user_id = $reschedule->user_id;
+    #$user_current = Auth::user()->id;
     $created = Carbon::parse($reschedule->created_at)->format('Y-m-d H:i');
     switch ($status) {
         case 1:
             return 'Contemplada';
         case 2:
-            if($user_current == $user_id)
+            if(Auth::user()->id == $reschedule_user_id)
             {
-                return 'Tu asesor te sugiere Re-agendar la asesoría, elige la nueva fecha desde el botón de Re agendar';
-            }else {
                 return 'Sugeriste a tu asesorado cambiar la fecha de asesoría';
+            }else {
+                return 'Tu asesor te sugiere Re-agendar la asesoría, elige la nueva fecha desde el botón de Re agendar';
             }
         case 3:
-            if ($user_current == $user_id)
+            if (Auth::user()->id == $reschedule_user_id)
             {
                 return 'Re agendaste la asesoría, espera que tu asesor acepte o rechace la nueva fecha. Si tu asesor no cambia el status tu asesoría se llevará a cabo en la nueva fecha que elegiste';
             }else{
                 return 'Tu asesorado agendando la asesoría, acepta o rechaza la fecha, desde el botón de Re agendar. Si no actualizas el estatus el evento se llevara acabo en la nueva fecha solicitada por tu asesorado';
             }
         case 4:
-            if ($user_current == $user_id){
+            if (Auth::user()->id == $reschedule_user_id){
                 return 'Aprobaste la nueva fecha que eligió tu asesorado';
             }else{
                 return 'Tu solicitud fue aprobada por tu asesor';
             }
         case 5:
-            if ($user_current == $user_id) {
+            if (Auth::user()->id == $reschedule_user_id) {
                 return 'Rechazaste la solicitud de tu asesorado para Re agendar';
             } else {
                 return 'Tu solicitud fue rechazada por el asesor, revisa las políticas de devoluciones y solicita la devolución de tu asesoría ';
             }
         case 6:
-            if ($user_current == $user_id) {
+            if (Auth::user()->id == $reschedule_user_id) {
                 return 'Solicitud de devolución en proceso ';
             } else {
                 return 'Tu asesorado solicitó la devolución de la asesoría ';
             }
         case 7:
-            if ($user_current == $user_id) {
+            if (Auth::user()->id == $reschedule_user_id) {
                 return 'Asesor hizo reporte que no llegaste a la asesoría y ya no esta disponible para reagendar ';
             } else {
                 return 'Asesorado no se presentó y bloqueaste la opción de re agendar ';
             }
         case 10:
-            if ($user_current == $user_id) {
+            if (Auth::user()->id == $reschedule_user_id) {
                 return 'Espera que tu asesor agregue nuevas fechas en las próximas 24 horas a partir que enviaste la solicitud '. $created;
             } else {
                 return 'Tu asesorado solicitó fechas que se adapten a su agenda, sino agregas fechas tu asesorado solicitará el reembolso ' .
@@ -215,6 +215,19 @@ function diferenceHoursStartToCurrent($date, $hours)
 
     if($hoursDiff >= $hours)
     {
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+function advicedateLastCurrent($last_reschedule)
+{
+    $new_date = $last_reschedule->current_date;
+    $current = Carbon::now();
+
+    if($new_date > $current){
         return true;
     }else{
         return false;
