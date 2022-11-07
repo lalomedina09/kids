@@ -69,7 +69,7 @@ Route::prefix('registrobasico')
         Route::post('/')
             ->uses('BasicoController@store');
     });
-Route::prefix('registroinversiones')
+Route::prefix('metasdeahorro')
     ->group(function () {
         Route::get('/')
             ->uses('InversionesController@show');

@@ -13,11 +13,11 @@
             <div class="row m-0 h-100">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-12 h-100">
                     <div class="align-vertical">
-                        <h1 class="text-white"><br>¡Alcanza tus metas
-más rápido!</h1>
+                        <h1 class="text-white"><br>¡Alcanza tus metas más rápido!</h1>
                         <div class="d-flex flex-row align-items-center">
                             <h5 class="text-black mb-0">Te regalamos nuestro descargable<br><br>
-<b>¡Meta de ahorro!</b></h5>
+                                <b>¡Meta de ahorro!</b>
+                            </h5>
                         </div>
                         <div class="d-flex flex-row align-items-center text-center">
                             <p><img src="{{ asset('images/landing/inversiones/logo.png') }}" alt="Master Plan" width="95%"></p>
@@ -119,23 +119,23 @@ más rápido!</h1>
 
         <section>
             <h1 class="title-underline title-underline-b title-underline-danger text-center">Descarga el formato de Meta de Ahorro
-<br><b>que te ayudará a:</b></h1>
+                <br><b>que te ayudará a:</b>
+            </h1>
             <div class="row mt-5">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                     <img src="{{ asset('images/landing/inversiones/1.png') }}" alt="Credito" width="100%">
-                    <h4 class="mb-3 text-center text-bold"><span class="text-danger">Visualizar fácilmente </span> 
+                    <h4 class="mb-3 text-center text-bold"><span class="text-danger">Visualizar fácilmente </span>
                     lo que debes hacer cada mes</h4>
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                     <img src="{{ asset('images/landing/inversiones/2.png') }}" alt="Tasas" width="100%">
-                    <h4 class="mb-3 text-center text-bold"><span class="text-danger">Conocer los posibles
-obstáculos que</span> 
+                    <h4 class="mb-3 text-center text-bold"><span class="text-danger">Conocer los posibles obstáculos que</span>
                     podrían existir en el camino</h4>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                     <img src="{{ asset('images/landing/inversiones/3.png') }}" alt="Monto" width="100%">
-                    <h4 class="mb-3 text-center text-bold"><span class="text-danger">Establecer tu meta</span> 
+                    <h4 class="mb-3 text-center text-bold"><span class="text-danger">Establecer tu meta</span>
                     y poner acciones para lograrla</h4>
                 </div>
             </div>
@@ -144,16 +144,16 @@ obstáculos que</span>
 
     <footer class="footer box">
         <div class="container text-center text-white">
-            <div class="text-center mx-auto"><a href="#" 
+            <div class="text-center mx-auto"><a href="#"
                             data-toggle="modal" data-target="#register-modal">
                 <img src="{{ asset('images/logo_light.svg') }}"
                     class="my-1"
-                    height="35px" alt="Querido Dinero">  
-                          
+                    height="35px" alt="Querido Dinero">
+
                         </a>
             </div>
            <p><span class="text-bold text-danger mb-2">Tu relación </span>con el dinero</p>
-            <!--  
+            <!--
             <p class="mb-0">
                 <a target="blank" href="#" title="web">
                     <img src="{{ asset('images/landing/inversiones/web.png') }}" width="100">
