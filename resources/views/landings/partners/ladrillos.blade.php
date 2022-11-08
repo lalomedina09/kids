@@ -42,8 +42,7 @@
                         <hr class="hr26">
                         <div class="d-flex flex-row align-items-center">
                             <img src="{{ asset('images/landing/ladrillos/chk2.png') }}" width="40" class="mr-2">
-                            <h5 class="text-white mb-0">Invierte en inmuebles
-en venta o preventa</h5>
+                            <h5 class="text-white mb-0">Invierte en inmuebles en venta o preventa</h5>
                         </div>
 
                         <div class="d-flex flex-row align-items-center">
@@ -70,7 +69,8 @@ en venta o preventa</h5>
                         <div class="p-4 rounded-lg text-center" style="background-color:rgba(0,0,0,0.4);">
                             <div class="text-center">
                                 <p class="text-white text-bold text-center">¡Conoce cómo<br>
- <span class="text-secondary"> vivir de tus rentas!</span></p>
+                                    <span class="text-secondary"> vivir de tus rentas!</span>
+                                </p>
                             </div>
 
                             <form method="post" id="form-landing" class="form">
@@ -147,8 +147,8 @@ en venta o preventa</h5>
                     <img src="{{ asset('images/landing/ladrillos/3.png') }}" alt="Credito" width="100%">
                     <hr class="hr25">
                     <h4 class="mb-3 text-bold"><span class="text-danger">Recibe tu renta</span></h4>
-                    <p class="font-weight-lighter" style="font-size: 1rem"><b class="text-bold">Preventa - </b> 
-                    Cuándo el proyecto de 
+                    <p class="font-weight-lighter" style="font-size: 1rem"><b class="text-bold">Preventa - </b>
+                    Cuándo el proyecto de
                     inversión haya sido terminado y esté en operación<br>
                     <b class="text-bold">Venta - </b>Desde el primer día</p>
                 </div>
@@ -165,7 +165,7 @@ en venta o preventa</h5>
             </div>
             <hr class="hr25">
         </section>
-        <section>        
+        <section>
                 <BR>
                 <h1 class="title-underline text-center title-underline-b title-underline-danger mb-5">Puntos claves al invertir con nosotros</h1>
             <div class="row mt-5">
@@ -196,7 +196,7 @@ en venta o preventa</h5>
     <footer class="footer box">
         <div class="container text-center">
            <p class="text-danger mb-2">¡Invertir en propiedades nunca fue tan sencillo!</p>
-                <!--  
+                <!--
             <p class="mb-0">
                 <a target="blank" href="https://www.masterplandigital.com/posgrados/creditos-educativos/" title="web">
                     <img src="{{ asset('images/landing/ladrillos/web.png') }}" width="100">
