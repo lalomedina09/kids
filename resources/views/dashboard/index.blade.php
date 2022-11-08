@@ -9,7 +9,31 @@
 
             <ul class="list-group">
                 <li class="list-group-item">
-                    *Actualizacion de Url en los articulos
+                    *Genere y subi el sitemap.xml para Queridodinero
+                </li>
+                <li class="list-group-item">
+                    *Nuevas funciones para el proceso de re agendar asesoría
+                </li>
+                <li class="list-group-item">
+                    *Nuevo Sitio <a href="https://dear-money.com" target="_blank">dear-money.com</a> <br>
+                    *Instalación de certificados SSL
+                    *Administracion de posts con origen para dear money <br>
+                    *Genere el sitemap.xml para las urls de dear money
+                </li>
+                <li class="list-group-item">
+                    *Se cambio la página home por el blog
+                    *Se desactivaron opciones del menu principal
+                </li>
+                <li class="list-group-item">
+                    *Nuevas landings para campañas de QD Play
+                </li>
+                <li class="list-group-item">
+                    *Instalación de libreria para facebook
+                    *Instalación de librería para exportar importar en Excel
+                </li>
+                <li class="list-group-item">
+                    *Funcion para actulizar la Url de un articulo
+                    *Opcion para selecionar en que dominio sera visible el articulo
                 </li>
                 <li class="list-group-item">
                     *Landing de Registros Qdplay Empresas <br>
@@ -18,7 +42,7 @@
                     *Agregue columnas en los resultados de landing para que se vea mas ordenada la información
                 </li>
                 <li class="list-group-item">
-                    *Reagendar asesoria (En proceso) <br>
+                    *Reagendar asesoria (Terminado espera de bugs) <br>
                     *Pagina de Notificaciones <br>
                     *Boton de acces directo a ver ordenes de compra <br>
                 </li>
