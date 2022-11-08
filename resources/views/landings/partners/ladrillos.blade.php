@@ -6,24 +6,24 @@
 
     <style type="text/css">
         @media (min-width: 800px) {
-     #contenedorImagen {
-        background-image: url(/images/landing/ladrillos/bg.png);
-       }
-     }
+            #contenedorImagen {
+                background-image: url(/images/landing/ladrillos/bg.png);
+            }
+            }
 
-     /*tablets*/
-    /* @media (min-width: 481px) and (max-width: 1024px) {
-     #contenedorImagen {
-        background-image: url(/images/landing/ladrillos/bgMobile.png);
-      }
-    }*/
+            /*tablets*/
+            /* @media (min-width: 481px) and (max-width: 1024px) {
+            #contenedorImagen {
+                background-image: url(/images/landing/ladrillos/bgMobile.png);
+            }
+            }*/
 
-    /*celulares*/
-    @media (max-width: 800px) {
-    #contenedorImagen {
-        background-image: url(/images/landing/ladrillos/bgMobile.png);
-      }
-    }
+            /*celulares*/
+            @media (max-width: 800px) {
+            #contenedorImagen {
+                background-image: url(/images/landing/ladrillos/bgMobile.png);
+            }
+        }
     </style>
 @endpush
 
@@ -37,8 +37,9 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-12 h-100">
                     <div class="align-vertical">
                         <h1 class="text-danger"><br><br><br><br><br><br><br>
-                        <span class="text-bold">Vuélvete inmobiliario</span><br>
-                        <span class="text-white">sin ser millonario</span></h1>
+                            <span class="text-bold">Vuélvete inmobiliario</span><br>
+                            <span class="text-white">sin ser millonario</span>
+                        </h1>
                         <hr class="hr26">
                         <div class="d-flex flex-row align-items-center">
                             <img src="{{ asset('images/landing/ladrillos/chk2.png') }}" width="40" class="mr-2">
