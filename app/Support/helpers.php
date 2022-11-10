@@ -224,7 +224,7 @@ function diferenceHoursStartToCurrent($date, $hours)
 
 function advicedateLastCurrent($last_reschedule)
 {
-    $new_date = $last_reschedule->current_date;
+    $new_date = $last_reschedule->new_date;
     $current = Carbon::now();
 
     if($new_date > $current){
