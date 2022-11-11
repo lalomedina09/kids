@@ -823,6 +823,18 @@ Route::prefix('parameters')
     });
 });
 
+Route::prefix('exports')
+    ->group(function () {
+        // Export Orders
+        Route::prefix('orders')
+            ->group(function () {
+                Route::get('/all')
+                    ->uses('ExportController@ordersAllData')
+                    ->name('export.orders.all')
+                    ->middleware(['permission:marketplace.orders.index']);
+    });
+});
+
 // Categories
 /*
 $router->resource('categories', 'CategoriesController', ['as' => 'dashboard', 'except' => ['show', 'edit', 'update', 'destroy']]);
