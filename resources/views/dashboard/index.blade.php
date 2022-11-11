@@ -9,6 +9,9 @@
 
             <ul class="list-group">
                 <li class="list-group-item">
+                    *El asesor ya puede subir varios archivos adjuntos
+                </li>
+                <li class="list-group-item">
                     *Genere y subi el sitemap.xml para Queridodinero
                 </li>
                 <li class="list-group-item">
