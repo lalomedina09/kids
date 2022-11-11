@@ -9,6 +9,9 @@
 
             <ul class="list-group">
                 <li class="list-group-item">
+                    *Botón para descargar datos en excel de tabla de marketplace, por ahora descarga todos los datos posteriormente integramos los filtros
+                </li>
+                <li class="list-group-item">
                     *El asesor ya puede subir varios archivos adjuntos
                 </li>
                 <li class="list-group-item">
