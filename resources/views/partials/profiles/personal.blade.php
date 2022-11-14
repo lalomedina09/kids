@@ -78,6 +78,17 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="control-label text-uppercase">Tiktok</label>
+                    <input type="text" name="tiktok" class="form-control"
+                        placeholder="@lang('e.g.') https://tiktok.com/tiktok"
+                        value="{{ $user->getMeta('blog', 'tiktok') }}">
+
+                    @if ($errors->has('tiktok'))
+                        <span class="small text-danger">{{ $errors->first('tiktok') }}</span>
+                    @endif
+                </div>
+
+                <div class="form-group">
                     <label class="control-label text-uppercase">YouTube</label>
                     <input type="text" name="youtube" class="form-control"
                         placeholder="@lang('e.g.') https://youtube.com/YouTube"

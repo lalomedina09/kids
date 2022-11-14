@@ -90,6 +90,23 @@
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="lni lni-tiktok"></i>
+                        </span>
+                    </div>
+                    <input type="text" name="tiktok" class="form-control"
+                    placeholder="@lang('e.g.') https://www.tiktok.com/@user"
+                        value="{{ $user->getMeta('blog', 'tiktok') }}">
+                </div>
+
+                @if ($errors->has('tiktok'))
+                    <span class="small text-danger">{{ $errors->first('tiktok') }}</span>
+                @endif
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
                         <span class="input-group-text"><span class="fa fa-youtube-play"></span></span>
                     </div>
                     <input type="text" name="youtube" class="form-control"

@@ -103,6 +103,9 @@ class UpdateRequest extends FormRequest
                     'instagram' => [
                         'active_url', 'url', 'nullable', 'min:10', 'regex:'.env('INSTAGRAM_PROFILE_REGEX')
                     ],
+                    'tiktok' => [
+                        'active_url', 'url', 'nullable', 'min:10', 'regex:'.env('TIKTOK_PROFILE_REGEX')
+                    ],
                     'youtube' => [
                         'active_url', 'url', 'nullable', 'min:10', 'regex:'.env('YOUTUBE_PROFILE_REGEX')
                     ]
