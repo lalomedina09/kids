@@ -13,22 +13,13 @@ class NotificationBlockReschedule extends Mailable
     protected $dataNotification;
     protected $user;
     protected $newReschedule;
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
+
     public function __construct($dataNotification, $advice)
     {
         $this->dataNotification = $dataNotification;
         $this->advice = $advice;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
         $emails = [env('QD_CONTACT_EMAIL')];

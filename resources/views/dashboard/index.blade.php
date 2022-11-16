@@ -9,6 +9,27 @@
 
             <ul class="list-group">
                 <li class="list-group-item">
+                    *Módulo de Asesorías
+                    Asesor le puede solicitar documentos al asesorado y está disponible la opción  de subir y listar documentos.
+                    <ul>
+                        <li>Relacionar Documentos</li>
+                        <li>Asesor envia comentarios y que documentos requiere</li>
+                        <li>Asesorado puede subir los documentos</li>
+                        <li>Ambos pueden descargar los documentos</li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    *Editar Perfil
+                    <ul>
+                        <li>
+                            Nuevo Campo para agregar link de tiktok
+                        </li>
+                        <li>
+                            Al ver un artículo podemos ver icono de tiktok
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
                     *Botón para descargar datos en excel de tabla de marketplace, por ahora descarga todos los datos posteriormente integramos los filtros
                 </li>
                 <li class="list-group-item">
@@ -53,8 +74,12 @@
                     *Boton de acces directo a ver ordenes de compra <br>
                 </li>
                 <li class="list-group-item">
-                    *Administracion de categorias en la pestaña de Administración <br>
-                    *Agrega *Actualiza  *Desactiva
+                    *Administración de categorias <br>
+                    <ul>
+                        <li>Agrega</li>
+                        <li>Actualiza</li>
+                        <li>Desactiva</li>
+                    </ul>
                 </li>
                 <li class="list-group-item">
                     *Parametros > Precios > rating de precios<br>
