@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6 col-12">
                     <img src="/images/courses/finanzas-personales-empleados/beneficios/bienestar-financiero.png" alt="Bienestar financiero" width="245"><br>
-                    Bienestar<br>fincanciero
+                    Bienestar<br>financiero
                 </div>
                 <div class="col-md-4 col-sm-6 col-12">
                     <img src="/images/courses/finanzas-personales-empleados/beneficios/menos-prestamos.png" alt="Menos préstamos" width="245"><br>
