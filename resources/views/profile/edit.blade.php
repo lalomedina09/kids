@@ -23,7 +23,7 @@
                     </div>
 
                     <p class="text-danger text-bold mb-0">{{ $user->present()->fullname }}</p>
-                    <p class="text-xsmall text-primary m-0">{{ $user->present()->email }}</p>
+                    <p class="text-primary m-0">{{ $user->present()->email }}</p><!--text-xsmall -->
 
                     @if ($user->hasMeta('blog', 'birthdate'))
                         <div class="mt-4 profile__content-info d-flex align-items-center">
