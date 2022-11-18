@@ -464,7 +464,18 @@ Route::prefix('descargas')
             ->name('downloads.download')
             ->middleware(['auth']);
     });
+/*
+Route::prefix('downloads')
+    ->group(function () {
+        Route::get('/')
+            ->uses('DownloadController@index')
+            ->name('downloads.index');
 
+        Route::get('/{slug}')
+        ->uses('DownloadController@download')
+        ->name('downloads.download');
+    });
+*/
 /*
 |--------------------------------------------------------------------------
 | Subscriber Newsletter
