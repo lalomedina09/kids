@@ -82,7 +82,7 @@ class CalendarService
     {
         $duration = $this->advice->duration/60;
         //H ->format 24 hours //h ->format 12 hours
-        $start = Carbon::parse($this->advice->start_date)->addHours(5);
+        $start = Carbon::parse($this->advice->start_date)->addHours(6);
         $end = Carbon::parse($start)->addMinutes($duration);
 
         $this->timeStart = $start;

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <p class="text-white text-uppercase text-center small">
+        <p class="text-white text-uppercase text-center ">
             Tu asesoría con
             <span class="text-danger text-uppercase text-center">
                 {{ $advice->advised->fullname }}
@@ -20,7 +20,7 @@
 <hr>
 <div class="row">
     <div class="col-md-12">
-        <p class="small text-danger">
+        <p class=" text-danger">
             ¿Tu asesorado no se presentó a la asesoría? <br>
             <span class="text-white">
                 De acuerdo con <b>nuestras políticas</b>, sí te presentaste a la asesoría y tu asesorado no se
@@ -34,7 +34,7 @@
 </div>
 <div class="row">
     <div class="col-md-12 text-center">
-        <p class="small text-danger">
+        <p class=" text-danger">
             ¿Deseas ofrecer la opción de reagendar? <br>
         </p>
         <a href="{{ route('qd.advice.advice.reschedule.after.option.reschedule', [$advice->hashid]) }}" class="btn btn btn-pill btn-danger mr-5">

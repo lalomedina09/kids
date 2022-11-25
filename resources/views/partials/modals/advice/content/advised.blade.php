@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <p class="text-white text-uppercase text-center small">
+        <p class="text-white text-uppercase text-center ">
             Tu asesoría con
             <span class="text-danger text-uppercase text-center">
                 {{ $advice->advisor->fullname }}
@@ -12,7 +12,7 @@
 
 <div class="row">
     <div class="col-md-12 text-center">
-        <p class="small text-danger text-center">
+        <p class=" text-danger text-center">
             ¿No sabes cómo acceder a la asesoría? <br>
             <span class="text-white">
                 Da clic aquí para conectarte a la sesión por videollamada.
@@ -27,7 +27,7 @@
 
 <div class="row">
     <div class="col-md-12 text-center">
-        <p class="small text-danger text-center">
+        <p class=" text-danger text-center">
             ¿Tu asesor no se presentó a la asesoría? <br>
             <span class="text-white">
                 De acuerdo con <b>nuestras políticas</b>, sí te presentaste a la asesoría y tu asesor no se
