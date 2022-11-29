@@ -111,9 +111,9 @@ function legendsReschedule($reschedule)
             }
         case 4:
             if (Auth::user()->id == $reschedule_user_id){
-                return 'Aprobaste la nueva fecha que eligió tu asesorado';
+                return 'Solicitud aprobada correctamente';
             }else{
-                return 'Tu solicitud fue aprobada por tu asesor';
+                return 'Solicitud aprobada correctamente';
             }
         case 5:
             if (Auth::user()->id == $reschedule_user_id) {
@@ -139,6 +139,13 @@ function legendsReschedule($reschedule)
             } else {
                 return 'Tu asesorado solicitó fechas que se adapten a su agenda, sino agregas fechas tu asesorado solicitará el reembolso ' .
                 'Mensaje del asesorado: '. $reschedule->description;
+            }
+        case 11:
+            if (Auth::user()->id == $reschedule_user_id) {
+                return 'Espera que tu asesorado elija la nueva fecha ';
+            } else {
+                return 'Tu asesor actualizo el calendario, elije una nueva fecha para re agendar la asesoría ' .
+                'Mensaje del asesor: ' . $reschedule->description;
             }
         default:
             return null;
@@ -224,7 +231,12 @@ function diferenceHoursStartToCurrent($date, $hours)
 
 function advicedateLastCurrent($last_reschedule)
 {
-    $new_date = $last_reschedule->new_date;
+    if($last_reschedule){
+        $new_date = $last_reschedule->new_date;
+    }else{
+        $new_date = null;
+    }
+
     $current = Carbon::now();
 
     if($new_date > $current){
@@ -237,4 +249,16 @@ function advicedateLastCurrent($last_reschedule)
 function onlyDate($date)
 {
     return  Carbon::parse($date)->format('Y-m-d');
+}
+
+function separateLinkDonwload($link)
+{
+    if($link)
+    {
+        $explode = explode('descargas/', $link);
+        $newUrl = 'https://dear-money.com/downloads/' . $explode[1];
+
+        return $newUrl;
+    }
+
 }
