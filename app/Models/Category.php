@@ -272,7 +272,7 @@ class Category extends Model
     public function tagged_articles()
     {
         return $this->morphedByMany(Article::class, 'taggable')
-            ->where('site', "dear-money.com");
+        ->where('site', '!=', "dear-money.com");
     }
 
     /**
