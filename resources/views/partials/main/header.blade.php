@@ -151,10 +151,10 @@
                 </a>
             @endif
 
-            <a href="{{ route('courses.index') }}"
+            {{--<a href="{{ route('courses.index') }}"
                 class="nav-link header__navigation-link {{ active_class('talleres*') }}">
                 Talleres
-            </a>
+            </a>--}}
 
             {{--<a href="{{ route('qdplay.index') }}"
                 class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">

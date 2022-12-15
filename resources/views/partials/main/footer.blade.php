@@ -30,11 +30,11 @@
                                     <a href="{{ route('qd.advice.advisors.index') }}" class="text-white">Asesores</a>
                                 </li>
                             @endif
-                            @if (config()->has('money.modules.products'))
+                            {{--@if (config()->has('money.modules.products'))
                                 <li class="mb-1">
                                     <a href="{{ route('qd.products.products.index') }}" class="text-white">Productos</a>
                                 </li>
-                            @endif
+                            @endif--}}
                             <li class="mb-1">
                                 <a href="{{ config('money.url.store') }}" class="link-white">Libro</a>
                             </li>
