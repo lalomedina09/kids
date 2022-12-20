@@ -72,6 +72,7 @@ Route::any('cerrar-sesion')
     ->uses('Auth\LoginController@logout')
     ->name('logout');
 
+
 /*
 |--------------------------------------------------------------------------
 | Register
@@ -89,6 +90,36 @@ Route::prefix('registro')
             ->uses('RegisterController@store')
             ->name('register.store');
     });
+
+
+/*
+|--------------------------------------------------------------------------
+| Join Account For Exhibitor (Expositores)
+|--------------------------------------------------------------------------
+*/
+Route::prefix('qdplay/unete')
+->middleware(['guest'])
+->group(function () {
+    Route::get('/')
+    ->uses('RegisterExhibitorController@showRegistrationForm')
+    ->name('qdplay/unete/show');
+
+    Route::post('/data-general')
+    ->uses('RegisterExhibitorController@storeDataGeneral')
+    ->name('register.store.general');
+
+    Route::post('/data-contact')
+    ->uses('RegisterExhibitorController@storeDataContact')
+    ->name('register.store.contact');
+
+    Route::post('/data-profile')
+    ->uses('RegisterExhibitorController@storeDataProfile')
+    ->name('register.store.profile');
+
+    Route::post('/data-bank')
+    ->uses('RegisterExhibitorController@storeDataBank')
+    ->name('register.store.bank');
+});
 
 /*
 |--------------------------------------------------------------------------
