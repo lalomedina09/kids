@@ -62,7 +62,6 @@ class UsersController extends Controller
     public function create()
     {
         $user = new User;
-        dd('estamos en el controaldor correcto');
         return view('dashboard.users.create', compact('user'));
     }
 

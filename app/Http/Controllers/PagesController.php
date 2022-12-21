@@ -92,6 +92,20 @@ class PagesController extends Controller
         return view('pages.index', ['page' => $page]);
     }
 
+    public function prestacion_de_servicios_fisica() : View
+    {
+        $page = Page::where('slug', 'contrato-de-prestacion-de-servicios-qd-play-persona-fisica')->first();
+
+        return view('pages.index', ['page' => $page]);
+    }
+
+    public function prestacion_de_servicios_moral() : View
+    {
+        $page = Page::where('slug', 'contrato-de-prestacion-de-servicios-qd-play')->first();
+        dd($page);
+        return view('pages.index', ['page' => $page]);
+    }
+
     /**
      * Display the content page.
      *

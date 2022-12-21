@@ -108,19 +108,27 @@ Route::prefix('qdplay/unete')
     ->uses('RegisterExhibitorController@storeDataGeneral')
     ->name('register.store.general');
 
-    Route::post('/data-contact')
-    ->uses('RegisterExhibitorController@storeDataContact')
-    ->name('register.store.contact');
 
-    Route::post('/data-profile')
-    ->uses('RegisterExhibitorController@storeDataProfile')
-    ->name('register.store.profile');
-
-    Route::post('/data-bank')
-    ->uses('RegisterExhibitorController@storeDataBank')
-    ->name('register.store.bank');
 });
 
+Route::prefix('qdplay/unete')
+//->middleware(['auth'])
+    ->group(function () {
+        //Route Data Contact
+        #Route::post('/data-contact')
+        #->uses('RegisterExhibitorController@storeDataContact')
+        #->name('register.store.contact');
+
+        //Data Profile
+        Route::patch('/data-profile/{id}/{section}')
+        ->uses('RegisterExhibitorController@storeDataProfile')
+        ->name('register.store.profile');
+
+        //Data Bank
+        Route::patch('/data-bank/{id}/{section}')
+        ->uses('RegisterExhibitorController@storeDataBank')
+        ->name('register.store.bank');
+    });
 /*
 |--------------------------------------------------------------------------
 | Password Reset
@@ -206,9 +214,17 @@ Route::get('/terminos-y-condiciones')
     ->uses('PagesController@terms')
     ->name('terms');
 
-Route::get('/pages/{slug}')
+Route::get('/contrato-de-prestacion-de-servicios-qd-play-persona-fisica')
+    ->uses('PagesController@prestacion_de_servicios_fisica')
+    ->name('contrato-de-prestacion-de-servicios-qd-play-persona-fisica');
+
+Route::get('/contrato-de-prestacion-de-servicios-qd-play-persona-moral')
+    ->uses('PagesController@prestacion_de_servicios_moral')
+    ->name('prestacion-de-servicios');
+
+Route::get('contrato-de-prestacion-de-servicios-qd-play-persona-moral')
     ->uses('PagesController@show')
-    ->name('pages.show');
+    ->name('contrato-de-prestacion-de-servicios-qd-play-persona-moral');
 
 Route::get('/descargas-libro', function () {
     return redirect()->route('pages.show', ['slug' => 'descargas-libro']);

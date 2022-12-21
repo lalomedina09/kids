@@ -117,6 +117,15 @@ class User extends Authenticatable implements HasMedia
     ];
 
     /**
+     * Exhibitor roles
+     *
+     * @var string
+     */
+    const EXHIBITOR_ROLES = [
+        'exhibitor'
+    ];
+
+    /**
      * Morph class
      *
      * @var string
@@ -390,5 +399,10 @@ class User extends Authenticatable implements HasMedia
     public function getDateHuman($date)
     {
         return $newDate = Carbon::parse($date)->diffForHumans();
+    }
+
+    public function hasExhibitorRoles()
+    {
+        return $this->hasAnyRole(User::EXHIBITOR_ROLES);
     }
 }

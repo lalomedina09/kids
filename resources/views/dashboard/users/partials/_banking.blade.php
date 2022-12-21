@@ -18,12 +18,12 @@
 
         <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
             <label for="user-bank" class="control-label">@lang('Bank')</label>
-            <input type="text" id="user-bank" class="form-control" readonly disabled>
+            <input type="text" id="user-bank" name="user_bank" class="form-control" value="{{ $user->getMeta('blog', 'user_bank') }}">
         </div>
 
         <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
             <label for="user-account" class="control-label">@lang('Account')</label>
-            <input type="text" id="user-account" class="form-control" readonly disabled>
+            <input type="text" id="user-account" name="user_account" class="form-control" value="{{ $user->getMeta('blog', 'user_account') }}">
         </div>
     </div>
 

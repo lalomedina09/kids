@@ -10,6 +10,7 @@ use App\Models\{ Newsletter, User };
 use App\Repositories\UserRepository;
 
 use Auth;
+#use DB;
 
 class RegisterController extends Controller
 {
@@ -65,7 +66,7 @@ class RegisterController extends Controller
                 'state' => $params['state']
             ]);
         }
-
+s
         Auth::login($user);
 
         Mailer::sendRegisterMail($user);
