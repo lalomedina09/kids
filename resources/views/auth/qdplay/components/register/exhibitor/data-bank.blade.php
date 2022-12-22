@@ -2,10 +2,9 @@
     Casi terminamos
 </p>
 
-<p class="text-danger text-uppercase text-center mb-3 ml-5">
+<p class="text-danger text-uppercase text-center mb-3">
     Tu solicitud será revisada, de ser aprobada te notificaremos por correo electrónico de los siguientes pasos.
 </p>
-<br><br>
 
 <div id="register-wrapper">
     <div id="register-form">

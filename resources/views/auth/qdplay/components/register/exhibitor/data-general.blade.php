@@ -8,7 +8,8 @@
     lo más pronto posible. <br> Querido Dinero se reserva el derecho de selección.
 </p>
 <br><br>
-<div id="register-wrapper mt-5">
+
+<div id="register-wrapper">
     <div id="register-form">
         <form action="{{ route('register.store.general') }}" method="POST"
             id="form-register" class="form-custom form-modal" enctype="multipart/form-data">
@@ -107,15 +108,13 @@
                                 <div class="col-md-12">
                                     <label class="control-label font-weight-bold">@lang('Profile photo')*:</label>
                                     <input type="file" name="profile_photo" id="profile_photo" accept="image/*"/>
-
-                                    <!--<label class="custom-file-label" for="featured_image">Seleccionar archivo...</label>-->
                                     <small class="form-text text-muted">Máximo 2 MB, en formato JPG, PNG</small>
                                 </div>
 
                                 @if ($errors->has('gender'))
                                     <span class="small text-danger">{{ $errors->first('gender') }}</span>
                                 @endif
-                            </div>
+                            </div>-->
                             <!-- Termina espacio para foto de perfil -->
                         </div>
 
