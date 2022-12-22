@@ -2,7 +2,7 @@
     <h5 class="text-danger text-uppercase mb-4">@lang('Banking information')</h5>
 
     <form action="{{ route('profile.update', ['payment']) }}" method="post"
-        id="form-payment" class="form-custom">
+        id="form-payment" class="form-custom" enctype="multipart/form-data">
         @csrf
 
         <div class="form-row mb-3">
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-
+        <!--- Datos Fiscales --->
         <h5 class="text-danger text-uppercase my-4">@lang('Tax data')</h5>
 
         <div class="form-row mb-3">
@@ -55,7 +55,21 @@
                     <span class="small text-danger">{{ $errors->first('tax_number') }}</span>
                 @endif
             </div>
+            <!------->
+            <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
+                <label for="user-tax-name" class="control-label text-uppercase">* Constancía de Situación Fiscal</label>
+                @if($user->getmedia('profile_file_tax')->first())
+                    <a href="{{ $user->getmedia('profile_file_tax')->first()->getUrl() }}">Ver Documento</a>
+                @else
+                    <input type="file" name="profile_file_tax" id="profile_file_tax" accept="pdf"/>
+                    <small class="form-text text-muted">Máximo 2 MB, en formato PDF</small>
+                @endif
 
+                @if ($errors->has('profile_file_tax'))
+                    <span class="small text-danger">{{ $errors->first('profile_file_tax') }}</span>
+                @endif
+            </div>
+            <!------->
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
                 <label for="user-tax-address" class="control-label text-uppercase">* @lang('Street')</label>
                 <input type="text" name="tax_address"

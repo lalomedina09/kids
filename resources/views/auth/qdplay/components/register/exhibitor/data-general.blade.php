@@ -1,11 +1,14 @@
-<p class="text-danger text-uppercase text-center mb-0">
-    unete a nuestra comunidad de expertos
-</p>
-<p class="modal__title text-uppercase text-center mb-5 text-green">
-    Quiero ser expositor de QD PLAY
+
+<p class="modal__title text-uppercase text-center mb-3 text-green">
+    Únete al programa de expositores
 </p>
 
-<div id="register-wrapper">
+<p class="text-danger text-uppercase text-left mb-3 ml-5">
+    Tu solicitud será revisada por el equipo de Querido Dinero y recibirás respuesta
+    lo más pronto posible. <br> Querido Dinero se reserva el derecho de selección.
+</p>
+<br><br>
+<div id="register-wrapper mt-5">
     <div id="register-form">
         <form action="{{ route('register.store.general') }}" method="POST"
             id="form-register" class="form-custom form-modal" enctype="multipart/form-data">

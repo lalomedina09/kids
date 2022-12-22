@@ -117,6 +117,13 @@ class ProfileController extends Controller
 
             case 'payment':
                 $this->users->saveMeta('blog', $params, $user);
+
+                if($params['profile_file_tax'])
+                {
+                    $file = $params['profile_file_tax'];
+                    $user->saveFileTaxSituation($file);
+                }
+
                 return redirect($redirect_url . '#' . str_slug(__('Payment')))->with('success', __('Your profile was update successfully'));
 
             default:

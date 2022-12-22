@@ -21,6 +21,7 @@ class RegisterExhibitorBankRequest extends FormRequest
             'name_bank' => 'required',
             'clabe' => 'required|string|digits:18',
             'tax_name' => 'required|string',
+            'profile_file_tax' => 'required',
             'tax_number' => 'required|string|between:12,13',
             'tax_address' => 'required|string',
             'tax_address_number' => 'required|numeric',

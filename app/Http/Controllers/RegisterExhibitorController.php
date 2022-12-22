@@ -84,7 +84,12 @@ class RegisterExhibitorController extends Controller
         $params = $request->all();
 
         $this->users->saveMeta('blog', $params, $user);
-        #$step_exhibitor = Session::put('step_exhibitor', 4);
+
+        if ($params['profile_file_tax']) {
+            $file = $params['profile_file_tax'];
+            $user->saveFileTaxSituation($file);
+        }
+
         Session::forget('step_exhibitor');
         Session::forget('user_id');
 

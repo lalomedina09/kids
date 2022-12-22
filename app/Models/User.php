@@ -405,4 +405,18 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->hasAnyRole(User::EXHIBITOR_ROLES);
     }
+
+    public function saveFileTaxSituation($file)
+    {
+        $this->addMedia($file)->toMediaCollection('profile_file_tax', config('money.filesystem.disk'));
+        $this->save();
+    }
+
+    public function registerMediaTaxSituation()
+    {
+        #$this->addMediaCollection('profile_file_tax')->singleFile();
+        #$this->addMediaCollection('profile_photo')->singleFile();
+        $this->getMedia('images')->first();
+        #->getUrl('thumb');
+    }
 }

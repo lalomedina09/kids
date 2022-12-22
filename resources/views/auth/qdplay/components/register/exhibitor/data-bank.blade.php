@@ -1,13 +1,16 @@
-<p class="text-danger text-uppercase text-center mb-0">
+<p class="modal__title text-uppercase text-center mb-3 text-green">
     Casi terminamos
 </p>
-<p class="modal__title text-uppercase text-center mb-5">
-    Es importante que agregues tus datos bancarios para recepción de pagos
+
+<p class="text-danger text-uppercase text-center mb-3 ml-5">
+    Tu solicitud será revisada, de ser aprobada te notificaremos por correo electrónico de los siguientes pasos.
 </p>
+<br><br>
 
 <div id="register-wrapper">
     <div id="register-form">
-            <form action="{{ route('register.store.bank', [$user_id, 'banking']) }}" class="form-custom form-modal" method="post" id="form-register">
+            <form action="{{ route('register.store.bank', [$user_id, 'banking']) }}" class="form-custom form-modal"
+            method="post" id="form-register" enctype="multipart/form-data">
                 @method('patch')
                 @csrf
             <div id="register-general">
@@ -58,6 +61,16 @@
 
                             @if ($errors->has('tax_number'))
                                 <span class="small text-danger">{{ $errors->first('tax_number') }}</span>
+                            @endif
+                        </div>
+
+                        <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
+                            <label for="profile_file_tax" class="control-label">* Constancía de Situación Fiscal</label>
+                            <input type="file" name="profile_file_tax" id="profile_file_tax" accept="pdf"/>
+                            <small class="form-text text-muted">Máximo 2 MB, en formato PDF</small>
+
+                            @if ($errors->has('profile_file_tax'))
+                                <span class="small text-danger">{{ $errors->first('profile_file_tax') }}</span>
                             @endif
                         </div>
 
