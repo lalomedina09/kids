@@ -89,6 +89,17 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="control-label text-uppercase">LinkedIn</label>
+                    <input type="text" name="linkedin" class="form-control"
+                        placeholder="@lang('e.g.') https://linkedin.com/in/user"
+                        value="{{ $user->getMeta('blog', 'linkedin') }}">
+
+                    @if ($errors->has('linkedin'))
+                        <span class="small text-danger">{{ $errors->first('linkedin') }}</span>
+                    @endif
+                </div>
+
+                <div class="form-group">
                     <label class="control-label text-uppercase">YouTube</label>
                     <input type="text" name="youtube" class="form-control"
                         placeholder="@lang('e.g.') https://youtube.com/YouTube"

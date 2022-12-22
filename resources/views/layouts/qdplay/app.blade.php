@@ -8,7 +8,7 @@
 
 </div>
 
-{{--@include('partials.main.scripts')--}}
+
 @if (app()->environment() === 'production')
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('services.google.analyticsKey') ?: 'UA-XXXXX-Y' }}"></script>
     <script type="text/javascript">

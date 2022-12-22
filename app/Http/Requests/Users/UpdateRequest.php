@@ -16,7 +16,7 @@ class UpdateRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    /*public function authorize()
     {
         switch ($this->section) {
             case 'personal':
@@ -28,7 +28,7 @@ class UpdateRequest extends FormRequest
             default:
                 return true;
         }
-    }
+    }*/
 
     /**
      * Get the validation rules that apply to the request.
@@ -106,12 +106,15 @@ class UpdateRequest extends FormRequest
                     'tiktok' => [
                         'active_url', 'url', 'nullable', 'min:10', 'regex:'.env('TIKTOK_PROFILE_REGEX')
                     ],
+                    'linkedin' => [
+                        'active_url', 'url', 'nullable', 'min:10'
+                    ],
                     'youtube' => [
                         'active_url', 'url', 'nullable', 'min:10', 'regex:'.env('YOUTUBE_PROFILE_REGEX')
                     ]
                 ];
 
-                if ($this->user()->hasAnyRole(['advisor'])) {
+                if ($this->user()->hasAnyRole(['advisor']) || $this->user()->hasExhibitorRoles()) {
                     $rules['video'] = 'required|video_url|min:10|max:1000';
                     $rules['education'] = 'required|array';
                     $rules['education.start_date'] = 'required|date_format:Y-m-d';

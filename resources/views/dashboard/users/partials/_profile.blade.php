@@ -107,6 +107,23 @@
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="lni lni-linkedin"></i>
+                        </span>
+                    </div>
+                    <input type="text" name="linkedin" class="form-control"
+                    placeholder="@lang('e.g.') https://www.linkedin.com/in/@user"
+                        value="{{ $user->getMeta('blog', 'linkedin') }}">
+                </div>
+
+                @if ($errors->has('linkedin'))
+                    <span class="small text-danger">{{ $errors->first('linkedin') }}</span>
+                @endif
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
                         <span class="input-group-text"><span class="fa fa-youtube-play"></span></span>
                     </div>
                     <input type="text" name="youtube" class="form-control"

@@ -117,6 +117,15 @@ class User extends Authenticatable implements HasMedia
     ];
 
     /**
+     * Exhibitor roles
+     *
+     * @var string
+     */
+    const EXHIBITOR_ROLES = [
+        'exhibitor'
+    ];
+
+    /**
      * Morph class
      *
      * @var string
@@ -390,5 +399,24 @@ class User extends Authenticatable implements HasMedia
     public function getDateHuman($date)
     {
         return $newDate = Carbon::parse($date)->diffForHumans();
+    }
+
+    public function hasExhibitorRoles()
+    {
+        return $this->hasAnyRole(User::EXHIBITOR_ROLES);
+    }
+
+    public function saveFileTaxSituation($file)
+    {
+        $this->addMedia($file)->toMediaCollection('profile_file_tax', config('money.filesystem.disk'));
+        $this->save();
+    }
+
+    public function registerMediaTaxSituation()
+    {
+        #$this->addMediaCollection('profile_file_tax')->singleFile();
+        #$this->addMediaCollection('profile_photo')->singleFile();
+        $this->getMedia('images')->first();
+        #->getUrl('thumb');
     }
 }

@@ -55,14 +55,14 @@
                         data-toggle="tab"
                     >@lang('My bookmarks')</a>
 
-                    @if ($user->hasProfileRoles())
+                    @if ($user->hasProfileRoles() || $user->hasExhibitorRoles())
                         <a href="#{{ str_slug(__('My personal profile')) }}"
                             class="nav-item nav-link text-uppercase"
                             data-toggle="tab"
                         >@lang('My personal profile')</a>
                     @endif
 
-                    @if ($user->hasPaymentRoles())
+                    @if ($user->hasPaymentRoles() || $user->hasExhibitorRoles())
                         <a href="#{{ str_slug(__('Payment')) }}"
                             class="nav-item nav-link text-uppercase"
                             data-toggle="tab"
@@ -97,11 +97,11 @@
                     @include('partials.profiles.interests')
                     @include('partials.profiles.bookmarks')
 
-                    @if ($user->hasProfileRoles())
+                    @if ($user->hasProfileRoles() || $user->hasExhibitorRoles())
                         @include('partials.profiles.personal')
                     @endif
 
-                    @if ($user->hasPaymentRoles())
+                    @if ($user->hasPaymentRoles() || $user->hasExhibitorRoles())
                         @include('partials.profiles.payment')
                     @endif
 
