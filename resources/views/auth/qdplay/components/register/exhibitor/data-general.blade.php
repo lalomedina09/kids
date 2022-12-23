@@ -114,7 +114,7 @@
                                 @if ($errors->has('gender'))
                                     <span class="small text-danger">{{ $errors->first('gender') }}</span>
                                 @endif
-                            </div>-->
+                            </div>
                             <!-- Termina espacio para foto de perfil -->
                         </div>
 
