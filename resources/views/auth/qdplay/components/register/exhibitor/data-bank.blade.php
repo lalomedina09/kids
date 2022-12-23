@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                            <label for="profile_file_tax" class="control-label">* Constancía de Situación Fiscal</label>
+                            <label for="profile_file_tax" class="control-label">* Constancia de Situación Fiscal</label>
                             <input type="file" name="profile_file_tax" id="profile_file_tax" accept="pdf"/>
                             <small class="form-text text-muted">Máximo 2 MB, en formato PDF</small>
 
