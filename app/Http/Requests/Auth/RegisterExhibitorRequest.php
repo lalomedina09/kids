@@ -53,7 +53,7 @@ class RegisterExhibitorRequest extends FormRequest
             'service_contract' => 'required',
             #'interests' => 'sometimes|array',
             #'interests.*' => 'integer|exists:categories,id|in:' . $extra_valid_interests,
-            'g-recaptcha-response' => 'required|recaptcha'
+            #'g-recaptcha-response' => 'required|recaptcha'
         ];
     }
 
