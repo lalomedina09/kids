@@ -50,10 +50,10 @@ class RegisterExhibitorRequest extends FormRequest
             'gender' => 'required|string|in:male,female',
             'whatsapp' => 'nullable|digits:10',
             'profile_photo' => 'required|max:2000',
-            'service_contract' => 'required'
+            'service_contract' => 'required',
             #'interests' => 'sometimes|array',
             #'interests.*' => 'integer|exists:categories,id|in:' . $extra_valid_interests,
-            //'g-recaptcha-response' => 'required|recaptcha'
+            'g-recaptcha-response' => 'required|recaptcha'
         ];
     }
 
