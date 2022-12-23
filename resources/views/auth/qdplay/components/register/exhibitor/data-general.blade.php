@@ -206,7 +206,7 @@
                     </p>
 
                     <div class="form-group text-center">
-                        <button type="submit" class="btn btn-danger btn-pill">@lang('Save')</button>
+                        <button type="submit" class="btn btn-danger btn-pill">@lang('Next')</button>
                     </div>
                     <div class="form-group text-right">
                         <h2 class="text-green">
