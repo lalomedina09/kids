@@ -116,7 +116,7 @@
             (*) @lang('The field is required')
         </p>
 
-        @if($user->hasAnyRole(['advisor']))
+        @if($user->hasAnyRole(['advisor']) || $user->hasExhibitorRoles())
             <hr>
 
             <div class="row">

@@ -45,7 +45,7 @@ class RegisterExhibitorProfileRequest extends FormRequest
                         'active_url', 'url', 'nullable', 'min:10', 'regex:' . env('YOUTUBE_PROFILE_REGEX')
                     ]
                 ];
-
+                /*
                 //$rules['video'] = 'required|video_url|min:10|max:1000';
                 $rules['education'] = 'required|array';
                 $rules['education.start_date'] = 'required|date_format:Y-m-d';
@@ -60,7 +60,7 @@ class RegisterExhibitorProfileRequest extends FormRequest
                 $rules['certifications'] = 'required|string|min:10|max:300';
                 $rules['specialization'] = 'required|string|min:10|max:100';
                 $rules['premium'] = 'sometimes|boolean';
-
+                */
                 return $rules;
     }
 
