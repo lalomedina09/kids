@@ -130,4 +130,24 @@ class ProfileController extends Controller
                 return $redirect;
         }
     }
+
+    public function updateFileSTax($user, Request $request)
+    {
+        $params = $request->all();
+        $redirect_url = route('profile.edit');
+        $user = request()->user();
+
+        if($params['profile_file_tax'])
+        {
+            //Primero hacemos busqueda luego eliminamos
+            $_file = $user->getmedia('profile_file_tax')->first();
+            $_file->delete();
+
+            //Ahora subimos el nuevo documento
+            $file = $params['profile_file_tax'];
+            $user->saveFileTaxSituation($file);
+        }
+
+        return redirect($redirect_url . '#' . str_slug(__('Payment')))->with('success', __('Constancia de situación fiscal, actualizada correctamente'));
+    }
 }

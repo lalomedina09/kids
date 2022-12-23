@@ -112,13 +112,7 @@ Route::prefix('qdplay/unete')
 });
 
 Route::prefix('qdplay/unete')
-//->middleware(['auth'])
     ->group(function () {
-        //Route Data Contact
-        #Route::post('/data-contact')
-        #->uses('RegisterExhibitorController@storeDataContact')
-        #->name('register.store.contact');
-
         //Data Profile
         Route::patch('/data-profile/{id}/{section}')
         ->uses('RegisterExhibitorController@storeDataProfile')
@@ -475,6 +469,11 @@ Route::prefix('perfil')
         Route::post('/{section}')
             ->uses('ProfileController@update')
             ->name('profile.update');
+
+        //Data Bank
+        Route::patch('/file-situation-tax/{user}')
+        ->uses('ProfileController@updateFileSTax')
+        ->name('update.situation.tax');
     });
 
 /*

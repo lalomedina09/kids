@@ -134,4 +134,28 @@
             </div>
         </div>
     </form>
+
+    @if($user->getmedia('profile_file_tax')->first())
+        <hr>
+        <h5 class="text-danger text-uppercase mb-4">Actualiza tu constancia de situacion fiscal</h5>
+        <form action="{{ route('update.situation.tax', [$user]) }}"
+                method="post" id="form-register" enctype="multipart/form-data">
+                    @method('patch')
+                    @csrf
+
+            <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
+                <label for="profile_file_tax" class="text-dark control-label">Subir constancia</label>
+                <input type="file" name="profile_file_tax" id="profile_file_tax" accept="pdf"/>
+                <small class="form-text text-muted">Máximo 2 MB, en formato PDF</small>
+
+                @if ($errors->has('profile_file_tax'))
+                    <span class="small text-danger">{{ $errors->first('profile_file_tax') }}</span>
+                @endif
+            </div>
+
+            <div class="form-group col-12 text-center">
+                <input type="submit" value="@lang('Actualizar')" class="btn btn-danger btn-pill">
+            </div>
+        </form>
+    @endif
 </div>
