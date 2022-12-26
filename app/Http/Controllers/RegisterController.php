@@ -66,7 +66,7 @@ class RegisterController extends Controller
                 'state' => $params['state']
             ]);
         }
-s
+
         Auth::login($user);
 
         Mailer::sendRegisterMail($user);
