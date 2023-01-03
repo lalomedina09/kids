@@ -28,9 +28,9 @@
 <div class="row">
     <div class="col-md-12 text-center">
         <p class=" text-danger text-center">
-            ¿Tu asesor no se presentó a la asesoría? <br>
+            ¿Tu couch no se presentó a la asesoría? <br>
             <span class="text-white">
-                De acuerdo con <b>nuestras políticas</b>, sí te presentaste a la asesoría y tu asesor no se
+                De acuerdo con <b>nuestras políticas</b>, sí te presentaste a la asesoría y tu couch no se
                 presentó es tu <b>derecho de solicitar</b> una devolución.
             </span>
         </p>

@@ -1,6 +1,6 @@
 @extends('layouts.email')
 
-@section('email-title', 'Notificacion Asesor no ofrecio reagendar')
+@section('email-title', 'Notificacion Couch no ofrecio reagendar')
 
 @section('email-content')
     <tr>
@@ -8,13 +8,13 @@
             <p style="margin-bottom:10px; text-align:left;">¡Hola!</p>
 
             <p style="margin-bottom:10px; text-align:left;">
-                El asesor <b> {{ $advice->advisor->fullname }} </b>:
+                El couch <b> {{ $advice->advisor->fullname }} </b>:
                 solicito <b>no reagendar</b> la asesoria a su asesorado <b>{{ $advice->advised->fullname }}</b>
                 que estaba programada para <b>{{ $advice->present()->given_at }}</b>
             </p>
 
             <p style="margin-bottom:10px; text-align:left;">
-                Mensaje del asesor: <br>
+                Mensaje del couch: <br>
                 {{ $dataNotification['description'] }}
             </p>
         </td>

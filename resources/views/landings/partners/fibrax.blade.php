@@ -83,7 +83,7 @@ financiera invirtiendo<br>
                                 </div>
 
                                 <div class="form-group clear">
-                                    <button class="btn btn-block btn-danger">Contactar a un asesor</button>
+                                    <button class="btn btn-block btn-danger">Contactar a un couch</button>
                                 </div>
                             </form>
                         </div>
@@ -156,7 +156,7 @@ tu inversión</h4>
             <hr>
         </section>
 
-        
+
         <section>
             <div class="text-center">
                 <h1 class="title-underline title-underline-b title-underline-danger mb-5">Alcanza tus metas financieras

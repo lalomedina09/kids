@@ -27,7 +27,7 @@
                             </li>
                             @if (config()->has('money.modules.advice'))
                                 <li class="mb-1">
-                                    <a href="{{ route('qd.advice.advisors.index') }}" class="text-white">Asesores</a>
+                                    <a href="{{ route('qd.advice.advisors.index') }}" class="text-white">Couches</a>
                                 </li>
                             @endif
                             {{--@if (config()->has('money.modules.products'))

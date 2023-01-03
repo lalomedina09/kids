@@ -1,4 +1,4 @@
-<!----- vista modal para el asesor--------->
+<!----- vista modal para el couch--------->
 <div class="row">
     <div class="col-md-12">
         <p class="text-white text-uppercase text-center small">

@@ -146,7 +146,7 @@
                     <img src="{{ asset('images/landing/advice/1.gif') }}" alt="" width="100%">
                     <hr class="separator--danger">
                     <h4 class="mb-3 text-bold">Asesoría personalizada</h4>
-                    <p class="font-weight-lighter">Elige entre diversos asesores expertos en diferentes áreas financieras y recibe asesorías individuales según tu asunto.</p>
+                    <p class="font-weight-lighter">Elige entre diversos couches expertos en diferentes áreas financieras y recibe asesorías individuales según tu asunto.</p>
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
@@ -176,8 +176,8 @@
                         <div class="text-center mb-3">
                             <img src="{{ asset('images/landing/advice/g1.gif') }}" alt="" width="80%">
                         </div>
-                        <h4 class="ml-3 mb-3 text-bold text-uppercase">Elige al asesor</h4>
-                        <p class="font-weight-lighter">Busca el tema el que requieras asesoría, ve los videos de los asesores, su descripción, experiencia, precio y elige el que más se adapte a tus necesidades.</p>
+                        <h4 class="ml-3 mb-3 text-bold text-uppercase">Elige al couch</h4>
+                        <p class="font-weight-lighter">Busca el tema el que requieras asesoría, ve los videos de los couches, su descripción, experiencia, precio y elige el que más se adapte a tus necesidades.</p>
                     </div>
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-3">
@@ -185,7 +185,7 @@
                             <img src="{{ asset('images/landing/advice/g2.gif') }}" alt="" width="80%">
                         </div>
                         <h4 class="mb-3 text-bold text-uppercase">Reserva tu asesoría</h4>
-                        <p class="font-weight-lighter">Revisa el calendario del asesor, programa la fecha y hora que más te convenga.</p>
+                        <p class="font-weight-lighter">Revisa el calendario del couch, programa la fecha y hora que más te convenga.</p>
                     </div>
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-3">
@@ -193,15 +193,15 @@
                             <img src="{{ asset('images/landing/advice/g3.gif') }}" alt="" width="80%">
                         </div>
                         <h4 class="ml-3 mb-3 text-bold text-uppercase">Soluciona tus dudas</h4>
-                        <p class="font-weight-lighter">Conecta con tu asesor por medio de video llamada y soluciona tus problemas y/o dudas financieras.</p>
+                        <p class="font-weight-lighter">Conecta con tu couch por medio de video llamada y soluciona tus problemas y/o dudas financieras.</p>
                     </div>
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-3">
                         <div class="text-center mb-3">
                             <img src="{{ asset('images/landing/advice/g4.gif') }}" alt="" width="80%">
                         </div>
-                        <h4 class="mb-3 text-bold text-uppercase">Califica a tu asesor</h4>
-                        <p class="font-weight-lighter">Descarga tu plan de trabajo en nuestra plataforma y califica a tu asesor.</p>
+                        <h4 class="mb-3 text-bold text-uppercase">Califica a tu couch</h4>
+                        <p class="font-weight-lighter">Descarga tu plan de trabajo en nuestra plataforma y califica a tu couch.</p>
                     </div>
                 </div>
 

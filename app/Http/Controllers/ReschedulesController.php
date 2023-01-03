@@ -33,7 +33,7 @@ class ReschedulesController extends Controller
 
             $dataNotification = array(
                 'user_id' => $user->id,
-                'subject' => 'Asesor '. $advice->advisor->fullname. ' No ofrecio la opcion de reagendar',
+                'subject' => 'Couch '. $advice->advisor->fullname. ' No ofrecio la opcion de reagendar',
                 'description' => $request->description,
                 'notificationsable_type' => "App\\Models\\Reschedule",
                 'notificationsable_id' => $reschedule->id,
@@ -55,7 +55,7 @@ class ReschedulesController extends Controller
         $reschedule->advice_id = $request->advice_id;
         $reschedule->current_date = null;
         $reschedule->new_date = null;
-        $reschedule->type_user = 1; //1 Porque lo solicita el asesor
+        $reschedule->type_user = 1; //1 Porque lo solicita el couch
         $reschedule->description = $request->description;
         $reschedule->save();
 
