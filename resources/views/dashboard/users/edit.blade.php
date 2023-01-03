@@ -15,13 +15,13 @@
             class="nav-item nav-link active"
             data-toggle="tab">@lang('General information')</a>
 
-        @if ($user->hasProfileRoles())
+        @if ($user->hasProfileRoles() || $user->hasExhibitorRoles())
             <a href="#profile"
                 class="nav-item nav-link"
                 data-toggle="tab">@lang('Personal profile')</a>
         @endif
 
-        @if ($user->hasPaymentRoles())
+        @if ($user->hasPaymentRoles() || $user->hasExhibitorRoles())
             <a href="#banking"
                 class="nav-item nav-link"
                 data-toggle="tab">@lang('Banking information')</a>
@@ -33,13 +33,13 @@
             @include('dashboard.users.partials._form', ['update' => true])
         </div>
 
-        @if ($user->hasProfileRoles())
+        @if ($user->hasProfileRoles() || $user->hasExhibitorRoles())
             <div id="profile" class="tab-pane">
                 @include('dashboard.users.partials._profile', ['update' => true])
             </div>
         @endif
 
-        @if ($user->hasPaymentRoles())
+        @if ($user->hasPaymentRoles() || $user->hasExhibitorRoles())
             <div id="banking" class="tab-pane">
                 @include('dashboard.users.partials._banking', ['update' => true])
             </div>
