@@ -47,7 +47,7 @@
                                 <label for="bio" class="control-label">* @lang('Biography')</label>
                                 <textarea name="bio" rows="10"
                                     id="user_bio" class="form-control text-white"
-                                    data-label="letters" data-limit="1000"></textarea>
+                                    data-label="letters" data-limit="260"></textarea>
 
                                 @if ($errors->has('bio'))
                                     <span class="small text-danger">{{ $errors->first('bio') }}</span>

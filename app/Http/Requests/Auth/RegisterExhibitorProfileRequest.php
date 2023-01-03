@@ -24,7 +24,7 @@ class RegisterExhibitorProfileRequest extends FormRequest
                             })
                     ],
                     'job' => 'nullable|string|min:1|max:100',
-                    'bio' => 'nullable|string|min:10|max:1000',
+                    'bio' => 'nullable|string|min:10|max:265',
                     'whatsapp' => 'nullable|string|regex:' . env('WHATSAPP_PROFILE_REGEX'),
                     'facebook' => [
                         'active_url', 'url', 'nullable', 'min:10', 'regex:' . env('FACEBOOK_PROFILE_REGEX')
