@@ -10,10 +10,10 @@
             <ul class="list-group">
                 <li class="list-group-item">
                     *Módulo de Asesorías
-                    Couch le puede solicitar documentos al asesorado y está disponible la opción  de subir y listar documentos.
+                    Coach le puede solicitar documentos al asesorado y está disponible la opción  de subir y listar documentos.
                     <ul>
                         <li>Relacionar Documentos</li>
-                        <li>Couch envia comentarios y que documentos requiere</li>
+                        <li>Coach envia comentarios y que documentos requiere</li>
                         <li>Asesorado puede subir los documentos</li>
                         <li>Ambos pueden descargar los documentos</li>
                     </ul>
@@ -33,7 +33,7 @@
                     *Botón para descargar datos en excel de tabla de marketplace, por ahora descarga todos los datos posteriormente integramos los filtros
                 </li>
                 <li class="list-group-item">
-                    *El couch ya puede subir varios archivos adjuntos
+                    *El coach ya puede subir varios archivos adjuntos
                 </li>
                 <li class="list-group-item">
                     *Genere y subi el sitemap.xml para Queridodinero

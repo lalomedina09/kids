@@ -83,7 +83,7 @@ financiera invirtiendo<br>
                                 </div>
 
                                 <div class="form-group clear">
-                                    <button class="btn btn-block btn-danger">Contactar a un couch</button>
+                                    <button class="btn btn-block btn-danger">Contactar a un coach</button>
                                 </div>
                             </form>
                         </div>

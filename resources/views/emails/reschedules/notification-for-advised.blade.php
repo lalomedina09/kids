@@ -8,7 +8,7 @@
             <p style="margin-bottom:10px; text-align:left;">¡Hola <b>{{ $dataNotification['advised']->fullname }}</b> !</p>
 
             <p style="margin-bottom:10px; text-align:left;">
-                Tu couch <b>{{ $user->fullname }}</b>
+                Tu coach <b>{{ $user->fullname }}</b>
                 <br><br>
                 Te invita a reagendar la asesoria ya que por el siguiente motivo no estare disponible en la fecha
                 que se tenía contemplada.

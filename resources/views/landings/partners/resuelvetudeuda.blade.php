@@ -107,7 +107,7 @@
                     <img src="{{ asset('images/landing/resuelvetudeuda/1.png') }}" alt="Apoyo" width="100%">
                     <hr class="separator--danger">
                     <h4 class="mb-3 text-bold">Cómo te ayudamos</h4>
-                    <p class="font-weight-lighter">Cuando te registras un couch te contacta para estudiar tu caso y diseñar contigo un plan de ahorro a tu medida.</p>
+                    <p class="font-weight-lighter">Cuando te registras un coach te contacta para estudiar tu caso y diseñar contigo un plan de ahorro a tu medida.</p>
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
@@ -121,7 +121,7 @@
                     <img src="{{ asset('images/landing/resuelvetudeuda/3.png') }}" alt="Asesoría" width="100%">
                     <hr class="separator--danger">
                     <h4 class="mb-3 text-bold">Nunca estarás solo</h4>
-                    <p class="font-weight-lighter">Tendrás a tu disposición todo un equipo de couches para aclarar dudas y saber qué hacer en todo momento.</p>
+                    <p class="font-weight-lighter">Tendrás a tu disposición todo un equipo de coaches para aclarar dudas y saber qué hacer en todo momento.</p>
                 </div>
             </div>
 

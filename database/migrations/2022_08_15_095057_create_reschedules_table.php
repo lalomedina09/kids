@@ -19,7 +19,7 @@ class CreateReschedulesTable extends Migration
             $table->integer('status')->nullable();
             $table->integer('user_id')->nullable()->unsigned()->index();
             $table->integer('advice_id')->nullable()->unsigned()->index();
-            $table->integer('type_user')->nullable();//1 = couch || 0 = usuario asesorado
+            $table->integer('type_user')->nullable();//1 = coach || 0 = usuario asesorado
             $table->text('description')->nullable();
             $table->datetime('current_date')->nullable();
             $table->datetime('new_date')->nullable();

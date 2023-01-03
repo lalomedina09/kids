@@ -74,7 +74,7 @@ class CalendarService
         {
             return $text1 . " asesorado " . $this->advice->advised->fullname . $text2 . $text3 ;
         }else{
-            return $text1 . " couch ". $this->advice->advisor->fullname . $text2 . $text3;
+            return $text1 . " coach ". $this->advice->advisor->fullname . $text2 . $text3;
         }
     }
 

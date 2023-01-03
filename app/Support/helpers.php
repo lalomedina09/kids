@@ -100,12 +100,12 @@ function legendsReschedule($reschedule)
             {
                 return 'Sugeriste a tu asesorado cambiar la fecha de asesoría';
             }else {
-                return 'Tu couch te sugiere Re-agendar la asesoría, elige la nueva fecha desde el botón de Re agendar';
+                return 'Tu coach te sugiere Re-agendar la asesoría, elige la nueva fecha desde el botón de Re agendar';
             }
         case 3:
             if (Auth::user()->id == $reschedule_user_id)
             {
-                return 'Re agendaste la asesoría, espera que tu couch acepte o rechace la nueva fecha. Si tu couch no cambia el status tu asesoría se llevará a cabo en la nueva fecha que elegiste';
+                return 'Re agendaste la asesoría, espera que tu coach acepte o rechace la nueva fecha. Si tu coach no cambia el status tu asesoría se llevará a cabo en la nueva fecha que elegiste';
             }else{
                 return 'Tu asesorado agendando la asesoría, acepta o rechaza la fecha, desde el botón de Re agendar. Si no actualizas el estatus el evento se llevara acabo en la nueva fecha solicitada por tu asesorado';
             }
@@ -119,7 +119,7 @@ function legendsReschedule($reschedule)
             if (Auth::user()->id == $reschedule_user_id) {
                 return 'Rechazaste la solicitud de tu asesorado para Re agendar';
             } else {
-                return 'Tu solicitud fue rechazada por el couch, revisa las políticas de devoluciones y solicita la devolución de tu asesoría ';
+                return 'Tu solicitud fue rechazada por el coach, revisa las políticas de devoluciones y solicita la devolución de tu asesoría ';
             }
         case 6:
             if (Auth::user()->id == $reschedule_user_id) {
@@ -129,13 +129,13 @@ function legendsReschedule($reschedule)
             }
         case 7:
             if (Auth::user()->id == $reschedule_user_id) {
-                return 'Couch hizo reporte que no llegaste a la asesoría y ya no esta disponible para reagendar ';
+                return 'Coach hizo reporte que no llegaste a la asesoría y ya no esta disponible para reagendar ';
             } else {
                 return 'Asesorado no se presentó y bloqueaste la opción de re agendar ';
             }
         case 10:
             if (Auth::user()->id == $reschedule_user_id) {
-                return 'Espera que tu couch agregue nuevas fechas en las próximas 24 horas a partir que enviaste la solicitud '. $created;
+                return 'Espera que tu coach agregue nuevas fechas en las próximas 24 horas a partir que enviaste la solicitud '. $created;
             } else {
                 return 'Tu asesorado solicitó fechas que se adapten a su agenda, sino agregas fechas tu asesorado solicitará el reembolso ' .
                 'Mensaje del asesorado: '. $reschedule->description;
@@ -144,8 +144,8 @@ function legendsReschedule($reschedule)
             if (Auth::user()->id == $reschedule_user_id) {
                 return 'Espera que tu asesorado elija la nueva fecha ';
             } else {
-                return 'Tu couch actualizo el calendario, elije una nueva fecha para re agendar la asesoría ' .
-                'Mensaje del couch: ' . $reschedule->description;
+                return 'Tu coach actualizo el calendario, elije una nueva fecha para re agendar la asesoría ' .
+                'Mensaje del coach: ' . $reschedule->description;
             }
         default:
             return null;
