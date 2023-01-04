@@ -150,7 +150,7 @@
 
                     <div class="d-flex flex-row align-items-center mb-4">
                         <img src="{{ asset('images/landing/curadeuda/chk.png') }}" width="40" class="mr-2">
-                        <h5 class="font-weight-light mb-0">Tendrás un Coach Personal durante todo el programa</h5>
+                        <h5 class="font-weight-light mb-0">Tendrás un Mentor Personal durante todo el programa</h5>
                     </div>
 
                     <div class="d-flex flex-row align-items-center mb-4">

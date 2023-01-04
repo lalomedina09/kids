@@ -53,7 +53,7 @@
                         <li class="nav-item">
                             <a href="{{ route('qd.advice.advisors.index') }}"
                                 class="header__menu-link">
-                                Coaches
+                                Mentores
                             </a>
                         </li>
                     @endif
@@ -164,7 +164,7 @@
             @if (config()->has('money.modules.advice'))
                 <a href="{{ route('qd.advice.advisors.index') }}"
                     class="nav-link header__navigation-link {{ active_class('asesores*') }}">
-                    Coaches
+                    Mentores
                 </a>
             @endif
 

@@ -10,7 +10,7 @@
             <p style="margin-bottom:10px;">
                 Tu
                 @if ($typeUser == 1)
-                    tu coach
+                    tu mentor
                 @else
                     tu cliente
                 @endif

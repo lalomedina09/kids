@@ -12,7 +12,7 @@
                         data-animate="visibleOnce" data-animation="fadeInDown">
                     <hr class="separator--danger">
                     <h4 class="mb-3 text-bold">Asesoría personalizada</h4>
-                    <p class="font-weight-lighter">Elige entre diversos coaches expertos en diferentes áreas financieras y recibe asesorías individuales según tu asunto.</p>
+                    <p class="font-weight-lighter">Elige entre diversos mentores expertos en diferentes áreas financieras y recibe asesorías individuales según tu asunto.</p>
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
@@ -47,9 +47,9 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 col-12 p-4">
                         <h4 class="ml-3 mb-3 text-bold text-uppercase">
                             <span class="number-circle number-circle-left">1</span>
-                            Elige al coach
+                            Elige al mentor
                         </h4>
-                        <p class="font-weight-lighter">Busca el tema el que requieras asesoría, ve los videos de los coaches, su descripción, experiencia, precio y elige el que más se adapte a tus necesidades.</p>
+                        <p class="font-weight-lighter">Busca el tema el que requieras asesoría, ve los videos de los mentores, su descripción, experiencia, precio y elige el que más se adapte a tus necesidades.</p>
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@
                             <span class="number-circle number-circle-right">2</span>
                             Reserva tu asesoría
                         </h4>
-                        <p class="font-weight-lighter">Revisa el calendario del coach, programa la fecha y hora que más te convenga.</p>
+                        <p class="font-weight-lighter">Revisa el calendario del mentor, programa la fecha y hora que más te convenga.</p>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-12 p-4 order-xl-last order-lg-last order-md-last order-first text-center">
                         <img src="{{ asset('images/landing/advice/g2.gif') }}" alt="" width="80%" class="rounded-lg">
@@ -77,7 +77,7 @@
                             <span class="number-circle number-circle-left">3</span>
                             Soluciona tus dudas
                         </h4>
-                        <p class="font-weight-lighter">Conecta con tu coach por medio de video llamada y soluciona tus problemas y/o dudas financieras.</p>
+                        <p class="font-weight-lighter">Conecta con tu mentor por medio de video llamada y soluciona tus problemas y/o dudas financieras.</p>
                     </div>
                 </div>
 
@@ -86,9 +86,9 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 col-12 p-4 order-xl-first order-lg-first order-md-first order-last">
                         <h4 class="mb-3 text-bold text-uppercase">
                             <span class="number-circle number-circle-right">4</span>
-                            Califica a tu coach
+                            Califica a tu mentor
                         </h4>
-                        <p class="font-weight-lighter">Descarga tu plan de trabajo en nuestra plataforma y califica a tu coach.</p>
+                        <p class="font-weight-lighter">Descarga tu plan de trabajo en nuestra plataforma y califica a tu mentor.</p>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-12 p-4 order-xl-last order-lg-last order-md-last order-first text-center">
                         <img src="{{ asset('images/landing/advice/g4.gif') }}" alt="" width="80%" class="rounded-lg">

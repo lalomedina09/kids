@@ -19,7 +19,7 @@ class CreateRefundsTable extends Migration
             $table->integer('status')->nullable();
             $table->integer('user_id')->nullable()->unsigned()->index();
             $table->integer('order_id')->nullable()->unsigned()->index();
-            #$table->integer('type_user')->nullable();//1 = coach || 0 = usuario asesorado
+            #$table->integer('type_user')->nullable();//1 = mentor || 0 = usuario asesorado
             $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();

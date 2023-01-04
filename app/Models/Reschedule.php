@@ -68,13 +68,13 @@ class Reschedule extends Model
         4 => 'Aprobada',
         5 => 'Rechazada',
         //6 => 'Reembolso',
-        7 => 'Coach Bloquea Reagendar',
-        8 => 'After Asesoria Coach Quiere ofrecer Reagendar',
-        9 => 'After Asesoria Coach Envio Propuesta Reagendar',
+        7 => 'Mentor Bloquea Reagendar',
+        8 => 'After Asesoria Mentor Quiere ofrecer Reagendar',
+        9 => 'After Asesoria Mentor Envio Propuesta Reagendar',
         10 => 'Asesorado ocupa otras fechas',
-        11 => 'Coach actualizo su calendario',
+        11 => 'Mentor actualizo su calendario',
     ];
-    //Status = 7 = Asesorado no se presento y coach hizo click en no quiero re agendar
+    //Status = 7 = Asesorado no se presento y Mentor hizo click en no quiero re agendar
     public const TYPEUSER = [
             1 => 'Asesor',
             2 => 'Cliente',

@@ -127,7 +127,7 @@ class PreQdPlayCourseController extends Controller
                 '3' => 'Miguel Cardona',
             ),
             'speciality_asesor' => array(
-                '1' => 'COACH FINANCIERO Y BANCARIO',
+                '1' => 'MENTOR FINANCIERO Y BANCARIO',
                 '2' => 'AMANTE DE LAS FINANZAS Y APASIONADA DE LOS NÚMEROS.',
                 '3' => 'EXPOSITOR',
             ),

@@ -83,7 +83,7 @@ financiera invirtiendo<br>
                                 </div>
 
                                 <div class="form-group clear">
-                                    <button class="btn btn-block btn-danger">Contactar a un coach</button>
+                                    <button class="btn btn-block btn-danger">Contactar a un mentor</button>
                                 </div>
                             </form>
                         </div>
