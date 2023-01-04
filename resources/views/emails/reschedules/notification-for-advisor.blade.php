@@ -1,6 +1,6 @@
 @extends('layouts.email')
 
-@section('email-title', 'Solicitud para Re - agendar asesoria')
+@section('email-title', 'Solicitud para Re - agendar mentoría')
 
 @section('email-content')
     <tr>
@@ -10,16 +10,16 @@
             <p style="margin-bottom:10px; text-align:left;">
                 Tu cliente <b>{{ $user->fullname }}</b>
                 <br><br>
-                Solicito reagendar la asesoria a la nueva fecha {{ getDateSpanish($newReschedule->new_date, $time=true) }}
+                Solicito reagendar la mentoría a la nueva fecha {{ getDateSpanish($newReschedule->new_date, $time=true) }}
 
                 <br>
-                El motivo para reagendar la asesoria es el siguiente
+                El motivo para reagendar la mentoría es el siguiente
                 {{ $newReschedule->description }}
             </p>
 
             <p style="margin-bottom:40px;">
                 Ingresa a la plataforma para que tengas mas detalles sobre la nueva fecha que eligio tu cliente para
-                tomar la asesoria. Si por algun motivo no puedes brindar la asesoria procede a rechazar y proceder con
+                tomar la mentoría. Si por algun motivo no puedes brindar la videollamada procede a rechazar y proceder con
                 el reembolso de la misma.
             </p>
 

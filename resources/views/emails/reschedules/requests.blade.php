@@ -1,6 +1,6 @@
 @extends('layouts.email')
 
-@section('email-title', 'Solicitud para Re - agendar asesoria')
+@section('email-title', 'Solicitud para Re - agendar mentoría')
 
 @section('email-content')
     <tr>
@@ -15,11 +15,11 @@
                     tu cliente
                 @endif
                 <br>
-                Solicito reagendar la asesoria que ya estaba programada para {{ $advice->present()->given_at }} a la nueva fecha
+                Solicito reagendar la mentoría que ya estaba programada para {{ $advice->present()->given_at }} a la nueva fecha
                 {{ $advice->present()->given_at }}
 
                 <br>
-                El motivo para reagendar la asesoria es el siguiente
+                El motivo para reagendar la mentoría es el siguiente
                 {{ $reschedule->description }}
             </p>
 

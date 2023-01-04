@@ -9,7 +9,7 @@
 
             <ul class="list-group">
                 <li class="list-group-item">
-                    *Módulo de Asesorías
+                    *Módulo de mentorías
                     Mentor le puede solicitar documentos al asesorado y está disponible la opción  de subir y listar documentos.
                     <ul>
                         <li>Relacionar Documentos</li>
@@ -39,7 +39,7 @@
                     *Genere y subi el sitemap.xml para Queridodinero
                 </li>
                 <li class="list-group-item">
-                    *Nuevas funciones para el proceso de re agendar asesoría
+                    *Nuevas funciones para el proceso de re agendar mentoría
                 </li>
                 <li class="list-group-item">
                     *Nuevo Sitio <a href="https://dear-money.com" target="_blank">dear-money.com</a> <br>
@@ -69,7 +69,7 @@
                     *Agregue columnas en los resultados de landing para que se vea mas ordenada la información
                 </li>
                 <li class="list-group-item">
-                    *Reagendar asesoria (Terminado espera de bugs) <br>
+                    *Reagendar mentoría (Terminado espera de bugs) <br>
                     *Pagina de Notificaciones <br>
                     *Boton de acces directo a ver ordenes de compra <br>
                 </li>

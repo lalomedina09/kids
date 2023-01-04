@@ -14,7 +14,7 @@
             </p>
 
             <p style="margin-bottom:10px; text-align:left;">
-                La siguiente Orden de compra : <b>{{ $refund->order_id }} </b> esta relacionada a la asesoria que se le solicita la devolución
+                La siguiente Orden de compra : <b>{{ $refund->order_id }} </b> esta relacionada a la mentoría que se le solicita la devolución
             </p>
 
             <p style="text-align:center;margin-bottom:40px;">

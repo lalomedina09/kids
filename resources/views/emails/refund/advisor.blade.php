@@ -10,7 +10,7 @@
             </p>
 
             <p style="margin-bottom:10px; text-align:left;">
-                Tu asesorado solicito la devolucion de la asesoría
+                Tu asesorado solicito la devolucion de la mentoría
                 y por lo tanto se cancelo el evento, para cualquier aclaracion
                 contacto al equipo de Querido Dinero Miriam@queridodinero.com
             </p>

@@ -22,7 +22,7 @@ class NotificationUploadDocument extends Mailable
 
     public function build()
     {
-        $subject = "Asesoría | Subir documentos ";
+        $subject = "Mentoría | Subir documentos ";
         $emails = [$this->advice->advised->email];
 
         return $this->subject($subject)

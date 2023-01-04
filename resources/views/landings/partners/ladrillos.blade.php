@@ -109,7 +109,7 @@
                                 </div>
 
                                 <div class="form-group clear">
-                                    <button class="btn btn-block btn-danger">ASESORÍA GRATIS</button>
+                                    <button class="btn btn-block btn-danger">MENTORÍA GRATIS</button>
                                 </div>
                             </form>
                         </div>

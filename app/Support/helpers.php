@@ -98,16 +98,16 @@ function legendsReschedule($reschedule)
         case 2:
             if(Auth::user()->id == $reschedule_user_id)
             {
-                return 'Sugeriste a tu asesorado cambiar la fecha de asesoría';
+                return 'Sugeriste a tu asesorado cambiar la fecha de mentoría';
             }else {
-                return 'Tu mentor te sugiere Re-agendar la asesoría, elige la nueva fecha desde el botón de Re agendar';
+                return 'Tu mentor te sugiere Re-agendar la mentoría, elige la nueva fecha desde el botón de Re agendar';
             }
         case 3:
             if (Auth::user()->id == $reschedule_user_id)
             {
-                return 'Re agendaste la asesoría, espera que tu mentor acepte o rechace la nueva fecha. Si tu mentor no cambia el status tu asesoría se llevará a cabo en la nueva fecha que elegiste';
+                return 'Re agendaste la mentoría, espera que tu mentor acepte o rechace la nueva fecha. Si tu mentor no cambia el status tu mentoría se llevará a cabo en la nueva fecha que elegiste';
             }else{
-                return 'Tu asesorado agendando la asesoría, acepta o rechaza la fecha, desde el botón de Re agendar. Si no actualizas el estatus el evento se llevara acabo en la nueva fecha solicitada por tu asesorado';
+                return 'Tu asesorado agendando la mentoría, acepta o rechaza la fecha, desde el botón de Re agendar. Si no actualizas el estatus el evento se llevara acabo en la nueva fecha solicitada por tu asesorado';
             }
         case 4:
             if (Auth::user()->id == $reschedule_user_id){
@@ -119,17 +119,17 @@ function legendsReschedule($reschedule)
             if (Auth::user()->id == $reschedule_user_id) {
                 return 'Rechazaste la solicitud de tu asesorado para Re agendar';
             } else {
-                return 'Tu solicitud fue rechazada por el mentor, revisa las políticas de devoluciones y solicita la devolución de tu asesoría ';
+                return 'Tu solicitud fue rechazada por el mentor, revisa las políticas de devoluciones y solicita la devolución de tu mentoría ';
             }
         case 6:
             if (Auth::user()->id == $reschedule_user_id) {
                 return 'Solicitud de devolución en proceso ';
             } else {
-                return 'Tu asesorado solicitó la devolución de la asesoría ';
+                return 'Tu asesorado solicitó la devolución de la mentoría ';
             }
         case 7:
             if (Auth::user()->id == $reschedule_user_id) {
-                return 'mentor hizo reporte que no llegaste a la asesoría y ya no esta disponible para reagendar ';
+                return 'mentor hizo reporte que no llegaste a la mentoría y ya no esta disponible para reagendar ';
             } else {
                 return 'Asesorado no se presentó y bloqueaste la opción de re agendar ';
             }
@@ -144,7 +144,7 @@ function legendsReschedule($reschedule)
             if (Auth::user()->id == $reschedule_user_id) {
                 return 'Espera que tu asesorado elija la nueva fecha ';
             } else {
-                return 'Tu mentor actualizo el calendario, elije una nueva fecha para re agendar la asesoría ' .
+                return 'Tu mentor actualizo el calendario, elije una nueva fecha para re agendar la mentoría ' .
                 'Mensaje del mentor: ' . $reschedule->description;
             }
         default:

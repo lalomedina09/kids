@@ -17,7 +17,7 @@
                 @case(2)
                     <p class="small mb-1 text-center">
                         <b>Recuerda</b> que le enviaste una propuesta al asesorado <br>
-                        para <b>reagendar la fecha</b> de asesoría
+                        para <b>reagendar la fecha</b> de mentoría
                     </p><br>
                     <span class="badge badge-danger">
                         Esperando respuesta del asesorado ...
@@ -25,7 +25,7 @@
                     @break
                 @case(3)
                     <p class="small mb-1 text-center">
-                            Hola tu asesorado <b>Re-agendo</b> la asesoria para hoy <br>
+                            Hola tu asesorado <b>Re-agendo</b> la mentoría para hoy <br>
                             <span class="text-danger">
                                 {{ $advice->present()->given_at }}
                             </span>
@@ -34,7 +34,7 @@
                             <br><br>
                     </p>
                     <a href="{{ $advice->videocall_url }}" class="btn btn-pill btn-danger animated tada mb-3" title="{{ $advice->videocall_url }}">
-                        Acceso a la asesoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
+                        Acceso a la mentoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
                     </a>
                     <br>
                     @if ($advice->videocallHasPassword())
@@ -52,7 +52,7 @@
                     </p>
                     <br>
                     <a href="{{ $advice->videocall_url }}" class="btn btn-pill btn-danger animated tada mb-3" title="{{ $advice->videocall_url }}">
-                        Acceso a la asesoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
+                        Acceso a la mentoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
                     </a>
                     <br>
                     @if ($advice->videocallHasPassword())
@@ -68,18 +68,18 @@
                     @break
                 @case(6)
                     <p class="small mb-1 text-center">
-                        Tu asesorado solicito el reembolso de la asesoría
+                        Tu asesorado solicito el reembolso de la mentoría
                     </p>
                     @break
                 @case(7)
                     <p class="small mb-1 text-center">
                         Hola bloqueaste la opcion de reagendar a tu asesorado <span class="text-danger">{{ $advice->advised->fullname }}</span>
-                        para llevar acabo esta asesoría
+                        para llevar acabo esta mentoría
                     </p>
                     @break
                 @case(8)
                     <p class="small mb-1 text-center">
-                        ¿Tienes pensado ofrecer la oportunidad de reagendar la asesoría a
+                        ¿Tienes pensado ofrecer la oportunidad de reagendar la mentoría a
                         <span class="text-danger">
                             {{ $advice->advised->fullname }}
                         </span> ?
@@ -90,7 +90,7 @@
                     @break
                 @case(9)
                     <p class="small mb-1 text-center">
-                        Le enviaste la opción de reagendar asesoría a tu asesorado
+                        Le enviaste la opción de reagendar mentoría a tu asesorado
                         <span class="text-danger">
                             {{ $advice->advised->fullname }}
                         </span>
@@ -114,7 +114,7 @@
                         <span class="text-danger">
                             {{ $advice->advised->fullname }}
                         </span> <br>
-                        Para que vuelva a elegir una nueva fecha y re agende la asesoría
+                        Para que vuelva a elegir una nueva fecha y re agende la mentoría
                     </p>
                     @break
                 @default

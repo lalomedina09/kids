@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <p class="text-white text-uppercase text-center ">
-            Tu asesoría con
+            Tu mentoría con
             <span class="text-danger text-uppercase text-center">
                 {{ $advice->advised->fullname }}
             </span> <br>
@@ -13,7 +13,7 @@
     <div class="col-md-12 text-center">
         <!-- href="{{-- $advice->videocall_url --}}" -->
         <a href="#" onclick="registerUserConnected('{{$advice->id}}', '{{$advice->videocall_url}}');" class="btn btn-pill btn-danger animated tada" title="{{ $advice->videocall_url }}">
-            Unirme a la asesoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
+            Unirme a la mentoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
         </a>
     </div>
 </div>
@@ -21,9 +21,9 @@
 <div class="row">
     <div class="col-md-12">
         <p class=" text-danger">
-            ¿Tu asesorado no se presentó a la asesoría? <br>
+            ¿Tu asesorado no se presentó a la mentoría? <br>
             <span class="text-white">
-                De acuerdo con <b>nuestras políticas</b>, sí te presentaste a la asesoría y tu asesorado no se
+                De acuerdo con <b>nuestras políticas</b>, sí te presentaste a la mentoría y tu asesorado no se
                 presentó es tu <b>derecho recibir</b> el pago completo.
                 <br><br>
                 Puedes brindar la opción a tu asesorado de <b>reagendar</b> la sesión si lo deseas,

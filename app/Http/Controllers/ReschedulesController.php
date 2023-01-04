@@ -44,7 +44,7 @@ class ReschedulesController extends Controller
             $notification = AdviceRescheduleTrait::createNotification($dataNotification, $user, $typeNotification = 1);
         DB::commit();
 
-        return $redirect->with('success', __('¡¡La asesoria fue bloqueada y ya no se podra Re agendar!!'));
+        return $redirect->with('success', __('¡¡La mentoría fue bloqueada y ya no se podrá Re agendar!!'));
     }
 
     public function storeReschedule(Request $request)

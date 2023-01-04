@@ -95,7 +95,7 @@
                                 </div>
 
                                 <div class="form-group clear">
-                                    <button class="btn btn-block btn-danger">Asesoría Gratis</button>
+                                    <button class="btn btn-block btn-danger">Mentoría Gratis</button>
                                 </div>
                             </form>
                         </div>
@@ -111,10 +111,10 @@
 
             <div class="row mt-5">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
-                    <img src="{{ asset('images/landing/curadeuda/1.png') }}" alt="Asesoría Financiera" width="100%">
+                    <img src="{{ asset('images/landing/curadeuda/1.png') }}" alt="Mentoría Financiera" width="100%">
                     <hr class="separator--danger">
-                    <h4 class="mb-3 text-bold">Asesoría financiera</h4>
-                    <p class="font-weight-lighter">Diagnosticamos tu caso, brindándote asesoría legal y financiera totalmente gratis.</p>
+                    <h4 class="mb-3 text-bold">Mentoría financiera</h4>
+                    <p class="font-weight-lighter">Diagnosticamos tu caso, brindándote mentoría legal y financiera totalmente gratis.</p>
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">

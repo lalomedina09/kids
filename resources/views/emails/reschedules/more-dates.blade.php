@@ -21,7 +21,7 @@
             <p style="text-align:center;margin-bottom:40px;">
                 <a href="{{ url('/perfil#asesorias') }}"
                     style="font-weight:bold;color:white;background-color:#0e0d0d;padding:15px 30px;display:inline-block;text-decoration:none;border-radius:5px;">
-                    Ver detalles de asesoría
+                    Ver detalles de mentoría
                 </a>
             </p>
         </td>

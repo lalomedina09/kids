@@ -45,10 +45,10 @@ class CalendarService
         $this->attendee = $dataUser;
         $this->description = $description;
 
-        $calendar = Calendar::create('QD Asesorias')
+        $calendar = Calendar::create('QD Mentorías')
         ->productIdentifier('asesoria.cz')
         ->event(function (Event $event) {
-            $event->name("Asesoría Programada En Querido Dinero")
+            $event->name("Mentoría Programada En Querido Dinero")
             ->alertMinutesBefore(15, $this->msgAlertBefore)
             ->organizer($this->organizer, 'Querido Dinero')
             ->status(EventStatus::confirmed())
@@ -65,10 +65,10 @@ class CalendarService
 
     public function setDescription($type)
     {
-        $text1 = " Asesoría programada en Querido Dinero con tu ";
+        $text1 = " Mentoría programada en Querido Dinero con tu ";
         $text2 = " Link de videollamada disponible en www.queridodinero.com/perfil ";
         $text3 = "
-            Recuerda iniciar Sesion > Perfil > Asesorías creado";
+            Recuerda iniciar Sesion > Perfil > Mentorías creado";
 
         if($type == "advisor")
         {
@@ -89,8 +89,8 @@ class CalendarService
         $this->timeEnd = $end;
         $this->organizer = env('QD_CONTACT_EMAIL', 'elqueridodinero@gmail.com');
 
-        $this->address = " Liga de Asesoria por Meeting en www.queridodinero.com/perfil ";
-        $this->msgAlertBefore = " Ingresa a www.queridodinero.com, La asesoria comenzara en 15 minutos ";
+        $this->address = " Liga de mentoría por Meeting en www.queridodinero.com/perfil ";
+        $this->msgAlertBefore = " Ingresa a www.queridodinero.com, La mentoría comenzara en 15 minutos ";
     }
 
 }

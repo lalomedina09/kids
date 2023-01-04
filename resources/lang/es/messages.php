@@ -159,7 +159,7 @@ return [
             'price' => [
                 'rating' => [
                     'show' => 'Ver parametro actual para Rating de precio',
-                    'update' => 'Actualizar Rating de precio de asesorias'
+                    'update' => 'Actualizar Rating de precio de mentorías'
                 ],
             ],
         ],

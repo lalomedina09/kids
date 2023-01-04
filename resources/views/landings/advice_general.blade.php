@@ -11,16 +11,16 @@
                     <img src="{{ asset('images/landing/advice/1.gif') }}" alt="" width="100%"
                         data-animate="visibleOnce" data-animation="fadeInDown">
                     <hr class="separator--danger">
-                    <h4 class="mb-3 text-bold">Asesoría personalizada</h4>
-                    <p class="font-weight-lighter">Elige entre diversos mentores expertos en diferentes áreas financieras y recibe asesorías individuales según tu asunto.</p>
+                    <h4 class="mb-3 text-bold">Mentoría personalizada</h4>
+                    <p class="font-weight-lighter">Elige entre diversos mentores expertos en diferentes áreas financieras y recibe mentorías individuales según tu asunto.</p>
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                     <img src="{{ asset('images/landing/advice/2.gif') }}" alt="" width="100%"
                         data-animate="visibleOnce" data-animation="fadeInDown">
                     <hr class="separator--danger">
-                    <h4 class="mb-3 text-bold">Pago por asesoría</h4>
-                    <p class="font-weight-lighter">Solo paga por el tiempo de tu asesoría y el precio que se ajuste a tu presupuesto.</p>
+                    <h4 class="mb-3 text-bold">Pago por mentoría</h4>
+                    <p class="font-weight-lighter">Solo paga por el tiempo de tu mentoría y el precio que se ajuste a tu presupuesto.</p>
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
@@ -28,7 +28,7 @@
                         data-animate="visibleOnce" data-animation="fadeInDown">
                     <hr class="separator--danger">
                     <h4 class="mb-3 text-bold">Donde sea, cuando sea</h4>
-                    <p class="font-weight-lighter">Obten asesorías en línea cuando y dónde te encuentres.</p>
+                    <p class="font-weight-lighter">Obten mentorías en línea cuando y dónde te encuentres.</p>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                             <span class="number-circle number-circle-left">1</span>
                             Elige al mentor
                         </h4>
-                        <p class="font-weight-lighter">Busca el tema el que requieras asesoría, ve los videos de los mentores, su descripción, experiencia, precio y elige el que más se adapte a tus necesidades.</p>
+                        <p class="font-weight-lighter">Busca el tema el que requieras mentoría, ve los videos de los mentores, su descripción, experiencia, precio y elige el que más se adapte a tus necesidades.</p>
                     </div>
                 </div>
 
@@ -58,7 +58,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 col-12 p-4 order-xl-first order-lg-first order-md-first order-last">
                         <h4 class="mb-3 text-bold text-uppercase">
                             <span class="number-circle number-circle-right">2</span>
-                            Reserva tu asesoría
+                            Reserva tu mentoría
                         </h4>
                         <p class="font-weight-lighter">Revisa el calendario del mentor, programa la fecha y hora que más te convenga.</p>
                     </div>
@@ -101,7 +101,7 @@
 
         <section>
             <div class="text-center">
-                <h1 class="title-underline title-underline-b title-underline-danger font-weight-lighter mb-5">Ofrecemos asesorías en:</h1>
+                <h1 class="title-underline title-underline-b title-underline-danger font-weight-lighter mb-5">Ofrecemos mentorías en:</h1>
             </div>
 
             <div class="row mb-4">
@@ -146,7 +146,7 @@
                 <a href="{{ route('qd.advice.advisors.search') }}"
                     class="btn btn-pill btn-danger"
                     data-animate="visible" data-animation="heartBeat"
-                >@lang('Reservar asesorías')</a>
+                >@lang('Reservar mentorías')</a>
             </div>
 
             <hr>
@@ -192,7 +192,7 @@
             </div>
 
             <div class="text-center">
-                <h5>Una vez terminada la asesoría puedes descargar el plan de trabajo desde <a href="https://www.queridodinero.com/perfil" class="text-danger">www.queridodinero.com/perfil</a></h5>
+                <h5>Una vez terminada la mentoría puedes descargar el plan de trabajo desde <a href="https://www.queridodinero.com/perfil" class="text-danger">www.queridodinero.com/perfil</a></h5>
 
                 <img src="{{ asset('images/landing/advice/lc.png') }}" alt="" width="150" class="my-4">
 

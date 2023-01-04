@@ -24,7 +24,7 @@
         </div>
         <ul class="list-group list-group-flush">
             @include('partials.exercises.variable', [
-                'label' => 'Asesorías y cursos',
+                'label' => 'Mentorías y cursos',
                 'variable' => 'capacitation_expenses',
                 'format' => '$',
                 'mutable' => 'total_previous_expenses'

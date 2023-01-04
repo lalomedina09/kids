@@ -69,8 +69,8 @@ class Reschedule extends Model
         5 => 'Rechazada',
         //6 => 'Reembolso',
         7 => 'Mentor Bloquea Reagendar',
-        8 => 'After Asesoria Mentor Quiere ofrecer Reagendar',
-        9 => 'After Asesoria Mentor Envio Propuesta Reagendar',
+        8 => 'After Mentoría Mentor Quiere ofrecer Reagendar',
+        9 => 'After Mentoría Mentor Envio Propuesta Reagendar',
         10 => 'Asesorado ocupa otras fechas',
         11 => 'Mentor actualizo su calendario',
     ];

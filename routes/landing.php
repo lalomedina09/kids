@@ -6,9 +6,9 @@
 |--------------------------------------------------------------------------
 */
 
-Route::get('/asesoria', 'MainController@adviceGeneral');
-Route::get('/asesoriafiscal', 'MainController@adviceLegal');
-Route::get('/asesoriafinanzaspersonales', 'MainController@advicePersonalFinances');
+Route::get('/mentoria', 'MainController@adviceGeneral');
+Route::get('/mentoriafiscal', 'MainController@adviceLegal');
+Route::get('/mentoriafinanzaspersonales', 'MainController@advicePersonalFinances');
 
 Route::prefix('registrocuradeuda')
     ->group(function () {

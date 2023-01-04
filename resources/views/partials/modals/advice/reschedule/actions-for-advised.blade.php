@@ -15,7 +15,7 @@
             @switch($reschedule->status)
                 @case(2)
                     <p class="small mb-1 text-center">
-                        Tu mentor te ofrece <b>Re-agendar</b> la asesoria,<br>
+                        Tu mentor te ofrece <b>Re-agendar</b> la mentoría,<br>
                         elige la nueva fecha desde el botón <b>"Ver solicitud del mentor"</b>
                     </p>
                     <br>
@@ -25,8 +25,8 @@
                     @break
                 @case(3)
                     <p class="small mb-1 text-center">
-                        <b>Re agendaste</b> la asesoria, espera que tu mentor <b>acepte</b> o <b>rechace</b>
-                        la nueva fecha, Si tu mentor <b>no cambia el status</b> tu asesoría se llevará acabo en la nueva fecha que elegiste
+                        <b>Re agendaste</b> la mentoría, espera que tu mentor <b>acepte</b> o <b>rechace</b>
+                        la nueva fecha, Si tu mentor <b>no cambia el status</b> tu mentoría se llevará acabo en la nueva fecha que elegiste
                         <span class="text-danger">
                             {{ $advice->present()->given_at }}
                         </span>
@@ -34,7 +34,7 @@
                     <br>
 
                     <a href="{{ $advice->videocall_url }}" class="btn btn-pill btn-danger animated tada mb-3" title="{{ $advice->videocall_url }}">
-                        Acceso a la asesoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
+                        Acceso a la mentoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
                     </a>
                     <br>
                     @if ($advice->videocallHasPassword())
@@ -54,7 +54,7 @@
                     </p>
                     <br>
                     <a href="{{ $advice->videocall_url }}" class="btn btn-pill btn-danger animated tada mb-3" title="{{ $advice->videocall_url }}">
-                        Acceso a la asesoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
+                        Acceso a la mentoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
                     </a>
                     <br>
                     @if ($advice->videocallHasPassword())
@@ -70,9 +70,9 @@
 
                     </p>
                     <p class="small text-danger">
-                        ¿Tu mentor no se presentó a la asesoría? <br>
+                        ¿Tu mentor no se presentó a la mentoría? <br>
                         <span class="text-white">
-                            De acuerdo con <b>nuestras políticas</b>, sí te presentaste a la asesoría y tu mentor no se
+                            De acuerdo con <b>nuestras políticas</b>, sí te presentaste a la mentoría y tu mentor no se
                             presentó es tu <b>derecho de solicitar</b> una devolución.
                         </span>
                     </p>
@@ -93,20 +93,20 @@
                 @case(7)
                     <p class="small mb-1 text-center">
                         Hola el mentor <span class="text-danger">{{ $advice->advisor->fullname }}</span>, <br>
-                        Bloqueo la opción de reagendar asesoría <br> ya que no te presentaste a tiempo a la asesoría
+                        Bloqueo la opción de reagendar mentoría <br> ya que no te presentaste a tiempo a la videollamada
                     </p>
                     @break
                 @case(8)
                     <p class="small mb-1 text-center">
                         Hola el mentor <span class="text-danger">{{ $advice->advisor->fullname }}</span>, <br>
-                        esta contemplando ofrecer la oportunidad de  reagendar la asesoria
+                        esta contemplando ofrecer la oportunidad de  reagendar la mentoría
                         ya que no te presentaste a tiempo
                     </p>
                     @break
                 @case(9)
                     <p class="small mb-1 text-center">
                         Hola el mentor <span class="text-danger">{{ $advice->advisor->fullname }}</span> , <br>
-                        te ofrecio reagendar la asesoría, elije una nueva fecha
+                        te ofrecio reagendar la mentoría, elije una nueva fecha
                     </p>
                     <br>
                     <a href="{{ route('qd.advice.advice.reschedule.edit', [$advice->hashid]) }}" class="btn btn btn-pill btn-danger mr-5 animated tada">
@@ -123,7 +123,7 @@
                 @case(11)
                     <p class="small mb-1 text-center">
                         Hola tu mentor <span class="text-danger">{{ $advice->advisor->fullname }}</span> , <br>
-                        actualizo su calendario, revisa las fechas para que re agendes la asesoría
+                        actualizo su calendario, revisa las fechas para que re agendes la mentoría
                     </p>
                     <br>
                     <a href="{{ route('qd.advice.advice.reschedule.edit', [$advice->hashid]) }}" class="btn btn btn-pill btn-danger mr-5 animated tada">

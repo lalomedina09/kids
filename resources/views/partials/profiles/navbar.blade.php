@@ -10,7 +10,7 @@
     @if (config()->has('money.modules.advice') && $user->hasRole('advisor'))
         <li class="list-inline-item {{ active_class('') }}">
             <a href="{{ route('qd.advice.advisors.show', [$user->profile_key]) }}" class="text-uppercase">
-                Asesoría
+                Mentoría
             </a>
         </li>
     @endif

@@ -43,7 +43,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-12 h-100">
                     <div class="align-vertical mb-2">
                         <div class="p-4 rounded-lg text-center" style="background-color:rgba(0,0,0,0.4);">
-                            <h5 class="text-white text-uppercase">Conoce más sobre nuestras asesorías personalizadas <span class="text-danger">por videollamada</span></h5>
+                            <h5 class="text-white text-uppercase">Conoce más sobre nuestras mentorías personalizadas <span class="text-danger">por videollamada</span></h5>
 
                             <div>
                                 <!-- Begin Mailchimp Signup Form -->
@@ -145,22 +145,22 @@
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                     <img src="{{ asset('images/landing/advice/1.gif') }}" alt="" width="100%">
                     <hr class="separator--danger">
-                    <h4 class="mb-3 text-bold">Asesoría personalizada</h4>
-                    <p class="font-weight-lighter">Elige entre diversos mentores expertos en diferentes áreas financieras y recibe asesorías individuales según tu asunto.</p>
+                    <h4 class="mb-3 text-bold">Mentoría personalizada</h4>
+                    <p class="font-weight-lighter">Elige entre diversos mentores expertos en diferentes áreas financieras y recibe mentorías individuales según tu asunto.</p>
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                     <img src="{{ asset('images/landing/advice/2.gif') }}" alt="" width="100%">
                     <hr class="separator--danger">
-                    <h4 class="mb-3 text-bold">Pago por asesoría</h4>
-                    <p class="font-weight-lighter">Solo paga por el tiempo de tu asesoría y el precio que se ajuste a tu presupuesto.</p>
+                    <h4 class="mb-3 text-bold">Pago por mentoría</h4>
+                    <p class="font-weight-lighter">Solo paga por el tiempo de tu mentoría y el precio que se ajuste a tu presupuesto.</p>
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                     <img src="{{ asset('images/landing/advice/3.gif') }}" alt="" width="100%">
                     <hr class="separator--danger">
                     <h4 class="mb-3 text-bold">Donde sea, cuando sea</h4>
-                    <p class="font-weight-lighter">Obten asesorías en línea cuando y dónde te encuentres.</p>
+                    <p class="font-weight-lighter">Obten mentorías en línea cuando y dónde te encuentres.</p>
                 </div>
             </div>
 
@@ -177,14 +177,14 @@
                             <img src="{{ asset('images/landing/advice/g1.gif') }}" alt="" width="80%">
                         </div>
                         <h4 class="ml-3 mb-3 text-bold text-uppercase">Elige al mentor</h4>
-                        <p class="font-weight-lighter">Busca el tema el que requieras asesoría, ve los videos de los mentores, su descripción, experiencia, precio y elige el que más se adapte a tus necesidades.</p>
+                        <p class="font-weight-lighter">Busca el tema el que requieras mentoría, ve los videos de los mentores, su descripción, experiencia, precio y elige el que más se adapte a tus necesidades.</p>
                     </div>
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-3">
                         <div class="text-center mb-3">
                             <img src="{{ asset('images/landing/advice/g2.gif') }}" alt="" width="80%">
                         </div>
-                        <h4 class="mb-3 text-bold text-uppercase">Reserva tu asesoría</h4>
+                        <h4 class="mb-3 text-bold text-uppercase">Reserva tu mentoría</h4>
                         <p class="font-weight-lighter">Revisa el calendario del mentor, programa la fecha y hora que más te convenga.</p>
                     </div>
 
@@ -209,7 +209,7 @@
                     <a href="{{ route('qd.advice.advisors.search', ['categories[]' => 37]) }}"
                         class="btn btn-pill btn-danger"
                         data-animate="visible" data-animation="heartBeat"
-                    >@lang('Quiero reservar una asesoría')</a>
+                    >@lang('Quiero reservar una mentoría')</a>
                 </div>
             </div>
 
@@ -242,7 +242,7 @@
             </div>
 
             <div class="text-center">
-                <h5>Una vez terminada la asesoría puedes descargar el plan de trabajo desde <a href="https://www.queridodinero.com/perfil" class="text-danger">www.queridodinero.com/perfil</a></h5>
+                <h5>Una vez terminada la mentoría puedes descargar el plan de trabajo desde <a href="https://www.queridodinero.com/perfil" class="text-danger">www.queridodinero.com/perfil</a></h5>
             </div>
         </section>
 
@@ -278,7 +278,7 @@
                     <div class="carousel-item text-center active">
                         <div class="row">
                             <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-8 offset-2 py-5">
-                                <p>Buena Asesoría con Pol, muy accesible y agradable.</p>
+                                <p>Buena Mentoría con Pol, muy accesible y agradable.</p>
                                 <p class="text-danger text-uppercase">Irene Cárdenas</p>
                             </div>
                         </div>

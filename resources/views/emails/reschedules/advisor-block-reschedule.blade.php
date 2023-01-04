@@ -9,7 +9,7 @@
 
             <p style="margin-bottom:10px; text-align:left;">
                 El mentor <b> {{ $advice->advisor->fullname }} </b>:
-                solicito <b>no reagendar</b> la asesoria a su asesorado <b>{{ $advice->advised->fullname }}</b>
+                solicito <b>no reagendar</b> la mentoria a su asesorado <b>{{ $advice->advised->fullname }}</b>
                 que estaba programada para <b>{{ $advice->present()->given_at }}</b>
             </p>
 

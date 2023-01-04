@@ -1,6 +1,6 @@
 @extends('layouts.email')
 
-@section('email-title', 'Estatus del cambio de fecha de tu asesoria')
+@section('email-title', 'Estatus del cambio de fecha de tu mentoria')
 
 @section('email-content')
     <tr>
@@ -15,7 +15,7 @@
                 @if ($newReschedule->status == 4)
                     <a href="{{ url('/perfil#asesorias') }}"
                         style="font-weight:bold;color:white;background-color:#0e0d0d;padding:15px 30px;display:inline-block;text-decoration:none;border-radius:5px;">
-                        Ver detalles de asesoría
+                        Ver detalles de mentoría
                     </a>
                 @else
                     <a href="{{ url('/perfil#asesorias') }}"

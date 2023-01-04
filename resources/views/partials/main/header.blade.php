@@ -277,7 +277,7 @@
                             </a>
                         @if (config()->has('money.modules.marketplace'))
                             <a href="{{ url('/perfil#asesorias') }}" class="dropdown-item header__buttons header__dropdown-buttons">
-                                Mis asesorias
+                                Mis mentorías
                             </a>
 
                             <a href="{{ route('qd.marketplace.orders.index') }}" title="Mis Compras"

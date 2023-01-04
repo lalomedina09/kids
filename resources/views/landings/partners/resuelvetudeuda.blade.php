@@ -39,7 +39,7 @@
                             <div class="text-center">
                                 <img src="{{ asset('images/landing/resuelvetudeuda/logo.png') }}" alt="Resuelve Tu Deuda" width="60%">
                                 <p class="text-white text-bold">Partner oficial</p>
-                                <p class="text-white text-bold text-center">Déjanos tus datos y recibe una asesoría <span class="text-secondary">sin costo</span></p>
+                                <p class="text-white text-bold text-center">Déjanos tus datos y recibe una mentoría <span class="text-secondary">sin costo</span></p>
                             </div>
 
                             <form method="post" id="form-landing" class="form">
@@ -90,7 +90,7 @@
                                 </div>
 
                                 <div class="form-group clear">
-                                    <button class="btn btn-block btn-danger">Asesoría Gratis</button>
+                                    <button class="btn btn-block btn-danger">Mentoría Gratis</button>
                                 </div>
                             </form>
                         </div>
@@ -118,7 +118,7 @@
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
-                    <img src="{{ asset('images/landing/resuelvetudeuda/3.png') }}" alt="Asesoría" width="100%">
+                    <img src="{{ asset('images/landing/resuelvetudeuda/3.png') }}" alt="Mentoría" width="100%">
                     <hr class="separator--danger">
                     <h4 class="mb-3 text-bold">Nunca estarás solo</h4>
                     <p class="font-weight-lighter">Tendrás a tu disposición todo un equipo de mentores para aclarar dudas y saber qué hacer en todo momento.</p>
@@ -130,7 +130,7 @@
 
         <section>
             <div class="text-center">
-                <h1 class="title-underline title-underline-b title-underline-danger font-weight-lighter mb-5">Asesoría de expertos en todo momento</h1>
+                <h1 class="title-underline title-underline-b title-underline-danger font-weight-lighter mb-5">Mentoría de expertos en todo momento</h1>
             </div>
 
             <div class="row mt-5">
