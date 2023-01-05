@@ -12,7 +12,10 @@
 <div class="row">
     <div class="col-md-12 text-center">
         <!-- href="{{-- $advice->videocall_url --}}" -->
-        <a href="#" onclick="registerUserConnected('{{$advice->id}}', '{{$advice->videocall_url}}');" class="btn btn-pill btn-danger animated tada" title="{{ $advice->videocall_url }}">
+        <!--<a href="#" onclick="registerUserConnected('{{$advice->id}}', '{{$advice->videocall_url}}');" class="btn btn-pill btn-danger animated tada" title="{{ $advice->videocall_url }}">
+            Unirme a la mentoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
+        </a>-->
+        <a href="{{ $advice->videocall_url }}" class="btn btn-pill btn-danger animated tada" title="{{ $advice->videocall_url }}">
             Unirme a la mentoría <i class="lni lni-video text-white" style="font-size:20px;"></i>
         </a>
     </div>
