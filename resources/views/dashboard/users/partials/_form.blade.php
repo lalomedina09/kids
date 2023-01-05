@@ -45,7 +45,7 @@
 
         <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
             <label for="whatsapp" class="control-label">@lang('Whatsapp'): (@lang('Ten Digits'))</label>
-            <input type="text" name="whatsapp" class="form-control" placeholder="8122009944" required="required" value="{{ $user->whatsapp }}">
+            <input type="text" name="whatsapp" class="form-control" placeholder="8122009944" required="required" value="{{ $user->getMeta('blog', 'whatsapp') }}">
         </div>
 
 
