@@ -49,7 +49,7 @@ class RegisterExhibitorRequest extends FormRequest
             'birthdate' => 'nullable|date_format:Y-m-d',
             'gender' => 'required|string|in:male,female',
             'whatsapp' => 'nullable|digits:10',
-            'profile_photo' => 'required|max:2000',
+            'profile_photo' => 'required|max:3000',
             'service_contract' => 'required',
             #'interests' => 'sometimes|array',
             #'interests.*' => 'integer|exists:categories,id|in:' . $extra_valid_interests,

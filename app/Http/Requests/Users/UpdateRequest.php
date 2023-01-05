@@ -95,22 +95,22 @@ class UpdateRequest extends FormRequest
                     'job' => 'nullable|string|min:1|max:100',
                     'bio' => 'nullable|string|min:10|max:1000',
                     'facebook' => [
-                        'active_url', 'url', 'nullable', 'min:10', 'regex:'.env('FACEBOOK_PROFILE_REGEX')
+                        'active_url', 'url', 'nullable', 'min:10'
                     ],
                     'twitter' => [
-                        'active_url', 'url', 'nullable', 'min:10', 'regex:'.env('TWITTER_PROFILE_REGEX')
+                        'active_url', 'url', 'nullable', 'min:10'
                     ],
                     'instagram' => [
-                        'active_url', 'url', 'nullable', 'min:10', 'regex:'.env('INSTAGRAM_PROFILE_REGEX')
+                        'active_url', 'url', 'nullable', 'min:10'
                     ],
                     'tiktok' => [
-                        'active_url', 'url', 'nullable', 'min:10', 'regex:'.env('TIKTOK_PROFILE_REGEX')
+                        'active_url', 'url', 'nullable', 'min:10'
                     ],
                     'linkedin' => [
                         'active_url', 'url', 'nullable', 'min:10'
                     ],
                     'youtube' => [
-                        'active_url', 'url', 'nullable', 'min:10', 'regex:'.env('YOUTUBE_PROFILE_REGEX')
+                        'active_url', 'url', 'nullable', 'min:10'
                     ]
                 ];
 
