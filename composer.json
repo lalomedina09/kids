@@ -22,6 +22,10 @@
         "queridodinero/products": {
             "type": "vcs",
             "url": "git@bitbucket.org:queridodinero/qd-products.git"
+        },
+        "queridodinero/qdplay": {
+            "type": "path",
+            "url": "vendor/queridodinero/qdplay"
         }
     },
     "require": {
@@ -56,6 +60,10 @@
         "queridodinero/communications": "^0.1",
         "queridodinero/marketplace": "0.5.*",
         "queridodinero/products": "^0.1",
+        "queridodinero/qdplay": "dev-main",
+        "socialiteproviders/facebook": "*",
+        "socialiteproviders/google": "*",
+        "socialiteproviders/microsoft": "*",
         "spatie/icalendar-generator": "~1.0.6",
         "spatie/laravel-analytics": "3.6.*",
         "spatie/laravel-medialibrary": "7.5.*",

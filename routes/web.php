@@ -227,7 +227,7 @@ Route::get('/descargas-libro.html', function () {
     return redirect()->route('pages.show', ['slug' => 'descargas-libro']);
 });
 
-Route::get('/qdplay')
+Route::get('/page-qdplay')
     ->uses('PagesController@cs_qdplay')
     ->name('qdplay');
 
@@ -432,7 +432,7 @@ Route::prefix('reschedules')
 |--------------------------------------------------------------------------
 */
 
-Route::prefix('qdplay')
+Route::prefix('qdplay-promo')
     ->group(function () {
         Route::get('/')
             ->uses('PreQdPlayCourseController@index')
@@ -750,3 +750,43 @@ Route::get('/paypal/failed', 'PaymentController2@paypalFailed');
 
 Route::get('/preqdplay/paypal/status', 'PaypalPreqdplayController@payPalStatus');
 Route::get('/preqdplay/paypal/failed', 'PaypalPreqdplayController@paypalFailed');
+
+
+/*
+/-------------------------------------------------------------------------
+/Rutas project QD PLAY
+/-------------------------------------------------------------------------
+*/
+Route::name('redirects.')
+    ->prefix('redirects')
+    ->middleware(['guest'])
+    ->group(function () {
+        Route::get('/facebook')
+            ->uses('SocialNetworksController@facebookRedirect')
+            ->name('facebook');
+
+        Route::get('/google')
+            ->uses('SocialNetworksController@googleRedirect')
+            ->name('google');
+
+        Route::get('/microsoft')
+            ->uses('SocialNetworksController@microsoftRedirect')
+            ->name('microsoft');
+    });
+
+Route::name('callbacks.')
+    ->prefix('callbacks')
+    ->middleware(['guest'])
+    ->group(function () {
+        Route::get('/facebook')
+            ->uses('SocialNetworksController@facebookCallback')
+            ->name('facebook');
+
+        Route::get('/google')
+            ->uses('SocialNetworksController@googleCallback')
+            ->name('google');
+
+        Route::get('/microsoft')
+            ->uses('SocialNetworksController@microsoftCallback')
+            ->name('microsoft');
+    });

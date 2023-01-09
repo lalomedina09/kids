@@ -40,13 +40,19 @@ return [
     ],
 
     'facebook' => [
-        'pixelId' => env('FACEBOOK_PIXEL_ID')
+        'pixelId' => env('FACEBOOK_PIXEL_ID'),
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => env('FACEBOOK_REDIRECT_URI')
     ],
 
     'google' => [
         'analyticsKey' => env('GOOGLE_ANALYTICS_KEY'),
         'adsKey' => env('GOOGLE_ADS_KEY'),
-        'conversionKey' => env('GOOGLE_ADS_CONVERSIONKEY')
+        'conversionKey' => env('GOOGLE_ADS_CONVERSIONKEY'),
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URI')
     ],
 
     'hotjar' => [
@@ -105,5 +111,11 @@ return [
         'users' => explode(',', env('ZOOM_USERS', '')),
         'available_users' => env('ZOOM_USERS_AVAILABLE', 0),
         'timezone' => env('ZOOM_TIMEZONE')
-    ]
+    ],
+
+    'microsoft' => [
+        'client_id' => env('MICROSOFT_CLIENT_ID'),
+        'client_secret' => env('MICROSOFT_CLIENT_SECRET'),
+        'redirect' => env('MICROSOFT_REDIRECT_URI')
+    ],
 ];

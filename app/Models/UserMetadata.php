@@ -78,6 +78,11 @@ class UserMetadata extends Model
             'facebook', 'twitter', 'instagram', 'youtube', 'skype', 'whatsapp','countrycode',
             'tiktok', 'linkedin', 'education', 'profession', 'certifications', 'specialization', 'premium',
             'clabe', 'tax_name','tax_number','tax_address','tax_address_number','tax_zipcode','tax_settlement'
+        ],
+        'qdplay' => [
+            'company', 'sat_persona', 'sat_uso_cfdi', 'sat_razon_social',
+            'sat_rfc', 'sat_calle', 'sat_numero', 'sat_cp', 'sat_colonia',
+            'sat_municipio', 'sat_estado'
         ]
     ];
 

@@ -202,6 +202,7 @@
                 </div>
             </div>
         </form>
+        @include('partials.auth.social_media_logins')
     </div>
 
     <div class="text-center">

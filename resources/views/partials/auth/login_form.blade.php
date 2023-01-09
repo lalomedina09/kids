@@ -55,6 +55,8 @@
     </p>
 </div>
 
+@include('partials.auth.social_media_logins')
+
 <hr>
 
 <div class="text-center">
