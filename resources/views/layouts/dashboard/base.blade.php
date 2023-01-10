@@ -71,10 +71,10 @@
                                 </li>
                             @endcan
 
-                            <li class="nav-item {{ active_class('dashboard/qdplay*') }}">
+                            <!--<li class="nav-item {{ active_class('dashboard/qdplay*') }}">
 								<a class="nav-link" href="{{ route('dashboard.qdplay') }}">
 									@lang('QD Play')</a>
-							</li>
+							</li>-->
                         </ul>
                     @endif
                 </div>
