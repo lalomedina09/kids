@@ -122,7 +122,7 @@
                         @endif
                     @endif
 
-					{{ -- }}@include('qd:qdplay::home.partials.profile')--}}
+					{{-- @include('qd:qdplay::home.partials.profile') --}}
                 </div>
             </div>
         </div>
