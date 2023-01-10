@@ -251,10 +251,10 @@
                 </a>
 
                 <div class="dropdown-menu header__dropdown">
-                    <a href="{{ route('qdplay.start') }}"
+                    {{--<a href="{{ route('qdplay.start') }}"
 						class="dropdown-item header__buttons header__dropdown-buttons">
 						QD Play
-					</a>
+					</a>--}}
 					<div class="dropdown-divider header__dropdown-divider"></div>
 
                     @auth
