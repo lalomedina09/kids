@@ -93,14 +93,7 @@
                         @endif
                     @endif
 
-                    {{ -- }}<a href="#{{ str_slug(__('QD Play')) }}"
-                        class="nav-item nav-link text-uppercase"
-                        data-toggle="tab"
-						>@lang('QD Play') <img src="{{ asset('etapa1/GIF-NEW-Querido-dinero.gif') }}" alt="new" width="50" /></a>
 
-					<a href="/queridodinero/app_close.html"
-                        class="nav-item nav-link text-uppercase"
-						>@lang('Salir')</a>--}}
                 </nav>
             </div>
 
