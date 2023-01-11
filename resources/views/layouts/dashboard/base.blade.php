@@ -70,6 +70,10 @@
                                         @lang('Parameters')</a>
                                 </li>
                             @endcan
+                            <li class="nav-item {{ active_class('dashboard/qdplay*') }}">
+                                <a class="nav-link" href="{{ route('dashboard.qdplay') }}">
+                                @lang('QD Play')</a>
+                            </li>
                         </ul>
                     @endif
                 </div>

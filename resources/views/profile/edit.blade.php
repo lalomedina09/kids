@@ -92,7 +92,15 @@
                             >@lang('Calendar & Schedule')</a>
                         @endif
                     @endif
+                    <a href="#{{ str_slug(__('QD Play')) }}"
+                        class="nav-item nav-link text-uppercase"
+                        data-toggle="tab"
+                        >@lang('QD Play') <img src="{{ asset('etapa1/GIF-NEW-Querido-dinero.gif') }}" alt="new" width="50" />
+                    </a>
 
+                    <a href="/queridodinero/app_close.html"
+                    class="nav-item nav-link text-uppercase"
+                    >@lang('Salir')</a>
 
                 </nav>
             </div>
@@ -100,7 +108,7 @@
             <div class="col-xl-9 col-lg-9 col-md-8 col-12">
                 <div class="tab-content mb-5">
                     @include('partials.profiles.general')
-					{{--@include('qd:qdplay::home.partials.billingData')--}}
+					@include('qd:qdplay::home.partials.billingData')
                     @include('partials.profiles.password')
                     @include('partials.profiles.interests')
                     @include('partials.profiles.bookmarks')
@@ -122,7 +130,7 @@
                         @endif
                     @endif
 
-					{{-- @include('qd:qdplay::home.partials.profile') --}}
+					@include('qd:qdplay::home.partials.profile')
                 </div>
             </div>
         </div>
