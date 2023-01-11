@@ -241,12 +241,12 @@
                     </div>
                 </div>
 
-                <div class="col-xl-6 col-lg-6 col-12">
+                <!--<div class="col-xl-6 col-lg-6 col-12">
                     <div class="form-group">
                         <label for="video" class="control-label text-uppercase">* @lang('Video')</label>
                         <input type="text" name="video" class="form-control"
                             placeholder="@lang('e.g.') https://www.youtube.com/watch?v=su8oRFpKLDA"
-                            value="{{ $user->getMeta('blog', 'video') }}">
+                            value="{{ $user->getMeta('blog', 'video') }}" required="false">
 
                         @if ($errors->has('video'))
                             <span class="small text-danger">{{ $errors->first('video') }}</span>
@@ -255,7 +255,7 @@
                     @if ($user->hasMeta('blog', 'video'))
                         {!! EmbedVideo::getEmbedVideoCode($user->getMeta('blog', 'video')) !!}
                     @endif
-                </div>
+                </div>-->
             </div>
         @endif
 

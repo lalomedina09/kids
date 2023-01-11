@@ -115,7 +115,7 @@ class UpdateRequest extends FormRequest
                 ];
 
                 if ($this->user()->hasAnyRole(['advisor']) || $this->user()->hasExhibitorRoles()) {
-                    $rules['video'] = 'required|video_url|min:10|max:1000';
+                    $rules['video'] = 'video_url|min:10|max:1000';
                     $rules['education'] = 'required|array';
                     $rules['education.start_date'] = 'required|date_format:Y-m-d';
                     $rules['education.end_date'] = 'required|date_format:Y-m-d';
