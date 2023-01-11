@@ -113,11 +113,11 @@
                     @include('partials.profiles.interests')
                     @include('partials.profiles.bookmarks')
 
-                    @if ($user->hasProfileRoles())
+                    @if ($user->hasProfileRoles() || $user->hasExhibitorRoles())
                         @include('partials.profiles.personal')
                     @endif
 
-                    @if ($user->hasPaymentRoles())
+                    @if ($user->hasPaymentRoles() || $user->hasExhibitorRoles())
                         @include('partials.profiles.payment')
                     @endif
 
