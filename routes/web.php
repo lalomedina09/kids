@@ -431,7 +431,7 @@ Route::prefix('reschedules')
 | QD-PLAY Promotions
 |--------------------------------------------------------------------------
 */
-
+/*
 Route::prefix('qdplay-promo')
     ->group(function () {
         Route::get('/')
@@ -452,7 +452,7 @@ Route::prefix('qdplay-promo')
         ->name('qdplay.buy')
         ->middleware(['auth']);
     });
-
+*/
 /*
 |--------------------------------------------------------------------------
 | Profile
