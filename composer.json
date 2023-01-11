@@ -8,20 +8,20 @@
     "license": "MIT",
     "repositories": {
         "queridodinero/advice": {
-            "type": "vcs",
-            "url": "git@bitbucket.org:queridodinero/qd-advice.git"
+            "type": "path",
+            "url": "vendor/queridodinero/advice"
         },
         "queridodinero/communications": {
-            "type": "vcs",
-            "url": "git@bitbucket.org:queridodinero/qd-comm.git"
+            "type": "path",
+            "url": "vendor/queridodinero/communications"
         },
         "queridodinero/marketplace": {
-            "type": "vcs",
-            "url": "git@bitbucket.org:queridodinero/qd-market.git"
+            "type": "path",
+            "url": "vendor/queridodinero/marketplace"
         },
         "queridodinero/products": {
-            "type": "vcs",
-            "url": "git@bitbucket.org:queridodinero/qd-products.git"
+            "type": "path",
+            "url": "vendor/queridodinero/products"
         },
         "queridodinero/qdplay": {
             "type": "path",
