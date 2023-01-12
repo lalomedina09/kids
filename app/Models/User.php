@@ -189,7 +189,12 @@ class User extends Authenticatable implements HasMedia
      */
     public function scopeHasGuestProfile($query)
     {
-        return $query->role(User::PROFILE_ROLES);
+        return $query->role(User::EXHIBITOR_ROLES);
+    }
+
+    public function scopeHasGuestProfileExhibitor($query)
+    {
+        return $query->role(User::EXHIBITOR_ROLES);
     }
 
     /**

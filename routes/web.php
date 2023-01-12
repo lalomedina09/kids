@@ -493,6 +493,16 @@ Route::prefix('escritores')
             ->name('authors.show');
     });
 
+Route::prefix('expositores')
+->group(function () {
+    Route::get('/')
+        ->uses('AuthorController@index')
+        ->name('authors.index');
+
+    Route::get('/{key}')
+    ->uses('AuthorController@showExhibitor')
+    ->name('authors.show');
+});
 /*
  |--------------------------------------------------------------------------
  | Downloads

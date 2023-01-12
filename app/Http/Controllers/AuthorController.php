@@ -36,18 +36,29 @@ class AuthorController extends Controller
         ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int|string  $key
-     * @return \Illuminate\Http\Response
-     */
+    //Exclusivo para los escritores
     public function show($key, Request $request)
     {
         $user = User::with(['articles' => function ($query) {
                 $query->published()->latest('published_at');
             }])
             ->hasGuestProfile()
+            ->byIdOrUsername($key)
+            ->firstOrFail();
+
+        return view('authors.show')->with([
+            'user' => $user
+        ]);
+    }
+
+    //Exclusivo para los expositores
+    public function showExhibitor($key, Request $request)
+    {
+        $user = User::with(['articles' => function ($query) {
+                $query->published()->latest('published_at');
+            }])
+            ->hasGuestProfile()
+            ->HasGuestProfileExhibitor()
             ->byIdOrUsername($key)
             ->firstOrFail();
 
