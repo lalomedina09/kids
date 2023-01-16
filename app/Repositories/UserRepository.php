@@ -50,6 +50,8 @@ class UserRepository
      */
     public function saveProfile($params, User $user) : User
     {
+		$profile_photo_checked = $params['profile_photo_checked'];
+
         $user->name = $params['name'];
         $user->last_name = array_has($params, 'last_name') ? $params['last_name'] : null;
 
@@ -57,11 +59,18 @@ class UserRepository
             $user->save();
         }
 
-        if (array_has($params, 'profile_photo')
-            && $params['profile_photo'] instanceof UploadedFile
-            && $file = $params['profile_photo']) {
-            $user->saveProfilePhoto($file);
-        }
+		if (is_null($profile_photo_checked)) {
+			if (array_has($params, 'profile_photo')
+				&& $params['profile_photo'] instanceof UploadedFile
+				&& $file = $params['profile_photo']) {
+				$user->saveProfilePhoto($file);
+			}
+		} else {
+			$temp = tempnam(sys_get_temp_dir(), 'php');
+			file_put_contents($temp, file_get_contents($profile_photo_checked));
+			$file = new UploadedFile($temp, basename($profile_photo_checked));
+			$user->saveProfilePhoto($file);
+		}
 
         $this->saveMeta('blog', $params, $user);
 
