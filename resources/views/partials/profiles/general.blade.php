@@ -99,10 +99,16 @@
                 </div>
             </div>
 
+            <input type="hidden" name="profile_photo_checked" id="profile_photo_checked" />
+
             <div class="col-xl-6 col-lg-6 col-12">
-                <div class="form-group text-center">
-                    <label for="profile_photo" class="btn btn-sm btn-danger btn-pill">@lang('Change profile photo')</label>
-                    <input type="file" name="profile_photo" id="profile_photo" hidden="true">
+				<div class="form-group text-center">
+                    <!--<label for="profile_photo" class="btn btn-sm btn-danger btn-pill">@lang('Change profile photo')</label>-->
+					<a href="#{{ str_slug(__('Change profile photo')) }}"
+                                class="btn btn-sm btn-danger btn-pill d-block"
+                                data-toggle="tab"
+                            >@lang('Change profile photo')</a>
+                    <input type="file" name="profile_photo" id="profile_photo" hidden="true" accept="image/png, image/jpeg" />
                 </div>
             </div>
         </div>

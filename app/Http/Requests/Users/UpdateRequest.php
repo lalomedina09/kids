@@ -61,6 +61,7 @@ class UpdateRequest extends FormRequest
                     'name' => 'required|string|min:1|max:255',
                     'last_name' => 'required|string|min:1|max:255',
                     'profile_photo' => 'nullable|max:2000',
+                    'profile_photo_checked' => 'sometimes|nullable|string',
                     'state' => 'required|string|in:' . $extra_valid_states,
                     'countrycode' => 'nullable|string|in:' . $extra_valid_countries,
                     'birthdate' => 'nullable|date_format:Y-m-d',
