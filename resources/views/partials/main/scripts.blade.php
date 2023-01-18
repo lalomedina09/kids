@@ -29,7 +29,7 @@
     </noscript>
 
     <div id="fb-root"></div>
-    <div class="fb-customerchat"
+    <!--<div class="fb-customerchat"
         attribution=setup_tool
         page_id="1494181534177770"
         theme_color="#FF6161"
@@ -52,7 +52,7 @@
             js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script>-->
 
     <script type="text/javascript">
         (function(h,o,t,j,a,r){
