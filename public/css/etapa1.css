@@ -6,6 +6,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Created on : May 27, 2022, 2:04:24 PM
     Author     : Saul
 */
+body{
+  font-size: 1.4rem;
+}
 
 .bg-green-blue {
 	bagkground-color: #90d06b;
