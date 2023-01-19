@@ -108,6 +108,7 @@
             <div class="col-xl-9 col-lg-9 col-md-8 col-12">
                 <div class="tab-content mb-5">
                     @include('partials.profiles.general')
+                    @include('partials.profiles.photo')
 					@include('qd:qdplay::home.partials.billingData')
                     @include('partials.profiles.password')
                     @include('partials.profiles.interests')
