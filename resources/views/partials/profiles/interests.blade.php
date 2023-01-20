@@ -1,4 +1,9 @@
 <div id="{{ str_slug(__('My interests')) }}" class="tab-pane">
+
+    <!-- Archivo para  botones dentro de la seccion-->
+    @include('partials.profiles.components.btn-blog')
+    <hr>
+
     <h5 class="text-danger text-uppercase mb-5">@lang('My interests')</h5>
 
     <form action="{{ route('profile.update', ['interests']) }}" method="post"
@@ -9,7 +14,7 @@
             @foreach ($interests as $key => $interest)
                 <div class="col-xl-3 col-lg-4 col-6 mb-2">
                     <div class="custom-control custom-checkbox">
-                        <label class="text-uppercase">
+                        <label class="text-uppercase c-text-size">
                             <input type="checkbox" name="interests[]" id="interest-{{ $interest->id }}" value="{{ $interest->id }}"
                                 {{ in_array($interest->id, $user_interests) ? 'checked' : ''}}>
                             <label for="interest-{{ $interest->id }}" class="form-control-label" >{{ $interest->name }}</label>
