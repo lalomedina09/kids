@@ -18,7 +18,9 @@ return [
         'demo' => 'Demo',
         'author' => 'Autor',
         'subscriptor' => 'Suscriptor',
-        'administration' => 'Administracion'
+        'administration' => 'Administracion',
+        'exhibitor' => 'Expositor',
+        'seller' => 'Vendedor'
     ],
     'permissions' => [
         'blog' => [
