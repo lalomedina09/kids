@@ -23,10 +23,16 @@ class SearchController extends Controller
     public function index(Request $request)
     {
         $search_query = ($request->input('q', '')) ?: '';
+
         $search_category = ($request->filled('category')) ? $request->input('category') : null;
 
         $articles_by_category_closure = function ($query) use ($search_query) {
-            $query->recent()->fullTextSearch('a');
+            if($search_query == "")
+            {
+                $query->recent()->fullTextSearch('a');
+            }else{
+                $query->recent()->where('title', 'like', '%' . $search_query . '%');
+            }
         };
 
         $category_closure = function ($category_query) use ($search_category) {
@@ -39,8 +45,7 @@ class SearchController extends Controller
 
         if($search_category != null && $search_query == ''){
             $category = Category::where('slug', $search_category)->firstOrFail();
-            //Query temporal para que funcione el buscador de inicio blog pero hay que modificarlo
-            //porque no es lo optimo 13 e oct del 2022
+
             $articles = Article::getCategories()->where('slug', $search_category)
             ->each(function ($category) {
                 $category->load(['articles' => function ($query) {
@@ -51,9 +56,9 @@ class SearchController extends Controller
             });
         }else{
             $articles = Category::whereHas('articles', $articles_by_category_closure)
-                ->with(['articles' => $articles_by_category_closure])
-                ->when($search_category, $category_closure)
-                ->get();
+            ->with(['articles' => $articles_by_category_closure])
+            ->when($search_category, $category_closure)
+            ->get();
         }
 
         $podcasts = Podcast::when($search_category, $search_category_closure)
@@ -68,7 +73,7 @@ class SearchController extends Controller
 
         $courses = Course::fullTextSearch($search_query)
             ->get();
-        //dd($search_category);
+
         return view('search.index')->with([
             'search' => [
                 'q' => $search_query,
