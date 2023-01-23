@@ -3,9 +3,9 @@
         <div class="row footer__sitemap">
             <div class="col-xl-10">
                <div class="row">
-                    <div class="col-sm-3">
-                        <h4 class="text-secondary mb-3">Por categoría</h4>
-                        <ul class="list-unstyled list-inline mb-0">
+                    <div class="col-sm-4">
+                        <h4 class="text-secondary mb-3 ml-5">Por categoría</h4>
+                        <ul class="list-unstyled list-inline mb-0 ml-5">
                             {{-- Lista de categorias viene del archivo helpers.php--}}
                             @foreach(getCategoriesQD() as $category)
                                 <li class="mb-1">
@@ -14,9 +14,12 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="col-sm-3">
-                        <h4 class="text-secondary mb-3">Por sección</h4>
-                        <ul class="list-unstyled list-inline mb-0">
+                    <div class="col-sm-4">
+                        <h4 class="text-secondary mb-3 ml-5">Por sección</h4>
+                        <ul class="list-unstyled list-inline mb-0 ml-5">
+                            <li class="mb-1">
+                                <a href="{{ route('qdplay.start') }}" class="link-white">QD Play</a>
+                            </li>
                             @if (config()->has('money.modules.blog'))
                                 <li class="mb-1">
                                     <a href="{{ route('blog') }}" class="text-white">Blog</a>
@@ -40,9 +43,9 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-sm-3">
-                        <h4 class="text-secondary mb-3">Contáctanos</h4>
-                        <ul class="list-unstyled list-inline mb-0">
+                    <div class="col-sm-4">
+                        <h4 class="text-secondary mb-3 ml-5">Contáctanos</h4>
+                        <ul class="list-unstyled list-inline mb-0 ml-5">
                             <li class="mb-1">
                                 <a href="/contacto" class="link-white">Contacto</a>
                             </li>

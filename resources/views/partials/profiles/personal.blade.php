@@ -1,6 +1,10 @@
 <div id="{{ str_slug(__('My personal profile')) }}" class="tab-pane">
-    <h5 class="text-danger text-uppercase mb-5">@lang('My personal profile')</h5>
 
+    <!-- Archivo para  botones dentro de la seccion-->
+    @include('partials.profiles.components.btn-profile')
+    <hr>
+
+    <h5 class="text-danger text-uppercase mb-5">@lang('My personal profile')</h5>
     <form action="{{ route('profile.update', ['personal']) }}" method="post"
         id="form-personal" class="form-custom">
         @csrf

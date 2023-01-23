@@ -1,4 +1,8 @@
 <div id="{{ str_slug(__('My bookmarks')) }}" class="tab-pane">
+
+    @include('partials.profiles.components.btn-blog')
+    <hr>
+
     <h5 class="text-danger text-uppercase mb-5">@lang('My bookmarks')</h5>
 
     <div class="row">
@@ -22,7 +26,6 @@
                 <a href="#" class="bookmark-delete--trigger text-center d-block">
                     <span class="text-danger text-uppercase">
                         <span class="fa fa-trash mr-1"></span>
-                        Quitar
                     </span>
                 </a>
             </div>

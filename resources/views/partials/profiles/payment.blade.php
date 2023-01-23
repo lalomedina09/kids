@@ -1,4 +1,8 @@
 <div id="{{ str_slug(__('Payment')) }}" class="tab-pane">
+
+    @include('partials.profiles.components.btn-profile')
+    <hr>
+
     <h5 class="text-danger text-uppercase mb-4">@lang('Banking information')</h5>
 
     <form action="{{ route('profile.update', ['payment']) }}" method="post"
@@ -7,7 +11,7 @@
 
         <div class="form-row mb-3">
             <div class="form-group col-12">
-                <label for="user-clabe" class="control-label text-uppercase">* @lang('CLABE')</label>
+                <label for="user-clabe" class="control-label text-uppercase c-text-size">* @lang('CLABE')</label>
                 <input type="number" name="clabe"
                     id="user-clabe" class="form-control"
                     placeholder="@lang('e.g.') 002115016003269411"
@@ -20,22 +24,22 @@
             </div>
 
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                <label for="user-bank" class="control-label text-uppercase">@lang('Bank')</label>
+                <label for="user-bank" class="control-label text-uppercase c-text-size">@lang('Bank')</label>
                 <input type="text" id="user-bank" class="form-control" readonly disabled>
             </div>
 
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                <label for="user-account" class="control-label text-uppercase">@lang('Account')</label>
+                <label for="user-account" class="control-label text-uppercase c-text-size">@lang('Account')</label>
                 <input type="text" id="user-account" class="form-control" readonly disabled>
             </div>
         </div>
 
         <!--- Datos Fiscales --->
-        <h5 class="text-danger text-uppercase my-4">@lang('Tax data')</h5>
+        <h5 class="text-danger text-uppercase c-text-size my-4">@lang('Tax data')</h5>
 
         <div class="form-row mb-3">
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                <label for="user-tax-name" class="control-label text-uppercase">* @lang('Business name')</label>
+                <label for="user-tax-name" class="control-label text-uppercase c-text-size">* @lang('Business name')</label>
                 <input type="text" name="tax_name"
                     id="user-tax-name" class="form-control"
                     value="{{ $user->getMeta('blog', 'tax_name') }}">
@@ -46,7 +50,7 @@
             </div>
 
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                <label for="user-tax-number" class="control-label text-uppercase">* @lang('Taxpayer identification number')</label>
+                <label for="user-tax-number" class="control-label text-uppercase c-text-size">* @lang('Taxpayer identification number')</label>
                 <input type="text" name="tax_number"
                     id="user-tax-number" class="form-control"
                     value="{{ $user->getMeta('blog', 'tax_number') }}">
@@ -57,7 +61,7 @@
             </div>
             <!------->
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                <label for="user-tax-name" class="control-label text-uppercase">* Constancía de Situación Fiscal</label>
+                <label for="user-tax-name" class="control-label text-uppercase c-text-size">* Constancía de Situación Fiscal</label>
                 @if($user->getmedia('profile_file_tax')->first())
                     <a href="{{ $user->getmedia('profile_file_tax')->first()->getUrl() }}">Ver Documento</a>
                 @else
@@ -71,7 +75,7 @@
             </div>
             <!------->
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                <label for="user-tax-address" class="control-label text-uppercase">* @lang('Street')</label>
+                <label for="user-tax-address" class="control-label text-uppercase c-text-size">* @lang('Street')</label>
                 <input type="text" name="tax_address"
                     id="user-tax-address" class="form-control"
                     value="{{ $user->getMeta('blog', 'tax_address') }}">
@@ -82,7 +86,7 @@
             </div>
 
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                <label for="user-tax-address-number" class="control-label text-uppercase">* @lang('Number')</label>
+                <label for="user-tax-address-number" class="control-label text-uppercase c-text-size">* @lang('Number')</label>
                 <input type="number" name="tax_address_number"
                     id="user-tax-address-number" class="form-control"
                     value="{{ $user->getMeta('blog', 'tax_address_number') }}">
@@ -93,7 +97,7 @@
             </div>
 
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                <label for="user-tax-zipcode" class="control-label text-uppercase">* @lang('Zip code')</label>
+                <label for="user-tax-zipcode" class="control-label text-uppercase c-text-size">* @lang('Zip code')</label>
                 <input type="number" name="tax_zipcode"
                     id="user-tax-zipcode" class="form-control"
                     value="{{ $user->getMeta('blog', 'tax_zipcode') }}"
@@ -105,7 +109,7 @@
             </div>
 
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                <label for="user-tax-settlements" class="control-label text-uppercase">* @lang('Settlement')</label>
+                <label for="user-tax-settlements" class="control-label text-uppercase c-text-size">* @lang('Settlement')</label>
                 <select name="tax_settlement"
                     id="user-tax-settlements" class="form-control"
                     @if($user->hasMeta('blog', 'tax_settlement')) data-selected="{{ $user->getMeta('blog', 'tax_settlement') }}" @endif></select>
@@ -116,12 +120,12 @@
             </div>
 
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                <label class="control-label text-uppercase">@lang('Municipality')</label>
+                <label class="control-label text-uppercase c-text-size">@lang('Municipality')</label>
                 <input type="text" id="user-tax-municipality" class="form-control" readonly disabled>
             </div>
 
             <div class="form-group col-xl-6 col-lg-6 col-md-6 col-12">
-                <label class="control-label text-uppercase">@lang('State')</label>
+                <label class="control-label text-uppercase c-text-size">@lang('State')</label>
                 <input type="text" id="user-tax-state" class="form-control" readonly disabled>
             </div>
 
@@ -137,7 +141,7 @@
 
     @if($user->getmedia('profile_file_tax')->first())
         <hr>
-        <h5 class="text-danger text-uppercase mb-4">Actualiza tu constancia de situacion fiscal</h5>
+        <h5 class="text-danger text-uppercase c-text-size mb-4">Actualiza tu constancia de situacion fiscal</h5>
         <form action="{{ route('update.situation.tax', [$user]) }}"
                 method="post" id="form-register" enctype="multipart/form-data">
                     @method('patch')

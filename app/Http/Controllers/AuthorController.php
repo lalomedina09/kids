@@ -57,7 +57,7 @@ class AuthorController extends Controller
         $user = User::with(['articles' => function ($query) {
                 $query->published()->latest('published_at');
             }])
-            ->hasGuestProfile()
+            //->hasGuestProfile()
             ->HasGuestProfileExhibitor()
             ->byIdOrUsername($key)
             ->firstOrFail();

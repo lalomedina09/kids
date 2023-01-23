@@ -2,6 +2,11 @@
 
 @push('styles')
     <link href="{{ mix('css/vendor/datetimepicker.css') }}" rel="stylesheet">
+    <style>
+        .c-text-size{
+            font-size: 80%
+        }
+    </style>
 @endpush
 
 @push('scripts')
@@ -11,6 +16,7 @@
 @endpush
 
 @section('content')
+
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4">
@@ -22,8 +28,8 @@
                         </p>
                     </div>
 
-                    <p class="text-danger text-bold mb-0">{{ $user->present()->fullname }}</p>
-                    <p class="text-xsmall text-primary m-0">{{ $user->present()->email }}</p>
+                    <p class="text-danger text-bold mb-0 small">{{ $user->present()->fullname }}</p>
+                    <p class="text-primary m-0 small">{{ $user->present()->email }}</p><!--text-xsmall -->
 
 					@if (($current_subscription = \QD\QDPlay\Models\Subscription::current($user->id)))
 					<div class="mt-4 profile__content-info d-flex align-items-center">
@@ -44,70 +50,75 @@
 
                 <nav class="nav flex-column">
                     <a href="#{{ str_slug(__('General information')) }}"
-                        class="nav-item nav-link text-uppercase"
-                        data-toggle="tab"
-                    >@lang('General information')</a>
+                        class="nav-item nav-link text-uppercase c-text-size"
+                        data-toggle="tab">@lang('My Profile')</a>
 
-                    <a href="#{{ str_slug(__('Billing Data')) }}"
-                        class="nav-item nav-link text-uppercase"
-                        data-toggle="tab"
-                    >@lang('Billing Data')</a>
+                    <!--<a href="#{{ str_slug(__('Billing Data')) }}"
+                        class="nav-item nav-link text-uppercase c-text-size"
+                        data-toggle="tab">@lang('Billing Data')</a>--->
 
-                    <a href="#{{ str_slug(__('Update password')) }}"
-                        class="nav-item nav-link text-uppercase"
-                        data-toggle="tab"
-                    >@lang('Update password')</a>
+                    <!--<a href="#{{ str_slug(__('Update password')) }}"
+                        class="nav-item nav-link text-uppercase c-text-size"
+                        data-toggle="tab">@lang('Update password')</a>-->
 
                     <a href="#{{ str_slug(__('My interests')) }}"
-                        class="nav-item nav-link text-uppercase"
-                        data-toggle="tab"
-                    >@lang('My interests')</a>
+                        class="nav-item nav-link text-uppercase c-text-size"
+                        data-toggle="tab">@lang('Blog')</a>
 
-                    <a href="#{{ str_slug(__('My bookmarks')) }}"
-                        class="nav-item nav-link text-uppercase"
-                        data-toggle="tab"
-                    >@lang('My bookmarks')</a>
-
-                    @if ($user->hasProfileRoles() || $user->hasExhibitorRoles())
+                    {{--
+                        <a href="#{{ str_slug(__('My bookmarks')) }}"
+                            class="nav-item nav-link text-uppercase c-text-size"
+                            data-toggle="tab"
+                        >@lang('My bookmarks')</a>
+                    --}}
+                    {{--@if ($user->hasProfileRoles() || $user->hasExhibitorRoles())
                         <a href="#{{ str_slug(__('My personal profile')) }}"
-                            class="nav-item nav-link text-uppercase"
+                            class="nav-item nav-link text-uppercase c-text-size"
                             data-toggle="tab"
                         >@lang('My personal profile')</a>
-                    @endif
-
+                    @endif--}}
+                    {{--
                     @if ($user->hasPaymentRoles() || $user->hasExhibitorRoles())
                         <a href="#{{ str_slug(__('Payment')) }}"
-                            class="nav-item nav-link text-uppercase"
+                            class="nav-item nav-link text-uppercase c-text-size"
                             data-toggle="tab"
                         >@lang('Payment')</a>
                     @endif
+                    --}}
+                    {{--@if (config()->has('money.modules.advice'))
+                        <a href="#{{ str_slug(__('Advices')) }}"
+                            class="nav-item nav-link text-uppercase c-text-size"
+                            data-toggle="tab"
+                        >@lang('Advices')</a>
+                    @endif--}}
 
                     @if (config()->has('money.modules.advice'))
                         <a href="#{{ str_slug(__('Advices')) }}"
-                            class="nav-item nav-link text-uppercase"
+                            class="nav-item nav-link text-uppercase c-text-size"
                             data-toggle="tab"
                         >@lang('Advices')</a>
 
-                        @if ($user->hasRole('advisor'))
+                        {{--@if ($user->hasRole('advisor'))
                             <a href="#{{ str_slug(__('Advice prices')) }}"
-                                class="nav-item nav-link text-uppercase"
+                                class="nav-item nav-link text-uppercase c-text-size"
                                 data-toggle="tab"
                             >@lang('Advice prices')</a>
 
                             <a href="#{{ str_slug(__('Calendar & Schedule')) }}"
-                                class="nav-item nav-link text-uppercase"
+                                class="nav-item nav-link text-uppercase c-text-size"
                                 data-toggle="tab"
                             >@lang('Calendar & Schedule')</a>
-                        @endif
+                        @endif--}}
                     @endif
+
                     <a href="#{{ str_slug(__('QD Play')) }}"
-                        class="nav-item nav-link text-uppercase"
+                        class="nav-item nav-link text-uppercase c-text-size"
                         data-toggle="tab"
                         >@lang('QD Play') <img src="{{ asset('etapa1/GIF-NEW-Querido-dinero.gif') }}" alt="new" width="50" />
                     </a>
 
                     <a href="/queridodinero/app_close.html"
-                    class="nav-item nav-link text-uppercase"
+                    class="nav-item nav-link text-uppercase c-text-size"
                     >@lang('Salir')</a>
 
                 </nav>
@@ -116,6 +127,7 @@
             <div class="col-xl-9 col-lg-9 col-md-8 col-12">
                 <div class="tab-content mb-5">
                     @include('partials.profiles.general')
+                    @include('partials.profiles.photo')
 					@include('qd:qdplay::home.partials.billingData')
                     @include('partials.profiles.password')
                     @include('partials.profiles.interests')
