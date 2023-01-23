@@ -4,7 +4,7 @@
     <link href="{{ mix('css/vendor/datetimepicker.css') }}" rel="stylesheet">
     <style>
         .c-text-size{
-            font-size: 80%
+            font-size: 100%
         }
     </style>
 @endpush
