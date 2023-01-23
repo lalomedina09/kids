@@ -23,9 +23,17 @@
                     </div>
 
                     <p class="text-danger text-bold mb-0">{{ $user->present()->fullname }}</p>
-                    <p class="text-primary m-0">{{ $user->present()->email }}</p><!--text-xsmall -->
+                    <p class="text-xsmall text-primary m-0">{{ $user->present()->email }}</p>
 
-                    @if ($user->hasMeta('blog', 'birthdate'))
+					@if (($current_subscription = \QD\QDPlay\Models\Subscription::current($user->id)))
+					<div class="mt-4 profile__content-info d-flex align-items-center">
+						<p class="text-bold text-large m-0">@lang('Plan')</p>
+						<span></span>
+						<p class="text-large m-0">{{ $current_subscription->plan }}</p>
+					</div>
+					@endif
+
+                    @if (false && $user->hasMeta('blog', 'birthdate'))
                         <div class="mt-4 profile__content-info d-flex align-items-center">
                             <p class="text-bold text-large m-0">@lang('Age')</p>
                             <span></span>
