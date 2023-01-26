@@ -19,6 +19,7 @@ class ArticlesController extends Controller
     {
         $featured = Article::recent()
             ->select('id', 'title', 'slug', 'excerpt')
+            ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
             ->take(3)
             ->get();
 
@@ -27,6 +28,7 @@ class ArticlesController extends Controller
                 $category->load(['articles' => function ($query) {
                     return $query->recent()
                         ->select('id', 'title', 'slug', 'author_id', 'published_at', 'updated_at')
+                        ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
                         ->limit(12);
                 }]);
             });
@@ -48,12 +50,14 @@ class ArticlesController extends Controller
     {
         $article = Article::published()
             ->whereSlug($slug)
+            ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
             ->firstOrFail();
 
         $article->checkViewable();
 
         $related = Article::recommended($request->user())
             ->exclude($article)
+            ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
             ->limit(3)
             ->get();
 
@@ -76,6 +80,7 @@ class ArticlesController extends Controller
 
         $articles = $category->articles()
             ->select('id', 'title', 'slug', 'author_id', 'published_at', 'updated_at')
+            ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
             ->recent()
             ->get();
 
@@ -97,6 +102,7 @@ class ArticlesController extends Controller
 
         $articles = $category->tagged_articles()
             ->select('id', 'title', 'slug', 'author_id', 'published_at', 'updated_at')
+            ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
             ->recent()
             ->get();
 
