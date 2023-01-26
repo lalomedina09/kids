@@ -59,9 +59,9 @@ class HomeController extends Controller
         });
 
         return view('home.index')->with([
-            'recommended' => Article::recommended($request->user())->take(15)->get(),
-            'trending' => Article::trending()->take(6)->get(),
-            'latest' => Article::recent()->take(9)->get(),
+            'recommended' => Article::recommended($request->user())->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(15)->get(),
+            'trending' => Article::trending()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(6)->get(),
+            'latest' => Article::recent()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(9)->get(),
             'radio' => Podcast::recent()->take(9)->get(),
             'videos' => Video::recent()->take(9)->get(),
             'covers' => $covers,
