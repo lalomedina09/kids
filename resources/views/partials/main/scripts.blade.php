@@ -91,6 +91,7 @@
     <script type="text/javascript" src="{{ asset('js/reschedules/main.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/advices/userConnected.js') }}"></script>
 @endauth
+<script type="text/javascript" src="{{ asset('js/advices/advisorPricexTime.js') }}"></script>
 
 @stack('scripts')
 @stack('scripts-inline')
