@@ -46,7 +46,7 @@
                         <span class="text-bold"> en Latinoamérica </span><br></h1>
                         <hr class="hr26">
                         <div class="d-flex flex-row align-items-center">
-                            <img src="{{ asset('images/landing/nube/chk2.png') }}" width="40" class="mr-2"> 
+                            <img src="{{ asset('images/landing/nube/chk2.png') }}" width="40" class="mr-2">
                             <h4 class="teb text-white mb-0"> Gestiona tus productos y ventas </h4>
                         </div>
 
@@ -107,15 +107,15 @@
                                         <option value="SI">SI</option>
                                         <option value="NO">NO</option>
                                     </select>
-                                </div>  
-                              
+                                </div>
+
 
                                 <div class="form-group mx-auto">
-                                    <!-- <div class="g-recaptcha" data-sitekey="{{ config('money.recaptcha.key') }}"></div>
+                                    <div class="g-recaptcha" data-sitekey="{{ config('money.recaptcha.key') }}"></div>
 
                                     @if ($errors->has('g-recaptcha-response'))
                                         <span class="small text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
-                                    @endif -->
+                                    @endif
                                 </div>
 
                                 <div class="form-group clear">
@@ -130,7 +130,7 @@
                 </div>
             </div>
         </div>
-    </div>                                      
+    </div>
     <div class="clearfix"></div>
     <section class="container">
         <section>
@@ -170,9 +170,9 @@
             </div>
             <hr class="hr25">
         </section>
-        <section>        
+        <section>
                 <!--cambie las clases de los titulos y el hr -->
-                <h1 class="text-center title2 mb-3"> Llego la hora de vender online </h1>          
+                <h1 class="text-center title2 mb-3"> Llego la hora de vender online </h1>
                 <hr class="title2 title-underline">
             <div class="row mt-5">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
@@ -197,7 +197,7 @@
     <footer class="footer box">
         <div class="container text-center">
            <p class="text-danger mb-2">Todo lo que tu negocio necesita para vender </p>
-                <!--  
+                <!--
             <p class="mb-0">
                 <a target="blank" href="https://www.masterplandigital.com/posgrados/creditos-educativos/" title="web">
                     <img src="{{ asset('images/landing/ladrillos/web.png') }}" width="100">
