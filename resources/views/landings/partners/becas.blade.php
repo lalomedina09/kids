@@ -79,8 +79,7 @@
                         <hr class="hr26">
                         <div class="d-flex flex-row align-items-center">
                             <img src="{{ asset('images/landing/nube/chk2.png') }}" width="40" class="mr-0">
-                            <h4 class="teb text-white mb-3"> Ahorra para la universidad o preparatoria
-de tus hijos, y obtén rendimientos </h4>
+                            <h4 class="teb text-white mb-3"> Ahorra para la universidad o preparatoria de tus hijos, y obtén rendimientos </h4>
                         </div>
 
                         <div class="d-flex flex-row align-items-center">
@@ -90,8 +89,7 @@ de tus hijos, y obtén rendimientos </h4>
 
                          <div class="d-flex flex-row align-items-center">
                             <img src="{{ asset('images/landing/nube/chk2.png') }}" width="40" class="mr-0">
-                            <h4 class="teb text-white mb-3"> Alianzas con universidades nacionales
-y extranjeras </h4>
+                            <h4 class="teb text-white mb-3"> Alianzas con universidades nacionales y extranjeras </h4>
                         </div>
 
                         <div class="d-flex flex-row align-items-center">
@@ -152,11 +150,11 @@ y extranjeras </h4>
                                 </div>
 
                                 <div class="form-group mx-auto">
-                                    <!-- <div class="g-recaptcha" data-sitekey="{{ config('money.recaptcha.key') }}"></div>
+                                    <div class="g-recaptcha" data-sitekey="{{ config('money.recaptcha.key') }}"></div>
 
                                     @if ($errors->has('g-recaptcha-response'))
                                         <span class="small text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
-                                    @endif -->
+                                    @endif
                                 </div>
 
                                 <div class="form-group clear">

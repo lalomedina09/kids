@@ -45,7 +45,7 @@ class GarbiController extends Controller
             'email' => 'required|email|min:1|max:255',
             'Celular' => 'required|string|min:1|max:255'
         ]);
-        //array_forget($params, 'g-recaptcha-response');
+        array_forget($params, 'g-recaptcha-response');
 
         $landing = new Landing;
         $landing->page = $request->route()->uri();

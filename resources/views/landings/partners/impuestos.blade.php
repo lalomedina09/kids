@@ -17,10 +17,11 @@
             <div class="row m-0 h-100">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-12 h-100">
                     <div class="align-vertical">
-                        <h1><br><span class="text-white">¡Armamos una</span><br>
-guía básica para<br>
-<span class="text-white">despejar tus dudas!</span>
-</h1>                   
+                        <h1>
+                            <br>
+                            <span class="text-white">¡Armamos una</span><br> guía básica para<br>
+                            <span class="text-white">despejar tus dudas!</span>
+                        </h1>
                         <hr class="hr20b">
                         <div class="d-flex flex-row align-items-center">
                         </div>
@@ -35,8 +36,7 @@ guía básica para<br>
                         <div class="p-5-1 p-4 rounded-lg text-center">
                             <div class="text-center">
                                 <p class="text-white text-bold text-center">Te regalamos nuestro descargable<br>
-                                <span class="text-secondary"> ¡Punto de partida para
-saber de impuestos!</span></p>
+                                <span class="text-secondary"> ¡Punto de partida para saber de impuestos!</span></p>
                             </div>
 
                             <form method="post" id="form-landing" class="form">
@@ -122,27 +122,25 @@ saber de impuestos!</span></p>
 
         <section>
             <h1 class="title-underline title-underline-b title-underline-danger text-center">
-<b>Nuestro e-book de facturas y deducciones</b><br>
-de impuestos te ayudará a:</h1>
+                <b>Nuestro e-book de facturas y deducciones</b><br> de impuestos te ayudará a:
+            </h1>
             <div class="row mt-5">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                     <img src="{{ asset('images/landing/impuestos/1.png') }}" alt="Credito" width="100%">
                     <h4 class="mb-3 text-center"><span class="text-danger text-bold">Conocer lo que necesitas </span><span style="font-family: font-family: 'Montserrat', sans-serif;"><br>
-                    para emitir una factura y
-comenzar a deducir impuestos</span></h4>
+                    para emitir una factura y comenzar a deducir impuestos</span></h4>
                 </div>
 
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                     <img src="{{ asset('images/landing/impuestos/2.png') }}" alt="Tasas" width="100%">
-                    <h4 class="mb-3 text-center"><span class="text-danger text-bold">Definir lo que sí </span><br> 
+                    <h4 class="mb-3 text-center"><span class="text-danger text-bold">Definir lo que sí </span><br>
                     <span style="font-family: font-family: 'Montserrat', sans-serif;">puedes deducir</span></h4>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-12">
                     <img src="{{ asset('images/landing/impuestos/3.png') }}" alt="Monto" width="100%">
-                    <h4 class="mb-3 text-center "><span class="text-danger text-bold">Entender las palabras<br> 
-clave</span>
-                   <span style="font-family: font-family: 'Montserrat', sans-serif;">que seguro vas a
-encontrar en tus próximas facturas</span></h4>
+                    <h4 class="mb-3 text-center "><span class="text-danger text-bold">Entender las palabras<br> clave</span>
+                        <span style="font-family: font-family: 'Montserrat', sans-serif;">que seguro vas a encontrar en tus próximas facturas</span>
+                    </h4>
                 </div>
             </div>
         </section>
@@ -150,16 +148,16 @@ encontrar en tus próximas facturas</span></h4>
 
     <footer class="footer box">
         <div class="container text-center text-white">
-            <div class="text-center mx-auto"><a href="#" 
+            <div class="text-center mx-auto"><a href="#"
                             data-toggle="modal" data-target="#register-modal">
                 <img src="{{ asset('images/logo_light.svg') }}"
                     class="my-1"
-                    height="35px" alt="Querido Dinero">  
-                          
+                    height="35px" alt="Querido Dinero">
+
                         </a>
             </div>
            <p><span class="text-danger mb-2">Tu relación </span>con el dinero</p>
-            <!--  
+            <!--
             <p class="mb-0">
                 <a target="blank" href="#" title="web">
                     <img src="{{ asset('images/landing/impuestos/web.png') }}" width="100">
