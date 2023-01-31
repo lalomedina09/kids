@@ -135,3 +135,5 @@ Crawl-delay: 60
 # disallow all other bots
 User-agent: *
 Disallow: /
+User-agent: AhrefsBot
+Crawl-Delay: 60
