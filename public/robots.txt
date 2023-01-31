@@ -135,5 +135,6 @@ Crawl-delay: 60
 # disallow all other bots
 User-agent: *
 Disallow: /
+# herramienta de rastreo
 User-agent: AhrefsBot
 Crawl-Delay: 60
