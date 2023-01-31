@@ -497,11 +497,11 @@ Route::prefix('expositores')
 ->group(function () {
     Route::get('/')
         ->uses('AuthorController@index')
-        ->name('authors.index');
+        ->name('exhibitors.index');
 
     Route::get('/{key}')
     ->uses('AuthorController@showExhibitor')
-    ->name('authors.show');
+    ->name('exhibitors.show');
 });
 /*
  |--------------------------------------------------------------------------
