@@ -12,41 +12,59 @@
                 <div class="card-header">
                     Información general
                 </div>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <span class="font-weight-bold">Nombre(s):</span>
-                        {{ $user->present()->name }}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="font-weight-bold">Apellido(s):</span>
-                        {{ $user->present()->last_name }}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="font-weight-bold">Correo electrónico:</span>
-                        {{ $user->present()->email }}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="font-weight-bold">WhatsApp:</span>
-                        {{ $user->getMeta('blog', 'countrycode') }} {{  $user->getMeta('blog', 'whatsapp') }}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="font-weight-bold">Género:</span>
-                        {{ $user->present()->gender }}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="font-weight-bold">Fecha de nacimiento:</span>
-                        {{ $user->present()->birthdate }}
-                        <span class="text-muted">({{ $user->present()->age }} años)</span>
-                    </li>
-                    <li class="list-group-item">
-                        <span class="font-weight-bold">Estado:</span>
-                        {{ $user->present()->state }}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="font-weight-bold">Ocupación:</span>
-                        {{ $user->present()->job }}
-                    </li>
-                </ul>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="font-weight-bold">Nombre(s):</span>
+                                {{ $user->present()->name }}
+                            </li>
+                            <li class="list-group-item">
+                                <span class="font-weight-bold">Apellido(s):</span>
+                                {{ $user->present()->last_name }}
+                            </li>
+                            <li class="list-group-item">
+                                <span class="font-weight-bold">Usuario:</span>
+                                {{ $user->getMeta('blog', 'username') }}
+                            </li>
+                            <li class="list-group-item">
+                                <span class="font-weight-bold">Nombre Público:</span>
+                                {{ $user->present()->name_public }}
+                            </li>
+                            <li class="list-group-item">
+                                <span class="font-weight-bold">Correo electrónico:</span>
+                                {{ $user->present()->email }}
+                            </li>
+                            <li class="list-group-item">
+                                <span class="font-weight-bold">WhatsApp:</span>
+                                {{ $user->getMeta('blog', 'countrycode') }} {{  $user->getMeta('blog', 'whatsapp') }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="font-weight-bold">Género:</span>
+                                {{ $user->present()->gender }}
+                            </li>
+                            <li class="list-group-item">
+                                <span class="font-weight-bold">Fecha de nacimiento:</span>
+                                {{ $user->present()->birthdate }}
+                                <span class="text-muted">({{ $user->present()->age }} años)</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="font-weight-bold">Estado:</span>
+                                {{ $user->present()->state }}
+                            </li>
+                            <li class="list-group-item">
+                                <span class="font-weight-bold">Ocupación:</span>
+                                {{ $user->present()->job }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
             </div>
 
             <div class="card mb-3">
@@ -66,32 +84,47 @@
             </div>
 
             <div class="card mb-4">
-                <div class="card-header">
-                    <span>Otros datos:</span>
-                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card-header">
+                            <span>Otros datos:</span>
+                        </div>
 
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <span class="fa fa-user"></span>&nbsp;&nbsp;
-                        <span class="font-weight-bold">Identificador único:</span> {{ $user->id }}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="fa fa-calendar"></span>&nbsp;&nbsp;
-                        <span class="font-weight-bold">Fecha de creación:</span> {{ $user->present()->created_at }}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="fa fa-calendar"></span>&nbsp;&nbsp;
-                        <span class="font-weight-bold">Primer acceso:</span> {{ $user->present()->first_login }}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="fa fa-calendar"></span>&nbsp;&nbsp;
-                        <span class="font-weight-bold">Último acceso:</span> {{ $user->present()->last_login }}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="fa fa-trash"></span>&nbsp;&nbsp;
-                        <span class="font-weight-bold">Eliminado:</span> {{ $user->present()->deleted_at }}
-                    </li>
-                </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="fa fa-user"></span>&nbsp;&nbsp;
+                                <span class="font-weight-bold">Identificador único:</span> {{ $user->id }}
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fa fa-calendar"></span>&nbsp;&nbsp;
+                                <span class="font-weight-bold">Fecha de creación:</span> {{ $user->present()->created_at }}
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fa fa-calendar"></span>&nbsp;&nbsp;
+                                <span class="font-weight-bold">Primer acceso:</span> {{ $user->present()->first_login }}
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fa fa-calendar"></span>&nbsp;&nbsp;
+                                <span class="font-weight-bold">Último acceso:</span> {{ $user->present()->last_login }}
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fa fa-trash"></span>&nbsp;&nbsp;
+                                <span class="font-weight-bold">Eliminado:</span> {{ $user->present()->deleted_at }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <br><p class="text-center">Foto de perfil</p>
+                        @if ($user->hasMedia('profile_photo'))
+                            <div class="image-background mx-auto"
+                                style="background-image: url({{ $user->present()->author_photo }});width:200px;height:200px"></div>
+                        @else
+                            <div class="alert alert-secondary">
+                                @lang('No profile photo')
+                            </div>
+                        @endif
+                    </div>
+                </div>
             </div>
         </div>
 

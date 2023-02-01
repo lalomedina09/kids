@@ -18,6 +18,13 @@
             <input type="text" name="last_name" class="form-control" value="{{ $user->last_name }}">
         </div>
 
+        <!---->
+        <div class="form-group col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <label for="name_public" class="control-label" title="Nombre para mostrar como expositor en QD Play">@lang('Name Public'):</label>
+            <input type="text" name="name_public" class="form-control" value="{{ $user->name_public }}">
+        </div>
+        <!---->
+
         <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
             <label for="email" class="control-label">@lang('E-Mail'):</label>
             <input type="text" name="email" class="form-control" value="{{ $user->email }}">
@@ -106,7 +113,7 @@
             <label class="control-label font-weight-bold">@lang('Preview'):</label>
             @if ($user->hasMedia('profile_photo'))
                 <div class="image-background mx-auto"
-                    style="background-image: url({{ $user->present()->author_photo }});width:400px;height:400px"></div>
+                    style="background-image: url({{ $user->present()->author_photo }});width:200px;height:200px"></div>
             @else
                 <div class="alert alert-secondary">
                     @lang('No profile photo')

@@ -162,7 +162,14 @@
                         </td>
                         <td>{{ $user->present()->created_at }}</td>
                         <td>
-                            <a href="{{ route('dashboard.users.show', $user->id) }}" class="btn btn-sm btn-outline-primary">@lang('Show')</a>
+                            @if(is_null($user->deleted_at))
+                                <a href="{{ route('dashboard.users.show', $user->id) }}" class="btn btn-sm btn-outline-primary">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                            @endif
+                            <a href="{{ route('dashboard.users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
