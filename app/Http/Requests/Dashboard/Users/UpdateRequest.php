@@ -38,6 +38,7 @@ class UpdateRequest extends FormRequest
                 return [
                     'name' => 'required|string|min:1|max:255',
                     'last_name' => 'required|string|min:1|max:255',
+                    'name_public' => 'required|string|min:1|max:255',
                     'profile_photo' => 'nullable|max:2000',
                     'state' => 'required|string|in:' . $extra_valid_states,
                     'countrycode' => 'required|string|in:' . $extra_valid_countries,
