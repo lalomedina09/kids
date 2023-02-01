@@ -29,9 +29,12 @@ class SearchController extends Controller
         $articles_by_category_closure = function ($query) use ($search_query) {
             if($search_query == "")
             {
-                $query->recent()->fullTextSearch('a');
+                $query->recent()->where('site', env('SITE_ARTICLES', "queridodinero.com"))
+                                ->fullTextSearch('a');
             }else{
-                $query->recent()->where('title', 'like', '%' . $search_query . '%');
+                $query->recent()->where('title', 'like', '%' . $search_query . '%')
+                                ->orWhere('body', 'like', '%' . $search_query . '%')
+                                ->where('site', env('SITE_ARTICLES', "queridodinero.com"));
             }
         };
 
