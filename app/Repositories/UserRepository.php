@@ -54,7 +54,10 @@ class UserRepository
         if (isset($params['profile_photo_checked']))
         $profile_photo_checked = $params['profile_photo_checked'];
 
+        //Validación para el campo de name_public si no existe la variable sera nula
+        $name_public = (isset($params['name_public'])) ? $params['name_public'] : null ;
         $user->name = $params['name'];
+        $user->name_public = $name_public;
         $user->last_name = array_has($params, 'last_name') ? $params['last_name'] : null;
 
         if ($user->isDirty()) {

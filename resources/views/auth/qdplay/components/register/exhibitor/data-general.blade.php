@@ -39,6 +39,18 @@
                                 @endif
                             </div>
                         </div>
+                        <!----- Campo para tener preferencia al mostrar en qdplay(expositores) ------->
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="name_public" title="Nombre para mostrar como Expositor en QD Play" class="text-uppercase">* @lang('Name Public')</label>
+                                <input type="text" name="name_public" class="form-control">
+
+                                @if ($errors->has('name_public'))
+                                    <span class="small text-danger">{{ $errors->first('name_public') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <!------------>
                     </div>
 
                     <div class="row">

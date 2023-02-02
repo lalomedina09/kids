@@ -28,7 +28,18 @@
                     @endif
                 </div>
             </div>
-
+            <!---------------- Campo para guardar el nombre publico ------------------->
+            <div class="col-xl-12 col-lg-12 col-12">
+                <div class="form-group">
+                    <label for="name_public" class="control-label c-text-size text-uppercase c-text-size"
+                    title="Nombre que te gustaría mostrar en el Módulo de QD Play">* @lang('Name Public')</label>
+                    <input type="text" name="name_public" class="form-control" value="{{ $user->name_public }}">
+                    @if ($errors->has('name_public'))
+                        <span class="small text-danger">{{ $errors->first('name_public') }}</span>
+                    @endif
+                </div>
+            </div>
+            <!---------------- Termina campo para guardar el nombre ------------------->
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="form-group">
                     <label for="state" class="control-label c-text-size text-uppercase c-text-size">* @lang('State')</label>
