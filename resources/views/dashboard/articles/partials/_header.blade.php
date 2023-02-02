@@ -6,7 +6,11 @@
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-4 col-12">
         <div class="btn-group float-right">
             @isset($link)
-                <a href="{{ route('articles.show', $article) }}" class="btn btn-outline-primary">
+                @php
+                    $site = ($article->site == "dear-money.com") ? "https://www.dear-money.com/articles/" : "https://www.queridodinero.com/articulos/" ;
+                @endphp
+                {{--<a href="{{ route('articles.show', $article) }}" class="btn btn-outline-primary">--}}
+                <a href="{{ $site . $article->slug }}" title="{{ $site . $article->slug }}" class="btn btn-outline-primary" target="_blank">
                     <span class="fa fa-arrow-right"></span> Ir al artículo
                 </a>
             @endisset
