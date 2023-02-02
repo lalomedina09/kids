@@ -12,6 +12,7 @@
         <table class="table table-hover table-bordered" data-order='[[ 3, "desc" ]]'>
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Título</th>
                     <th>Categorías</th>
                     <th>Autor</th>
@@ -23,6 +24,7 @@
             </thead>
             <tfoot>
                 <tr>
+                    <th>ID</th>
                     <th>Título</th>
                     <th>Categorías</th>
                     <th>Autor</th>
@@ -35,6 +37,9 @@
             <tbody>
                 @foreach($articles as $article)
                     <tr>
+                        <td class="small">
+                            <span class="text-dark">{{ $article->present()->id }}</span>
+                        </td>
                         <td class="small">
                             @if ($article->site == "dear-money.com")
                                 <a href="{{ $site . $article->slug }}" target="_blank">
