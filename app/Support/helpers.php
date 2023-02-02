@@ -262,3 +262,16 @@ function separateLinkDonwload($link)
     }
 
 }
+
+function countCharacterArticle($article)
+{
+    //Tratamos la variable
+    $trim = strip_tags($article->body);
+    $trim = str_replace([" ", "\n", "\t", "&ndash;", "&rsquo;", "&#39;", "&quot;", "&nbsp;"], '', $trim);
+
+    //Contamos los caracteres
+    $totalCharacter = strlen(utf8_decode($trim));
+
+    //Retornamos la variable
+    return $totalCharacter;
+}

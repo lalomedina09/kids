@@ -83,6 +83,7 @@ class ArticleController extends Controller
     public function edit($article_id)
     {
         $article = $this->query()->findOrFail($article_id);
+
         return view('dashboard.articles.edit')->with([
             'article' => $article,
             'categories' => Article::getCategories(),
@@ -181,6 +182,7 @@ class ArticleController extends Controller
     public function publish($article_id, PublishRequest $request)
     {
         $article = $this->query()->findOrFail($article_id);
+
         $redirect = redirect()->route('dashboard.articles.edit', [$article->id]);
 
         $article->published_at = $request->get('published_at');
