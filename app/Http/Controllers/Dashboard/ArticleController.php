@@ -43,6 +43,16 @@ class ArticleController extends Controller
         ]);
     }
 
+    public function details()
+    {
+        $articles = $this->query()
+            ->select('id', 'title', 'body', 'slug', 'author_id', 'site', 'published_at', 'updated_at')
+            ->without(['media'])
+            ->get();
+        return view('dashboard.articles.details')->with([
+            'articles' => $articles
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

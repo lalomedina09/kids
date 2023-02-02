@@ -14,6 +14,9 @@
                     <span class="fa fa-arrow-right"></span> Ir al artículo
                 </a>
             @endisset
+            <a href="{{ route('dashboard.articles.listDetail') }}" class="btn btn-outline-primary">
+                <span class="fa fa-list"></span> Detalle
+            </a>
             <a href="{{ route('dashboard.social-post.index') }}" class="btn btn-outline-primary">
                 <span class="fa fa-plus"></span> Post Instagram
             </a>

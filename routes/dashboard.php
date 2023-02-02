@@ -27,6 +27,11 @@ Route::prefix('blog')
                     ->name('articles.index')
                     ->middleware(['permission:blog.articles.index']);
 
+                Route::get('/list-details')
+                    ->uses('ArticleController@details')
+                    ->name('articles.listDetail')
+                    ->middleware(['permission:blog.articles.index']);
+
                 Route::get('/trashed')
                     ->uses('ArticleController@trashed')
                     ->name('articles.trashed')
