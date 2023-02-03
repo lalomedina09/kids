@@ -219,13 +219,19 @@ Route::get('/contrato-de-prestacion-de-servicios-qd-play-persona-moral')
 Route::get('contrato-de-prestacion-de-servicios-qd-play-persona-moral')
     ->uses('PagesController@show')
     ->name('contrato-de-prestacion-de-servicios-qd-play-persona-moral');
+/*
+Route::get('/pages/{slug}')
+    ->uses('PagesController@show')
+    ->name('pages.show');
+*/
+Route::get('/descargas-libro')
+->uses('PagesController@download_book_qd')
+->name('pages.show');
 
-Route::get('/descargas-libro', function () {
-    return redirect()->route('pages.show', ['slug' => 'descargas-libro']);
-});
-Route::get('/descargas-libro.html', function () {
-    return redirect()->route('pages.show', ['slug' => 'descargas-libro']);
-});
+Route::get('/descargas-libro.html')
+->uses('PagesController@download_book_qd')
+->name('pages.show');
+///////////
 
 Route::get('/page-qdplay')
     ->uses('PagesController@cs_qdplay')

@@ -102,7 +102,14 @@ class PagesController extends Controller
     public function prestacion_de_servicios_moral() : View
     {
         $page = Page::where('slug', 'contrato-de-prestacion-de-servicios-qd-play')->first();
-        dd($page);
+        //dd($page);
+        return view('pages.index', ['page' => $page]);
+    }
+
+    public function download_book_qd(): View
+    {
+        $page = Page::where('slug', 'descargas-libro')->first();
+        //dd($page);
         return view('pages.index', ['page' => $page]);
     }
 
