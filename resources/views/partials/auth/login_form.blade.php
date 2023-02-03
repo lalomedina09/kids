@@ -55,7 +55,7 @@
     </p>
 </div>
 
-@include('partials.auth.social_media_logins')
+{{--@include('partials.auth.social_media_logins')--}}
 
 <hr>
 
