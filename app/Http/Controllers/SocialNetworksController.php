@@ -13,7 +13,7 @@ class SocialNetworksController extends Controller
 {
 
 	private $users;
-	
+
     /**
      * Create a new resource instance
      */
@@ -22,11 +22,12 @@ class SocialNetworksController extends Controller
     }
 
     public function facebookRedirect() {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('facebook')->stateless()->redirect();
+
     }
 
     public function facebookCallback() : RedirectResponse {
-        $facebook_user = Socialite::driver('facebook')->user();
+        $facebook_user = Socialite::driver('facebook')->stateless()->user();
 		$user = User::query()->where('email', $facebook_user->email)->
 				orWhere('facebook_id', $facebook_user->id)->first();
 		if ($user instanceof User) {
@@ -43,17 +44,17 @@ class SocialNetworksController extends Controller
 				'name' => strtok(trim($facebook_user->name), ' '),
 				'last_name' => strtok(' '),
 			], $user);
-			
+
 			//Mailer::sendRegisterMail($user);
 		}
-		
+
 		Auth::login($user);
 
         return redirect()
             ->route('home')
             ->with(['success' => '¡Bienvenido!']);
     }
-	
+
     public function googleRedirect() : RedirectResponse {
         return Socialite::driver('google')->redirect();
     }
@@ -65,7 +66,7 @@ class SocialNetworksController extends Controller
 			return redirect()
 					->route('home')
 					->with(['error' => '¡No has verificado el mail de tu cuenta Google!']);
-		
+
 		$user = User::query()->where('email', $g_user['email'])->
 				orWhere('google_id', $g_user['sub'])->first();
 		if ($user instanceof User) {
@@ -82,17 +83,17 @@ class SocialNetworksController extends Controller
 				'name' => $g_user['given_name'],
 				'last_name' => $g_user['family_name'],
 			], $user);
-			
+
 			//Mailer::sendRegisterMail($user);
 		}
-		
+
 		Auth::login($user);
 
         return redirect()
             ->route('home')
             ->with(['success' => '¡Bienvenido!']);
     }
-	
+
 	public function microsoftRedirect() : RedirectResponse {
         return Socialite::driver('microsoft')->redirect();
     }
@@ -115,21 +116,21 @@ class SocialNetworksController extends Controller
 				'name' => $microsoft_user->givenName,
 				'last_name' => $microsoft_user->surname,
 			], $user);
-			
+
 			//Mailer::sendRegisterMail($user);
 		}
-		
+
 		Auth::login($user);
 
         return redirect()
             ->route('home')
             ->with(['success' => '¡Bienvenido!']);
     }
-	
+
 	public function appleRedirect() : RedirectResponse {
         return Socialite::driver('apple')->redirect();
     }
-	
+
 	public function appleCallback() : RedirectResponse {
 		$apple_user = Socialite::driver('apple')->user();
 		$a_user = $apple_user->user;
@@ -137,7 +138,7 @@ class SocialNetworksController extends Controller
 			return redirect()
 					->route('home')
 					->with(['error' => '¡No has verificado el mail de tu cuenta Apple!']);
-		
+
 		$user = User::query()->where('email', $a_user['email'])->
 				orWhere('apple_id', $a_user['sub'])->first();
 		if ($user instanceof User) {
@@ -154,15 +155,15 @@ class SocialNetworksController extends Controller
 				'name' => $apple_user->name ?? strtok(trim($a_user['email']), '@'),
 				'last_name' => $apple_user->nickname ?? strtok('@'),
 			], $user);
-			
+
 			//Mailer::sendRegisterMail($user);
 		}
-		
+
 		Auth::login($user);
 
         return redirect()
             ->route('home')
             ->with(['success' => '¡Bienvenido!']);
     }
-	
+
 }
