@@ -61,6 +61,7 @@
         "queridodinero/marketplace": "0.5.*",
         "queridodinero/products": "^0.1",
         "queridodinero/qdplay": "dev-main",
+        "socialiteproviders/apple": "*",
         "socialiteproviders/facebook": "*",
         "socialiteproviders/google": "*",
         "socialiteproviders/microsoft": "*",
