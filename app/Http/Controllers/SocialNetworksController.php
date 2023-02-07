@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Auth\Mailer;
 use App\Models\User;
 use App\Repositories\UserRepository;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -23,57 +25,144 @@ class SocialNetworksController extends Controller
         return Socialite::driver('facebook')->redirect();
     }
 
-    public function facebookCallback()
-    {
-        // TODO...
-		$facebook_user = Socialite::driver('facebook')->user();
-		dd($facebook_user);
+    public function facebookCallback() : RedirectResponse {
+        $facebook_user = Socialite::driver('facebook')->user();
+		$user = User::query()->where('email', $facebook_user->email)->
+				orWhere('facebook_id', $facebook_user->id)->first();
+		if ($user instanceof User) {
+			if (is_null($user->facebook_id)) {
+				$user->facebook_id = $facebook_user->id;
+				$user->save();
+			}
+		} else {
+			$user = new User;
+			$user->email = $facebook_user->email;
+			$user->password = '3rd party';
+			$user->facebook_id = $facebook_user->id;
+			$this->users->saveProfile([
+				'name' => strtok(trim($facebook_user->name), ' '),
+				'last_name' => strtok(' '),
+			], $user);
+			
+			//Mailer::sendRegisterMail($user);
+		}
+		
+		Auth::login($user);
+
+        return redirect()
+            ->route('home')
+            ->with(['success' => '¡Bienvenido!']);
     }
 	
-    public function googleRedirect() {
+    public function googleRedirect() : RedirectResponse {
         return Socialite::driver('google')->redirect();
     }
 
-    public function googleCallback()
-    {
+    public function googleCallback() : RedirectResponse {
         $google_user = Socialite::driver('google')->user();
-		$subuser = $google_user->user;
-		$user = User::query()->where('email', $subuser['email'])->first();
+		$g_user = $google_user->user;
+		if (!$g_user['email_verified'])
+			return redirect()
+					->route('home')
+					->with(['error' => '¡No has verificado el mail de tu cuenta Google!']);
 		
-		if (is_null($user)) {
+		$user = User::query()->where('email', $g_user['email'])->
+				orWhere('google_id', $g_user['sub'])->first();
+		if ($user instanceof User) {
+			if (is_null($user->google_id)) {
+				$user->google_id = $g_user['sub'];
+				$user->save();
+			}
+		} else {
 			$user = new User;
-			$user->email = $subuser['email'];
-			$user->password = 'via google oauth';
-			$user->google_id = $subuser['sub'];
-			$user = $this->users->saveProfile([
-				'name' => $subuser['given_name'],
-				'last_name' => $subuser['family_name'],
+			$user->email = $g_user['email'];
+			$user->password = '3rd party';
+			$user->google_id = $g_user['sub'];
+			$this->users->saveProfile([
+				'name' => $g_user['given_name'],
+				'last_name' => $g_user['family_name'],
 			], $user);
 			
-			Auth::login($user);
-
-			// TODO..
 			//Mailer::sendRegisterMail($user);
-			
-			return redirect()->route('home')
-					->with(['success' => '¡Bienvenido! ahora estás registrado.']);
-		} else {
-			Auth::login($user);
-			
-			return redirect()->route('home')
-					->with(['success' => 'Se inició tu sesión correctamente.']);
 		}
+		
+		Auth::login($user);
+
+        return redirect()
+            ->route('home')
+            ->with(['success' => '¡Bienvenido!']);
     }
 	
-	public function microsoftRedirect() {
+	public function microsoftRedirect() : RedirectResponse {
         return Socialite::driver('microsoft')->redirect();
     }
 
-    public function microsoftCallback()
-    {
-        // TODO...
+    public function microsoftCallback(): RedirectResponse {
 		$microsoft_user = Socialite::driver('microsoft')->user();
-		dd($microsoft_user);
+		$user = User::query()->where('email', $microsoft_user->userPrincipalName)->
+				orWhere('microsoft_id', $microsoft_user->id)->first();
+		if ($user instanceof User) {
+			if (is_null($user->microsoft_id)) {
+				$user->microsoft_id = $microsoft_user->id;
+				$user->save();
+			}
+		} else {
+			$user = new User;
+			$user->email = $microsoft_user->userPrincipalName;
+			$user->password = '3rd party';
+			$user->microsoft_id = $microsoft_user->id;
+			$this->users->saveProfile([
+				'name' => $microsoft_user->givenName,
+				'last_name' => $microsoft_user->surname,
+			], $user);
+			
+			//Mailer::sendRegisterMail($user);
+		}
+		
+		Auth::login($user);
+
+        return redirect()
+            ->route('home')
+            ->with(['success' => '¡Bienvenido!']);
+    }
+	
+	public function appleRedirect() : RedirectResponse {
+        return Socialite::driver('apple')->redirect();
+    }
+	
+	public function appleCallback() : RedirectResponse {
+		$apple_user = Socialite::driver('apple')->user();
+		$a_user = $apple_user->user;
+		if (!$a_user['email_verified'])
+			return redirect()
+					->route('home')
+					->with(['error' => '¡No has verificado el mail de tu cuenta Apple!']);
+		
+		$user = User::query()->where('email', $a_user['email'])->
+				orWhere('apple_id', $a_user['sub'])->first();
+		if ($user instanceof User) {
+			if (is_null($user->apple_id)) {
+				$user->apple_id = $a_user['sub'];
+				$user->save();
+			}
+		} else {
+			$user = new User;
+			$user->email = $a_user['email'];
+			$user->password = '3rd party';
+			$user->apple_id = $a_user['sub'];
+			$this->users->saveProfile([
+				'name' => $apple_user->name ?? strtok(trim($a_user['email']), '@'),
+				'last_name' => $apple_user->nickname ?? strtok('@'),
+			], $user);
+			
+			//Mailer::sendRegisterMail($user);
+		}
+		
+		Auth::login($user);
+
+        return redirect()
+            ->route('home')
+            ->with(['success' => '¡Bienvenido!']);
     }
 	
 }

@@ -71,7 +71,26 @@
 		background-color: #fff;
 	}
 
-	.google-button:hover, .facebook-button:hover, .microsoft-button:hover {
+	@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+	.apple-button {
+		margin: 5px;
+		font-size: 4.4mm;
+		display: inline-block;
+		padding: 0 3mm 0 13mm;
+		border-radius: 3px;
+		height: 12mm;
+		background: url('{{ asset("etapa1/apple_logo.png") }}') no-repeat;
+		background-position: 2px 2px;
+		line-height: 12mm;
+		text-decoration: none;
+		color: #fff !important;
+		font-family: 'SF Pro Display', sans-serif;
+		background-color: #000;
+		font-weight: bold;
+	}
+
+	.google-button:hover, .facebook-button:hover, .microsoft-button:hover, .apple-button:hover {
 		text-decoration: none;
 	}
 </style>
@@ -81,4 +100,5 @@
 	<a href="{{ route('redirects.facebook') }}" class="facebook-button">Iniciar Sesión con Facebook</a>
 	<a href="{{ route('redirects.google') }}" class="google-button">Iniciar Sesión con Google</a>
 	<a href="{{ route('redirects.microsoft') }}" class="microsoft-button">Iniciar Sesión con Microsoft</a>
+	<a href="{{ route('redirects.apple') }}" class="apple-button">Iniciar Sesión con Apple</a>
 </div>

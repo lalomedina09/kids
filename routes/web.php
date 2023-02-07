@@ -788,6 +788,10 @@ Route::name('redirects.')
         Route::get('/microsoft')
             ->uses('SocialNetworksController@microsoftRedirect')
             ->name('microsoft');
+
+        Route::get('/apple')
+            ->uses('SocialNetworksController@appleRedirect')
+            ->name('apple');
     });
 
 Route::name('callbacks.')
@@ -805,4 +809,8 @@ Route::name('callbacks.')
         Route::get('/microsoft')
             ->uses('SocialNetworksController@microsoftCallback')
             ->name('microsoft');
+
+        Route:: post('/apple')
+        ->uses('SocialNetworksController@appleCallback')
+        ->name('apple');
     });
