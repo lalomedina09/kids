@@ -22,37 +22,39 @@ class SocialNetworksController extends Controller
     }
 
     public function facebookRedirect() {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('facebook')->stateless()->redirect();
+
     }
 
     public function facebookCallback() : RedirectResponse {
-        $facebook_user = Socialite::driver('facebook')->user();
-        dd($facebook_user);
-		$user = User::query()->where('email', $facebook_user->email)->
-				orWhere('facebook_id', $facebook_user->id)->first();
-		if ($user instanceof User) {
-			if (is_null($user->facebook_id)) {
-				$user->facebook_id = $facebook_user->id;
-				$user->save();
-			}
-		} else {
-			$user = new User;
-			$user->email = $facebook_user->email;
-			$user->password = '3rd party';
-			$user->facebook_id = $facebook_user->id;
-			$this->users->saveProfile([
-				'name' => strtok(trim($facebook_user->name), ' '),
-				'last_name' => strtok(' '),
-			], $user);
+        $facebook_user = Socialite::driver('facebook')->stateless()->user();
+        dd($facebook_user, 'Linea 31');
+        $user = User::query()->where('email', $facebook_user->email)->
+        orWhere('facebook_id', $facebook_user->id)->first();
 
-			//Mailer::sendRegisterMail($user);
-		}
+        if ($user instanceof User) {
+            if (is_null($user->facebook_id)) {
+            $user->facebook_id = $facebook_user->id;
+            $user->save();
+            }
+        } else {
+            $user = new User;
+            $user->email = $facebook_user->email;
+            $user->password = '3rd party';
+            $user->facebook_id = $facebook_user->id;
+            $this->users->saveProfile([
+            'name' => strtok(trim($facebook_user->name), ' '),
+            'last_name' => strtok(' '),
+            ], $user);
 
-		Auth::login($user);
+            //Mailer::sendRegisterMail($user);
+        }
+
+        Auth::login($user);
 
         return redirect()
-            ->route('home')
-            ->with(['success' => '¡Bienvenido!']);
+        ->route('home')
+        ->with(['success' => '¡Bienvenido!']);
     }
 
     public function googleRedirect() : RedirectResponse {
