@@ -21,16 +21,22 @@
                             <div class="form-group">
                                 <label for="slug" class="form-label">
                                     Url actual:
-                                    <a href="{{ route('articles.show', [$article->slug]) }}" target="_blank">
-                                        {{ env('APP_URL', '/')}}/{{ $article->slug }}
-                                    </a>
+                                    @isset($update)
+                                        @php
+                                            $site = ($article->site == "dear-money.com") ? "https://www.dear-money.com/articles/" : "https://www.queridodinero.com/articulos/" ;
+                                        @endphp
+                                        <a href="{{ $site . $article->slug }}" title="{{ $site . $article->slug }}" target="_blank">
+                                            {{ $site . $article->slug }}
+                                        </a>
+                                    @endisset
                                 </label>
                                 <br><br>
                                 <label for="slug" class="form-label">Nueva Url:</label>
                                 {!! Form::text('slug', $article->slug, ['class' => 'form-control',
-                                                            'placeholder' => 'Nueva Url',
-                                                            'required' => 'required'
-                                                            ] ) !!}
+                                        'placeholder' => 'Nueva Url',
+                                        'required' => 'required'
+                                        ] )
+                                !!}
                             </div>
                             <input class="btn btn-primary btn-block" type="submit" value="Actualizar">
                         </form>
