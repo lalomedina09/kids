@@ -71,7 +71,7 @@ class SocialNetworksController extends Controller
 		
 		$user = User::where('google_id', $g_user['sub'])->first();
 		if (!($user instanceof User))
-			$user = User::where('email', $g_user['email'])->first;
+			$user = User::where('email', $g_user['email'])->first();
 		
 		if ($user instanceof User) {
 			if (is_null($user->google_id)) {
