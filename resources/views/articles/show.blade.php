@@ -73,7 +73,7 @@
                     <div class="article__author">
                         <div class="float-left">
                             <a href="{{ route('authors.show', [$article->owner->profile_key]) }}">
-                                <img src="{{ $article->owner->present()->profile_photo }}" class="rounded-circle" width="60" height="60">&nbsp;
+                                <img src="{{ $article->owner->present()->profile_photo }}" class="rounded-circle" width="60" height="60" alt="{{ $article->owner->present()->profile_photo }}" >&nbsp;
                             </a>
                         </div>
 

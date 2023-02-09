@@ -9,7 +9,7 @@
 @endpush
 
 <p class="text-danger text-uppercase text-center mb-0">Se parte de nuestra comunidad</p>
-<p class="modal__title text-uppercase text-center mb-5">Regístrate a Querido Dinero</p>
+<h1 class="modal__title text-uppercase text-center mb-5 mt-2">Regístrate a Querido Dinero</h1>
 
 <div id="register-wrapper">
     <div id="register-form">
