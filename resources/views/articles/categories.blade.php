@@ -9,7 +9,7 @@
         @include('partials.search.bar')
     </div>
 
-    <h3 class="home__title home__title--secondary my-4">{{ $category->present()->name }}</h3>
+    <h1 class="home__title home__title--secondary my-4">{{ $category->present()->name }}</h1>
 
     <div class="row mb-4">
         @foreach($articles as $article)
