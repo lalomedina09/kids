@@ -13,7 +13,7 @@
                     <div class="align-vertical">
                         <p class="small text-white text-underline text-uppercase mb-3">@lang('About')</p>
 
-                        <h2 class="text-bold text-danger mb-3">{{ $user->present()->fullname }}</h2>
+                        <h1 class="text-bold text-danger mb-3">{{ $user->present()->fullname }}</h1>
 
                         @if ($user->hasMeta('blog', 'job'))
                             <p class="small text-bold text-white text-uppercase mb-3">{{ $user->getMeta('blog', 'job') }}</p>

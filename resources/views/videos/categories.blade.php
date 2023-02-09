@@ -6,6 +6,8 @@
     @include('partials.main.blog')
 
     <div class="my-5">
+        <h1 class="text-center">Videos</h1>
+        <br><br>
         @include('partials.search.bar')
     </div>
 

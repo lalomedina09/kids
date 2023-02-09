@@ -10,7 +10,7 @@
     <div class="col-xl-6 offset-md-3 col-lg-6 offset-md-3 col-md-6 offset-md-3 col-sm-8 offset-md-2 col-12">
         <div class="p-3" style="background-color: #262525;">
             <p class="text-danger text-uppercase text-center mb-1">Parece que olvidaste algo</p>
-            <h4 class="modal__title text-uppercase text-center mb-5">Restablecer contraseña</h4>
+            <h1 class="modal__title text-uppercase text-center mb-5">Restablecer contraseña</h1>
 
             <form action="{{ route('password.request') }}" method="POST"
                 id="form-reset" class="form-custom form-modal">

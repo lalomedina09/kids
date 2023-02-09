@@ -4,7 +4,7 @@
 
     <section class="home pt-5">
         <div class="container">
-            <h1 class="text-center mb-4">Tu relación con el dinero</h1>
+            <h1 class="text-center mb-4" style="display: none">Tu relación con el dinero</h1>
             <div class="mb-4">
                 @include('partials.search.bar')
             </div>

@@ -12,7 +12,7 @@
         <div class="p-3" style="background-color: #262525;">
 
             <p class="text-danger text-uppercase text-center mb-1 text-white">Parece que olvidaste algo</p>
-            <h4 class="modal__title text-uppercase text-center mb-5 text-green">Restablecer contraseña</h4>
+            <h1 class="modal__title text-uppercase text-center mb-5 text-green">Restablecer contraseña</h1>
 
             <form action="{{ route('password.qdplay.email') }}" method="POST"
                 id="form-email" class="form-custom form-modal">

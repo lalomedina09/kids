@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="text-center">
-            <h2 class="education__title education__title--bottom text-danger text-center text-bold pos-rel mb-5">Contáctanos</h2>
+            <h1 class="education__title education__title--bottom text-danger text-center text-bold pos-rel mb-5">Contáctanos</h1>
             <p class="text-center mb-5">¡Ponte en contacto con nosotros y tendrás noticias nuestras muy pronto!</p>
         </div>
 
