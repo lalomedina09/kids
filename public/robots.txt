@@ -127,14 +127,9 @@ user-agent: Yeti
 User-agent: yoozBot
 # youdao.com chinese search engine
 User-agent: YoudaoBot
-# crawling rule(s)
-Disallow: /*?*
-Disallow: /search
-Disallow: /api/
-Crawl-delay: 60
-# disallow all other bots
+Allow:
 User-agent: *
-Disallow: /
+Allow: /
 # herramienta de rastreo Ahrefs
 User-agent: AhrefsSiteAudit
 Allow: /
