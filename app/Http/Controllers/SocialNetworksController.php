@@ -13,7 +13,7 @@ class SocialNetworksController extends Controller
 {
 
 	private $users;
-
+	
     /**
      * Create a new resource instance
      */
@@ -23,40 +23,40 @@ class SocialNetworksController extends Controller
 
     public function facebookRedirect() {
         return Socialite::driver('facebook')->stateless()->redirect();
-
     }
 
     public function facebookCallback() : RedirectResponse {
         $facebook_user = Socialite::driver('facebook')->stateless()->user();
-        dd($facebook_user, 'Linea 31');
-        $user = User::query()->where('email', $facebook_user->email)->
-        orWhere('facebook_id', $facebook_user->id)->first();
-
-        if ($user instanceof User) {
-            if (is_null($user->facebook_id)) {
-            $user->facebook_id = $facebook_user->id;
-            $user->save();
-            }
-        } else {
-            $user = new User;
-            $user->email = $facebook_user->email;
-            $user->password = '3rd party';
-            $user->facebook_id = $facebook_user->id;
-            $this->users->saveProfile([
-            'name' => strtok(trim($facebook_user->name), ' '),
-            'last_name' => strtok(' '),
-            ], $user);
-
-            //Mailer::sendRegisterMail($user);
-        }
-
-        Auth::login($user);
+		
+		$user = User::where('facebook_id', $facebook_user->id)->first();
+		if (!($user instanceof User))
+			$user = User::where('email', $facebook_user->email)->first();
+				
+		if ($user instanceof User) {
+			if (is_null($user->facebook_id)) {
+				$user->facebook_id = $facebook_user->id;
+				$user->save();
+			}
+		} else {
+			$user = new User;
+			$user->email = $facebook_user->email ?? $facebook_user->id;
+			$user->password = '3rd party';
+			$user->facebook_id = $facebook_user->id;
+			$this->users->saveProfile([
+				'name' => strtok(trim($facebook_user->name), ' '),
+				'last_name' => strtok(' '),
+			], $user);
+			
+			//Mailer::sendRegisterMail($user);
+		}
+		
+		Auth::login($user);
 
         return redirect()
-        ->route('home')
-        ->with(['success' => '¡Bienvenido!']);
+            ->route('home')
+            ->with(['success' => '¡Bienvenido!']);
     }
-
+	
     public function googleRedirect() : RedirectResponse {
         return Socialite::driver('google')->redirect();
     }
@@ -68,9 +68,11 @@ class SocialNetworksController extends Controller
 			return redirect()
 					->route('home')
 					->with(['error' => '¡No has verificado el mail de tu cuenta Google!']);
-
-		$user = User::query()->where('email', $g_user['email'])->
-				orWhere('google_id', $g_user['sub'])->first();
+		
+		$user = User::where('google_id', $g_user['sub'])->first();
+		if (!($user instanceof User))
+			$user = User::where('email', $g_user['email'])->first();
+		
 		if ($user instanceof User) {
 			if (is_null($user->google_id)) {
 				$user->google_id = $g_user['sub'];
@@ -78,32 +80,35 @@ class SocialNetworksController extends Controller
 			}
 		} else {
 			$user = new User;
-			$user->email = $g_user['email'];
+			$user->email = $g_user['email'] ?? $g_user['sub'];
 			$user->password = '3rd party';
 			$user->google_id = $g_user['sub'];
 			$this->users->saveProfile([
 				'name' => $g_user['given_name'],
 				'last_name' => $g_user['family_name'],
 			], $user);
-
+			
 			//Mailer::sendRegisterMail($user);
 		}
-
+		
 		Auth::login($user);
 
         return redirect()
             ->route('home')
             ->with(['success' => '¡Bienvenido!']);
     }
-
+	
 	public function microsoftRedirect() : RedirectResponse {
         return Socialite::driver('microsoft')->redirect();
     }
 
     public function microsoftCallback(): RedirectResponse {
 		$microsoft_user = Socialite::driver('microsoft')->user();
-		$user = User::query()->where('email', $microsoft_user->userPrincipalName)->
-				orWhere('microsoft_id', $microsoft_user->id)->first();
+		
+		$user = User::where('microsoft_id', $microsoft_user->id)->first();
+		if (!($user instanceof User))
+			$user = User::where('email', $microsoft_user->userPrincipalName)->first();
+		
 		if ($user instanceof User) {
 			if (is_null($user->microsoft_id)) {
 				$user->microsoft_id = $microsoft_user->id;
@@ -111,28 +116,28 @@ class SocialNetworksController extends Controller
 			}
 		} else {
 			$user = new User;
-			$user->email = $microsoft_user->userPrincipalName;
+			$user->email = $microsoft_user->userPrincipalName ?? $microsoft_user->id;
 			$user->password = '3rd party';
 			$user->microsoft_id = $microsoft_user->id;
 			$this->users->saveProfile([
 				'name' => $microsoft_user->givenName,
 				'last_name' => $microsoft_user->surname,
 			], $user);
-
+			
 			//Mailer::sendRegisterMail($user);
 		}
-
+		
 		Auth::login($user);
 
         return redirect()
             ->route('home')
             ->with(['success' => '¡Bienvenido!']);
     }
-
+	
 	public function appleRedirect() : RedirectResponse {
         return Socialite::driver('apple')->redirect();
     }
-
+	
 	public function appleCallback() : RedirectResponse {
 		$apple_user = Socialite::driver('apple')->user();
 		$a_user = $apple_user->user;
@@ -140,9 +145,11 @@ class SocialNetworksController extends Controller
 			return redirect()
 					->route('home')
 					->with(['error' => '¡No has verificado el mail de tu cuenta Apple!']);
-
-		$user = User::query()->where('email', $a_user['email'])->
-				orWhere('apple_id', $a_user['sub'])->first();
+		
+		$user = User::where('apple_id', $a_user['sub'])->first();
+		if (!($user instanceof User))
+			$user = User::where('email', $a_user['email'])->first();
+		
 		if ($user instanceof User) {
 			if (is_null($user->apple_id)) {
 				$user->apple_id = $a_user['sub'];
@@ -157,15 +164,15 @@ class SocialNetworksController extends Controller
 				'name' => $apple_user->name ?? strtok(trim($a_user['email']), '@'),
 				'last_name' => $apple_user->nickname ?? strtok('@'),
 			], $user);
-
+			
 			//Mailer::sendRegisterMail($user);
 		}
-
+		
 		Auth::login($user);
 
         return redirect()
             ->route('home')
             ->with(['success' => '¡Bienvenido!']);
     }
-
+	
 }
