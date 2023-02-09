@@ -29,7 +29,7 @@ class UsersController extends Controller {
 		if ($user instanceof User) {
 			return response()->json([
 				'valid' => false,
-				'message' => 'Already Registered',
+				'message' => 'Already Exists',
 			], 412);
 		}
 		
@@ -69,7 +69,10 @@ class UsersController extends Controller {
 			]);
 		}
 		
-		return response()->json(['valid' => false], 403);
+		return response()->json([
+			'valid' => false,
+			'message' => 'Not Found',
+		], 404);
 	}
 	
 	public function thirdPartyAccess() {
@@ -121,7 +124,7 @@ class UsersController extends Controller {
 			if ($user->app_password_key != request('passwordKey'))
 				return response()->json([
 					'valid' => false,
-					'message' => 'Not Found',
+					'message' => 'Invalid Key',
 				], 403);
 			
 			// TODO... check subscriptions and licenses
@@ -135,6 +138,6 @@ class UsersController extends Controller {
 		return response()->json([
 			'valid' => false,
 			'message' => 'Not Found',
-		], 403);
+		], 404);
 	}
 }
