@@ -16,6 +16,8 @@
     <div class="container pt-5">
         <div class="row">
             <div class="col-12">
+                <h1 class="text-center">Resultados</h1>
+                <br><br>
                 @include('partials.search.bar')
             </div>
         </div>

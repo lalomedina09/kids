@@ -18,7 +18,7 @@
 
     <div class="container">
         <section class="single px-lg-5">
-            <img src="{{ $article->present()->featured_image }}" alt="" class="single-featured__image">
+            <img src="{{ $article->present()->featured_image }}" alt="{{ $article->present()->title }}" class="single-featured__image">
 
             <article class="single__wrapper">
                 <div class="pos-rel">
