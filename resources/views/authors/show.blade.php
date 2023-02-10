@@ -10,9 +10,11 @@
 
         <div class="row mb-4">
             @foreach($user->articles as $article)
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb-5">
-                    @include('partials.articles.card', ['article' => $article])
-                </div>
+                @if ($article->site == env('SITE_ARTICLES', "queridodinero.com"))
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb-5">
+                        @include('partials.articles.card', ['article' => $article])
+                    </div>
+                @endif
             @endforeach
         </div>
     </div>
