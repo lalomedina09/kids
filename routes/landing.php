@@ -5,7 +5,7 @@
 | Landing pages
 |--------------------------------------------------------------------------
 */
-
+/*
 Route::get('/mentoria', 'MainController@adviceGeneral');
 Route::get('/mentoriafiscal', 'MainController@adviceLegal');
 Route::get('/mentoriafinanzaspersonales', 'MainController@advicePersonalFinances');
@@ -125,3 +125,4 @@ Route::prefix('registrogarvi')
         Route::post('/')
             ->uses('GarbiController@store');
     });
+*/
