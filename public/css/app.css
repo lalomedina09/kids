@@ -385,7 +385,8 @@ section {
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.3rem;
+  /*font-size: 1.3rem;*/
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.5;
   color: #212529;
@@ -17470,7 +17471,7 @@ a:active {
 
 .text-small,
 .trending--title {
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .text-xsmall,
@@ -17479,7 +17480,7 @@ a:active {
 .link--more,
 .article__category,
 .article__more {
-  font-size: 0.7rem;
+  font-size: 16px;
 }
 
 .text-base {
