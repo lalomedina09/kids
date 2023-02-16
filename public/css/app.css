@@ -387,7 +387,7 @@ body {
   font-family: "Montserrat", sans-serif;
   /*font-size: 1.3rem;*/
   font-size: 20px;
-  font-weight: 500;
+  font-weight: normal;
   line-height: 1.5;
   color: #212529;
   text-align: left;
@@ -15535,7 +15535,7 @@ body {
 
 body {
   background-color: white;
-  font-weight: 500;
+  font-weight: normal;
 }
 
 body.open-search {
