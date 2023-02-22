@@ -5,12 +5,13 @@
             class="nav-item nav-link text-uppercase text-dark c-text-size text-center"
             data-toggle="tab">@lang('General information')</a>
     </div>
-    <div class="col-md-3">
-        <a href="#{{ str_slug(__('Payment')) }}"
-            class="nav-item nav-link text-uppercase text-dark c-text-size text-center"
-            data-toggle="tab">@lang('Payment')</a>
-    </div>
-
+    @if ($user->hasProfileRoles() || $user->hasExhibitorRoles())
+        <div class="col-md-3">
+            <a href="#{{ str_slug(__('Payment')) }}"
+                class="nav-item nav-link text-uppercase text-dark c-text-size text-center"
+                data-toggle="tab">@lang('Payment')</a>
+        </div>
+    @endif
     <!-- esto hace referencia a QD Play->
     <div class="col-md-4">
         <a href="#{{ str_slug(__('Billing Data')) }}"
@@ -20,12 +21,13 @@
     -->
 
     @if ($user->hasProfileRoles() || $user->hasExhibitorRoles())
-    <div class="col-md-3">
-        <a href="#{{ str_slug(__('My personal profile')) }}"
-            class="nav-item nav-link text-uppercase text-dark c-text-size text-center"
-            data-toggle="tab">@lang('Experence and Education')</a>
-    </div>
+        <div class="col-md-3">
+            <a href="#{{ str_slug(__('My personal profile')) }}"
+                class="nav-item nav-link text-uppercase text-dark c-text-size text-center"
+                data-toggle="tab">@lang('Experence and Education')</a>
+        </div>
     @endif
+
     <div class="col-md-3">
         <a href="#{{ str_slug(__('Update password')) }}"
             class="nav-item nav-link text-uppercase text-dark c-text-size text-center"
