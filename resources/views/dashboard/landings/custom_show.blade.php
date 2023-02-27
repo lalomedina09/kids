@@ -44,6 +44,7 @@
                     <th>Num</th>
                     @if($custom_page != "registro-qdplay-personas-fisicas")
                         <th>Nombre</th>
+                        <th>Apellidos</th>
                         <th>Email Empresarial</th>
                         <th>Celular</th>
                         <th>Empresa</th>
@@ -64,7 +65,8 @@
                     <tr>
                         <td>{{ $count++ }}</td>
                         @if($custom_page != "registro-qdplay-personas-fisicas")
-                            <td class="small"> {{ $lead->name}} {{ $lead->last_name}} </td>
+                            <td class="small">{{ $lead->name}}</td>
+                            <td class="small">{{ $lead->last_name}}</td>
                             <td class="small">{{ $lead->mail_corporate }}</td>
                             <td class="small">{{ $lead->movil }}</td>
                             <td class="small">{{ $lead->company }}</td>
