@@ -502,11 +502,11 @@ Route::prefix('escritores')
 Route::prefix('expositores')
 ->group(function () {
     Route::get('/')
-        ->uses('AuthorController@index')
+        ->uses('ExhibitorController@index')
         ->name('exhibitors.index');
 
     Route::get('/{key}')
-    ->uses('AuthorController@showExhibitor')
+    ->uses('ExhibitorController@show')
     ->name('exhibitors.show');
 });
 /*

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\{ Request, Response };
+use Illuminate\Http\{Request, Response};
 
 use App\Models\User;
 
-class AuthorController extends Controller
+class ExhibitorController extends Controller
 {
 
     /**
@@ -14,7 +14,9 @@ class AuthorController extends Controller
      *
      * @return void
      */
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
     /**
      * Display a listing of the resource.
@@ -23,32 +25,31 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = User::role('author')->get();
+        $authors = User::role('exhibitor')->get();
 
         list($staff_authors, $guest_authors) = $authors->partition(function ($author) {
             return $author->hasRole('staff');
         });
         $staff_authors->shift();
 
-        return view('authors.index')->with([
+        return view('exhibitors.index')->with([
             'staff_authors' => $staff_authors,
             'guest_authors' => $guest_authors
         ]);
     }
 
-    //Exclusivo para los escritores
     public function show($key, Request $request)
     {
         $user = User::with(['articles' => function ($query) {
-                $query->published()->latest('published_at');
-            }])
-            ->hasGuestProfile()
+            $query->published()->latest('published_at');
+        }])
+            //->hasGuestProfile()
+            ->HasGuestProfileExhibitor()
             ->byIdOrUsername($key)
             ->firstOrFail();
 
-        return view('authors.show')->with([
+        return view('exhibitors.show')->with([
             'user' => $user
         ]);
     }
-
 }

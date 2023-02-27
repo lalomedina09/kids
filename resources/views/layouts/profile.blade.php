@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="image-background mx-auto" style="background-image: url({{ $user->present()->author_photo }});"></div>
+                    <div class="image-background mx-auto custom-filter-gray" style="background-image: url({{ $user->present()->author_photo }});"></div>
                 </div>
 
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
