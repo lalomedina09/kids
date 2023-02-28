@@ -230,5 +230,8 @@
     "Start Date": "Fecha Inicial",
     "End Date": "Fecha Final",
     "Discount amount": "Descuento por monto",
-    "Discount Rate": "Descuento por porcentaje"
+    "Discount Rate": "Descuento por porcentaje",
+    "My Company": "Mi Empresa",
+    "Branches": "Sucursales",
+    "Roles": "Roles"
 }
