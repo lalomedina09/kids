@@ -4,7 +4,7 @@
     @include('partials.profiles.components.btn-blog')
     <hr>
 
-    <h5 class="text-danger text-uppercase mb-5">@lang('My interests')</h5>
+    <h5 class="text-danger text-uppercase custom-f-s-small mb-5">@lang('My interests')</h5>
 
     <form action="{{ route('profile.update', ['interests']) }}" method="post"
         id="form-interests" class="form-custom">
@@ -14,7 +14,7 @@
             @foreach ($interests as $key => $interest)
                 <div class="col-xl-3 col-lg-4 col-6 mb-2">
                     <div class="custom-control custom-checkbox">
-                        <label class="text-uppercase c-text-size">
+                        <label class="text-uppercase custom-f-s-small">
                             <input type="checkbox" name="interests[]" id="interest-{{ $interest->id }}" value="{{ $interest->id }}"
                                 {{ in_array($interest->id, $user_interests) ? 'checked' : ''}}>
                             <label for="interest-{{ $interest->id }}" class="form-control-label" >{{ $interest->name }}</label>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form control text-center">
-            <input type="submit" value="@lang('Save changes')" class="btn btn-danger btn-pill">
+            <input type="submit" value="@lang('Save changes')" class="btn btn-danger btn-pill custom-f-s-small">
         </div>
     </form>
 </div>

@@ -16,11 +16,13 @@ class CreateBranchesTable extends Migration
         Schema::create('branches', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
+            $table->integer('company_id')->nullable()->unsigned()->index();
             $table->integer('user_id')->nullable()->unsigned()->index();
             $table->text('comments')->nullable();
 
             $table->timestamps();
             $table->softDeletes();
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('set null');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
         });
     }

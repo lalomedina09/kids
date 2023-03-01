@@ -21,3 +21,11 @@
 .custom-filter-gray{
     filter: grayscale(100%);
 }
+
+.custom-f-s-small{
+    font-size: 15px;
+}
+
+.badge-secondary{
+    font-size: 15px;
+}
