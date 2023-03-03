@@ -29,3 +29,15 @@
 .badge-secondary{
     font-size: 15px;
 }
+
+.btn-small {
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px 15px;
+    text-transform: uppercase;
+}
+
+.btn-small:hover {
+    background-color: #262525 !important;
+}

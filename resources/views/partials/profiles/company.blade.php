@@ -18,7 +18,7 @@
                     @endif
                 </div>
             </div>
-            <!---------------- Campo para guardar el nombre publico ------------------->
+
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="form-group">
                     <label for="comments" class="control-label text-uppercase custom-f-s-small"
@@ -29,8 +29,7 @@
                     @endif
                 </div>
             </div>
-            <!---------------- Termina campo para guardar el nombre ------------------->
-            <!-- En agosto 2022 agregamos el item de wpp -->
+
         </div>
 
         <p class="small font-italic">
@@ -38,7 +37,7 @@
         </p>
 
         <div class="form-group text-center">
-            <input type="submit" value="@lang('Save changes')" class="btn btn-danger btn-pill custom-f-s-small">
+            <input type="submit" value="@lang('Add')" class="btn btn-danger btn-pill custom-f-s-small">
         </div>
     </form>
 </div>

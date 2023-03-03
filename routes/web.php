@@ -480,6 +480,51 @@ Route::prefix('perfil')
         Route::patch('/file-situation-tax/{user}')
         ->uses('ProfileController@updateFileSTax')
         ->name('update.situation.tax');
+
+        //Data Company
+        Route::prefix('company')
+            ->group(function () {
+                Route::post('/post')
+                ->uses('CompanyController@post')
+                ->name('branch.post');
+
+                Route::patch('/update')
+                ->uses('CompanyController@update')
+                ->name('company.update');
+        });
+
+        //Data Branch
+        Route::prefix('branch')
+        ->group(function () {
+            Route::post('/post')
+            ->uses('BranchController@post')
+            ->name('branch.post');
+
+            Route::delete('/delete')
+            ->uses('BranchController@delete')
+            ->name('branch.delete');
+
+            Route::patch('/update')
+            ->uses('BranchController@update')
+            ->name('branch.update');
+
+        });
+
+        //Data Company Role
+        Route::prefix('company-role')
+        ->group(function () {
+            Route::post('/store')
+            ->uses('CompanyRoleController@store')
+            ->name('companyrole.store');
+
+            Route::delete('/delete')
+            ->uses('CompanyRoleController@delete')
+            ->name('companyrole.delete');
+
+            Route::patch('/update')
+            ->uses('CompanyRoleController@update')
+            ->name('companyrole.update');
+            });
     });
 
 /*
