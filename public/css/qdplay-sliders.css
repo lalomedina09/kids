@@ -82,7 +82,7 @@
 
 #slider li .content_slider {
     background: rgb(52 47 47 / 8%);
-    padding: 10px 125px;
+    /*padding: 10px 125px;*/
 }
 
 .content_slider {
@@ -149,6 +149,7 @@
     background: #FFF !important;
 }
 
+
 @media screen and (max-width: 460px) {
     .content_slider h2 {
         font-size: 15pt !important;
@@ -172,8 +173,8 @@
     }
 
     #slider {
-        height: 400px;
-        min-height: 400px;
+        height: 965px;
+        min-height: 700px;
     }
 
     #slider li .content_slider {
@@ -186,3 +187,16 @@
     }
 
 }
+
+@media (min-width: 1024px) {
+    #slider {
+        height: 100vh;
+    }
+}
+
+@media (min-width: 1280px) {
+    #slider {
+        height: 100vh;
+    }
+}
+
