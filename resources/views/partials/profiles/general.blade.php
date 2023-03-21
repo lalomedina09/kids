@@ -3,7 +3,7 @@
     <!-- Archivo para  botones dentro de la seccion-->
     @include('partials.profiles.components.btn-profile')
     <hr>
-    <h5 class="text-danger text-uppercase c-text-size mb-5">@lang('General information')</h5>
+    <h5 class="text-danger text-uppercase custom-f-s-small mb-5">@lang('General information')</h5>
     <form action="{{ route('profile.update', ['profile']) }}" method="post" enctype="multipart/form-data"
         id="form-profile" class="form-custom">
         @csrf
@@ -11,7 +11,7 @@
         <div class="row mb-3">
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="form-group">
-                    <label for="name" class="control-label c-text-size text-uppercase c-text-size">* @lang('Name')</label>
+                    <label for="name" class="control-label custom-f-s-small text-uppercase">* @lang('Name')</label>
                     <input type="text" name="name" class="form-control" value="{{ $user->name }}">
                     @if ($errors->has('name'))
                         <span class="small text-danger">{{ $errors->first('name') }}</span>
@@ -21,7 +21,7 @@
 
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="form-group">
-                    <label for="last_name" class="control-label c-text-size text-uppercase c-text-size">* @lang('Last Name')</label>
+                    <label for="last_name" class="control-label custom-f-s-small text-uppercase">* @lang('Last Name')</label>
                     <input type="text" name="last_name" class="form-control" value="{{ $user->last_name }}">
                     @if ($errors->has('last_name'))
                         <span class="small text-danger">{{ $errors->first('last_name') }}</span>
@@ -31,7 +31,7 @@
             <!---------------- Campo para guardar el nombre publico ------------------->
             <div class="col-xl-12 col-lg-12 col-12">
                 <div class="form-group">
-                    <label for="name_public" class="control-label c-text-size text-uppercase c-text-size"
+                    <label for="name_public" class="control-label custom-f-s-small text-uppercase"
                     title="Nombre que te gustaría mostrar en el Módulo de QD Play">* @lang('Name Public')</label>
                     <input type="text" name="name_public" class="form-control" value="{{ $user->name_public }}">
                     @if ($errors->has('name_public'))
@@ -42,7 +42,7 @@
             <!---------------- Termina campo para guardar el nombre ------------------->
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="form-group">
-                    <label for="state" class="control-label c-text-size text-uppercase c-text-size">* @lang('State')</label>
+                    <label for="state" class="control-label custom-f-s-small text-uppercase">* @lang('State')</label>
                     <select name="state" class="form-control">
                         @foreach (cache()->get('states.json') as $state)
                             <option value="{{ $state->name }}" {{ ($user->getMeta('blog', 'state') == $state->name) ? 'selected' : '' }}>{{ $state->name }}</option>
@@ -56,7 +56,7 @@
 
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="form-group">
-                    <label for="birthdate" class="control-label c-text-size text-uppercase c-text-size">@lang('Birth Date')</label>
+                    <label for="birthdate" class="control-label custom-f-s-small text-uppercase">@lang('Birth Date')</label>
                     <input type="date" name="birthdate"
                         id="user-birthdate" class="form-control datetimepicker-input"
                         data-target="#user-birthdate" data-toggle="datetimepicker" value="{{ optional($user->getMeta('blog', 'birthdate'))->format('Y-m-d') }}">
@@ -68,7 +68,7 @@
             <!-- En agosto 2022 agregamos el item de wpp -->
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="form-group">
-                    <label for="countrycode" class="control-label c-text-size text-uppercase c-text-size">* @lang('Country Code')</label>
+                    <label for="countrycode" class="control-label custom-f-s-small text-uppercase">* @lang('Country Code')</label>
                     <select name="countrycode" class="form-control" required="required">
                         @foreach (cache()->get('countries.json') as $countrycode)
                             <option value="{{ $countrycode->dial_code }}" {{ ($user->getMeta('blog', 'countrycode') == $countrycode->dial_code) ? 'selected' : '' }}>
@@ -83,7 +83,7 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="form-group">
-                    <label for="whatsapp" class="control-label c-text-size text-uppercase c-text-size">* @lang('Whatsapp')</label>
+                    <label for="whatsapp" class="control-label custom-f-s-small text-uppercase">* @lang('Whatsapp')</label>
                     <input type="text" name="whatsapp"
                         id="user-whatsapp" class="form-control" data-target="#user-whatsapp" value="{{ $user->getMeta('blog', 'whatsapp') }}">
                     @if ($errors->has('whatsapp'))
@@ -93,11 +93,11 @@
             </div>
 
             <div class="col-xl-6 col-lg-6 col-12">
-                <label for="gender" class="text-uppercase c-text-size mb-3">* @lang('Gender')</label>
+                <label for="gender" class="text-uppercase custom-f-s-small mb-3">* @lang('Gender')</label>
                 <div class="form-group">
                     <div class="custom-control custom-radio custom-control-inline">
                         <label>
-                            <span class="custom-control-description">@lang('Male')</span>
+                            <span class="custom-control-description ">@lang('Male')</span>
                             <input type="radio" name="gender" value="male" {{ ($user->getMeta('blog', 'gender') === 'male' ) ? 'checked' : '' }}>
                             <span class="custom-control-indicator"></span>
                         </label>
@@ -105,7 +105,7 @@
 
                     <div class="custom-control custom-radio custom-control-inline">
                         <label>
-                            <span class="custom-control-description">@lang('Female')</span>
+                            <span class="custom-control-description ">@lang('Female')</span>
                             <input type="radio" name="gender" value="female" {{ ($user->getMeta('blog', 'gender') === 'female' ) ? 'checked' : '' }}>
                             <span class="custom-control-indicator"></span>
                         </label>
@@ -119,7 +119,7 @@
 				<div class="form-group text-center">
                     <!--<label for="profile_photo" class="btn btn-sm btn-danger btn-pill">@lang('Change profile photo')</label>-->
 					<a href="#{{ str_slug(__('Change profile photo')) }}"
-                                class="btn btn-sm btn-danger btn-pill d-block"
+                                class="btn btn-sm btn-danger btn-pill d-block custom-f-s-small"
                                 data-toggle="tab"
                             >@lang('Change profile photo')</a>
                     <input type="file" name="profile_photo" id="profile_photo" hidden="true" accept="image/png, image/jpeg" />
@@ -127,12 +127,12 @@
             </div>
         </div>
 
-        <p class="small font-italic">
+        <p class="small font-italic custom-f-s-small">
             (*) @lang('The field is required')
         </p>
 
         <div class="form-group text-center">
-            <input type="submit" value="@lang('Save changes')" class="btn btn-danger btn-pill">
+            <input type="submit" value="@lang('Save changes')" class="btn btn-danger btn-pill custom-f-s-small">
         </div>
     </form>
 </div>

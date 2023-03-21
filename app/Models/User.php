@@ -18,6 +18,10 @@ use QD\Marketplace\Models\Traits\OrderUserTrait;
 use Spatie\MediaLibrary\HasMedia\{ HasMedia, HasMediaTrait };
 use Spatie\Permission\Traits\HasRoles;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\hasOne;
+use Illuminate\Database\Eloquent\Relations\hasMany;
 class User extends Authenticatable implements HasMedia
 {
 
@@ -419,9 +423,24 @@ class User extends Authenticatable implements HasMedia
 
     public function registerMediaTaxSituation()
     {
+        $this->getMedia('images')->first();
         #$this->addMediaCollection('profile_file_tax')->singleFile();
         #$this->addMediaCollection('profile_photo')->singleFile();
-        $this->getMedia('images')->first();
         #->getUrl('thumb');
+    }
+
+    public function company()
+    {
+        return $this->hasOne(Company::class, 'user_id', 'id');
+    }
+
+    public function branches()
+    {
+        return $this->hasMany(Branch::class, 'user_id', 'id');
+    }
+    public function companyRoles()
+    {
+        // 'foreign_key' , 'local_key'
+        return $this->hasMany(CompanyRole::class, 'user_id', 'id');
     }
 }

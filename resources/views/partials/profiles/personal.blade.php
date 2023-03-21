@@ -4,7 +4,7 @@
     @include('partials.profiles.components.btn-profile')
     <hr>
 
-    <h5 class="text-danger text-uppercase mb-5">@lang('My personal profile')</h5>
+    <h5 class="text-danger text-uppercase custom-f-s-small mb-5">@lang('My personal profile')</h5>
     <form action="{{ route('profile.update', ['personal']) }}" method="post"
         id="form-personal" class="form-custom">
         @csrf
@@ -12,7 +12,7 @@
         <div class="row mb-3">
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="form-group">
-                    <label for="username" class="control-label text-uppercase">* @lang('Username')</label>
+                    <label for="username" class="control-label custom-f-s-small text-uppercase">* @lang('Username')</label>
                     <input type="text" name="username" class="form-control"
                         data-label="letters" data-limit="50"
                         placeholder="@lang('e.g.') juanperez_01"
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="job" class="control-label text-uppercase">* @lang('Job')</label>
+                    <label for="job" class="control-label custom-f-s-small text-uppercase">* @lang('Job')</label>
                     <input type="text" name="job" class="form-control"
                         data-label="letters" data-limit="100"
                         placeholder="@lang('e.g.') Gurú financiero"
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="bio" class="control-label text-uppercase">* @lang('Biography')</label>
+                    <label for="bio" class="control-label custom-f-s-small text-uppercase">* @lang('Biography')</label>
                     <textarea name="bio" rows="10"
                         id="user_bio" class="form-control"
                         data-label="letters" data-limit="1000">{{ $user->getMeta('blog', 'bio') }}</textarea>
@@ -49,7 +49,7 @@
 
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="form-group">
-                    <label class="control-label text-uppercase">Facebook</label>
+                    <label class="control-label custom-f-s-small text-uppercase">Facebook</label>
                     <input type="text" name="facebook" class="form-control"
                         placeholder="@lang('e.g.') https://facebook.com/facebook"
                         value="{{ $user->getMeta('blog', 'facebook') }}">
@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label text-uppercase">Twitter</label>
+                    <label class="control-label custom-f-s-small text-uppercase">Twitter</label>
                     <input type="text" name="twitter" class="form-control"
                         placeholder="@lang('e.g.') https://twitter.com/twitter"
                         value="{{ $user->getMeta('blog', 'twitter') }}">
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label text-uppercase">Instagram</label>
+                    <label class="control-label custom-f-s-small text-uppercase">Instagram</label>
                     <input type="text" name="instagram" class="form-control"
                         placeholder="@lang('e.g.') https://instagram.com/instagram"
                         value="{{ $user->getMeta('blog', 'instagram') }}">
@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label text-uppercase">Tiktok</label>
+                    <label class="control-label custom-f-s-small text-uppercase">Tiktok</label>
                     <input type="text" name="tiktok" class="form-control"
                         placeholder="@lang('e.g.') https://tiktok.com/tiktok"
                         value="{{ $user->getMeta('blog', 'tiktok') }}">
@@ -93,7 +93,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label text-uppercase">LinkedIn</label>
+                    <label class="control-label custom-f-s-small text-uppercase">LinkedIn</label>
                     <input type="text" name="linkedin" class="form-control"
                         placeholder="@lang('e.g.') https://linkedin.com/in/user"
                         value="{{ $user->getMeta('blog', 'linkedin') }}">
@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label text-uppercase">YouTube</label>
+                    <label class="control-label custom-f-s-small text-uppercase">YouTube</label>
                     <input type="text" name="youtube" class="form-control"
                         placeholder="@lang('e.g.') https://youtube.com/YouTube"
                         value="{{ $user->getMeta('blog', 'youtube') }}">
@@ -116,7 +116,7 @@
             </div>
         </div>
 
-        <p class="small font-italic">
+        <p class="small font-italic custom-f-s-small">
             (*) @lang('The field is required')
         </p>
 
@@ -125,11 +125,11 @@
 
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-12">
-                    <h5 class="text-danger text-uppercase mb-4">@lang('Education')</h5>
+                    <h5 class="text-danger text-uppercase custom-f-s-small mb-4">@lang('Education')</h5>
 
                     <div class="form-row">
                         <div class="form-group col-xl-6 col-lg-6 col-12">
-                            <label for="education_start_date" class="control-label text-uppercase">* @lang('Start date')</label>
+                            <label for="education_start_date" class="control-label custom-f-s-small text-uppercase">* @lang('Start date')</label>
                             <input type="date" name="education[start_date]"
                                 id="education_start_date" class="form-control datetimepicker-input"
                                 value="{{ array_get($education, 'start_date', '') }}"
@@ -141,7 +141,7 @@
                         </div>
 
                         <div class="form-group col-xl-6 col-lg-6 col-12">
-                            <label for="education_end_date" class="control-label text-uppercase">* @lang('End date')</label>
+                            <label for="education_end_date" class="control-label custom-f-s-small text-uppercase">* @lang('End date')</label>
                             <input type="date" name="education[end_date]"
                                 id="education_end_date" class="form-control datetimepicker-input"
                                 value="{{ array_get($education, 'end_date', '') }}"
@@ -153,7 +153,7 @@
                         </div>
 
                         <div class="form-group col-12">
-                            <label for="education_school_name" class="control-label text-uppercase">* @lang('School name')</label>
+                            <label for="education_school_name" class="control-label custom-f-s-small text-uppercase">* @lang('School name')</label>
                             <input type="text" name="education[school_name]"
                                 id="education_school_name" class="form-control"
                                 value="{{ array_get($education, 'school_name', '') }}"
@@ -165,7 +165,7 @@
                         </div>
 
                         <div class="form-group col-12">
-                            <label for="education_school_degree" class="control-label text-uppercase">* @lang('Degree')</label>
+                            <label for="education_school_degree" class="control-label custom-f-s-small text-uppercase">* @lang('Degree')</label>
                             <input type="text" name="education[degree]"
                                 id="education_school_degree" class="form-control"
                                 value="{{ array_get($education, 'degree', '') }}"
@@ -179,11 +179,11 @@
                 </div>
 
                 <div class="col-xl-6 col-lg-6 col-12">
-                    <h5 class="text-danger text-uppercase mb-4">@lang('Work experience')</h5>
+                    <h5 class="text-danger text-uppercase custom-f-s-small mb-4">@lang('Work experience')</h5>
 
                     <div class="form-row">
                         <div class="form-group col-xl-6 col-lg-6 col-12">
-                            <label for="profession_start_date" class="control-label text-uppercase">* @lang('Start date')</label>
+                            <label for="profession_start_date" class="control-label custom-f-s-small text-uppercase">* @lang('Start date')</label>
                             <input type="date" name="profession[start_date]"
                                 id="profession_start_date" class="form-control datetimepicker-input"
                                 value="{{ array_get($profession, 'start_date', '') }}"
@@ -195,7 +195,7 @@
                         </div>
 
                         <div class="form-group col-xl-6 col-lg-6 col-12">
-                            <label for="profession_end_date" class="control-label text-uppercase">* @lang('End date')</label>
+                            <label for="profession_end_date" class="control-label custom-f-s-small text-uppercase">* @lang('End date')</label>
                             <input type="date" name="profession[end_date]"
                                 id="profession_end_date" class="form-control datetimepicker-input"
                                 value="{{ array_get($profession, 'end_date', '') }}"
@@ -207,7 +207,7 @@
                         </div>
 
                         <div class="form-group col-12">
-                            <label for="profession_company_name" class="control-label text-uppercase">* @lang('Company name')</label>
+                            <label for="profession_company_name" class="control-label custom-f-s-small text-uppercase">* @lang('Company name')</label>
                             <input type="text" name="profession[company_name]"
                                 id="profession_company_name" class="form-control"
                                 value="{{ array_get($profession, 'company_name', '') }}"
@@ -219,7 +219,7 @@
                         </div>
 
                         <div class="form-group col-12">
-                            <label for="profession_job" class="control-label text-uppercase">* @lang('Job')</label>
+                            <label for="profession_job" class="control-label custom-f-s-small text-uppercase">* @lang('Job')</label>
                             <input type="text" name="profession[job]"
                                 id="profession_job" class="form-control"
                                 value="{{ array_get($profession, 'job', '') }}"
@@ -234,7 +234,7 @@
 
                 <div class="col-xl-6 col-lg-6 col-12">
                     <div class="form-group">
-                        <label for="certifications" class="control-label text-uppercase">* @lang('Certifications')</label>
+                        <label for="certifications" class="control-label custom-f-s-small text-uppercase">* @lang('Certifications')</label>
                         <textarea name="certifications" rows="10"
                             id="certifications" class="form-control"
                             data-label="letters" data-limit="300">{{ $user->getMeta('blog', 'certifications') }}</textarea>
@@ -247,7 +247,7 @@
 
                 <!--<div class="col-xl-6 col-lg-6 col-12">
                     <div class="form-group">
-                        <label for="video" class="control-label text-uppercase">* @lang('Video')</label>
+                        <label for="video" class="control-label custom-f-s-small text-uppercase">* @lang('Video')</label>
                         <input type="text" name="video" class="form-control"
                             placeholder="@lang('e.g.') https://www.youtube.com/watch?v=su8oRFpKLDA"
                             value="{{ $user->getMeta('blog', 'video') }}" required="false">
@@ -263,14 +263,14 @@
             </div>
         @endif
 
-        <p class="small font-italic">
+        <p class="small font-italic custom-f-s-small">
             (*) @lang('The field is required')
         </p>
 
         <hr>
 
         <div class="form-group text-center">
-            <input type="submit" value="@lang('Save changes')" class="btn btn-danger btn-pill">
+            <input type="submit" value="@lang('Save changes')" class="btn btn-danger btn-pill custom-f-s-small">
         </div>
     </form>
 </div>

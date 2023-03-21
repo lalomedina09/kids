@@ -67,9 +67,16 @@ class ProfileController extends Controller
             return Date::createFromFormat('U', $elem)->format('h:i a');
         }, $h));
 
+        #$company = $user->company()->first();
+        #$branches = $user->branches()->get();
+        #$roles = $user->companyRoles()->get();
+        #dd($roles);
         return view('profile.edit')->with([
             'interests' => User::getValidInterests(),
             'user' => $user,
+            'company' => $user->company()->first(),
+            'branches' => $user->branches()->get(),
+            'companyRoles' => $user->companyRoles()->get(),
             'user_interests' => $user_interests,
             'education' => $user_education,
             'profession' => $user_profession,

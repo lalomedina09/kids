@@ -80,6 +80,7 @@
     "Create": "Crear",
     "New": "Nuevo",
     "Add": "Agregar",
+    "Update": "Actualizar",
     "Trashed": "Papelera",
     "Logout": "Cerrar sesión",
     "Accept": "Aceptar",
@@ -230,5 +231,16 @@
     "Start Date": "Fecha Inicial",
     "End Date": "Fecha Final",
     "Discount amount": "Descuento por monto",
-    "Discount Rate": "Descuento por porcentaje"
+    "Discount Rate": "Descuento por porcentaje",
+    "Company": "Empresa",
+    "My Company": "Mi Empresa",
+    "Name Company": "Nombre Comercial",
+    "Branch": "Sucursal",
+    "Branches": "Sucursales",
+    "List Branches": "Lista de Sucursales",
+    "Name Branch": "Nombre de la Sucursal",
+    "Roles": "Roles",
+    "Rol": "Rol",
+    "List Roles": "Lista de Roles",
+    "Name Rol": "Nombre del Rol"
 }
