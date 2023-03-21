@@ -10,7 +10,7 @@
                 <div class="form-group">
                     <label for="name" class="control-label text-uppercase custom-f-s-small">* @lang('Name Rol')</label>
                     <input type="hidden" name="company_id" class="form-control" value="{{ $company->id }}">
-                    <input type="text" name="name" class="form-control" value=""> {{-- {{ $user->name }} --}}
+                    <input type="text" name="name" class="form-control" required value=""> {{-- {{ $user->name }} --}}
                     @if ($errors->has('name'))
                         <span class="small text-danger">{{ $errors->first('name') }}</span>
                     @endif

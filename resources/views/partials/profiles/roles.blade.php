@@ -8,7 +8,7 @@
         @include('partials.profiles.components.roles.table')
     @endif
 
-    <!------------------------------------------->
+    <hr>
     @if (count($branches)>0)
         @include('partials.profiles.components.roles.create')
     @else

@@ -9,6 +9,7 @@
         @include('partials.profiles.components.branches.table')
     @endif
 
+    <hr>
     <h5 class="text-danger text-uppercase custom-f-s-small mb-3 mt-5">@lang('Add') @lang('Branch')</h5>
 
     @if (!is_null($company))

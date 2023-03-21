@@ -6,7 +6,7 @@
         <div class="col-xl-6 col-lg-6 col-12">
             <div class="form-group">
                 <label for="name" class="control-label text-uppercase custom-f-s-small">* @lang('Name Branch')</label>
-                <input type="text" name="name" class="form-control" value="">
+                <input type="text" name="name" class="form-control" value="" required>
                 <input type="hidden" name="company_id" class="form-control" value="{{ $company->id }}">
                 @if ($errors->has('name'))
                     <span class="small text-danger">{{ $errors->first('name') }}</span>

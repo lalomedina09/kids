@@ -32,9 +32,13 @@
                     <td class="custom-f-s-small">{{ $rol->branch->name }}</td>
                     <td class="custom-f-s-small">
                         @if(is_null($rol->deleted_at))
-                        <button class="btn btn-danger btn-pill custom-f-s-small btn-small" type="button">
-                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                        </button>
+                            <a class="btn btn-danger btn-pill custom-f-s-small btn-small" onclick="editCompanyRole({{$rol->id}});">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="{{route('profile.companyrole.destroy',$rol->id)}}" class="btn btn-danger btn-pill custom-f-s-small btn-small">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
                         @endif
                     </td>
                 </tr>

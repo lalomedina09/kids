@@ -13,6 +13,9 @@
     <script type="text/javascript" src="{{ mix('js/vendor/moment.js') }}"></script>
     <script type="text/javascript" src="{{ mix('js/vendor/datetimepicker.js') }}"></script>
     <script type="text/javascript" src="{{ mix('js/profiles/edit.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('js-new/models/branches.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js-new/models/companyroles.js') }}"></script>
 @endpush
 
 @section('content')
@@ -172,4 +175,5 @@
         </div>
     </div>
 
+    @include('partials.modals.branchAndRole')
 @endsection

@@ -28,12 +28,17 @@
                 <td class="custom-f-s-small">{{ $branch->company->name }}</td>
                 <td class="custom-f-s-small">{{ $branch->name }}</td>
                 <td class="custom-f-s-small">
-                    <button class="btn btn-danger btn-pill custom-f-s-small btn-small" type="button">
+                    <a class="btn btn-danger btn-pill custom-f-s-small btn-small" onclick="editBranch({{$branch->id}});">
                         <i class="fa fa-pencil" aria-hidden="true"></i>
-                    </button>
+                    </a>
+
+                    <a href="{{route('profile.branch.destroy',$branch->id)}}" class="btn btn-danger btn-pill custom-f-s-small btn-small">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
 <div id="add-branch"></div>
+

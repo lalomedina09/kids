@@ -500,9 +500,13 @@ Route::prefix('perfil')
             ->uses('BranchController@store')
             ->name('profile.branch.post');
 
-            Route::delete('/delete')
-            ->uses('BranchController@delete')
-            ->name('profile.branch.delete');
+            Route::get('/destroy/{id}')
+            ->uses('BranchController@destroy')
+            ->name('profile.branch.destroy');
+
+            Route::post('/edit/{id}')
+            ->uses('BranchController@edit')
+            ->name('profile.branch.edit');
 
             Route::patch('/update/{id}')
             ->uses('BranchController@update')
@@ -517,9 +521,13 @@ Route::prefix('perfil')
             ->uses('CompanyRoleController@store')
             ->name('profile.companyrole.store');
 
-            Route::delete('/delete/{id}')
-            ->uses('CompanyRoleController@delete')
-            ->name('profile.companyrole.delete');
+            Route::get('/destroy/{id}')
+            ->uses('CompanyRoleController@destroy')
+            ->name('profile.companyrole.destroy');
+
+            Route::post('/edit/{id}')
+            ->uses('CompanyRoleController@edit')
+            ->name('profile.companyrole.edit');
 
             Route::patch('/update/{id}')
             ->uses('CompanyRoleController@update')
