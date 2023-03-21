@@ -485,28 +485,28 @@ Route::prefix('perfil')
         Route::prefix('company')
             ->group(function () {
                 Route::post('/post')
-                ->uses('CompanyController@post')
-                ->name('branch.post');
+                ->uses('CompanyController@store')
+                ->name('profile.company.post');
 
-                Route::patch('/update')
+                Route::patch('/update/{id}')
                 ->uses('CompanyController@update')
-                ->name('company.update');
+                ->name('profile.company.update');
         });
 
         //Data Branch
         Route::prefix('branch')
         ->group(function () {
             Route::post('/post')
-            ->uses('BranchController@post')
-            ->name('branch.post');
+            ->uses('BranchController@store')
+            ->name('profile.branch.post');
 
             Route::delete('/delete')
             ->uses('BranchController@delete')
-            ->name('branch.delete');
+            ->name('profile.branch.delete');
 
-            Route::patch('/update')
+            Route::patch('/update/{id}')
             ->uses('BranchController@update')
-            ->name('branch.update');
+            ->name('profile.branch.update');
 
         });
 
@@ -515,15 +515,15 @@ Route::prefix('perfil')
         ->group(function () {
             Route::post('/store')
             ->uses('CompanyRoleController@store')
-            ->name('companyrole.store');
+            ->name('profile.companyrole.store');
 
-            Route::delete('/delete')
+            Route::delete('/delete/{id}')
             ->uses('CompanyRoleController@delete')
-            ->name('companyrole.delete');
+            ->name('profile.companyrole.delete');
 
-            Route::patch('/update')
+            Route::patch('/update/{id}')
             ->uses('CompanyRoleController@update')
-            ->name('companyrole.update');
+            ->name('profile.companyrole.update');
             });
     });
 

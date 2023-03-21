@@ -4,9 +4,10 @@ namespace App\Models;
 
 use App\Models\Traits\Presentable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, hasOne, hasMany};
 //use Illuminate\Database\Eloquent\Relations\MorphTo;
-
-class Company extends Model
+use Illuminate\Database\Eloquent\SoftDeletes;
+class Branch extends Model
 {
     use Presentable;
 
@@ -23,4 +24,15 @@ class Company extends Model
     ];
     //protected $presenter = Presenters\ContactPresenter::class;
 
+    public function company()
+    {
+        // 'foreign_key' , 'local_key'
+        return $this->hasOne(Company::class, 'id', 'company_id');
+    }
+
+    public function user()
+    {
+        // 'foreign_key' , 'local_key'
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

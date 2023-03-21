@@ -12,7 +12,7 @@ use App\Models\Traits\Morphable;
 
 use Exception;
 
-class Bookmark extends Model
+class Address extends Model
 {
 
     use Morphable, SoftDeletes;
