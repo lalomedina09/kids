@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Company extends Model
 {
-    use Presentable;
+    use Presentable, SoftDeletes;
 
     protected $fillable = [
         'name'

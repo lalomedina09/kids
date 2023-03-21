@@ -25,6 +25,16 @@ class BranchController extends Controller
         return redirect(route('profile.edit') . '#' . str_slug(__('sucursales')))->with('success', __('Tu sucursal se agrego con exito'));
     }
 
+    public function edit($id, Request $request)
+    {
+        #dd($id);
+        $branch = Branch::where('id', $id)->first();
+        //dd($branch);
+        $view = view('partials.profiles.components.branches.edit', compact('branch'))->render();
+
+        return response()->json(['view' => $view]);
+    }
+
     public function update($id, Request $request)
     {
 
@@ -40,7 +50,10 @@ class BranchController extends Controller
         return redirect(route('profile.edit') . '#' . str_slug(__('sucursales')))->with('success', __('Tu sucursal se actualizo con exito'));
     }
 
-    public function delete(){
-        dd('Desactivamos la sucursal');
+    public function destroy($id){
+        $branch = Branch::find($id);
+        $branch->delete();
+
+        return redirect(route('profile.edit') . '#' . str_slug(__('sucursales')))->with('success', __('Tu sucursal se desactivo con exito'));
     }
 }

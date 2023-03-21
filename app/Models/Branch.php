@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\{BelongsTo, hasOne, hasMany};
 use Illuminate\Database\Eloquent\SoftDeletes;
 class Branch extends Model
 {
-    use Presentable;
+    use Presentable, SoftDeletes;
 
     protected $fillable = [
         'name'
