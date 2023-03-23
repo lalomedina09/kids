@@ -19,6 +19,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        'callbacks/*'
+        'callbacks/*',
+        'qdplay/pagos/callback-3d-secure',
     ];
 }

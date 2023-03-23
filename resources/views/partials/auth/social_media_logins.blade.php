@@ -100,5 +100,5 @@
 	<a href="{{ route('redirects.facebook') }}" class="facebook-button">Iniciar Sesión con Facebook</a>
 	<a href="{{ route('redirects.google') }}" class="google-button">Iniciar Sesión con Google</a>
 	<a href="{{ route('redirects.microsoft') }}" class="microsoft-button">Iniciar Sesión con Microsoft</a>
-	<a href="{{ route('redirects.apple') }}" class="apple-button">Iniciar Sesión con Apple</a>
+	{{--<a href="{{ route('redirects.apple') }}" class="apple-button">Iniciar Sesión con Apple</a>--}}
 </div>

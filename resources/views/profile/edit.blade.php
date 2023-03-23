@@ -13,6 +13,9 @@
     <script type="text/javascript" src="{{ mix('js/vendor/moment.js') }}"></script>
     <script type="text/javascript" src="{{ mix('js/vendor/datetimepicker.js') }}"></script>
     <script type="text/javascript" src="{{ mix('js/profiles/edit.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('js-new/models/branches.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js-new/models/companyroles.js') }}"></script>
 @endpush
 
 @section('content')
@@ -20,6 +23,8 @@
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4">
+
+                <!--- Empieza caja gris --->
                 <div class="box-gray text-center p-3 mb-3">
                     <div class="mb-3">
                         <img src="{{ $user->present()->profile_photo }}" class="image--profile-change" alt="profile photo">
@@ -47,6 +52,7 @@
                         </div>
                     @endif
                 </div>
+                <!--- Termina caja gris --->
 
                 <nav class="nav flex-column">
                     <a href="#{{ str_slug(__('General information')) }}"
@@ -111,10 +117,17 @@
                         @endif--}}
                     @endif
 
+                    <a href="#{{ str_slug(__('My Company')) }}"
+                        class="nav-item nav-link text-uppercase c-text-size"
+                        data-toggle="tab"
+                        >@lang('My Company')
+                    </a>
+
                     <a href="#{{ str_slug(__('QD Play')) }}"
                         class="nav-item nav-link text-uppercase c-text-size"
                         data-toggle="tab"
-                        >@lang('QD Play') <img src="{{ asset('etapa1/GIF-NEW-Querido-dinero.gif') }}" alt="new" width="50" />
+                        >@lang('QD Play')
+                        <img src="{{ asset('etapa1/GIF-NEW-Querido-dinero.gif') }}" alt="new" width="50" />
                     </a>
 
                     <a href="/queridodinero/app_close.html"
@@ -128,7 +141,13 @@
                 <div class="tab-content mb-5">
                     @include('partials.profiles.general')
                     @include('partials.profiles.photo')
+
+                    @include('partials.profiles.company')
+                    @include('partials.profiles.branches')
+                    @include('partials.profiles.roles')
+                    <!-- Incluir vista para admin de QD Play-->
 					@include('qd:qdplay::home.partials.billingData')
+
                     @include('partials.profiles.password')
                     @include('partials.profiles.interests')
                     @include('partials.profiles.bookmarks')
@@ -156,4 +175,5 @@
         </div>
     </div>
 
+    @include('partials.modals.branchAndRole')
 @endsection

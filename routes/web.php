@@ -480,6 +480,59 @@ Route::prefix('perfil')
         Route::patch('/file-situation-tax/{user}')
         ->uses('ProfileController@updateFileSTax')
         ->name('update.situation.tax');
+
+        //Data Company
+        Route::prefix('company')
+            ->group(function () {
+                Route::post('/post')
+                ->uses('CompanyController@store')
+                ->name('profile.company.post');
+
+                Route::patch('/update/{id}')
+                ->uses('CompanyController@update')
+                ->name('profile.company.update');
+        });
+
+        //Data Branch
+        Route::prefix('branch')
+        ->group(function () {
+            Route::post('/post')
+            ->uses('BranchController@store')
+            ->name('profile.branch.post');
+
+            Route::get('/destroy/{id}')
+            ->uses('BranchController@destroy')
+            ->name('profile.branch.destroy');
+
+            Route::post('/edit/{id}')
+            ->uses('BranchController@edit')
+            ->name('profile.branch.edit');
+
+            Route::patch('/update/{id}')
+            ->uses('BranchController@update')
+            ->name('profile.branch.update');
+
+        });
+
+        //Data Company Role
+        Route::prefix('company-role')
+        ->group(function () {
+            Route::post('/store')
+            ->uses('CompanyRoleController@store')
+            ->name('profile.companyrole.store');
+
+            Route::get('/destroy/{id}')
+            ->uses('CompanyRoleController@destroy')
+            ->name('profile.companyrole.destroy');
+
+            Route::post('/edit/{id}')
+            ->uses('CompanyRoleController@edit')
+            ->name('profile.companyrole.edit');
+
+            Route::patch('/update/{id}')
+            ->uses('CompanyRoleController@update')
+            ->name('profile.companyrole.update');
+            });
     });
 
 /*
