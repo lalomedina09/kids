@@ -65,10 +65,12 @@ class LandingController extends Controller
     {
         $results = Landing::all();
         $leads = Lead::where('form', $custom_page)->orderBy('id', 'desc')->get();
+        $getLanding = Lead::where('form', $custom_page)->first();
 
         return view('dashboard.landings.custom_show')->with([
             'pages' => $this->getPages(),
             'custom_page' => $custom_page,
+            'getLanding' => $getLanding,
             'leads' => $leads,
             'results' => $results
         ]);

@@ -29,7 +29,11 @@
     </ul>
 
     <div class="table-responsive">
+        
         <div class="text-right">
+            <a class="btn btn-info" href="{{ url($page) }}" target="_blank">
+                Ver Landing
+            </a>
             <a class="btn btn-success" href="{{ route('dashboard.landings.export.results.excel', [$page]) }}">
                 Exportar resultados Excel
             </a>

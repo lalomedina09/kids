@@ -32,6 +32,15 @@
 
     <div class="table-responsive">
         <div class="text-right">
+            @if ($getLanding->form = "finanzas-personales-para-empleados")
+                <a class="btn btn-info" href="{{ url("registrofinanzaspersonales") }}" target="_blank">
+                    Ver Landing
+                </a>
+            @else
+                <a class="btn btn-info" href="{{ url($getLanding->url) }}" target="_blank">
+                    Ver Landing
+                </a>
+            @endif
             <a class="btn btn-success" href="{{ route('dashboard.landings.export.results', [$custom_page]) }}">
                 Exportar resultados Excel
             </a>
