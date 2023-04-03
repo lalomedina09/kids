@@ -16,8 +16,8 @@
                     <th>Num</th>
                     <th>Curso</th>
                     <th>Quiz</th>
-                    <th>Preguntas</th>
                     <th>Comentarios</th>
+                    <th>Preguntas</th>
                     <th>Actualizado</th>
                     <th>Acciones</th>
                     {{--<th>Estado</th>--}}
@@ -28,8 +28,8 @@
                     <th>Num</th>
                     <th>Curso</th>
                     <th>Quiz</th>
-                    <th>Preguntas</th>
                     <th>Comentarios</th>
+                    <th>Preguntas</th>
                     <th>Actualizado</th>
                     <th>Acciones</th>
                     {{--<th>Estado</th>--}}
@@ -40,10 +40,10 @@
                 @foreach($quizzes as $result)
                     <tr>
                         <td>{{ $count++ }}</td>
-                        <td>aqui va nombre del curso</td>
+                        <td>{{ $result->quizzesable->name }}</td>
                         <td>{{ $result->title }}</td>
                         <td>{{ $result->comments }}</td>
-                        <td>10</td>
+                        <td>{{ count($result->questions) }}</td>
                         <td class="small"> {{ getCustomDateHuman($result->updated_at) }} </td>
                         <td class="text-center">
                             {{--

@@ -68,4 +68,10 @@ class Quiz extends Model
     {
         return $this->belongsTo('App\Models\User');
     }*/
+
+    public function questions()
+    {
+        // 'foreign_key' , 'local_key'
+        return $this->hasMany(QzQuestion::class, 'quiz_id', 'id');
+    }
 }
