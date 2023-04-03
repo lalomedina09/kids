@@ -165,5 +165,42 @@ return [
                 ],
             ],
         ],
+        'quiz' => [
+            'all' =>[
+                'index' => 'Listar las quiz pages creadas',
+                'create' => 'Crear nuevas quiz pages (inactivo)',
+                'show' => 'Ver las quiz pages',
+                'update' => 'Actualizar las quiz pages (inactivo)',
+                'delete' => 'Eliminar las quiz pages (inactivo)',
+            ],
+            'questions' => [
+                'index' => 'Listar las quiz pages creadas',
+                'create' => 'Crear nuevas quiz pages (inactivo)',
+                'show' => 'Ver las quiz pages',
+                'update' => 'Actualizar las quiz pages (inactivo)',
+                'delete' => 'Eliminar las quiz pages (inactivo)',
+            ],
+            'options' => [
+                'index' => 'Listar las quiz pages creadas',
+                'create' => 'Crear nuevas quiz pages (inactivo)',
+                'show' => 'Ver las quiz pages',
+                'update' => 'Actualizar las quiz pages (inactivo)',
+                'delete' => 'Eliminar las quiz pages (inactivo)',
+            ],
+            'answers' => [
+                'index' => 'Listar las quiz pages creadas',
+                'create' => 'Crear nuevas quiz pages (inactivo)',
+                'show' => 'Ver las quiz pages',
+                'update' => 'Actualizar las quiz pages (inactivo)',
+                'delete' => 'Eliminar las quiz pages (inactivo)',
+            ],
+            'feedback' => [
+                'index' => 'Listar las quiz pages creadas',
+                'create' => 'Crear nuevas quiz pages (inactivo)',
+                'show' => 'Ver las quiz pages',
+                'update' => 'Actualizar las quiz pages (inactivo)',
+                'delete' => 'Eliminar las quiz pages (inactivo)',
+            ],
+        ],
     ]
 ];

@@ -809,8 +809,182 @@ Route::prefix('administration')
 
             });
 
-    });
 
+
+            // Quiz
+        Route::prefix('quizzes')
+        ->group(function () {
+            Route::get('/')
+                ->uses('QuizController@index')
+                ->name('quizzes.index');
+                #->middleware(['permission:blog.quiz.index']);
+
+            Route::get('/{id}')
+                ->uses('QuizController@show')
+                ->name('quizzes.show');
+                #->middleware(['permission:blog.quiz.show']);
+
+            Route::get('/trashed')
+                ->uses('QuizController@trashed')
+                ->name('quizzes.trashed');
+                #->middleware(['permission:blog.categories.index']);
+
+            Route::get('/create')
+                ->uses('QuizController@create')
+                ->name('quizzes.create');
+                #->middleware(['permission:blog.categories.create']);
+
+            Route::post('/')
+                ->uses('QuizController@store')
+                ->name('quizzes.store');
+                #->middleware(['permission:blog.categories.create']);
+
+            Route::get('/edit/{id}')
+                ->uses('QuizController@edit')
+                ->name('quizzes.edit');
+                #->middleware(['permission:blog.categories.update']);
+
+            Route::patch('/update/{id}')
+                ->uses('QuizController@update')
+                ->name('quizzes.update');
+                #->middleware(['permission:blog.categories.update']);
+
+            Route::get('/destroy')
+                ->uses('QuizController@destroy')
+                ->name('quizzes.destroy');
+            #->middleware(['permission:blog.categories.delete']);
+        });
+
+        // Questions
+        Route::prefix('questions')
+        ->group(function () {
+                Route::get('/')
+                ->uses('QuestionsController@index')
+                ->name('questions.index');
+                #->middleware(['permission:blog.quiz.index']);
+
+                Route::get('/{id}')
+                ->uses('QuestionsController@show')
+                ->name('questions.show');
+                #->middleware(['permission:blog.quiz.show']);
+
+                Route::get('/trashed')
+                ->uses('QuestionsController@trashed')
+                ->name('questions.trashed');
+                #->middleware(['permission:blog.categories.index']);
+
+                Route::get('/create/{id}')
+                    ->uses('QuestionsController@create')
+                    ->name('questions.create');
+                #->middleware(['permission:blog.categories.create']);
+
+                Route::post('/')
+                ->uses('QuestionsController@store')
+                ->name('questions.store');
+                #->middleware(['permission:blog.categories.create']);
+
+                Route::get('/edit/{id}')
+                    ->uses('QuestionsController@edit')
+                    ->name('questions.edit');
+                #->middleware(['permission:blog.categories.update']);
+
+                Route::patch('/update/{id}')
+                ->uses('QuestionsController@update')
+                ->name('questions.update');
+                #->middleware(['permission:blog.categories.update']);
+
+                Route::get('/destroy')
+                ->uses('QuestionsController@destroy')
+                ->name('questions.destroy');
+
+        });
+
+        //Options
+        Route::prefix('options')
+        ->group(function () {
+            Route::get('/')
+            ->uses('OptionsController@index')
+            ->name('options.index');
+            #->middleware(['permission:blog.quiz.index']);
+
+            Route::get('/{id}')
+            ->uses('OptionsController@show')
+            ->name('options.show');
+            #->middleware(['permission:blog.quiz.show']);
+
+            Route::get('/trashed')
+            ->uses('OptionsController@trashed')
+            ->name('options.trashed');
+            #->middleware(['permission:blog.categories.index']);
+
+            Route::get('/create/{id}')
+            ->uses('OptionsController@create')
+            ->name('options.create');
+            #->middleware(['permission:blog.categories.create']);
+
+            Route::post('/')
+            ->uses('OptionsController@store')
+            ->name('options.store');
+            #->middleware(['permission:blog.categories.create']);
+
+            Route::get('/edit/{id}')
+            ->uses('OptionsController@edit')
+            ->name('options.edit');
+            #->middleware(['permission:blog.categories.update']);
+
+            Route::patch('/update/{id}')
+            ->uses('OptionsController@update')
+            ->name('options.update');
+            #->middleware(['permission:blog.categories.update']);
+
+            Route::get('/destroy')
+            ->uses('OptionsController@destroy')
+            ->name('options.destroy');
+        });
+
+        // Feedbacks
+        Route::prefix('feedbacks')
+        ->group(function () {
+            Route::get('/')
+            ->uses('FeedbackController@index')
+            ->name('quizzes.feedback.index');
+            #->middleware(['permission:blog.quiz.index']);
+
+            Route::get('/{id}')
+            ->uses('FeedbackController@show')
+            ->name('quizzes.feedback.show');
+            #->middleware(['permission:blog.quiz.show']);
+
+            Route::get('/trashed')
+            ->uses('FeedbackController@trashed')
+            ->name('quizzes.feedback.trashed');
+            #->middleware(['permission:blog.categories.index']);
+
+            Route::get('/create/{id}')
+            ->uses('FeedbackController@create')
+            ->name('quizzes.feedback.create');
+            #->middleware(['permission:blog.categories.create']);
+
+            Route::post('/')
+            ->uses('FeedbackController@store')
+            ->name('quizzes.feedback.store');
+            #->middleware(['permission:blog.categories.create']);
+
+            Route::get('/edit/{id}')
+            ->uses('FeedbackController@edit')
+            ->name('quizzes.feedback.edit');
+            #->middleware(['permission:blog.categories.update']);
+
+            Route::patch('/update/{id}')
+            ->uses('FeedbackController@update')
+            ->name('quizzes.feedback.update');
+            #->middleware(['permission:blog.categories.update']);
+
+            Route::get('/destroy')
+            ->uses('FeedbackController@destroy')
+            ->name('quizzes.feedback.destroy');
+        });
+});
 
 Route::prefix('parameters')
     ->group(function () {

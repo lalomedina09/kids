@@ -11,8 +11,6 @@
                 <h6 class="header__menu-title">Temas</h6>
 
                 <ul class="navbar-nav header__menu-list">
-                    {{-- Lista de categorias viene del archivo helpers.php--}}
-
                     @foreach(getCategoriesQD() as $category)
                         <li class="nav-item">
                             <a href="{{ route('articles.category.index', $category) }}"
@@ -57,22 +55,6 @@
                             </a>
                         </li>
                     @endif
-                    {{--
-                    @if (config()->has('money.modules.products'))
-                        <li class="nav-item">
-                            <a href="{{ route('qd.products.products.index') }}"
-                                class="header__menu-link">
-                                Productos
-                            </a>
-                        </li>
-                    @endif
-
-                    <li class="nav-item">
-                        <a href="{{ config('money.url.store') }}"
-                            class="header__menu-link">
-                            Libro
-                        </a>
-                    </li>--}}
                 </ul>
 
                 <div class="d-none d-lg-block header__menu-footer">
@@ -137,29 +119,26 @@
         </a>
 
         <nav class="nav d-none d-lg-flex header__navigation">
-            <!--<a href="#" title="Proximamente"
-                class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
-                QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" class="" style="">
-            </a>-->
+
             <a href="/" class="nav-link header__navigation-link {{ active_class('descargas*') }}">
                 Inicio
             </a>
+            <a href="{{ route('qdplay.start') }}" title="QD Play"
+                class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
+                QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">
+            </a>
+
+            <a href="{{ route('qdplay.business') }}" title="QD Play para empresas"
+                class="newlogo nav-link header__navigation-link {{ active_class('qdplay/empresas*') }}">
+                Para Empresas
+            </a>
+
             @if (config()->has('money.modules.blog'))
                 <a href="{{ route('blog') }}"
                     class="nav-link header__navigation-link {{ active_class('articles*') }}">
                     Blog
                 </a>
             @endif
-
-            {{--<a href="{{ route('courses.index') }}"
-                class="nav-link header__navigation-link {{ active_class('talleres*') }}">
-                Talleres
-            </a>--}}
-
-            {{--<a href="{{ route('qdplay.index') }}"
-                class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
-                QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" class="" style="">
-            </a>--}}
 
             @if (config()->has('money.modules.advice'))
                 <a href="{{ route('qd.advice.advisors.index') }}"
@@ -172,24 +151,6 @@
                 class="nav-link header__navigation-link {{ active_class('descargas*') }}">
                 Contacto
             </a>
-
-            {{--@if (config()->has('money.modules.products'))
-                <a href="{{ route('qd.products.products.index') }}"
-                    class="nav-link header__navigation-link {{ active_class('productos*') }}">
-                    Productos
-                </a>
-            @endif--}}
-
-            <!--<a href="{{ route('downloads.index') }}"
-                class="nav-link header__navigation-link {{ active_class('descargas*') }}">
-                Descargas
-            </a>
-
-            <a href="{{ config('money.url.store') }}"
-                class="nav-link header__navigation-link">
-                Libro
-
-            </a>-->
 
             @auth
                 @if (config()->has('money.modules.marketplace'))
@@ -229,7 +190,9 @@
                     </li>
                 @endif
             @endauth
+
             <li class="nav-item dropdown">
+
                 <a href="#" class="nav-link dropdown-toggle header__buttons header__buttons--last"
                     data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -251,10 +214,10 @@
                 </a>
 
                 <div class="dropdown-menu header__dropdown">
-                    <!--<a href="{{ route('qdplay.start') }}"
+                    <a href="{{ route('qdplay.start') }}"
 						class="dropdown-item header__buttons header__dropdown-buttons">
 						QD Play
-					</a>-->
+					</a>
 					<div class="dropdown-divider header__dropdown-divider"></div>
 
                     @auth
