@@ -51,4 +51,11 @@
         </a>
     @endif
 
+    @can('blog.categories.index')
+        <a href="{{ route('dashboard.quizzes.index') }}"
+            class="nav-link {{ active_class('dashboard/administration/quizzes*') }}">
+            Quizzes
+        </a>
+    @endif
+
 @endsection

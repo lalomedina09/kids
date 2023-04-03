@@ -31,4 +31,10 @@ class QzQuestion extends Model
         return $this->hasOne(Quiz::class, 'id', 'quiz_id');
     }
 
+    public function options()
+    {
+        // 'foreign_key' , 'local_key'
+        return $this->hasMany(QzOption::class, 'question_id', 'id');
+    }
+
 }
