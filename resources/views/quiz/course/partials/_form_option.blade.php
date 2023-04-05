@@ -8,10 +8,26 @@
                 $numOption = " Opción: ". $count2
             @endphp
 
-                    <input type="radio" id="option{{ $option->question_id }}" required name="answers[{{ $option->question_id }}]" value="{{ $option->id }}" />
-                    <label for="option{{ $option->question_id }}" class="font-weight-lighter" title="{{ $option->option }}">{{ $option->option }}</label>
+                <!--<input type="radio" id="option{{ $option->question_id }}"
+                    required name="answers[{{ $option->question_id }}]"
+                    value="{{ $option->id }}" />
+                <label for="option{{ $option->question_id }}"
+                    class="font-weight-lighter"
+                    title="{{ $option->option }}">{{ $option->option }}
+                </label>
                 <br>
+                -->
+                <!------------------------------->
+                <label class="radio" title="{{ $option->option }}">{{ $option->option }}
+                    <input type="radio"
+                        required name="answers[{{ $option->question_id }}]"
+                        id="option{{ $option->question_id }}"
+                        value="{{ $option->id }}">
+                    <span class="check"></span>
+                </label>
 
+
+                <!------------------------------->
             <!--<div class="col-md-4">
                 <div class="form-group">
                     <input type="radio" id="option{{ $option->question_id }}" required name="answers[{{ $option->question_id }}]" value="{{ $option->id }}" />

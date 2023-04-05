@@ -12,15 +12,23 @@
                     @endif
                 </div>
                 <div class="col-md-11">
-                    <h5 class="font-weight-lighter">{{ $count++ }}.-
+                    <h5 class="font-weight-lighter">
+                        <span style="background: linear-gradient(to right, #90d06b, #01dacb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            {{ $count++ }}.-
+                        </span>
                         @if ($answer->question)
-                            {{ $answer->question->question }}
+                            <span class="font-weight-bold">
+                                {{ $answer->question->question }}
+                            </span>
                         @endif
                         <br>
-                        R:
+                        <span style="background: linear-gradient(to right, #90d06b, #01dacb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            R:
+                        </span>
                         <b>@if ($answer->option)
                             {{ $answer->option->option }}
-                        @endif</b>
+                            @endif
+                        </b>
                     </h5>
                 </div>
             @endforeach
