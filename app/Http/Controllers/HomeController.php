@@ -20,7 +20,6 @@ class HomeController extends Controller
         $user = $request->user();
         $course = Course::where('id', 8)->first();
 
-        //Quiz aqui obtenemos el cuestionario
         $quiz = Quiz::where('quizzesable_type', "QD\QDPlay\Models\Course")->where('quizzesable_id', $course->id)->first();
         $answers = 0;
 
@@ -34,10 +33,10 @@ class HomeController extends Controller
         return view('test.quiz')->with([
             'quiz' => $quiz,
             'answers' => $answers
-        ]);
+        ])->with('success', 'Quiz realizado con exito');
     }
 
-    public function testQuizSave(Request $request)
+    public function quizCourseSave(Request $request)
     {
         $user = $request->user();
         $answers = $request->answers;
@@ -51,7 +50,7 @@ class HomeController extends Controller
             $answer->save();
         }
 
-        return redirect()->route('test');
+        return redirect()->back();
     }
 
     /**

@@ -25,7 +25,7 @@ class CreateQzAnswersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
-            $table->foreign('quiz_id')->references('id')->on('companies')->onDelete('set null');
+            $table->foreign('quiz_id')->references('id')->on('quizzes')->onDelete('set null');
             $table->foreign('question_id')->references('id')->on('qz_questions')->onDelete('set null');
             $table->foreign('option_id')->references('id')->on('qz_options')->onDelete('set null');
         });

@@ -871,3 +871,8 @@ Route::name('callbacks.')
         ->uses('SocialNetworksController@appleCallback')
         ->name('apple');
     });
+
+//Routes for quiz
+Route::post('quiz/course/save')
+->uses('HomeController@quizCourseSave')
+->name('quiz.course.save');
