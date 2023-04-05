@@ -32,7 +32,6 @@
 			<a href="#" onclick="return toggle_area('quiz-del-curso');">
 				<img src="{{ asset('etapa1/2. visualizacion curso-13.png') }}" alt="" align="right" class="icon-30" />
 			</a>
-
 			<hr />
 		</h1>
 
@@ -48,7 +47,9 @@
                     @endif
 
                 @else
-                    <h4 class="text-center font-weight-bold">En este momento el curso no cuenta con un Quiz</h4>
+                    <h4 class="text-center font-weight-bold">
+                        En este momento el curso no cuenta con un Quiz
+                    </h4>
                     {{-- dd('No entro al proximo if porque tampoco hay un quiz para el curso') --}}
 
                 @endif
