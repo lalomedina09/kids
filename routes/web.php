@@ -19,9 +19,13 @@ $router->pattern('slug', '[a-z0-9-]+');
 |--------------------------------------------------------------------------
 */
 
-Route::any('test')
+Route::get('test')
     ->uses('HomeController@test')
     ->name('test');
+
+Route::post('test/quiz')
+    ->uses('HomeController@testQuizSave')
+    ->name('test.quiz');
 
 //ruta de prueba antes de integrar con el paquete de Mentorías
 Route::get('test/service/calendar')
