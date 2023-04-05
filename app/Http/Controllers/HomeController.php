@@ -7,16 +7,50 @@ use Illuminate\Http\{ Request, Response };
 use App\Models\{ Article, Cover, Podcast, Quote, Video };
 
 use QD\Advice\Models\Advice;
-
+use App\Models\Quiz;
+use App\Models\QzAnswer;
+use QD\QDPlay\Models\Course;
+use App\Models\QzQuestion;
+use App\Models\QzOption;
 class HomeController extends Controller
 {
 
-    /**
-     * For testing
-     */
     public function test(Request $request)
     {
-        return redirect()->route('home');
+        $user = $request->user();
+        $course = Course::where('id', 8)->first();
+
+        $quiz = Quiz::where('quizzesable_type', "QD\QDPlay\Models\Course")->where('quizzesable_id', $course->id)->first();
+        $answers = 0;
+
+        //Quiz y usuario con esto sabremos si el usuario ya contesto el quizz
+        if ($quiz) {
+            $answers = QzAnswer::where('quiz_id', $quiz->id)->where('user_id', $user->id)->get();
+        }
+        //dd($quiz, $answers);
+
+        //dd($answers);
+        return view('test.quiz')->with([
+            'quiz' => $quiz,
+            'answers' => $answers
+        ])->with('success', 'Quiz realizado con exito');
+    }
+
+    public function quizCourseSave(Request $request)
+    {
+        $user = $request->user();
+        $answers = $request->answers;
+
+        foreach ($answers as $question => $option) {
+            $answer = new QzAnswer;
+            $answer->user_id = $user->id;
+            $answer->quiz_id = $request->quiz_id;
+            $answer->question_id = $question;
+            $answer->option_id = $option;
+            $answer->save();
+        }
+
+        return redirect()->back();
     }
 
     /**

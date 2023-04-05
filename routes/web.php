@@ -19,9 +19,13 @@ $router->pattern('slug', '[a-z0-9-]+');
 |--------------------------------------------------------------------------
 */
 
-Route::any('test')
+Route::get('test')
     ->uses('HomeController@test')
     ->name('test');
+
+Route::post('test/quiz')
+    ->uses('HomeController@testQuizSave')
+    ->name('test.quiz');
 
 //ruta de prueba antes de integrar con el paquete de Mentorías
 Route::get('test/service/calendar')
@@ -867,3 +871,8 @@ Route::name('callbacks.')
         ->uses('SocialNetworksController@appleCallback')
         ->name('apple');
     });
+
+//Routes for quiz
+Route::post('quiz/course/save')
+->uses('HomeController@quizCourseSave')
+->name('quiz.course.save');

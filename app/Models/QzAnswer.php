@@ -39,12 +39,21 @@ class QzAnswer extends Model
     public function question()
     {
         // 'foreign_key' , 'local_key'
-        return $this->hasOne(QzQuestion::class, 'id', 'qz_question_id');
+        return $this->hasOne(QzQuestion::class, 'id', 'question_id');
     }
 
     public function option()
     {
         // 'foreign_key' , 'local_key'
-        return $this->hasOne(QzOption::class, 'id', 'qz_option_id');
+        return $this->hasOne(QzOption::class, 'id', 'option_id');
     }
+
+    //pruebas
+    //Relation for get quiz
+    public function getQuizzesAnswers()
+    {
+        //dd('llego al modelo curso');
+        return $this->morphMany('App\Models\Quiz', 'quizzesable');
+    }
+    //terminan pruebas
 }
