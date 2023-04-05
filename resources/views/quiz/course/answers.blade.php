@@ -30,6 +30,7 @@
                             @endif
                         </b>
                     </h5>
+                    <hr>
                 </div>
             @endforeach
             <hr>
