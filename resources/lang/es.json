@@ -242,5 +242,9 @@
     "Roles": "Roles",
     "Rol": "Rol",
     "List Roles": "Lista de Roles",
-    "Name Rol": "Nombre del Rol"
+    "Name Rol": "Nombre del Rol",
+    "Other Actions" : "Otras Acciones",
+    "Delete Account": "Eliminar Cuenta",
+    "Repeat password": "Repetir contraseña",
+    "Confirm deletion": "Confirmar Eliminacion"
 }

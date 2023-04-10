@@ -33,4 +33,10 @@
             class="nav-item nav-link text-uppercase text-dark custom-f-s-small text-center"
             data-toggle="tab">@lang('Update password')</a>
     </div>
+
+    <div class="col-md-3">
+        <a href="#{{ str_slug(__('Other Actions')) }}"
+            class="nav-item nav-link text-uppercase text-dark custom-f-s-small text-center"
+            data-toggle="tab">@lang('Other Actions')</a>
+    </div>
 </div>
