@@ -7,6 +7,7 @@ use Illuminate\Http\{ Request, Response };
 use App\Http\Requests\Users\UpdateRequest;
 use App\Models\User;
 use App\Repositories\UserRepository;
+use Illuminate\Support\Facades\Hash;
 
 use QD\Advice\Models\{ Advice, Calendar };
 
@@ -137,6 +138,23 @@ class ProfileController extends Controller
                 return $redirect;
         }
     }
+	
+	public function destroy() {
+		$user = request()->user();
+
+		if (Hash::check(request('password'), $user->password)) {
+			$user->delete();
+			$this->guard()->logout();
+			$request->session()->invalidate();
+			
+			return redirect()
+					->route('home')
+					->with('success', 'Se eliminó la cuenta correctamente.');
+		}
+		
+		return redirect()->to(url()->previous() . '#otras-acciones')
+				->with('error', 'Contraseña(s) incorrectas.');
+	}
 
     public function updateFileSTax($user, Request $request)
     {

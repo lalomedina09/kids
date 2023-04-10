@@ -476,6 +476,10 @@ Route::prefix('perfil')
             ->uses('ProfileController@edit')
             ->name('profile.edit');
 
+		Route::post('/borrar')
+			->uses('ProfileController@destroy')
+			->name('profile.destroy');
+		
         Route::post('/{section}')
             ->uses('ProfileController@update')
             ->name('profile.update');

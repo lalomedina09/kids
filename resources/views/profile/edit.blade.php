@@ -149,6 +149,7 @@
 					@include('qd:qdplay::home.partials.billingData')
 
                     @include('partials.profiles.password')
+                    @include('partials.profiles.delete')
                     @include('partials.profiles.interests')
                     @include('partials.profiles.bookmarks')
 
