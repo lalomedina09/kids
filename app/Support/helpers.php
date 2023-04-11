@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\Notification;
 use App\Models\Category;
+use App\Models\QzAnswer;
+use App\Models\Quiz;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
@@ -273,4 +275,50 @@ function countCharacterArticle($article)
 
     //Retornamos la variable
     return $subTotalCharacter;
+}
+
+function AvgQuizQdplay($quiz, $user)
+{
+    $data = [
+        'total' => count($quiz->questions),
+        'correct' => count(getOptionsCorrect($quiz, $user)),
+        'incorrect' => count(getOptionsDontCorrect($quiz, $user)),
+        'img' => asset('etapa1/quiz/mas-o-menos.png')
+    ];
+
+    $avg = ($data['correct'] * 100 ) / $data['total'];
+
+    if ($avg >= 80) {
+        $data['img'] = asset('etapa1/quiz/correct.png');
+    } elseif ($avg >= 60) {
+        $data['img'] = asset('etapa1/quiz/mas-o-menos.png');
+    } else{
+        $data['img'] = asset('etapa1/quiz/incorrect.png');
+    }
+
+    return $data;
+}
+
+function getOptionsCorrect($quiz, $user)
+{
+    $data = QzAnswer::join('qz_options', 'qz_answers.option_id', '=', 'qz_options.id')
+    ->select('qz_options.*')
+    ->where('qz_answers.quiz_id', $quiz->id)
+    ->where('qz_answers.user_id', $user->id)
+    ->where('qz_options.is_correct', 1)
+    ->get();
+
+    return $data;
+}
+
+function getOptionsDontCorrect($quiz, $user)
+{
+    $data = QzAnswer::join('qz_options', 'qz_answers.option_id', '=', 'qz_options.id')
+    ->select('qz_options.*')
+    ->where('qz_answers.quiz_id', $quiz->id)
+    ->where('qz_answers.user_id', $user->id)
+    ->where('qz_options.is_correct', 0)
+    ->get();
+
+    return $data;
 }

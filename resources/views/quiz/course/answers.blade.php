@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-7">
-        <h5 class="text-left">Tus respuestas</h5>
+        <h5 class="text-center">Tus respuestas</h5>
         <div class="row">
             @php $count=1; @endphp
             @foreach ($answers as $answer)
@@ -38,29 +38,40 @@
     </div>
     <div class="col-md-5">
         <div class="row">
+            @php
+                $avgQuiz = AvgQuizQdplay($quiz, $user, $course);
+
+            @endphp
+
             <div class="col-md-6">
-                <h5 class="text-left">Tu resultado</h5>
-                <table>
+                <h5 class="text-center">Tu resultado</h5>
+                <table class="table">
                     <tr>
-                        <td>Num de preguntas</td>
-                        <td><b>10</b></td>
+                        <td class="font-weight-normal">Num de preguntas</td>
+                        <td><b>{{ $avgQuiz['total']}}</b></td>
                     </tr>
                     <tr>
-                        <td>Correctas</td>
-                        <td><b>6</b></td>
+                        <td class="font-weight-normal">Correctas</td>
+                        <td><b>{{ $avgQuiz['correct']}}</b></td>
                     </tr>
                     <tr>
-                        <td>Incorrectas</td>
-                        <td><b>6</b></td>
+                        <td class="font-weight-normal">Incorrectas</td>
+                        <td><b>{{ $avgQuiz['incorrect']}}</b></td>
                     </tr>
                 </table>
             </div>
             <div class="col-md-6">
-                <img src="{{ asset('etapa1/quiz/quiz-realizado.png')}}" style="display: block;margin:auto;" width="90" alt="Quiz Realizado">
+                <br><br>
+                <img src="{{ $avgQuiz['img']}}" style="display: block;margin:auto;" width="130" alt="Quiz Realizado">
+            </div>
+            <div class="col-md-12">
+                <br>
+                <img src="{{ asset('etapa1/quiz/icon-quiz.png')}}" style="display: block;margin:auto;" width="80%" alt="Quiz Realizado">
             </div>
         </div>
     </div>
 </div>
+
 
 
 
