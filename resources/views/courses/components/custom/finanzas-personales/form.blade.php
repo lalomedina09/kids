@@ -2,8 +2,8 @@
 
     @csrf
 
-    <input type="hidden" name="interests" value=" Curso de Finanzas Personales para tu equipo (Empleados)">
-    <input type="hidden" name="form" value="finanzas-personales-para-empleados">
+    <input type="hidden" name="interests" value=" Curso de Finanzas Personales Landing 2">
+    <input type="hidden" name="form" value="finanzas-empleados">
 
     <div class="row pl-2 pt-2 pb-3">
         <div class="col-12 padding-custom-regis-qdp text-left">

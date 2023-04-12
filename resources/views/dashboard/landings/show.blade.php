@@ -26,10 +26,14 @@
             class="nav-item nav-link {{ "finanzas-personales-para-empleados" == $page ? 'active' : '' }}">
             Curso Finanzas Personales
         </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['finanzas-empleados']) }}"
+            class="nav-item nav-link {{ "finanzas-empleados" == $page ? 'active' : '' }}">
+            Curso Finanzas Personales #2
+        </a>
     </ul>
 
     <div class="table-responsive">
-        
+
         <div class="text-right">
             <a class="btn btn-info" href="{{ url($page) }}" target="_blank">
                 Ver Landing
