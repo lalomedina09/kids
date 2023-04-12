@@ -37,15 +37,17 @@
 @endif
 
 @section('content')
-    @if ($course->slug == 'finanzas-personales-para-empleados')
+    @if($course->slug == 'finanzas-personales-para-empleados')
         @include('courses.components.custom.finanzas-personales.index')
+    @elseif($course->slug == 'finanzas-empleados')
+        @include('courses.components.custom.finanzas-empleados.index')
     @else
         @include('courses.components.show.carousel')
-        
+
         @include('courses.components.show.address')
 
         @include('courses.components.show.content')
-        
+
         @include('courses.components.show.speakers')
 
         @include('courses.components.show.itineraries')
@@ -62,5 +64,5 @@
             @endif
         @endauth
     @endif
-    
+
 @endsection

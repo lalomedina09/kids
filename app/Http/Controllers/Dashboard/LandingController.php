@@ -66,6 +66,7 @@ class LandingController extends Controller
         $results = Landing::all();
         $leads = Lead::where('form', $custom_page)->orderBy('id', 'desc')->get();
         $getLanding = Lead::where('form', $custom_page)->first();
+        //dd('llego a la funcion', $custom_page, 'buscamos leds', 'get landing');
 
         return view('dashboard.landings.custom_show')->with([
             'pages' => $this->getPages(),

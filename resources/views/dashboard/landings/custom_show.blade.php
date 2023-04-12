@@ -28,24 +28,31 @@
             class="nav-item nav-link {{ "finanzas-personales-para-empleados" == $custom_page ? 'active' : '' }}">
             Curso Finanzas Personales
         </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['finanzas-empleados']) }}"
+            class="nav-item nav-link {{ "finanzas-empleados" == $custom_page ? 'active' : '' }}">
+            Curso Finanzas Personales #2
+        </a>
     </ul>
 
     <div class="table-responsive">
-        <div class="text-right">
-            @if ($getLanding->form = "finanzas-personales-para-empleados")
-                <a class="btn btn-info" href="{{ url("registrofinanzaspersonales") }}" target="_blank">
-                    Ver Landing
+        @if ($getLanding)
+            <div class="text-right">
+                @if ($getLanding->form = "finanzas-personales-para-empleados")
+                    <a class="btn btn-info" href="{{ url("registrofinanzaspersonales") }}" target="_blank">
+                        Ver Landing
+                    </a>
+                @else
+                    <a class="btn btn-info" href="{{ url($getLanding->url) }}" target="_blank">
+                        Ver Landing
+                    </a>
+                @endif
+                <a class="btn btn-success" href="{{ route('dashboard.landings.export.results', [$custom_page]) }}">
+                    Exportar resultados Excel
                 </a>
-            @else
-                <a class="btn btn-info" href="{{ url($getLanding->url) }}" target="_blank">
-                    Ver Landing
-                </a>
-            @endif
-            <a class="btn btn-success" href="{{ route('dashboard.landings.export.results', [$custom_page]) }}">
-                Exportar resultados Excel
-            </a>
-            <br>
-        </div>
+                <br>
+            </div>
+
+        @endif
         <br>
         <table class="table table-hover table-bordered" data-order='[[ 0, "asc" ]]'>
             <thead>

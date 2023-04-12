@@ -28,6 +28,10 @@
             class="nav-item nav-link">
             Curso Finanzas Personales
         </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['finanzas-empleados']) }}"
+            class="nav-item nav-link">
+            Curso Finanzas Personales #2
+        </a>
     </ul>
 
     <div class="alert alert-default">

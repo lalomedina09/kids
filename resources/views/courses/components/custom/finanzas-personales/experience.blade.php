@@ -17,6 +17,7 @@
                     <img src="/images/qdplay/registro-empresas/empresas/fiat.png" alt="" width="100%">
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <br>
                     <img src="/images/qdplay/registro-empresas/empresas/amis.png" alt="" width="100%">
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
@@ -26,6 +27,7 @@
                     <img src="/images/qdplay/registro-empresas/empresas/kon-dinero.png" alt="" width="100%">
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <br>
                     <img src="/images/qdplay/registro-empresas/empresas/alpha.png" alt="" width="100%">
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
@@ -34,10 +36,10 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <img src="/images/qdplay/registro-empresas/empresas/bontu.png" alt="" width="100%">
                 </div>
-                <div class="col-lg-3 d-lg-block d-none"></div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="col-lg-4 d-lg-block d-none"></div>
+                <!--<div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <img src="/images/qdplay/registro-empresas/empresas/banorte.png" alt="" width="100%">
-                </div>
+                </div>-->
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     <img src="/images/qdplay/registro-empresas/empresas/becas.png" alt="" width="100%">
                 </div>
