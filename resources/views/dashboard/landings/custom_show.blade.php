@@ -37,12 +37,12 @@
     <div class="table-responsive">
         @if ($getLanding)
             <div class="text-right">
-                @if ($getLanding->form = "finanzas-personales-para-empleados")
-                    <a class="btn btn-info" href="{{ url("registrofinanzaspersonales") }}" target="_blank">
+                @if ($getLanding->form == "finanzas-personales-para-empleados")
+                    <a class="btn btn-info" href="{{ url("talleres/finanzas-personales-para-empleados") }}" target="_blank">
                         Ver Landing
                     </a>
                 @else
-                    <a class="btn btn-info" href="{{ url($getLanding->url) }}" target="_blank">
+                    <a class="btn btn-info" href="{{ url("talleres/finanzas-empleados") }}" target="_blank">
                         Ver Landing
                     </a>
                 @endif
