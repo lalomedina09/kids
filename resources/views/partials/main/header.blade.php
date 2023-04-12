@@ -152,13 +152,13 @@
                 Contacto
             </a>
 
-            @auth
+            {{--@auth
                 @if (config()->has('money.modules.marketplace'))
                     <a href="{{ route('qd.marketplace.orders.index') }}" class="nav-link header__navigation-link">
                         Mis compras
                     </a>
                 @endif
-            @endauth
+            @endauth--}}
 
         </nav>
 
@@ -182,13 +182,13 @@
                         </a>
                     </li>
                 @endif
-                @if(config()->has('money.modules.marketplace'))
+                {{--@if(config()->has('money.modules.marketplace'))
                     <li class="nav-item nav-item-search d-none d-sm-inline">
                         <a href="{{ route('qd.marketplace.orders.index') }}" id="nav--search" title="Mis Compras">
                             <img src="{{ asset('images/icons/order.svg') }}" class="mb-5px" alt="Order Icon">
                         </a>
                     </li>
-                @endif
+                @endif--}}
             @endauth
 
             <li class="nav-item dropdown">
