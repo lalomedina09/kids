@@ -173,11 +173,42 @@ class CourseController extends Controller
             'mail_corporate' => 'required|email|min:1|max:255',
             'movil' => 'required|digits:10',
             'company' => 'required|string|min:1|max:255',
-            #'g-recaptcha-response' => 'required|recaptcha'
+            'g-recaptcha-response' => 'required|recaptcha'
         ]);
 
         array_forget($params, 'g-recaptcha-response');
 
+        $lead = $this->saveLead($request);
+
+        return redirect()->back()->with('success', 'Gracias, Pronto nos pondremos en contacto contigo');
+    }
+
+    public function customRegisterFormContact(Request $request)
+    {
+        $params = $request->validate([
+            'name' => 'required|string|min:1|max:255',
+            'last_name' => 'required|string|min:1|max:255',
+            'mail_corporate' => 'required|email|min:1|max:255',
+            'movil' => 'required|digits:10',
+            'company' => 'required|string|min:1|max:255',
+            'g-recaptcha-response' => 'required|recaptcha'
+        ]);
+
+        $emailCorp = $this->validateEmailCorp($request->mail_corporate);
+
+        array_forget($params, 'g-recaptcha-response');
+        if($emailCorp)
+        {
+            $lead = $this->saveLead($request);
+            return redirect()->back()->with('success', 'Gracias, Pronto nos pondremos en contacto contigo');
+
+        }else{
+            return redirect()->back()->with('error', 'El correo debe ser de tu trabajo');
+        }
+    }
+
+    private function saveLead($request)
+    {
         $lead = new Lead;
         $lead->type = 1;
         $lead->status = 0;
@@ -191,6 +222,37 @@ class CourseController extends Controller
         $lead->url = $request->url();
         $lead->save();
 
-        return redirect()->back()->with('success', 'Gracias, Pronto nos pondremos en contacto contigo');
+        return $lead;
+    }
+
+    public function validateEmailCorp($email)
+    {
+        $domain = explode('@', $email ?? null);
+
+        if ($domain) {
+
+            switch ($domain[1]) {
+                case 'gmail.com':
+                    return false;
+                    //break;
+                case 'outlook.com':
+                    return false;
+
+                case 'hotmail.com':
+                    return false;
+
+                case 'yaho.com':
+                    return false;
+                    //break;
+
+                case 'live.com.mx':
+                    return false;
+                    //break;
+
+                default:
+                    return true;
+                    break;
+            }
+        }
     }
 }

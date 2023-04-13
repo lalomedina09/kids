@@ -380,6 +380,10 @@ Route::prefix('talleres')
             ->uses('CourseController@registerFormContact')
             ->name('courses.register.form');
 
+        Route::post('/register/form/validate-email-corp')
+        ->uses('CourseController@customRegisterFormContact')
+        ->name('courses.register.form.email-corp');
+
     });
 
 /*
@@ -479,7 +483,7 @@ Route::prefix('perfil')
 		Route::post('/borrar')
 			->uses('ProfileController@destroy')
 			->name('profile.destroy');
-		
+
         Route::post('/{section}')
             ->uses('ProfileController@update')
             ->name('profile.update');

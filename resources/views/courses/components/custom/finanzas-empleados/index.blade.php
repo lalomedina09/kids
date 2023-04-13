@@ -1,6 +1,6 @@
 @include('courses.components.custom.finanzas-empleados.style')
 
-@include('courses.components.custom.finanzas-personales.banner')
+@include('courses.components.custom.finanzas-empleados.banner')
 
 @include('courses.components.custom.finanzas-empleados.about')
 

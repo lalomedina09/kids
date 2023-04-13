@@ -123,7 +123,7 @@
             <a href="/" class="nav-link header__navigation-link {{ active_class('descargas*') }}">
                 Inicio
             </a>
-            <a href="{{ route('qdplay.start') }}" title="QD Play"
+            <a href="{{ route('qdplay.index') }}" title="QD Play"
                 class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
                 QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">
             </a>
