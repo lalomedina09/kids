@@ -1,4 +1,4 @@
-<form action="{{ route('courses.register.form') }}" method="POST" class=" movil-form-center">
+<form action="{{ route('courses.register.form.email-corp') }}" method="POST" class=" movil-form-center">
 
     @csrf
 
