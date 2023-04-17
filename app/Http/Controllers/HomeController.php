@@ -50,7 +50,7 @@ class HomeController extends Controller
             $answer->save();
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Quiz enviado con exito');;
     }
 
     /**
