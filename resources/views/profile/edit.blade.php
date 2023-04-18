@@ -123,6 +123,12 @@
                         >@lang('My Company')
                     </a>
 
+                    <a href="#{{ str_slug(__('Tools')) }}"
+                        class="nav-item nav-link text-uppercase c-text-size"
+                        data-toggle="tab"
+                        >@lang('Tools')
+                    </a>
+
                     <a href="#{{ str_slug(__('QD Play')) }}"
                         class="nav-item nav-link text-uppercase c-text-size"
                         data-toggle="tab"
@@ -139,14 +145,21 @@
 
             <div class="col-xl-9 col-lg-9 col-md-8 col-12">
                 <div class="tab-content mb-5">
+                    <!-- Archivos para seccion del usuario -->
                     @include('partials.profiles.general')
                     @include('partials.profiles.photo')
 
+                    <!-- Archivos para seccion de compañia-->
                     @include('partials.profiles.company')
                     @include('partials.profiles.branches')
                     @include('partials.profiles.roles')
+
+                    <!-- Archivos para seccion de Herramientas -->
+                    @include('partials.profiles.tools')
+
                     <!-- Incluir vista para admin de QD Play-->
 					@include('qd:qdplay::home.partials.billingData')
+                    @include('partials.profiles.company')
 
                     @include('partials.profiles.password')
                     @include('partials.profiles.delete')
