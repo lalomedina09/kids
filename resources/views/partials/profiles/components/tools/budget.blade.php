@@ -1,27 +1,31 @@
 <div id="{{ str_slug(__('Tool-budget')) }}" class="tab-pane">
-    {{--
-    aqui van las herrtamienasidasub
-    <!-- Archivo para  botones dentro de la seccion-->
-    @include('partials.profiles.components.btn-company')
-    <hr>
-    @include('partials.profiles.components.companies.form')
-    --}}
     <div class="row">
-        <div class="col-md-6" class="text-bold">
-           <img src="{{ asset('images/tools/return.png') }}" alt="Return" width="20">
-           Herramientas
-           <img src="{{ asset('images/tools/icon-tools.png') }}" alt="Icon Tools" width="30">
-           <br><br>
-           <span class="small">Utiliza estas funciones que tenemos para ti.</span>
+        <div class="col-md-12 mb-2">
+            <a href="#{{ str_slug(__('Tools')) }}" class="custom-btn-link text-bold" data-toggle="tab">
+                <img src="{{ asset('images/tools/return.png') }}" alt="Return" width="20">
+                     Herramientas
+            </a>
+            <span class="text-bold"> | Presupuesto </span>
+            <span class="text-right small"> Crea tu presupuesto basandote en el principio 50% / 30% / 20%</span>
         </div>
-        <div class="col-md-6">
-            <img src="{{ asset('images/tools/ilustracion.png') }}" width="60%" style="float: right;" alt="Ilustracion herramientas">
+        <div class="col-md-3">
+            <img src="{{ asset('images/tools/budget/eye.png') }}" width="30" alt="Visualizacion Mensual">
+            <span class="small text-bold">Visualización Mensual</span>
+        </div>
+        <div class="col-md-3">
+            <img src="{{ asset('images/tools/budget/eye.png') }}" width="30" alt="Visualizacion Anual">
+            <span class="small text-bold">Visualización Anual</span>
         </div>
     </div>
 
-    <hr>
+    <hr class="hr-gradient" style="margin-bottom: 1px;">
 
-    <div>
-       pantalla de movimientos, reportes, etc.
+    <div class="row">
+       @include('partials.profiles.components.tools.components.budget.view-month.header')
     </div>
+
+    <div class="row">
+        @include('partials.profiles.components.tools.components.budget.view-month.bodyCategories')
+     </div>
+
 </div>

@@ -2,10 +2,9 @@
 
 @push('styles')
     <link href="{{ mix('css/vendor/datetimepicker.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom/profile-qd.css') }}" rel="stylesheet">
     <style>
-        .c-text-size{
-            font-size: 100%
-        }
+
     </style>
 @endpush
 
@@ -157,6 +156,7 @@
                     <!-- Archivos para seccion de Herramientas -->
                     @include('partials.profiles.tools')
                     @include('partials.profiles.components.tools.budget')
+
                     <!-- Incluir vista para admin de QD Play-->
 					@include('qd:qdplay::home.partials.billingData')
                     @include('partials.profiles.company')
