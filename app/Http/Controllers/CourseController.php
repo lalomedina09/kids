@@ -197,14 +197,16 @@ class CourseController extends Controller
         $emailCorp = $this->validateEmailCorp($request->mail_corporate);
 
         array_forget($params, 'g-recaptcha-response');
-        if($emailCorp)
+        $lead = $this->saveLead($request);
+        return redirect()->back()->with('success', 'Gracias, Pronto nos pondremos en contacto contigo');
+        /*if($emailCorp)
         {
             $lead = $this->saveLead($request);
             return redirect()->back()->with('success', 'Gracias, Pronto nos pondremos en contacto contigo');
 
         }else{
             return redirect()->back()->with('error', 'El correo debe ser de tu trabajo');
-        }
+        }*/
     }
 
     private function saveLead($request)
