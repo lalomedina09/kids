@@ -8,7 +8,7 @@
             <span class="text-bold"> | Presupuesto </span>
             <span class="text-right small"> Crea tu presupuesto basandote en el principio 50% / 30% / 20%</span>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <img src="{{ asset('images/tools/budget/eye.png') }}" width="30" alt="Visualizacion Mensual">
             <span class="small text-bold">Visualización Mensual</span>
         </div>
@@ -18,14 +18,16 @@
         </div>
     </div>
 
-    <hr class="hr-gradient" style="margin-bottom: 1px;">
+    <hr class="hr-gradient" style="margin-bottom: 0px;">
 
-    <div class="row">
-       @include('partials.profiles.components.tools.components.budget.view-month.header')
+    <div class="container">
+        <div class="row">
+           @include('partials.profiles.components.tools.components.budget.view-month.header')
+        </div>
+
+        @include('partials.profiles.components.tools.components.budget.view-month.bodyCategories')
+
     </div>
 
-    <div class="row">
-        @include('partials.profiles.components.tools.components.budget.view-month.bodyCategories')
-     </div>
 
 </div>

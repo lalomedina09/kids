@@ -2,7 +2,7 @@
 
 @push('styles')
     <link href="{{ mix('css/vendor/datetimepicker.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/custom/profile-qd.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom/profile-qd.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
     <style>
 
     </style>
