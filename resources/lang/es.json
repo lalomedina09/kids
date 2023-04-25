@@ -248,6 +248,16 @@
     "Repeat password": "Repetir contraseña",
     "Confirm deletion": "Confirmar Eliminacion",
     "Tools": "Herramientas",
-    "Tool-budget": "Herramienta-presupuesto"
-
+    "Budget": "Presupuesto",
+    "Entrances": "Entradas",
+    "Exits": "Salidas",
+    "Movements": "Movimientos",
+    "Section Entrances": "Seccion Entradas",
+    "Section Exits": "Seccion Salidas",
+    "Section Movements": "Seccion Movimientos",
+    "Section Annual": "Seccion Anual",
+    "Calendar Budget": "Calendario presupuesto",
+    "Calendar": "Calendario",
+    "Report Annual": "Reporte Annual",
+    "Report": "Reporte"
 }

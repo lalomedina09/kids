@@ -24,7 +24,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="tool-container">
-                <a href="#{{ str_slug(__('Tool-budget')) }}" data-toggle="tab">
+                <a href="#{{ str_slug(__('Section Entrances')) }}" data-toggle="tab">
                     <img src="{{ asset('images/tools/presupuesto.png') }}" width="80%" alt="Tools Budget">
                 </a>
                 <!--<div class="texto-encima">Texto</div>-->
@@ -77,3 +77,18 @@
         </div>
     </div>
 </div>
+
+@include('partials.profiles.components.tools.components.budget.entrances')
+
+@include('partials.profiles.components.tools.components.budget.exits')
+
+@include('partials.profiles.components.tools.components.budget.movements')
+
+@include('partials.profiles.components.tools.components.budget.view-year.calendar')
+
+@include('partials.profiles.components.tools.components.budget.view-year.report')
+
+
+@include('partials.profiles.components.tools.components.budget.components.modal-add-move')
+@include('partials.profiles.components.tools.components.budget.components.modal-moves')
+@include('partials.profiles.components.tools.components.budget.components.modal-zoom')

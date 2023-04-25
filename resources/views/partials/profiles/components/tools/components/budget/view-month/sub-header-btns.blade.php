@@ -1,6 +1,6 @@
 <div class="row mt-4">
     <div class="col-md-3 text-left">
-        <a class="btn-white-tool-budget btn-radius-tool-budget custom-ml-6" href="#{{ str_slug(__('Section Entrances')) }}" data-toggle="tab">
+        <a class="btn-white-tool-budget btn-radius-tool-budget custom-ml-5" href="#{{ str_slug(__('Section Entrances')) }}" data-toggle="tab">
             Lo que entra
             <img src="{{ asset('images/tools/budget/enter-black.png') }}" width="30" alt="Lo que entra">
         </a>
@@ -17,18 +17,3 @@
         </a>
     </div>
 </div>
-{{--
-<div id="{{ str_slug(__('Section Entrances')) }}" class="tab-pane">
-    seccion para las entrdads
-</div>
-
-<div id="{{ str_slug(__('Section Exists')) }}" class="tab-pane">
-    seccion para las salidas
-</div>
-
-<div id="{{ str_slug(__('Section Movements')) }}" class="tab-pane">
-    seccion para los movimientos
-</div>
-
---}}
-

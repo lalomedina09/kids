@@ -155,7 +155,7 @@
 
                     <!-- Archivos para seccion de Herramientas -->
                     @include('partials.profiles.tools')
-                    @include('partials.profiles.components.tools.budget')
+                    {{--@include('partials.profiles.components.tools.budget')--}}
 
                     <!-- Incluir vista para admin de QD Play-->
 					@include('qd:qdplay::home.partials.billingData')

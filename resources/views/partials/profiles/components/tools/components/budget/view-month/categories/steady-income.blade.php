@@ -6,10 +6,10 @@
                     <img src="{{ asset('images/tools/budget/plus.png') }}" width="20" alt="Minimizar">
                 </div>
                 <div class="col-md-4 mt-4">
-                    <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="25" alt="Minimizar"> <span class="text-bold"> Fijos</span>
+                    <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="25" alt="Minimizar"> <span class="text-bold"> Ingresos Constantes</span>
                 </div>
 
-                @include('partials.profiles.components.tools.components.budget.view-month.categories.components.exits.header-amount-category')
+                @include('partials.profiles.components.tools.components.budget.view-month.categories.components.entrances.header-amount-category')
 
                 <div class="col-md-12">
                     <div class="bordertest">
@@ -30,7 +30,7 @@
             @include('partials.profiles.components.tools.components.budget.view-month.categories.components.exits.fijos-rows')
 
             <br>
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col-md-12 text-center">
                     <button class="btn btn-add-move col-12">
                         <i class="lni lni-plus"></i>
