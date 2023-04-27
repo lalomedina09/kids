@@ -15,7 +15,11 @@
     <!-- estilo utilizado para las landings relacionadas a qdplay -->
     <link href="{{asset('index_files/etapa1.css')}}?v={{ (rand(1,500)) }}" rel="stylesheet">
     <link href="{{asset('index_files/app.css')}}?v={{ (rand(1,500)) }}" rel="stylesheet">
-
+    <style>
+        .w-80{
+            width: 80%;
+        }
+    </style>
     @include('landings.components.register-qdplay.banner')
 
     @include('landings.components.register-qdplay.benefits')

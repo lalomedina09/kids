@@ -1,4 +1,4 @@
-<div class="image-background mb-5" style="background-color: #ffffff;">
+<div class="image-background" style="background-color: #ffffff;">
     <div class="container text-center">
         <section>
             <h1 class="mb-5 text-center font-weight-normal title-underline title-underline-b font-size-3x">
