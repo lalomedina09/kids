@@ -26,4 +26,43 @@ class Controller extends BaseController
         $data->save();
         return $data;
     }
+
+    public function listMonths()
+    {
+        return $months = array(
+            1 => "Enero",
+            2 => "Febrero",
+            3 => "Marzo",
+            4 => "Abril",
+            5 => "Mayo",
+            6 => "Junio",
+            7 => "Julio",
+            8 => "Agosto",
+            9 => "Septiembre",
+            10 => "Octubre",
+            11 => "Noviembre",
+            12 => "Diciembre"
+        );
+    }
+
+    public function listYears()
+    {
+        return $years = array(
+            2022 => "2022",
+            2023 => "2023"
+        );
+    }
+
+    public function listDays()
+    {
+        return $years = array(
+            1 => "Lunes",
+            2 => "Martes",
+            3 => "Miercoles",
+            4 => "Jueves",
+            5 => "Viernes",
+            6 => "Sabado",
+            7 => "Viernes"
+        );
+    }
 }

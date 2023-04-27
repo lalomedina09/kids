@@ -68,6 +68,8 @@ class ProfileController extends Controller
             return Date::createFromFormat('U', $elem)->format('h:i a');
         }, $h));
 
+        $listMonths = $this->listMonths();
+        $listYears = $this->listYears();
         #$company = $user->company()->first();
         #$branches = $user->branches()->get();
         #$roles = $user->companyRoles()->get();
@@ -88,6 +90,8 @@ class ProfileController extends Controller
             'weekdays' => Calendar::getValidRecurrentWeekdays(),
             'hours' => $recurrent_valid_hours,
             'durations' => Calendar::getValidRecurrentDurations(),
+            'listMonths' => $listMonths,
+            'listYears' => $listYears,
             #'user_whatsapp' => $user_whatsapp
         ]);
     }
@@ -138,7 +142,7 @@ class ProfileController extends Controller
                 return $redirect;
         }
     }
-	
+
 	public function destroy() {
 		$user = request()->user();
 
@@ -146,12 +150,12 @@ class ProfileController extends Controller
 			$user->delete();
 			$this->guard()->logout();
 			$request->session()->invalidate();
-			
+
 			return redirect()
 					->route('home')
 					->with('success', 'Se eliminó la cuenta correctamente.');
 		}
-		
+
 		return redirect()->to(url()->previous() . '#otras-acciones')
 				->with('error', 'Contraseña(s) incorrectas.');
 	}

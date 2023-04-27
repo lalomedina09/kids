@@ -198,7 +198,9 @@
                     aria-haspopup="true" aria-expanded="false">
 
                     @guest
-                        <span class="text-small d-none d-xl-inline-block"> Mi Cuenta </span>
+                        <span class="text-small d-none d-xl-inline-block">
+                            Mi Cuenta
+                        </span>
                     @endguest
 
                     @auth

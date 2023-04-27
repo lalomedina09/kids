@@ -1,0 +1,284 @@
+.c-text-size{
+    font-size: 100%
+}
+
+.hr-gradient {
+    background-image: linear-gradient(90deg, rgba(128,202,86,1) 35%, rgba(11,218,195,1) 100%);
+    border: 0;
+    height: 3px;
+}
+
+.bordertest {
+    /*
+    border-top: 10px solid pink;
+    border-image: linear-gradient(90deg, rgba(128, 202, 86, 1) 35%, rgba(11, 218, 195, 1) 100%);
+    */
+    border-top: 2px solid;
+    border-image: linear-gradient(to right, #80ca56, #02dacb) 1 1 0 0;
+}
+
+.c-border-bottom{
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #80ca56, #02dacb) 1 1 0 0;
+}
+
+.simple-border-bottom{
+    border-bottom: 2px solid;
+}
+
+.border-top{
+    border-top-style: solid;
+    /*background-image: linear-gradient(90deg, rgba(128, 202, 86, 1) 35%, rgba(11, 218, 195, 1) 100%);
+    border: 0;
+    height: 3px;
+    */
+}
+/* Estilos para mostrar texto encima de una imagen */
+.tool-container{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.texto-encima{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.tools-text-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    font-weight: 600;
+    transform: translate(-50%, -50%);
+}
+
+/*Estilos para botones*/
+.custom-btn-link{
+    text-decoration: none;
+    color: #000;
+}
+
+.custom-btn-link:hover{
+    text-decoration: none;
+}
+
+.header-bg-gradient{
+    background-color: #90d06b;
+    background-image: linear-gradient(to right, #90d06b, #01dacb);
+    -webkit-border-radius: 30px;
+    -webkit-border-top-right-radius: 1px;
+    -moz-border-radius: 30px;
+    -moz-border-radius-topright: 1px;
+    border-radius: 30px;
+    border-top-right-radius: 1px;
+    height: 90%;
+}
+.custom-bg-white{
+    background-color: #fff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.custom-bg-gradient{
+    background-color: #90d06b;
+    background-image: linear-gradient(to right, #90d06b, #01dacb);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+.space-left-in{
+    margin-left: 15px;
+}
+
+.btn-white-tool-budget{
+    background-color: #eee;
+    margin-right: 0px;
+    padding: 10px 20px;
+    color: #000;
+    text-decoration: none;
+    /*border-style: solid;
+    border-color: #eee;*/
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.btn-white-tool-budget:hover{
+    text-decoration: none;
+    /*
+    color: #000;
+    border-style: solid;
+    border-color: #90d06b;
+    */
+    background: #90D06B;
+    background: linear-gradient(to right, #90D06B 0%, #01dacb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-dark-tool-budget{
+    background-color: #363637;
+    margin-right: 20px;
+    padding: 10px 20px;
+    color:#fff;
+    text-decoration: none;
+    /*border-style: solid;
+    border-color: #363637;*/
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.btn-dark-tool-budget:hover{
+    text-decoration: none;
+    /*
+    color:#fff;
+    border-style: solid;
+    border-color: #90d06b;
+    */
+    background: #90D06B;
+    background: linear-gradient(to right, #90D06B 0%, #01dacb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn-radius-tool-budget{
+    -webkit-border-radius: 20px;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius: 20px;
+    -moz-border-radius-bottomleft: 0;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+}
+
+.btn-a-style-none{
+    color: #000;
+    text-decoration: none;
+}
+
+.btn-a-style-none:hover{
+    text-decoration: none;
+    background: #90D06B;
+    background: linear-gradient(to right, #90D06B 0%, #01dacb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*Estilos de boton para agregar ctegorias*/
+.btn-add-move{
+    background-color: #fff;
+    margin-right: 20px;
+    padding: 7px 12px;
+    color:#363637;
+    border-radius: 20px;
+    text-decoration: none;
+    border-style: solid;
+    border-color: #fff;
+}
+
+/*Margenes*/
+.custom-ml-5{
+    margin-left: -5%;
+}
+
+
+/*Inputs del form de herramientas personalizadas*/
+.custom-input-text{
+    font-size: 0.8rem;
+    border-radius: 1.25rem;
+    text-align: center;
+}
+
+.custom-input-transparent{
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 1.25rem;
+    color: #fff;
+}
+
+/*Texto con color degradado*/
+.text-color-gradient{
+    background: #90D06B;
+    background: linear-gradient(to right, #90D06B 0%, #01dacb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*Clase para encerrar numero con circulo*/
+.dot {
+    height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.numberCircle {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+    background: #fff;
+    border: 2px solid #666;
+    font-size: .7rem;
+    text-align: center;
+    font-weight: 700;
+    /*border-bottom: 2px solid;*/
+    border-image: linear-gradient(to right, #80ca56, #02dacb) 1 1 0 0;
+}
+
+/*Section calendar*/
+.calendar-card-month{
+    background-color: #fff;
+    margin: 5%;
+    border-radius: 5%;
+}
+
+.custom-box {
+    position: relative;
+  }
+
+.custom-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    padding: 10px;
+    background:linear-gradient(to right, #80ca56, #02dacb) 1 1 0 0;
+    -webkit-mask:
+       linear-gradient(#fff 0 0) content-box,
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+}
+/*
+.rounded-corners-gradient-borders {
+    width: 300px;
+    height: 80px;
+    border: double 4px transparent;
+    border-radius: 80px;
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #f00,#3020ff);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+*/
+.rounded-corners-gradient-borders{
+    border: double 4px transparent;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    padding: 8px;
+    /*border-image: linear-gradient(to right, #80ca56, #02dacb) 1;*/
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #80ca56, #02dacb);
+    font-size: .7rem;
+    text-align: center;
+    font-weight: 700;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+
+/*estilos para las ventanas emergentes*/
+.modal-add-move{
+    /*background-image: linear-gradient(white, white), radial-gradient(circle at top left, #80ca56, #02dacb);*/
+    background: rgb(128,202,86);
+    background: linear-gradient(90deg, rgba(128,202,86,1) 26%, rgba(2,218,203,1) 100%);
+    border-radius: 15px;
+}
