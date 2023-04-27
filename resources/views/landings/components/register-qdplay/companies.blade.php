@@ -7,39 +7,56 @@
                 para las siguientes empresas
             </h2>
             <div class="row pb-3 mb-3">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-empresas/empresas/banregio.png" alt="" width="100%">
+                <div class="col-lg-1 d-lg-block d-none"></div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <br>
+                    <img src="images/qdplay/registro-empresas/empresas/banregio.png" alt="Cliente" width="100%">
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-empresas/empresas/the-home-depot.png" alt="" width="100%">
+                    <img src="images/qdplay/registro-empresas/empresas/the-home-depot.png" alt="Cliente" width="80%">
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-empresas/empresas/fiat.png" alt="" width="100%">
+                    <img src="images/qdplay/registro-empresas/empresas/fiat.png" alt="Cliente" width="80%">
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-empresas/empresas/amis.png" alt="" width="100%">
+                    <br>
+                    <img src="images/qdplay/registro-empresas/empresas/amis.png" alt="Cliente" width="100%">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-empresas/empresas/vector.png" alt="" width="100%">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <br>
+                    <img src="images/qdplay/registro-empresas/empresas/vector.png" alt="Cliente" width="100%">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-empresas/empresas/kon-dinero.png" alt="" width="100%">
+                <div class="col-lg-1 d-lg-block d-none"></div>
+                <!--*************** Row 1*********************** -->
+                <div class="col-lg-1 d-lg-block d-none"></div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <img src="images/qdplay/registro-empresas/empresas/kon-dinero.png" alt="Cliente" width="100%">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-empresas/empresas/alpha.png" alt="" width="100%">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <img src="images/qdplay/registro-empresas/empresas/cisco.png" alt="Cliente" width="80%">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-empresas/empresas/hir.png" alt="" width="100%">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <br>
+                    <img src="images/qdplay/registro-empresas/empresas/dsv.png" alt="Cliente" width="80%">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-empresas/empresas/bontu.png" alt="" width="100%">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <img src="images/qdplay/registro-empresas/empresas/hir.png" alt="Cliente" width="100%">
                 </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                    <img src="images/qdplay/registro-empresas/empresas/bontu.png" alt="Cliente" width="100%">
+                </div>
+                <div class="col-lg-1 d-lg-block d-none"></div>
+                <!--*************** Row 2*********************** -->
+
+                <!--*************** Row 3*********************** -->
+
                 <div class="col-lg-3 d-lg-block d-none"></div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-empresas/empresas/banorte.png" alt="" width="100%">
+                    <br>
+                    <img src="images/qdplay/registro-empresas/empresas/banorte.png" alt="Cliente" width="100%">
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-empresas/empresas/becas.png" alt="" width="100%">
+                    <img src="images/qdplay/registro-empresas/empresas/becas.png" alt="Cliente" width="100%">
                 </div>
                 <div class="col-lg-3 d-lg-block d-none"></div>
             </div>

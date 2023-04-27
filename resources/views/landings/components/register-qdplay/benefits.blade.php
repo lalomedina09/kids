@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-md-4 col-sm-12 col-12">
                     <img src="images/qdplay/registro-empresas/beneficios/bienestar.png" alt="" width="250"><br>
-                    Bienestar<br>fincanciero
+                    Bienestar<br>financiero
                 </div>
                 <div class="col-md-2 d-md-block d-none"></div>
             </div>
