@@ -76,6 +76,12 @@
             <p class="text-center">Interés compuesto</p>
         </div>
     </div>
+
+    <!-- Botones dentro de tab de herramientas-->
+    @include('partials.profiles.components.tools.components.budget.components.modal-add-move')
+    @include('partials.profiles.components.tools.components.budget.components.modal-moves')
+    @include('partials.profiles.components.tools.components.budget.components.modal-zoom')
+
 </div>
 
 @include('partials.profiles.components.tools.components.budget.entrances')
@@ -89,6 +95,3 @@
 @include('partials.profiles.components.tools.components.budget.view-year.report')
 
 
-@include('partials.profiles.components.tools.components.budget.components.modal-add-move')
-@include('partials.profiles.components.tools.components.budget.components.modal-moves')
-@include('partials.profiles.components.tools.components.budget.components.modal-zoom')
