@@ -11,7 +11,7 @@
                 donde quiera y cuando quiera.
             </h2>
 
-            <img src="images/qdplay/registro-empresas/ilustracion.png" alt="" width="100%">
+            <img src="images/qdplay/registro-empresas/ilustracion-abril.png" alt="Ilustracion empresas" width="100%">
 
             <!--<div>
                 <a href="form_ventas.php" class="btn btn-pill bg-green-blue text-white font-weight-bold text-uppercase font-size-md">
