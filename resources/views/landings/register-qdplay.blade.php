@@ -13,8 +13,8 @@
     @include('landings.components.register-qdplay.styles')
 
     <!-- estilo utilizado para las landings relacionadas a qdplay -->
-    <link href="{{asset('index_files/etapa1.css')}}" rel="stylesheet">
-    <link href="{{asset('index_files/app.css')}}" rel="stylesheet">
+    <link href="{{asset('index_files/etapa1.css')}}?v={{ (rand(1,500)) }}" rel="stylesheet">
+    <link href="{{asset('index_files/app.css')}}?v={{ (rand(1,500)) }}" rel="stylesheet">
 
     @include('landings.components.register-qdplay.banner')
 
@@ -26,7 +26,7 @@
 
 @endsection
 
-<script type="text/javascript" src="{{asset('index_files/manifest.js.descarga')}}"></script>
-<script type="text/javascript" src="{{asset('index_files/vendor.js.descarga')}}"></script>
-<script type="text/javascript" src="{{asset('index_files/app.js.descarga')}}"></script>
-<script type="text/javascript" src="{{asset('index_files/etapa1.js.descarga')}}"></script>
+<script type="text/javascript" src="{{asset('index_files/manifest.js.descarga')}}?v={{ (rand(1,500)) }}"></script>
+<script type="text/javascript" src="{{asset('index_files/vendor.js.descarga')}}?v={{ (rand(1,500)) }}"></script>
+<script type="text/javascript" src="{{asset('index_files/app.js.descarga')}}?v={{ (rand(1,500)) }}"></script>
+<script type="text/javascript" src="{{asset('index_files/etapa1.js.descarga')}}?v={{ (rand(1,500)) }}"></script>
