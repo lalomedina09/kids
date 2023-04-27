@@ -10,7 +10,7 @@
 
                 <div class="col-12 text-center padding-custom-regis-qdp">
                     <a href="#section-form" class="btn btn-pill btn-dark text-uppercase font-weight-bold p-3 p-lg-3 mb-2">
-                        NOTIFÍCAME DEL LANZAMIENTO
+                        MÁS INFORMACIÓN
                     </a>
                 </div>
 			</div>

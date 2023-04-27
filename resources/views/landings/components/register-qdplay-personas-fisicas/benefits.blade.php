@@ -7,28 +7,28 @@
             </h1>
 
             <div class="row pb-3">
-                <div class="col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-personas-fisicas/beneficios/500-videos.png" alt="" width="250"><br>
-                    Acceso ilimitado a<br>más de 500 videos
+                <div class="col-md-3 col-sm-6 col-12">
+                    <img src="images/qdplay/registro-personas-fisicas/beneficios/500-videos.png" alt="Acceso Ilimitado" width="100%"><br>
+                    <b>Acceso ilimitado a los cursos</b><br>
+                    Hechos por expertos financieros
                 </div>
-                <div class="col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-personas-fisicas/beneficios/recursos-adicionales.png" alt="" width="250"><br>
-                    Recursos adicionales para llevar los conocimientos a la práctica
+                <div class="col-md-3 col-sm-6 col-12">
+                    <img src="images/qdplay/registro-personas-fisicas/beneficios/ritmo.png" alt="Aprende a tu ritmo" class="img-margin-top" width="100%"><br>
+                    <b>Aprende a tu ritmo</b><br>
+                    Cursos cortos que se adaptan a tu vida diaria
                 </div>
-                <div class="col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-personas-fisicas/beneficios/explicacion-clara-sencilla.png" alt="" width="250"><br>
-                    Explicación de forma<br>clara y sencilla
+                <div class="col-md-3 col-sm-6 col-12">
+                    <img src="images/qdplay/registro-personas-fisicas/beneficios/interactivo.png" alt="Aprendizaje interactivo" width="100%"><br>
+                    <b>Aprendizaje interactivo</b><br>
+                    Practica lo que aprendes con quizzes y archivos descargables
                 </div>
-                <div class="col-md-2 d-md-block d-none"></div>
-                <div class="col-md-4 col-sm-6 col-12">
-                    <img src="images/qdplay/registro-personas-fisicas/beneficios/cursos-cortos.png" alt="" width="250"><br>
-                    Cursos cortos que<br>se adaptan a tu vida diaria
+                <!--<div class="col-md-2 d-md-block d-none"></div>-->
+                <div class="col-md-3 col-sm-6 col-12">
+                    <img src="images/qdplay/registro-personas-fisicas/beneficios/sencilla.png" class="img-margin-top" alt="Explicacion de forma clara y sencilla" width="100%"><br>
+                    <b>Explicación de forma clara y sencilla</b><br>
+                    Desde nivel principiante hasta avanzado
                 </div>
-                <div class="col-md-4 col-sm-12 col-12">
-                    <img src="images/qdplay/registro-personas-fisicas/beneficios/mentores-expertos.png" alt="" width="250"><br>
-                    Mentores expertos<br>en el sector fincanciero
-                </div>
-                <div class="col-md-2 d-md-block d-none"></div>
+                <!--<div class="col-md-2 d-md-block d-none"></div>-->
             </div>
         </section>
     </div>

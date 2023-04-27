@@ -27,6 +27,10 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+    .img-margin-top{
+        margin-top: 0px;
+    }
     @media (min-width: 320px) {
         .banner-reg-qdplay{
             background-image: url('/images/qdplay/registro-empresas/bg-movil.png');
@@ -360,6 +364,9 @@
         .img-ilustration{
             width: 920px;
         }
+        .img-margin-top{
+        margin-top: 130px;
+    }
         /* /- /- /- /- /- /-*/
     }
 

@@ -29,7 +29,7 @@
                 <!---- row ---->
                 <div class="row">
                     <div class="col-md-12">
-                        <img src="images/qdplay/registro-personas-fisicas/portada.png" alt="Img portada para version movil" class="img-portada-show-movil">
+                        <img src="{{ asset('images/qdplay/registro-personas-fisicas/img-banner.png') }}" alt="Img portada para version movil" class="img-portada-show-movil">
                     </div>
                 </div>
                 <!---- row ---->
@@ -40,7 +40,7 @@
                 </div>
 			</div>
             <div class="order-md-2 col-md-6 col-xs-12 col-sm-12 col-12 p-0">
-				<img src="images/qdplay/registro-personas-fisicas/portada.png" alt="Img portada para version pc" class="w-100 d-none d-md-block text-md-left img-portada-hidden-movil">
+				<img src="{{ asset('images/qdplay/registro-personas-fisicas/img-banner.png') }}" alt="Img portada para version pc" class="w-100 d-none d-md-block text-md-left img-portada-hidden-movil">
 			</div>
 		</div>
 	</section>
