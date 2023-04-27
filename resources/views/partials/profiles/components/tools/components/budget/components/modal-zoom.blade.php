@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalZoom">
-    Launch demo modal
+    crear zoom
 </button>
 
   <!-- Modal -->
@@ -10,16 +10,16 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+            <img src="{{ asset('images/tools/budget/minimize.png') }}" alt="Return" width="20">
           </button>
         </div>
         <div class="modal-body">
           cuerpo de zoom
         </div>
-        <div class="modal-footer">
+        <!--<div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>

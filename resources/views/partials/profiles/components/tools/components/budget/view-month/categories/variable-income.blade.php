@@ -9,7 +9,7 @@
                     <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="25" alt="Minimizar"> <span class="text-bold"> Ingresos Variables</span>
                 </div>
 
-                @include('partials.profiles.components.tools.components.budget.view-month.categories.components.exits.header-amount-category')
+                @include('partials.profiles.components.tools.components.budget.view-month.categories.components.entrances.header-amount-category')
 
                 <div class="col-md-12">
                     <div class="bordertest">

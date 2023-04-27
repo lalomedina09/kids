@@ -190,6 +190,7 @@
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 1.25rem;
+    color: #fff;
 }
 
 /*Texto con color degradado*/
@@ -271,4 +272,13 @@
     font-weight: 700;
     background-origin: border-box;
     background-clip: padding-box, border-box;
+}
+
+
+/*estilos para las ventanas emergentes*/
+.modal-add-move{
+    /*background-image: linear-gradient(white, white), radial-gradient(circle at top left, #80ca56, #02dacb);*/
+    background: rgb(128,202,86);
+    background: linear-gradient(90deg, rgba(128,202,86,1) 26%, rgba(2,218,203,1) 100%);
+    border-radius: 15px;
 }
