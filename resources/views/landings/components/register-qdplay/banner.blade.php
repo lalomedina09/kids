@@ -16,8 +16,8 @@
 				<h3 class="mb-5 pt-2 font-weight-normal banner-text-dinamic">
 					Invierte en el desarrollo personal y profesional de tu equipo con cursos bajo demanda hechos por expertos financieros
 				</h3>
-				<!--------------------------------------------------------->
 
+				<!--------------------------------------------------------->
 				<img src="images/qdplay/registro-empresas/portada.png" alt="Img portada para version movil" class="w-100 text-md-left d-movil-show img-align-left">
 
 				@include('landings.components.register-qdplay.form')
