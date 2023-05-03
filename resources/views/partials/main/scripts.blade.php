@@ -77,6 +77,19 @@
         ga('send', 'pageview');
     </script>
 @endif
+
+<!-- Google Analytics 4-->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZQGNNHEF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S7ZQGNNHEF');
+</script>
+<!-- End Google Analytics 4-->
+
 <input type="hidden" name="_token" id="token" value="{{ csrf_token()}}">
 <script type="text/javascript" src="{{ asset('i18n?v='.config('money.app.subversion')) }}"></script>
 <script type="text/javascript" src="{{ mix('js/manifest.js') }}"></script>
