@@ -13,8 +13,10 @@
     <script type="text/javascript" src="{{ mix('js/vendor/datetimepicker.js') }}"></script>
     <script type="text/javascript" src="{{ mix('js/profiles/edit.js') }}"></script>
 
-    <script type="text/javascript" src="{{ asset('js-new/models/branches.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js-new/models/companyroles.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js-new/models/branches.js') }}?v={{ (rand(1,500)) }}"></script>
+    <script type="text/javascript" src="{{ asset('js-new/models/companyroles.js') }}?v={{ (rand(1,500)) }}"></script>
+
+    <script type="text/javascript" src="{{ asset('js-new/tools/budget/functions.js') }}?v={{ (rand(1,500)) }}"></script>
 @endpush
 
 @section('content')

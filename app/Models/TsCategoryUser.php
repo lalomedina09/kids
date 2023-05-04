@@ -12,6 +12,8 @@ class TsCategoryUser extends Model
 {
     use Presentable, SoftDeletes;
 
+    protected $table = 'ts_categories_users';
+
     protected $fillable = [
         'name', 'percent'
     ];

@@ -15,7 +15,7 @@
                     <div class="bordertest">
                         <div class="row">
                             <div class=" col-md-4 text-left">
-                               <span style="font-size: .8rem">  (Lo que necesitas para vivir) </span>
+                               <!--<span style="font-size: .8rem">  (Lo que necesitas para vivir) </span>-->
                             </div>
                             <div class=" col-md-8 text-right">
                                 <span style="font-size: .8rem"> Gasta el <span class="text-bold">50%</span>  de tus ingresos (Hasta $5,000)</span>

@@ -42,6 +42,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapDashboardRoutes();
         $this->mapLandingRoutes();
         $this->mapWebRoutes();
+        $this->mapToolsRoutes();
     }
 
     /**
@@ -99,5 +100,19 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
              ->namespace("{$this->namespace}\Landing")
              ->group(base_path('routes/landing.php'));
+    }
+
+    /**
+     * Define the "tools" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapToolsRoutes()
+    {
+        Route::middleware('web')
+             ->namespace("{$this->namespace}\Tools")
+             ->group(base_path('routes/tools.php'));
     }
 }

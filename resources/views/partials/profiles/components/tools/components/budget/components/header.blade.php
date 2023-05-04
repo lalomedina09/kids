@@ -19,4 +19,7 @@
             <span class="small text-bold">Visualización Anual</span>
         </a>
     </div>
+    <div class="col-md-3">
+        @include('partials.components.loading')
+    </div>
 </div>

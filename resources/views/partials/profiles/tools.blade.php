@@ -27,15 +27,12 @@
                 <a href="#{{ str_slug(__('Section Entrances')) }}" data-toggle="tab">
                     <img src="{{ asset('images/tools/presupuesto.png') }}" width="80%" alt="Tools Budget">
                 </a>
-                <!--<div class="texto-encima">Texto</div>-->
-                <!--<div class="tools-text-center">PRÓXIMAMENTE</div>-->
             </div>
             <p class="text-center">Presupuesto</p>
         </div>
         <div class="col-md-4">
             <div class="tool-container">
                 <img src="{{ asset('images/tools/hipotecario-2.png') }}" width="80%" alt="Tools 2">
-                <!--<div class="texto-encima">Texto</div>-->
                 <div class="tools-text-center">PRÓXIMAMENTE</div>
             </div>
             <p class="text-center">Hipotecario</p>
@@ -43,7 +40,6 @@
         <div class="col-md-4">
             <div class="tool-container">
                 <img src="{{ asset('images/tools/auto-2.png') }}" width="80%" alt="Tools 3">
-                <!--<div class="texto-encima">Texto</div>-->
                 <div class="tools-text-center">PRÓXIMAMENTE</div>
             </div>
             <p class="text-center">Automotriz</p>
@@ -54,7 +50,6 @@
         <div class="col-md-4">
             <div class="tool-container">
                 <img src="{{ asset('images/tools/retiro-2.png') }}" width="80%" alt="Tools 4">
-                <!--<div class="texto-encima">Texto</div>-->
                 <div class="tools-text-center">PRÓXIMAMENTE</div>
             </div>
             <p class="text-center">Retiro</p>
@@ -62,7 +57,6 @@
         <div class="col-md-4">
             <div class="tool-container">
                 <img src="{{ asset('images/tools/impuestos-2.png') }}" width="80%" alt="Tools 5">
-                <!--<div class="texto-encima">Texto</div>-->
                 <div class="tools-text-center">PRÓXIMAMENTE</div>
             </div>
             <p class="text-center">Impuestos</p>
@@ -70,7 +64,6 @@
         <div class="col-md-4">
             <div class="tool-container">
                 <img src="{{ asset('images/tools/intereses-comp-2.png') }}" width="80%" alt="Tools 6">
-                <!--<div class="texto-encima">Texto</div>-->
                 <div class="tools-text-center">PRÓXIMAMENTE</div>
             </div>
             <p class="text-center">Interés compuesto</p>

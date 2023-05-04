@@ -12,6 +12,8 @@ class TsBudget extends Model
 {
     use Presentable, SoftDeletes;
 
+    protected $table = 'ts_budgets';
+
     protected $fillable = [
         'type_move', 'amount_real', 'amount_estimated'
     ];
