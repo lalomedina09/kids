@@ -41,6 +41,7 @@ class ProfileController extends Controller
         $user_interests = $user->interests->pluck('id')->toArray();
 
         $now = Date::now();
+
         $advice = [
             'pending' => $user->advice->filter(function ($item) use ($now) {
                 return $item->end_date->gt($now);

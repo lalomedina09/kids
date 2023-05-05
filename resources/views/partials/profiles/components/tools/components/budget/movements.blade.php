@@ -25,8 +25,11 @@
                     </div>
                     <!---------  Mostrar esta tabla si se encuentran movimientos ------------->
                     <div id="table-movements">
-
-                        @include('partials.components.loading-bg-gray')
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                @include('partials.components.loading-bg-gray')
+                            </div>
+                        </div>
                         {{-- Comente este include porque se alimentara desde el ajax --}}
                         {{--@include('partials.profiles.components.tools.components.budget.view-month.moves.table')--}}
                     </div>

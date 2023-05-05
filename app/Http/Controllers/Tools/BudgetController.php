@@ -23,8 +23,39 @@ class BudgetController extends Controller
         $user = Auth::user();
         $moves = TsBudget::where('user_id', $user->id)->get();
 
-        $table_movements = view('partials.profiles.components.tools.components.budget.view-month.moves.table', compact('moves'))->render();
-        return response()->json(['table_movements' => $table_movements]);
+        $header_month = $this->getHeaderMonth($moves);
+
+        $table_movements = $this->getMoves($moves);
+
+        return response()->json([
+            'table_movements' => $table_movements,
+            'header_month' => $header_month
+        ]);
     }
 
+    public function getHeaderMonth($moves)
+    {
+        $entrances = $moves->where('type_move', 1)->sum('amount_real');
+        $exists = $moves->where('type_move', 0)->sum('amount_real');
+        $total = 500;
+
+        $header_month = view(
+            'partials.profiles.components.tools.components.budget.view-month.components._ajax_header_month',
+            compact('entrances', 'exists', 'total')
+        )
+        ->render();
+
+        return $header_month;
+    }
+
+    public function getMoves($moves)
+    {
+        $table_movements = view(
+            'partials.profiles.components.tools.components.budget.view-month.moves._ajax_table',
+            compact('moves')
+        )
+        ->render();
+
+        return $table_movements;
+    }
 }
