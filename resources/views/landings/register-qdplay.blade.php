@@ -21,7 +21,6 @@
         }
     </style>
     @include('landings.components.register-qdplay.banner')
-
     @include('landings.components.register-qdplay.benefits')
 
     @include('landings.components.register-qdplay.companies')
