@@ -19,7 +19,7 @@
         @if ($urlQdplayCompany == "register.qdplay.show")
             @include('partials.main.custom.script-body-qdplay-empresas')
         @else
-            @include('partials.main.custom.script-body')
+            @include('partials.main.script-body')
         @endif
         @yield('base')
     </body>
