@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Tools;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Tools\BudgetMonthFilter;
+use App\Http\Controllers\Tools\BudgetYearFilter;
 use App\Models\TsBudget;
 
 #use App\Mail\Landings\Mailer;
@@ -17,14 +19,12 @@ class BudgetController extends Controller
     public function __construct() {}
 
 
-    public function active(Request $request)
+    public function activePrincipal(Request $request)
     {
-        //dd('en el controller de presupuesto');
         $user = Auth::user();
         $moves = TsBudget::where('user_id', $user->id)->get();
 
-        $header_month = $this->getHeaderMonth($moves);
-
+        $header_month = $this->getHeaderMonth(1);
         $table_movements = $this->getMoves($moves);
 
         return response()->json([
@@ -33,11 +33,41 @@ class BudgetController extends Controller
         ]);
     }
 
+    public function activeMonth(Request $request)
+    {
+        $user = Auth::user();
+        $moves = TsBudget::where('user_id', $user->id)->get();
+
+        $header = BudgetMonthFilter::header($moves);
+        $body = BudgetMonthFilter::body($moves);
+
+        return response()->json([
+            'section_header_month' => $header,
+            'section_month' => $body
+        ]);
+
+    }
+
+    public function activeYear(Request $request)
+    {
+        $user = Auth::user();
+        $moves = TsBudget::where('user_id', $user->id)->get();
+
+
+        $header = BudgetYearFilter::header($moves);
+        $body = BudgetYearFilter::body($moves);
+
+        return response()->json([
+            'section_header_year' => $header,
+            'section_year' => $body
+        ]);
+    }
+    /*
     public function getHeaderMonth($moves)
     {
         $entrances = $moves->where('type_move', 1)->sum('amount_real');
         $exists = $moves->where('type_move', 0)->sum('amount_real');
-        $total = 500;
+        $total = $entrances - $exists;
 
         $header_month = view(
             'partials.profiles.components.tools.components.budget.view-month.components._ajax_header_month',
@@ -58,4 +88,35 @@ class BudgetController extends Controller
 
         return $table_movements;
     }
+    */
+    /*
+    public function activeMonth(Request $request)
+    {
+        $user = Auth::user();
+        $moves = TsBudget::where('user_id', $user->id)->get();
+
+        $header_month = $this->getHeaderMonth($moves);
+
+        $table_movements = $this->getMoves($moves);
+
+        return response()->json([
+            'table_movements' => $table_movements,
+            'header_month' => $header_month
+        ]);
+    }
+
+    public function activeYear(Request $request)
+    {
+        $user = Auth::user();
+        $moves = TsBudget::where('user_id', $user->id)->get();
+
+        $header_month = $this->getHeaderMonth($moves);
+
+        $table_movements = $this->getMoves($moves);
+
+        return response()->json([
+            'table_movements' => $table_movements,
+            'header_month' => $header_month
+        ]);
+    }*/
 }

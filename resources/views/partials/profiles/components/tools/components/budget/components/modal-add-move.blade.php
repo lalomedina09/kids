@@ -1,11 +1,11 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddMove">
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddMove">
     Agregar movimiento
-</button>
+</button>-->
 <!--<img src="{{ asset('images/gif/loading/circle.gif') }}" alt="Loading 1" width="150">
-<img src="{{ asset('images/gif/loading/circle-blue.gif') }}" alt="Loading 2" width="150">-->
+<img src="{{ asset('images/gif/loading/circle-blue.gif') }}" alt="Loading 2" width="150">
 <img src="{{ asset('images/gif/loading/circle-gray.gif') }}" alt="Loading 3" width="100">
-<img src="{{ asset('images/gif/loading/circle-black.gif') }}" alt="Loading 4" width="50">
+<img src="{{ asset('images/gif/loading/circle-black.gif') }}" alt="Loading 4" width="50">-->
   <!-- Modal -->
   <div class="modal fade" id="modalAddMove" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">

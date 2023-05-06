@@ -1,8 +1,9 @@
 <!-- Button trigger modal -->
+<!--
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalZoom">
     crear zoom
 </button>
-
+-->
   <!-- Modal -->
   <div class="modal fade" id="modalZoom" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

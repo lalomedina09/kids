@@ -7,9 +7,17 @@
 
 Route::prefix('budget')
     ->group(function () {
-        Route::post('/active')
-            ->uses('BudgetController@active')
-            ->name('budget.active');
+        Route::post('/active/principal')
+            ->uses('BudgetController@activePrincipal')
+            ->name('budget.active.principal');
+
+        Route::post('/active/month')
+            ->uses('BudgetController@activeMonth')
+            ->name('budget.active.month');
+
+        Route::post('/active/year')
+        ->uses('BudgetController@activeYear')
+        ->name('budget.active.year');
 
         /*
         Route::post('/')
@@ -17,7 +25,7 @@ Route::prefix('budget')
             ->name('budget.active12')*/
     });
 
-    /*
+    /*/budget/active/month
 Route::prefix('registroresuelvetudeuda')
     ->group(function () {
         Route::get('/')

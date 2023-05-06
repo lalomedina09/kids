@@ -27,7 +27,7 @@ class Controller extends BaseController
         return $data;
     }
 
-    public function listMonths()
+    public static function listMonths()
     {
         return $months = array(
             1 => "Enero",
@@ -45,7 +45,7 @@ class Controller extends BaseController
         );
     }
 
-    public function listYears()
+    public static function listYears()
     {
         return $years = array(
             2022 => "2022",
@@ -53,7 +53,7 @@ class Controller extends BaseController
         );
     }
 
-    public function listDays()
+    public static function listDays()
     {
         return $years = array(
             1 => "Lunes",

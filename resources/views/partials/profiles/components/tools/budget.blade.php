@@ -1,4 +1,4 @@
-<div id="{{ str_slug(__('Section Entrances')) }}" class="tab-pane">
+<div id="{{ str_slug(__('Section View Month')) }}" class="tab-pane">
 
     @include('partials.profiles.components.tools.components.budget.components.header')
 
