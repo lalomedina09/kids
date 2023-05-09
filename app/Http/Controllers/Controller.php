@@ -55,7 +55,7 @@ class Controller extends BaseController
 
     public static function listDays()
     {
-        return $years = array(
+        return $days = array(
             1 => "Lunes",
             2 => "Martes",
             3 => "Miercoles",

@@ -9,3 +9,16 @@ function responseDataSectionMonth(data) {
     $("#budget-section-month").empty();
     $("#budget-section-month").html(data.section_month);
 }
+
+function responseDataSectionMonthBtns(data) {
+    console.log("Carga div con los Btns submenu");
+    $("#budget-section-month-btns").empty();
+    $("#budget-section-month-btns").html(data.section_month_btns);
+}
+
+function responseDataSectionMonthContent(data) {
+    console.log("Carga div con la seccion correspondiente elegida");
+    $("#budget-section-month-content").empty();
+    $("#budget-section-month-content").html(data.section_month_content);
+}
+

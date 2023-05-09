@@ -4,7 +4,7 @@
 
     <hr class="hr-gradient" style="margin-bottom: 0px;">
 
-    <div class="container" id="budget-section-month-header">
+    <div class="container" id="budget-section-year-header">
         @include('partials.profiles.components.tools.components.budget.view-year.pre-load._year_header')
     </div>
 
@@ -13,4 +13,3 @@
     </div>
 
 </div>
-

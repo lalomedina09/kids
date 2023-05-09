@@ -7,11 +7,15 @@
         <span class="text-bold"> | Presupuesto </span>
         <span class="text-right small"> Crea tu presupuesto basandote en el principio 50% / 30% / 20%</span>
     </div>
+    <!--
+        clase css para poner linea debajo del boton de visualizacion mensual o anual
+        simple-border-bottom
+    -->
     <div class="col-md-4">
         <a href="#{{ str_slug(__('Section View Month')) }}"
             data-toggle="tab"
             onclick="activeBudgetSectionMonth();"
-            class="simple-border-bottom btn-a-style-none">
+            class="btn-a-style-none">
             <img src="{{ asset('images/tools/budget/eye.png') }}" width="30" alt="Visualizacion Mensual">
             <span class="small text-bold">Visualización Mensual</span>
         </a>

@@ -13,6 +13,7 @@ use App\Models\TsBudget;
 
 use Mail;
 use Auth;
+use Carbon\Carbon;
 class BudgetController extends Controller
 {
 
@@ -21,6 +22,8 @@ class BudgetController extends Controller
 
     public function activePrincipal(Request $request)
     {
+        $month = Carbon::now();
+        $year = ;
         $user = Auth::user();
         $moves = TsBudget::where('user_id', $user->id)->get();
 
@@ -62,61 +65,21 @@ class BudgetController extends Controller
             'section_year' => $body
         ]);
     }
-    /*
-    public function getHeaderMonth($moves)
+
+    public function activeSection(Request $request)
     {
-        $entrances = $moves->where('type_move', 1)->sum('amount_real');
-        $exists = $moves->where('type_move', 0)->sum('amount_real');
-        $total = $entrances - $exists;
-
-        $header_month = view(
-            'partials.profiles.components.tools.components.budget.view-month.components._ajax_header_month',
-            compact('entrances', 'exists', 'total')
-        )
-        ->render();
-
-        return $header_month;
-    }
-
-    public function getMoves($moves)
-    {
-        $table_movements = view(
-            'partials.profiles.components.tools.components.budget.view-month.moves._ajax_table',
-            compact('moves')
-        )
-        ->render();
-
-        return $table_movements;
-    }
-    */
-    /*
-    public function activeMonth(Request $request)
-    {
+        $section = $request->section;
         $user = Auth::user();
         $moves = TsBudget::where('user_id', $user->id)->get();
 
-        $header_month = $this->getHeaderMonth($moves);
+        $btns = BudgetMonthFilter::btns($section);
+        $content = BudgetMonthFilter::content($moves, $section);
 
-        $table_movements = $this->getMoves($moves);
 
         return response()->json([
-            'table_movements' => $table_movements,
-            'header_month' => $header_month
+            'section_month_btns' => $btns,
+            'section_month_content' => $content
         ]);
     }
 
-    public function activeYear(Request $request)
-    {
-        $user = Auth::user();
-        $moves = TsBudget::where('user_id', $user->id)->get();
-
-        $header_month = $this->getHeaderMonth($moves);
-
-        $table_movements = $this->getMoves($moves);
-
-        return response()->json([
-            'table_movements' => $table_movements,
-            'header_month' => $header_month
-        ]);
-    }*/
 }

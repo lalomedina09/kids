@@ -6,11 +6,9 @@
         <div class="space-left-in mt-2">
             <span style="font-size: .8rem">Lo que entra</span>
             <br>
-            <img src="{{ asset('images/gif/loading/circle-black.gif') }}"
-                alt="Loading 3"
-                width="20"
-                style="display: block; margin-left: 35%;
-            ">
+            <p style="font-size: 0.9rem; font-weight: bold;">${{ number_format($entrances, 2) }}
+                <span style="font-size: .8rem">MXN</span>
+            </p>
         </div>
     </div>
 </div>
@@ -19,11 +17,9 @@
         <div class="space-left-in mt-2">
             <span style="font-size: .8rem">Lo que sale</span>
             <br>
-            <img src="{{ asset('images/gif/loading/circle-black.gif') }}"
-                alt="Loading 3"
-                width="20"
-                style="display: block; margin-left: 35%;
-            ">
+            <p style="font-size: 0.9rem; font-weight: bold;">${{ number_format($exists, 2) }}
+                <span style="font-size: .8rem">MXN</span>
+            </p>
         </div>
     </div>
 </div>
@@ -31,11 +27,11 @@
     <div class="custom-bg-white">
         <div class="space-left-in mt-2">
             <span style="font-size: .8rem">Total</span>
-            <img src="{{ asset('images/gif/loading/circle-black.gif') }}"
-                alt="Loading 3"
-                width="20"
-                style="display: block; margin-left: 35%;
-            ">
+            <br>
+            <p style="font-size: 0.9rem; font-weight: bold;">${{ number_format($total, 2) }}
+                <span style="font-size: .8rem">MXN</span>
+            </p>
         </div>
     </div>
 </div>
+

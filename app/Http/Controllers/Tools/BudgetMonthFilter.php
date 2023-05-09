@@ -19,10 +19,10 @@ class BudgetMonthFilter extends Controller
         $total = $entrances - $exists;
         $listMonths = Controller::listMonths();
         $listYears = Controller::listYears();
-
+        $section = null;
         $header_month = view(
-            'partials.profiles.components.tools.components.budget.view-month.categories.ajax._header_month',
-            compact('entrances', 'exists', 'total','listMonths', 'listYears')
+            'partials.profiles.components.tools.components.budget.view-month.ajax._header_month',
+            compact('entrances', 'exists', 'total','listMonths', 'listYears', 'section')
         )
         ->render();
 
@@ -35,13 +35,66 @@ class BudgetMonthFilter extends Controller
         $entrances = $moves->where('type_move', 1)->sum('amount_real');
         $exists = $moves->where('type_move', 0)->sum('amount_real');
         $total = $entrances - $exists;
-
+        $section = null;
         $body_month = view(
-            'partials.profiles.components.tools.components.budget.view-month.categories.ajax._entrances',
-            compact('entrances', 'exists', 'total')
+            'partials.profiles.components.tools.components.budget.view-month.ajax._content',
+            compact('entrances', 'exists', 'total', 'section')
         )
-            ->render();
+        ->render();
 
         return $body_month;
     }
+
+    public static function btns($section)
+    {
+        $btns = BudgetMonthFilter::monthlistBtns();
+
+        $view = view(
+            'partials.profiles.components.tools.components.budget.view-month.ajax._btns',
+            compact('btns', 'section')
+        )
+        ->render();
+
+        return $view;
+    }
+
+    public static function content($moves, $section)
+    {
+        $btns = BudgetMonthFilter::monthlistBtns();
+
+        $view = view(
+            'partials.profiles.components.tools.components.budget.view-month.ajax._content',
+            compact('moves', 'section')
+        )
+        ->render();
+
+        return $view;
+    }
+
+    public static function monthlistBtns()
+    {
+        $listBtns = array(
+            "entrances" => array(
+                "section" => "entrances",
+                "title" => "Lo que entra",
+                "img_white" => "images/tools/budget/enter-white.png",
+                "img_black" => "images/tools/budget/enter-black.png",
+            ),
+            "exits" => array(
+                "section" => "exits",
+                "title" => "Lo que sale",
+                "img_white" => "images/tools/budget/out-white.png",
+                "img_black" => "images/tools/budget/out-black.png",
+            ),
+            "movements" => array(
+                "section" => "movements",
+                "title" => "Movimientos",
+                "img_white" => "images/tools/budget/moves-white.png",
+                "img_black" => "images/tools/budget/moves-dark.png",
+            )
+        );
+
+        return $listBtns;
+    }
 }
+

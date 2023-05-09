@@ -19,6 +19,12 @@ function customCompleteLoading()
     $('#contentLoading').addClass('loading-hidden');
 }
 /*
+function customBeforeLoading()
+{
+    $('#imgIreland').css("display", "block");
+}
+*/
+/*
 function responseDataHeaderMonth(data)
 {
     console.log("Update Div header de etiquetas mensuales");

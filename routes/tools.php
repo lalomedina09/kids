@@ -11,29 +11,31 @@ Route::prefix('budget')
             ->uses('BudgetController@activePrincipal')
             ->name('budget.active.principal');
 
-        Route::post('/active/month')
-            ->uses('BudgetController@activeMonth')
-            ->name('budget.active.month');
+        //Routes for month
+        Route::prefix('active/month')
+        ->group(function () {
+            Route::post('/')
+                ->uses('BudgetController@activeMonth')
+                ->name('budget.active.month');
 
-        Route::post('/active/year')
-        ->uses('BudgetController@activeYear')
-        ->name('budget.active.year');
+            Route::post('/section')
+                ->uses('BudgetController@activeSection')
+                ->name('budget.active.section');
+        });
 
-        /*
-        Route::post('/')
-            ->uses('BudgetController@store');
-            ->name('budget.active12')*/
+        //Routes for month
+        Route::prefix('active/year')
+        ->group(function () {
+            Route::post('/')
+            ->uses('BudgetController@activeYear')
+            ->name('budget.active.year');
+
+            Route::post('/calendar')
+            ->uses('BudgetController@activeCalendar')
+            ->name('budget.active.calendar');
+        });
+
+
     });
 
-    /*/budget/active/month
-Route::prefix('registroresuelvetudeuda')
-    ->group(function () {
-        Route::get('/')
-            ->uses('ResuelveTuDeudaController@show')
-            ->name('budget.active.wqew');
 
-        Route::post('/')
-            ->uses('ResuelveTuDeudaController@store')
-            ->name('budget.active.weq1');
-    });
-*/
