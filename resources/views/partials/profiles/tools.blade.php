@@ -1,11 +1,4 @@
 <div id="{{ str_slug(__('Tools')) }}" class="tab-pane">
-    {{--
-    aqui van las herrtamienasidasub
-    <!-- Archivo para  botones dentro de la seccion-->
-    @include('partials.profiles.components.btn-company')
-    <hr>
-    @include('partials.profiles.components.companies.form')
-    --}}
     <div class="row">
         <div class="col-md-6" class="text-bold">
            <!--<img src="{{ asset('images/tools/return.png') }}" alt="Return" width="20">-->
@@ -20,11 +13,10 @@
     </div>
     <hr class="hr-gradient">
 
-
     <div class="row">
         <div class="col-md-4">
             <div class="tool-container">
-                <a href="#{{ str_slug(__('Section Entrances')) }}" data-toggle="tab">
+                <a href="#{{ str_slug(__('Section View Month')) }}" data-toggle="tab">
                     <img src="{{ asset('images/tools/presupuesto.png') }}" width="80%" alt="Tools Budget">
                 </a>
             </div>
@@ -77,6 +69,9 @@
 
 </div>
 
+@include('partials.profiles.components.tools.components.budget.view-month')
+@include('partials.profiles.components.tools.components.budget.view-year')
+{{--
 @include('partials.profiles.components.tools.components.budget.entrances')
 
 @include('partials.profiles.components.tools.components.budget.exits')
@@ -86,5 +81,6 @@
 @include('partials.profiles.components.tools.components.budget.view-year.calendar')
 
 @include('partials.profiles.components.tools.components.budget.view-year.report')
+--}}
 
 

@@ -1,19 +1,16 @@
-<div id="{{ str_slug(__('Section Movements')) }}" class="tab-pane">
+@switch($section)
+    @case('entrances')
+        @include('partials.profiles.components.tools.components.budget.view-month.categories.steady-income')
+        @include('partials.profiles.components.tools.components.budget.view-month.categories.variable-income')
+        @break
+    @case('exits')
+        @include('partials.profiles.components.tools.components.budget.view-month.categories.fijos')
 
-    @include('partials.profiles.components.tools.components.budget.components.header')
+        @include('partials.profiles.components.tools.components.budget.view-month.categories.gustos')
 
-    <hr class="hr-gradient" style="margin-bottom: 0px;">
-
-    <div class="container">
-        <div class="row">
-           @include('partials.profiles.components.tools.components.budget.view-month.header')
-        </div>
-
-        @include('partials.profiles.components.tools.components.budget.view-month.sub-header-btns')
-
-    </div>
-
-    <div class="" style="background-color: #eee;">
+        @include('partials.profiles.components.tools.components.budget.view-month.categories.ahorros')
+        @break
+    @case('movements')
         <div class="row mt-1">
             <div class="col-md-12 mt-4">
                 <div style="background-color: #eeeeee">
@@ -27,7 +24,8 @@
                     <div id="table-movements">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                @include('partials.components.loading-bg-gray')
+                                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components._movements_table')
+                                {{--@include('partials.components.loading-bg-gray')--}}
                             </div>
                         </div>
                         {{-- Comente este include porque se alimentara desde el ajax --}}
@@ -38,6 +36,6 @@
                 </div>
             </div>
         </div>
-    </div>
+        @break
+@endswitch
 
-</div>

@@ -1,65 +1,41 @@
+$(document).ready(function(){
 
-  $(document).ready(function(){
-        let consulta = "Hola Lalo";
-        let param = 1;
-        console.log(consulta + ' Inicia a trabajar backend para devolver informacion de Herramienta Presupuesto')
-        //Paso 1 funcion para ir al backend y buscar movimientos
-        //Llamamos a la funcion que comienza a sincronizar los movimientos y calculos
-        activeBudgetOption(param);
+    let param = 1;
+        console.log('Se inicio la busqueda de movimientos')
 
-
+        activeBudgetSectionMonth();
+        activeBudgetSectionYear();
 });
 
-function activeBudgetOption(param) {
+function customBeforeLoading()
+{
+    $('#contentLoading').addClass('loading-show');
+    $('#contentLoading').removeClass('loading-hidden');
+}
 
-    let token = $('#token').val();
-
-    //console.log('entro a la funcion de presupuesto activado opcion');
-    //$('#contentLoading').show();
-    $.ajax({
-        url:"/budget/active",
-        beforeSend: function() {
-            $('#contentLoading').addClass('loading-show');
-            $('#contentLoading').removeClass('loading-hidden');
-        },
-        complete: function() {
-            $('#contentLoading').removeClass('loading-show');
-            $('#contentLoading').addClass('loading-hidden');
-        },
-        data: {_token:token, param:param},
-        type: "POST",
-        headers: {
-            'X-CSRF-Token': '{{ csrf_token() }}',
-        },
-        success: function(data){
-            $("#table-movements").empty();
-            $("#table-movements").html(data.table_movements);
-            //$('#contentLoading').hide();
-            console.log("okay vamos bien");
-
-        },
-        error: function(){
-              console.log("No se pudo retornar el valor")
-         }
-    });
-
-};
+function customCompleteLoading()
+{
+    $('#contentLoading').removeClass('loading-show');
+    $('#contentLoading').addClass('loading-hidden');
+}
 /*
-function activeBudget(param) {
-    console.log('entro a la funcion');
-    let url = "{{ route('budget.active')}}";
+function customBeforeLoading()
+{
+    $('#imgIreland').css("display", "block");
+}
+*/
+/*
+function responseDataHeaderMonth(data)
+{
+    console.log("Update Div header de etiquetas mensuales");
+    $("#header-level-month").empty();
+    $("#header-level-month").html(data.header_month);
+}
 
-    let token = $('#token').val();
-
-        $('#contentLoading').html('<div class="loading"><img src ="/images/gif/loading/circle-gray.gif" width="100px" alt="loading" /><br/><p>Cargando....</p></div>');
-        $.post(url, {
-            _token: token,
-        },
-        function(data){
-            console.log(data);
-            $("#table-movements").empty();
-            $("#table-movements").html(data.table_movements);
-            console.log('regreso del controlador');
-        });
+function responseDataMoves(data)
+{
+    console.log("Update Div de movimientos");
+    $("#table-movements").empty();
+    $("#table-movements").html(data.table_movements);
 }
 */

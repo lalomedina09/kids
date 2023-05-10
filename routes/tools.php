@@ -7,25 +7,35 @@
 
 Route::prefix('budget')
     ->group(function () {
-        Route::post('/active')
-            ->uses('BudgetController@active')
-            ->name('budget.active');
+        Route::post('/active/principal')
+            ->uses('BudgetController@activePrincipal')
+            ->name('budget.active.principal');
 
-        /*
-        Route::post('/')
-            ->uses('BudgetController@store');
-            ->name('budget.active12')*/
+        //Routes for month
+        Route::prefix('active/month')
+        ->group(function () {
+            Route::post('/')
+                ->uses('BudgetController@activeMonth')
+                ->name('budget.active.month');
+
+            Route::post('/section')
+                ->uses('BudgetController@activeSection')
+                ->name('budget.active.section');
+        });
+
+        //Routes for month
+        Route::prefix('active/year')
+        ->group(function () {
+            Route::post('/')
+            ->uses('BudgetController@activeYear')
+            ->name('budget.active.year');
+
+            Route::post('/calendar')
+            ->uses('BudgetController@activeCalendar')
+            ->name('budget.active.calendar');
+        });
+
+
     });
 
-    /*
-Route::prefix('registroresuelvetudeuda')
-    ->group(function () {
-        Route::get('/')
-            ->uses('ResuelveTuDeudaController@show')
-            ->name('budget.active.wqew');
 
-        Route::post('/')
-            ->uses('ResuelveTuDeudaController@store')
-            ->name('budget.active.weq1');
-    });
-*/

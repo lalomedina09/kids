@@ -29,7 +29,7 @@
             <div class="custom-bg-white">
                 <div class="space-left-in mt-2">
                     <span style="font-size: .8rem">Lo que entra</span>
-                    <p style="font-size: 1rem; font-weight: bold;">${{ number_format($entrances, 2) }}
+                    <p style="font-size: 0.9rem; font-weight: bold;">${{ number_format($entrances, 2) }}
                         <span style="font-size: .8rem">MXN</span>
                     </p>
                 </div>
@@ -39,7 +39,7 @@
             <div class="custom-bg-white">
                 <div class="space-left-in mt-2">
                     <span style="font-size: .8rem">Lo que sale</span>
-                    <p style="font-size: 1rem; font-weight: bold;">${{ number_format($exists, 2) }}
+                    <p style="font-size: 0.9rem; font-weight: bold;">${{ number_format($exists, 2) }}
                         <span style="font-size: .8rem">MXN</span>
                     </p>
                 </div>
@@ -49,7 +49,7 @@
             <div class="custom-bg-white">
                 <div class="space-left-in mt-2">
                     <span style="font-size: .8rem">Total</span>
-                    <p style="font-size: 1rem; font-weight: bold;">${{ number_format($total, 2) }}
+                    <p style="font-size: 0.9rem; font-weight: bold;">${{ number_format($total, 2) }}
                         <span style="font-size: .8rem">MXN</span>
                     </p>
                 </div>

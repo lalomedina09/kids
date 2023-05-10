@@ -322,3 +322,25 @@ function getOptionsDontCorrect($quiz, $user)
 
     return $data;
 }
+
+//Obtener fecha personalizada
+function customDateSpanish($date)
+{
+    $now = Carbon::parse($date)->format('Y-m-d');
+    $div = explode("-", $now);
+
+    $year = $div[0];
+    $month = $div[1];
+    $day = $div[2];
+    $month_spanish = getMonthSpanish($month);
+
+    return $day . " de " . $month_spanish . " de " . $year;
+}
+
+
+function getMonthSpanish($month)
+{
+    $months = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+    return $months[date('n') - 1];
+}
