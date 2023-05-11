@@ -21,7 +21,7 @@
             <img src="{{ asset('images/tools/budget/out-white.png') }}" width="30" alt="Lo que sale">
         </a>
     </div>
-    <div class="col-md-4 text-left">
+    <div class="col-md-3 text-left">
         <a class="btn-white-tool-budget btn-radius-tool-budget"
             href="#"
             onclick="activeBudgetSectionMonthMenu('movements');">
@@ -29,9 +29,10 @@
             <img src="{{ asset('images/tools/budget/moves-dark.png') }}" width="30" alt="Movimientos">
         </a>
     </div>
-    <div class="col-md-4 text-left">
+    <div class="col-md-3 text-left">
         <div id="budgetSectionMonthBtnsLoading" style="display:none">
-            <img src="{{ asset('images/gif/loading/circle-black.gif') }}" alt="Loading 4" width="50">
+            <img src="{{ asset('images/gif/loading/circle-black.gif') }}" alt="Loading 4" width="30">
+            <span>...</span>
         </div>
     </div>
 </div>

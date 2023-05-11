@@ -25,7 +25,6 @@ class BudgetYearFilter extends Controller
             compact('entrances', 'exists', 'total', 'listMonths', 'listYears')
         )
             ->render();
-
         return $header_month;
     }
 
@@ -41,7 +40,6 @@ class BudgetYearFilter extends Controller
             compact('entrances', 'exists', 'total')
         )
             ->render();
-
         return $body_month;
     }
 }

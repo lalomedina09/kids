@@ -1,5 +1,6 @@
-@if(count($moves)>0)
+@if(count($data['movements'])>0)
     <!---------  Mostrar esta tabla si se encuentran movimientos ------------->
+<div class="my-custom-scrollbar">
     <table class="table">
         <thead>
             <tr>
@@ -11,7 +12,7 @@
         </thead>
         <tbody>
             @php $counter = 1; @endphp
-            @foreach ($moves as $move)
+            @foreach ($data['movements'] as $move)
             <tr>
                 <td style="font-size: 0.9rem;" scope="row">
                     {{ $counter++ }}
@@ -34,12 +35,16 @@
             @endforeach
         </tbody>
     </table>
+</div>
 @else
-    <!------------  Div para mostrar mensaje donde no hay movimientos que se deben mostrar---------->
+    <!------------  Div para notificar que no existen movimientos mayores a zero---------->
     <div>
-        <p class="text-center mt-5 mb-5">
-            No tienes movimientos para mostrar,
-            comienza a registrar tus gastos e ingresos.
+        <p class="text-center mt-5 mb-5" style="font-size:1rem;">
+            Aun no tienes movimientos para mostrar, <br>
+            comienza a registrar tus
+            <a href="#" onclick="activeBudgetSectionMonthMenu('exits');">gastos </a>
+            e
+            <a href="#" onclick="activeBudgetSectionMonthMenu('entrances');">ingresos. </a>
         </p>
     </div>
 @endif

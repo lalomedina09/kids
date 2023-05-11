@@ -11,6 +11,10 @@ Route::prefix('budget')
             ->uses('BudgetController@activePrincipal')
             ->name('budget.active.principal');
 
+        Route::post('/active/categories')
+        ->uses('BudgetController@activeCategoriesCustom')
+        ->name('budget.active.principal');
+
         //Routes for month
         Route::prefix('active/month')
         ->group(function () {

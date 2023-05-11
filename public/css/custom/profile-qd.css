@@ -190,7 +190,7 @@
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 1.25rem;
-    color: #fff;
+    color: #373839;
 }
 
 /*Texto con color degradado*/
@@ -292,4 +292,16 @@
   }
   .loading-hidden{
     display: none;
+  }
+
+  /* estilos scroll en la tabla*/
+  .my-custom-scrollbar {
+      position: relative;
+      height: 300px;
+      overflow: auto;
+  }
+
+  .table-wrapper-scroll-y {
+
+     display: block;
   }

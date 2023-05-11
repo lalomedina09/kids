@@ -16,7 +16,11 @@
     <div class="row">
         <div class="col-md-4">
             <div class="tool-container">
-                <a href="#{{ str_slug(__('Section View Month')) }}" data-toggle="tab">
+                <a
+                    href="#{{ str_slug(__('Section View Month')) }}"
+                    data-toggle="tab"
+                    onclick="activeBudgetSectionMonth();;"
+                >
                     <img src="{{ asset('images/tools/presupuesto.png') }}" width="80%" alt="Tools Budget">
                 </a>
             </div>

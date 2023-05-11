@@ -2,7 +2,8 @@
 function activeBudgetSectionMonth() {
 
     let token = $('#token').val();
-    console.log('Inicia activacion de ajax Presupuesto activado'); +
+    let section = 'entrances';
+    console.log('Inicia activacion de ajax Presupuesto activado');
         $.ajax({
             url: "/budget/active/month",
             beforeSend: function () {
@@ -20,10 +21,12 @@ function activeBudgetSectionMonth() {
                 'X-CSRF-Token': '{{ csrf_token() }}',
             },
             success: function (data) {
-                console.log("Ajax regreso con exito del BackEnd");
+                console.log("Ajax Activo la Vista mensual");
 
                 responseDataHeaderMonth(data);
                 responseDataSectionMonth(data);
+                responseDataSectionMonthBtns(data);
+                //responseDataSectionMonthContent(data, section);
             },
             error: function () {
                 console.log("Ajax no tuvo exito en el BackEnd")
@@ -35,7 +38,7 @@ function activeBudgetSectionMonth() {
 function activeBudgetSectionMonthMenu(section) {
 
     let token = $('#token').val();
-    console.log('Activacion de ajax Mensual -> ' + section);
+    console.log('Ajax Activado Sección: -> ' + section);
         $.ajax({
             url: "/budget/active/month/section",
             beforeSend: function () {
@@ -55,13 +58,14 @@ function activeBudgetSectionMonthMenu(section) {
                 'X-CSRF-Token': '{{ csrf_token() }}',
             },
             success: function (data) {
-                console.log("Ajax regreso con exito del BackEnd para cargar seccion elegida");
+                console.log("Ajax Correcto!! Se cargo Sección: " + section);
 
+                //responseDataHeaderMonth(data);
                 responseDataSectionMonthBtns(data);
-                responseDataSectionMonthContent(data);
+                responseDataSectionMonthContent(data, section);
             },
             error: function () {
-                console.log("Ajax no tuvo exito en el BackEnd para llenar opcion elegida " + section)
+                console.log("Ajax Error!! Sección: " + section)
             }
         });
 

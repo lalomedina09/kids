@@ -24,14 +24,11 @@
                     <div id="table-movements">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components._movements_table')
-                                {{--@include('partials.components.loading-bg-gray')--}}
+                                {{--dd($data['movements'])--}}
+                                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.movements._table')
                             </div>
                         </div>
-                        {{-- Comente este include porque se alimentara desde el ajax --}}
-                        {{--@include('partials.profiles.components.tools.components.budget.view-month.moves.table')--}}
                     </div>
-                    <!------------  Div para mostrar mensaje donde no hay movimientos que se deben mostrar---------->
                     <br>
                 </div>
             </div>

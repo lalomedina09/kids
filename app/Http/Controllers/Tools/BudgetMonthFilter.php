@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Tools;
 use DB;
 use Auth;
 use App\Models\TsBudget;
+use App\Models\TsCategory;
+use App\Models\TsCategoryUser;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Http\Controllers\Tools\Traits\BudgetTrait;
+use App\Http\Controllers\Tools\Traits\CategoryUserTrait;
 class BudgetMonthFilter extends Controller
 {
 
@@ -25,7 +29,6 @@ class BudgetMonthFilter extends Controller
             compact('entrances', 'exists', 'total','listMonths', 'listYears', 'section')
         )
         ->render();
-
         return $header_month;
     }
 
@@ -35,13 +38,13 @@ class BudgetMonthFilter extends Controller
         $entrances = $moves->where('type_move', 1)->sum('amount_real');
         $exists = $moves->where('type_move', 0)->sum('amount_real');
         $total = $entrances - $exists;
-        $section = null;
+        $section = 'entrances';
+
         $body_month = view(
             'partials.profiles.components.tools.components.budget.view-month.ajax._content',
             compact('entrances', 'exists', 'total', 'section')
         )
         ->render();
-
         return $body_month;
     }
 
@@ -54,20 +57,19 @@ class BudgetMonthFilter extends Controller
             compact('btns', 'section')
         )
         ->render();
-
         return $view;
     }
 
-    public static function content($moves, $section)
+    public static function content($moves, $section, $request)
     {
         $btns = BudgetMonthFilter::monthlistBtns();
-
+        $data = BudgetMonthFilter::getListCategories($moves, $section, $request);
+        //dd($data);
         $view = view(
             'partials.profiles.components.tools.components.budget.view-month.ajax._content',
-            compact('moves', 'section')
+            compact('moves', 'section', 'data')
         )
         ->render();
-
         return $view;
     }
 
@@ -95,6 +97,47 @@ class BudgetMonthFilter extends Controller
         );
 
         return $listBtns;
+    }
+
+    public static function getListCategories($moves, $section, $request)
+    {
+        //dd($moves, $section, $request);
+        $date = array(
+            'start' => '2023-05-01 00:00:00',
+            'end' => '2023-05-31 23:59:59'
+        );
+
+        switch ($section) {
+            case 'entrances':
+                $constantes =  BudgetTrait::dataCategory($date, 4, 1);
+                $variables =  BudgetTrait::dataCategory($date, 5, 1);
+
+                return $categories = array(
+                    'constantes' => $constantes,
+                    'variables' => $variables
+                );
+                break;
+            case 'exits':
+                $fijos =  BudgetTrait::dataCategory($date, 1, 0);
+                $gustos =  BudgetTrait::dataCategory($date, 2, 0);
+                $ahorros =  BudgetTrait::dataCategory($date, 3, 0);
+
+                return $categories = array(
+                    'fijos' => $fijos,
+                    'gustos' => $gustos,
+                    'ahorros' => $ahorros
+                );
+                break;
+            case 'movements':
+                $data =  BudgetTrait::dataAllMoves($moves, $date);
+                return $moves = array(
+                    'movements' => $data
+                );
+                break;
+            default:
+                return null;
+            break;
+        }
     }
 }
 

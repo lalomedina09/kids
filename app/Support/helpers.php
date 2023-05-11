@@ -344,3 +344,11 @@ function getMonthSpanish($month)
 
     return $months[date('n') - 1];
 }
+
+function dateRemoveHours($date)
+{
+    $onlyDate= explode(" ", $date);
+
+    return $onlyDate[0];
+}
+

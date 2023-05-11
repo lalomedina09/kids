@@ -15,12 +15,8 @@ class CreateTsCategoriesTable extends Migration
     {
         Schema::create('ts_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('slug')->unique();
             $table->string('name')->string();
-            $table->string('code')->nullable()->unique()->index();
-            $table->string('lang')->nullable()->unique();
-            $table->nestedSet();
-
+            $table->integer('parent_id')->nullable()->unsigned()->index();
             $table->timestamps();
             $table->softDeletes();
         });
