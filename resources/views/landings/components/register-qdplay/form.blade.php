@@ -48,7 +48,7 @@
 
         <div class="col-12 text-center padding-custom-regis-qdp">
             <button type="submit" class="btn btn-pill btn-dark text-uppercase font-weight-bold p-3 p-lg-3 mb-2">
-                MAS INFORMACIÓN
+                MÁS INFORMACIÓN
             </button>
             <!--<input type="submit" value="Enviar" class="tag border-0 p-2 p-lg-3 bg-green-blue text-white text-uppercase">-->
         </div>
