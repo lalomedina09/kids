@@ -15,4 +15,18 @@
         @include('partials.profiles.components.tools.components.budget.view-month.pre-load._month_body')
     </div>
 
+    <!-- Modal Add Move -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content modal-add-move" style="border-radius: 20px;">
+                <div class="modal-body">
+                    <div id="contentModalAddMove">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------->
 </div>

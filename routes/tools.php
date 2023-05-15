@@ -51,6 +51,29 @@ Route::prefix('budget')
             ->name('budget.active.calendar');*/
         });
 
+        //Routes for add Move
+        Route::prefix('addmove/modal')
+        ->group(function () {
+            Route::post('/open')
+                ->uses('BudgetController@AddMoveModalOpen')
+                ->name('budget.add.move.modal.open');
+
+            Route::post('/save')
+                ->uses('BudgetController@AddMoveModalSave')
+                ->name('budget.add.move.modal.save');
+        });
+
+        //Routes for activate show modals
+        Route::prefix('modal/year')
+        ->group(function () {
+            Route::post('/movements')
+                ->uses('BudgetController@AddMoveModalOpen')
+                ->name('budget.add.move.modal.open');
+
+            Route::post('/zoom')
+                ->uses('BudgetController@AddMoveModalSave')
+                ->name('budget.add.move.modal.save');
+        });
     });
 
 

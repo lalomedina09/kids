@@ -147,5 +147,40 @@ class BudgetController extends Controller
         ]);
     }
 
+    public function AddMoveModalOpen(Request $request)
+    {
+        $user = Auth::user();
+        //dd($user->id);
+        $categoryId = $request->categoryId;
+
+        $categoriesUser = TsCategoryUser::where('user_id', $user->id)
+        ->where('ts_category_id', $categoryId)
+        ->get();
+
+        //join('ts_categories', 'ts_categories_users.ts_category_id', '=', 'ts_categories.id')
+        //->where('ts_categories_users.user_id', $user->id)
+        //->whereNotNull('ts_categories_users.ts_category_id')
+        //->where('ts_categories.parent_id', $categoryId)
+        //->select('ts_categories_users.*')
+        //->toSql();
+        //dd($categoriesUser);
+        //ts_categories_users
+        //ts_categories
+
+        $view = view(
+            'partials.profiles.components.tools.components.budget.components.modal-content._add_move',
+            compact('categoriesUser', 'categoryId')
+        )
+        ->render();
+
+        return response()->json([
+            'view' => $view
+        ]);
+    }
+
+    public function AddMoveModalSave(Request $request)
+    {
+
+    }
 
 }

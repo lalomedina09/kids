@@ -36,7 +36,7 @@ function activeBudgetSectionMonth() {
 }
 
 function activeBudgetSectionMonthMenu(section) {
-
+    //alert('linea 39 archivos de meses');
     let token = $('#token').val();
     console.log('Ajax Activado Sección: -> ' + section);
         $.ajax({
@@ -70,11 +70,3 @@ function activeBudgetSectionMonthMenu(section) {
         });
 
 }
-/*
-()
-
-activeExistsBudgetSectionMonth()
-
-activeMovementsBudgetSectionMonth()
-
-*/

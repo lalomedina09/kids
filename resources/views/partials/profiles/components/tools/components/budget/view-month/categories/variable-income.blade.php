@@ -53,7 +53,11 @@
             @endforeach
             <br>
             <!-- Particula: Boton que llamara al modal para agregar movimientos-->
-            @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_add_move')
+            @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_add_move',
+                array(
+                    'section' => 'entrances',
+                    'category_id' => 5
+            ))
         </div>
     </div>
 </div>

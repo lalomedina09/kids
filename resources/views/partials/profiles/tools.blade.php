@@ -19,7 +19,7 @@
                 <a
                     href="#{{ str_slug(__('Section View Month')) }}"
                     data-toggle="tab"
-                    onclick="activeBudgetSectionMonth();;"
+                    onclick="activeBudgetSectionMonth();"
                 >
                     <img src="{{ asset('images/tools/presupuesto.png') }}" width="80%" alt="Tools Budget">
                 </a>
@@ -66,15 +66,18 @@
         </div>
     </div>
 
+    {{--
     <!-- Botones dentro de tab de herramientas-->
-    @include('partials.profiles.components.tools.components.budget.components.modal-add-move')
-    @include('partials.profiles.components.tools.components.budget.components.modal-moves')
-    @include('partials.profiles.components.tools.components.budget.components.modal-zoom')
+    @include('partials.profiles.components.tools.components.budget.components.modal-style.modal-add-move')
+    @include('partials.profiles.components.tools.components.budget.components.modal-style.modal-moves')
+    @include('partials.profiles.components.tools.components.budget.components.modal-style.modal-zoom')
+    --}}
 
 </div>
 
 @include('partials.profiles.components.tools.components.budget.view-month')
 @include('partials.profiles.components.tools.components.budget.view-year')
+
 {{--
 @include('partials.profiles.components.tools.components.budget.entrances')
 

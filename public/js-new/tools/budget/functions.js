@@ -1,13 +1,15 @@
 $(document).ready(function(){
 
     let param = 1;
+    let section = 'entrances';
         console.log('Se inicio la busqueda de movimientos')
         activeBudgetSectionCreateCategories();
         //activeBudgetSectionMonth();
-        activeBudgetSectionMonthMenu('entrances');
         activeBudgetSectionYear();
+        activeBudgetSectionMonthMenu(section);
 });
-
+//activeBudgetSectionMonthMenu
+//activeBudgetSectionMonthMenu
 function customBeforeLoading()
 {
     $('#contentLoading').addClass('loading-show');
@@ -75,4 +77,81 @@ function budgetEditInput(section, nameInput, id_move) {
         }
     });
 
+}
+
+
+function openModalAddMove(section, categoryId) {
+
+    let url = '/budget/addmove/modal/open';
+    let token = $('#token').val();
+    console.log('Activando modal para agregar movimiento');
+    $.post(url, {
+        _token: token,
+        section: section,
+        categoryId: categoryId
+    },
+        function (data) {
+            //console.log(data);
+            console.log('Listo para agregar movimiento');
+            $("#contentModalAddMove").empty();
+            $("#contentModalAddMove").html(data.view);
+            $("#exampleModal").modal('show');
+
+        });
+}
+
+function openModalMoves(section) {
+
+    let url = '/budget/modal/year/movements';
+    let token = $('#token').val();
+    console.log('Activacion para abrir ventana modal ver movimientos');
+    $.post(url, {
+        _token: token,
+        section: section
+    },
+        function (data) {
+            //console.log(data);
+            console.log('Listo para ver movimientos');
+            $("#contentModalMoves").empty();
+            $("#contentModalMoves").html(data.view);
+            $("#modalMoves").modal('show');
+
+        });
+}
+
+function openModalBudgetZoom(section) {
+
+    let url = '/budget/modal/year/zoom';
+    let token = $('#token').val();
+    console.log('Activacion para ver div en Zoom');
+    $.post(url, {
+        _token: token,
+        section: section
+    },
+        function (data) {
+            //console.log(data);
+            console.log('Zoom activado para seccion del mes');
+            $("#contentModalZoom").empty();
+            $("#contentModalZoom").html(data.view);
+            $("#modalZoom").modal('show');
+
+        });
+}
+
+function saveMoveBudget(){
+    let url = '/budget/addmove/modal/save';
+    let token = $('#token').val();
+    console.log('Inicia proceso para envio de formulario registrar categoria');
+    $.post(url, {
+        _token: token,
+        section: section
+    },
+        function (data) {
+            //console.log(data);
+            console.log('Zoom activado para seccion del mes');
+            $("#contentModalZoom").empty();
+            $("#contentModalZoom").html(data.view);
+            $("#modalZoom").modal('show');
+
+        });
 }

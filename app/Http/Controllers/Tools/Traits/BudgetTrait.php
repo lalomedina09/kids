@@ -24,8 +24,7 @@ trait BudgetTrait
     public static function editItem($budget, $request)
     {
         $nowTime = Carbon::now()->format('H:i:s');
-        //$dateParse =
-        //dd($nowTime);
+
         switch ($request->nameInput) {
             case 'estimated':
                 $budget->amount_real = $request->value;
@@ -35,7 +34,7 @@ trait BudgetTrait
                 break;
             case 'created_at':
                 $date = $request->value . ' ' . $nowTime;
-                //dd($date, 'fechaa');
+
                 $budget->created_at = $date;
                 break;
             default:
@@ -54,7 +53,6 @@ trait BudgetTrait
 
     public static function dataCategory($date, $category, $typeMove)
     {
-        //dd($moves);
         $user = Auth::user();
         $moves = TsBudget::join('ts_categories_users', 'ts_budgets.ts_category_user_id', '=', 'ts_categories_users.id')
             ->where('ts_budgets.user_id', $user->id)

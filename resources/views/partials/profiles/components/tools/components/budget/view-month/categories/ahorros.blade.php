@@ -49,13 +49,11 @@
             array('rows' => $data['ahorros']))
             --}}
             <br>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <button class="btn btn-add-move col-12">
-                        <i class="lni lni-plus"></i>
-                    </button>
-                </div>
-            </div>
+            @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_add_move',
+                array(
+                    'section' => 'exits',
+                    'category_id' => 3
+            ))
         </div>
     </div>
 </div>

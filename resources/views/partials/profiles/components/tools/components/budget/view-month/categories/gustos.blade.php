@@ -49,13 +49,12 @@
             array('rows' => $data['gustos']))
             --}}
             <br>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <button class="btn btn-add-move col-12">
-                        <i class="lni lni-plus"></i>
-                    </button>
-                </div>
-            </div>
+            <!-- Particula: Boton que llamara al modal para agregar movimientos-->
+            @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_add_move',
+                array(
+                    'section' => 'exits',
+                    'category_id' => 2
+            ))
         </div>
     </div>
 </div>

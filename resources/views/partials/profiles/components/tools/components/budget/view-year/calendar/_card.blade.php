@@ -7,7 +7,9 @@
                         <span style="text-transform: uppercase;">Enero</span>
                     </div>
                     <div class="col-md-2 text-left">
-                        <img src="{{ asset('images/tools/budget/zoom-in.png') }}" width="30" alt="Zoom">
+                        <a href="#" onclick="openModalBudgetZoom('entrances');">
+                            <img src="{{ asset('images/tools/budget/zoom-in.png') }}" width="30" alt="Zoom">
+                        </a>
                     </div>
                 </div>
                 <br>
@@ -25,9 +27,12 @@
                 @include('partials.profiles.components.tools.components.budget.view-year.calendar._categories')
                 <br>
                 <div class="mb-3">
-                    <img src="{{ asset('images/tools/budget/moves-dark.png') }}" width="30" alt="Movimientos">
-                    <span style="font-weight:700; font-size: 1.3rem;">Movimientos</span>
-                    <img src="{{ asset('images/tools/budget/plus.png') }}" width="30" alt="Movimientos">
+                    <a href="#" onclick="openModalMoves('entrances');">
+                        <img src="{{ asset('images/tools/budget/moves-dark.png') }}" width="30" alt="Movimientos">
+                        <span style="font-weight:700; font-size: 1.3rem;">Movimientos</span>
+                        <img src="{{ asset('images/tools/budget/plus.png') }}" width="30" alt="Movimientos">
+
+                    </a>
                 </div>
             </div>
         </div>
