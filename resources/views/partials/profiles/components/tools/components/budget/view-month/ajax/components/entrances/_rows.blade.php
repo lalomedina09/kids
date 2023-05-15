@@ -4,21 +4,39 @@
     @php
         $date = dateRemoveHours($row->created_at);
         $counter++;
-        $classTransparent = (($counter % 2) == 0) ? "custom-input-transparent" : null ;
+        $class = (($counter % 2) == 0) ? null : "custom-input-transparent" ;
     @endphp
+
     <div class="row mb-2">
         <div class="col-md-4 text-center">
-            <input type="text" class="form-control custom-input-text {{ $classTransparent}}" value="{{ $row->customCategory->name}}">
+            <input type="text"
+            id="name_{{ $row->id}}"
+            class="form-control custom-input-text {{ $class}}"
+            onkeydown="budgetEditInput('entrances', 'name', {{ $row->id }});"
+            value="{{ $row->customCategory->name}}">
         </div>
         <div class="col-md-3 text-center">
-            <input type="text" class="form-control custom-input-text {{ $classTransparent}}" value="{{ $row->amount_estimated }}">
+            <input type="text"
+            id="estimated_{{ $row->id }}"
+            class="form-control custom-input-text {{ $class}}"
+            onkeydown="budgetEditInput('entrances', 'estimated', {{ $row->id }});"
+            value="{{ $row->amount_estimated }}">
         </div>
         <div class="col-md-3 text-center">
-            <input type="text" class="form-control custom-input-text {{ $classTransparent}}" value="{{ $row->amount_real }}">
+            <input type="text"
+            id="real_{{ $row->id }}"
+            class="form-control custom-input-text {{ $class}}"
+            onkeydown="budgetEditInput('entrances', 'real', {{ $row->id }});"
+            value="{{ $row->amount_real }}">
         </div>
         <div class="col-md-2 text-center">
-            <input type="date" class="form-control custom-input-text {{ $classTransparent}}" value="{{ $date }}">
+            <input type="date"
+            id="created_at_{{ $row->id }}"
+            class="form-control custom-input-text {{ $class}}"
+            onchange="budgetEditInput('entrances', 'created_at', {{ $row->id }});"
+            value="{{ $date }}">
         </div>
         <br>
     </div>
 @endforeach
+

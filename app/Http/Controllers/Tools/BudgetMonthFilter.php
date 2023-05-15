@@ -15,15 +15,16 @@ use App\Http\Controllers\Tools\Traits\CategoryUserTrait;
 class BudgetMonthFilter extends Controller
 {
 
-    public static function header($moves)
+    public static function header($moves, $request)
     {
         //$q = Order::query();
         $entrances = $moves->where('type_move', 1)->sum('amount_real');
         $exists = $moves->where('type_move', 0)->sum('amount_real');
-        $total = $entrances - $exists;
         $listMonths = Controller::listMonths();
         $listYears = Controller::listYears();
+        $total = $entrances - $exists;
         $section = null;
+
         $header_month = view(
             'partials.profiles.components.tools.components.budget.view-month.ajax._header_month',
             compact('entrances', 'exists', 'total','listMonths', 'listYears', 'section')

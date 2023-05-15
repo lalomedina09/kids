@@ -39,6 +39,17 @@ Route::prefix('budget')
             ->name('budget.active.calendar');
         });
 
+        //Routes for edit moves
+        Route::prefix('edit/{section}')
+        ->group(function () {
+            Route::post('/')
+                ->uses('BudgetController@editInput')
+                ->name('budget.edit.section');
+
+            /*Route::post('/calendar')
+            ->uses('BudgetController@activeCalendar')
+            ->name('budget.active.calendar');*/
+        });
 
     });
 

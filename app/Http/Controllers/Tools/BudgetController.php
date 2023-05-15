@@ -75,7 +75,7 @@ class BudgetController extends Controller
         $month = Carbon::now()->format('m');
         $year = Carbon::now()->format('Y');
 
-        $header = BudgetMonthFilter::header($moves);
+        $header = BudgetMonthFilter::header($moves, $request);
         //$body = BudgetMonthFilter::body($moves);
         $body = BudgetMonthFilter::content($moves, 'entrances', $request);
 
@@ -83,6 +83,35 @@ class BudgetController extends Controller
             'section_header_month' => $header,
             'section_month' => $body
         ]);
+    }
+
+    public function editInput(Request $request, $section)
+    {
+        $getBudget = TsBudget::findOrFail($request->id_move);
+        $customCategory = $getBudget->customCategory;
+
+        if ($request->nameInput == "name") {
+            $category = CategoryUserTrait::editItem($customCategory, $request);
+            //dd($category);
+        }else{
+            $budget = BudgetTrait::editItem($getBudget, $request);
+            //dd($budget, 'budget');
+        }
+
+        $user = Auth::user();
+        $moves = TsBudget::where('user_id', $user->id);
+        $month = $request->month;
+        $year = $request->year;
+
+        $header = BudgetMonthFilter::header($moves, $request);
+        //$body = BudgetMonthFilter::body($moves);
+        //$body = BudgetMonthFilter::content($moves, 'entrances', $request);
+
+        return response()->json([
+            'section_header_month' => $header,
+            //'section_month' => $body
+        ]);
+
     }
 
     public function activeYear(Request $request)

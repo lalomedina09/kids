@@ -19,6 +19,23 @@ trait CategoryUserTrait
         //Comment = ($category->parent_id) ? $category->parent_id : $category->id
     }
 
+    public static function editItem($category, $request)
+    {
+        switch ($request->nameInput) {
+            case 'name':
+                $category->name = $request->value;
+                break;
+            case 'percent':
+                $category->percent = $request->nameInput;
+                break;
+            default:
+            break;
+        }
+
+        $category->update();
+        return $category;
+    }
+
     public static function getPercentCategory($id)
     {
         switch ($id) {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Tools\Traits;
 
 use Auth;
+use Carbon\Carbon;
 use App\Models\TsBudget;
 
 trait BudgetTrait
@@ -17,6 +18,31 @@ trait BudgetTrait
         $budget->user_id = $user->id;
 
         $budget->save();
+        return $budget;
+    }
+
+    public static function editItem($budget, $request)
+    {
+        $nowTime = Carbon::now()->format('H:i:s');
+        //$dateParse =
+        //dd($nowTime);
+        switch ($request->nameInput) {
+            case 'estimated':
+                $budget->amount_real = $request->value;
+                break;
+            case 'real':
+                $budget->amount_estimated = $request->value;
+                break;
+            case 'created_at':
+                $date = $request->value . ' ' . $nowTime;
+                //dd($date, 'fechaa');
+                $budget->created_at = $date;
+                break;
+            default:
+
+            break;
+        }
+        $budget->update();
         return $budget;
     }
 

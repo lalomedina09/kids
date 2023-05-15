@@ -28,9 +28,26 @@
             @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.exits._header_columns')
 
             <!-- Particula: Renglones para mostrar las categorías -->
+            @php $counter = 1; @endphp
+            @foreach ($data['gustos'] as $row)
+                @php
+                    $date = dateRemoveHours($row->created_at);
+                    $counter++;
+                    $class = (($counter % 2) == 0) ? null : "custom-input-transparent" ;
+                @endphp
+                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._row',
+                array(
+                    'row' => $row,
+                    'section' => 'exits',
+                    'date' => $date,
+                    'counter' => $counter,
+                    'class' => $class
+                ))
+            @endforeach
+            {{--
             @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.exits._rows',
             array('rows' => $data['gustos']))
-
+            --}}
             <br>
             <div class="row">
                 <div class="col-md-12 text-center">

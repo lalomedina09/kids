@@ -36,8 +36,22 @@
             @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.entrances._header_columns')
 
             <!-- Particula: Renglones para mostrar las categorías -->
-            @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.entrances._rows',
-            array('rows' => $data['constantes']))
+            @php $counter = 1; @endphp
+            @foreach ($data['constantes'] as $row)
+                @php
+                    $date = dateRemoveHours($row->created_at);
+                    $counter++;
+                    $class = (($counter % 2) == 0) ? null : "custom-input-transparent" ;
+                @endphp
+                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._row',
+                array(
+                    'row' => $row,
+                    'section' => 'entrances',
+                    'date' => $date,
+                    'counter' => $counter,
+                    'class' => $class
+                ))
+            @endforeach
 
             <br>
             <!-- Particula: Boton que llamara al modal para agregar movimientos-->
