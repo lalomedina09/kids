@@ -1,3 +1,4 @@
+@php $urlQdplayCompany = Route::currentRouteName();@endphp
 @if (app()->environment() === 'production')
     @if ($urlQdplayCompany != "register.qdplay.show")
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('services.google.analyticsKey') ?: 'UA-XXXXX-Y' }}"></script>
