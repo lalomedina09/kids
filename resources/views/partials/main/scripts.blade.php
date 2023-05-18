@@ -13,6 +13,7 @@
         </script>
     {{--@endif--}}
     <!-- Google tag (gtag.js) -->
+{{--
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZQGNNHEF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,11 +22,13 @@
 
   gtag('config', 'G-S7ZQGNNHEF');
 </script>
+--}}
 @if(false)<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4887802.js"></script>@endif
 
     @include('partials.main.scripts.facebook')
 
 @else
+    {{--
     <script type="text/javascript">
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -36,7 +39,7 @@
         ga('create', 'UA-XXXXX-Y', 'auto');
         ga('set', 'sendHitTask', null);
         ga('send', 'pageview');
-    </script>
+    </script>--}}
 @endif
 
 @include('partials.main.scripts.google')
