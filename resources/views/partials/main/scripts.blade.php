@@ -1,15 +1,16 @@
 @if (app()->environment() === 'production')
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('services.google.analyticsKey') ?: 'UA-XXXXX-Y' }}"></script>
-    <script type="text/javascript">
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', "{{ config('services.google.analyticsKey') ?: 'UA-XXXXX-Y' }}");
-        gtag('config', "{{ config('services.google.adsKey') ?: 'AW-NNNNNNNNN' }}");
-    </script>
-
+    @if ($urlQdplayCompany != "register.qdplay.show")
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('services.google.analyticsKey') ?: 'UA-XXXXX-Y' }}"></script>
+        <script type="text/javascript">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', "{{ config('services.google.analyticsKey') ?: 'UA-XXXXX-Y' }}");
+            gtag('config', "{{ config('services.google.adsKey') ?: 'AW-NNNNNNNNN' }}");
+        </script>
+    @endif
     @if(false)<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4887802.js"></script>@endif
 
     <script>
