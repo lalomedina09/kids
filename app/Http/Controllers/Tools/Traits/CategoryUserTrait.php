@@ -11,7 +11,7 @@ trait CategoryUserTrait
         $categoryUser = new TsCategoryUser;
         $categoryUser->name = $request->name;
         $categoryUser->percent = $request->percent;
-        $categoryUser->ts_category_id = $category->parent_id;
+        $categoryUser->ts_category_id = ($category->parent_id) ? $category->parent_id : $category->id;
         $categoryUser->user_id = $user->id;
 
         $categoryUser->save();

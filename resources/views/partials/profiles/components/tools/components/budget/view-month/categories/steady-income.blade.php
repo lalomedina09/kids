@@ -12,7 +12,20 @@
                     </span>
                 </div>
 
-                @include('partials.profiles.components.tools.components.budget.view-month.categories.components.entrances.header-amount-category')
+                 @php
+                    $counter = 1;
+                    $section = "entrances";
+                    $categoryRows = $data['constantes']->get();
+                    $idArrowsName = "arrowsCategorySteady";
+                    $idCategoryAmountReal = "arrowsCategorySteadyAmountReal";
+                    $idCategoryAmountEstimate = "arrowsCategorySteadyAmountEstimate";
+                @endphp
+                @include('partials.profiles.components.tools.components.budget.view-month.categories.components.entrances.header-amount-category',
+                array(
+                    'amount_estimate' => $data['constantes']->sum('amount_estimated'),
+                    'amount_real' => $data['constantes']->sum('amount_real')
+                    )
+                )
 
                 <div class="col-md-12">
                     <div class="bordertest">
@@ -36,29 +49,19 @@
             @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.entrances._header_columns')
 
             <!-- Particula: Renglones para mostrar las categorías -->
-            @php $counter = 1; @endphp
-            @foreach ($data['constantes'] as $row)
-                @php
-                    $date = dateRemoveHours($row->created_at);
-                    $counter++;
-                    $class = (($counter % 2) == 0) ? null : "custom-input-transparent" ;
-                @endphp
-                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._row',
-                array(
-                    'row' => $row,
-                    'section' => 'entrances',
-                    'date' => $date,
-                    'counter' => $counter,
-                    'class' => $class
-                ))
-            @endforeach
+            <div id="{{ $idArrowsName }}">
+                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows')
+            </div>
 
             <br>
             <!-- Particula: Boton que llamara al modal para agregar movimientos-->
             @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_add_move',
                 array(
                     'section' => 'entrances',
-                    'category_id' => 4
+                    'category_id' => 4,
+                    'idArrowsName' => $idArrowsName,
+                    'idCategoryAmountReal' => $idCategoryAmountReal,
+                    'idCategoryAmountEstimate' => $idCategoryAmountEstimate
             ))
 
         </div>

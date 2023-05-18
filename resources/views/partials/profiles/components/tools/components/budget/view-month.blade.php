@@ -6,6 +6,10 @@
 
     <div class="container" id="budget-section-month-header">
         <!-- Aqui van archivos de pre load header month---->
+        @php
+            $year = \Carbon\Carbon::now()->format('Y');
+            $month = \Carbon\Carbon::now()->format('m');
+        @endphp
         @include('partials.profiles.components.tools.components.budget.view-month.pre-load._month_header')
 
     </div>
@@ -16,7 +20,7 @@
     </div>
 
     <!-- Modal Add Move -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalAddMoveBudget" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content modal-add-move" style="border-radius: 20px;">
                 <div class="modal-body">

@@ -75,7 +75,7 @@ class BudgetController extends Controller
         $month = Carbon::now()->format('m');
         $year = Carbon::now()->format('Y');
 
-        $header = BudgetMonthFilter::header($moves, $request);
+        $header = BudgetMonthFilter::header($request);
         //$body = BudgetMonthFilter::body($moves);
         $body = BudgetMonthFilter::content($moves, 'entrances', $request);
 
@@ -92,10 +92,8 @@ class BudgetController extends Controller
 
         if ($request->nameInput == "name") {
             $category = CategoryUserTrait::editItem($customCategory, $request);
-            //dd($category);
         }else{
             $budget = BudgetTrait::editItem($getBudget, $request);
-            //dd($budget, 'budget');
         }
 
         $user = Auth::user();
@@ -103,12 +101,14 @@ class BudgetController extends Controller
         $month = $request->month;
         $year = $request->year;
 
-        $header = BudgetMonthFilter::header($moves, $request);
+        $header = BudgetMonthFilter::header($request);
+        $resumenMonth = BudgetMonthFilter::resumenMonth($request);
         //$body = BudgetMonthFilter::body($moves);
         //$body = BudgetMonthFilter::content($moves, 'entrances', $request);
 
         return response()->json([
             'section_header_month' => $header,
+            'resumenMonth' => $resumenMonth,
             //'section_month' => $body
         ]);
 
@@ -121,8 +121,8 @@ class BudgetController extends Controller
         $month = Carbon::now()->format('m');
         $year = Carbon::now()->format('Y');
 
-        $header = BudgetYearFilter::header($moves);
-        $body = BudgetYearFilter::body($moves);
+        $header = BudgetYearFilter::header($moves, $request);
+        $body = BudgetYearFilter::body($moves, $request);
 
         return response()->json([
             'section_header_year' => $header,
@@ -150,26 +150,20 @@ class BudgetController extends Controller
     public function AddMoveModalOpen(Request $request)
     {
         $user = Auth::user();
-        //dd($user->id);
         $categoryId = $request->categoryId;
+        $section = $request->section;
+        $divCategory = $request->divArrowsCategory;
+        $divAmountEstimate = $request->divAmountEstimate;
+        $divAmountReal = $request->divAmountReal;
 
+        $category = TsCategory::where('id', $categoryId)->first();
         $categoriesUser = TsCategoryUser::where('user_id', $user->id)
         ->where('ts_category_id', $categoryId)
         ->get();
 
-        //join('ts_categories', 'ts_categories_users.ts_category_id', '=', 'ts_categories.id')
-        //->where('ts_categories_users.user_id', $user->id)
-        //->whereNotNull('ts_categories_users.ts_category_id')
-        //->where('ts_categories.parent_id', $categoryId)
-        //->select('ts_categories_users.*')
-        //->toSql();
-        //dd($categoriesUser);
-        //ts_categories_users
-        //ts_categories
-
         $view = view(
             'partials.profiles.components.tools.components.budget.components.modal-content._add_move',
-            compact('categoriesUser', 'categoryId')
+            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal')
         )
         ->render();
 
@@ -180,7 +174,21 @@ class BudgetController extends Controller
 
     public function AddMoveModalSave(Request $request)
     {
+        $user = Auth::user();
+        $category = TsCategory::where('id', $request->category_id)->first();
 
+        $categoryUser = CategoryUserTrait::create($category, $user, $request);
+        $budget = BudgetTrait::create($categoryUser, $user, $request);
+
+        $resumenMonth = BudgetMonthFilter::resumenMonth($request);
+        $divArrowsCategory = BudgetMonthFilter::divArrowsCategory($request, $budget);
+
+        return response()->json([
+            'resumenMonth' => $resumenMonth,
+            'divArrowsCategory' => $divArrowsCategory['viewArrows'],
+            'viewAmountEstimate' => $divArrowsCategory['viewHeaderCategoryAmountEstimate'],
+            'viewAmountReal' => $divArrowsCategory['viewHeaderCategoryAmountReal']
+        ]);
     }
 
 }

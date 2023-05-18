@@ -27,10 +27,10 @@ trait BudgetTrait
 
         switch ($request->nameInput) {
             case 'estimated':
-                $budget->amount_real = $request->value;
+                $budget->amount_estimated = $request->value;
                 break;
             case 'real':
-                $budget->amount_estimated = $request->value;
+                $budget->amount_real = $request->value;
                 break;
             case 'created_at':
                 $date = $request->value . ' ' . $nowTime;
@@ -60,8 +60,8 @@ trait BudgetTrait
             ->where('ts_budgets.type_move', $typeMove)
             ->where('ts_budgets.created_at', '>=', $date['start'])
             ->where('ts_budgets.created_at', '<=', $date['end'])
-            ->select('ts_budgets.*')
-            ->get();
+            ->select('ts_budgets.*');
+            //->get();
 
         return $moves;
     }

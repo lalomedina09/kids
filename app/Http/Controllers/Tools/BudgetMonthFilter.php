@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Tools;
 
 use DB;
 use Auth;
+use Carbon\Carbon;
+
 use App\Models\TsBudget;
 use App\Models\TsCategory;
 use App\Models\TsCategoryUser;
@@ -15,19 +17,25 @@ use App\Http\Controllers\Tools\Traits\CategoryUserTrait;
 class BudgetMonthFilter extends Controller
 {
 
-    public static function header($moves, $request)
+    public static function header($request)
     {
         //$q = Order::query();
-        $entrances = $moves->where('type_move', 1)->sum('amount_real');
-        $exists = $moves->where('type_move', 0)->sum('amount_real');
+        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
+        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+
+        $user = Auth::user();
+        $entrances = TsBudget::where('user_id', $user->id)->where('type_move', 1)->sum('amount_real');
+        $exists = TsBudget::where('user_id', $user->id)->where('type_move', 0)->sum('amount_real');
+
         $listMonths = Controller::listMonths();
         $listYears = Controller::listYears();
+
         $total = $entrances - $exists;
         $section = null;
 
         $header_month = view(
             'partials.profiles.components.tools.components.budget.view-month.ajax._header_month',
-            compact('entrances', 'exists', 'total','listMonths', 'listYears', 'section')
+            compact('entrances', 'exists', 'total','listMonths', 'listYears', 'section', 'year', 'month')
         )
         ->render();
         return $header_month;
@@ -65,7 +73,7 @@ class BudgetMonthFilter extends Controller
     {
         $btns = BudgetMonthFilter::monthlistBtns();
         $data = BudgetMonthFilter::getListCategories($moves, $section, $request);
-        //dd($data);
+
         $view = view(
             'partials.profiles.components.tools.components.budget.view-month.ajax._content',
             compact('moves', 'section', 'data')
@@ -102,7 +110,6 @@ class BudgetMonthFilter extends Controller
 
     public static function getListCategories($moves, $section, $request)
     {
-        //dd($moves, $section, $request);
         $date = array(
             'start' => '2023-05-01 00:00:00',
             'end' => '2023-05-31 23:59:59'
@@ -139,6 +146,73 @@ class BudgetMonthFilter extends Controller
                 return null;
             break;
         }
+    }
+
+    public static function resumenMonth($request)
+    {
+        $user = Auth::user();
+        $entrances = TsBudget::where('user_id', $user->id)->where('type_move', 1)->sum('amount_real');
+        $exists = TsBudget::where('user_id', $user->id)->where('type_move', 0)->sum('amount_real');
+        $total = $entrances - $exists;
+
+        $view = view(
+            'partials.profiles.components.tools.components.budget.view-month.components._header_month',
+            compact('entrances', 'exists', 'total')
+        )
+        ->render();
+
+        return $view;
+    }
+
+    public static function divArrowsCategory($request, $budget)
+    {
+        $user = Auth::user();
+        $counter = 1;
+        $section = $request->section;
+        $date = array(
+            'start' => '2023-05-01 00:00:00',
+            'end' => '2023-05-31 23:59:59'
+        );
+
+        $categoryMain = $request->category_id;
+        $typeMove = BudgetTrait::getTypeMove($budget->customCategory);
+        $_rows = BudgetTrait::dataCategory($date, $categoryMain, $typeMove);
+        $categoryRows = $_rows->get();
+
+        $viewArrows = view('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows',
+            compact('counter', 'section', 'categoryRows')
+        )->render();
+
+        $viewHeaderCategoryAmountEstimate = BudgetMonthFilter::calculateHeaderCategory($categoryRows, 'estimate', $request);
+        $viewHeaderCategoryAmountReal = BudgetMonthFilter::calculateHeaderCategory($categoryRows, 'real', $request);
+
+        $views = array(
+            'viewArrows' => $viewArrows,
+            'viewHeaderCategoryAmountEstimate' => $viewHeaderCategoryAmountEstimate,
+            'viewHeaderCategoryAmountReal' => $viewHeaderCategoryAmountReal
+        );
+        return   $views;
+
+    }
+
+    public static function calculateHeaderCategory($categoryRows, $typeAmount, $request)
+    {
+        $section = $request->section;
+        if($typeAmount == "estimate"){
+            $amount_estimate = $categoryRows->sum('amount_estimated');
+            $view = view(
+                'partials.profiles.components.tools.components.budget.view-month.ajax.components.'. $section .'.categoryHeaderAmontEstimate',
+                compact('amount_estimate')
+            )->render();
+        }else{
+            $amount_real = $categoryRows->sum('amount_real');
+            $view = view(
+                'partials.profiles.components.tools.components.budget.view-month.ajax.components.' . $section . '.categoryHeaderAmontReal',
+                compact('amount_real')
+            )->render();
+
+        }
+        return $view;
     }
 }
 

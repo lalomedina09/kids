@@ -8,8 +8,21 @@
                 <div class="col-md-4 mt-4">
                     <img src="{{ asset('images/tools/budget/cat-ahorro.png') }}" width="25" alt="Minimizar"> <span class="text-bold"> Ahorros</span>
                 </div>
+                @php
+                    $counter = 1;
+                    $section = "exits";
+                    $categoryRows = $data['ahorros']->get();
+                    $idArrowsName = "arrowsCategorySaving";
+                    $idCategoryAmountReal = "arrowsCategorySavingAmountReal";
+                    $idCategoryAmountEstimate = "arrowsCategorySavingAmountEstimate";
+                @endphp
 
-                @include('partials.profiles.components.tools.components.budget.view-month.categories.components.exits.header-amount-category')
+                @include('partials.profiles.components.tools.components.budget.view-month.categories.components.exits.header-amount-category',
+                array(
+                    'amount_estimate' => $data['ahorros']->sum('amount_estimated'),
+                    'amount_real' => $data['ahorros']->sum('amount_real')
+                    )
+                )
 
                 <div class="col-md-12">
                     <div class="bordertest">
@@ -28,31 +41,18 @@
             @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.exits._header_columns')
 
             <!-- Particula: Renglones para mostrar las categorías -->
-            @php $counter = 1; @endphp
-            @foreach ($data['ahorros'] as $row)
-                @php
-                    $date = dateRemoveHours($row->created_at);
-                    $counter++;
-                    $class = (($counter % 2) == 0) ? null : "custom-input-transparent" ;
-                @endphp
-                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._row',
-                array(
-                    'row' => $row,
-                    'section' => 'exits',
-                    'date' => $date,
-                    'counter' => $counter,
-                    'class' => $class
-                ))
-            @endforeach
-            {{--
-            @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.exits._rows',
-            array('rows' => $data['ahorros']))
-            --}}
+            <div id="{{ $idArrowsName }}">
+                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows')
+            </div>
+
             <br>
             @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_add_move',
                 array(
                     'section' => 'exits',
-                    'category_id' => 3
+                    'category_id' => 3,
+                    'idArrowsName' => $idArrowsName,
+                    'idCategoryAmountReal' => $idCategoryAmountReal,
+                    'idCategoryAmountEstimate' => $idCategoryAmountEstimate
             ))
         </div>
     </div>

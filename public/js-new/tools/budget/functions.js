@@ -44,16 +44,15 @@ function activeBudgetSectionCreateCategories() {
     });
 
 }
-//function budgetEditInput(section, idInput, id_move) {
+
 function budgetEditInput(section, nameInput, id_move) {
 
     let token = $('#token').val();
     let month = $('#month').val();
     let year = $('#year').val();
     let value = $('#' + nameInput + '_' + id_move).val();
-    //alert('id = ' + input);
-    //alert('jijijijijijijijij');
-    console.log('Usuario inicia edicion del input con valor:  ' + value);
+
+    console.log('Usuario inicia edicion del input con valor:  ' + nameInput);
 
     $.ajax({
         url: "/budget/edit/" + section,
@@ -70,7 +69,12 @@ function budgetEditInput(section, nameInput, id_move) {
             'X-CSRF-Token': '{{ csrf_token() }}',
         },
         success: function (data) {
-            console.log("Se hizo el update del input " + value);
+            console.log("Se hizo el update del input " + nameInput);
+            $("#header-level-month").empty();
+            $("#header-level-month").html(data.resumenMonth);
+
+            //$('#' + nameInput + '_' + id_move).val();
+            //divArrowsName
         },
         error: function () {
             console.log("No se hizo el update en la DB")
@@ -80,7 +84,7 @@ function budgetEditInput(section, nameInput, id_move) {
 }
 
 
-function openModalAddMove(section, categoryId) {
+function openModalAddMove(section, categoryId, divArrowsCategory, divAmountEstimate, divAmountReal) {
 
     let url = '/budget/addmove/modal/open';
     let token = $('#token').val();
@@ -88,14 +92,16 @@ function openModalAddMove(section, categoryId) {
     $.post(url, {
         _token: token,
         section: section,
-        categoryId: categoryId
+        categoryId: categoryId,
+        divArrowsCategory: divArrowsCategory,
+        divAmountEstimate: divAmountEstimate,
+        divAmountReal: divAmountReal
     },
         function (data) {
-            //console.log(data);
             console.log('Listo para agregar movimiento');
             $("#contentModalAddMove").empty();
             $("#contentModalAddMove").html(data.view);
-            $("#exampleModal").modal('show');
+            $("#modalAddMoveBudget").modal('show');
 
         });
 }
@@ -138,20 +144,51 @@ function openModalBudgetZoom(section) {
         });
 }
 
-function saveMoveBudget(){
+function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal){
     let url = '/budget/addmove/modal/save';
     let token = $('#token').val();
-    console.log('Inicia proceso para envio de formulario registrar categoria');
+
+    let category_id = $('#formAddMove_category_id').val();
+    let name = $('#formAddMove_name').val();
+    let estimated = $('#formAddMove_estimated').val();
+    let real = $('#formAddMove_real').val();
+    let percent = $('#formAddMove_percent').val();
+
+    if (category_id != '' || name != '' || real != '') {
+        console.log('Inicia proceso para envio de formulario registrar categoria');
+
+    }else{
+        alert('No puedes guardar campos vacios');
+        return false;
+    }
+
     $.post(url, {
         _token: token,
-        section: section
+        section: section,
+        category_id: category_id,
+        name: name,
+        amount_estimated: estimated,
+        amount_real: real,
+        percent: percent
     },
         function (data) {
-            //console.log(data);
-            console.log('Zoom activado para seccion del mes');
-            $("#contentModalZoom").empty();
-            $("#contentModalZoom").html(data.view);
-            $("#modalZoom").modal('show');
+           $("#header-level-month").empty();
+            $("#header-level-month").html(data.resumenMonth);
 
+            //Renglones de la categoria principal
+            $('#' + divArrowsCategory).empty();
+            $('#' + divArrowsCategory).html(data.divArrowsCategory);
+
+            //Update Encabezado de Categoria Monto Real
+            $('#' + divAmountReal).empty();
+            $('#' + divAmountReal).html(data.viewAmountReal);
+
+            //Update Encabezado de Categoria Monto Estimado
+            $('#' + divAmountEstimate).empty();
+            $('#' + divAmountEstimate).html(data.viewAmountEstimate);
+
+            //Encabezado de la categoria principal
+            $('#modalAddMoveBudget').modal('hide');
         });
 }
+
