@@ -11,11 +11,12 @@ trait CategoryUserTrait
         $categoryUser = new TsCategoryUser;
         $categoryUser->name = $request->name;
         $categoryUser->percent = $request->percent;
-        $categoryUser->ts_category_id = ($category->parent_id) ? $category->parent_id : $category->id;
+        $categoryUser->ts_category_id = $category->parent_id;
         $categoryUser->user_id = $user->id;
 
         $categoryUser->save();
         return $categoryUser;
+        //Ojo -> ver si hago una funcion exlusiva para esto o buscar la forma de solucionar este bug
         //Comment = ($category->parent_id) ? $category->parent_id : $category->id
     }
 
