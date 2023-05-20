@@ -24,28 +24,30 @@ class BudgetYearFilter extends Controller
         $listMonths = Controller::listMonths();
         $listYears = Controller::listYears();
 
-        $header_month = view(
+        $header_year = view(
             'partials.profiles.components.tools.components.budget.view-year.ajax._header_year',
             compact('entrances', 'exists', 'total', 'listMonths', 'listYears', 'year')
-        )
-            ->render();
-        return $header_month;
+        )->render();
+
+        return $header_year;
     }
 
     public static function body($moves, $request)
     {
         //$q = Order::query();
         $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
+        $listMonths = Controller::listMonths();
 
         $entrances = $moves->where('type_move', 1)->sum('amount_real');
         $exists = $moves->where('type_move', 0)->sum('amount_real');
         $total = $entrances - $exists;
 
-        $body_month = view(
+        $buildCardsMonth = $listMonths;
+        $body_year_calendar = view(
             'partials.profiles.components.tools.components.budget.view-year.ajax._calendar',
-            compact('entrances', 'exists', 'total')
-        )
-            ->render();
-        return $body_month;
+            compact('entrances', 'exists', 'total', 'year', 'listMonths', 'buildCardsMonth')
+        )->render();
+
+        return $body_year_calendar;
     }
 }

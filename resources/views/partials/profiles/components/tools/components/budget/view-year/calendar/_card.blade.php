@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-md-12 text-center">
                         <span class="b-calendar-name-month">
-                            Enero
+                            {{ $name }}
                         </span>
                     </div>
                 </div>
