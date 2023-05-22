@@ -2,16 +2,21 @@
     <div class="row">
         <div class="col-md-4">
             <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="30" alt="Lo que sale">
-            <span class="rounded-corners-gradient-borders">50%</span>
+            <span class="rounded-corners-gradient-borders">
+                {{ getPercentForCategory($_month['enter_real'], $_month['cat_fijo']) }}%
+            </span>
         </div>
         <div class="col-md-4">
             <img src="{{ asset('images/tools/budget/cat-gustitos.png') }}" width="30" alt="Lo que sale">
-            <span class="rounded-corners-gradient-borders">30%</span>
+            <span class="rounded-corners-gradient-borders">
+                {{ getPercentForCategory($_month['enter_real'], $_month['cat_gustos']) }}%
+            </span>
         </div>
         <div class="col-md-4">
             <img src="{{ asset('images/tools/budget/cat-ahorro.png') }}" width="35" alt="Lo que sale">
-            <span class="rounded-corners-gradient-borders">20%</span>
+            <span class="rounded-corners-gradient-borders">
+                {{ getPercentForCategory($_month['enter_real'], $_month['cat_ahorros']) }}%
+            </span>
         </div>
-
     </div>
 </div>

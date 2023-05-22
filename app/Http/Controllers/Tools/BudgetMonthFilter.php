@@ -19,13 +19,26 @@ class BudgetMonthFilter extends Controller
 
     public static function header($request)
     {
+        $user = Auth::user();
         //$q = Order::query();
         $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
         $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
 
-        $user = Auth::user();
-        $entrances = TsBudget::where('user_id', $user->id)->where('type_move', 1)->sum('amount_real');
-        $exists = TsBudget::where('user_id', $user->id)->where('type_move', 0)->sum('amount_real');
+        $startDate = $year . '-' . $month.'-01'  . ' 00:00:00';
+        $endTime = '' . ' 23:59:59';
+        $_endDate = Carbon::parse($startDate)->format('Y-m-t');
+        $endDate = $_endDate . $endTime;
+
+        $entrances = TsBudget::where('user_id', $user->id)
+            ->where('type_move', 1)
+            ->where('created_at', '>=', $startDate)
+            ->where('created_at', '<=', $endDate)
+            ->sum('amount_real');
+        $exists = TsBudget::where('user_id', $user->id)
+            ->where('type_move', 0)
+            ->where('created_at', '>=', $startDate)
+            ->where('created_at', '<=', $endDate)
+            ->sum('amount_real');
 
         $listMonths = Controller::listMonths();
         $listYears = Controller::listYears();

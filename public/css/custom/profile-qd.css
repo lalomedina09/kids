@@ -317,6 +317,13 @@
      display: block;
   }
 
+  /*Estilos scroll en div de calendario*/
+  .div-scroll-calendar{
+    height:500px;
+    overflow:scroll;
+    overflow-x:hidden;
+  }
+
   /*Media Queries para pantallas tipo laptop*/
   @media (min-width: 1000px) {
     .b-calendar-name-month{
@@ -331,7 +338,7 @@
     }
 
     .b-calendar-div-amounts-p{
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         color: #fff;
         font-weight: bold;
         margin-top: -5px;

@@ -67,4 +67,70 @@ class Controller extends BaseController
             7 => "Viernes"
         );
     }
+
+    public static function buildArrayMonths($year)
+    {
+        return $months = array(
+            "01" => array(
+                "month" => "Enero",
+                "start_month" => $year . "-01-01",
+                "end_month" => $year . "-01-31",
+            ),
+            "02" => array(
+                "month" => "Febrero",
+                "start_month" => $year . "-02-01",
+                "end_month" => $year . "-02-29",
+            ),
+            "03" => array(
+                "month" => "Marzo",
+                "start_month" => $year . "-03-01",
+                "end_month" => $year . "-03-31",
+            ),
+            "04" => array(
+                "month" => "Abril",
+                "start_month" => $year . "-04-01",
+                "end_month" => $year . "-04-30",
+            ),
+            "05" => array(
+                "month" => "Mayo",
+                "start_month" => $year . "-05-01",
+                "end_month" => $year . "-05-31",
+            ),
+            "06" => array(
+                "month" => "Junio",
+                "start_month" => $year . "-06-01",
+                "end_month" => $year . "-06-30",
+            ),
+            "07" => array(
+                "month" => "Julio",
+                "start_month" => $year . "-07-01",
+                "end_month" => $year . "-07-31",
+            ),
+            "08" => array(
+                "month" => "Agosto",
+                "start_month" => $year . "-08-01",
+                "end_month" => $year . "-08-31",
+            ),
+            "09" => array(
+                "month" => "Septiembre",
+                "start_month" => $year . "-09-01",
+                "end_month" => $year . "-09-30",
+            ),
+            "10" => array(
+                "month" => "Octubre",
+                "start_month" => $year . "-10-01",
+                "end_month" => $year . "-10-31",
+            ),
+            "11" => array(
+                "month" => "Noviembre",
+                "start_month" => $year . "-11-01",
+                "end_month" => $year . "-11-30",
+            ),
+            "12" => array(
+                "month" => "Diciembre",
+                "start_month" => $year . "-12-01",
+                "end_month" => $year . "-12-31",
+            ),
+        );
+    }
 }

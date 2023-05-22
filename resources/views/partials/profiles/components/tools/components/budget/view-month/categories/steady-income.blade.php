@@ -26,18 +26,25 @@
                     'amount_real' => $data['constantes']->sum('amount_real')
                     )
                 )
+                @php
+                    $total_month = $data['constantes']->sum('amount_real') + $data['variables']->sum('amount_real');
 
+                    $totalMonthSession = session(['totalMonthSession' => $total_month]);
+
+                    $percentRecommended = $total_month / 2;
+                @endphp
                 <div class="col-md-12">
                     <div class="bordertest">
                         <div class="row">
                             <div class=" col-md-4 text-left">
                                <!--<span style="font-size: .8rem">  (Lo que necesitas para vivir) </span>-->
+
                             </div>
                             <div class=" col-md-8 text-right">
                                 <span style="font-size: .8rem">
                                     Gasta el
                                     <span class="text-bold">50%</span>
-                                    de tus ingresos (Hasta $5,000)
+                                    de tus ingresos (Hasta ${{ number_format($percentRecommended, 2)}})
                                 </span>
                             </div>
                         </div>

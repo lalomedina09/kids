@@ -103,8 +103,6 @@ class BudgetController extends Controller
 
         $header = BudgetMonthFilter::header($request);
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);
-        //$body = BudgetMonthFilter::body($moves);
-        //$body = BudgetMonthFilter::content($moves, 'entrances', $request);
 
         return response()->json([
             'section_header_month' => $header,
@@ -177,7 +175,7 @@ class BudgetController extends Controller
         $user = Auth::user();
         $category = TsCategory::where('id', $request->category_id)->first();
 
-        $categoryUser = CategoryUserTrait::create($category, $user, $request);
+        $categoryUser = CategoryUserTrait::createForForm($category, $user, $request);
         $budget = BudgetTrait::create($categoryUser, $user, $request);
 
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);

@@ -75,4 +75,28 @@ trait BudgetTrait
 
         return $data;
     }
+
+    public static function dataCalendarMonth($start_month, $end_month, $user, $dataSum, $typeMove, $category)
+    {
+        $data_sum = 'ts_budgets.' . $dataSum;
+        $startMonth = $start_month . ' 00:00:00';
+        $endMonth = $end_month . ' 23:59:59';
+
+        $q = TsBudget::join('ts_categories_users', 'ts_budgets.ts_category_user_id', '=', 'ts_categories_users.id')
+        ->where('ts_budgets.user_id', $user->id);
+
+        if ($category) {
+            $q->where('ts_categories_users.ts_category_id', $category);
+        }
+
+        $q->where('ts_budgets.type_move', $typeMove)
+        ->where('ts_budgets.created_at', '>=', "$startMonth")
+        ->where('ts_budgets.created_at', '<=', "$endMonth")
+        ->select('ts_budgets.*')
+        //->sum("$data_sum");
+        //->toSql();
+        ->get();
+        //dd();
+        return $q->sum("$data_sum");
+    }
 }

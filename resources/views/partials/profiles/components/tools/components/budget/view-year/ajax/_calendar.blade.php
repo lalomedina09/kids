@@ -1,9 +1,11 @@
-<div class="row mt-0">
-    @foreach ($buildCardsMonth as $_month => $name)
+<div class="mt-1">
+        <br>
+        <div class="div-scroll-calendar row">
+        @foreach ($buildCardsMonth as $_month)
 
-        @include('partials.profiles.components.tools.components.budget.view-year.calendar._card')
+            @include('partials.profiles.components.tools.components.budget.view-year.calendar._card')
 
-    @endforeach
-
-
+        @endforeach
+    </div>
 </div>
+

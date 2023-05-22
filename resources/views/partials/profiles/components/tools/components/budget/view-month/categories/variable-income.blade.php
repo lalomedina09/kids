@@ -25,6 +25,10 @@
                     )
                 )
 
+                @php
+                    $total_month = $data['constantes']->sum('amount_real') + $data['variables']->sum('amount_real');
+                    $percentVariables = $total_month / 2;
+                @endphp
                 <div class="col-md-12">
                     <div class="bordertest">
                         <div class="row">
@@ -35,7 +39,7 @@
                                 <span style="font-size: .8rem">
                                     Gasta el
                                     <span class="text-bold">50%</span>
-                                    de tus ingresos (Hasta $5,000)
+                                    de tus ingresos (Hasta ${{ number_format($percentVariables, 2)}})
                                 </span>
                             </div>
                         </div>

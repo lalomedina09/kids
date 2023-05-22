@@ -25,6 +25,16 @@
                     )
                 )
 
+                @php
+                    //dd(Session::get('totalMonthSession'));
+                    $total_month = Session::get('totalMonthSession');
+                    if (Session::get('totalMonthSession'))
+                    {
+                        $percentLikes = ($total_month * 30) / 100;
+                    }else{
+                        $percentLikes = 0;
+                    }
+                @endphp
                 <div class="col-md-12">
                     <div class="bordertest">
                         <div class="row">
@@ -32,7 +42,8 @@
                                <span style="font-size: .8rem">  (Lo que te hace feliz) </span>
                             </div>
                             <div class=" col-md-8 text-right">
-                                <span style="font-size: .8rem"> Gasta el <span class="text-bold">30%</span>  de tus ingresos (Hasta $3,000)</span>
+                                <span style="font-size: .8rem"> Gasta el <span class="text-bold">30%</span>
+                                de tus ingresos (Hasta ${{number_format($percentLikes, 2)}})</span>
                             </div>
                         </div>
                     </div>

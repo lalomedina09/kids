@@ -352,3 +352,13 @@ function dateRemoveHours($date)
     return $onlyDate[0];
 }
 
+function getPercentForCategory($int_real, $out_real)
+{
+    if($int_real <> 0 && $out_real <> 0)
+    {
+        $percent = round(($out_real * 100)/$int_real);
+    }else{
+        $percent = 0;
+    }
+    return $percent;
+}
