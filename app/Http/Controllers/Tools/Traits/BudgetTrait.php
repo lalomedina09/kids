@@ -97,7 +97,20 @@ trait BudgetTrait
         //->sum("$data_sum");
         //->toSql();
         ->get();
-        //dd();
+
         return $q->sum("$data_sum");
+    }
+
+    public static function createAutomatic($categoryUser, $user, $request, $created_at)
+    {
+        $budget = new TsBudget;
+        $budget->type_move = BudgetTrait::getTypeMove($categoryUser);
+        $budget->amount_real = $request->amount_real;
+        $budget->amount_estimated = $request->amount_estimated;
+        $budget->ts_category_user_id = $categoryUser->id;
+        $budget->user_id = $user->id;
+        $budget->created_at = $created_at;
+        $budget->save();
+        return $budget;
     }
 }

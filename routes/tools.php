@@ -41,6 +41,10 @@ Route::prefix('budget')
             Route::post('/calendar')
             ->uses('BudgetController@activeCalendar')
             ->name('budget.active.calendar');
+
+            Route::post('/section/filter-year')
+            ->uses('BudgetController@activeCalendarFilterYear')
+            ->name('budget.active.calendar.year.filter');
         });
 
         //Routes for edit moves

@@ -48,8 +48,12 @@ function activeBudgetSectionCreateCategories() {
 function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmountReal) {
 
     let token = $('#token').val();
-    let month = $('#month').val();
-    let year = $('#year').val();
+    //let month = $('#month').val();
+    //let year = $('#year').val();
+    ////7
+    let month = $('#budget_month_id').val();
+    let year = $('#budget_year_id').val();
+    ////
     let value = $('#' + nameInput + '_' + id_move).val();
 
     console.log('Usuario inicia edicion del input con valor:  ' + nameInput);

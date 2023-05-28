@@ -43,15 +43,32 @@ class BudgetController extends Controller
     public function activeCategoriesCustom(Request $request)
     {
         $user = Auth::user();
+        ////////
+        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
+        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
 
-        $searchCategories = TsCategoryUser::where('user_id', $user->id)->get();
+        $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
+        $endTime = '' . ' 23:59:59';
+        $_endDate = Carbon::parse($startDate)->format('Y-m-t');
+        $endDate = $_endDate . $endTime;
+        ////////
+        //$start = Carbon::now()->startOfMonth()->format('Y-m-d H:i:s');
+        //$end = Carbon::now()->endOfMonth()->format('Y-m-d H:i:s');
+        //$end = Carbon::now();
+
+        //TsBudget
+        //$searchCategories = TsCategoryUser::where('user_id', $user->id)
+        $searchCategories = TsBudget::where('user_id', $user->id)
+            ->where('created_at', '>=', $startDate)
+            ->where('created_at', '<=', $endDate)
+            ->get();
 
         if (count($searchCategories) == 0) {
-            $this->createCategoryUser($user, $request);
+            $this->createCategoryUser($user, $request, $startDate);
         }
     }
 
-    public function createCategoryUser($user, $request)
+    public function createCategoryUser($user, $request, $startDate)
     {
         $categoriesMain = TsCategory::all();
 
@@ -64,7 +81,8 @@ class BudgetController extends Controller
             ]);
 
             $categoryUser = CategoryUserTrait::create($category, $user, $request);
-            $budget = BudgetTrait::create($categoryUser, $user, $request);
+            //$budget = BudgetTrait::create($categoryUser, $user, $request);
+            $budget = BudgetTrait::createAutomatic($categoryUser, $user, $request, $startDate);
         }
     }
 
@@ -102,10 +120,10 @@ class BudgetController extends Controller
         $year = $request->year;
 
         ////
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
-        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+        //$year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        //$month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
-        $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
+        $startDate = $year . '-' . $month . '-01 00:00:00';
         $endTime = '' . ' 23:59:59';
         $_endDate = Carbon::parse($startDate)->format('Y-m-t');
         $endDate = $_endDate . $endTime;
@@ -116,13 +134,13 @@ class BudgetController extends Controller
             'start' => $startDate,
             'end' => $endDate
         );
-        ////
 
         $header = BudgetMonthFilter::header($request);
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);
         $typeMove = BudgetTrait::getTypeMove($budget->customCategory);
 
-        $categoryMain = $budget->customCategory->category_id;
+        $categoryMain = $budget->customCategory->ts_category_id;
+
         $_rows = BudgetTrait::dataCategory($date, $categoryMain, $typeMove);
         $categoryRows = $_rows->get();
 
@@ -155,8 +173,27 @@ class BudgetController extends Controller
         ]);
     }
 
+    public function activeCalendarFilterYear(Request $request)
+    {
+        $user = Auth::user();
+        $moves = TsBudget::where('user_id', $user->id)->get();
+        $month = Carbon::now()->format('m');
+        $year = Carbon::now()->format('Y');
+
+        $header = BudgetYearFilter::header($moves, $request);
+        $body = BudgetYearFilter::body($moves, $request);
+
+        return response()->json([
+            'section_header_year' => $header,
+            'section_year' => $body
+        ]);
+    }
+
     public function activeSection(Request $request)
     {
+        //Con la siguiente linea buscamos si existen registros de categorias
+        //si no encoentra crea los registros para ese mes correspondiente
+
         $section = $request->section;
         $user = Auth::user();
         $moves = TsBudget::where('user_id', $user->id);
@@ -177,18 +214,20 @@ class BudgetController extends Controller
 
     public function activeSectionFilterDate(Request $request)
     {
-        //dd('llego a la linea 151', $request->all());
+
+        //Funcion para filtro por mes
+        $this->activeCategoriesCustom($request);
         $section = $request->section;
         $user = Auth::user();
         $moves = TsBudget::where('user_id', $user->id);
         $month = Carbon::now()->format('m');
         $year = Carbon::now()->format('Y');
-        //dd('linea 156');
+
         $btns = BudgetMonthFilter::btns($section);
         $content = BudgetMonthFilter::content($moves, $section, $request);
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);
 
-        //dd($request->all());
+
         return response()->json([
             'section_month_btns' => $btns,
             'resumenMonth' => $resumenMonth,

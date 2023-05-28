@@ -15,10 +15,20 @@ class BudgetYearFilter extends Controller
     public static function header($moves, $request)
     {
         //$q = Order::query();
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
 
-        $entrances = $moves->where('type_move', 1)->sum('amount_real');
-        $exists = $moves->where('type_move', 0)->sum('amount_real');
+        $year_start = $year . '-01-01 00:00:00';
+        $year_end = $year . '-12-31 23:59:59';
+
+        $entrances = $moves->where('type_move', 1)
+                        ->where('created_at', '>=', $year_start)
+                        ->where('created_at', '<=', $year_end)
+                        ->sum('amount_real');
+
+        $exists = $moves->where('type_move', 0)
+                        ->where('created_at', '>=', $year_start)
+                        ->where('created_at', '<=', $year_end)
+                        ->sum('amount_real');
         $total = $entrances - $exists;
 
         $listMonths = Controller::listMonths();
@@ -36,16 +46,25 @@ class BudgetYearFilter extends Controller
     {
         //$q = Order::query();
         $user = Auth::user();
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $year_start = $year . '-01-01 00:00:00';
+        $year_end = $year . '-12-31 23:59:59';
+
         $listMonths = Controller::listMonths();
 
+        $entrances = $moves->where('type_move', 1)
+                    ->where('created_at', '>=', $year_start)
+                    ->where('created_at', '<=', $year_end)
+                    ->sum('amount_real');
 
-        $entrances = $moves->where('type_move', 1)->sum('amount_real');
-        $exists = $moves->where('type_move', 0)->sum('amount_real');
+        $exists = $moves->where('type_move', 0)
+                    ->where('created_at', '>=', $year_start)
+                    ->where('created_at', '<=', $year_end)
+                    ->sum('amount_real');
         $total = $entrances - $exists;
 
         $buildCardsMonth = BudgetYearFilter::buildCardsMonth($year);
-        //dd($buildCardsMonth, 'dododod', 'exactoo');
+
         $body_year_calendar = view(
             'partials.profiles.components.tools.components.budget.view-year.ajax._calendar',
             compact('entrances', 'exists', 'total', 'year', 'listMonths', 'buildCardsMonth')
@@ -77,8 +96,6 @@ class BudgetYearFilter extends Controller
         }
 
         return $cards;
-
-        //dd($cards);
 
     }
 }

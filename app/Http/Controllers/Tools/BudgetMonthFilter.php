@@ -21,6 +21,7 @@ class BudgetMonthFilter extends Controller
     {
         $user = Auth::user();
         //$q = Order::query();
+        //dd($request->all());
         $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
         $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
 

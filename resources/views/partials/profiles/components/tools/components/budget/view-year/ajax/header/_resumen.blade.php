@@ -10,7 +10,7 @@
         <div class="col-md-6">
             <label for="years" class="control-label text-uppercase custom-f-s-small"
                     title="List Years">* @lang('Year')</label>
-            <select name="budget_year" id="budget_year" class="form-control" required="required">
+            <select name="budget_year" id="budget_year" class="form-control" onchange="changeDateYearCalendar();" required="required">
                 @foreach ($listYears as $_year )
                     <option value="{{ $_year }}" @if($_year == $year) selected @endif>
                             {{ $_year }}

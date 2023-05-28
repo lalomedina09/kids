@@ -4,6 +4,9 @@ function activeBudgetSectionMonth() {
     let token = $('#token').val();
     let section = 'entrances';
     console.log('Inicia activacion de ajax Presupuesto activado');
+
+    activeBudgetSectionCreateCategories();
+    console.log('Paso la función de busqueda creacion de categorias');
         $.ajax({
             url: "/budget/active/month",
             beforeSend: function () {
@@ -37,6 +40,8 @@ function activeBudgetSectionMonth() {
 
 function activeBudgetSectionMonthMenu(section) {
     let token = $('#token').val();
+    let budget_month = $('#budget_month_id').val();
+    let budget_year = $('#budget_year_id').val();
     console.log('Ajax Activado Sección: -> ' + section);
         $.ajax({
             url: "/budget/active/month/section",
@@ -50,7 +55,9 @@ function activeBudgetSectionMonthMenu(section) {
             },
             data: {
                 _token: token,
-                section: section
+                section: section,
+                budget_month: budget_month,
+                budget_year: budget_year
             },
             type: "POST",
             headers: {
@@ -98,3 +105,6 @@ function changeDateMonthSection(section) {
             responseDataSectionMonthContent(data, section);
         });
 }
+
+
+

@@ -29,3 +29,31 @@ function activeBudgetSectionYear() {
     });
 
 }
+
+/* - - -  Funcion que activa el cambio de año para la seccion de calendario- - -*/
+function changeDateYearCalendar() {
+    let url = '/budget/active/year/section/filter-year';
+    let token = $('#token').val();
+
+    let budget_year = $('#budget_year').val();
+    //pendiente activacion de ajax y agregar funcion al select de html
+    $.post(url, {
+        _token: token,
+        //section: section,
+        //budget_month: budget_month,
+        budget_year: budget_year
+    },
+        function (data) {
+            console.log("Ajax Anual!! Se aplica el filtro por año : " + budget_year);
+
+            //responseDataHeaderMonth(data);
+            responseDataHeaderYear(data);
+            responseDataSectionYear(data);
+            /*
+            responseDataSectionMonthBtns(data);
+            $("#header-level-month").empty();
+            $("#header-level-month").html(data.resumenMonth);
+            responseDataSectionMonthContent(data, section);
+            */
+        });
+}
