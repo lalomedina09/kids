@@ -101,12 +101,39 @@ class BudgetController extends Controller
         $month = $request->month;
         $year = $request->year;
 
+        ////
+        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
+        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+
+        $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
+        $endTime = '' . ' 23:59:59';
+        $_endDate = Carbon::parse($startDate)->format('Y-m-t');
+        $endDate = $_endDate . $endTime;
+        ///
+        $date = array(
+            //'start' => '2023-05-01 00:00:00',
+            //'end' => '2023-05-31 23:59:59'
+            'start' => $startDate,
+            'end' => $endDate
+        );
+        ////
+
         $header = BudgetMonthFilter::header($request);
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);
+        $typeMove = BudgetTrait::getTypeMove($budget->customCategory);
+
+        $categoryMain = $budget->customCategory->category_id;
+        $_rows = BudgetTrait::dataCategory($date, $categoryMain, $typeMove);
+        $categoryRows = $_rows->get();
+
+        $viewHeaderCategoryAmountEstimate = BudgetMonthFilter::calculateHeaderCategory($categoryRows, 'estimate', $request);
+        $viewHeaderCategoryAmountReal = BudgetMonthFilter::calculateHeaderCategory($categoryRows, 'real', $request);
 
         return response()->json([
             'section_header_month' => $header,
             'resumenMonth' => $resumenMonth,
+            'viewHeaderCategoryAmountEstimate' => $viewHeaderCategoryAmountEstimate,
+            'viewHeaderCategoryAmountReal' => $viewHeaderCategoryAmountReal
             //'section_month' => $body
         ]);
 
@@ -136,11 +163,35 @@ class BudgetController extends Controller
         $month = Carbon::now()->format('m');
         $year = Carbon::now()->format('Y');
 
+        //$resumenMonth = BudgetMonthFilter::resumenMonth($request);
+        $header = BudgetMonthFilter::header($request);
         $btns = BudgetMonthFilter::btns($section);
         $content = BudgetMonthFilter::content($moves, $section, $request);
 
         return response()->json([
             'section_month_btns' => $btns,
+            'section_header_month' => $header,
+            'section_month_content' => $content
+        ]);
+    }
+
+    public function activeSectionFilterDate(Request $request)
+    {
+        //dd('llego a la linea 151', $request->all());
+        $section = $request->section;
+        $user = Auth::user();
+        $moves = TsBudget::where('user_id', $user->id);
+        $month = Carbon::now()->format('m');
+        $year = Carbon::now()->format('Y');
+        //dd('linea 156');
+        $btns = BudgetMonthFilter::btns($section);
+        $content = BudgetMonthFilter::content($moves, $section, $request);
+        $resumenMonth = BudgetMonthFilter::resumenMonth($request);
+
+        //dd($request->all());
+        return response()->json([
+            'section_month_btns' => $btns,
+            'resumenMonth' => $resumenMonth,
             'section_month_content' => $content
         ]);
     }

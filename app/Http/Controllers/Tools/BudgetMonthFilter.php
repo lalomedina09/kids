@@ -44,7 +44,7 @@ class BudgetMonthFilter extends Controller
         $listYears = Controller::listYears();
 
         $total = $entrances - $exists;
-        $section = null;
+        $section = $request->section;
 
         $header_month = view(
             'partials.profiles.components.tools.components.budget.view-month.ajax._header_month',
@@ -123,9 +123,17 @@ class BudgetMonthFilter extends Controller
 
     public static function getListCategories($moves, $section, $request)
     {
+        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
+        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+
+        $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
+        $endTime = '' . ' 23:59:59';
+        $_endDate = Carbon::parse($startDate)->format('Y-m-t');
+        $endDate = $_endDate . $endTime;
+
         $date = array(
-            'start' => '2023-05-01 00:00:00',
-            'end' => '2023-05-31 23:59:59'
+            'start' => $startDate,
+            'end' => $endDate
         );
 
         switch ($section) {
@@ -164,13 +172,32 @@ class BudgetMonthFilter extends Controller
     public static function resumenMonth($request)
     {
         $user = Auth::user();
-        $entrances = TsBudget::where('user_id', $user->id)->where('type_move', 1)->sum('amount_real');
-        $exists = TsBudget::where('user_id', $user->id)->where('type_move', 0)->sum('amount_real');
-        $total = $entrances - $exists;
 
+        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
+        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+
+        $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
+        $endTime = '' . ' 23:59:59';
+        $_endDate = Carbon::parse($startDate)->format('Y-m-t');
+        $endDate = $_endDate . $endTime;
+
+        $entrances = TsBudget::where('user_id', $user->id)
+        ->where('type_move', 1)
+            ->where('created_at', '>=', $startDate)
+            ->where('created_at', '<=', $endDate)
+        ->sum('amount_real');
+
+        $exists = TsBudget::where('user_id', $user->id)
+        ->where('type_move', 0)
+            ->where('created_at', '>=', $startDate)
+            ->where('created_at', '<=', $endDate)
+        ->sum('amount_real');
+
+        $total = $entrances - $exists;
+        $section = $request->section;
         $view = view(
             'partials.profiles.components.tools.components.budget.view-month.components._header_month',
-            compact('entrances', 'exists', 'total')
+            compact('entrances', 'exists', 'total', 'section')
         )
         ->render();
 
@@ -182,18 +209,31 @@ class BudgetMonthFilter extends Controller
         $user = Auth::user();
         $counter = 1;
         $section = $request->section;
+        ////
+        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
+        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+
+        $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
+        $endTime = '' . ' 23:59:59';
+        $_endDate = Carbon::parse($startDate)->format('Y-m-t');
+        $endDate = $_endDate . $endTime;
+        ///
         $date = array(
-            'start' => '2023-05-01 00:00:00',
-            'end' => '2023-05-31 23:59:59'
+            //'start' => '2023-05-01 00:00:00',
+            //'end' => '2023-05-31 23:59:59'
+            'start' => $startDate,
+            'end' => $endDate
         );
 
         $categoryMain = $request->category_id;
         $typeMove = BudgetTrait::getTypeMove($budget->customCategory);
         $_rows = BudgetTrait::dataCategory($date, $categoryMain, $typeMove);
         $categoryRows = $_rows->get();
+        $idCategoryAmountReal = $request->divAmountReal;
+        $idCategoryAmountEstimate = $request->divAmountEstimate;
 
         $viewArrows = view('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows',
-            compact('counter', 'section', 'categoryRows')
+            compact('counter', 'section', 'categoryRows', 'idCategoryAmountReal', 'idCategoryAmountEstimate')
         )->render();
 
         $viewHeaderCategoryAmountEstimate = BudgetMonthFilter::calculateHeaderCategory($categoryRows, 'estimate', $request);
@@ -211,8 +251,12 @@ class BudgetMonthFilter extends Controller
     public static function calculateHeaderCategory($categoryRows, $typeAmount, $request)
     {
         $section = $request->section;
+        //dd($typeAmount, 'tipo de monto');
+        //dd($typeAmount, 'tipo de monto');
+        //if ($section == "entrance") {
         if($typeAmount == "estimate"){
             $amount_estimate = $categoryRows->sum('amount_estimated');
+            //dd($amount_estimate);
             $view = view(
                 'partials.profiles.components.tools.components.budget.view-month.ajax.components.'. $section .'.categoryHeaderAmontEstimate',
                 compact('amount_estimate')

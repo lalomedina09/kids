@@ -25,6 +25,10 @@ Route::prefix('budget')
             Route::post('/section')
                 ->uses('BudgetController@activeSection')
                 ->name('budget.active.section');
+
+            Route::post('/section/filter-month')
+            ->uses('BudgetController@activeSectionFilterDate')
+            ->name('budget.active.section.filter');
         });
 
         //Routes for month

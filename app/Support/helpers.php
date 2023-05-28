@@ -342,7 +342,23 @@ function getMonthSpanish($month)
 {
     $months = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
-    return $months[date('n') - 1];
+    return $months[date('n') - $month];
+}
+
+function fechaEspanol($date)
+{
+    $format = 'Y-m-d H:i:s'; //This is an optional input format mask for datetime database extracted info
+    $d = DateTime::createFromFormat($format, $date); //A simple $d = new DateTime($fecha) can also be used
+    $year = $d->format('Y');
+    $month = $d->format('n');
+    $day = $d->format('d');
+    $dayWeek = $d->format('w');
+
+    $days = array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
+
+    $months = array(1 => "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+    return "{$days[$dayWeek]}, $day de {$months[$month]} de $year";
 }
 
 function dateRemoveHours($date)
@@ -361,4 +377,10 @@ function getPercentForCategory($int_real, $out_real)
         $percent = 0;
     }
     return $percent;
+}
+
+function divEmailProfile($email)
+{
+    return $separate = explode("@", $email);
+
 }

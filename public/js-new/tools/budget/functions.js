@@ -45,7 +45,7 @@ function activeBudgetSectionCreateCategories() {
 
 }
 
-function budgetEditInput(section, nameInput, id_move) {
+function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmountReal) {
 
     let token = $('#token').val();
     let month = $('#month').val();
@@ -62,6 +62,7 @@ function budgetEditInput(section, nameInput, id_move) {
             month: month,
             value: value,
             id_move: id_move,
+            section: section,
             nameInput: nameInput
         },
         type: "POST",
@@ -73,6 +74,15 @@ function budgetEditInput(section, nameInput, id_move) {
             $("#header-level-month").empty();
             $("#header-level-month").html(data.resumenMonth);
 
+            //Update Encabezado de Categoria Monto Real
+            $('#' + divAmountReal).empty();
+            $('#' + divAmountReal).html(data.viewHeaderCategoryAmountEstimate);
+            console.log(divAmountReal + '<--- div para monto real');
+
+            //Update Encabezado de Categoria Monto Estimado
+            $('#' + divAmountEstimate).empty();
+            $('#' + divAmountEstimate).html(data.viewHeaderCategoryAmountReal);
+            console.log(divAmountEstimate + '<--- div para monto estimado');
             //$('#' + nameInput + '_' + id_move).val();
             //divArrowsName
         },
@@ -169,7 +179,9 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
         name: name,
         amount_estimated: estimated,
         amount_real: real,
-        percent: percent
+        percent: percent,
+        divAmountEstimate: divAmountEstimate,
+        divAmountReal: divAmountReal
     },
         function (data) {
            $("#header-level-month").empty();
@@ -181,11 +193,11 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
 
             //Update Encabezado de Categoria Monto Real
             $('#' + divAmountReal).empty();
-            $('#' + divAmountReal).html(data.viewAmountReal);
+            $('#' + divAmountReal).html(data.viewAmountEstimate);
 
             //Update Encabezado de Categoria Monto Estimado
             $('#' + divAmountEstimate).empty();
-            $('#' + divAmountEstimate).html(data.viewAmountEstimate);
+            $('#' + divAmountEstimate).html(data.viewAmountReal);
 
             //Encabezado de la categoria principal
             $('#modalAddMoveBudget').modal('hide');

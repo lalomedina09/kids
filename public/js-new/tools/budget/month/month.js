@@ -14,7 +14,7 @@ function activeBudgetSectionMonth() {
             },
             data: {
                 _token: token,
-                //param: param
+                section: section
             },
             type: "POST",
             headers: {
@@ -36,7 +36,6 @@ function activeBudgetSectionMonth() {
 }
 
 function activeBudgetSectionMonthMenu(section) {
-    //alert('linea 39 archivos de meses');
     let token = $('#token').val();
     console.log('Ajax Activado Sección: -> ' + section);
         $.ajax({
@@ -61,6 +60,11 @@ function activeBudgetSectionMonthMenu(section) {
                 console.log("Ajax Correcto!! Se cargo Sección: " + section);
 
                 //responseDataHeaderMonth(data);
+                responseDataHeaderMonth(data);
+                /*
+                $("#header-level-month").empty();
+                $("#header-level-month").html(data.resumenMonth);
+                */
                 responseDataSectionMonthBtns(data);
                 responseDataSectionMonthContent(data, section);
             },
@@ -69,4 +73,28 @@ function activeBudgetSectionMonthMenu(section) {
             }
         });
 
+}
+
+/*--- Funcion que se activa cada que se cambia el mes o el año son inputs tipo select*/
+function changeDateMonthSection(section) {
+    let url = '/budget/active/month/section/filter-month';
+    let token = $('#token').val();
+    let budget_month = $('#budget_month_id').val();
+    let budget_year = $('#budget_year_id').val();
+
+    $.post(url, {
+        _token: token,
+        section: section,
+        budget_month: budget_month,
+        budget_year: budget_year
+    },
+        function (data) {
+            console.log("Ajax Correcto!! Se cargo Sección con el filtro de fecha : " + section);
+
+            //responseDataHeaderMonth(data);
+            responseDataSectionMonthBtns(data);
+            $("#header-level-month").empty();
+            $("#header-level-month").html(data.resumenMonth);
+            responseDataSectionMonthContent(data, section);
+        });
 }

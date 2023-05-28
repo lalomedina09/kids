@@ -40,7 +40,12 @@
                     </div>
 
                     <p class="text-danger text-bold mb-0 small">{{ $user->present()->fullname }}</p>
-                    <p class="text-primary m-0 small">{{ $user->present()->email }}</p><!--text-xsmall -->
+                    <p class="text-primary m-0" style="font-size:60%">
+                        @php
+                            $separate = divEmailProfile($user->present()->email)
+                        @endphp
+                        {{ $separate[0] }} <br> <span>@</span>{{ $separate[1] }}
+                    </p><!--text-xsmall -->
 
 					@if (($current_subscription = \QD\QDPlay\Models\Subscription::current($user->id)))
 					<div class="mt-4 profile__content-info d-flex align-items-center">

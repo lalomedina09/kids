@@ -11,29 +11,29 @@
         <div class="col-md-4 text-center">
             <input type="text"
             id="name_{{ $row->id}}"
-            class="form-control custom-input-text {{ $class}}"
-            onkeydown="budgetEditInput('entrances', 'name', {{ $row->id }});"
+            class="form-control custom-input-text {{ $class }}"
+            onkeydown="budgetEditInput('entrances', 'name', {{ $row->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
             value="{{ $row->customCategory->name}}">
         </div>
         <div class="col-md-3 text-center">
             <input type="text"
             id="estimated_{{ $row->id }}"
-            class="form-control custom-input-text {{ $class}}"
-            onkeydown="budgetEditInput('entrances', 'estimated', {{ $row->id }});"
+            class="form-control custom-input-text {{ $class }}"
+            onkeydown="budgetEditInput('entrances', 'estimated', {{ $row->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
             value="{{ $row->amount_estimated }}">
         </div>
         <div class="col-md-3 text-center">
             <input type="text"
             id="real_{{ $row->id }}"
-            class="form-control custom-input-text {{ $class}}"
-            onkeydown="budgetEditInput('entrances', 'real', {{ $row->id }});"
+            class="form-control custom-input-text {{ $class }}"
+            onkeydown="budgetEditInput('entrances', 'real', {{ $row->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
             value="{{ $row->amount_real }}">
         </div>
         <div class="col-md-2 text-center">
             <input type="date"
             id="created_at_{{ $row->id }}"
-            class="form-control custom-input-text {{ $class}}"
-            onchange="budgetEditInput('entrances', 'created_at', {{ $row->id }});"
+            class="form-control custom-input-text {{ $class }}"
+            onchange="budgetEditInput('entrances', 'created_at', {{ $row->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
             value="{{ $date }}">
         </div>
         <br>

@@ -9,6 +9,7 @@
         @php
             $year = \Carbon\Carbon::now()->format('Y');
             $month = \Carbon\Carbon::now()->format('m');
+            $section = "entrances";
         @endphp
         @include('partials.profiles.components.tools.components.budget.view-month.pre-load._month_header')
 

@@ -71,6 +71,7 @@ trait BudgetTrait
         $data = $moves->where('created_at', '>=', $date['start'])
             ->where('created_at', '<=', $date['end'])
             ->where('amount_real', '>', 0)
+            ->orderBy('created_at')
             ->get();
 
         return $data;

@@ -15,7 +15,7 @@
             @foreach ($data['movements'] as $move)
             <tr>
                 <td style="font-size: 0.9rem;" scope="row">
-                    {{ $counter++ }}
+                    #{{ $counter++ }}M0{{ $move->id }}
                 </td>
                 <td class="text-left" style="font-size: 0.9rem;">
                     {{ $move->customCategory->name }}
@@ -29,7 +29,7 @@
                     ${{ $move->amount_real }} MXN
                 </td>
                 <td style="font-size: 0.9rem;">
-                    {{ customDateSpanish($move->updated_at)}}
+                    {{ fechaEspanol($move->created_at)}}
                 </td>
             </tr>
             @endforeach

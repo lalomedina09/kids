@@ -5,7 +5,7 @@
         {{dd($_month, $month)}}
         @endforeach
         --}}
-<select name="month_id" class="form-control" required="required">
+<select name="month_id" id="budget_month_id" class="form-control" required="required" onchange="changeDateMonthSection('{{$section}}')">
     @foreach ($listMonths as $_month => $name)
         <option value="{{ $_month }}" @if($_month == $month) selected @endif>
                 {{ $name }}

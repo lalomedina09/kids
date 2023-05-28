@@ -12,28 +12,28 @@
             <input type="text"
             id="name_{{ $row->id}}"
             class="form-control custom-input-text {{ $class}}"
-            onkeydown="budgetEditInput('exits', 'name', {{ $row->id }});"
+            onkeydown="budgetEditInput('exits', 'name', {{ $row->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
             value="{{ $row->customCategory->name}}">
         </div>
         <div class="col-md-3 text-center">
             <input type="text"
             id="estimated_{{ $row->id }}"
             class="form-control custom-input-text {{ $class}}"
-            onkeydown="budgetEditInput('exits', 'estimated', {{ $row->id }});"
+            onkeydown="budgetEditInput('exits', 'estimated', {{ $row->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
             value="{{ $row->amount_estimated }}">
         </div>
         <div class="col-md-3 text-center">
             <input type="text"
             id="real_{{ $row->id }}"
             class="form-control custom-input-text {{ $class}}"
-            onkeydown="budgetEditInput('exits', 'real', {{ $row->id }});"
+            onkeydown="budgetEditInput('exits', 'real', {{ $row->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
             value="{{ $row->amount_real }}">
         </div>
         <div class="col-md-2 text-center">
             <input type="date"
             id="created_at_{{ $row->id }}"
             class="form-control custom-input-text {{ $class}}"
-            onchange="budgetEditInput('exits', 'created_at', {{ $row->id }});"
+            onchange="budgetEditInput('exits', 'created_at', {{ $row->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
             value="{{ $date }}">
         </div>
         <br>
