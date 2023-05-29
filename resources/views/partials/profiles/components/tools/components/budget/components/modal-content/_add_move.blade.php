@@ -23,7 +23,7 @@
     </div>
     <div class="col-md-2 text-center">
         <span class="small">
-                $ estimada
+                $ Estimada
         </span>
         <input type="text" class="form-control" id="formAddMove_estimated" onkeypress="return valideKey(event);"
         required placeholder="Agregar monto"/>
