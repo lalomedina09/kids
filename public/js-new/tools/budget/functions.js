@@ -120,14 +120,17 @@ function openModalAddMove(section, categoryId, divArrowsCategory, divAmountEstim
         });
 }
 
-function openModalMoves(section) {
+function openModalMoves(nameMonth, start, end) {
 
     let url = '/budget/modal/year/movements';
     let token = $('#token').val();
     console.log('Activacion para abrir ventana modal ver movimientos');
     $.post(url, {
         _token: token,
-        section: section
+        //section: section,
+        nameMonth: nameMonth,
+        start: start,
+        end: end
     },
         function (data) {
             //console.log(data);
@@ -139,14 +142,17 @@ function openModalMoves(section) {
         });
 }
 
-function openModalBudgetZoom(section) {
+function openModalBudgetZoom(nameMonth, start, end) {
 
     let url = '/budget/modal/year/zoom';
     let token = $('#token').val();
     console.log('Activacion para ver div en Zoom');
     $.post(url, {
         _token: token,
-        section: section
+        //section: section,
+        nameMonth: nameMonth,
+        start: start,
+        end: end
     },
         function (data) {
             //console.log(data);
