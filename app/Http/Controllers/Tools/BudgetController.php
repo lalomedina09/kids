@@ -44,8 +44,8 @@ class BudgetController extends Controller
     {
         $user = Auth::user();
         ////////
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
-        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
         $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
         $endTime = '' . ' 23:59:59';
@@ -243,7 +243,7 @@ class BudgetController extends Controller
         $divCategory = $request->divArrowsCategory;
         $divAmountEstimate = $request->divAmountEstimate;
         $divAmountReal = $request->divAmountReal;
-        $created_at = $request->budget_year . '-'. $request->budget_month .'-' . $day = Carbon::now()->format('d');
+        $created_at = $request->year . '-'. $request->month .'-' . $day = Carbon::now()->format('d');
         //dd($created_at);
         $category = TsCategory::where('id', $categoryId)->first();
         $categoriesUser = TsCategoryUser::where('user_id', $user->id)

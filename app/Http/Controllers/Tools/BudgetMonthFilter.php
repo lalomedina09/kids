@@ -22,8 +22,8 @@ class BudgetMonthFilter extends Controller
         $user = Auth::user();
         //$q = Order::query();
         //dd($request->all());
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
-        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
         $startDate = $year . '-' . $month.'-01'  . ' 00:00:00';
         $endTime = '' . ' 23:59:59';
@@ -124,8 +124,8 @@ class BudgetMonthFilter extends Controller
 
     public static function getListCategories($moves, $section, $request)
     {
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
-        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
         $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
         $endTime = '' . ' 23:59:59';
@@ -174,8 +174,8 @@ class BudgetMonthFilter extends Controller
     {
         $user = Auth::user();
 
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
-        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
         $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
         $endTime = '' . ' 23:59:59';
@@ -211,8 +211,8 @@ class BudgetMonthFilter extends Controller
         $counter = 1;
         $section = $request->section;
         ////
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
-        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
         $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
         $endTime = '' . ' 23:59:59';

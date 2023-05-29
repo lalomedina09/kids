@@ -56,8 +56,8 @@ function activeBudgetSectionMonthMenu(section) {
             data: {
                 _token: token,
                 section: section,
-                budget_month: budget_month,
-                budget_year: budget_year
+                month: budget_month,
+                year: budget_year
             },
             type: "POST",
             headers: {
@@ -92,8 +92,8 @@ function changeDateMonthSection(section) {
     $.post(url, {
         _token: token,
         section: section,
-        budget_month: budget_month,
-        budget_year: budget_year
+        month: budget_month,
+        year: budget_year
     },
         function (data) {
             console.log("Ajax Correcto!! Se cargo Sección con el filtro de fecha : " + section);

@@ -113,8 +113,8 @@ function openModalAddMove(section, categoryId, divArrowsCategory, divAmountEstim
         divArrowsCategory: divArrowsCategory,
         divAmountEstimate: divAmountEstimate,
         divAmountReal: divAmountReal,
-        budget_month: budget_month,
-        budget_year: budget_year
+        month: budget_month,
+        year: budget_year
     },
         function (data) {
             console.log('Listo para agregar movimiento');
@@ -179,8 +179,10 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
     let real = $('#formAddMove_real').val();
     let percent = $('#formAddMove_percent').val();
     let created_at = $('#formAddMove_date').val();
+    let budget_month = $('#budget_month_id').val();
+    let budget_year = $('#budget_year_id').val();
 
-    if (category_id != '' || name != '' || real != '') {
+    if (category_id != '' && name != '' && estimated != '' && created_at != '') {
         console.log('Inicia proceso para envio de formulario registrar categoria');
 
     }else{
@@ -198,7 +200,9 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
         percent: percent,
         divAmountEstimate: divAmountEstimate,
         divAmountReal: divAmountReal,
-        created_at: created_at
+        created_at: created_at,
+        month: budget_month,
+        year: budget_year
     },
         function (data) {
            $("#header-level-month").empty();

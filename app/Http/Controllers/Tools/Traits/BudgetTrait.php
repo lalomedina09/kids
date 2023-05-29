@@ -12,7 +12,7 @@ trait BudgetTrait
     {
         $budget = new TsBudget;
         $budget->type_move = BudgetTrait::getTypeMove($categoryUser);
-        $budget->amount_real = $request->amount_real;
+        $budget->amount_real = ($request->amount_real) ? $request->amount_real : 0;
         $budget->amount_estimated = $request->amount_estimated;
         $budget->ts_category_user_id = $categoryUser->id;
         $budget->user_id = $user->id;
