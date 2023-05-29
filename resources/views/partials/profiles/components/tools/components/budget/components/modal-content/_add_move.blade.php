@@ -49,4 +49,29 @@
             <i class="lni lni-checkmark" style="font-weight: bold;"></i>
         </button>
     </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-8">
+        <!--<div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Default checkbox
+            </label>
+        </div>-->
+        <!--<div class="form-check mt-2">
+            <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label small" for="flexCheckChecked">
+                Agregar Movimiento en los proximos meses del año {{ $year }}
+            </label>
+        </div>-->
+
+        <div class="mt-2">
+            <label class="containerCheck">
+                <span class="small">
+                    Agregar Movimiento en los proximos meses del año {{ $year }}
+                </span>
+                <input type="checkbox" id="addMovePostMonth" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
 </div>

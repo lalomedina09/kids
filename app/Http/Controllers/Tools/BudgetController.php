@@ -244,6 +244,7 @@ class BudgetController extends Controller
         $divAmountEstimate = $request->divAmountEstimate;
         $divAmountReal = $request->divAmountReal;
         $created_at = $request->year . '-'. $request->month .'-' . $day = Carbon::now()->format('d');
+        $year = $request->year;
         //dd($created_at);
         $category = TsCategory::where('id', $categoryId)->first();
         $categoriesUser = TsCategoryUser::where('user_id', $user->id)
@@ -252,7 +253,7 @@ class BudgetController extends Controller
 
         $view = view(
             'partials.profiles.components.tools.components.budget.components.modal-content._add_move',
-            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at')
+            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at', 'year')
         )
         ->render();
 
@@ -265,9 +266,27 @@ class BudgetController extends Controller
     {
         $user = Auth::user();
         $category = TsCategory::where('id', $request->category_id)->first();
+        $arrayMonths = Controller::buildArrayMonths($request->year);
+        $addMovePostMonth = $request->addMovePostMonth;
 
         $categoryUser = CategoryUserTrait::createForForm($category, $user, $request);
         $budget = BudgetTrait::create($categoryUser, $user, $request);
+
+        if ($addMovePostMonth) {
+            foreach ($arrayMonths as $key => $value) {
+                if ($key > $request->month) {
+                    $request->request->add([
+                        'created_at' => $value['start_month'],
+                    ]);
+
+                    //dd($request->all());
+                    $budget = BudgetTrait::create($categoryUser, $user, $request);
+                }
+                //$request->month;
+                //dd($key, $value);
+            }
+        }
+
 
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);
         $divArrowsCategory = BudgetMonthFilter::divArrowsCategory($request, $budget);

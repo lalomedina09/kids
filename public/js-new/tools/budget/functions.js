@@ -181,6 +181,8 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
     let created_at = $('#formAddMove_date').val();
     let budget_month = $('#budget_month_id').val();
     let budget_year = $('#budget_year_id').val();
+    //let addMovePostMonth = null;
+    let addMovePostMonth = $('#addMovePostMonth').prop('checked');
 
     if (category_id != '' && name != '' && estimated != '' && created_at != '') {
         console.log('Inicia proceso para envio de formulario registrar categoria');
@@ -202,7 +204,8 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
         divAmountReal: divAmountReal,
         created_at: created_at,
         month: budget_month,
-        year: budget_year
+        year: budget_year,
+        addMovePostMonth: addMovePostMonth
     },
         function (data) {
            $("#header-level-month").empty();
