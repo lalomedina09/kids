@@ -75,11 +75,11 @@ Route::prefix('budget')
         Route::prefix('modal/year')
         ->group(function () {
             Route::post('/movements')
-                ->uses('BudgetController@AddMoveModalOpen')
+                ->uses('BudgetController@openModalYearMovements')
                 ->name('budget.add.move.modal.open');
 
             Route::post('/zoom')
-                ->uses('BudgetController@AddMoveModalSave')
+                ->uses('BudgetController@openModalYearZoom')
                 ->name('budget.add.move.modal.save');
         });
     });

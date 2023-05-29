@@ -41,7 +41,7 @@ function changeDateYearCalendar() {
         _token: token,
         //section: section,
         //budget_month: budget_month,
-        budget_year: budget_year
+        year: budget_year
     },
         function (data) {
             console.log("Ajax Anual!! Se aplica el filtro por año : " + budget_year);

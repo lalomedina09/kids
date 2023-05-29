@@ -279,4 +279,55 @@ class BudgetController extends Controller
         ]);
     }
 
+    //Nueva funcion para visualizar los movimientos del mes
+    public function openModalYearMovements(Request $request)
+    {
+        $user = Auth::user();
+        $categoryId = $request->categoryId;
+        $section = $request->section;
+        $divCategory = $request->divArrowsCategory;
+        $divAmountEstimate = $request->divAmountEstimate;
+        $divAmountReal = $request->divAmountReal;
+
+        $category = TsCategory::where('id', $categoryId)->first();
+        $categoriesUser = TsCategoryUser::where('user_id', $user->id)
+        ->where('ts_category_id', $categoryId)
+        ->get();
+
+        $view = view(
+            'partials.profiles.components.tools.components.budget.components.modal-content._add_move',
+            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal')
+        )
+        ->render();
+
+        return response()->json([
+            'view' => $view
+        ]);
+    }
+    //Nueva funcion para ver tarjeta en zom
+    public function openModalYearZoom(Request $request)
+    {
+        $user = Auth::user();
+        $categoryId = $request->categoryId;
+        $section = $request->section;
+        $divCategory = $request->divArrowsCategory;
+        $divAmountEstimate = $request->divAmountEstimate;
+        $divAmountReal = $request->divAmountReal;
+
+        $category = TsCategory::where('id', $categoryId)->first();
+        $categoriesUser = TsCategoryUser::where('user_id', $user->id)
+        ->where('ts_category_id', $categoryId)
+            ->get();
+
+        $view = view(
+            'partials.profiles.components.tools.components.budget.components.modal-content._add_move',
+            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal')
+        )
+        ->render();
+
+        return response()->json([
+            'view' => $view
+        ]);
+    }
+    //terminan funciones relacionadas a ventana modal
 }

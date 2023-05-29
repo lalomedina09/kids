@@ -4,11 +4,11 @@
             <div class="col-md-12 text-center mt-3">
                 <div class="row">
                     <div class="col-md-12 text-right" style="margin-bottom: -20px;">
-                        <a href="#"
+                        <!--<a href="#"
                         onclick="openModalBudgetZoom('{{ $_month['month'] }}', '{{ $_month['start_month'] }}', '{{ $_month['end_month'] }}');"
                         style="margin-right: 10px;">
                             <img src="{{ asset('images/tools/budget/zoom-in.png') }}" width="25" alt="Zoom">
-                        </a>
+                        </a>-->
                     </div>
                     <div class="col-md-12 text-center">
                         <span class="b-calendar-name-month">
@@ -99,12 +99,12 @@
                 @include('partials.profiles.components.tools.components.budget.view-year.calendar._categories')
 
                 <div class="mb-3 mt-1">
-                    <a href="#"
+                    <!--<a href="#"
                     onclick="openModalMoves('{{ $_month['month'] }}', '{{ $_month['start_month'] }}', '{{ $_month['end_month'] }}');" title="Ver movimientos del mes">
                         <img src="{{ asset('images/tools/budget/moves-dark.png') }}" width="25" alt="Movimientos">
                         <span style="font-weight:700; font-size: 1.1rem; color:#000;">Movimientos</span>
                         <img src="{{ asset('images/tools/budget/plus.png') }}" width="25" alt="Movimientos">
-                    </a>
+                    </a>-->
                 </div>
             </div>
         </div>
