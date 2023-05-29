@@ -322,3 +322,65 @@ function getOptionsDontCorrect($quiz, $user)
 
     return $data;
 }
+
+//Obtener fecha personalizada
+function customDateSpanish($date)
+{
+    $now = Carbon::parse($date)->format('Y-m-d');
+    $div = explode("-", $now);
+
+    $year = $div[0];
+    $month = $div[1];
+    $day = $div[2];
+    $month_spanish = getMonthSpanish($month);
+
+    return $day . " de " . $month_spanish . " de " . $year;
+}
+
+
+function getMonthSpanish($month)
+{
+    $months = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+    return $months[date('n') - $month];
+}
+
+function fechaEspanol($date)
+{
+    $format = 'Y-m-d H:i:s'; //This is an optional input format mask for datetime database extracted info
+    $d = DateTime::createFromFormat($format, $date); //A simple $d = new DateTime($fecha) can also be used
+    $year = $d->format('Y');
+    $month = $d->format('n');
+    $day = $d->format('d');
+    $dayWeek = $d->format('w');
+
+    $days = array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
+
+    $months = array(1 => "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+    return "{$days[$dayWeek]}, $day de {$months[$month]} de $year";
+}
+
+function dateRemoveHours($date)
+{
+    $onlyDate= explode(" ", $date);
+
+    return $onlyDate[0];
+}
+
+function getPercentForCategory($int_real, $out_real)
+{
+    if($int_real <> 0 && $out_real <> 0)
+    {
+        $percent = round(($out_real * 100)/$int_real);
+    }else{
+        $percent = 0;
+    }
+    return $percent;
+}
+
+function divEmailProfile($email)
+{
+    return $separate = explode("@", $email);
+
+}

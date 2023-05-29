@@ -84,12 +84,12 @@
 .custom-bg-gradient{
     background-color: #90d06b;
     background-image: linear-gradient(to right, #90d06b, #01dacb);
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
 }
 .space-left-in{
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .btn-white-tool-budget{
@@ -100,7 +100,7 @@
     text-decoration: none;
     /*border-style: solid;
     border-color: #eee;*/
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 .btn-white-tool-budget:hover{
@@ -124,7 +124,7 @@
     text-decoration: none;
     /*border-style: solid;
     border-color: #363637;*/
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 .btn-dark-tool-budget:hover{
@@ -190,7 +190,7 @@
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 1.25rem;
-    color: #fff;
+    color: #373839;
 }
 
 /*Texto con color degradado*/
@@ -248,17 +248,7 @@
     -webkit-mask-composite: xor;
             mask-composite: exclude;
 }
-/*
-.rounded-corners-gradient-borders {
-    width: 300px;
-    height: 80px;
-    border: double 4px transparent;
-    border-radius: 80px;
-    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #f00,#3020ff);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-  }
-*/
+
 .rounded-corners-gradient-borders{
     border: double 4px transparent;
     border-radius: 50%;
@@ -267,11 +257,15 @@
     padding: 8px;
     /*border-image: linear-gradient(to right, #80ca56, #02dacb) 1;*/
     background-image: linear-gradient(white, white), radial-gradient(circle at top left, #80ca56, #02dacb);
+    display: inline-block;
+    margin-top: 7px;
     font-size: .7rem;
     text-align: center;
     font-weight: 700;
     background-origin: border-box;
     background-clip: padding-box, border-box;
+    height: 40px;
+    width: 43px;
 }
 
 
@@ -282,3 +276,76 @@
     background: linear-gradient(90deg, rgba(128,202,86,1) 26%, rgba(2,218,203,1) 100%);
     border-radius: 15px;
 }
+
+
+/*Btn redondo agregar movimiento*/
+.redondo{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent !important;
+    border: 3px solid #fff;
+    margin-top: -10px;
+    color: #fff;
+}
+
+.redondo:hover {
+    background-color: #fff !important;
+    border: 3px solid #fff;
+    margin-top: -10px;
+    color: #000;
+}
+
+  /* estilos para componentes*/
+  .loading-show{
+    display: contents;
+  }
+  .loading-hidden{
+    display: none;
+  }
+
+  /* estilos scroll en la tabla*/
+  .my-custom-scrollbar {
+      position: relative;
+      height: 300px;
+      overflow: auto;
+  }
+
+  .table-wrapper-scroll-y {
+
+     display: block;
+  }
+
+  /*Estilos scroll en div de calendario*/
+  .div-scroll-calendar{
+    height:500px;
+    overflow:scroll;
+    overflow-x:hidden;
+  }
+
+  /*Media Queries para pantallas tipo laptop*/
+  @media (min-width: 1000px) {
+    .b-calendar-name-month{
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }
+
+    .b-calendar-div-amounts{
+        margin-top: 6%;
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+
+    .b-calendar-div-amounts-p{
+        font-size: 0.7rem;
+        color: #fff;
+        font-weight: bold;
+        margin-top: -5px;
+    }
+
+    .b-calendar-div-amounts-span {
+        font-size: .7rem;
+        margin-right: 20px;
+    }
+  }

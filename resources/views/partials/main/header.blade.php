@@ -235,11 +235,11 @@
                             Perfil
                         </a>
 
-                        <div class="dropdown-divider header__dropdown-divider"></div>
+                        <!--<div class="dropdown-divider header__dropdown-divider"></div>-->
 
-                        <a href="{{ route('exercises.index') }}" class="dropdown-item header__buttons header__dropdown-buttons">
+                        <!--<a href="{{ route('exercises.index') }}" class="dropdown-item header__buttons header__dropdown-buttons">
                             Ejercicios
-                        </a>
+                        </a>-->
 
                         <div class="dropdown-divider header__dropdown-divider"></div>
                             <a href="{{route('notification.index')}}"

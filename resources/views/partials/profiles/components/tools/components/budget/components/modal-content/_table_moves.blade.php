@@ -1,26 +1,7 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalMoves">
-    ver movimientos
-  </button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="modalMoves" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" style="color:#fff;">
-                Movimientos de Abril
-            </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <img src="{{ asset('images/tools/budget/minimize.png') }}" alt="Return" width="20">
-                <!--<span aria-hidden="true">&times;</span>-->
-            </button>
-        </div>
-        <div class="modal-body">
-            <!------------------------------------->
+<!------------------------------------->
             <div class="row">
                 <div class="col-md-4 text-center small">
-                   <span class="text-bold" style="font-size: 0.9rem;">
+                    <span class="text-bold" style="font-size: 0.9rem;">
                         Concepto
                     </span>
                 </div>
@@ -133,11 +114,3 @@
             </div>
 
             <!------------------------------------->
-        </div>
-        <!--<div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>-->
-      </div>
-    </div>
-  </div>

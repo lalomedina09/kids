@@ -10,7 +10,6 @@
         </div>
 
         @include('partials.profiles.components.tools.components.budget.view-month.sub-header-btns')
-
     </div>
 
     <div class="" style="background-color: #eee;">
