@@ -16,7 +16,7 @@ trait BudgetTrait
         $budget->amount_estimated = $request->amount_estimated;
         $budget->ts_category_user_id = $categoryUser->id;
         $budget->user_id = $user->id;
-
+        $budget->created_at = $request->created_at;
         $budget->save();
         return $budget;
     }

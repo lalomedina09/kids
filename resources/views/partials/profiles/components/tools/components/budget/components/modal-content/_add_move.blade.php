@@ -21,21 +21,27 @@
         </select>--}}
         <input type="text" class="form-control" id="formAddMove_name" required placeholder="Agrega la Categoría">
     </div>
-    <div class="col-md-3 text-center">
+    <div class="col-md-2 text-center">
         <span class="small">
-                Cantidad estimada
+                $ estimada
         </span>
         <input type="text" class="form-control" id="formAddMove_estimated" onkeypress="return valideKey(event);"
-        required placeholder="Agrega el monto estimado"/>
+        required placeholder="Agregar monto"/>
 
     </div>
 
-    <div class="col-md-3 text-center">
+    <div class="col-md-2 text-center">
         <span class="small">
-                Cantidad Real
+                $ Real
         </span>
         <input type="text" class="form-control" id="formAddMove_real" onkeypress="return valideKey(event);"
-        required placeholder="Agrega el monto estimado">
+        required placeholder="Agregar monto">
+    </div>
+    <div class="col-md-2 text-center">
+        <span class="small">
+                Fecha
+        </span>
+        <input type="date" class="form-control" id="formAddMove_date" value="{{ $created_at }}">
     </div>
     <div class="col-md-2">
         <br>

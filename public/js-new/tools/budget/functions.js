@@ -102,14 +102,19 @@ function openModalAddMove(section, categoryId, divArrowsCategory, divAmountEstim
 
     let url = '/budget/addmove/modal/open';
     let token = $('#token').val();
+    let budget_month = $('#budget_month_id').val();
+    let budget_year = $('#budget_year_id').val();
     console.log('Activando modal para agregar movimiento');
+
     $.post(url, {
         _token: token,
         section: section,
         categoryId: categoryId,
         divArrowsCategory: divArrowsCategory,
         divAmountEstimate: divAmountEstimate,
-        divAmountReal: divAmountReal
+        divAmountReal: divAmountReal,
+        budget_month: budget_month,
+        budget_year: budget_year
     },
         function (data) {
             console.log('Listo para agregar movimiento');
@@ -173,6 +178,7 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
     let estimated = $('#formAddMove_estimated').val();
     let real = $('#formAddMove_real').val();
     let percent = $('#formAddMove_percent').val();
+    let created_at = $('#formAddMove_date').val();
 
     if (category_id != '' || name != '' || real != '') {
         console.log('Inicia proceso para envio de formulario registrar categoria');
@@ -191,7 +197,8 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
         amount_real: real,
         percent: percent,
         divAmountEstimate: divAmountEstimate,
-        divAmountReal: divAmountReal
+        divAmountReal: divAmountReal,
+        created_at: created_at
     },
         function (data) {
            $("#header-level-month").empty();

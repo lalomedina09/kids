@@ -243,7 +243,8 @@ class BudgetController extends Controller
         $divCategory = $request->divArrowsCategory;
         $divAmountEstimate = $request->divAmountEstimate;
         $divAmountReal = $request->divAmountReal;
-
+        $created_at = $request->budget_year . '-'. $request->budget_month .'-' . $day = Carbon::now()->format('d');
+        //dd($created_at);
         $category = TsCategory::where('id', $categoryId)->first();
         $categoriesUser = TsCategoryUser::where('user_id', $user->id)
         ->where('ts_category_id', $categoryId)
@@ -251,7 +252,7 @@ class BudgetController extends Controller
 
         $view = view(
             'partials.profiles.components.tools.components.budget.components.modal-content._add_move',
-            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal')
+            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at')
         )
         ->render();
 
