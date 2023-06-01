@@ -21,6 +21,12 @@ trait BudgetTrait
         return $budget;
     }
 
+    public static function destroy($id)
+    {
+        $budget = TsBudget::withTrashed()->findOrFail($id);
+        $budget->delete();
+    }
+
     public static function editItem($budget, $request)
     {
         $nowTime = Carbon::now()->format('H:i:s');
@@ -47,7 +53,9 @@ trait BudgetTrait
 
     public static function getTypeMove($categoryUser)
     {
+        //dd('category_user', $categoryUser);
         $category_id = $categoryUser->ts_category_id;
+        //dd($category_id);
         return $value = ($category_id == 4 || $category_id == 5) ? 1 : 0 ;
     }
 
@@ -94,8 +102,6 @@ trait BudgetTrait
         ->where('ts_budgets.created_at', '>=', "$startMonth")
         ->where('ts_budgets.created_at', '<=', "$endMonth")
         ->select('ts_budgets.*')
-        //->sum("$data_sum");
-        //->toSql();
         ->get();
 
         return $q->sum("$data_sum");

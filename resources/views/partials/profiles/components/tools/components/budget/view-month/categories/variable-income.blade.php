@@ -53,7 +53,14 @@
             <!-- Particula: Renglones para mostrar las categorías -->
             <!-- Variables de la parte superior funcionan para el siguiente include-->
             <div id="{{ $idArrowsName }}">
-                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows')
+                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows',
+                array(
+                    'section' => 'entrances',
+                    'category_id' => 5,
+                    'idArrowsName' => $idArrowsName,
+                    'idCategoryAmountReal' => $idCategoryAmountReal,
+                    'idCategoryAmountEstimate' => $idCategoryAmountEstimate
+                ))
             </div>
             <br>
             <!-- Particula: Boton que llamara al modal para agregar movimientos-->

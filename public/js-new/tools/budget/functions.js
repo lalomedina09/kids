@@ -48,12 +48,8 @@ function activeBudgetSectionCreateCategories() {
 function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmountReal) {
 
     let token = $('#token').val();
-    //let month = $('#month').val();
-    //let year = $('#year').val();
-    ////7
     let month = $('#budget_month_id').val();
     let year = $('#budget_year_id').val();
-    ////
     let value = $('#' + nameInput + '_' + id_move).val();
 
     console.log('Usuario inicia edicion del input con valor:  ' + nameInput);
@@ -87,8 +83,6 @@ function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmou
             $('#' + divAmountEstimate).empty();
             $('#' + divAmountEstimate).html(data.viewHeaderCategoryAmountReal);
             console.log(divAmountEstimate + '<--- div para monto estimado');
-            //$('#' + nameInput + '_' + id_move).val();
-            //divArrowsName
         },
         error: function () {
             console.log("No se hizo el update en la DB")
@@ -111,6 +105,7 @@ function openModalAddMove(section, categoryId, divArrowsCategory, divAmountEstim
         section: section,
         categoryId: categoryId,
         divArrowsCategory: divArrowsCategory,
+        idArrowsName: divArrowsCategory,
         divAmountEstimate: divAmountEstimate,
         divAmountReal: divAmountReal,
         month: budget_month,
@@ -138,7 +133,6 @@ function openModalMoves(nameMonth, start, end) {
         end: end
     },
         function (data) {
-            //console.log(data);
             console.log('Listo para ver movimientos');
             $("#contentModalMoves").empty();
             $("#contentModalMoves").html(data.view);
@@ -160,7 +154,6 @@ function openModalBudgetZoom(nameMonth, start, end) {
         end: end
     },
         function (data) {
-            //console.log(data);
             console.log('Zoom activado para seccion del mes');
             $("#contentModalZoom").empty();
             $("#contentModalZoom").html(data.view);
@@ -181,7 +174,7 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
     let created_at = $('#formAddMove_date').val();
     let budget_month = $('#budget_month_id').val();
     let budget_year = $('#budget_year_id').val();
-    //let addMovePostMonth = null;
+
     let addMovePostMonth = $('#addMovePostMonth').prop('checked');
 
     if (category_id != '' && name != '' && estimated != '' && created_at != '') {
@@ -205,7 +198,8 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
         created_at: created_at,
         month: budget_month,
         year: budget_year,
-        addMovePostMonth: addMovePostMonth
+        addMovePostMonth: addMovePostMonth,
+        divArrowsCategory: divArrowsCategory
     },
         function (data) {
            $("#header-level-month").empty();
@@ -228,3 +222,78 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
         });
 }
 
+//Funcion para abrir Ventana modal que eliminara el movimiento
+function openModalDeleteMove(section, categoryId, divArrowsCategory, divAmountEstimate, divAmountReal, budget_id) {
+
+    let url = '/budget/deletemove/modal/open';
+    let token = $('#token').val();
+    let budget_month = $('#budget_month_id').val();
+    let budget_year = $('#budget_year_id').val();
+    console.log('Activando modal para borrar movimiento');
+    //alert('entro a la funcion para abrir ventana de borrar movimientos');
+    $.post(url, {
+        _token: token,
+        section: section,
+        categoryId: categoryId,
+        divArrowsCategory: divArrowsCategory,
+        divAmountEstimate: divAmountEstimate,
+        divAmountReal: divAmountReal,
+        month: budget_month,
+        year: budget_year,
+        budget_id: budget_id
+    },
+        function (data) {
+            console.log('Listo para borrar movimiento');
+            $("#contentModalDeleteMove").empty();
+            $("#contentModalDeleteMove").html(data.view);
+            $("#modalDeleteMoveBudget").modal('show');
+        });
+}
+
+//Funcion para confirmar que se van eliminar los o el movimiento
+function deleteMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal) {
+    let url = '/budget/deletemove/modal/confirm';
+    let token = $('#token').val();
+    let category_id = $('#formAddMove_category_id').val();
+    let budget_id = $('#formDeleteMove_id').val();
+    let budget_name = $('#formDeleteMove_name').val();
+    let budget_month = $('#budget_month_id').val();
+    let budget_year = $('#budget_year_id').val();
+    let ts_category_user_id = $('#formDeleteMove_ts_category_user_id').val();
+    let deleteMovePostMonth = $('#deleteMovePostMonth').prop('checked');
+
+    $.post(url, {
+        _token: token,
+        section: section,
+        category_id: category_id,
+        divAmountEstimate: divAmountEstimate,
+        divAmountReal: divAmountReal,
+        month: budget_month,
+        year: budget_year,
+        budget_id: budget_id,
+        ts_category_user_id: ts_category_user_id,
+        budget_name: budget_name,
+        deleteMovePostMonth: deleteMovePostMonth,
+        divArrowsCategory: divArrowsCategory
+    },
+        function (data) {
+            $("#header-level-month").empty();
+            $("#header-level-month").html(data.resumenMonth);
+
+            //Renglones de la categoria principal
+            $('#' + divArrowsCategory).empty();
+            $('#' + divArrowsCategory).html(data.divArrowsCategory);
+
+            //Update Encabezado de Categoria Monto Real
+            $('#' + divAmountReal).empty();
+            $('#' + divAmountReal).html(data.viewAmountEstimate);
+
+            //Update Encabezado de Categoria Monto Estimado
+            $('#' + divAmountEstimate).empty();
+            $('#' + divAmountEstimate).html(data.viewAmountReal);
+
+            //Encabezado de la categoria principal
+            $('#modalDeleteMoveBudget').modal('hide');
+            console.log('El movimientos se elimino correctamente');
+        });
+}

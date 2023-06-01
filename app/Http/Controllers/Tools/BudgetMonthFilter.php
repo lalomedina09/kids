@@ -20,8 +20,7 @@ class BudgetMonthFilter extends Controller
     public static function header($request)
     {
         $user = Auth::user();
-        //$q = Order::query();
-        //dd($request->all());
+
         $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
         $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
@@ -57,7 +56,6 @@ class BudgetMonthFilter extends Controller
 
     public static function body($moves)
     {
-        //$q = Order::query();
         $entrances = $moves->where('type_move', 1)->sum('amount_real');
         $exists = $moves->where('type_move', 0)->sum('amount_real');
         $total = $entrances - $exists;
@@ -210,7 +208,7 @@ class BudgetMonthFilter extends Controller
         $user = Auth::user();
         $counter = 1;
         $section = $request->section;
-        ////
+
         $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
         $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
@@ -226,15 +224,22 @@ class BudgetMonthFilter extends Controller
             'end' => $endDate
         );
 
-        $categoryMain = $request->category_id;
+        //dd($budget->customCategory->ts_category_id, 'obtenemos id de categoria principl');
+        //$categoryMain = $request->category_id;
+        $category_id = $budget->customCategory->ts_category_id;
+        //dd($categoryMain);
+        //dd($budget->customCategory, 'Linea 228');
         $typeMove = BudgetTrait::getTypeMove($budget->customCategory);
-        $_rows = BudgetTrait::dataCategory($date, $categoryMain, $typeMove);
+        $_rows = BudgetTrait::dataCategory($date, $category_id, $typeMove);
+        //dd($_rows);
         $categoryRows = $_rows->get();
+        $divArrowsCategory = $request->divArrowsCategory;
+        $idArrowsName = $request->divArrowsCategory;
         $idCategoryAmountReal = $request->divAmountReal;
         $idCategoryAmountEstimate = $request->divAmountEstimate;
 
         $viewArrows = view('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows',
-            compact('counter', 'section', 'categoryRows', 'idCategoryAmountReal', 'idCategoryAmountEstimate')
+            compact('counter', 'section', 'categoryRows', 'idCategoryAmountReal', 'idCategoryAmountEstimate', 'category_id', 'divArrowsCategory', 'idArrowsName')
         )->render();
 
         $viewHeaderCategoryAmountEstimate = BudgetMonthFilter::calculateHeaderCategory($categoryRows, 'estimate', $request);
@@ -252,12 +257,10 @@ class BudgetMonthFilter extends Controller
     public static function calculateHeaderCategory($categoryRows, $typeAmount, $request)
     {
         $section = $request->section;
-        //dd($typeAmount, 'tipo de monto');
-        //dd($typeAmount, 'tipo de monto');
-        //if ($section == "entrance") {
+
         if($typeAmount == "estimate"){
             $amount_estimate = $categoryRows->sum('amount_estimated');
-            //dd($amount_estimate);
+
             $view = view(
                 'partials.profiles.components.tools.components.budget.view-month.ajax.components.'. $section .'.categoryHeaderAmontEstimate',
                 compact('amount_estimate')

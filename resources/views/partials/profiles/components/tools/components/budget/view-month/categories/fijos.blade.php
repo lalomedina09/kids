@@ -55,7 +55,14 @@
 
             <!-- Particula: Renglones para mostrar las categorías -->
             <div id="{{ $idArrowsName }}">
-                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows')
+                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows',
+                array(
+                    'section' => 'exits',
+                    'category_id' => 1,
+                    'idArrowsName' => $idArrowsName,
+                    'idCategoryAmountReal' => $idCategoryAmountReal,
+                    'idCategoryAmountEstimate' => $idCategoryAmountEstimate
+                ))
             </div>
 
             <br>

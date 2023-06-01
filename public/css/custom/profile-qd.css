@@ -277,6 +277,12 @@
     border-radius: 15px;
 }
 
+.modal-delete-move {
+    /*background-image: linear-gradient(white, white), radial-gradient(circle at top left, #80ca56, #02dacb);*/
+    background: #363637;
+    /*background: linear-gradient(90deg, rgba(128, 202, 86, 1) 26%, rgba(2, 218, 203, 1) 100%);*/
+    border-radius: 15px;
+}
 
 /*Btn redondo agregar movimiento*/
 .redondo{
@@ -393,6 +399,42 @@
     transform: rotate(45deg);
 }
 
+/*Boton para eliminar concepto*/
+.button-delete {
+    background-color: #363637;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.button-delete:hover {
+    background-color: #fc7c7c;
+}
+
+.button-confirm-delete {
+    background-color: #fc7c7c;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button-confirm-delete:hover {
+    background-color: #f86c6c;
+}
   /*Media Queries para pantallas tipo laptop*/
   @media (min-width: 1000px) {
     .b-calendar-name-month{

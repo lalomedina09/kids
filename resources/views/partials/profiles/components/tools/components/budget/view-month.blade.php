@@ -33,5 +33,18 @@
             </div>
         </div>
     </div>
+    <!-- Modal Delete Move -->
+    <div class="modal fade" id="modalDeleteMoveBudget" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content modal-delete-move" style="border-radius: 20px;">
+                <div class="modal-body">
+                    <div id="contentModalDeleteMove">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-------->
 </div>
