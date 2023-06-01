@@ -13,4 +13,9 @@
             <img src="{{ asset('images/tools/budget/report-white.png') }}" width="25" alt="Lo que sale">
         </a>
     </div>
+    <div class="col-md-3 text-left">
+        <div id="budgetSectionYearLoading" style="display:none">
+            <img src="{{ asset('images/gif/loading/loading-qdplay.gif') }}" alt="Loading 4" width="30">
+        </div>
+    </div>
 </div>

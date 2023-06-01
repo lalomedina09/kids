@@ -36,6 +36,7 @@ function changeDateYearCalendar() {
     let token = $('#token').val();
 
     let budget_year = $('#budget_year').val();
+    $('#budgetSectionYearLoading').css("display", "contents");
     //pendiente activacion de ajax y agregar funcion al select de html
     $.post(url, {
         _token: token,
@@ -46,14 +47,8 @@ function changeDateYearCalendar() {
         function (data) {
             console.log("Ajax Anual!! Se aplica el filtro por año : " + budget_year);
 
-            //responseDataHeaderMonth(data);
             responseDataHeaderYear(data);
             responseDataSectionYear(data);
-            /*
-            responseDataSectionMonthBtns(data);
-            $("#header-level-month").empty();
-            $("#header-level-month").html(data.resumenMonth);
-            responseDataSectionMonthContent(data, section);
-            */
+            $('#budgetSectionYearLoading').css("display", "none");
         });
 }

@@ -30,8 +30,7 @@
 @endforeach
 <div class="col-md-3 text-left">
     <div id="budgetSectionMonthBtnsLoading" style="display:none">
-        <img src="{{ asset('images/gif/loading/circle-black.gif') }}" alt="Loading 4" width="30">
-        <!--<span style="font-size:.8rem">.... <span>-->
+        <img src="{{ asset('images/gif/loading/loading-qdplay.gif') }}" alt="Loading 4" width="30">
     </div>
 </div>
 

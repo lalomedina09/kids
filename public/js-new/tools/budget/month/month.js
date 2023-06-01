@@ -89,6 +89,8 @@ function changeDateMonthSection(section) {
     let budget_month = $('#budget_month_id').val();
     let budget_year = $('#budget_year_id').val();
 
+    $('#budgetSectionMonthBtnsLoading').css("display", "contents");
+
     $.post(url, {
         _token: token,
         section: section,
@@ -103,6 +105,7 @@ function changeDateMonthSection(section) {
             $("#header-level-month").empty();
             $("#header-level-month").html(data.resumenMonth);
             responseDataSectionMonthContent(data, section);
+            $('#budgetSectionMonthBtnsLoading').css("display", "none");
         });
 }
 
