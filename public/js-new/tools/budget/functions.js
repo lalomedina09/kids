@@ -55,6 +55,14 @@ function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmou
     console.log('Usuario inicia edicion del input con valor:  ' + nameInput);
 
     $.ajax({
+        beforeSend: function () {
+            //customBeforeLoading();
+            $('#budgetSectionMonthBtnsLoading').css("display", "contents");
+        },
+        complete: function () {
+            //customCompleteLoading();
+            $('#budgetSectionMonthBtnsLoading').css("display", "none");
+        },
         url: "/budget/edit/" + section,
         data: {
             _token: token,
@@ -100,7 +108,7 @@ function openModalAddMove(section, categoryId, divArrowsCategory, divAmountEstim
     let budget_year = $('#budget_year_id').val();
     console.log('Activando modal para agregar movimiento');
 
-    $.post(url, {
+    $.post(url,{
         _token: token,
         section: section,
         categoryId: categoryId,
