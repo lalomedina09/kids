@@ -2,6 +2,15 @@
     <div class="col-md-12 ">
         <div style="background-color: #eeeeee;margin-left: 10px;margin-right: 10px;">
             <div class="row line-buttom">
+                @php
+                    $counter = 1;
+                    $section = "entrances";
+                    $categoryRows = $data['constantes']->get();
+                    $idArrowsName = "arrowsCategorySteady";
+                    $idCategoryAmountReal = "arrowsCategorySteadyAmountReal";
+                    $idCategoryAmountEstimate = "arrowsCategorySteadyAmountEstimate";
+                @endphp
+
                 <!-- Particula: Boton minimizar o maximizar lista de categorias-->
                 @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_min_or_max')
 
@@ -12,14 +21,6 @@
                     </span>
                 </div>
 
-                 @php
-                    $counter = 1;
-                    $section = "entrances";
-                    $categoryRows = $data['constantes']->get();
-                    $idArrowsName = "arrowsCategorySteady";
-                    $idCategoryAmountReal = "arrowsCategorySteadyAmountReal";
-                    $idCategoryAmountEstimate = "arrowsCategorySteadyAmountEstimate";
-                @endphp
                 @include('partials.profiles.components.tools.components.budget.view-month.categories.components.entrances.header-amount-category',
                 array(
                     'amount_estimate' => $data['constantes']->sum('amount_estimated'),

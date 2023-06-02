@@ -2,13 +2,6 @@
     <div class="col-md-12 ">
         <div style="background-color: #eeeeee;margin-left: 10px;margin-right: 10px;">
             <div class="row line-buttom">
-                <!-- Particula: Boton minimizar o maximizar lista de categorias-->
-                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_min_or_max')
-
-                <div class="col-md-4 mt-4">
-                    <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="25" alt="Minimizar">
-                    <span class="text-bold"> Ingresos Variables</span>
-                </div>
                 @php
                     $counter = 1;
                     $section = "entrances";
@@ -17,6 +10,14 @@
                     $idCategoryAmountReal = "arrowsCategoryVariablesAmountReal";
                     $idCategoryAmountEstimate = "arrowsCategoryVariablesAmountEstimate";
                 @endphp
+
+                <!-- Particula: Boton minimizar o maximizar lista de categorias-->
+                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_min_or_max')
+
+                <div class="col-md-4 mt-4">
+                    <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="25" alt="Minimizar">
+                    <span class="text-bold"> Ingresos Variables</span>
+                </div>
 
                 @include('partials.profiles.components.tools.components.budget.view-month.categories.components.entrances.header-amount-category',
                 array(

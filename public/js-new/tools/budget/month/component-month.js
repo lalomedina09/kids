@@ -22,3 +22,12 @@ function responseDataSectionMonthContent(data, section) {
     $("#budget-section-month-content").html(data.section_month_content);
 }
 
+function ocultarDivBudgetCategory(idDivCategory)
+{
+    console.log('Debe ocultar el id #' + idDivCategory);
+    //$('#' + idDivCategory).hide(); //muestro mediante id
+    $('#' + idDivCategory).toggle(500);
+
+    //$('.target').show(); //muestro mediante clase
+    //let value = $('#' + nameInput + '_' + id_move).val();
+}

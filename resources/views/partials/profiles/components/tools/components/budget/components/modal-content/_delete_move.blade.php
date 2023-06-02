@@ -39,5 +39,8 @@
             onclick="deleteMoveBudget('{{$section}}', '{{ $divCategory }}', '{{ $divAmountEstimate }}', '{{ $divAmountReal }}');">
             Eliminar movimiento
         </button>
+        <div id="budgetMonthLoadingDeleteMove" style="display:none">
+            <img src="{{ asset('images/gif/loading/loading-qdplay.gif') }}" alt="Loading 4" width="30">
+        </div>
     </div>
 </div>

@@ -107,7 +107,7 @@ function openModalAddMove(section, categoryId, divArrowsCategory, divAmountEstim
     let budget_month = $('#budget_month_id').val();
     let budget_year = $('#budget_year_id').val();
     console.log('Activando modal para agregar movimiento');
-
+    $('#budgetSectionMonthBtnsLoading').css("display", "contents");
     $.post(url,{
         _token: token,
         section: section,
@@ -124,7 +124,7 @@ function openModalAddMove(section, categoryId, divArrowsCategory, divAmountEstim
             $("#contentModalAddMove").empty();
             $("#contentModalAddMove").html(data.view);
             $("#modalAddMoveBudget").modal('show');
-
+            $('#budgetSectionMonthBtnsLoading').css("display", "none");
         });
 }
 
@@ -192,6 +192,7 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
         alert('No puedes guardar campos vacios');
         return false;
     }
+    $('#budgetMonthLoadingAddMove').css("display", "contents");
 
     $.post(url, {
         _token: token,
@@ -227,6 +228,7 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
 
             //Encabezado de la categoria principal
             $('#modalAddMoveBudget').modal('hide');
+            $('#budgetMonthLoadingAddMove').css("display", "none");
         });
 }
 
@@ -238,6 +240,7 @@ function openModalDeleteMove(section, categoryId, divArrowsCategory, divAmountEs
     let budget_month = $('#budget_month_id').val();
     let budget_year = $('#budget_year_id').val();
     console.log('Activando modal para borrar movimiento');
+    $('#budgetSectionMonthBtnsLoading').css("display", "contents");
     //alert('entro a la funcion para abrir ventana de borrar movimientos');
     $.post(url, {
         _token: token,
@@ -255,6 +258,7 @@ function openModalDeleteMove(section, categoryId, divArrowsCategory, divAmountEs
             $("#contentModalDeleteMove").empty();
             $("#contentModalDeleteMove").html(data.view);
             $("#modalDeleteMoveBudget").modal('show');
+            $('#budgetSectionMonthBtnsLoading').css("display", "none");
         });
 }
 
@@ -269,7 +273,7 @@ function deleteMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmou
     let budget_year = $('#budget_year_id').val();
     let ts_category_user_id = $('#formDeleteMove_ts_category_user_id').val();
     let deleteMovePostMonth = $('#deleteMovePostMonth').prop('checked');
-
+    $('#budgetMonthLoadingDeleteMove').css("display", "contents");
     $.post(url, {
         _token: token,
         section: section,
@@ -302,6 +306,7 @@ function deleteMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmou
 
             //Encabezado de la categoria principal
             $('#modalDeleteMoveBudget').modal('hide');
+            $('#budgetMonthLoadingDeleteMove').css("display", "none");
             console.log('El movimientos se elimino correctamente');
         });
 }
