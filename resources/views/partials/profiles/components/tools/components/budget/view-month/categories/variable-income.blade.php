@@ -37,11 +37,11 @@
                                <!--<span style="font-size: .8rem">  (Lo que necesitas para vivir) </span>-->
                             </div>
                             <div class=" col-md-8 text-right">
-                                <span style="font-size: .8rem">
+                                {{--<span style="font-size: .8rem">
                                     Gasta el
                                     <span class="text-bold">50%</span>
                                     de tus ingresos (Hasta ${{ number_format($percentVariables, 2)}})
-                                </span>
+                                </span>--}}
                             </div>
                         </div>
                     </div>

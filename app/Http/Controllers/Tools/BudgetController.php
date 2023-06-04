@@ -300,20 +300,20 @@ class BudgetController extends Controller
     public function openModalYearMovements(Request $request)
     {
         $user = Auth::user();
-        $categoryId = $request->categoryId;
-        $section = $request->section;
-        $divCategory = $request->divArrowsCategory;
-        $divAmountEstimate = $request->divAmountEstimate;
-        $divAmountReal = $request->divAmountReal;
 
-        $category = TsCategory::where('id', $categoryId)->first();
-        $categoriesUser = TsCategoryUser::where('user_id', $user->id)
-        ->where('ts_category_id', $categoryId)
-        ->get();
+        $request->nameMonth;
+        $nameMonth = $request->nameMonth;
+        $date = array(
+            'start' => $request->start . ' 00:00:00',
+            'end' => $request->end . ' 23:59:59'
+        );
 
+        $moves = TsBudget::where('user_id', $user->id);
+        $data =  BudgetTrait::dataAllMoves($moves, $date);
+        //dd('lugar correcto');
         $view = view(
-            'partials.profiles.components.tools.components.budget.components.modal-content._add_move',
-            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal')
+            'partials.profiles.components.tools.components.budget.components.modal-content._table_moves',
+            compact('data', 'nameMonth')
         )
         ->render();
 
@@ -326,20 +326,26 @@ class BudgetController extends Controller
     public function openModalYearZoom(Request $request)
     {
         $user = Auth::user();
-        $categoryId = $request->categoryId;
-        $section = $request->section;
-        $divCategory = $request->divArrowsCategory;
-        $divAmountEstimate = $request->divAmountEstimate;
-        $divAmountReal = $request->divAmountReal;
+        $request->nameMonth;
+        $request->start;
+        $request->end;
 
-        $category = TsCategory::where('id', $categoryId)->first();
-        $categoriesUser = TsCategoryUser::where('user_id', $user->id)
-        ->where('ts_category_id', $categoryId)
-            ->get();
+        $card = array(
+            'month' => $request->nameMonth,
+            'start_month' => $request->start,
+            'end_month' => $request->end,
+            "enter_estimate" => BudgetTrait::dataCalendarMonth($request->start, $request->end, $user, 'amount_estimated', $typeMove = 1, $cat = null),
+            "enter_real" => BudgetTrait::dataCalendarMonth($request->start, $request->end, $user, 'amount_real', $typeMove = 1, $cat = null),
+            "out_estimate" => BudgetTrait::dataCalendarMonth($request->start, $request->end, $user, 'amount_estimated', $typeMove = 0, $cat = null),
+            "out_real" => BudgetTrait::dataCalendarMonth($request->start, $request->end, $user, 'amount_real', $typeMove = 0, $cat = null),
+            "cat_fijo" => BudgetTrait::dataCalendarMonth($request->start, $request->end, $user, 'amount_real', $typeMove = 0, $cat = 1),
+            "cat_gustos" => BudgetTrait::dataCalendarMonth($request->start, $request->end, $user, 'amount_real', $typeMove = 0, $cat = 2),
+            "cat_ahorros" => BudgetTrait::dataCalendarMonth($request->start, $request->end, $user, 'amount_real', $typeMove = 0, $cat = 3),
+        );
 
         $view = view(
-            'partials.profiles.components.tools.components.budget.components.modal-content._add_move',
-            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal')
+            'partials.profiles.components.tools.components.budget.components.modal-content._zoom_month',
+            compact('card')
         )
         ->render();
 
