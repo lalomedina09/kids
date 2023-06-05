@@ -1,7 +1,8 @@
 function activeBudgetSectionYear() {
 
     let token = $('#token').val();
-    console.log('Ajax presupuesto Seccion Anual');
+    $("#btn-section-year-top").addClass("btn-line-buttom");
+    //console.log('Ajax presupuesto Seccion Anual');
     $.ajax({
         url: "/budget/active/year",
         beforeSend: function () {
@@ -19,12 +20,12 @@ function activeBudgetSectionYear() {
             'X-CSRF-Token': '{{ csrf_token() }}',
         },
         success: function (data) {
-            console.log("Ajax regreso con exito del BackEnd Ruta Anual");
             responseDataHeaderYear(data);
             responseDataSectionYear(data);
+            $("#btn-section-month-top").removeClass("btn-line-buttom");
         },
         error: function () {
-            console.log("Ajax no tuvo exito en el BackEnd Ruta Anual")
+            //console.log("Ajax no tuvo exito en el BackEnd Ruta Anual")
         }
     });
 
@@ -37,16 +38,11 @@ function changeDateYearCalendar() {
 
     let budget_year = $('#budget_year').val();
     $('#budgetSectionYearLoading').css("display", "contents");
-    //pendiente activacion de ajax y agregar funcion al select de html
     $.post(url, {
         _token: token,
-        //section: section,
-        //budget_month: budget_month,
         year: budget_year
     },
         function (data) {
-            console.log("Ajax Anual!! Se aplica el filtro por año : " + budget_year);
-
             responseDataHeaderYear(data);
             responseDataSectionYear(data);
             $('#budgetSectionYearLoading').css("display", "none");

@@ -435,6 +435,14 @@
 .button-confirm-delete:hover {
     background-color: #f86c6c;
 }
+
+.btn-line-buttom{
+    border-bottom: solid;
+    text-decoration: none;
+}
+.btn-line-buttom:hover {
+    text-decoration: none;
+}
   /*Media Queries para pantallas tipo laptop*/
   @media (min-width: 1000px) {
     .b-calendar-name-month{

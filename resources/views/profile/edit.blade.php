@@ -16,6 +16,7 @@
     <script type="text/javascript" src="{{ asset('js-new/models/branches.js') }}?v={{ (rand(1,500)) }}"></script>
     <script type="text/javascript" src="{{ asset('js-new/models/companyroles.js') }}?v={{ (rand(1,500)) }}"></script>
 
+    <script type="text/javascript" src="{{ asset('js-new/tools/budget/functions-modal.js') }}?v={{ (rand(1,500)) }}"></script>
     <script type="text/javascript" src="{{ asset('js-new/tools/budget/functions.js') }}?v={{ (rand(1,500)) }}"></script>
     <script type="text/javascript" src="{{ asset('js-new/components/numero-decimal.js') }}?v={{ (rand(1,500)) }}"></script>
     <script type="text/javascript" src="{{ asset('js-new/tools/budget/month/component-month.js') }}?v={{ (rand(1,500)) }}"></script>
