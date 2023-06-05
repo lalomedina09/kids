@@ -58,9 +58,11 @@ class BudgetController extends Controller
 
         //TsBudget
         //$searchCategories = TsCategoryUser::where('user_id', $user->id)
-        $searchCategories = TsBudget::where('user_id', $user->id)
-            ->where('created_at', '>=', $startDate)
-            ->where('created_at', '<=', $endDate)
+        $searchCategories = TsBudget::join('ts_categories_users', 'ts_budgets.ts_category_user_id', '=', 'ts_categories_users.id')
+            ->where('ts_budgets.user_id', $user->id)
+            ->where('ts_budgets.created_at', '>=', $startDate)
+            ->where('ts_budgets.created_at', '<=', $endDate)
+            ->where('ts_categories_users.created_by_app', 1)
             ->get();
 
         if (count($searchCategories) == 0) {

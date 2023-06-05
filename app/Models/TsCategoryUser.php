@@ -15,7 +15,7 @@ class TsCategoryUser extends Model
     protected $table = 'ts_categories_users';
 
     protected $fillable = [
-        'name', 'percent'
+        'name', 'percent', 'created_by_app'
     ];
 
     protected $dates = [

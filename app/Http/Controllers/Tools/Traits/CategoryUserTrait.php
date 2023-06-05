@@ -13,6 +13,7 @@ trait CategoryUserTrait
         $categoryUser->percent = $request->percent;
         $categoryUser->ts_category_id = $category->parent_id;
         $categoryUser->user_id = $user->id;
+        $categoryUser->created_by_app = 1;
 
         $categoryUser->save();
         return $categoryUser;
