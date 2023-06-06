@@ -175,7 +175,33 @@ class BudgetController extends Controller
         ]);
     }
 
-    public function activeCalendarFilterYear(Request $request)
+    public function activeYearReport(Request $request)
+    {
+        $user = Auth::user();
+        $moves = TsBudget::where('user_id', $user->id)->get();
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $header = BudgetYearFilter::header($moves, $request);
+
+        $labels = BudgetYearFilter::buildMonthOfArray($year);
+        $ingresosEstimados = BudgetYearFilter::buildAmontsForMonthEstimate($year, $type = 1);
+        $ingresosReales = BudgetYearFilter::buildAmontsForMonthReal($year, $type = 1);
+
+        $gastosEstimados = BudgetYearFilter::buildAmontsForMonthEstimate($year, $type = 0);
+        $gastosReales = BudgetYearFilter::buildAmontsForMonthReal($year, $type = 0);
+
+
+        $body_temporal = view(
+            'partials.profiles.components.tools.components.budget.view-year.report.graph-income',
+            compact('labels', 'ingresosEstimados', 'ingresosReales', 'year', 'gastosEstimados', 'gastosReales')
+        )->render();
+
+        return response()->json([
+            'section_header_year' => $header,
+            'section_year' => $body_temporal
+        ]);
+    }
+
+    public function activeCalendarFilterYearCalendar(Request $request)
     {
         $user = Auth::user();
         $moves = TsBudget::where('user_id', $user->id)->get();
@@ -188,6 +214,33 @@ class BudgetController extends Controller
         return response()->json([
             'section_header_year' => $header,
             'section_year' => $body
+        ]);
+    }
+
+    public function activeCalendarFilterYearReport(Request $request)
+    {
+        $user = Auth::user();
+        $moves = TsBudget::where('user_id', $user->id)->get();
+        $month = Carbon::now()->format('m');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+
+        $header = BudgetYearFilter::header($moves, $request);
+        $labels = BudgetYearFilter::buildMonthOfArray($year);
+
+        $ingresosEstimados = BudgetYearFilter::buildAmontsForMonthEstimate($year, $type = 1);
+        $ingresosReales = BudgetYearFilter::buildAmontsForMonthReal($year, $type = 1);
+
+        $gastosEstimados = BudgetYearFilter::buildAmontsForMonthEstimate($year, $type = 0);
+        $gastosReales = BudgetYearFilter::buildAmontsForMonthReal($year, $type = 0);
+
+        $body_temporal = view(
+            'partials.profiles.components.tools.components.budget.view-year.report.graph-income',
+            compact('labels', 'ingresosEstimados', 'ingresosReales', 'year', 'gastosEstimados', 'gastosReales')
+        )->render();
+
+        return response()->json([
+            'section_header_year' => $header,
+            'section_year' => $body_temporal
         ]);
     }
 

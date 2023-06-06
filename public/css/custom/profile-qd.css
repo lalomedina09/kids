@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 .c-text-size{
     font-size: 100%
 }
@@ -443,8 +447,9 @@
 .btn-line-buttom:hover {
     text-decoration: none;
 }
-  /*Media Queries para pantallas tipo laptop*/
-  @media (min-width: 1000px) {
+
+/*Media Queries para pantallas tipo laptop*/
+@media (min-width: 1000px) {
     .b-calendar-name-month{
         text-transform: uppercase;
         font-size: 1.5rem;
@@ -501,4 +506,4 @@
           height: 45px;
           width: 46px;
       }
-  }
+}

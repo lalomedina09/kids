@@ -5,6 +5,7 @@
                  Herramientas
         </a>
         <span class="text-bold"> | Presupuesto </span>
+        <br>
         <span class="text-right small"> Crea tu presupuesto basandote en el principio 50% / 30% / 20%</span>
     </div>
     <!--

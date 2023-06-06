@@ -131,6 +131,10 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
             //Encabezado de la categoria principal
             $('#modalAddMoveBudget').modal('hide');
             $('#budgetMonthLoadingAddMove').css("display", "none");
+
+            alertify.notify('Movimiento Agregado con exito', 'success', 5, function () {
+                console.log('Movimiento Agregado con exito');
+            });
         });
 }
 
@@ -207,5 +211,9 @@ function deleteMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmou
             //Encabezado de la categoria principal
             $('#modalDeleteMoveBudget').modal('hide');
             $('#budgetMonthLoadingDeleteMove').css("display", "none");
+
+            alertify.notify('Movimiento Eliminado con exito', 'success', 5, function () {
+                console.log('Movimiento Eliminado con exito');
+            });
         });
 }

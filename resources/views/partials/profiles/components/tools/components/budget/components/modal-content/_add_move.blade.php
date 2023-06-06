@@ -19,7 +19,7 @@
                 </option>
             @endforeach
         </select>--}}
-        <input type="text" class="form-control" id="formAddMove_name" required placeholder="Agrega la Categoría">
+        <input type="text" class="form-control" id="formAddMove_name" required placeholder="Agregar concepto">
     </div>
     <div class="col-md-2 text-center">
         <span class="small">

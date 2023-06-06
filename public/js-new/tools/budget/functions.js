@@ -78,6 +78,12 @@ function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmou
 
             $('#' + divAmountEstimate).empty();
             $('#' + divAmountEstimate).html(data.viewHeaderCategoryAmountReal);
+
+            alertify.notify('Actualiación con exito', 'success', 5, function ()
+            {
+                console.log('Alerta Grafica Lo que entro');
+            });
+
         },
         error: function () {
             //console.log("No se hizo el update en la DB")
