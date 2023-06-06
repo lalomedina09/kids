@@ -24,8 +24,7 @@
             <input type="hidden" id="formDeleteMove_id" value="{{ $budget->id }}">
             <label class="containerCheck">
                 <span class="small">
-                    Eliminar conceptos  {{-- $budget->customCategory->name --}}
-                    creados en los próximos meses del año {{ $year }}
+                    Quitar Movimiento "{{ $budget->customCategory->name }}" existentes en los próximos meses
                 </span>
                 <input type="checkbox" id="deleteMovePostMonth" checked="checked">
                 <span class="checkmark"></span>

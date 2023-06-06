@@ -6,9 +6,9 @@
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-3 text-center">
-        <input type="hidden" class="form-control" id="formAddMove_category_id" value="{{ $categoryId }}" required placeholder="Id Category Parent">
+        <input type="hidden" class="form-control" id="formAddMove_category_id" value="{{ $categoryId }}" required placeholder="Id Category Parent" style="font-size: 0.8rem;">
         <input type="hidden" class="form-control" id="formAddMove_percent" value="0" required>
-        <span class="small">
+        <span style="font-size:65%">
             Nombre de la categoría
         </span>
         <!-- Comente label porque aqui vamos agregar categorias nuevas que aun no esten registrados en la DB-->
@@ -19,29 +19,37 @@
                 </option>
             @endforeach
         </select>--}}
-        <input type="text" class="form-control" id="formAddMove_name" required placeholder="Agregar concepto">
+        <input type="text" class="form-control" id="formAddMove_name" required placeholder="Agregar concepto" style="font-size: 0.8rem;">
     </div>
     <div class="col-md-2 text-center">
-        <span class="small">
-                $ Estimado
+        <span style="font-size:65%">
+            @if($section == 'entrances')
+                Lo que creo recibir
+            @else
+                Lo que creo gastar
+            @endif
         </span>
         <input type="text" class="form-control" id="formAddMove_estimated" onkeypress="return valideKey(event);"
-        required placeholder="Agregar monto"/>
+        required placeholder="Agregar monto" style="font-size: 0.8rem;">
 
     </div>
 
     <div class="col-md-2 text-center">
-        <span class="small">
-                $ Real
+        <span style="font-size:65%">
+            @if($section == 'entrances')
+                Lo que recibí
+            @else
+                Lo que gasté
+            @endif
         </span>
         <input type="text" class="form-control" id="formAddMove_real" onkeypress="return valideKey(event);"
-        required placeholder="Agregar monto">
+        required placeholder="Agregar monto" style="font-size: 0.8rem;">
     </div>
     <div class="col-md-2 text-center">
-        <span class="small">
+        <span style="font-size:65%">
                 Fecha
         </span>
-        <input type="date" class="form-control" id="formAddMove_date" value="{{ $created_at }}">
+        <input type="date" class="form-control" id="formAddMove_date" value="{{ $created_at }}" style="font-size: 0.8rem;">
     </div>
     <div class="col-md-2">
         <br>
@@ -57,7 +65,7 @@
         <div class="mt-2">
             <label class="containerCheck">
                 <span class="small">
-                    Agregar Movimiento en los proximos meses del año {{ $year }}
+                    Repetir movimiento en los proximos meses del año
                 </span>
                 <input type="checkbox" id="addMovePostMonth" checked="checked">
                 <span class="checkmark"></span>
