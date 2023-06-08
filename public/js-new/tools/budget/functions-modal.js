@@ -175,7 +175,7 @@ function saveMoveToCategoryBudget(section, divArrowsCategory, divAmountEstimate,
     let token = $('#token').val();
 
     let category_id = $('#formAddMove_category_id').val();
-    let category_user_id = $('#formAddMove_category_user_id').val();
+    let parent_id = $('#formAddMove_category_user_id').val();
     let name = $('#formAddMove_name').val();
     let estimated = $('#formAddMove_estimated').val();
     let real = $('#formAddMove_real').val();
@@ -183,7 +183,7 @@ function saveMoveToCategoryBudget(section, divArrowsCategory, divAmountEstimate,
     let created_at = $('#formAddMove_date').val();
     let budget_month = $('#budget_month_id').val();
     let budget_year = $('#budget_year_id').val();
-
+    let budgetId = $('#budgetId').val();
     let addMovePostMonth = $('#addMovePostMonth').prop('checked');
 
     if (category_id != '' && name != '' && created_at != '') {
@@ -210,7 +210,8 @@ function saveMoveToCategoryBudget(section, divArrowsCategory, divAmountEstimate,
             year: budget_year,
             addMovePostMonth: addMovePostMonth,
             divArrowsCategory: divArrowsCategory,
-            category_user_id: category_user_id
+            parent_id: parent_id,
+            budgetId:budgetId
         },
         function (data) {
             $("#header-level-month").empty();

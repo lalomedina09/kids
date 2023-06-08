@@ -5,6 +5,7 @@
         <thead>
             <tr>
                 <th scope="col" style="font-size: 0.9rem;">#</th>
+                <th scope="col" class="text-left" style="font-size: 0.9rem;">Categoría</th>
                 <th scope="col" class="text-left" style="font-size: 0.9rem;">Concepto</th>
                 <th scope="col" style="font-size: 0.9rem;">Monto Real</th>
                 <th scope="col" style="font-size: 0.9rem;">Fecha</th>
@@ -16,6 +17,11 @@
             <tr>
                 <td style="font-size: 0.9rem;" scope="row">
                     #{{ $counter++ }}M0{{ $move->id }}
+                </td>
+                <td class="text-left" style="font-size: 0.9rem;">
+                    @if ($move->customCategory->parent)
+                        {{ $move->customCategory->parent->name }}
+                    @endif
                 </td>
                 <td class="text-left" style="font-size: 0.9rem;">
                     {{ $move->customCategory->name }}

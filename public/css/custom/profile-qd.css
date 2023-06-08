@@ -409,6 +409,26 @@ a {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+/*Boton tipo menu para desplegar acciones*/
+.button-menu-actions {
+    background: rgb(128,202,86);
+    background: linear-gradient(90deg, rgba(128,202,86,1) 26%, rgba(2,218,203,1) 100%);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+.button-menu-actions:hover {
+    background-color: #363637;;
+}
+
 /*Boton para agregar concepto*/
 .button-add {
     background: rgb(128,202,86);
@@ -493,6 +513,25 @@ a {
     text-decoration: none;
 }
 
+.span-small-rounded-corners-gradient-borders
+{
+    border: double 4px transparent;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    padding: 6px;
+    /*border-image: linear-gradient(to right, #80ca56, #02dacb) 1;*/
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #80ca56, #02dacb);
+    display: inline-block;
+    margin-top: 0px;
+    font-size: .6rem;
+    text-align: center;
+    font-weight: 500;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    height: 30px;
+    width: 31px;
+}
 /*Media Queries para pantallas tipo laptop*/
 @media (min-width: 1000px) {
     .b-calendar-name-month{

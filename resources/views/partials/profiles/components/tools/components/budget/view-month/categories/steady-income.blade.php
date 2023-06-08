@@ -14,7 +14,7 @@
                 <!-- Particula: Boton minimizar o maximizar lista de categorias-->
                 @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_min_or_max')
 
-                <div class="col-md-4 mt-4">
+                <div class="col-md-5 mt-4">
                     <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="25" alt="Icono Categoria">
                     <span class="text-bold">
                         Ingresos Constantes

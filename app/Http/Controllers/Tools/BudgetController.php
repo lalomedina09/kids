@@ -43,7 +43,6 @@ class BudgetController extends Controller
     public function activeCategoriesCustom(Request $request)
     {
         $user = Auth::user();
-        ////////
         $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
         $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
@@ -51,13 +50,7 @@ class BudgetController extends Controller
         $endTime = '' . ' 23:59:59';
         $_endDate = Carbon::parse($startDate)->format('Y-m-t');
         $endDate = $_endDate . $endTime;
-        ////////
-        //$start = Carbon::now()->startOfMonth()->format('Y-m-d H:i:s');
-        //$end = Carbon::now()->endOfMonth()->format('Y-m-d H:i:s');
-        //$end = Carbon::now();
 
-        //TsBudget
-        //$searchCategories = TsCategoryUser::where('user_id', $user->id)
         $searchCategories = TsBudget::join('ts_categories_users', 'ts_budgets.ts_category_user_id', '=', 'ts_categories_users.id')
             ->where('ts_budgets.user_id', $user->id)
             ->where('ts_budgets.created_at', '>=', $startDate)
@@ -82,9 +75,16 @@ class BudgetController extends Controller
                 'percent' => CategoryUserTrait::getPercentCategory($category->id)
             ]);
 
-            $categoryUser = CategoryUserTrait::create($category, $user, $request);
-            //$budget = BudgetTrait::create($categoryUser, $user, $request);
-            $budget = BudgetTrait::createAutomatic($categoryUser, $user, $request, $startDate);
+            //Creamos La Categoría para el usuario con categoria Parent
+            $categoryUserParent = CategoryUserTrait::create($category, $user, $request);
+            $budgetParent = BudgetTrait::createAutomatic($categoryUserParent, $user, $request, $startDate);
+
+            //Creamos La Categoría para el usuario con categoria Child
+            $request->request->add([
+                'parent_id' => $categoryUserParent->id,
+            ]);
+            $categoryUserChild = CategoryUserTrait::create($category, $user, $request);
+            $budget = BudgetTrait::createAutomatic($categoryUserChild, $user, $request, $startDate);
         }
     }
 

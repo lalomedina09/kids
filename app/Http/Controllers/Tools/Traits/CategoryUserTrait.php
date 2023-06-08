@@ -12,6 +12,7 @@ trait CategoryUserTrait
         $categoryUser->name = $request->name;
         $categoryUser->percent = $request->percent;
         $categoryUser->ts_category_id = $category->parent_id;
+        $categoryUser->parent_id = $request->parent_id;
         $categoryUser->user_id = $user->id;
         $categoryUser->created_by_app = 1;
 
@@ -27,6 +28,7 @@ trait CategoryUserTrait
         $categoryUser->name = $request->name;
         $categoryUser->percent = $request->percent;
         $categoryUser->ts_category_id = $category->id;
+        $categoryUser->parent_id = ($request->parent_id) ? $request->parent_id : null;
         $categoryUser->user_id = $user->id;
 
         $categoryUser->save();
@@ -34,6 +36,20 @@ trait CategoryUserTrait
         //Ojo -> ver si hago una funcion exlusiva para esto o buscar la forma de solucionar este bug
         //Comment = ($category->parent_id) ? $category->parent_id : $category->id
     }
+
+    /*public static function createForMove($category, $user, $request)
+    {
+        $categoryUser = new TsCategoryUser;
+        $categoryUser->name = $request->name;
+        $categoryUser->percent = $request->percent;
+        $categoryUser->ts_category_id = $category->id;
+        $categoryUser->parent_id = $request->parent_id;
+        $categoryUser->user_id = $user->id;
+
+        $categoryUser->save();
+        return $categoryUser;
+        dd();
+    }*/
 
     public static function editItem($category, $request)
     {

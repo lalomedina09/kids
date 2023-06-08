@@ -18,7 +18,7 @@ class AlterTableTscategoriesUserTableAddColumnParentId extends Migration
         });
 
         Schema::table('ts_categories_users', function (Blueprint $table) {
-            $table->foreign('parent_id')->references('id')->on('ts_categories')->onDelete('cascade');
+            $table->foreign('parent_id')->references('id')->on('ts_categories_users')->onDelete('cascade');
         });
     }
 

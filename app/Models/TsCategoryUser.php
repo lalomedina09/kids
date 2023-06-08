@@ -23,7 +23,7 @@ class TsCategoryUser extends Model
     ];
 
     protected $guarded = [
-        'id', 'user_id', 'ts_category_id'
+        'id', 'user_id', 'ts_category_id', 'parent_id'
     ];
 
     public function user()
@@ -37,7 +37,7 @@ class TsCategoryUser extends Model
         // 'foreign_key' , 'local_key'
         return $this->hasOne(TsCategory::class, 'id', 'ts_category_id');
     }
-
+    /*
     public static function getChild($child_id, $parent_id)
     {
         return self::where('id', $child_id)
@@ -48,5 +48,14 @@ class TsCategoryUser extends Model
     public static function getManyChilds($parent_id)
     {
         return self::where('parent_id', $parent_id)->get();
+    }*/
+    public function parent()
+    {
+        return $this->belongsTo(TsCategoryUser::class, 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(TsCategoryUser::class, 'parent_id');
     }
 }

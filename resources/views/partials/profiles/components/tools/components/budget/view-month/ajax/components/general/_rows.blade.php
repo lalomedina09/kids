@@ -5,7 +5,7 @@
         $class = (($counter % 2) == 0) ? null : "custom-input-transparent" ;
     @endphp
 
-    <div class="row mb-2">
+    <div class="row mb-">
         <div class="col-md-2 text-center">
             <input type="text"
             id="name_{{ $row->id}}"
@@ -16,6 +16,7 @@
         <div class="col-md-3 text-center">
             <input type="text"
             id="estimated_{{ $row->id }}"
+            @if(count($row->customCategory->children) > 1) readonly title="Editalo desde la opción de acciones" @endif
             class="form-control custom-input-text {{ $class}}"
             onchange="budgetEditInput('{{$section}}', 'estimated', {{ $row->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
             @if($row->amount_estimated> 0)
@@ -28,6 +29,7 @@
         <div class="col-md-3 text-center">
             <input type="text"
             id="real_{{ $row->id }}"
+            @if(count($row->customCategory->children) > 1) readonly title="Editalo desde la opción de acciones" @endif
             class="form-control custom-input-text {{ $class}}"
             onchange="budgetEditInput('{{$section}}', 'real', {{ $row->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
             @if($row->amount_real > 0)
@@ -40,31 +42,56 @@
         <div class="col-md-2 text-center">
             <input type="date"
             id="created_at_{{ $row->id }}"
+            @if(count($row->customCategory->children) > 1) readonly title="Editalo desde la opción de acciones" @endif
             class="form-control custom-input-text {{ $class}}"
             onchange="budgetEditInput('{{$section}}', 'created_at', {{ $row->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
             value="{{ $date }}">
         </div>
-        <div class="col-md-2 text-center">
-            <button class="button-add"
-           onclick="openModalAddMoveToCategory('{{ $section }}', {{$category_id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $row->id }});"
-           title="¿Agregar movimiento a la categoría {{ $row->customCategory->name}}?">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-            </button>
-            <button class="button-edit"
-           onclick="openModalDeleteMove('{{ $section }}', {{$category_id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $row->id }});"
-           title="¿Editar movimientos de la categoría {{ $row->customCategory->name}}?">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-            </button>
-           <button class="button-delete"
-           onclick="openModalDeleteMove('{{ $section }}', {{$category_id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $row->id }});"
-           title="¿Eliminar categoría {{ $row->customCategory->name}}?">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-            </button>
+        <div class="col-md-1 text-center">
+            <span class="span-small-rounded-corners-gradient-borders" title="Número de movimientos {{ count($row->customCategory->children) }}">
+                {{ count($row->customCategory->children) }}
+            </span>
+        </div>
+        <div class="col-md-1 text-center">
+            <div class="btn-group">
+                <button type="button" class="button-menu-actions dropdown-toggle"
+                        data-toggle="dropdown">
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                    <span class="caret"></span>
+                </button>
 
-            <!--
-                alo mejor se llega a utilizar esta opcion
-                <i class="fa fa-list" aria-hidden="true"></i>
-            -->
+                <ul class="dropdown-menu" role="menu" style="background-color: rgb(54, 54, 55);">
+                    @if (count($row->customCategory->children) >= 1)
+                    <li style="margin-bottom: 7px;">
+                        <a href="#"
+                        style="font-size: .8rem; margin-left: 15px;"
+                        title="¿Agregar movimiento a la categoría {{ $row->customCategory->name}}?"
+                        onclick="openModalAddMoveToCategory('{{ $section }}', {{$category_id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $row->id }});"
+                        >
+                        Agregar
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 7px;">
+                        <a href="#"
+                        style="font-size: .8rem; margin-left: 15px;"
+                        title="¿Editar movimientos de la categoría {{ $row->customCategory->name}}?"
+                        onclick="openModalDeleteMove('{{ $section }}', {{$category_id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $row->id }});"
+                        >
+                        Editar
+                        </a>
+                    </li>
+                    @endif
+                    <li style="margin-bottom: 7px;">
+                        <a href="#"
+                        style="font-size: .8rem; margin-left: 15px;"
+                        title="¿Eliminar categoría {{ $row->customCategory->name}}?"
+                        onclick="openModalDeleteMove('{{ $section }}', {{$category_id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $row->id }});"
+                        >
+                        Eliminar
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <br>
     </div>

@@ -117,6 +117,7 @@ trait BudgetTrait
         $budget->user_id = $user->id;
         $budget->created_at = $created_at;
         $budget->save();
+
         return $budget;
     }
 }

@@ -6,6 +6,7 @@
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-3 text-center">
+        <input class="form-control" type="hidden" name="budgetId" id="budgetId" value="{{ $budget->id }}">
         <input type="hidden" class="form-control" id="formAddMove_category_user_id" value="{{ $budget->customCategory->id }}" required placeholder="Id Category User" style="font-size: 0.8rem;">
         <input type="hidden" class="form-control" id="formAddMove_category_id" value="{{ $categoryId }}" required placeholder="Id Category Parent" style="font-size: 0.8rem;">
         <input type="hidden" class="form-control" id="formAddMove_percent" value="0" required>

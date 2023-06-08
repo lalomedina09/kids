@@ -266,17 +266,14 @@ class BudgetModalsController extends Controller
     //funcion para agregar el movimiento dentro de la categoria
     public function AddMoveToCategoryModalSave(Request $request)
     {
-        //dd('listo para guardar el movimiento');
         $user = Auth::user();
         $category = TsCategory::where('id', $request->category_id)->first();
-        //$arrayMonths = Controller::buildArrayMonths($request->year);
-        $addMovePostMonth = $request->addMovePostMonth;
-        dd($request->all());
-        $categoryUser = CategoryUserTrait::createForForm($category, $user, $request);
-        $budget = BudgetTrait::create($categoryUser, $user, $request);
+        $budgetMain = TsBudget::where('id', $request->budgetId)->first();
 
+        $categoryUser = CategoryUserTrait::createForForm($category, $user, $request);
+        $budgetMove = BudgetTrait::create($categoryUser, $user, $request);
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);
-        $divArrowsCategory = BudgetMonthFilter::divArrowsCategory($request, $budget);
+        $divArrowsCategory = BudgetMonthFilter::divArrowsCategory($request, $budgetMain);
 
         return response()->json([
             'resumenMonth' => $resumenMonth,
