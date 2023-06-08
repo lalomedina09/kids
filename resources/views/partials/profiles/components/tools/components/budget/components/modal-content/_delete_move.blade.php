@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <h5 class="text-center" style="color:#fc7c7c">
-            ¿Eliminar movimiento "{{ $budget->customCategory->name }}"?
+            ¿Eliminar categoria "{{ $budget->customCategory->name }}"?
         </h5>
     </div>
 </div>

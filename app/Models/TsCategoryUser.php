@@ -37,25 +37,16 @@ class TsCategoryUser extends Model
         // 'foreign_key' , 'local_key'
         return $this->hasOne(TsCategory::class, 'id', 'ts_category_id');
     }
-    /*
-    public function question()
+
+    public static function getChild($child_id, $parent_id)
     {
-        // 'foreign_key' , 'local_key'
-        return $this->hasOne(QzQuestion::class, 'id', 'question_id');
+        return self::where('id', $child_id)
+            ->where('parent_id', $parent_id)
+            ->first();
     }
 
-    public function option()
+    public static function getManyChilds($parent_id)
     {
-        // 'foreign_key' , 'local_key'
-        return $this->hasOne(QzOption::class, 'id', 'option_id');
+        return self::where('parent_id', $parent_id)->get();
     }
-
-    //Relation for get quiz
-    public function getQuizzesAnswers()
-    {
-        //dd('llego al modelo curso');
-        return $this->morphMany('App\Models\Quiz', 'quizzesable');
-    }
-    */
-    //terminan pruebas
 }

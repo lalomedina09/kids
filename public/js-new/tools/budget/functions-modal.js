@@ -48,7 +48,38 @@ function openModalMoves(nameMonth, start, end) {
             $('#budgetSectionYearLoading').css("display", "none");
         });
 }
+function openModalAddMoveToCategory(section, categoryId, divArrowsCategory, divAmountEstimate, divAmountReal, budgetId) {
 
+    //alert('entro a la funcion de moviento a la categoria');
+    let url = '/budget/addmove/modal/open/add/move-to-category';
+    let token = $('#token').val();
+    let budget_month = $('#budget_month_id').val();
+    let budget_year = $('#budget_year_id').val();
+    //console.log('Activando modal para agregar movimiento');
+    $('#budgetSectionMonthBtnsLoading').css("display", "contents");
+    $.post(url, {
+            _token: token,
+            section: section,
+            categoryId: categoryId,
+            divArrowsCategory: divArrowsCategory,
+            idArrowsName: divArrowsCategory,
+            divAmountEstimate: divAmountEstimate,
+            divAmountReal: divAmountReal,
+            month: budget_month,
+            year: budget_year,
+            budgetId: budgetId
+        },
+        function (data) {
+            //console.log('Listo para agregar movimiento');
+            $("#contentModalAddMove").empty();
+            $("#contentModalAddMove").html(data.view);
+            $("#modalAddMoveBudget").modal('show');
+            $('#budgetSectionMonthBtnsLoading').css("display", "none");
+        });
+}
+/*Terminan funciones para agregar movimientos o categorias*/
+
+/*Empiezan funciones relacionadas con la vista anual*/
 function openModalBudgetZoom(nameMonth, start, end) {
 
     let url = '/budget/modal/year/zoom';
@@ -71,8 +102,8 @@ function openModalBudgetZoom(nameMonth, start, end) {
             $('#budgetSectionYearLoading').css("display", "none");
         });
 }
-
-function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal) {
+//Funcion para guardar la categoria
+function saveCategoryBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal) {
     let url = '/budget/addmove/modal/save';
     let token = $('#token').val();
 
@@ -87,11 +118,11 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
 
     let addMovePostMonth = $('#addMovePostMonth').prop('checked');
 
-    if (category_id != '' && name != '' && estimated != '' && created_at != '') {
+    if (category_id != '' && name != '' && created_at != '') {
         //console.log('Inicia proceso para envio de formulario registrar categoria');
 
     } else {
-        alert('No puedes guardar campos vacios');
+        alert('Debes agregar el nombre de la categoría');
         return false;
     }
     $('#budgetMonthLoadingAddMove').css("display", "contents");
@@ -132,8 +163,77 @@ function saveMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmount
             $('#modalAddMoveBudget').modal('hide');
             $('#budgetMonthLoadingAddMove').css("display", "none");
 
-            alertify.notify('Movimiento Agregado con exito', 'success', 5, function () {
-                console.log('Movimiento Agregado con exito');
+            alertify.notify('Categoría Agregado con exito', 'success', 5, function () {
+                console.log('Categoría Agregado con exito');
+            });
+        });
+}
+
+//Funcion para guardar el movimiento dentro de una categoria
+function saveMoveToCategoryBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal) {
+    let url = '/budget/addmove/modal/open/add/move-to-category/save';
+    let token = $('#token').val();
+
+    let category_id = $('#formAddMove_category_id').val();
+    let category_user_id = $('#formAddMove_category_user_id').val();
+    let name = $('#formAddMove_name').val();
+    let estimated = $('#formAddMove_estimated').val();
+    let real = $('#formAddMove_real').val();
+    let percent = $('#formAddMove_percent').val();
+    let created_at = $('#formAddMove_date').val();
+    let budget_month = $('#budget_month_id').val();
+    let budget_year = $('#budget_year_id').val();
+
+    let addMovePostMonth = $('#addMovePostMonth').prop('checked');
+
+    if (category_id != '' && name != '' && created_at != '') {
+        //console.log('Inicia proceso para envio de formulario registrar categoria');
+
+    } else {
+        alert('Debes agregar el nombre de la categoría');
+        return false;
+    }
+    $('#budgetMonthLoadingAddMove').css("display", "contents");
+
+    $.post(url, {
+            _token: token,
+            section: section,
+            category_id: category_id,
+            name: name,
+            amount_estimated: estimated,
+            amount_real: real,
+            percent: percent,
+            divAmountEstimate: divAmountEstimate,
+            divAmountReal: divAmountReal,
+            created_at: created_at,
+            month: budget_month,
+            year: budget_year,
+            addMovePostMonth: addMovePostMonth,
+            divArrowsCategory: divArrowsCategory,
+            category_user_id: category_user_id
+        },
+        function (data) {
+            $("#header-level-month").empty();
+            $("#header-level-month").html(data.resumenMonth);
+
+            //Renglones de la categoria principal
+            $('#' + divArrowsCategory).empty();
+            $('#' + divArrowsCategory).html(data.divArrowsCategory);
+
+            //Update Encabezado de Categoria Monto Real
+            $('#' + divAmountReal).empty();
+            $('#' + divAmountReal).html(data.viewAmountEstimate);
+
+            //Update Encabezado de Categoria Monto Estimado
+            $('#' + divAmountEstimate).empty();
+            $('#' + divAmountEstimate).html(data.viewAmountReal);
+
+            //Encabezado de la categoria principal
+            $('#modalAddMoveBudget').modal('hide');
+            $('#budgetMonthLoadingAddMove').css("display", "none");
+
+            alertify.notify('Movimiento Agregado con exito a la categoria', 'success', 5, function () {
+                console.log('Movimiento Agregado con exito a la categoria');
             });
         });
 }

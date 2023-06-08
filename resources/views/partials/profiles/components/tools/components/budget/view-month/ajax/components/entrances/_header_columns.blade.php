@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-3 text-center small">
+    <div class="col-md-2 text-center small">
        <span class="text-bold" style="font-size: 0.9rem;">
             Concepto
         </span>
@@ -19,9 +19,9 @@
             Fecha
         </span>
     </div>
-    <div class="col-md-1 text-center small">
+    <div class="col-md-2 text-center small">
         <span class="text-bold" style="font-size: 0.9rem;">
-            Quitar
+            Acciones
         </span>
     </div>
     <br>

@@ -71,23 +71,31 @@ Route::prefix('budget')
         Route::prefix('addmove/modal')
         ->group(function () {
             Route::post('/open')
-                ->uses('BudgetController@AddMoveModalOpen')
+                ->uses('BudgetModalsController@AddMoveModalOpen')
                 ->name('budget.add.move.modal.open');
 
             Route::post('/save')
-                ->uses('BudgetController@AddMoveModalSave')
+                ->uses('BudgetModalsController@AddMoveModalSave')
                 ->name('budget.add.move.modal.save');
+
+            Route::post('open/add/move-to-category')
+            ->uses('BudgetModalsController@addMoveToCategoryModalOpen')
+            ->name('budget.add.move.modal.add.category.open');
+
+            Route::post('open/add/move-to-category/save')
+            ->uses('BudgetModalsController@AddMoveToCategoryModalSave')
+            ->name('budget.add.move.modal.add.category.save');
         });
 
         //Routes for delete Move
         Route::prefix('deletemove/modal')
         ->group(function () {
             Route::post('/open')
-                ->uses('BudgetController@deleteMoveModalOpen')
+                ->uses('BudgetModalsController@deleteMoveModalOpen')
                 ->name('budget.delete.move.modal.open');
 
             Route::post('/confirm')
-                ->uses('BudgetController@deleteMoveModalConfirm')
+                ->uses('BudgetModalsController@deleteMoveModalConfirm')
                 ->name('budget.delete.move.modal.confirm');
         });
 
@@ -95,11 +103,11 @@ Route::prefix('budget')
         Route::prefix('modal/year')
         ->group(function () {
             Route::post('/movements')
-                ->uses('BudgetController@openModalYearMovements')
+                ->uses('BudgetModalsController@openModalYearMovements')
                 ->name('budget.view.moves.modal.open');
 
             Route::post('/zoom')
-                ->uses('BudgetController@openModalYearZoom')
+                ->uses('BudgetModalsController@openModalYearZoom')
                 ->name('budget.zoom.card.modal.month');
         });
     });
