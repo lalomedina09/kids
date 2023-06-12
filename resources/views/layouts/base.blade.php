@@ -8,15 +8,15 @@
 
         @php $urlQdplayCompany = Route::currentRouteName();@endphp
 
-        @if ($urlQdplayCompany == "register.qdplay.show")
-        @include('partials.main.custom.script-head-qdplay-empresas')
+        @if ($urlQdplayCompany == "register.qdplay.showww")
+            @include('partials.main.custom.script-head-qdplay-empresas')
         @else
             @include('partials.main.script-head')
         @endif
     </head>
 
     <body>
-        @if ($urlQdplayCompany == "register.qdplay.show")
+        @if ($urlQdplayCompany == "register.qdplay.showww")
             @include('partials.main.custom.script-body-qdplay-empresas')
         @else
             @include('partials.main.script-body')
