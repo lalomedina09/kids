@@ -15,7 +15,7 @@ class TsCategoryUser extends Model
     protected $table = 'ts_categories_users';
 
     protected $fillable = [
-        'name', 'percent', 'created_by_app'
+        'name', 'percent', 'created_by_app', 'comments'
     ];
 
     protected $dates = [
@@ -36,6 +36,11 @@ class TsCategoryUser extends Model
     {
         // 'foreign_key' , 'local_key'
         return $this->hasOne(TsCategory::class, 'id', 'ts_category_id');
+    }
+
+    public function moves()
+    {
+        return $this->hasMany(TsBudget::class, 'ts_category_user_id', 'id');
     }
     /*
     public static function getChild($child_id, $parent_id)

@@ -14,7 +14,7 @@
                 @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_min_or_max')
 
                 <div class="col-md-5 mt-4">
-                    <img src="{{ asset('images/tools/budget/cat-gustitos.png') }}" width="25" alt="Minimizar"> <span class="text-bold"> Gustos</span>
+                    <img src="{{ asset('images/tools/budget/cat-gustitos.png') }}" width="25" alt="Minimizar"> <span class="text-bold"> Gustos ({{count($categoryRows)}})</span>
                 </div>
                 @include('partials.profiles.components.tools.components.budget.view-month.categories.components.exits.header-amount-category',
                 array(

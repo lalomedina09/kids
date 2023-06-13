@@ -17,7 +17,7 @@
                 <div class="col-md-5 mt-4">
                     <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="25" alt="Icono Categoria">
                     <span class="text-bold">
-                        Ingresos Constantes
+                        Ingresos Constantes ({{count($categoryRows)}})
                     </span>
                 </div>
 

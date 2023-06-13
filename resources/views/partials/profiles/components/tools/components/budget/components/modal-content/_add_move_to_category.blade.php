@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <h3 class="text-white text-center">
-            Agregar movimiento en <span style="color:black">"{{$budget->customCategory->name}}"</span>
+            Agregar movimiento en la categoría <span style="color:black">"{{$budget->customCategory->name}}"</span>
         </h3>
     </div>
     <div class="col-md-1"></div>

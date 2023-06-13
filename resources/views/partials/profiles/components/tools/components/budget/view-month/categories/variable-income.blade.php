@@ -16,7 +16,7 @@
 
                 <div class="col-md-5 mt-4">
                     <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="25" alt="Minimizar">
-                    <span class="text-bold"> Ingresos Variables</span>
+                    <span class="text-bold"> Ingresos Variables ({{count($categoryRows)}})</span>
                 </div>
 
                 @include('partials.profiles.components.tools.components.budget.view-month.categories.components.entrances.header-amount-category',

@@ -9,12 +9,13 @@
 <div class="my-custom-scrollbar">
     <table class="table">
         <thead>
-            <tr>
-                <th scope="col" class="text-white" style="font-size: 0.9rem;">#</th>
-                <th scope="col" class="text-white" class="text-left" style="font-size: 0.9rem;">Categoría</th>
-                <th scope="col" class="text-white" class="text-left" style="font-size: 0.9rem;">Concepto</th>
-                <th scope="col" class="text-white" style="font-size: 0.9rem;">Monto Real</th>
-                <th scope="col" class="text-white" style="font-size: 0.9rem;">Fecha</th>
+            <tr class="text-white">
+                <th scope="col" style="font-size: 0.9rem;">#</th>
+                <th scope="col" class="text-left" style="font-size: 0.9rem;">Movimiento</th>
+                <th scope="col" class="text-left" style="font-size: 0.9rem;">Categoría</th>
+                <th scope="col" class="text-left" style="font-size: 0.9rem;">Concepto</th>
+                <th scope="col" style="font-size: 0.9rem;">Monto Real</th>
+                <th scope="col" style="font-size: 0.9rem;">Fecha</th>
             </tr>
         </thead>
         <tbody>
@@ -24,19 +25,24 @@
                 <td style="font-size: 0.9rem;" scope="row" class="text-white">
                     #{{ $counter++ }}M0{{ $move->id }}
                 </td>
-                <td class="text-left" style="font-size: 0.9rem;" class="text-white">
-                    {{ $move->customCategory->category->name }}
+                <td class="text-left" style="font-size: 0.9rem;">
+                    @if ($move->type_move == 1)
+                        Entro
+                    @else
+                        Salio
+                    @endif
+                </td>
+                <td class="text-left" style="font-size: 0.9rem;font-weight: bold;" class="text-white">
+                    @if ($move->customCategory->parent)
+                        {{ $move->customCategory->parent->name }}
+                    @endif
                 </td>
                 <td class="text-left" style="font-size: 0.9rem;" class="text-white">
                     {{ $move->customCategory->name }}
                 </td>
                 <td style="font-size: 0.9rem;" class="text-white">
-                    @if ($move->type_move == 1)
-                        <i class="lni lni-plus" style="font-weight: bold;"></i>
-                    @else
-                        <i class="lni lni-minus" style="font-weight: bold;"></i>
-                    @endif
-                    ${{ $move->amount_real }} MXN
+
+                    ${{ $move->amount_real }} <span style="font-size: 0.5rem;">MXN</span>
                 </td>
                 <td style="font-size: 0.9rem;" class="text-white">
                     {{ fechaEspanol($move->created_at)}}

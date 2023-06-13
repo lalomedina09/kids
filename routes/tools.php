@@ -75,7 +75,7 @@ Route::prefix('budget')
                 ->name('budget.add.move.modal.open');
 
             Route::post('/save')
-                ->uses('BudgetModalsController@AddMoveModalSave')
+                ->uses('BudgetModalsController@AddCategoryModalSave')
                 ->name('budget.add.move.modal.save');
 
             Route::post('open/add/move-to-category')
@@ -97,6 +97,22 @@ Route::prefix('budget')
             Route::post('/confirm')
                 ->uses('BudgetModalsController@deleteMoveModalConfirm')
                 ->name('budget.delete.move.modal.confirm');
+        });
+
+        //Routes for actions level move
+        Route::prefix('actions/modal')
+        ->group(function () {
+            Route::post('/show-moves')
+                ->uses('BudgetModalsController@modalMovesShow')
+                ->name('budget.delete.modal.open.actions.show');
+
+            Route::post('/update-moves')
+            ->uses('BudgetModalsController@modalMovesUpdate')
+            ->name('budget.delete.modal.open.actions.update');
+
+            Route::post('/destroy-moves')
+            ->uses('BudgetModalsController@modalMovesDestroy')
+            ->name('budget.delete.modal.open.actions.destroy');
         });
 
         //Routes for activate show modals

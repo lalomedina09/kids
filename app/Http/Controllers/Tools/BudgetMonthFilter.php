@@ -139,7 +139,7 @@ class BudgetMonthFilter extends Controller
             case 'entrances':
                 $constantes =  BudgetTrait::dataCategory($date, 4, 1);
                 $variables =  BudgetTrait::dataCategory($date, 5, 1);
-
+                //dd($constantes->get()->count(), $variables->get()->count(), 'datos por categoria');
                 return $categories = array(
                     'constantes' => $constantes,
                     'variables' => $variables

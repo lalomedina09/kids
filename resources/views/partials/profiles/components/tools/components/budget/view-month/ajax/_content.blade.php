@@ -17,7 +17,9 @@
                     <div class="row line-buttom">
                         <div class="col-md-5 mt-3 ml-4 mb-4">
                             <img src="{{ asset('images/tools/budget/moves-dark.png') }}" width="25" alt="Movimientos Dark">
-                            <span class="text-bold"> Movimientos</span>
+                            <span class="text-bold">
+                                ({{ count($data['movements']) }}) Movimientos
+                            </span>
                         </div>
                     </div>
                     <!---------  Mostrar esta tabla si se encuentran movimientos ------------->

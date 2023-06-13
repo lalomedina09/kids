@@ -1,8 +1,12 @@
 <div class="row">
     <div class="col-md-12">
         <h3 class="text-white text-center">
-            Agregar categoría | <span style="color:black"> @if($section == 'entrances') Lo que entra @else Lo que sale @endif </span>
-            <!--<span style="color:black">"{{$category->name}}"</span>-->
+            Agregar categoría a sección |
+            <span style="color:black">
+                {{ $categoriesUser->name }}
+                {{--@if($section == 'entrances') Lo que entra @else Lo que sale @endif--}}
+            </span>
+
         </h3>
     </div>
     <div class="col-md-1"></div>

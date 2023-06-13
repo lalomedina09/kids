@@ -15,7 +15,7 @@ class TsBudget extends Model
     protected $table = 'ts_budgets';
 
     protected $fillable = [
-        'type_move', 'amount_real', 'amount_estimated'
+        'name', 'type_move', 'amount_real', 'amount_estimated', 'comments'
     ];
 
     protected $dates = [

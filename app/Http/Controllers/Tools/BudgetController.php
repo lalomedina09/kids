@@ -65,9 +65,9 @@ class BudgetController extends Controller
 
     public function createCategoryUser($user, $request, $startDate)
     {
-        $categoriesMain = TsCategory::all();
+        $categoriesMain = TsCategory::whereNotNull('parent_id')->get();
 
-        foreach ($categoriesMain as $category) {
+        foreach($categoriesMain as $category) {
             $request->request->add([
                 'name' => $category->name,
                 'amount_real' => 0,
@@ -75,16 +75,9 @@ class BudgetController extends Controller
                 'percent' => CategoryUserTrait::getPercentCategory($category->id)
             ]);
 
-            //Creamos La Categoría para el usuario con categoria Parent
-            $categoryUserParent = CategoryUserTrait::create($category, $user, $request);
+            $categoryUserParent = CategoryUserTrait::createCategoryAutomatic($category, $user, $request, $startDate, $origin = 'filter-date');
             $budgetParent = BudgetTrait::createAutomatic($categoryUserParent, $user, $request, $startDate);
 
-            //Creamos La Categoría para el usuario con categoria Child
-            $request->request->add([
-                'parent_id' => $categoryUserParent->id,
-            ]);
-            $categoryUserChild = CategoryUserTrait::create($category, $user, $request);
-            $budget = BudgetTrait::createAutomatic($categoryUserChild, $user, $request, $startDate);
         }
     }
 

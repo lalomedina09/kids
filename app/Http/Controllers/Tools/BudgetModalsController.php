@@ -33,32 +33,35 @@ class BudgetModalsController extends Controller
         $divAmountReal = $request->divAmountReal;
         $created_at = $request->year . '-'. $request->month .'-' . $day = Carbon::now()->format('d');
         $year = $request->year;
-        //dd($created_at);
+
         $category = TsCategory::where('id', $categoryId)->first();
         $categoriesUser = TsCategoryUser::where('user_id', $user->id)
         ->where('ts_category_id', $categoryId)
-        ->get();
+        ->first();
 
-        $view = view(
-            'partials.profiles.components.tools.components.budget.components.modal-content._add_move',
-            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at', 'year')
-        )
-        ->render();
+        $view = view('partials.profiles.components.tools.components.budget.components.modal-content.new_category',compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at', 'year'))
+            ->render();
 
         return response()->json([
             'view' => $view
         ]);
     }
 
-    public function AddMoveModalSave(Request $request)
+    //Funcion para agregar una nueva categoria
+    public function AddCategoryModalSave(Request $request)
     {
         $user = Auth::user();
         $category = TsCategory::where('id', $request->category_id)->first();
+
         $arrayMonths = Controller::buildArrayMonths($request->year);
         $addMovePostMonth = $request->addMovePostMonth;
+        $startDate = $this->createDateForInitMonth($request);
 
-        $categoryUser = CategoryUserTrait::createForForm($category, $user, $request);
-        $budget = BudgetTrait::create($categoryUser, $user, $request);
+        //Creamos la categoria
+        $categoryUserParent = CategoryUserTrait::createCategoryAutomatic($category, $user, $request, $startDate, $origin = 'save-cat-user');
+
+        //Creamos el movimiento de forma automatica
+        $budgetOne = BudgetTrait::createAutomatic($categoryUserParent, $user, $request, $startDate);
 
         //Si el usuario activo check se agregara movimientos en los siguientes meses
         if ($addMovePostMonth == "true") {
@@ -68,13 +71,13 @@ class BudgetModalsController extends Controller
                         'created_at' => $value['start_month'],
                     ]);
 
-                    $budgetAfter = BudgetTrait::create($categoryUser, $user, $request);
+                    $budgetAfter = BudgetTrait::createChild($categoryUserParent, $user, $request);
                 }
             }
         }
 
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);
-        $divArrowsCategory = BudgetMonthFilter::divArrowsCategory($request, $budget);
+        $divArrowsCategory = BudgetMonthFilter::divArrowsCategory($request, $budgetOne);
 
         return response()->json([
             'resumenMonth' => $resumenMonth,
@@ -244,9 +247,8 @@ class BudgetModalsController extends Controller
         $divAmountReal = $request->divAmountReal;
         $created_at = $request->year . '-' . $request->month . '-' . $day = Carbon::now()->format('d');
         $year = $request->year;
-        //dd($created_at);
+
         $budget = TsBudget::where('id', $request->budgetId)->first();
-        //dd($request->all(), $budget->customCategory);
         $category = TsCategory::where('id', $categoryId)->first();
         $categoriesUser = TsCategoryUser::where('user_id', $user->id)
             ->where('ts_category_id', $categoryId)
@@ -267,13 +269,12 @@ class BudgetModalsController extends Controller
     public function AddMoveToCategoryModalSave(Request $request)
     {
         $user = Auth::user();
-        $category = TsCategory::where('id', $request->category_id)->first();
-        $budgetMain = TsBudget::where('id', $request->budgetId)->first();
+        $categoryUser = TsCategoryUser::where('id', $request->parent_id)->first();
+        $budgetMove = BudgetTrait::create($categoryUser, $request);
 
-        $categoryUser = CategoryUserTrait::createForForm($category, $user, $request);
-        $budgetMove = BudgetTrait::create($categoryUser, $user, $request);
+        //Cargamos los elementos para renderizar
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);
-        $divArrowsCategory = BudgetMonthFilter::divArrowsCategory($request, $budgetMain);
+        $divArrowsCategory = BudgetMonthFilter::divArrowsCategory($request, $budgetMove);
 
         return response()->json([
             'resumenMonth' => $resumenMonth,
@@ -288,4 +289,39 @@ class BudgetModalsController extends Controller
         $date = $request->year . '-' . $request->month . '-01 00:00:00';
         return $date;
     }
+
+    public function modalMovesShow(Request $request)
+    {
+        $user = Auth::user();
+        $categoryId = $request->categoryId;
+        $section = $request->section;
+        $divCategory = $request->divArrowsCategory;
+        $divAmountEstimate = $request->divAmountEstimate;
+        $divAmountReal = $request->divAmountReal;
+        $created_at = $request->year . '-' . $request->month . '-' . $day = Carbon::now()->format('d');
+        $year = $request->year;
+
+        $category = TsCategory::where('id', $categoryId)->first();
+        $categoriesUser = TsCategoryUser::where('user_id', $user->id)
+            ->where('ts_category_id', $categoryId)
+            ->first();
+
+        $view = view('partials.profiles.components.tools.components.budget.components.modal-content.show-moves', compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at', 'year'))
+            ->render();
+
+        return response()->json([
+            'view' => $view
+        ]);
+    }
+
+    public function modalMovesUpdate(Request $request)
+    {
+
+    }
+
+    public function modalMovesDestroy(Request $request)
+    {
+
+    }
 }
+

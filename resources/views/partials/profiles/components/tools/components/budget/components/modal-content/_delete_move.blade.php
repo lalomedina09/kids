@@ -35,7 +35,7 @@
     <div class="col-md-1"></div>
     <div class="col-md-11 text-center">
         <button class="button-confirm-delete"
-            onclick="deleteMoveBudget('{{$section}}', '{{ $divCategory }}', '{{ $divAmountEstimate }}', '{{ $divAmountReal }}');">
+            onclick="deleteCategoryBudget('{{$section}}', '{{ $divCategory }}', '{{ $divAmountEstimate }}', '{{ $divAmountReal }}');">
             Eliminar movimiento
         </button>
         <div id="budgetMonthLoadingDeleteMove" style="display:none">

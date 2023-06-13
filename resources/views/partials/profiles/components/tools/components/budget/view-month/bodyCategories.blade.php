@@ -17,18 +17,5 @@
         </a>
     </div>
 </div>
-{{--
-<div id="{{ str_slug(__('Section Entrances')) }}" class="tab-pane">
-    seccion para las entrdads
-</div>
 
-<div id="{{ str_slug(__('Section Exists')) }}" class="tab-pane">
-    seccion para las salidas
-</div>
-
-<div id="{{ str_slug(__('Section Movements')) }}" class="tab-pane">
-    seccion para los movimientos
-</div>
-
---}}
 

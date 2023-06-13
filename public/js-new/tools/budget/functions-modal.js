@@ -79,6 +79,39 @@ function openModalAddMoveToCategory(section, categoryId, divArrowsCategory, divA
 }
 /*Terminan funciones para agregar movimientos o categorias*/
 
+//NX8 Ver los movimientos en una ventana modal, solo de la categoria porque se van actualizar y eliminar
+function openModalShowMovesForEditOrDelete(section, categoryId, divArrowsCategory, divAmountEstimate, divAmountReal, budgetId)
+{
+
+    //alert('entro a la funcion de moviento a la categoria');
+    let url = '/budget/actions/modal/show-moves';
+    let token = $('#token').val();
+    let budget_month = $('#budget_month_id').val();
+    let budget_year = $('#budget_year_id').val();
+    //console.log('Activando modal para agregar movimiento');
+    $('#budgetSectionMonthBtnsLoading').css("display", "contents");
+    $.post(url, {
+            _token: token,
+            section: section,
+            categoryId: categoryId,
+            divArrowsCategory: divArrowsCategory,
+            idArrowsName: divArrowsCategory,
+            divAmountEstimate: divAmountEstimate,
+            divAmountReal: divAmountReal,
+            month: budget_month,
+            year: budget_year,
+            budgetId: budgetId
+        },
+        function (data) {
+            //console.log('Listo para agregar movimiento');
+            $("#contentModalAddMove").empty();
+            $("#contentModalAddMove").html(data.view);
+            $("#modalAddMoveBudget").modal('show');
+            $('#budgetSectionMonthBtnsLoading').css("display", "none");
+        });
+}
+//NX8 termina
+
 /*Empiezan funciones relacionadas con la vista anual*/
 function openModalBudgetZoom(nameMonth, start, end) {
 
@@ -102,7 +135,7 @@ function openModalBudgetZoom(nameMonth, start, end) {
             $('#budgetSectionYearLoading').css("display", "none");
         });
 }
-//Funcion para guardar la categoria
+//Funcion para guardar la categoriato
 function saveCategoryBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal) {
     let url = '/budget/addmove/modal/save';
     let token = $('#token').val();
@@ -240,7 +273,7 @@ function saveMoveToCategoryBudget(section, divArrowsCategory, divAmountEstimate,
 }
 
 //Funcion para abrir Ventana modal que eliminara el movimiento
-function openModalDeleteMove(section, categoryId, divArrowsCategory, divAmountEstimate, divAmountReal, budget_id) {
+function openModalDeleteCategory(section, categoryId, divArrowsCategory, divAmountEstimate, divAmountReal, budget_id) {
 
     let url = '/budget/deletemove/modal/open';
     let token = $('#token').val();
@@ -268,7 +301,7 @@ function openModalDeleteMove(section, categoryId, divArrowsCategory, divAmountEs
 }
 
 //Funcion para confirmar que se van eliminar los o el movimiento
-function deleteMoveBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal) {
+function deleteCategoryBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal) {
     let url = '/budget/deletemove/modal/confirm';
     let token = $('#token').val();
     let category_id = $('#formAddMove_category_id').val();
