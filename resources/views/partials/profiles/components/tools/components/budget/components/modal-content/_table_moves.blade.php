@@ -33,12 +33,12 @@
                     @endif
                 </td>
                 <td class="text-left" style="font-size: 0.9rem;font-weight: bold;" class="text-white">
-                    @if ($move->customCategory->parent)
-                        {{ $move->customCategory->parent->name }}
+                   @if ($move->customCategory)
+                        {{ $move->customCategory->name }}
                     @endif
                 </td>
                 <td class="text-left" style="font-size: 0.9rem;" class="text-white">
-                    {{ $move->customCategory->name }}
+                    {{ $move->name }}
                 </td>
                 <td style="font-size: 0.9rem;" class="text-white">
 

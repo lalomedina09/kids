@@ -42,18 +42,12 @@ class TsCategoryUser extends Model
     {
         return $this->hasMany(TsBudget::class, 'ts_category_user_id', 'id');
     }
-    /*
-    public static function getChild($child_id, $parent_id)
+
+    public function move()
     {
-        return self::where('id', $child_id)
-            ->where('parent_id', $parent_id)
-            ->first();
+        return $this->hasOne(TsBudget::class, 'ts_category_user_id', 'id');
     }
 
-    public static function getManyChilds($parent_id)
-    {
-        return self::where('parent_id', $parent_id)->get();
-    }*/
     public function parent()
     {
         return $this->belongsTo(TsCategoryUser::class, 'parent_id');

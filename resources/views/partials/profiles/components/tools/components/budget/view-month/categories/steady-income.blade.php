@@ -5,6 +5,7 @@
                 @php
                     $counter = 1;
                     $section = "entrances";
+
                     $categoryRows = $data['constantes']->get();
                     $idArrowsName = "arrowsCategorySteady";
                     $idCategoryAmountReal = "arrowsCategorySteadyAmountReal";
@@ -17,18 +18,21 @@
                 <div class="col-md-5 mt-4">
                     <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="25" alt="Icono Categoria">
                     <span class="text-bold">
-                        Ingresos Constantes ({{count($categoryRows)}})
+                        Ingresos Constantes
                     </span>
                 </div>
 
                 @include('partials.profiles.components.tools.components.budget.view-month.categories.components.entrances.header-amount-category',
                 array(
-                    'amount_estimate' => $data['constantes']->sum('amount_estimated'),
-                    'amount_real' => $data['constantes']->sum('amount_real')
+                    //'amount_estimate' => $data['constantes']->moves->sum('amount_estimated'),
+                    //'amount_real' => $data['constantes']->moves->sum('amount_real')
+                    'amount_estimate' => $amountSectionConstantesEstimate,
+                    'amount_real' => $amountSectionConstantesReal
                     )
                 )
+
                 @php
-                    $total_month = $data['constantes']->sum('amount_real') + $data['variables']->sum('amount_real');
+                    $total_month = $amountSectionConstantesReal + $amountSectionVariablesReal;
 
                     $totalMonthSession = session(['totalMonthSession' => $total_month]);
 
@@ -58,7 +62,7 @@
 
             <!-- Particula: Renglones para mostrar las categorías -->
             <div id="{{ $idArrowsName }}">
-                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows',
+                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows_beta',
                 array(
                     'section' => 'entrances',
                     'category_id' => 4,
@@ -66,6 +70,14 @@
                     'idCategoryAmountReal' => $idCategoryAmountReal,
                     'idCategoryAmountEstimate' => $idCategoryAmountEstimate
                 ))
+                {{--@include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows',
+                array(
+                    'section' => 'entrances',
+                    'category_id' => 4,
+                    'idArrowsName' => $idArrowsName,
+                    'idCategoryAmountReal' => $idCategoryAmountReal,
+                    'idCategoryAmountEstimate' => $idCategoryAmountEstimate
+                ))--}}
             </div>
 
             <br>

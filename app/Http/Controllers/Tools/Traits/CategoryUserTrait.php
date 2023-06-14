@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Tools\Traits;
 
+use Auth;
 use App\Models\TsCategoryUser;
 
 trait CategoryUserTrait
@@ -109,15 +110,11 @@ trait CategoryUserTrait
     {
         $user = Auth::user();
         $categoriesUser = TsCategoryUser::where('ts_category_id', $categoryMain)
+                    ->where('user_id', $user->id)
                     ->where('created_at', '>=', $date['start'])
                     ->where('created_at', '<=', $date['end'])
                     ->whereNull('ts_categories_users.parent_id');
-                    #->select('*');
-            //join('ts_categories_users', 'ts_budgets.ts_category_user_id', '=', 'ts_categories_users.id')
-            //->where('ts_budgets.user_id', $user->id)
-            //->where('ts_budgets.type_move', $typeMove)
-            //->select('ts_budgets.*');
-
+                    //->toSql();
         return $categoriesUser;
     }
 }

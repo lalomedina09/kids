@@ -15,13 +15,15 @@
                 @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_min_or_max')
 
                 <div class="col-md-5 mt-4">
-                    <img src="{{ asset('images/tools/budget/cat-ahorro.png') }}" width="25" alt="Minimizar"> <span class="text-bold"> Ahorros ({{count($categoryRows)}})</span>
+                    <img src="{{ asset('images/tools/budget/cat-ahorro.png') }}" width="25" alt="Minimizar"> <span class="text-bold"> Ahorros </span>
                 </div>
 
                 @include('partials.profiles.components.tools.components.budget.view-month.categories.components.exits.header-amount-category',
                 array(
-                    'amount_estimate' => $data['ahorros']->sum('amount_estimated'),
-                    'amount_real' => $data['ahorros']->sum('amount_real')
+                    //'amount_estimate' => $data['ahorros']->sum('amount_estimated'),
+                    //'amount_real' => $data['ahorros']->sum('amount_real')
+                    'amount_estimate' => $amountSectionAhorrosEstimate,
+                    'amount_real' => $amountSectionAhorrosReal
                     )
                 )
 
@@ -54,7 +56,7 @@
 
             <!-- Particula: Renglones para mostrar las categorías -->
             <div id="{{ $idArrowsName }}">
-                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows',
+                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows_beta',
                 array(
                     'section' => 'exits',
                     'category_id' => 3,

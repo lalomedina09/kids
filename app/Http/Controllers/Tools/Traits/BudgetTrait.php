@@ -88,7 +88,6 @@ trait BudgetTrait
         return $value = ($category_id == 4 || $category_id == 5) ? 1 : 0 ;
     }
 
-
     //Función utilizada desde varios puntos
     public static function dataCategory($date, $category, $typeMove)
     {

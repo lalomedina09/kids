@@ -294,6 +294,7 @@ class BudgetModalsController extends Controller
     {
         $user = Auth::user();
         $categoryId = $request->categoryId;
+        $categoryUserId = $request->budgetId;
         $section = $request->section;
         $divCategory = $request->divArrowsCategory;
         $divAmountEstimate = $request->divAmountEstimate;
@@ -303,7 +304,7 @@ class BudgetModalsController extends Controller
 
         $category = TsCategory::where('id', $categoryId)->first();
         $categoriesUser = TsCategoryUser::where('user_id', $user->id)
-            ->where('ts_category_id', $categoryId)
+            ->where('id', $categoryUserId)
             ->first();
 
         $view = view('partials.profiles.components.tools.components.budget.components.modal-content.show-moves', compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at', 'year'))

@@ -16,19 +16,23 @@
 
                 <div class="col-md-5 mt-4">
                     <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="25" alt="Minimizar">
-                    <span class="text-bold"> Ingresos Variables ({{count($categoryRows)}})</span>
+                    <span class="text-bold"> Ingresos Variables </span>
                 </div>
 
                 @include('partials.profiles.components.tools.components.budget.view-month.categories.components.entrances.header-amount-category',
                 array(
-                    'amount_estimate' => $data['variables']->sum('amount_estimated'),
-                    'amount_real' => $data['variables']->sum('amount_real')
+                    #'amount_estimate' => $data['variables']->sum('amount_estimated'),
+                    #'amount_real' => $data['variables']->sum('amount_real')
+                    'amount_estimate' => $amountSectionVariablesEstimate,
+                    'amount_real' => $amountSectionVariablesReal
                     )
                 )
 
                 @php
-                    $total_month = $data['constantes']->sum('amount_real') + $data['variables']->sum('amount_real');
-                    $percentVariables = $total_month / 2;
+                    /*
+                        $total_month = $data['constantes']->sum('amount_real') + $data['variables']->sum('amount_real');
+                        $percentVariables = $total_month / 2;
+                    */
                 @endphp
                 <div class="col-md-12">
                     <div class="bordertest">
@@ -54,7 +58,7 @@
             <!-- Particula: Renglones para mostrar las categorías -->
             <!-- Variables de la parte superior funcionan para el siguiente include-->
             <div id="{{ $idArrowsName }}">
-                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows',
+                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows_beta',
                 array(
                     'section' => 'entrances',
                     'category_id' => 5,
@@ -63,6 +67,7 @@
                     'idCategoryAmountEstimate' => $idCategoryAmountEstimate
                 ))
             </div>
+
             <br>
             <!-- Particula: Boton que llamara al modal para agregar movimientos-->
             @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_add_move',
@@ -74,5 +79,6 @@
                     'idCategoryAmountEstimate' => $idCategoryAmountEstimate
             ))
         </div>
+
     </div>
 </div>
