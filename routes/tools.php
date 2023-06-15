@@ -111,7 +111,7 @@ Route::prefix('budget')
             ->name('budget.delete.modal.open.actions.update');
 
             Route::post('/destroy-moves')
-            ->uses('BudgetModalsController@modalMovesDestroy')
+            ->uses('BudgetModalsController@moveDestroy')
             ->name('budget.delete.modal.open.actions.destroy');
         });
 

@@ -145,7 +145,7 @@ class BudgetModalsController extends Controller
         ]);
     }
 
-    //Funcion para activar ventana modal eliminar movimiento
+    //Funcion para activar ventana modal eliminar categoria
     public function deleteMoveModalOpen(Request $request)
     {
         $user = Auth::user();
@@ -320,9 +320,24 @@ class BudgetModalsController extends Controller
 
     }
 
-    public function modalMovesDestroy(Request $request)
+    public function moveDestroy(Request $request)
     {
 
+        $user = Auth::user();
+        $budget_id = $request->budget_id;
+        $budgetDelete = BudgetTrait::destroy($budget_id);
+
+        //Recuperamos el movimiento ya eliminado para mandar la collection a la funcion
+        $budget = TsBudget::where('id', $budget_id)->withTrashed()->first();
+        $resumenMonth = BudgetMonthFilter::resumenMonth($request);
+        $divArrowsCategory = BudgetMonthFilter::divArrowsCategory($request, $budget);
+
+        return response()->json([
+            'resumenMonth' => $resumenMonth,
+            'divArrowsCategory' => $divArrowsCategory['viewArrows'],
+            'viewAmountEstimate' => $divArrowsCategory['viewHeaderCategoryAmountEstimate'],
+            'viewAmountReal' => $divArrowsCategory['viewHeaderCategoryAmountReal']
+        ]);
     }
 }
 

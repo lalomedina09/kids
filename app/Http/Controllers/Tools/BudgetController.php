@@ -288,4 +288,5 @@ class BudgetController extends Controller
         $date = $request->year . '-' . $request->month . '-01 00:00:00';
         return $date;
     }
+
 }

@@ -50,12 +50,11 @@ function openModalMoves(nameMonth, start, end) {
 }
 function openModalAddMoveToCategory(section, categoryId, divArrowsCategory, divAmountEstimate, divAmountReal, budgetId) {
 
-    //alert('entro a la funcion de moviento a la categoria');
     let url = '/budget/addmove/modal/open/add/move-to-category';
     let token = $('#token').val();
     let budget_month = $('#budget_month_id').val();
     let budget_year = $('#budget_year_id').val();
-    //console.log('Activando modal para agregar movimiento');
+
     $('#budgetSectionMonthBtnsLoading').css("display", "contents");
     $.post(url, {
             _token: token,
@@ -70,25 +69,23 @@ function openModalAddMoveToCategory(section, categoryId, divArrowsCategory, divA
             budgetId: budgetId
         },
         function (data) {
-            //console.log('Listo para agregar movimiento');
+
             $("#contentModalAddMove").empty();
             $("#contentModalAddMove").html(data.view);
             $("#modalAddMoveBudget").modal('show');
             $('#budgetSectionMonthBtnsLoading').css("display", "none");
         });
 }
-/*Terminan funciones para agregar movimientos o categorias*/
+
 
 //NX8 Ver los movimientos en una ventana modal, solo de la categoria porque se van actualizar y eliminar
 function openModalShowMovesForEditOrDelete(section, categoryId, divArrowsCategory, divAmountEstimate, divAmountReal, budgetId)
 {
-
-    //alert('entro a la funcion de moviento a la categoria');
     let url = '/budget/actions/modal/show-moves';
     let token = $('#token').val();
     let budget_month = $('#budget_month_id').val();
     let budget_year = $('#budget_year_id').val();
-    //console.log('Activando modal para agregar movimiento');
+
     $('#budgetSectionMonthBtnsLoading').css("display", "contents");
     $.post(url, {
             _token: token,
@@ -103,7 +100,6 @@ function openModalShowMovesForEditOrDelete(section, categoryId, divArrowsCategor
             budgetId: budgetId
         },
         function (data) {
-            //console.log('Listo para agregar movimiento');
             $("#contentModalAddMove").empty();
             $("#contentModalAddMove").html(data.view);
             $("#modalAddMoveBudget").modal('show');
@@ -111,6 +107,59 @@ function openModalShowMovesForEditOrDelete(section, categoryId, divArrowsCategor
         });
 }
 //NX8 termina
+
+//NX9 Empieza funcion para eliminar solo un movimiento
+function deleteCategoryBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal) {
+    let url = '/budget/actions/modal/show-moves';
+    let token = $('#token').val();
+    let category_id = $('#formAddMove_category_id').val();
+    let budget_id = $('#formDeleteMove_id').val();
+    let budget_name = $('#formDeleteMove_name').val();
+    let budget_month = $('#budget_month_id').val();
+    let budget_year = $('#budget_year_id').val();
+    let ts_category_user_id = $('#formDeleteMove_ts_category_user_id').val();
+    let deleteMovePostMonth = $('#deleteMovePostMonth').prop('checked');
+    $('#budgetMonthLoadingDeleteMove').css("display", "contents");
+    $.post(url, {
+        _token: token,
+        section: section,
+        category_id: category_id,
+        divAmountEstimate: divAmountEstimate,
+        divAmountReal: divAmountReal,
+        month: budget_month,
+        year: budget_year,
+        budget_id: budget_id,
+        ts_category_user_id: ts_category_user_id,
+        budget_name: budget_name,
+        deleteMovePostMonth: deleteMovePostMonth,
+        divArrowsCategory: divArrowsCategory
+    },
+        function (data) {
+            $("#header-level-month").empty();
+            $("#header-level-month").html(data.resumenMonth);
+
+            //Renglones de la categoria principal
+            $('#' + divArrowsCategory).empty();
+            $('#' + divArrowsCategory).html(data.divArrowsCategory);
+
+            //Update Encabezado de Categoria Monto Real
+            $('#' + divAmountReal).empty();
+            $('#' + divAmountReal).html(data.viewAmountEstimate);
+
+            //Update Encabezado de Categoria Monto Estimado
+            $('#' + divAmountEstimate).empty();
+            $('#' + divAmountEstimate).html(data.viewAmountReal);
+
+            //Encabezado de la categoria principal
+            $('#modalDeleteMoveBudget').modal('hide');
+            $('#budgetMonthLoadingDeleteMove').css("display", "none");
+
+            alertify.notify('Movimiento Eliminado con exito', 'success', 5, function () {
+                console.log('Movimiento Eliminado con exito');
+            });
+        });
+}
+//NX9 termina
 
 /*Empiezan funciones relacionadas con la vista anual*/
 function openModalBudgetZoom(nameMonth, start, end) {
@@ -272,7 +321,7 @@ function saveMoveToCategoryBudget(section, divArrowsCategory, divAmountEstimate,
         });
 }
 
-//Funcion para abrir Ventana modal que eliminara el movimiento
+//Funcion para abrir Ventana modal que eliminara la categoria
 function openModalDeleteCategory(section, categoryId, divArrowsCategory, divAmountEstimate, divAmountReal, budget_id) {
 
     let url = '/budget/deletemove/modal/open';
@@ -300,7 +349,7 @@ function openModalDeleteCategory(section, categoryId, divArrowsCategory, divAmou
         });
 }
 
-//Funcion para confirmar que se van eliminar los o el movimiento
+//Funcion para confirmar que se van a eliminar la categoria
 function deleteCategoryBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal) {
     let url = '/budget/deletemove/modal/confirm';
     let token = $('#token').val();
@@ -346,8 +395,8 @@ function deleteCategoryBudget(section, divArrowsCategory, divAmountEstimate, div
             $('#modalDeleteMoveBudget').modal('hide');
             $('#budgetMonthLoadingDeleteMove').css("display", "none");
 
-            alertify.notify('Movimiento Eliminado con exito', 'success', 5, function () {
-                console.log('Movimiento Eliminado con exito');
+            alertify.notify('Categoría Eliminada con exito', 'success', 5, function () {
+                console.log('Categoría Eliminada con exito');
             });
         });
 }
