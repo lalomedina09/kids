@@ -40,7 +40,9 @@ trait BudgetTrait
 
     public static function createChild($categoryUserParent, $user, $request)
     {
+        //dd($request->created_at);
         $budget = new TsBudget;
+        $budget->name = 'Movimiento #1 ' . $categoryUserParent->name;
         $budget->type_move = BudgetTrait::getTypeMove($categoryUserParent);
         $budget->amount_real = ($request->amount_real) ? $request->amount_real : 0;
         $budget->amount_estimated = ($request->amount_estimated) ? $request->amount_estimated : 0;
@@ -63,11 +65,22 @@ trait BudgetTrait
         $nowTime = Carbon::now()->format('H:i:s');
 
         switch ($request->nameInput) {
+            case 'name_move':
+                if ($request->value) {
+                    $budget->name = $request->value;
+                }
+                break;
             case 'estimated':
-                $budget->amount_estimated = $request->value;
+                if($request->value)
+                {
+                    $budget->amount_estimated = $request->value;
+                }
                 break;
             case 'real':
-                $budget->amount_real = $request->value;
+                if($request->value)
+                {
+                    $budget->amount_real = $request->value;
+                }
                 break;
             case 'created_at':
                 $date = $request->value . ' ' . $nowTime;
@@ -88,7 +101,7 @@ trait BudgetTrait
         return $value = ($category_id == 4 || $category_id == 5) ? 1 : 0 ;
     }
 
-    //Función utilizada desde varios puntos
+    //Función utilizada desde varios metodos
     public static function dataCategory($date, $category, $typeMove)
     {
         $user = Auth::user();
@@ -149,9 +162,11 @@ trait BudgetTrait
         $budget = new TsBudget;
         $budget->name = 'Movimiento #1' . $categoryUser->name;
         $budget->type_move = BudgetTrait::getTypeMove($categoryUser);
-        $budget->amount_real = $request->amount_real;
-        $budget->amount_estimated = $request->amount_estimated;
+        //$budget->amount_real = $request->amount_real;
+        //$budget->amount_estimated = $request->amount_estimated;
         $budget->ts_category_user_id = $categoryUser->id;
+        $budget->amount_real = ($request->amount_real) ? $request->amount_real : 0;
+        $budget->amount_estimated = ($request->amount_estimated) ? $request->amount_estimated : 0;
         $budget->user_id = $user->id;
         $budget->created_at = $created_at;
         $budget->updated_at = $created_at;

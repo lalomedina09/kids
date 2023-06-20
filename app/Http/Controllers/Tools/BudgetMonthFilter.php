@@ -239,6 +239,7 @@ class BudgetMonthFilter extends Controller
             ->where('created_at', '>=', $startDate)
             ->where('created_at', '<=', $endDate)
         ->sum('amount_real');
+        //->toSql();
 
         $exists = TsBudget::where('user_id', $user->id)
         ->where('type_move', 0)
@@ -276,9 +277,7 @@ class BudgetMonthFilter extends Controller
             'end' => $endDate
         );
 
-
         $category_id = $budget->customCategory->ts_category_id;
-
         $typeMove = BudgetTrait::getTypeMove($budget->customCategory);
         $_rowsBudgets = BudgetTrait::dataCategory($date, $category_id, $typeMove);
         $_rows = CategoryUserTrait::listCategory($date, $category_id);

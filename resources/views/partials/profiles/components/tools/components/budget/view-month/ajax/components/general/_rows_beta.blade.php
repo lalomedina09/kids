@@ -8,6 +8,7 @@
         if (count($categoryUser->moves) == 1) {
             //Dentro del if porque solo existe un movimiento
             $onlyMove = true;
+            $move_id = $categoryUser->move->id;
             $amount_estimated = $categoryUser->move->amount_estimated;
             $amount_real = $categoryUser->move->amount_real;
             $idInput = $categoryUser->move->id;
@@ -16,6 +17,7 @@
             //Dentro del else porque tiene mas de un movimiento
             $onlyMove = false;
             //dd($categoryUser->moves->pluck('id')->toArray(), 'guaoo');
+            $move_id = 0;
             $amount_real = $categoryUser->moves->sum('amount_real');
             $amount_estimated = $categoryUser->moves->sum('amount_estimated');
             $idInput = $categoryUser->id;
@@ -27,15 +29,17 @@
             <input type="text"
             id="name_{{ $categoryUser->id}}"
             class="form-control custom-input-text {{ $class}}"
-            onchange="budgetEditInput('{{$section}}', 'name', {{ $categoryUser->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
+            onchange="budgetEditInput('{{$section}}', 'name', {{ $categoryUser->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
             value="{{ $categoryUser->name}}">
         </div>
+
+        <!-- Campo Numerico Monto Estimado -->
         <div class="col-md-3 text-center">
             <input type="text"
-            id="estimated_{{ $categoryUser->id }}"
+            id="estimated_{{ $move_id }}"
             @if(count($categoryUser->moves) > 1) readonly title="Editalo desde la opción de acciones" @endif
             class="form-control custom-input-text {{ $class}}"
-            onchange="budgetEditInput('{{$section}}', 'estimated', {{ $categoryUser->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
+            onchange="budgetEditInput('{{$section}}', 'estimated', {{ $move_id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
             @if($onlyMove)
                 value="{{ $amount_estimated }}"
             @else
@@ -43,12 +47,14 @@
             @endif
             >
         </div>
+
+        <!-- Campo Numerico Monto Real -->
         <div class="col-md-3 text-center">
             <input type="text"
-            id="real_{{ $categoryUser->id }}"
+            id="real_{{ $move_id }}"
             @if(count($categoryUser->moves) > 1) readonly title="Editalo desde la opción de acciones" @endif
             class="form-control custom-input-text {{ $class}}"
-            onchange="budgetEditInput('{{$section}}', 'real', {{ $categoryUser->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
+            onchange="budgetEditInput('{{$section}}', 'real', {{ $move_id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
             @if($onlyMove)
                 value="{{ $amount_real }}"
             @else
@@ -56,12 +62,14 @@
             @endif
             >
         </div>
+
+        <!-- Fecha -->
         <div class="col-md-2 text-center">
             <input type="date"
             id="created_at_{{ $categoryUser->id }}"
             @if(count($categoryUser->moves) > 1) readonly title="Editalo desde la opción de acciones" @endif
             class="form-control custom-input-text {{ $class}}"
-            onchange="budgetEditInput('{{$section}}', 'created_at', {{ $categoryUser->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}');"
+            onchange="budgetEditInput('{{$section}}', 'created_at', {{ $categoryUser->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
             value="{{ $date }}">
         </div>
         <div class="col-md-1 text-center">

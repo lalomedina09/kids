@@ -13,6 +13,7 @@ use App\Models\TsCategoryUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+//use App\Http\Controllers\Tools\BudgetController;
 use App\Http\Controllers\Tools\BudgetYearFilter;
 use App\Http\Controllers\Tools\BudgetMonthFilter;
 use App\Http\Controllers\Tools\Traits\BudgetTrait;
@@ -57,10 +58,8 @@ class BudgetModalsController extends Controller
         $addMovePostMonth = $request->addMovePostMonth;
         $startDate = $this->createDateForInitMonth($request);
 
-        //Creamos la categoria
+        //Creamos la categoria y su primer movimiento
         $categoryUserParent = CategoryUserTrait::createCategoryAutomatic($category, $user, $request, $startDate, $origin = 'save-cat-user');
-
-        //Creamos el movimiento de forma automatica
         $budgetOne = BudgetTrait::createAutomatic($categoryUserParent, $user, $request, $startDate);
 
         //Si el usuario activo check se agregara movimientos en los siguientes meses
@@ -70,8 +69,8 @@ class BudgetModalsController extends Controller
                     $request->request->add([
                         'created_at' => $value['start_month'],
                     ]);
-
-                    $budgetAfter = BudgetTrait::createChild($categoryUserParent, $user, $request);
+                    $categoryUserParentTwo = CategoryUserTrait::createCategoryAutomatic($category, $user, $request, $value['start_month'], $origin = 'save-cat-user');
+                    $budgetAfter = BudgetTrait::createChild($categoryUserParentTwo, $user, $request);
                 }
             }
         }
@@ -157,15 +156,14 @@ class BudgetModalsController extends Controller
         $divAmountReal = $request->divAmountReal;
         $created_at = $request->year . '-' . $request->month . '-' . $day = Carbon::now()->format('d');
         $year = $request->year;
-        //dd($created_at);
+
         $category = TsCategory::where('id', $categoryId)->first();
-        $categoriesUser = TsCategoryUser::where('user_id', $user->id)
-        ->where('ts_category_id', $categoryId)
-        ->get();
+        $categoryUser = TsCategoryUser::where('id', $request->categoryUser_id)->first();
+
         $budget = TsBudget::where('id', $request->budget_id)->first();
         $view = view(
             'partials.profiles.components.tools.components.budget.components.modal-content._delete_move',
-            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at', 'year', 'budget', 'divArrowsCategory')
+            compact('categoryUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at', 'year', 'budget', 'divArrowsCategory')
         )
         ->render();
 
@@ -177,51 +175,47 @@ class BudgetModalsController extends Controller
     public function deleteMoveModalConfirm(Request $request)
     {
         $user = Auth::user();
-        $category = TsCategory::where('id', $request->category_id)->first();
+
         $arrayMonths = Controller::buildArrayMonths($request->year);
+        $date = Controller::buildDateMonth($request);
         $deleteMovePostMonth = $request->deleteMovePostMonth;
         $budget_id = $request->budget_id;
-        $dateInit = $this->createDateForInitMonth($request);
 
-        //Search 1: Busqueda de movimientos con la misma categoria creada en la tabla ts_categories_users
-        //mayor al mes actual
-        $searchMovementsForId = TsBudget::where('created_at', '>', $dateInit)
-                        ->where('ts_category_user_id', $request->ts_category_user_id)
-                        ->get();
+        //Search 1: ubicamos la categoria a traves del id
+        $searchCategoryUser = TsCategoryUser::where('created_at', '>=', $date['start'])
+                        ->where('created_at', '<=', $date['end'])
+                        ->where('id', $request->categoryUser_id)
+                        ->first();
 
-        //Search 2: Busqueda de movimientos basados en nombres mayor al mes actual
-        $searchMovementsForName = TsBudget::join('ts_categories_users', 'ts_budgets.ts_category_user_id', '=', 'ts_categories_users.id')
-            ->where('ts_budgets.created_at', '>', $dateInit)
-            ->where('ts_budgets.user_id', $user->id)
-            ->where('ts_categories_users.name', $request->budget_name)
-            ->select('ts_budgets.id')
-            ->get()
-            ->pluck('id')
-            ->toArray();
-
-        $budgetDelete = BudgetTrait::destroy($budget_id);
-
-        //Si el usuario activo check se eliminara el movimiento en los siguientes meses
-        if ($deleteMovePostMonth == "true") {
-            //Entra al if porque encontro referencias de la categoria user ID
-            if(count($searchMovementsForId)>0)
-            {
-                foreach($searchMovementsForId as $item)
-                {
-                    $deleteOne = BudgetTrait::destroy($item->id);
-                }
+        if($searchCategoryUser){
+            foreach ($searchCategoryUser->moves as $move) {
+                BudgetTrait::destroy($move->id);
             }
 
-            //Entro al if porque encontro referencias por nombre de los siguientes meses
-            if(count($searchMovementsForName))
-            {
-                foreach($searchMovementsForName as $item)
-                {
-                    $deleteTwo = BudgetTrait::destroy($item);
+            $searchCategoryUser->delete();
+        }
+
+        //Si el usuario activo check se eliminara las categorias en los proximos meses
+        if ($deleteMovePostMonth == "true") {
+            foreach ($arrayMonths as $key => $value) {
+                if ($key > $request->month) {
+                    $searchForNameCategoryUser = TsCategoryUser::where('user_id', $user->id)
+                        ->where('created_at', '>=', $value['start_month'])
+                        ->where('created_at', '<=', $value['end_month'])
+                        ->where('name', $request->usercategory_name)
+                        ->first();
+
+                    if($searchForNameCategoryUser){
+                        foreach ($searchForNameCategoryUser->moves as $move) {
+                            BudgetTrait::destroy($move->id);
+                        }
+
+                        $searchForNameCategoryUser->delete();
+                    }
                 }
             }
         }
-        //dd($request->all());
+
         //Recuperamos el movimiento ya eliminado para mandar la collection a la funcion
         $budget = TsBudget::where('id', $budget_id)->withTrashed()->first();
 
@@ -236,7 +230,7 @@ class BudgetModalsController extends Controller
             'viewAmountReal' => $divArrowsCategory['viewHeaderCategoryAmountReal']
         ]);
     }
-
+    //Abrir ventana modal para agregar movimiento a la categoria selecionada
     public function addMoveToCategoryModalOpen(Request $request)
     {
         $user = Auth::user();
@@ -247,8 +241,8 @@ class BudgetModalsController extends Controller
         $divAmountReal = $request->divAmountReal;
         $created_at = $request->year . '-' . $request->month . '-' . $day = Carbon::now()->format('d');
         $year = $request->year;
-
-        $budget = TsBudget::where('id', $request->budgetId)->first();
+        $budget = TsBudget::where('id', $request->budgetId)->withTrashed()->first();
+        //dd($budget, $request->all());
         $category = TsCategory::where('id', $categoryId)->first();
         $categoriesUser = TsCategoryUser::where('user_id', $user->id)
             ->where('ts_category_id', $categoryId)
@@ -290,6 +284,7 @@ class BudgetModalsController extends Controller
         return $date;
     }
 
+    //Abrir ventana modal para
     public function modalMovesShow(Request $request)
     {
         $user = Auth::user();
@@ -307,7 +302,9 @@ class BudgetModalsController extends Controller
             ->where('id', $categoryUserId)
             ->first();
 
-        $view = view('partials.profiles.components.tools.components.budget.components.modal-content.show-moves', compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at', 'year'))
+        $view = view('partials.profiles.components.tools.components.budget.components.modal-content.show-moves',
+                compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at', 'year')
+            )
             ->render();
 
         return response()->json([
@@ -322,16 +319,15 @@ class BudgetModalsController extends Controller
 
     public function moveDestroy(Request $request)
     {
-
         $user = Auth::user();
-        $budget_id = $request->budget_id;
+        $budget_id = $request->moveId;
         $budgetDelete = BudgetTrait::destroy($budget_id);
 
         //Recuperamos el movimiento ya eliminado para mandar la collection a la funcion
         $budget = TsBudget::where('id', $budget_id)->withTrashed()->first();
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);
         $divArrowsCategory = BudgetMonthFilter::divArrowsCategory($request, $budget);
-
+        //dd($budget, $resumenMonth, $divArrowsCategory);
         return response()->json([
             'resumenMonth' => $resumenMonth,
             'divArrowsCategory' => $divArrowsCategory['viewArrows'],

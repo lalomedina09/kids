@@ -59,26 +59,46 @@
             $class = (($counter % 2) == 0) ? null : "custom-input-transparent" ;
         @endphp
         <!-- init row-->
-        <div class="row">
+        <div class="row" id="row_id_move_{{ $move->id }}">
             <div class="col-md-1">
                 <span style="font-size: 0.9rem; color:transparent;">#{{ $counter++ }}M0{{ $move->id }}</span>
             </div>
 
             <div class="col-md-3 text-center">
-                <input type="hidden" class="form-control" id="formAddMove_category_id" value="{{ $categoryId }}" required placeholder="Id Category Parent" style="font-size: 0.8rem;">
+                <input type="hidden" class="form-control" id="formAddMove_category_id" value="{{ $categoryId }}"
+                required placeholder="Id Category Parent" style="font-size: 0.8rem;">
+
                 <input type="hidden" class="form-control" id="formAddMove_percent" value="0" required>
-                <input type="text" class="form-control" id="formAddMove_name" value="{{ $move->name }}" required placeholder="Nueva categoría" style="font-size: 0.8rem;text-align: center;">
+
+                <!-- input nombre del movimiento-->
+                <!--
+                <input type="text" class="form-control" id="formAddMove_name" value="{{ $move->name }}"
+                 required placeholder="Nueva categoría" style="font-size: 0.8rem;text-align: center;">
+                -->
+                <input type="text"
+                    id="name_move_{{ $move->id }}"
+                    class="form-control"
+                    onchange="budgetEditInput('{{$section}}', 'name_move', {{ $move->id }}, '{{ $divAmountReal}}', '{{ $divAmountEstimate }}', {{ $move->customCategory->id }});"
+                    value="{{ $move->name }}"
+                >
             </div>
 
             <div class="col-md-2 text-center">
-                <input type="text" class="form-control" id="formAddMove_estimated" value="{{ $move->amount_real }}" onkeypress="return valideKey(event);"
-                required placeholder="Agregar monto" style="font-size: 0.8rem;text-align: center;">
-
+                <input type="text"
+                    id="estimated_{{ $move->id }}"
+                    class="form-control"
+                    onchange="budgetEditInput('{{$section}}', 'estimated', {{ $move->id }}, '{{ $divAmountReal}}', '{{ $divAmountEstimate }}', {{ $move->customCategory->id }});"
+                    value="{{ $move->amount_real }}"
+                >
             </div>
 
             <div class="col-md-2 text-center">
-                <input type="text" class="form-control" value="{{ $move->amount_estimated }}" id="formAddMove_real" onkeypress="return valideKey(event);"
-                required placeholder="Agregar monto" style="font-size: 0.8rem;text-align: center;">
+                <input type="text"
+                    id="real_{{ $move->id }}"
+                    class="form-control"
+                    onchange="budgetEditInput('{{$section}}', 'real', {{ $move->id }}, '{{ $divAmountReal}}', '{{ $divAmountEstimate }}', {{ $move->customCategory->id }});"
+                    value="{{ $move->amount_real }}"
+                >
             </div>
 
             <div class="col-md-2 text-center">
@@ -86,10 +106,15 @@
             </div>
 
             <div class="col-md-1">
-                <button type="button" class="button-delete"
-                            data-toggle="dropdown">
-                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                <button type="button"
+                    class="button-delete"
+                    title="¿Eliminar movimiento {{ $move->name}}?"
+                        onclick="simpleDeleteMoveOfCategory('{{ $move->id}}', '{{ $section }}', {{$categoryId}}, '{{ $divCategory }}', '{{ $divAmountReal}}', '{{ $divAmountEstimate }}', {{ $categoriesUser->id }});"
+                >
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
                 </button>
+
+                <!-- Imagen que aparece mientras se hace un proceso con ajax-->
                 <div id="budgetMonthLoadingAddMove" style="display:none">
                     <img src="{{ asset('images/gif/loading/loading-qdplay.gif') }}" alt="Loading 4" width="30">
                 </div>

@@ -41,13 +41,13 @@ function activeBudgetSectionCreateCategories() {
 
 }
 
-function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmountReal) {
+function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmountReal, userCategoryId) {
 
     let token = $('#token').val();
     let month = $('#budget_month_id').val();
     let year = $('#budget_year_id').val();
     let value = $('#' + nameInput + '_' + id_move).val();
-
+    //console.log(value);
     $.ajax({
         beforeSend: function () {
             $('#budgetSectionMonthBtnsLoading').css("display", "contents");
@@ -63,7 +63,8 @@ function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmou
             value: value,
             id_move: id_move,
             section: section,
-            nameInput: nameInput
+            nameInput: nameInput,
+            userCategory_id: userCategoryId
         },
         type: "POST",
         headers: {
@@ -79,9 +80,9 @@ function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmou
             $('#' + divAmountEstimate).empty();
             $('#' + divAmountEstimate).html(data.viewHeaderCategoryAmountReal);
 
-            alertify.notify('Actualización con exito', 'success', 5, function ()
+            alertify.notify('Actualización realizada con exito', 'success', 5, function ()
             {
-                console.log('Alerta Grafica Lo que entro');
+                //console.log('Alerta actualizacion de input');
             });
 
         },
@@ -90,4 +91,45 @@ function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmou
         }
     });
 
+}
+
+function simpleDeleteMoveOfCategory(moveId, section, categoryId, divArrowsCategory, divAmountReal, divAmountEstimate , categoryUserId)
+{
+    let url = '/budget/actions/modal/destroy-move';
+    let token = $('#token').val();
+
+    $('#budgetSectionMonthBtnsLoading').css("display", "contents");
+    $.post(url, {
+        _token: token,
+        moveId: moveId,
+        section: section,
+        categoryId: categoryId,
+        divArrowsCategory: divArrowsCategory,
+        divAmountReal: divAmountReal,
+        divAmountEstimate: divAmountEstimate,
+        categoryUserId: categoryUserId
+    },
+        function (data) {
+            $("#header-level-month").empty();
+            $("#header-level-month").html(data.resumenMonth);
+
+            //Renglones de la categoria principal
+            $('#' + divArrowsCategory).empty();
+            $('#' + divArrowsCategory).html(data.divArrowsCategory);
+
+            //Update Encabezado de Categoria Monto Real
+            $('#' + divAmountReal).empty();
+            $('#' + divAmountReal).html(data.viewAmountEstimate);
+
+            //Update Encabezado de Categoria Monto Estimado
+            $('#' + divAmountEstimate).empty();
+            $('#' + divAmountEstimate).html(data.viewAmountReal);
+
+            $('#budgetSectionMonthBtnsLoading').css("display", "none");
+            $('#row_id_move_' + moveId).hide(4000);
+
+            alertify.notify('Movimiento eliminado con exito a la categoria', 'success', 5, function () {
+                //console.log('Movimiento Agregado con exito a la categoria');
+            });
+        });
 }

@@ -58,8 +58,9 @@
         <button class="redondo" onclick="saveMoveToCategoryBudget('{{$section}}', '{{ $divCategory }}', '{{ $divAmountEstimate }}', '{{ $divAmountReal }}');">
             <i class="lni lni-checkmark" style="font-weight: bold;"></i>
         </button>
-        <div id="budgetMonthLoadingAddMove" style="display:none">
+        <div id="budgetMonthLoadingEditOrDeleteMove" style="display:none">
             <img src="{{ asset('images/gif/loading/loading-qdplay.gif') }}" alt="Loading 4" width="30">
         </div>
     </div>
 </div>
+

@@ -184,7 +184,7 @@ function openModalBudgetZoom(nameMonth, start, end) {
             $('#budgetSectionYearLoading').css("display", "none");
         });
 }
-//Funcion para guardar la categoriato
+//Funcion para crear una nueva categoria
 function saveCategoryBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal) {
     let url = '/budget/addmove/modal/save';
     let token = $('#token').val();
@@ -322,7 +322,7 @@ function saveMoveToCategoryBudget(section, divArrowsCategory, divAmountEstimate,
 }
 
 //Funcion para abrir Ventana modal que eliminara la categoria
-function openModalDeleteCategory(section, categoryId, divArrowsCategory, divAmountEstimate, divAmountReal, budget_id) {
+function openModalDeleteCategory(section, categoryId, divArrowsCategory, divAmountEstimate, divAmountReal, categoryUserId) {
 
     let url = '/budget/deletemove/modal/open';
     let token = $('#token').val();
@@ -339,7 +339,7 @@ function openModalDeleteCategory(section, categoryId, divArrowsCategory, divAmou
         divAmountReal: divAmountReal,
         month: budget_month,
         year: budget_year,
-        budget_id: budget_id
+        categoryUser_id: categoryUserId
     },
         function (data) {
             $("#contentModalDeleteMove").empty();
@@ -350,7 +350,7 @@ function openModalDeleteCategory(section, categoryId, divArrowsCategory, divAmou
 }
 
 //Funcion para confirmar que se van a eliminar la categoria
-function deleteCategoryBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal) {
+function deleteCategoryBudget(section, divArrowsCategory, divAmountEstimate, divAmountReal, categoryUserId) {
     let url = '/budget/deletemove/modal/confirm';
     let token = $('#token').val();
     let category_id = $('#formAddMove_category_id').val();
@@ -360,7 +360,7 @@ function deleteCategoryBudget(section, divArrowsCategory, divAmountEstimate, div
     let budget_year = $('#budget_year_id').val();
     let ts_category_user_id = $('#formDeleteMove_ts_category_user_id').val();
     let deleteMovePostMonth = $('#deleteMovePostMonth').prop('checked');
-    $('#budgetMonthLoadingDeleteMove').css("display", "contents");
+    $('#budgetMonthLoadingEditOrDeleteMove').css("display", "contents");
     $.post(url, {
         _token: token,
         section: section,
@@ -371,9 +371,10 @@ function deleteCategoryBudget(section, divArrowsCategory, divAmountEstimate, div
         year: budget_year,
         budget_id: budget_id,
         ts_category_user_id: ts_category_user_id,
-        budget_name: budget_name,
+        usercategory_name: budget_name,
         deleteMovePostMonth: deleteMovePostMonth,
-        divArrowsCategory: divArrowsCategory
+        divArrowsCategory: divArrowsCategory,
+        categoryUser_id: categoryUserId
     },
         function (data) {
             $("#header-level-month").empty();
@@ -393,7 +394,7 @@ function deleteCategoryBudget(section, divArrowsCategory, divAmountEstimate, div
 
             //Encabezado de la categoria principal
             $('#modalDeleteMoveBudget').modal('hide');
-            $('#budgetMonthLoadingDeleteMove').css("display", "none");
+            $('#budgetMonthLoadingEditOrDeleteMove').css("display", "none");
 
             alertify.notify('Categoría Eliminada con exito', 'success', 5, function () {
                 console.log('Categoría Eliminada con exito');

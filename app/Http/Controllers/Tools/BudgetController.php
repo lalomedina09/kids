@@ -100,7 +100,16 @@ class BudgetController extends Controller
 
     public function editInput(Request $request, $section)
     {
-        $getBudget = TsBudget::findOrFail($request->id_move);
+        $getBudget = TsBudget::where('id', $request->id_move)->first();
+        $user = Auth::user();
+
+        $date = Controller::buildDateMonth($request);
+        if($getBudget == null)
+        {
+            $categoryUserParent = TsCategoryUser::where('id', $request->userCategory_id)->first();
+            $getBudget = BudgetTrait::createAutomatic($categoryUserParent, $user, $request, $date['start']);
+        }
+
         $customCategory = $getBudget->customCategory;
 
         if ($request->nameInput == "name") {
@@ -111,31 +120,13 @@ class BudgetController extends Controller
 
         $user = Auth::user();
         $moves = TsBudget::where('user_id', $user->id);
-        $month = $request->month;
-        $year = $request->year;
 
-        ////
-        //$year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
-        //$month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
-
-        $startDate = $year . '-' . $month . '-01 00:00:00';
-        $endTime = '' . ' 23:59:59';
-        $_endDate = Carbon::parse($startDate)->format('Y-m-t');
-        $endDate = $_endDate . $endTime;
-        ///
-        $date = array(
-            //'start' => '2023-05-01 00:00:00',
-            //'end' => '2023-05-31 23:59:59'
-            'start' => $startDate,
-            'end' => $endDate
-        );
-
+        $date = Controller::buildDateMonth($request);
         $header = BudgetMonthFilter::header($request);
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);
         $typeMove = BudgetTrait::getTypeMove($budget->customCategory);
 
         $categoryMain = $budget->customCategory->ts_category_id;
-
         $_rows = BudgetTrait::dataCategory($date, $categoryMain, $typeMove);
         $categoryRows = $_rows->get();
 
@@ -288,5 +279,6 @@ class BudgetController extends Controller
         $date = $request->year . '-' . $request->month . '-01 00:00:00';
         return $date;
     }
+
 
 }
