@@ -77,6 +77,7 @@
 
 @include('partials.profiles.components.tools.components.budget.view-month')
 @include('partials.profiles.components.tools.components.budget.view-year')
+@include('partials.profiles.components.tools.components.budget.view-year-report')
 
 {{--
 @include('partials.profiles.components.tools.components.budget.entrances')

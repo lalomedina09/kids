@@ -3,10 +3,10 @@ function activeBudgetSectionMonth() {
 
     let token = $('#token').val();
     let section = 'entrances';
-    console.log('Inicia activacion de ajax Presupuesto activado');
 
     activeBudgetSectionCreateCategories();
-    console.log('Paso la función de busqueda creacion de categorias');
+
+
         $.ajax({
             url: "/budget/active/month",
             beforeSend: function () {
@@ -24,15 +24,17 @@ function activeBudgetSectionMonth() {
                 'X-CSRF-Token': '{{ csrf_token() }}',
             },
             success: function (data) {
-                console.log("Ajax Activo la Vista mensual");
-
                 responseDataHeaderMonth(data);
                 responseDataSectionMonth(data);
                 responseDataSectionMonthBtns(data);
-                //responseDataSectionMonthContent(data, section);
+                responseDataSectionMonthContent(data, section);
+
+                /*alertify.notify('Visualización Mensual', 'success', 5, function () {
+                    console.log('Visualización Mensual ');
+                });*/
             },
             error: function () {
-                console.log("Ajax no tuvo exito en el BackEnd")
+                //console.log("Ajax no tuvo exito en el BackEnd")
             }
         });
 
@@ -42,41 +44,34 @@ function activeBudgetSectionMonthMenu(section) {
     let token = $('#token').val();
     let budget_month = $('#budget_month_id').val();
     let budget_year = $('#budget_year_id').val();
-    console.log('Ajax Activado Sección: -> ' + section);
         $.ajax({
             url: "/budget/active/month/section",
             beforeSend: function () {
-                //customBeforeLoading();
                 $('#budgetSectionMonthBtnsLoading').css("display", "contents");
             },
             complete: function () {
-                //customCompleteLoading();
                 $('#budgetSectionMonthBtnsLoading').css("display", "none");
             },
             data: {
                 _token: token,
                 section: section,
-                budget_month: budget_month,
-                budget_year: budget_year
+                month: budget_month,
+                year: budget_year
             },
             type: "POST",
             headers: {
                 'X-CSRF-Token': '{{ csrf_token() }}',
             },
             success: function (data) {
-                console.log("Ajax Correcto!! Se cargo Sección: " + section);
-
-                //responseDataHeaderMonth(data);
                 responseDataHeaderMonth(data);
-                /*
-                $("#header-level-month").empty();
-                $("#header-level-month").html(data.resumenMonth);
-                */
                 responseDataSectionMonthBtns(data);
                 responseDataSectionMonthContent(data, section);
+                alertify.notify('Cambio de sección', 'success', 5, function () {
+                    console.log('Cambio de sección ');
+                });
             },
             error: function () {
-                console.log("Ajax Error!! Sección: " + section)
+                //console.log("Ajax Error!! Sección: " + section)
             }
         });
 
@@ -89,20 +84,24 @@ function changeDateMonthSection(section) {
     let budget_month = $('#budget_month_id').val();
     let budget_year = $('#budget_year_id').val();
 
+    $('#budgetSectionMonthBtnsLoading').css("display", "contents");
+
     $.post(url, {
         _token: token,
         section: section,
-        budget_month: budget_month,
-        budget_year: budget_year
+        month: budget_month,
+        year: budget_year
     },
         function (data) {
-            console.log("Ajax Correcto!! Se cargo Sección con el filtro de fecha : " + section);
-
-            //responseDataHeaderMonth(data);
             responseDataSectionMonthBtns(data);
             $("#header-level-month").empty();
             $("#header-level-month").html(data.resumenMonth);
             responseDataSectionMonthContent(data, section);
+            $('#budgetSectionMonthBtnsLoading').css("display", "none");
+
+            alertify.notify('Filtro realizado con éxito', 'message', 5, function () {
+                console.log('Filtro realizado con éxito ');
+            });
         });
 }
 

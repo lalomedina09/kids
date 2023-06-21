@@ -6,6 +6,7 @@ use Illuminate\Http\{ Request, Response };
 
 use App\Http\Requests\Users\UpdateRequest;
 use App\Models\User;
+use DB;
 use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\Hash;
 
@@ -75,6 +76,29 @@ class ProfileController extends Controller
         #$branches = $user->branches()->get();
         #$roles = $user->companyRoles()->get();
         #dd($roles);
+        ////esto es de pruebas para funcionamiento de las graficas
+        /*
+        $users = User::select(DB::raw("COUNT(*) as count"), DB::raw("MONTHNAME(created_at) as month_name"))
+        ->whereYear('created_at', date('Y'))
+            ->groupBy(DB::raw("Month(created_at)"))
+            ->pluck('count', 'month_name')
+            ->limit('200');
+        */
+        /*
+        $labels = array(
+            'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+        );
+        $data = array(
+            5, 2, 3, 4, 5, 6,7, 8, 9, 10, 11, 12
+        );
+        $data2 = array(
+            5, 3, 4, 5, 6, 7,7, 10, 11, 12, 13, 14
+        );
+        */
+        #$labels = $users->keys();
+        #$data = $users->values();
+        ////
         return view('profile.edit')->with([
             'interests' => User::getValidInterests(),
             'user' => $user,
@@ -93,6 +117,9 @@ class ProfileController extends Controller
             'durations' => Calendar::getValidRecurrentDurations(),
             'listMonths' => $listMonths,
             'listYears' => $listYears,
+            //'labels' => $labels,
+            //'data' => $data,
+            //'data2' => $data2
             #'user_whatsapp' => $user_whatsapp
         ]);
     }

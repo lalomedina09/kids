@@ -42,8 +42,16 @@ Route::prefix('budget')
             ->uses('BudgetController@activeCalendar')
             ->name('budget.active.calendar');
 
-            Route::post('/section/filter-year')
-            ->uses('BudgetController@activeCalendarFilterYear')
+            Route::post('/section/filter-year-calendar')
+            ->uses('BudgetController@activeCalendarFilterYearCalendar')
+            ->name('budget.active.calendar.year.filter');
+
+            Route::post('/report')
+            ->uses('BudgetController@activeYearReport')
+            ->name('budget.active.year.report');
+
+            Route::post('/section/filter-year-report')
+            ->uses('BudgetController@activeCalendarFilterYearReport')
             ->name('budget.active.calendar.year.filter');
         });
 
@@ -63,25 +71,62 @@ Route::prefix('budget')
         Route::prefix('addmove/modal')
         ->group(function () {
             Route::post('/open')
-                ->uses('BudgetController@AddMoveModalOpen')
+                ->uses('BudgetModalsController@AddMoveModalOpen')
                 ->name('budget.add.move.modal.open');
 
             Route::post('/save')
-                ->uses('BudgetController@AddMoveModalSave')
+                ->uses('BudgetModalsController@AddCategoryModalSave')
                 ->name('budget.add.move.modal.save');
+
+            Route::post('open/add/move-to-category')
+            ->uses('BudgetModalsController@addMoveToCategoryModalOpen')
+            ->name('budget.add.move.modal.add.category.open');
+
+            Route::post('open/add/move-to-category/save')
+            ->uses('BudgetModalsController@AddMoveToCategoryModalSave')
+            ->name('budget.add.move.modal.add.category.save');
+        });
+
+        //Routes for delete Move
+        Route::prefix('deletemove/modal')
+        ->group(function () {
+            Route::post('/open')
+                ->uses('BudgetModalsController@deleteMoveModalOpen')
+                ->name('budget.delete.move.modal.open');
+
+            Route::post('/confirm')
+                ->uses('BudgetModalsController@deleteMoveModalConfirm')
+                ->name('budget.delete.move.modal.confirm');
+        });
+
+        //Routes for actions level move
+        Route::prefix('actions/modal')
+        ->group(function () {
+            Route::post('/show-moves')
+                ->uses('BudgetModalsController@modalMovesShow')
+                ->name('budget.delete.modal.open.actions.show');
+
+            Route::post('/update-moves')
+            ->uses('BudgetModalsController@modalMovesUpdate')
+            ->name('budget.delete.modal.open.actions.update');
+
+            Route::post('/destroy-move')
+            ->uses('BudgetModalsController@moveDestroy')
+            ->name('budget.delete.modal.open.actions.destroy');
         });
 
         //Routes for activate show modals
         Route::prefix('modal/year')
         ->group(function () {
             Route::post('/movements')
-                ->uses('BudgetController@AddMoveModalOpen')
-                ->name('budget.add.move.modal.open');
+                ->uses('BudgetModalsController@openModalYearMovements')
+                ->name('budget.view.moves.modal.open');
 
             Route::post('/zoom')
-                ->uses('BudgetController@AddMoveModalSave')
-                ->name('budget.add.move.modal.save');
+                ->uses('BudgetModalsController@openModalYearZoom')
+                ->name('budget.zoom.card.modal.month');
         });
     });
 
 
+//deletemove

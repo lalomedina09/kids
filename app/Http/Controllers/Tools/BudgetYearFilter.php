@@ -35,7 +35,7 @@ class BudgetYearFilter extends Controller
         $listYears = Controller::listYears();
 
         $header_year = view(
-            'partials.profiles.components.tools.components.budget.view-year.ajax._header_year',
+            'partials.profiles.components.tools.components.budget.view-year.ajax.'. $request->header_year,
             compact('entrances', 'exists', 'total', 'listMonths', 'listYears', 'year')
         )->render();
 
@@ -97,5 +97,53 @@ class BudgetYearFilter extends Controller
 
         return $cards;
 
+    }
+
+    public static function buildMonthOfArray($year)
+    {
+        $getMonths = Controller::buildArrayMonths($year);
+
+        foreach ($getMonths as $key => $value) {
+
+            $json_decoded = json_decode($key);
+            $labels[] = $value['month'];
+        }
+
+        $values = array_values($labels);
+        return $values;
+    }
+
+    public static function buildAmontsForMonthEstimate($year, $typeMove)
+    {
+
+        $getAmounts = array();
+        $buildArrayMonth = Controller::buildArrayMonths($year);
+        $user = Auth::user();
+
+        foreach ($buildArrayMonth as $key => $value) {
+
+            $json_decoded = json_decode($key);
+            $getAmounts[] = BudgetTrait::dataCalendarMonth($value['start_month'], $value['end_month'], $user, 'amount_estimated', $typeMove, $cat = null);
+        }
+
+        $values = array_values($getAmounts);
+        return $values;
+    }
+
+    public static function buildAmontsForMonthReal($year, $typeMove)
+    {
+
+        $amounts = array();
+        $buildArrayMonth = Controller::buildArrayMonths($year);
+        $user = Auth::user();
+
+        foreach ($buildArrayMonth as $key => $value) {
+
+            $json_decoded = json_decode($key);
+            $getAmounts[] = BudgetTrait::dataCalendarMonth($value['start_month'], $value['end_month'], $user, 'amount_real', $typeMove, $cat = null);
+        }
+
+        $values = array_values($getAmounts);
+        return $values;
     }
 }

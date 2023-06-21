@@ -5,6 +5,7 @@
                  Herramientas
         </a>
         <span class="text-bold"> | Presupuesto </span>
+        <br>
         <span class="text-right small"> Crea tu presupuesto basandote en el principio 50% / 30% / 20%</span>
     </div>
     <!--
@@ -14,6 +15,7 @@
     <div class="col-md-4">
         <a href="#{{ str_slug(__('Section View Month')) }}"
             data-toggle="tab"
+            id="btn-section-month-top"
             onclick="activeBudgetSectionMonth();"
             class="btn-a-style-none">
             <img src="{{ asset('images/tools/budget/eye.png') }}" width="30" alt="Visualizacion Mensual">
@@ -23,6 +25,7 @@
     <div class="col-md-4">
         <a href="#{{ str_slug(__('Section View Year')) }}"
             data-toggle="tab"
+            id="btn-section-year-top"
             onclick="activeBudgetSectionYear();"
             class="btn-a-style-none">
             <img src="{{ asset('images/tools/budget/eye.png') }}" width="30" alt="Visualizacion Calendario Anual">

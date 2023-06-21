@@ -15,7 +15,7 @@ class TsCategoryUser extends Model
     protected $table = 'ts_categories_users';
 
     protected $fillable = [
-        'name', 'percent'
+        'name', 'percent', 'created_by_app', 'comments'
     ];
 
     protected $dates = [
@@ -23,7 +23,7 @@ class TsCategoryUser extends Model
     ];
 
     protected $guarded = [
-        'id', 'user_id', 'ts_category_id'
+        'id', 'user_id', 'ts_category_id', 'parent_id'
     ];
 
     public function user()
@@ -37,25 +37,24 @@ class TsCategoryUser extends Model
         // 'foreign_key' , 'local_key'
         return $this->hasOne(TsCategory::class, 'id', 'ts_category_id');
     }
-    /*
-    public function question()
+
+    public function moves()
     {
-        // 'foreign_key' , 'local_key'
-        return $this->hasOne(QzQuestion::class, 'id', 'question_id');
+        return $this->hasMany(TsBudget::class, 'ts_category_user_id', 'id');
     }
 
-    public function option()
+    public function move()
     {
-        // 'foreign_key' , 'local_key'
-        return $this->hasOne(QzOption::class, 'id', 'option_id');
+        return $this->hasOne(TsBudget::class, 'ts_category_user_id', 'id');
     }
 
-    //Relation for get quiz
-    public function getQuizzesAnswers()
+    public function parent()
     {
-        //dd('llego al modelo curso');
-        return $this->morphMany('App\Models\Quiz', 'quizzesable');
+        return $this->belongsTo(TsCategoryUser::class, 'parent_id');
     }
-    */
-    //terminan pruebas
+
+    public function children()
+    {
+        return $this->hasMany(TsCategoryUser::class, 'parent_id');
+    }
 }

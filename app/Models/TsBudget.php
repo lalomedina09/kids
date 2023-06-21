@@ -15,7 +15,7 @@ class TsBudget extends Model
     protected $table = 'ts_budgets';
 
     protected $fillable = [
-        'type_move', 'amount_real', 'amount_estimated'
+        'name', 'type_move', 'amount_real', 'amount_estimated', 'comments'
     ];
 
     protected $dates = [
@@ -35,7 +35,7 @@ class TsBudget extends Model
     public function customCategory()
     {
         // 'foreign_key' , 'local_key'
-        return $this->hasOne(TsCategoryUser::class, 'id', 'ts_category_user_id');
+        return $this->hasOne(TsCategoryUser::class, 'id', 'ts_category_user_id')->withTrashed();
     }
     /*
     public function question()

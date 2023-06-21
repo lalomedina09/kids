@@ -2,32 +2,37 @@
     <div class="col-md-12 ">
         <div style="background-color: #eeeeee;margin-left: 10px;margin-right: 10px;">
             <div class="row line-buttom">
+                @php
+                    $counter = 1;
+                    $section = "entrances";
+
+                    $categoryRows = $data['constantes']->get();
+                    $idArrowsName = "arrowsCategorySteady";
+                    $idCategoryAmountReal = "arrowsCategorySteadyAmountReal";
+                    $idCategoryAmountEstimate = "arrowsCategorySteadyAmountEstimate";
+                @endphp
+
                 <!-- Particula: Boton minimizar o maximizar lista de categorias-->
                 @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._btn_min_or_max')
 
-                <div class="col-md-4 mt-4">
+                <div class="col-md-5 mt-4">
                     <img src="{{ asset('images/tools/budget/cat-fijos.png') }}" width="25" alt="Icono Categoria">
                     <span class="text-bold">
                         Ingresos Constantes
                     </span>
                 </div>
 
-                 @php
-                    $counter = 1;
-                    $section = "entrances";
-                    $categoryRows = $data['constantes']->get();
-                    $idArrowsName = "arrowsCategorySteady";
-                    $idCategoryAmountReal = "arrowsCategorySteadyAmountReal";
-                    $idCategoryAmountEstimate = "arrowsCategorySteadyAmountEstimate";
-                @endphp
                 @include('partials.profiles.components.tools.components.budget.view-month.categories.components.entrances.header-amount-category',
                 array(
-                    'amount_estimate' => $data['constantes']->sum('amount_estimated'),
-                    'amount_real' => $data['constantes']->sum('amount_real')
+                    //'amount_estimate' => $data['constantes']->moves->sum('amount_estimated'),
+                    //'amount_real' => $data['constantes']->moves->sum('amount_real')
+                    'amount_estimate' => $amountSectionConstantesEstimate,
+                    'amount_real' => $amountSectionConstantesReal
                     )
                 )
+
                 @php
-                    $total_month = $data['constantes']->sum('amount_real') + $data['variables']->sum('amount_real');
+                    $total_month = $amountSectionConstantesReal + $amountSectionVariablesReal;
 
                     $totalMonthSession = session(['totalMonthSession' => $total_month]);
 
@@ -41,11 +46,11 @@
 
                             </div>
                             <div class=" col-md-8 text-right">
-                                <span style="font-size: .8rem">
+                                {{--<span style="font-size: .8rem">
                                     Gasta el
                                     <span class="text-bold">50%</span>
                                     de tus ingresos (Hasta ${{ number_format($percentRecommended, 2)}})
-                                </span>
+                                </span>--}}
                             </div>
                         </div>
                     </div>
@@ -57,7 +62,22 @@
 
             <!-- Particula: Renglones para mostrar las categorías -->
             <div id="{{ $idArrowsName }}">
-                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows')
+                @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows_beta',
+                array(
+                    'section' => 'entrances',
+                    'category_id' => 4,
+                    'idArrowsName' => $idArrowsName,
+                    'idCategoryAmountReal' => $idCategoryAmountReal,
+                    'idCategoryAmountEstimate' => $idCategoryAmountEstimate
+                ))
+                {{--@include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows',
+                array(
+                    'section' => 'entrances',
+                    'category_id' => 4,
+                    'idArrowsName' => $idArrowsName,
+                    'idCategoryAmountReal' => $idCategoryAmountReal,
+                    'idCategoryAmountEstimate' => $idCategoryAmountEstimate
+                ))--}}
             </div>
 
             <br>

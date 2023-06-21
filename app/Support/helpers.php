@@ -6,6 +6,9 @@ use App\Models\Notification;
 use App\Models\Category;
 use App\Models\QzAnswer;
 use App\Models\Quiz;
+use App\Models\TsBudget;
+use App\Models\TsCategory;
+use App\Models\TsCategoryUser;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
@@ -382,5 +385,27 @@ function getPercentForCategory($int_real, $out_real)
 function divEmailProfile($email)
 {
     return $separate = explode("@", $email);
+
+}
+
+
+function getSumForCategory($arrayCategories, $arrayDate, $nameColumn)
+{
+    $user = Auth::user();
+
+    if(count($arrayCategories)>0){
+
+        return
+        $moves = TsBudget::join('ts_categories_users', 'ts_budgets.ts_category_user_id', '=', 'ts_categories_users.id')
+        ->where('ts_budgets.user_id', $user->id)
+            ->whereIn('ts_categories_users.id', $arrayCategories)
+            ->where('ts_budgets.created_at', '>=', $arrayDate['start'])
+            ->where('ts_budgets.created_at', '<=', $arrayDate['end'])
+            ->select('ts_budgets.*')
+            ->get()
+            ->sum("$nameColumn");
+    }else{
+        return 0;
+    }
 
 }

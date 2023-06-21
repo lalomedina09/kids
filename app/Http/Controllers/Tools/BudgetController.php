@@ -43,24 +43,19 @@ class BudgetController extends Controller
     public function activeCategoriesCustom(Request $request)
     {
         $user = Auth::user();
-        ////////
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
-        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
         $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
         $endTime = '' . ' 23:59:59';
         $_endDate = Carbon::parse($startDate)->format('Y-m-t');
         $endDate = $_endDate . $endTime;
-        ////////
-        //$start = Carbon::now()->startOfMonth()->format('Y-m-d H:i:s');
-        //$end = Carbon::now()->endOfMonth()->format('Y-m-d H:i:s');
-        //$end = Carbon::now();
 
-        //TsBudget
-        //$searchCategories = TsCategoryUser::where('user_id', $user->id)
-        $searchCategories = TsBudget::where('user_id', $user->id)
-            ->where('created_at', '>=', $startDate)
-            ->where('created_at', '<=', $endDate)
+        $searchCategories = TsBudget::join('ts_categories_users', 'ts_budgets.ts_category_user_id', '=', 'ts_categories_users.id')
+            ->where('ts_budgets.user_id', $user->id)
+            ->where('ts_budgets.created_at', '>=', $startDate)
+            ->where('ts_budgets.created_at', '<=', $endDate)
+            ->where('ts_categories_users.created_by_app', 1)
             ->get();
 
         if (count($searchCategories) == 0) {
@@ -70,9 +65,9 @@ class BudgetController extends Controller
 
     public function createCategoryUser($user, $request, $startDate)
     {
-        $categoriesMain = TsCategory::all();
+        $categoriesMain = TsCategory::whereNotNull('parent_id')->get();
 
-        foreach ($categoriesMain as $category) {
+        foreach($categoriesMain as $category) {
             $request->request->add([
                 'name' => $category->name,
                 'amount_real' => 0,
@@ -80,9 +75,9 @@ class BudgetController extends Controller
                 'percent' => CategoryUserTrait::getPercentCategory($category->id)
             ]);
 
-            $categoryUser = CategoryUserTrait::create($category, $user, $request);
-            //$budget = BudgetTrait::create($categoryUser, $user, $request);
-            $budget = BudgetTrait::createAutomatic($categoryUser, $user, $request, $startDate);
+            $categoryUserParent = CategoryUserTrait::createCategoryAutomatic($category, $user, $request, $startDate, $origin = 'filter-date');
+            $budgetParent = BudgetTrait::createAutomatic($categoryUserParent, $user, $request, $startDate);
+
         }
     }
 
@@ -105,7 +100,16 @@ class BudgetController extends Controller
 
     public function editInput(Request $request, $section)
     {
-        $getBudget = TsBudget::findOrFail($request->id_move);
+        $getBudget = TsBudget::where('id', $request->id_move)->first();
+        $user = Auth::user();
+
+        $date = Controller::buildDateMonth($request);
+        if($getBudget == null)
+        {
+            $categoryUserParent = TsCategoryUser::where('id', $request->userCategory_id)->first();
+            $getBudget = BudgetTrait::createAutomatic($categoryUserParent, $user, $request, $date['start']);
+        }
+
         $customCategory = $getBudget->customCategory;
 
         if ($request->nameInput == "name") {
@@ -116,31 +120,13 @@ class BudgetController extends Controller
 
         $user = Auth::user();
         $moves = TsBudget::where('user_id', $user->id);
-        $month = $request->month;
-        $year = $request->year;
 
-        ////
-        //$year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
-        //$month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
-
-        $startDate = $year . '-' . $month . '-01 00:00:00';
-        $endTime = '' . ' 23:59:59';
-        $_endDate = Carbon::parse($startDate)->format('Y-m-t');
-        $endDate = $_endDate . $endTime;
-        ///
-        $date = array(
-            //'start' => '2023-05-01 00:00:00',
-            //'end' => '2023-05-31 23:59:59'
-            'start' => $startDate,
-            'end' => $endDate
-        );
-
+        $date = Controller::buildDateMonth($request);
         $header = BudgetMonthFilter::header($request);
         $resumenMonth = BudgetMonthFilter::resumenMonth($request);
         $typeMove = BudgetTrait::getTypeMove($budget->customCategory);
 
         $categoryMain = $budget->customCategory->ts_category_id;
-
         $_rows = BudgetTrait::dataCategory($date, $categoryMain, $typeMove);
         $categoryRows = $_rows->get();
 
@@ -173,7 +159,33 @@ class BudgetController extends Controller
         ]);
     }
 
-    public function activeCalendarFilterYear(Request $request)
+    public function activeYearReport(Request $request)
+    {
+        $user = Auth::user();
+        $moves = TsBudget::where('user_id', $user->id)->get();
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $header = BudgetYearFilter::header($moves, $request);
+
+        $labels = BudgetYearFilter::buildMonthOfArray($year);
+        $ingresosEstimados = BudgetYearFilter::buildAmontsForMonthEstimate($year, $type = 1);
+        $ingresosReales = BudgetYearFilter::buildAmontsForMonthReal($year, $type = 1);
+
+        $gastosEstimados = BudgetYearFilter::buildAmontsForMonthEstimate($year, $type = 0);
+        $gastosReales = BudgetYearFilter::buildAmontsForMonthReal($year, $type = 0);
+
+
+        $body_temporal = view(
+            'partials.profiles.components.tools.components.budget.view-year.report.graph-income',
+            compact('labels', 'ingresosEstimados', 'ingresosReales', 'year', 'gastosEstimados', 'gastosReales')
+        )->render();
+
+        return response()->json([
+            'section_header_year' => $header,
+            'section_year' => $body_temporal
+        ]);
+    }
+
+    public function activeCalendarFilterYearCalendar(Request $request)
     {
         $user = Auth::user();
         $moves = TsBudget::where('user_id', $user->id)->get();
@@ -186,6 +198,33 @@ class BudgetController extends Controller
         return response()->json([
             'section_header_year' => $header,
             'section_year' => $body
+        ]);
+    }
+
+    public function activeCalendarFilterYearReport(Request $request)
+    {
+        $user = Auth::user();
+        $moves = TsBudget::where('user_id', $user->id)->get();
+        $month = Carbon::now()->format('m');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+
+        $header = BudgetYearFilter::header($moves, $request);
+        $labels = BudgetYearFilter::buildMonthOfArray($year);
+
+        $ingresosEstimados = BudgetYearFilter::buildAmontsForMonthEstimate($year, $type = 1);
+        $ingresosReales = BudgetYearFilter::buildAmontsForMonthReal($year, $type = 1);
+
+        $gastosEstimados = BudgetYearFilter::buildAmontsForMonthEstimate($year, $type = 0);
+        $gastosReales = BudgetYearFilter::buildAmontsForMonthReal($year, $type = 0);
+
+        $body_temporal = view(
+            'partials.profiles.components.tools.components.budget.view-year.report.graph-income',
+            compact('labels', 'ingresosEstimados', 'ingresosReales', 'year', 'gastosEstimados', 'gastosReales')
+        )->render();
+
+        return response()->json([
+            'section_header_year' => $header,
+            'section_year' => $body_temporal
         ]);
     }
 
@@ -235,48 +274,11 @@ class BudgetController extends Controller
         ]);
     }
 
-    public function AddMoveModalOpen(Request $request)
+    public function createDateForInitMonth($request)
     {
-        $user = Auth::user();
-        $categoryId = $request->categoryId;
-        $section = $request->section;
-        $divCategory = $request->divArrowsCategory;
-        $divAmountEstimate = $request->divAmountEstimate;
-        $divAmountReal = $request->divAmountReal;
-
-        $category = TsCategory::where('id', $categoryId)->first();
-        $categoriesUser = TsCategoryUser::where('user_id', $user->id)
-        ->where('ts_category_id', $categoryId)
-        ->get();
-
-        $view = view(
-            'partials.profiles.components.tools.components.budget.components.modal-content._add_move',
-            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal')
-        )
-        ->render();
-
-        return response()->json([
-            'view' => $view
-        ]);
+        $date = $request->year . '-' . $request->month . '-01 00:00:00';
+        return $date;
     }
 
-    public function AddMoveModalSave(Request $request)
-    {
-        $user = Auth::user();
-        $category = TsCategory::where('id', $request->category_id)->first();
-
-        $categoryUser = CategoryUserTrait::createForForm($category, $user, $request);
-        $budget = BudgetTrait::create($categoryUser, $user, $request);
-
-        $resumenMonth = BudgetMonthFilter::resumenMonth($request);
-        $divArrowsCategory = BudgetMonthFilter::divArrowsCategory($request, $budget);
-
-        return response()->json([
-            'resumenMonth' => $resumenMonth,
-            'divArrowsCategory' => $divArrowsCategory['viewArrows'],
-            'viewAmountEstimate' => $divArrowsCategory['viewHeaderCategoryAmountEstimate'],
-            'viewAmountReal' => $divArrowsCategory['viewHeaderCategoryAmountReal']
-        ]);
-    }
 
 }

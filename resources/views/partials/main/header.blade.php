@@ -147,6 +147,11 @@
                 </a>
             @endif
 
+            <a href="{{ route('profile.edit') }}#{{ str_slug(__('Tools')) }}"
+                    class="nav-link header__navigation-link {{ active_class('asesores*') }}">
+                    Herramientas
+            </a>
+
             <a href="{{ route('contact') }}"
                 class="nav-link header__navigation-link {{ active_class('descargas*') }}">
                 Contacto
@@ -170,17 +175,17 @@
             </li>
             @auth
                 @if (getNotificationsMenu() > 0)
-                    <li class="nav-item nav-item-search d-none d-sm-inline">
+                    <!--<li class="nav-item nav-item-search d-none d-sm-inline">
                         <a href="{{route('notification.index')}}" id="" >
                             <img src="{{ asset('images/icons/notification-circle.svg') }}" class="mb-5px" id="icon-notification-alert" alt="Notification Icon Alert" width="25px">
                         </a>
-                    </li>
+                    </li>-->
                 @else
-                    <li class="nav-item nav-item-search d-none d-sm-inline">
+                    <!--<li class="nav-item nav-item-search d-none d-sm-inline">
                         <a href="{{route('notification.index')}}" id="nav--search">
                             <img src="{{ asset('images/icons/notification.svg') }}" class="mb-5px" alt="Notification Icon Dont Alert">
                         </a>
-                    </li>
+                    </li>-->
                 @endif
                 {{--@if(config()->has('money.modules.marketplace'))
                     <li class="nav-item nav-item-search d-none d-sm-inline">
@@ -204,7 +209,7 @@
                     @endguest
 
                     @auth
-                        <span class="text-small d-none d-xl-inline-block">Hola, {{ auth()->user()->name }}</span>
+                        <span class="text-small d-none d-xl-inline-block"><!--Hola, -->{{-- auth()->user()->name --}}</span>
                             @if (auth()->user()->present()->profile_photo)
                                 <img src="{{ auth()->user()->present()->profile_photo }}"
                                     class="rounded-circle"
@@ -246,6 +251,11 @@
                                 class="dropdown-item header__buttons header__dropdown-buttons">
                                 Notificaciones
                             </a>
+                            <a href="{{ route('profile.edit') }}#{{ str_slug(__('Tools')) }}"
+                                class="dropdown-item header__buttons header__dropdown-buttons">
+                                Herramientas
+                            </a>
+
                         @if (config()->has('money.modules.marketplace'))
                             <a href="{{ url('/perfil#asesorias') }}" class="dropdown-item header__buttons header__dropdown-buttons">
                                 Mis mentorías

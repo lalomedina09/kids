@@ -20,10 +20,9 @@ class BudgetMonthFilter extends Controller
     public static function header($request)
     {
         $user = Auth::user();
-        //$q = Order::query();
-        //dd($request->all());
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
-        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
         $startDate = $year . '-' . $month.'-01'  . ' 00:00:00';
         $endTime = '' . ' 23:59:59';
@@ -57,7 +56,6 @@ class BudgetMonthFilter extends Controller
 
     public static function body($moves)
     {
-        //$q = Order::query();
         $entrances = $moves->where('type_move', 1)->sum('amount_real');
         $exists = $moves->where('type_move', 0)->sum('amount_real');
         $total = $entrances - $exists;
@@ -86,7 +84,7 @@ class BudgetMonthFilter extends Controller
     public static function content($moves, $section, $request)
     {
         $btns = BudgetMonthFilter::monthlistBtns();
-        $data = BudgetMonthFilter::getListCategories($moves, $section, $request);
+        $data = BudgetMonthFilter::getListCategoriesBeta($moves, $section, $request);
 
         $view = view(
             'partials.profiles.components.tools.components.budget.view-month.ajax._content',
@@ -122,10 +120,10 @@ class BudgetMonthFilter extends Controller
         return $listBtns;
     }
 
-    public static function getListCategories($moves, $section, $request)
+    /*public static function getListCategories($moves, $section, $request)
     {
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
-        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
         $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
         $endTime = '' . ' 23:59:59';
@@ -139,10 +137,12 @@ class BudgetMonthFilter extends Controller
 
         switch ($section) {
             case 'entrances':
+                $constantesBeta =  CategoryUserTrait::listCategory($date, 4);
                 $constantes =  BudgetTrait::dataCategory($date, 4, 1);
                 $variables =  BudgetTrait::dataCategory($date, 5, 1);
 
                 return $categories = array(
+                    'constantesBeta' => $constantesBeta,
                     'constantes' => $constantes,
                     'variables' => $variables
                 );
@@ -168,14 +168,66 @@ class BudgetMonthFilter extends Controller
                 return null;
             break;
         }
+    }*/
+
+    public static function getListCategoriesBeta($moves, $section, $request)
+    {
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
+
+        $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
+        $endTime = '' . ' 23:59:59';
+        $_endDate = Carbon::parse($startDate)->format('Y-m-t');
+        $endDate = $_endDate . $endTime;
+
+        $date = array(
+            'start' => $startDate,
+            'end' => $endDate
+        );
+
+        switch ($section) {
+            case 'entrances':
+                //$constantesBeta =  CategoryUserTrait::listCategory($date, 4);
+                $constantes =  CategoryUserTrait::listCategory($date, 4);
+                $variables =  CategoryUserTrait::listCategory($date, 5);
+
+                return $categories = array(
+                    //'constantesBeta' => $constantesBeta,
+                    'constantes' => $constantes,
+                    'variables' => $variables,
+                    'date' => $date
+                );
+                break;
+            case 'exits':
+                $fijos =  CategoryUserTrait::listCategory($date, 1);
+                $gustos =  CategoryUserTrait::listCategory($date, 2);
+                $ahorros =  CategoryUserTrait::listCategory($date, 3);
+
+                return $categories = array(
+                    'fijos' => $fijos,
+                    'gustos' => $gustos,
+                    'ahorros' => $ahorros,
+                    'date' => $date
+                );
+                break;
+            case 'movements':
+                $data =  BudgetTrait::dataAllMoves($moves, $date);
+                return $moves = array(
+                    'movements' => $data
+                );
+                break;
+            default:
+                return null;
+                break;
+        }
     }
 
     public static function resumenMonth($request)
     {
         $user = Auth::user();
 
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
-        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
         $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
         $endTime = '' . ' 23:59:59';
@@ -187,6 +239,7 @@ class BudgetMonthFilter extends Controller
             ->where('created_at', '>=', $startDate)
             ->where('created_at', '<=', $endDate)
         ->sum('amount_real');
+        //->toSql();
 
         $exists = TsBudget::where('user_id', $user->id)
         ->where('type_move', 0)
@@ -210,35 +263,37 @@ class BudgetMonthFilter extends Controller
         $user = Auth::user();
         $counter = 1;
         $section = $request->section;
-        ////
-        $year = ($request->has('budget_year')) ? $request->budget_year : Carbon::now()->format('Y');
-        $month = ($request->has('budget_month')) ? $request->budget_month : Carbon::now()->format('m');
+
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
 
         $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
         $endTime = '' . ' 23:59:59';
         $_endDate = Carbon::parse($startDate)->format('Y-m-t');
         $endDate = $_endDate . $endTime;
-        ///
+
         $date = array(
-            //'start' => '2023-05-01 00:00:00',
-            //'end' => '2023-05-31 23:59:59'
             'start' => $startDate,
             'end' => $endDate
         );
 
-        $categoryMain = $request->category_id;
+        $category_id = $budget->customCategory->ts_category_id;
         $typeMove = BudgetTrait::getTypeMove($budget->customCategory);
-        $_rows = BudgetTrait::dataCategory($date, $categoryMain, $typeMove);
+        $_rowsBudgets = BudgetTrait::dataCategory($date, $category_id, $typeMove);
+        $_rows = CategoryUserTrait::listCategory($date, $category_id);
         $categoryRows = $_rows->get();
+
+        $divArrowsCategory = $request->divArrowsCategory;
+        $idArrowsName = $request->divArrowsCategory;
         $idCategoryAmountReal = $request->divAmountReal;
         $idCategoryAmountEstimate = $request->divAmountEstimate;
 
-        $viewArrows = view('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows',
-            compact('counter', 'section', 'categoryRows', 'idCategoryAmountReal', 'idCategoryAmountEstimate')
+        $viewArrows = view('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows_beta',
+            compact('counter', 'section', 'categoryRows', 'idCategoryAmountReal', 'idCategoryAmountEstimate', 'category_id', 'divArrowsCategory', 'idArrowsName')
         )->render();
 
-        $viewHeaderCategoryAmountEstimate = BudgetMonthFilter::calculateHeaderCategory($categoryRows, 'estimate', $request);
-        $viewHeaderCategoryAmountReal = BudgetMonthFilter::calculateHeaderCategory($categoryRows, 'real', $request);
+        $viewHeaderCategoryAmountEstimate = BudgetMonthFilter::calculateHeaderCategory($_rowsBudgets->get(), 'estimate', $request);
+        $viewHeaderCategoryAmountReal = BudgetMonthFilter::calculateHeaderCategory($_rowsBudgets->get(), 'real', $request);
 
         $views = array(
             'viewArrows' => $viewArrows,
@@ -252,12 +307,10 @@ class BudgetMonthFilter extends Controller
     public static function calculateHeaderCategory($categoryRows, $typeAmount, $request)
     {
         $section = $request->section;
-        //dd($typeAmount, 'tipo de monto');
-        //dd($typeAmount, 'tipo de monto');
-        //if ($section == "entrance") {
+
         if($typeAmount == "estimate"){
             $amount_estimate = $categoryRows->sum('amount_estimated');
-            //dd($amount_estimate);
+
             $view = view(
                 'partials.profiles.components.tools.components.budget.view-month.ajax.components.'. $section .'.categoryHeaderAmontEstimate',
                 compact('amount_estimate')

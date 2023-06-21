@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\UserLog;
 use Illuminate\Support\Facades\Auth;
 
@@ -131,6 +132,24 @@ class Controller extends BaseController
                 "start_month" => $year . "-12-01",
                 "end_month" => $year . "-12-31",
             ),
+        );
+    }
+
+    public static function buildDateMonth($request)
+    {
+        $year = ($request->has('year')) ? $request->year : Carbon::now()->format('Y');
+        $month = ($request->has('month')) ? $request->month : Carbon::now()->format('m');
+
+        $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
+        $endTime = '' . ' 23:59:59';
+        $_endDate = Carbon::parse($startDate)->format('Y-m-t');
+        $endDate = $_endDate . $endTime;
+
+        return $date = array(
+            'start' => $startDate,
+            'end' => $endDate,
+            'month' => $month,
+            'year' => $year,
         );
     }
 }

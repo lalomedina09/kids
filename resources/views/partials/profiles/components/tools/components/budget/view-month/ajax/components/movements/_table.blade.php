@@ -1,3 +1,4 @@
+{{--dd($data['movements']->get(), 'entrentrentre')--}}
 @if(count($data['movements'])>0)
     <!---------  Mostrar esta tabla si se encuentran movimientos ------------->
 <div class="my-custom-scrollbar">
@@ -5,6 +6,8 @@
         <thead>
             <tr>
                 <th scope="col" style="font-size: 0.9rem;">#</th>
+                <th scope="col" class="text-left" style="font-size: 0.9rem;">Movimiento</th>
+                <th scope="col" class="text-left" style="font-size: 0.9rem;">Categoría</th>
                 <th scope="col" class="text-left" style="font-size: 0.9rem;">Concepto</th>
                 <th scope="col" style="font-size: 0.9rem;">Monto Real</th>
                 <th scope="col" style="font-size: 0.9rem;">Fecha</th>
@@ -18,17 +21,25 @@
                     #{{ $counter++ }}M0{{ $move->id }}
                 </td>
                 <td class="text-left" style="font-size: 0.9rem;">
-                    {{ $move->customCategory->name }}
-                </td>
-                <td style="font-size: 0.9rem;">
                     @if ($move->type_move == 1)
-                        <i class="lni lni-plus" style="font-weight: bold;"></i>
+                        Entrada
                     @else
-                        <i class="lni lni-minus" style="font-weight: bold;"></i>
+                        Salida
                     @endif
-                    ${{ $move->amount_real }} MXN
+                </td>
+                <td class="text-left" style="font-size: 0.9rem;font-weight: bold;">
+                    @if ($move->customCategory)
+                        {{ $move->customCategory->name }}
+                    @endif
+                </td>
+                <td class="text-left" style="font-size: 0.9rem;">
+                    {{ $move->name }}
                 </td>
                 <td style="font-size: 0.9rem;">
+                    ${{ $move->amount_real }}
+                    <span style="font-size: 0.5rem;">MXN</span>
+                </td>
+                <td style="font-size: 0.7rem;">
                     {{ fechaEspanol($move->created_at)}}
                 </td>
             </tr>
