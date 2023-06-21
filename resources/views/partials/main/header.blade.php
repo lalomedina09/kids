@@ -221,13 +221,12 @@
                 </a>
 
                 <div class="dropdown-menu header__dropdown">
-                    <a href="{{ route('qdplay.start') }}"
+                    @auth
+                    <a href="{{ route('qdplay.content') }}"
 						class="dropdown-item header__buttons header__dropdown-buttons">
 						QD Play
 					</a>
 					<div class="dropdown-divider header__dropdown-divider"></div>
-
-                    @auth
                         @can('blog.dashboard.show')
                             <a href="/dashboard" class="dropdown-item header__buttons header__dropdown-buttons">
                                 Dashboard
