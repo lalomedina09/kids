@@ -147,10 +147,10 @@
                 </a>
             @endif
 
-            <a href="{{ route('profile.edit') }}#{{ str_slug(__('Tools')) }}"
+            <!--<a href="{{ route('profile.edit') }}#{{ str_slug(__('Tools')) }}"
                     class="nav-link header__navigation-link {{ active_class('asesores*') }}">
                     Herramientas
-            </a>
+            </a>-->
 
             <a href="{{ route('contact') }}"
                 class="nav-link header__navigation-link {{ active_class('descargas*') }}">
@@ -250,10 +250,10 @@
                                 class="dropdown-item header__buttons header__dropdown-buttons">
                                 Notificaciones
                             </a>
-                            <a href="{{ route('profile.edit') }}#{{ str_slug(__('Tools')) }}"
+                            <!--<a href="{{ route('profile.edit') }}#{{ str_slug(__('Tools')) }}"
                                 class="dropdown-item header__buttons header__dropdown-buttons">
                                 Herramientas
-                            </a>
+                            </a>-->
 
                         @if (config()->has('money.modules.marketplace'))
                             <a href="{{ url('/perfil#asesorias') }}" class="dropdown-item header__buttons header__dropdown-buttons">
