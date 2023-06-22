@@ -152,12 +152,12 @@
                         >@lang('My Company')
                     </a>
                     <!-- Btn oculto herramientas mientras hago correcciones y actualizacion de imagenes-->
-                    <a href="#{{ str_slug(__('Tools')) }}"
+                    <!--<a href="#{{ str_slug(__('Tools')) }}"
                         class="nav-item nav-link text-uppercase c-text-size"
                         data-toggle="tab"
                         >@lang('Tools')
                         <img src="{{ asset('etapa1/GIF-NEW-Querido-dinero.gif') }}" alt="new" width="35" />
-                    </a>
+                    </a>-->
 
                     <a href="#{{ str_slug(__('QD Play')) }}"
                         class="nav-item nav-link text-uppercase c-text-size"
