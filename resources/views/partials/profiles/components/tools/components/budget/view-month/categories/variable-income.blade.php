@@ -53,9 +53,10 @@
             </div>
 
             <!-- Particula: Encabezados de inputs 4 columnas -->
-            @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.entrances._header_columns')
+            {{--@include('partials.profiles.components.tools.components.budget.view-month.ajax.components.entrances._header_columns')--}}
 
             <!-- Particula: Renglones para mostrar las categorías -->
+            <br><br>
             <!-- Variables de la parte superior funcionan para el siguiente include-->
             <div id="{{ $idArrowsName }}">
                 @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.general._rows_beta',

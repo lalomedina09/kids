@@ -52,7 +52,7 @@
                 </div>
             </div>
             <!-- Particula: Encabezados de inputs 4 columnas -->
-            @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.exits._header_columns')
+            {{--@include('partials.profiles.components.tools.components.budget.view-month.ajax.components.exits._header_columns')--}}
 
             <!-- Particula: Renglones para mostrar las categorías -->
             <div id="{{ $idArrowsName }}">

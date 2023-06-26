@@ -24,8 +24,18 @@
         }
     @endphp
 
-    <div class="row mb-">
-        <div class="col-md-2 text-center">
+    <div class="row mb-1">
+        <!-- Campo agregar-->
+        <div class="col-md-1 text-right">
+            <a href="#"
+                title="¿Agregar movimiento a la categoría {{ $categoryUser->name}}?"
+                onclick="openModalAddMoveToCategory('{{ $section }}', {{$categoryUser->id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
+                >
+                <img src="{{ asset('images/tools/budget/plus.png') }}" width="16" alt="Minimizar">
+            </a>
+        </div>
+        <!-- Campo Texto Name-->
+        <div class="col-md-3 text-center">
             <input type="text"
             id="name_{{ $categoryUser->id}}"
             class="form-control custom-input-text {{ $class}}"
@@ -34,7 +44,7 @@
         </div>
 
         <!-- Campo Numerico Monto Estimado -->
-        <div class="col-md-3 text-center">
+        <div class="col-md-2 text-center">
             <input type="text"
             id="estimated_{{ $move_id }}"
             @if(count($categoryUser->moves) > 1) readonly title="Editalo desde la opción de acciones" @endif
@@ -49,7 +59,7 @@
         </div>
 
         <!-- Campo Numerico Monto Real -->
-        <div class="col-md-3 text-center">
+        <div class="col-md-2 text-center">
             <input type="text"
             id="real_{{ $move_id }}"
             @if(count($categoryUser->moves) > 1) readonly title="Editalo desde la opción de acciones" @endif
@@ -72,6 +82,7 @@
             onchange="budgetEditInput('{{$section}}', 'created_at', {{ $categoryUser->id }}, '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
             value="{{ $date }}">
         </div>
+        <!-- campo lista acciones-->
         <div class="col-md-1 text-center">
             <div class="btn-group">
                 <button type="button" class="button-menu-actions dropdown-toggle"
@@ -128,6 +139,7 @@
                 </ul>
             </div>
         </div>
+        <!-- campo notas-->
         <div class="col-md-1 text-center">
             <span class="span-small-rounded-corners-gradient-borders" title="Número de movimientos {{ count($categoryUser->moves) }}">
                 {{ count($categoryUser->moves) }}
