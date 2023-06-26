@@ -242,15 +242,17 @@ class BudgetModalsController extends Controller
         $created_at = $request->year . '-' . $request->month . '-' . $day = Carbon::now()->format('d');
         $year = $request->year;
         $budget = TsBudget::where('id', $request->budgetId)->withTrashed()->first();
-        //dd($budget, $request->all());
+
         $category = TsCategory::where('id', $categoryId)->first();
+
+        $onlyCategoriesUser = TsCategoryUser::where('id', $categoryId)->first();
         $categoriesUser = TsCategoryUser::where('user_id', $user->id)
-            ->where('ts_category_id', $categoryId)
+            ->where('id', $categoryId)
             ->get();
 
         $view = view(
             'partials.profiles.components.tools.components.budget.components.modal-content._add_move_to_category',
-            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'divAmountEstimate', 'divAmountReal', 'created_at', 'year', 'budget')
+            compact('categoriesUser', 'categoryId', 'section', 'category', 'divCategory', 'onlyCategoriesUser', 'divAmountEstimate', 'divAmountReal', 'created_at', 'year', 'budget')
         )
             ->render();
 
@@ -284,7 +286,7 @@ class BudgetModalsController extends Controller
         return $date;
     }
 
-    //Abrir ventana modal para
+    //Abrir ventana modal para ver movimientos
     public function modalMovesShow(Request $request)
     {
         $user = Auth::user();

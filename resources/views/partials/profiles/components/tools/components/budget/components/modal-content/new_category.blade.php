@@ -3,7 +3,7 @@
         <h3 class="text-white text-center">
             Agregar categoría a sección |
             <span style="color:black">
-                {{ $categoriesUser->name }}
+                {{ $category->name }}
                 {{--@if($section == 'entrances') Lo que entra @else Lo que sale @endif--}}
             </span>
 

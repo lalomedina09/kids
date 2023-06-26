@@ -87,7 +87,7 @@
                                 <a href="#"
                                 style="font-size: .8rem; margin-left: 15px; text-decoration:none; color:#ffffff;"
                                 title="¿Agregar movimiento a la categoría {{ $categoryUser->name}}?"
-                                onclick="openModalAddMoveToCategory('{{ $section }}', {{$category_id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
+                                onclick="openModalAddMoveToCategory('{{ $section }}', {{$categoryUser->id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
                                 >
                                 Agregar movimiento
                                 </a>
@@ -98,7 +98,7 @@
                             <a href="#"
                             style="font-size: .8rem; margin-left: 15px; text-decoration:none; color:#ffffff;"
                             title="¿Agregar movimiento a la categoría {{ $categoryUser->name}}?"
-                            onclick="openModalAddMoveToCategory('{{ $section }}', {{$category_id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
+                            onclick="openModalAddMoveToCategory('{{ $section }}', {{$categoryUser->id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
                             >
                             Agregar movimiento
                             </a>
@@ -107,7 +107,7 @@
                             <a href="#"
                             style="font-size: .8rem; margin-left: 15px; text-decoration:none; color:#ffffff;"
                             title="¿Editar movimientos de la categoría {{ $categoryUser->name}}?"
-                            onclick="openModalShowMovesForEditOrDelete('{{ $section }}', {{$category_id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
+                            onclick="openModalShowMovesForEditOrDelete('{{ $section }}', {{$categoryUser->id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
                             >
                             Ver movimientos
                             </a>
@@ -119,7 +119,7 @@
                             <a href="#"
                             style="font-size: .8rem; margin-left: 15px; text-decoration:none; color:#ffffff;"
                             title="¿Eliminar categoría {{ $categoryUser->name}}?"
-                            onclick="openModalDeleteCategory('{{ $section }}', {{$category_id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
+                            onclick="openModalDeleteCategory('{{ $section }}', {{$categoryUser->id}}, '{{ $idArrowsName }}', '{{ $idCategoryAmountReal}}', '{{ $idCategoryAmountEstimate }}', {{ $categoryUser->id }});"
                             >
                             Eliminar Categoría {{-- $categoryUser->name --}}
                             </a>

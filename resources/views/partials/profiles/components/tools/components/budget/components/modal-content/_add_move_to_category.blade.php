@@ -1,13 +1,13 @@
 <div class="row">
     <div class="col-md-12">
         <h3 class="text-white text-center">
-            Agregar movimiento en la categoría <span style="color:black">"{{$budget->customCategory->name}}"</span>
+            Agregar movimiento en la categoría <span style="color:black">"{{$onlyCategoriesUser->name}}"</span>
         </h3>
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-3 text-center">
         <input class="form-control" type="hidden" name="budgetId" id="budgetId" value="{{ $budget->id }}">
-        <input type="hidden" class="form-control" id="formAddMove_category_user_id" value="{{ $budget->customCategory->id }}" required placeholder="Id Category User" style="font-size: 0.8rem;">
+        <input type="hidden" class="form-control" id="formAddMove_category_user_id" value="{{ $onlyCategoriesUser->id }}" required placeholder="Id Category User" style="font-size: 0.8rem;">
         <input type="hidden" class="form-control" id="formAddMove_category_id" value="{{ $categoryId }}" required placeholder="Id Category Parent" style="font-size: 0.8rem;">
         <input type="hidden" class="form-control" id="formAddMove_percent" value="0" required>
         <span style="font-size:65%">
