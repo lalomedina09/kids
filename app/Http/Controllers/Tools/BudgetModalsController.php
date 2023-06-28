@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Tools;
 
 use Mail;
 use Auth;
+use PDF;
 use Carbon\Carbon;
 
 use App\Models\TsBudget;

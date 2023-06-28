@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Tools;
 
 use Mail;
 use Auth;
+use PDF;
 use Carbon\Carbon;
 
 use App\Models\TsBudget;
@@ -281,4 +282,12 @@ class BudgetController extends Controller
     }
 
 
+    public function donwloadMoves()
+    {
+        $view = 'partials.profiles.components.tools.components.budget.components.modal-content.new_category';
+        $view = 'qd:marketplace::viewer.paypal';
+        $var2 = 100;
+        $view = PDF::loadView($view, ['articulo' => $item->name, 'precio' => $item->price, 'descuento' => $item->discount, 'comision' => $item->taxes, 'subtotal' => $item->subtotal, 'total' => $item->after_taxes]);
+        $filename = "QueridoDinero_Orden_{100}.pdf";
+    }
 }
