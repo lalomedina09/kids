@@ -13,12 +13,12 @@
 
             <p>Por correo electrónico: <span class="strong">{{ config('money.email') }}</p>
 
-            <p>En nuestras redes sociales:</p>
+            <!--<p>En nuestras redes sociales:</p>
             <ul>
                 <li><span style="color:#4a7db7;">Facebook:</span> <span class="strong">{{ config('money.url.facebook') }}</span></li>
                 <li><span style="color:#3cafc1;">Twitter:</span> <span class="strong">{{ config('money.url.twitter') }}</span></li>
                 <li><span style="color:#800080;">Instagram:</span> <span class="strong">{{ config('money.url.instagram') }}</span></li>
-            </ul>
+            </ul>-->
 
             <p>
                 Horarios de atención:
@@ -30,7 +30,7 @@
         <td class="small" valign="top" width="40%">
             <p class="strong">Importante:</p>
             <li>Este documento no es una factura fiscal.</li>
-            <li>Recuerde conservar su comprobante de pago.</li>
+            <li>Recuerde que los movimientos son los que registraste en la herramienta de presupuesto.</li>
         </td>
     </tr>
 </table>
