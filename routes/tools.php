@@ -29,6 +29,10 @@ Route::prefix('budget')
             Route::post('/section/filter-month')
             ->uses('BudgetController@activeSectionFilterDate')
             ->name('budget.active.section.filter');
+
+            Route::get('/download/pdf-moves/{year}/{month}')
+            ->uses('BudgetController@donwloadMoves')
+            ->name('budget.active.download.pdf');
         });
 
         //Routes for month

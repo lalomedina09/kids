@@ -56,6 +56,12 @@
                                 ({{ count($data['movements']) }}) Movimientos
                             </span>
                         </div>
+                        <div class="col-md-6 mt-3 ml-4 mb-4 text-right">
+                            <a class="btn bg-green-blue text-white p-1 p-xl-2"
+                            href="{{ url('budget/active/month/download/pdf-moves/2023/6')}}">
+                                Descargar PDF we
+                            </a>
+                        </div>
                     </div>
                     <!---------  Mostrar esta tabla si se encuentran movimientos ------------->
                     <div id="table-movements">

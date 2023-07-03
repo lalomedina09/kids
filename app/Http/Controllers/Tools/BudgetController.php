@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Tools;
 
 use Mail;
 use Auth;
+use Exception;
+use PDF;
 use Carbon\Carbon;
 
 use App\Models\TsBudget;
@@ -253,7 +255,6 @@ class BudgetController extends Controller
 
     public function activeSectionFilterDate(Request $request)
     {
-
         //Funcion para filtro por mes
         $this->activeCategoriesCustom($request);
         $section = $request->section;
@@ -280,5 +281,28 @@ class BudgetController extends Controller
         return $date;
     }
 
+    public function donwloadMoves($year, $month)
+    {
+        $user = Auth::user();
 
+        $startDate = $year . '-' . $month . '-01'  . ' 00:00:00';
+        $endTime = '' . ' 23:59:59';
+        $_endDate = Carbon::parse($startDate)->format('Y-m-t');
+        $endDate = $_endDate . $endTime;
+
+        $date = array(
+            'start' => $startDate,
+            'end' => $endDate
+        );
+
+        $getMoves = TsBudget::where('user_id', $user->id)->get();
+        $moves =  BudgetTrait::dataAllMoves($getMoves, $date);
+
+        $view = 'partials.profiles.components.tools.components.budget.components.pdf.moves-v2';
+        $filename = "Movimientos.pdf";
+
+        $view = PDF::loadView($view, ['year' => $year, 'month' =>$month, 'moves' =>$moves, 'user' => $user]);
+
+        return $view->download($filename);
+    }
 }
