@@ -50,10 +50,10 @@
 	<h5 class="text-uppercase mb-3">@lang('Change profile photo')</h5>
 
 	<div class="row mb-3" id="profile-photos">
-		@for ($i = 5; $i <= 15; ++$i)
+		@for ($i = 2; $i <= 15; ++$i)
 		<div class="col-2 mb-1" style="min-width: 100px;">
-			<input type="radio" name="profile_photo_radio" value="{{ 'etapa1/7. Perfiles-' . str_pad($i,2,'0',STR_PAD_LEFT) . '.png' }}" class="circle"
-				   style="background-image: url('{{ asset('etapa1/7. Perfiles-' . str_pad($i,2,'0',STR_PAD_LEFT) . '.png') }}')" />
+			<input type="radio" name="profile_photo_radio" value="{{ "etapa1/perfiles/Asset $i.png" }}" class="circle"
+				   style="background-image: url('{{ asset("etapa1/perfiles/Asset $i.png") }}')" />
 		</div>
 		@endfor
 
