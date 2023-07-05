@@ -1,5 +1,17 @@
 @extends('layouts.profile')
 
+@push('styles')
+<link href="{{ url('css/etapa1.css') }}" rel="stylesheet" />
+@endpush
+
+@push('styles-inline')
+<style>
+#profile-qdplay a {
+color: black;
+}
+</style>
+@endpush
+
 @section('profile-content')
 
     <div class="tab-pane active" id="profile-articles" role="tabpanel">
@@ -18,5 +30,15 @@
             @endforeach
         </div>
     </div>
+
+	<div class="tab-pane" id="profile-qdplay" role="tabpanel">
+		<div class="row">
+			@foreach ($courses as $course)
+			<div class="video-card col-md-4 col-sm-6 col-12 mb-4">
+				@include('qd:qdplay::home.partials._courseCard', ['course' => $course])
+			</div>
+			@endforeach
+		</div>
+	</div>
 
 @endsection
