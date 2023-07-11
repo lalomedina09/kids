@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\{Request, Response};
-
+use QD\QDPlay\Models\Course;
 use App\Models\User;
 
 class ExhibitorController extends Controller
@@ -47,9 +47,23 @@ class ExhibitorController extends Controller
             ->HasGuestProfileExhibitor()
             ->byIdOrUsername($key)
             ->firstOrFail();
+		
+		$courses = Course::with('videos')->whereHas('videos', function($q) use ($user) {
+			$q->whereHas('speakers', function($q2) use ($user) {
+				$q2->where('user_id', $user->id);
+			});
+		})->get();
+		
+		foreach ($courses as $course) {
+			$course->videos_length = intval($course->videos()->sum('length'));
+			$course->students_count = 0;
+			foreach ($course->videos as $video)
+				$course->students_count += $video->views()->distinct()->count('user_id');
+		}
 
         return view('exhibitors.show')->with([
-            'user' => $user
+            'user' => $user,
+			'courses' => $courses
         ]);
     }
 }

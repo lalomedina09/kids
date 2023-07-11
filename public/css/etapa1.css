@@ -2,16 +2,13 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
 */
-/*
+/* 
     Created on : May 27, 2022, 2:04:24 PM
     Author     : Saul
 */
-body {
-    font-size: 1.4rem;
-}
 
 .bg-green-blue {
-	background-color: #90d06b;
+	bagkground-color: #90d06b;
 	background-image: linear-gradient(to right, #90d06b, #01dacb);
 }
 
@@ -196,7 +193,7 @@ h1 hr, hr.h1 {
 	border: 2px solid transparent;
 	background: linear-gradient(to right, #90d06b, #01dacb) border-box;
 	-webkit-mask:
-		linear-gradient(#fff 0 0) padding-box,
+		linear-gradient(#fff 0 0) padding-box, 
 		linear-gradient(#fff 0 0);
 	-webkit-mask-composite: xor;
 	mask-composite: exclude;
@@ -215,8 +212,28 @@ h1 hr, hr.h1 {
 	border: 3px solid transparent;
 	background: linear-gradient(to right, #90d06b, #01dacb) border-box;
 	-webkit-mask:
-		linear-gradient(#fff 0 0) padding-box,
+		linear-gradient(#fff 0 0) padding-box, 
 		linear-gradient(#fff 0 0);
 	-webkit-mask-composite: xor;
 	mask-composite: exclude;
+}
+
+.dropdown-menu-networks {
+	text-align: right;
+    text-wrap: nowrap;
+	padding-left: 30px;
+	border-radius: 30px 0 30px 30px;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-menu-networks a {
+	display: inline-block;
+	margin: 30px 30px 30px 0;
+	color: white;
+	text-align: center;
+}
+
+.dropdown-menu-networks a img {
+	width: 100px;
+	height: 100px;
 }

@@ -2,44 +2,37 @@
 
 @push('styles')
     <link href="{{ mix('css/vendor/datetimepicker.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/custom/profile-qd.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
-    <link href="{{ asset('css/alertify/alertify.min.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
-    <link href="{{ asset('css/alertify/default.min.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
-
     <style>
-        .alertify-notifier .ajs-message.ajs-success{
-            font-size: 12px;
-            color: #ffffff;
-            background-color: #8ad06f;
+        .c-text-size{
+            font-size: 100%
         }
-        .alertify-notifier .ajs-message.ajs-message {
-            right: -320px;
-            font-size: 12px;
-            color: #ffffff;
-            background-color: #262525;
-        }
+
+.pencil {
+	display: inline-block;
+	position: relative;
+}
+
+.pencil::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	content: "";
+	height: 32px;
+	width: 32px;
+	background-image: url("{{ asset('etapa1/pencil-60-32.png') }}");
+	background-size: cover;
+}
     </style>
 @endpush
 
 @push('scripts')
     <script type="text/javascript" src="{{ mix('js/vendor/moment.js') }}"></script>
     <script type="text/javascript" src="{{ mix('js/vendor/datetimepicker.js') }}"></script>
-    <script type="text/javascript" src="{{ mix('js/vendor/moment.js') }}"></script>
     <script type="text/javascript" src="{{ mix('js/profiles/edit.js') }}"></script>
 
-    <!-- script para las alertas-->
-    <script type="text/javascript" src="{{ asset('js-new/plugins/alertify.min.js') }}?v={{ (rand(1,500)) }}"></script>
-
-    <script type="text/javascript" src="{{ asset('js-new/models/branches.js') }}?v={{ (rand(1,500)) }}"></script>
-    <script type="text/javascript" src="{{ asset('js-new/models/companyroles.js') }}?v={{ (rand(1,500)) }}"></script>
-
-    <script type="text/javascript" src="{{ asset('js-new/tools/budget/functions-modal.js') }}?v={{ (rand(1,500)) }}"></script>
-    <script type="text/javascript" src="{{ asset('js-new/tools/budget/functions.js') }}?v={{ (rand(1,500)) }}"></script>
-    <script type="text/javascript" src="{{ asset('js-new/components/numero-decimal.js') }}?v={{ (rand(1,500)) }}"></script>
-    <script type="text/javascript" src="{{ asset('js-new/tools/budget/month/component-month.js') }}?v={{ (rand(1,500)) }}"></script>
-    <script type="text/javascript" src="{{ asset('js-new/tools/budget/month/month.js') }}?v={{ (rand(1,500)) }}"></script>
-    <script type="text/javascript" src="{{ asset('js-new/tools/budget/year/component-year.js') }}?v={{ (rand(1,500)) }}"></script>
-    <script type="text/javascript" src="{{ asset('js-new/tools/budget/year/year.js') }}?v={{ (rand(1,500)) }}"></script>
+    <script type="text/javascript" src="{{ asset('js-new/models/branches.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js-new/models/companyroles.js') }}"></script>
 @endpush
 
 @section('content')
@@ -51,25 +44,22 @@
                 <!--- Empieza caja gris --->
                 <div class="box-gray text-center p-3 mb-3">
                     <div class="mb-3">
-                        <img src="{{ $user->present()->profile_photo }}" class="image--profile-change" alt="profile photo">
+						<a href="#cambiar-foto-de-perfil" class="pencil" data-toggle="tab">
+							<img src="{{ $user->present()->profile_photo }}" class="image--profile-change" alt="profile photo">
+						</a>
                         <p class="image--profile-change__alert mt-2 text-danger d-none">
                             <small>@lang('The profile photo will be updated until save the changes')</small>
                         </p>
                     </div>
 
                     <p class="text-danger text-bold mb-0 small">{{ $user->present()->fullname }}</p>
-                    <p class="text-primary m-0" style="font-size:60%">
-                        @php
-                            $separate = divEmailProfile($user->present()->email)
-                        @endphp
-                        {{ $separate[0] }} <br> <span>@</span>{{ $separate[1] }}
-                    </p><!--text-xsmall -->
+                    <p class="text-primary m-0 small">{{ $user->present()->email }}</p><!--text-xsmall -->
 
 					@if (($current_subscription = \QD\QDPlay\Models\Subscription::current($user->id)))
 					<div class="mt-4 profile__content-info d-flex align-items-center">
 						<p class="text-bold text-large m-0">@lang('Plan')</p>
 						<span></span>
-						<p class="text-large m-0">{{ $current_subscription->plan }}</p>
+						<p class="text-large m-0">{{ $current_subscription->plan_type_name }}</p>
 					</div>
 					@endif
 
@@ -151,19 +141,12 @@
                         data-toggle="tab"
                         >@lang('My Company')
                     </a>
-                    <!-- Btn oculto herramientas mientras hago correcciones y actualizacion de imagenes-->
-                    <!--<a href="#{{ str_slug(__('Tools')) }}"
-                        class="nav-item nav-link text-uppercase c-text-size"
-                        data-toggle="tab"
-                        >@lang('Tools')
-                        <img src="{{ asset('etapa1/GIF-NEW-Querido-dinero.gif') }}" alt="new" width="35" />
-                    </a>-->
 
-                    <a href="#{{ str_slug(__('QD Play')) }}"
+                    <a href="#qdplay-subscription"
                         class="nav-item nav-link text-uppercase c-text-size"
                         data-toggle="tab"
                         >@lang('QD Play')
-                        <img src="{{ asset('etapa1/GIF-NEW-Querido-dinero.gif') }}" alt="new" width="35" />
+                        <img src="{{ asset('etapa1/GIF-NEW-Querido-dinero.gif') }}" alt="new" width="50" />
                     </a>
 
                     <a href="/queridodinero/app_close.html"
@@ -175,22 +158,14 @@
 
             <div class="col-xl-9 col-lg-9 col-md-8 col-12">
                 <div class="tab-content mb-5">
-                    <!-- Archivos para seccion del usuario -->
                     @include('partials.profiles.general')
                     @include('partials.profiles.photo')
 
-                    <!-- Archivos para seccion de compañia-->
                     @include('partials.profiles.company')
                     @include('partials.profiles.branches')
                     @include('partials.profiles.roles')
-
-                    <!-- Archivos para seccion de Herramientas -->
-                    @include('partials.profiles.tools')
-                    {{--@include('partials.profiles.components.tools.budget')--}}
-
                     <!-- Incluir vista para admin de QD Play-->
 					@include('qd:qdplay::home.partials.billingData')
-                    @include('partials.profiles.company')
 
                     @include('partials.profiles.password')
                     @include('partials.profiles.delete')
@@ -221,96 +196,4 @@
     </div>
 
     @include('partials.modals.branchAndRole')
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    {{--
-    <script type="text/javascript">
-    $(function () {
-        //Levamos la primer grafica para los ingresos
-        var ctx = document.getElementById("myChartIngresos").getContext('2d');
-        var arrayMeses =  {!! json_encode($labels) !!};
-        var arrayIngresosReales =  {!! json_encode($data) !!};
-        var arrayingresosEstimados =  {!! json_encode($data2) !!};
-            var data = {
-                datasets: [
-                        {
-                            label: 'Ingresos Reales',
-                            backgroundColor: 'rgb(3, 218, 202)',
-                            borderColor: 'rgb(3, 218, 202)',
-                            data: arrayIngresosReales,
-                        },
-                        {
-                            label: 'Ingresos Estimados',
-                            backgroundColor: 'rgb(0, 0, 0)',
-                            borderColor: 'rgb(0, 0, 0)',
-                            data: arrayingresosEstimados,
-                        }
-                    ],
-                labels: arrayMeses
-            };
-            var myDoughnutChart = new Chart(ctx, {
-                //type: 'doughnut',
-                type: 'line',
-                data: data,
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            boxWidth: 12
-                        }
-                    },
-                    title: {
-                        display: true,
-                        text: 'Grafica de tus ingresos estimados vs reales'
-                    }
-                }
-            });
-
-
-        //Iniciamos la segunda grafica para los gastos
-        var ctx_2 = document.getElementById("myChartGastos").getContext('2d');
-        var data_2 = {
-            datasets: [
-                {
-                    label: 'Gastos Reales',
-                    backgroundColor: 'rgb(3, 218, 202)',
-                    borderColor: 'rgb(3, 218, 202)',
-                    data: arrayIngresosReales,
-                },
-                {
-                    label: 'Gastos Estimados',
-                    backgroundColor: 'rgb(0, 0, 0)',
-                    borderColor: 'rgb(0, 0, 0)',
-                    data: arrayingresosEstimados,
-                }
-            ],
-                labels: arrayMeses
-            };
-            var myDoughnutChart_2 = new Chart(ctx_2, {
-                type: 'line',
-                data: data_2,
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            boxWidth: 12
-                        }
-                    },
-                    title: {
-                        display: true,
-                        text: 'Grafica de tus gastos estimados vs reales'
-                    }
-                }
-            });
-
-        //empieza la graficas de pie por categorias
-    });
-    </script>
-    --}}
 @endsection
