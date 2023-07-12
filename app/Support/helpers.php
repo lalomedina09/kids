@@ -214,7 +214,7 @@ function showBtnVideoCall($_start, $_end)
 
 function getSubMinutesTime($date)
 {
-    $hour = Carbon::parse($date)->subMinutes(15)->format('H:i A');
+    $hour = Carbon::parse($date)->subMinutes(60)->format('H:i A');
     return $hour;
 }
 
