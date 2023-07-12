@@ -194,7 +194,7 @@ function getMyAdvices()
 
 function showBtnVideoCall($_start, $_end)
 {
-    $start = Carbon::parse($_start)->subMinutes(15);
+    $start = Carbon::parse($_start)->subMinutes(60);
     $end = Carbon::parse($_end);
 
     $current = Carbon::now();
