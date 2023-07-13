@@ -41,6 +41,14 @@
                     <a class="btn btn-info" href="{{ url("talleres/finanzas-personales-para-empleados") }}" target="_blank">
                         Ver Landing
                     </a>
+                @elseif($getLanding->form == "registro-qdplay-empresas")
+                    <a class="btn btn-info" href="{{ url("registro-qdplay-empresas") }}" target="_blank">
+                        Ver Landing
+                    </a>
+                @elseif($getLanding->form == "registro-qdplay-personas-fisicas")
+                    <a class="btn btn-info" href="{{ url("registro-qdplay-individual") }}" target="_blank">
+                        Ver Landing
+                    </a>
                 @else
                     <a class="btn btn-info" href="{{ url("talleres/finanzas-empleados") }}" target="_blank">
                         Ver Landing
