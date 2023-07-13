@@ -41,6 +41,9 @@
         @include('courses.components.custom.finanzas-personales.index')
     @elseif($course->slug == 'finanzas-empleados')
         @include('courses.components.custom.finanzas-empleados.index')
+    @elseif($course->slug == 'inversiones-colaboradores')
+        @include('courses.components.custom.inversiones-colaboradores.index')
+
     @else
         @include('courses.components.show.carousel')
 

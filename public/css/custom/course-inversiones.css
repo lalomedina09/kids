@@ -1,0 +1,246 @@
+.mb-5px {
+    margin-top: 15px;
+}
+
+.row {
+    margin: 0;
+}
+
+.side-background {
+    padding: 5% 10% 0;
+    background-image: url('/images/courses/background-vertical.png'), linear-gradient(to right, #90d06b, #01dacb);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #00dbcd;
+    background-position-y: bottom;
+    height: 820px;
+}
+
+.font-resize {
+    font-size: 1rem;
+}
+
+.title-underline-left-black {
+    position: relative;
+}
+
+.title-underline-left-black:before {
+    content: "";
+    border-top: 3px solid;
+    height: 1px;
+    width: 100px;
+    position: absolute;
+    margin-left: 0;
+    color: #000;
+}
+
+.bg-portada-taller {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.banner-subtitle-course {
+    text-align: center;
+}
+
+.banner-title-course {
+    text-align: center;
+}
+
+@media (min-width: 320px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo.png');
+        height: 300px;
+    }
+}
+
+@media (min-width: 360px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo.png');
+        height: 310px;
+    }
+}
+
+@media (min-width: 450px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo.png');
+        height: 470px;
+    }
+}
+
+@media (max-width: 540px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo.png');
+        height: 340px;
+    }
+}
+
+@media (min-width: 600px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo-nueva-altura.png');
+        height: 470px;
+    }
+}
+
+@media (min-width: 700px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo-nueva-altura.png');
+        height: 470px;
+    }
+}
+
+@media (min-width: 740px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo-nueva-altura.png');
+        height: 400px;
+    }
+}
+
+@media (min-width: 799.98px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo.png');
+        height: 475px;
+    }
+
+    .title-underline-left-black:before {
+        content: "";
+        border-top: 3px solid;
+        height: 1px;
+        width: 100px;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media (min-width: 800px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo.png');
+        height: 380px;
+    }
+
+    .banner-subtitle-course {
+        text-align: center;
+    }
+
+    .banner-title-course {
+        text-align: center;
+    }
+
+    .title-underline-left-black:before {
+        content: "";
+        border-top: 3px solid;
+        height: 1px;
+        width: 100px;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media (min-width: 1000px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo-nueva-altura.png');
+        height: 355px;
+    }
+
+    .banner-subtitle-course {
+        text-align: center;
+    }
+
+    .banner-title-course {
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/inversiones-colaboradores/ilustracion-inversiones.png');
+        height: 450px;
+    }
+
+    .banner-title-course {
+        text-align: left;
+    }
+
+    .banner-subtitle-course {
+        text-align: left;
+        margin-left: -28px;
+    }
+
+    .title-underline-left-black:before {
+        content: "";
+        border-top: 3px solid;
+        height: 1px;
+        width: 100px;
+        position: absolute;
+        margin-left: 0;
+        color: #000;
+    }
+}
+
+@media (min-width: 1480px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo-nueva-altura.png');
+        height: 470px;
+    }
+
+    .banner-title-course {
+        text-align: left;
+    }
+
+    .banner-subtitle-course {
+        text-align: left;
+        margin-left: -28px;
+    }
+
+    .title-underline-left-black:before {
+        content: "";
+        border-top: 3px solid;
+        height: 1px;
+        width: 100px;
+        position: absolute;
+        margin-left: 0;
+        color: #000;
+    }
+}
+
+@media (min-width: 1600px) {
+    .bg-portada-taller {
+        background-image: url('/images/courses/finanzas-empleados/banner-nuevo-nueva-altura.png');
+        height: 470px;
+    }
+
+    .banner-subtitle-course {
+        text-align: left !important;
+    }
+
+    .banner-title-course {
+        text-align: left !important;
+    }
+
+    .title-underline-left-black:before {
+        content: "";
+        border-top: 3px solid;
+        height: 1px;
+        width: 100px;
+        position: absolute;
+        margin-left: 0;
+        color: #000;
+    }
+}
+
+.form-control {
+    background-color: #FFF;
+    background-clip: padding-box;
+    border: 1px solid #ff6161;
+}
+
+.form-control::placeholder {
+    color: #333;
+}

@@ -32,6 +32,10 @@
             class="nav-item nav-link {{ "finanzas-empleados" == $custom_page ? 'active' : '' }}">
             Curso Finanzas Personales #2
         </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['inversiones-colaboradores']) }}"
+            class="nav-item nav-link {{ "inversiones-colaboradores" == $page ? 'active' : '' }}">
+            Curso Inversiones para colaboradores
+        </a>
     </ul>
 
     <div class="table-responsive">
