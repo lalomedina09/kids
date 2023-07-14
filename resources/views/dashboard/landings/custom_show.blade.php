@@ -32,6 +32,10 @@
             class="nav-item nav-link {{ "finanzas-empleados" == $custom_page ? 'active' : '' }}">
             Curso Finanzas Personales #2
         </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['inversiones-colaboradores']) }}"
+            class="nav-item nav-link {{ "inversiones-colaboradores" == $custom_page ? 'active' : '' }}">
+            Curso Inversiones Colaboradores
+        </a>
     </ul>
 
     <div class="table-responsive">
@@ -41,12 +45,8 @@
                     <a class="btn btn-info" href="{{ url("talleres/finanzas-personales-para-empleados") }}" target="_blank">
                         Ver Landing
                     </a>
-                @elseif($getLanding->form == "registro-qdplay-empresas")
-                    <a class="btn btn-info" href="{{ url("registro-qdplay-empresas") }}" target="_blank">
-                        Ver Landing
-                    </a>
-                @elseif($getLanding->form == "registro-qdplay-personas-fisicas")
-                    <a class="btn btn-info" href="{{ url("registro-qdplay-individual") }}" target="_blank">
+                @elseif ($getLanding->form == "inversiones-colaboradores")
+                    <a class="btn btn-info" href="{{ url("talleres/inversiones-colaboradores") }}" target="_blank">
                         Ver Landing
                     </a>
                 @else
@@ -111,5 +111,3 @@
     </div>
 
 @endsection
-
-
