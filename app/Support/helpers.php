@@ -194,7 +194,7 @@ function getMyAdvices()
 
 function showBtnVideoCall($_start, $_end)
 {
-    $start = Carbon::parse($_start)->subMinutes(15);
+    $start = Carbon::parse($_start)->subMinutes(60);
     $end = Carbon::parse($_end);
 
     $current = Carbon::now();
@@ -214,7 +214,7 @@ function showBtnVideoCall($_start, $_end)
 
 function getSubMinutesTime($date)
 {
-    $hour = Carbon::parse($date)->subMinutes(15)->format('H:i A');
+    $hour = Carbon::parse($date)->subMinutes(60)->format('H:i A');
     return $hour;
 }
 

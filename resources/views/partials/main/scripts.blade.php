@@ -1,6 +1,6 @@
 @php $urlQdplayCompany = Route::currentRouteName();@endphp
 @if (app()->environment() === 'production')
-    @if ($urlQdplayCompany != "register.qdplay.show")--
+    {{--@if ($urlQdplayCompany != "register.qdplay.show")
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('services.google.analyticsKey') ?: 'UA-XXXXX-Y' }}"></script>
         <script type="text/javascript">
             window.dataLayer = window.dataLayer || [];
@@ -11,7 +11,7 @@
             gtag('config', "{{ config('services.google.analyticsKey') ?: 'UA-XXXXX-Y' }}");
             gtag('config', "{{ config('services.google.adsKey') ?: 'AW-NNNNNNNNN' }}");
         </script>
-    @endif
+    @endif--}}
     <!-- Google tag (gtag.js) -->
 {{--
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZQGNNHEF"></script>
