@@ -33,8 +33,8 @@
             Curso Finanzas Personales #2
         </a>
         <a href="{{ route('dashboard.landings.custom.show', ['inversiones-colaboradores']) }}"
-            class="nav-item nav-link {{ "inversiones-colaboradores" == $page ? 'active' : '' }}">
-            Curso Inversiones para colaboradores
+            class="nav-item nav-link {{ "inversiones-colaboradores" == $custom_page ? 'active' : '' }}">
+            Curso Inversiones Colaboradores
         </a>
     </ul>
 
@@ -43,6 +43,10 @@
             <div class="text-right">
                 @if ($getLanding->form == "finanzas-personales-para-empleados")
                     <a class="btn btn-info" href="{{ url("talleres/finanzas-personales-para-empleados") }}" target="_blank">
+                        Ver Landing
+                    </a>
+                @elseif ($getLanding->form == "inversiones-colaboradores")
+                    <a class="btn btn-info" href="{{ url("talleres/inversiones-colaboradores") }}" target="_blank">
                         Ver Landing
                     </a>
                 @else

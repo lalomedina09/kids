@@ -32,7 +32,7 @@
         </a>
         <a href="{{ route('dashboard.landings.custom.show', ['inversiones-colaboradores']) }}"
             class="nav-item nav-link {{ "inversiones-colaboradores" == $page ? 'active' : '' }}">
-            Curso Inversiones para colaboradores
+            Curso Inversiones Colaboradores
         </a>
 
     </ul>

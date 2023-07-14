@@ -32,6 +32,10 @@
             class="nav-item nav-link">
             Curso Finanzas Personales #2
         </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['inversiones-colaboradores']) }}"
+            class="nav-item nav-link">
+            Curso Inversiones Colaboradores
+        </a>
     </ul>
 
     <div class="alert alert-default">

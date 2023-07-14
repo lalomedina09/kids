@@ -79,7 +79,7 @@ class LandingController extends Controller
 
     public function exportDataLanding($form)
     {
-        return Excel::download(new LeadsExport($form), 'Registros-Qdplay-Empresas.xlsx');
+        return Excel::download(new LeadsExport($form), 'registros.xlsx');
     }
 
 
