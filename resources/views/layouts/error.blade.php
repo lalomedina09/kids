@@ -16,4 +16,10 @@
     </div>
 </div>
 
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'event': 'page_not_found',
+});
+</script>
 @endsection
