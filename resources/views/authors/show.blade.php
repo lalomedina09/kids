@@ -28,8 +28,8 @@ color: black;
             @endforeach
         </div>
     </div>
-	
-	<div class="tab-pane" id="profile-qdplay" role="tabpanel">
+
+	{{--<div class="tab-pane" id="profile-qdplay" role="tabpanel">
 		<div class="row">
 			@foreach ($courses as $course)
 			<div class="video-card col-md-4 col-sm-6 col-12 mb-4">
@@ -37,7 +37,7 @@ color: black;
 			</div>
 			@endforeach
 		</div>
-	</div>
+	</div>--}}
 
 @endsection
 
