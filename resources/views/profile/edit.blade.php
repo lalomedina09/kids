@@ -81,7 +81,7 @@
                     </div>
 
                     <p class="text-danger text-bold mb-0 small">{{ $user->present()->fullname }}</p>
-                    <p class="text-primary m-0 small">{!! substr_replace($user->present()->email, '<wbr />', strpos($user->present()->email, '@'), 0) !!}</p><!--text-xsmall -->
+                    <p class="text-primary m-0 small">{!! substr_replace($user->present()->email, '<br />', strpos($user->present()->email, '@'), 0) !!}</p><!--text-xsmall -->
 
 					@if (($current_subscription = \QD\QDPlay\Models\Subscription::current($user->id)))
 					<div class="mt-4 profile__content-info d-flex align-items-center">
