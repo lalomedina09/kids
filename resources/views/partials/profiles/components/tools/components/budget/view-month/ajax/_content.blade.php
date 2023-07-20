@@ -40,10 +40,9 @@
         @endphp
 
         @include('partials.profiles.components.tools.components.budget.view-month.categories.fijos')
-
         @include('partials.profiles.components.tools.components.budget.view-month.categories.gustos')
-
         @include('partials.profiles.components.tools.components.budget.view-month.categories.ahorros')
+
         @break
     @case('movements')
         <div class="row mt-1">
@@ -57,9 +56,13 @@
                             </span>
                         </div>
                         <div class="col-md-6 mt-3 ml-4 mb-4 text-right">
+                            @php
+                            $num_year = $num_dates['num_year'];
+                            $num_month = ltrim($num_dates['num_month'], "0");
+                            @endphp
                             <a class="btn bg-green-blue text-white p-1 p-xl-2"
-                            href="{{ url('budget/active/month/download/pdf-moves/2023/6')}}">
-                                Descargar PDF we
+                            href="{{ url('budget/active/month/download/pdf-moves/'. $num_year . '/' . $num_month)}}">
+                                Descargar PDF
                             </a>
                         </div>
                     </div>
@@ -67,7 +70,6 @@
                     <div id="table-movements">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                {{--dd($data['movements'])--}}
                                 @include('partials.profiles.components.tools.components.budget.view-month.ajax.components.movements._table')
                             </div>
                         </div>

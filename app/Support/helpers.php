@@ -345,7 +345,7 @@ function getMonthSpanish($month)
 {
     $months = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
-    return $months[date('n') - $month];
+    return $months[date('n') - 1];
 }
 
 function fechaEspanol($date)

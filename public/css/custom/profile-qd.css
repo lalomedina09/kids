@@ -77,6 +77,7 @@ a {
     border-radius: 30px;
     border-top-right-radius: 1px;
     height: 90%;
+    margin-top: 0px;
 }
 .custom-bg-white{
     background-color: #fff;
@@ -298,8 +299,8 @@ a {
 /*Btn redondo agregar movimiento*/
 .redondo{
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-color: transparent !important;
     border: 3px solid #fff;
@@ -590,4 +591,70 @@ a {
           height: 45px;
           width: 46px;
       }
+
+    .budget-title-modal {
+        font-size: 18px;
+    }
+
+    .span-label-modal {
+        font-size: 55%;
+    }
+
+    .header-bg-gradient {
+        margin-top: 0px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .btn-white-tool-budget {
+            background-color: #eee;
+            margin-right: 0px;
+            padding: 10px 20px;
+            color: #000;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+    }
+
+    .btn-dark-tool-budget {
+        background-color: #363637;
+        margin-right: 20px;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .small{
+        font-size: 70%;
+    }
+
+    .budget-title-modal{
+        font-size: 23px;
+    }
+
+    .span-label-modal{
+        font-size: 65%;
+    }
+
+    .header-bg-gradient {
+        margin-top: 0px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header-bg-gradient {
+        margin-top: 20px;
+    }
+
+    .budget-title-modal{
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 800px) {
+    .span-label-modal {
+        font-size: 15px;
+    }
 }

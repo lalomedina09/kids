@@ -67,8 +67,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @php $counter = 1; @endphp
+                    @php
+                        $counter = 1;
+                        $ingresos = 0;
+                        $gastos = 0;
+                    @endphp
                     @foreach ($moves as $move)
+                    @php
+
+                    if ($move->type_move == 1) {
+                        $ingresos += $move->amount_real;
+                    }
+
+                    if ($move->type_move == 0) {
+                        $gastos += $move->amount_real;
+                    }
+                    @endphp
+
                     <tr class="" style="border-bottom:1pt solid black; margin-bottom: 5px;">
                         <td class="text-left " style="font-size: 0.9rem;" scope="row">
                             #{{ $counter++ }}M0{{ $move->id }}
@@ -98,6 +113,23 @@
                     </tr>
                     @endforeach
                 </tbody>
+                <tfoot>
+                    <tr class="" style="background-color:#000; color:#fff;">
+                        <th scope="col" colspan="4" class="text-left"></th>
+                        <th scope="col" style="font-size: 0.9rem; color:#fff; text-align: left;">Lo que entro</th>
+                        <th scope="col" style="font-size: 0.9rem; color:#fff; text-align: left;">${{ $ingresos }} MXN</th>
+                    </tr>
+                    <tr class="" style="background-color:#000; color:#fff;">
+                        <th scope="col" colspan="4" class="text-left"></th>
+                        <th scope="col" style="font-size: 0.9rem; color:#fff; text-align: left;">Lo que salio</th>
+                        <th scope="col" style="font-size: 0.9rem; color:#fff; text-align: left;">${{ $gastos}} MXN</th>
+                    </tr>
+                    <tr class="" style="background-color:#000; color:#fff;">
+                        <th scope="col" colspan="4" class="text-left"></th>
+                        <th scope="col" style="font-size: 0.9rem; color:#fff; text-align: left;">Total</th>
+                        <th scope="col" style="font-size: 0.9rem; color:#fff; text-align: left;">${{  $ingresos-$gastos}} MXN</th>
+                    </tr>
+                </tfoot>
             </table>
         </td>
     </tr>
@@ -105,4 +137,5 @@
 </table>
 
 @stop
+
 
