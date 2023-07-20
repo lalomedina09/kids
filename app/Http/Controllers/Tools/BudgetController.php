@@ -242,6 +242,13 @@ class BudgetController extends Controller
         $year = Carbon::now()->format('Y');
 
         //$resumenMonth = BudgetMonthFilter::resumenMonth($request);
+
+        //Creamos request que utilizara el boton de descarga
+        $request->request->add([
+            'num_year' => $year,
+            'num_month' => $month
+        ]);
+
         $header = BudgetMonthFilter::header($request);
         $btns = BudgetMonthFilter::btns($section);
         $content = BudgetMonthFilter::content($moves, $section, $request);
@@ -299,7 +306,7 @@ class BudgetController extends Controller
         $moves =  BudgetTrait::dataAllMoves($getMoves, $date);
 
         $view = 'partials.profiles.components.tools.components.budget.components.pdf.moves-v2';
-        $filename = "Movimientos.pdf";
+        $filename = 'Movimientos-'. $month . '-'. $year .'pdf';
 
         $view = PDF::loadView($view, ['year' => $year, 'month' =>$month, 'moves' =>$moves, 'user' => $user]);
 

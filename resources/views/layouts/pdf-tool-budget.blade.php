@@ -91,4 +91,4 @@
         @include('partials.profiles.components.tools.components.budget.components.pdf.footer')
     </body>
 </html>
-{{-- dd('laallala nenetatata') --}}
+{{--dd('visualizacion de pdf')--}}

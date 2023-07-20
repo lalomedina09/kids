@@ -85,10 +85,10 @@ class BudgetMonthFilter extends Controller
     {
         $btns = BudgetMonthFilter::monthlistBtns();
         $data = BudgetMonthFilter::getListCategoriesBeta($moves, $section, $request);
-
+        $num_dates = array('num_year' => $request->num_year, 'num_month' => $request->num_month);
         $view = view(
             'partials.profiles.components.tools.components.budget.view-month.ajax._content',
-            compact('moves', 'section', 'data')
+            compact('moves', 'section', 'data', 'num_dates')
         )
         ->render();
         return $view;
