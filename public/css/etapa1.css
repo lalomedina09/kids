@@ -237,3 +237,10 @@ h1 hr, hr.h1 {
 	width: 100px;
 	height: 100px;
 }
+
+.mandatory-sticker {
+	position: absolute;
+	top: 0;
+	right: 1em;
+	width: 20%;
+}
