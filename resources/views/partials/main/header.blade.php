@@ -292,7 +292,7 @@
 
             <!---------------------------------------------->
             <li class="nav-item nav-item-search d-none d-sm-inline" style="margin-top:10px;">
-				<a href="{{ route('qdplay.individual-tests') }}" class="nav-link text-blue font-size-sm">
+				<a href="https://www.queridodinero.com/qdplay/CdUIuL8sW" class="nav-link text-blue font-size-sm">
                     Prueba Gratis
                 </a>
 			</li>
