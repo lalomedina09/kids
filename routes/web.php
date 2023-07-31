@@ -101,7 +101,7 @@ Route::prefix('registro')
 | Join Account For Exhibitor (Expositores)
 |--------------------------------------------------------------------------
 */
-Route::prefix('qdplay/unete')
+Route::prefix('qdplay/unete/expositor')
 ->middleware(['guest'])
 ->group(function () {
     Route::get('/')
@@ -115,18 +115,37 @@ Route::prefix('qdplay/unete')
 
 });
 
-Route::prefix('qdplay/unete')
+Route::prefix('qdplay/resuelve/descuento')
+    ->middleware(['guest'])
     ->group(function () {
-        //Data Profile
-        Route::patch('/data-profile/{id}/{section}')
-        ->uses('RegisterExhibitorController@storeDataProfile')
-        ->name('register.store.profile');
+        //Show Landing
+        Route::get('/')
+        ->uses('SignupCompanyController@resuelve')
+        ->name('register.resuelve.signup');
 
-        //Data Bank
-        Route::patch('/data-bank/{id}/{section}')
-        ->uses('RegisterExhibitorController@storeDataBank')
-        ->name('register.store.bank');
+        //Save Account
+        Route::post('/signup')
+        ->uses('SignupCompanyController@resuelveStore')
+        ->name('register.resuelve.signup.save');
     });
+
+/*
+|--------------------------------------------------------------------------
+| Routes Custom For QD Play AND Company
+|--------------------------------------------------------------------------
+*/
+Route::prefix('qdplay/unete')
+->middleware(['guest'])
+->group(function () {
+    Route::get('/')
+    ->uses('RegisterExhibitorController@showRegistrationForm')
+    ->name('qdplay/unete/show');
+
+    Route::post('/data-general')
+    ->uses('RegisterExhibitorController@storeDataGeneral')
+    ->name('register.store.general');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Password Reset
