@@ -16,6 +16,8 @@
             ])
         !!}
 
+        @csrf
+
         <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
         @php $count = 1; @endphp
         <div class="row">
