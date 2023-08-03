@@ -116,7 +116,7 @@ Route::prefix('qdplay/unete/expositor')
 });
 
 Route::prefix('qdplay/resuelve/descuento')
-    ->middleware(['guest'])
+    //->middleware(['guest'])
     ->group(function () {
         //Show Landing
         Route::get('/')

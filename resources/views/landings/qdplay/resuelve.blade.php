@@ -59,11 +59,7 @@ $i_am_logged = $user instanceof App\Models\User;
                 <p class="text-bold">
                     Aprende con los cursos online hechos por expertos financieros
                 </p>
-				@auth
-                    <p class="text-bold">
-                        El beneficio solo esta disponible para usuarios nuevos
-                    </p>
-				@else
+
 				<form class="row" method="post" action="{{ route('register.resuelve.signup.save') }}">
                     @csrf
 					<div class="col-sm-6 col-12 p-1">
@@ -92,12 +88,16 @@ $i_am_logged = $user instanceof App\Models\User;
 						</select>--}}
 					</div>
 				</form>
-				@endauth
 
 
-				<div class="font-size-md text-lg-left">
-					<b>Se aplican <a href="{{ route('terms') }}" class="text-blue">Términos y Condiciones</a></b>.<br />
 
+				<div>
+                    <p class="">
+                        <span class="text-bold">Al registrarse estás aceptando nuestros </span>
+					    <b><a href="{{ route('terms') }}" class="text-blue">Términos y Condiciones</a></b>.
+                        <br>
+                        <span>* El 15% de descuento solo aplica en la membresia mensual.</span>
+                    </p>
 				</div>
 
 			</div>
@@ -146,12 +146,12 @@ $i_am_logged = $user instanceof App\Models\User;
 			</div>
 			<div class="col-lg-3 col-md-6 col-12 my-5">
 				<img src="{{ asset('etapa1/landings/v3/Asset 15-min.png') }}" alt="" width="150" />
-				<div class="text-bold my-4">Finanzas Personales y en Pareja</div>
+				<div class="text-bold my-4">Fiscal</div>
 				<div>Aprende el funcionamiento de los impuestos en México.</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-12 my-5">
 				<img src="{{ asset('etapa1/landings/v3/Asset 14-min.png') }}" alt="" width="150" />
-				<div class="text-bold my-4">Finanzas Personales y en Pareja</div>
+				<div class="text-bold my-4">Emprendimiento y Pymes</div>
 				<div>Eleva tus ventas o incrementa ganancias. Descubre herramientas básicas para tu negocio.</div>
 			</div>
 		</div>
