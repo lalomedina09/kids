@@ -24,28 +24,29 @@ class SignupCompanyController extends Controller
         $this->users = $users;
     }
 
-
     public function resuelve()
     {
         $codeConcept = "RESUELVE";
         $user = request()->user();
-
         return view('landings.qdplay.resuelve', compact('codeConcept', 'user'));
     }
 
+    public function bnmx()
+    {
+        $codeConcept = "BNMX25";
+        $user = request()->user();
+        return view('landings.qdplay.bnmx', compact('codeConcept', 'user'));
+    }
 
-    public function resuelveStore(RegisterUserResuelveRequest $request)
+    public function store(RegisterUserResuelveRequest $request)
     {
         $params = $request->all();
-
         $user = new User;
         $user->email = $params['email'];
         $user->password = bcrypt($params['password']);
-
         $user = $this->users->saveProfile($params, $user);
 
         Mailer::sendRegisterMail($user);
-
         $this->users = $user;
         Auth::login($user);
 
@@ -55,4 +56,5 @@ class SignupCompanyController extends Controller
                 'success' => '¡Bienvenido! a Querido Dinero'
             ]);
     }
+
 }

@@ -41,16 +41,16 @@ $i_am_logged = $user instanceof App\Models\User;
 
 <div class="container pt-0 pt-lg-4">
     <section class="text-center pb-3">
-		<img src="{{ asset('etapa1/landings/resuelve/logos-qdplay-resuelve.png') }}" alt="Logo QD Play y Resuelve" width="300">
+		<img src="{{ asset('etapa1/landings/v3/Asset 18-min.png') }}" alt="Logo QD Play" width="100">
 	</section>
 	<section>
 		<div class="row">
 			<div class="col-md-6 col-12">
-				<img src="{{ asset('etapa1/landings/resuelve/ilustracion.png') }}" alt="Logo ilustracion izquierdo" class="w-80" />
+				<img src="{{ asset('etapa1/landings/bnmx/ilustracion-bnmx.png') }}" alt="Logo ilustracion izquierdo" class="w-100" />
 			</div>
 			<div class="col-md-6 col-12 text-center text-md-left">
                 <h1 class="text-normal">
-                    Obtén un <span class="text-bold">15</span>% de
+                    Obtén un <span class="text-bold">25</span>% de
                 </h1>
                 <h1 class="text-normal title-underline title-underline-b title-underline-bl">
                     descuento en <span class=" text-green-blue text-bold">QD Play</span>
@@ -67,7 +67,7 @@ $i_am_logged = $user instanceof App\Models\User;
                         <span class="text-bold">Al registrarse estás aceptando nuestros </span>
 					    <b><a href="{{ route('terms') }}" class="text-blue">Términos y Condiciones</a></b>.
                         <br>
-                        <span>* El 15% de descuento solo aplica en la membresia mensual.</span>
+                        <span>* El 25% de descuento solo aplica en la membresia mensual.</span>
                     </p>
 				</div>
 

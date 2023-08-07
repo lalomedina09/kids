@@ -114,19 +114,28 @@ Route::prefix('qdplay/unete/expositor')
 
 
 });
-
+    //2 Rutas para la empresa de resuelve tu deuda
 Route::prefix('qdplay/resuelve/descuento')
-    //->middleware(['guest'])
     ->group(function () {
-        //Show Landing
         Route::get('/')
         ->uses('SignupCompanyController@resuelve')
         ->name('register.resuelve.signup');
 
-        //Save Account
         Route::post('/signup')
-        ->uses('SignupCompanyController@resuelveStore')
-        ->name('register.resuelve.signup.save');
+        ->uses('SignupCompanyController@store')
+        ->name('register.qdplay.signup.save');
+    });
+
+//2 Rutas para la empresa de Citibanamex
+Route::prefix('qdplay/bnmx/descuento')
+    ->group(function () {
+        Route::get('/')
+            ->uses('SignupCompanyController@bnmx')
+            ->name('register.bnmx.signup');
+
+        /*Route::post('/signup')
+        ->uses('SignupCompanyController@store')
+        ->name('register.qdplay.signup.save');*/
     });
 
 /*
