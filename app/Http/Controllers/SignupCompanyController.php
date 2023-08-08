@@ -51,7 +51,7 @@ class SignupCompanyController extends Controller
         Auth::login($user);
 
         return redirect()
-            ->route('qdplay.payments.payform', ['concept' => 'RESUELVE'])
+            ->route('qdplay.payments.payform', ['concept' => $request->codeConcept])
             ->with([
                 'success' => '¡Bienvenido! a Querido Dinero'
             ]);
