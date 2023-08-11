@@ -1,6 +1,6 @@
 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 text-center">
     <a href="{{ route('exhibitors.show', [$author->profile_key]) }}" class="d-block">
-        <img src="{{ $author->present()->author_photo }}" class="image--article custom-filter-gray" alt="{{ $author->present()->fullname }}">
+        <img src="{{ $author->present()->author_photo }}" class="image--article custom-filter-gray" style="border-radius: 250px; width: 210px;" alt="{{ $author->present()->fullname }}">
     </a>
 
     <a href="{{ route('exhibitors.show', [$author->profile_key]) }}"
