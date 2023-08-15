@@ -114,7 +114,13 @@ Route::prefix('qdplay/unete/expositor')
 
 
 });
-    //2 Rutas para la empresa de resuelve tu deuda
+
+/*
+|--------------------------------------------------------------------------
+| Routes Custom For QD Play Add Companies
+|--------------------------------------------------------------------------
+*/
+//2 Rutas para la empresa de resuelve tu deuda
 Route::prefix('qdplay/resuelve/descuento')
     ->group(function () {
         Route::get('/')
@@ -124,7 +130,7 @@ Route::prefix('qdplay/resuelve/descuento')
         Route::post('/signup')
         ->uses('SignupCompanyController@store')
         ->name('register.qdplay.signup.save');
-    });
+});
 
 //2 Rutas para la empresa de Citibanamex
 Route::prefix('qdplay/bnmx/descuento')
@@ -136,7 +142,20 @@ Route::prefix('qdplay/bnmx/descuento')
         /*Route::post('/signup')
         ->uses('SignupCompanyController@store')
         ->name('register.qdplay.signup.save');*/
-    });
+});
+
+/*
+|--------------------------------------------------------------------------
+| Routes Custom  Functions Internals
+|--------------------------------------------------------------------------
+*/
+//uta para descargar informes en pdf acerca de colaboradore
+Route::prefix('qdplay/custom/reports/')
+    ->group(function () {
+        Route::get('/collaboration-views')
+            ->uses('QdPlayReportsController@collaboration_views')
+            ->name('qdplay.custom.report.collaboration.views');
+});
 
 /*
 |--------------------------------------------------------------------------
