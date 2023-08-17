@@ -4,16 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\{Request, Response};
 
-use App\Models\{Article, Cover, Podcast, Quote, Video};
-use PDF;
 use DB;
+use PDF;
 use Auth;
-use QD\Advice\Models\Advice;
-use App\Models\Quiz;
-use App\Models\QzAnswer;
-use QD\QDPlay\Models\Course;
-use App\Models\QzQuestion;
-use App\Models\QzOption;
+use Carbon\Carbon;
 
 class QdPlayReportsController extends Controller
 {
@@ -53,13 +47,13 @@ class QdPlayReportsController extends Controller
 
         $result = DB::select(DB::raw($query), [':holder_id' => $user->id]);
 
-        $view = 'partials.profiles.components.qdplay-reports.example3';
+        $view = 'partials.profiles.components.qdplay-reports.users-views';
         $filename = 'Vistas-de-colaboradores' . '.pdf';
-
+        $now = Carbon::now();
         return $view = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
-        ->loadView($view, ['result' => $result, 'user' => $user])->stream();
+        ->loadView($view, ['result' => $result, 'user' => $user, 'now' => $now])->stream();
         //$view->render();
-        #return $view->stream();;
+        #return $view->stream();
         return $view->download($filename);
     }
 
