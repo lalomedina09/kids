@@ -18,7 +18,7 @@
         height: 150px;
 
         /** Extra personal styles **/
-        background-image: url(http://prod.querido-dinero.develop/etapa1/pdf/img-header.png);
+        background-image: url(https://www.queridodinero.com/etapa1/pdf/img-header.png);
         background-size: 100%;
         background-repeat: no-repeat;
         color: white;
@@ -35,7 +35,7 @@
 
         /** Extra personal styles **/
         /*background-color: #90d06b;*/
-        background-image: url(http://prod.querido-dinero.develop/etapa1/pdf/img-footer.png);
+        background-image: url(https://www.queridodinero.com/etapa1/pdf/img-footer.png);
         background-size: 100%;
         color: white;
         text-align: center;
