@@ -12,7 +12,6 @@ class QdpRecordsTrialsData implements FromView
 
     public function __construct(string $form)
     {
-        //dd('llego al archivo exportador de informacion');
         $this->form = $form;
     }
 

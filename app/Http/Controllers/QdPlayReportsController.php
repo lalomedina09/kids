@@ -9,10 +9,33 @@ use PDF;
 use Auth;
 use Carbon\Carbon;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\QdpCollaborationsViewsData;
 class QdPlayReportsController extends Controller
 {
 
-    public function collaboration_views(Request $request)
+    public function collaboration_views_pdf(Request $request)
+    {
+        $user = Auth::user();
+
+        $result = $this->collaboration_views();
+        $view = 'partials.profiles.components.qdplay-reports.users-views';
+        $filename = 'Vistas-de-colaboradores' . '.pdf';
+        $now = Carbon::now();
+
+        return $view = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
+        ->loadView($view, ['result' => $result, 'user' => $user, 'now' => $now])->stream();
+        return $view->download($filename);
+    }
+
+    public function collaboration_views_excel(Request $request)
+    {
+        $result = $this->collaboration_views();
+
+        return Excel::download(new QdpCollaborationsViewsData($var = 'sinData', $result), 'registro-de-vistas-por-colaborador.xlsx');
+    }
+
+    public function collaboration_views()
     {
         $user = Auth::user();
 
@@ -45,16 +68,8 @@ class QdPlayReportsController extends Controller
                 users ON users.id = views.user_id
         ORDER BY user_id , course_id';
 
-        $result = DB::select(DB::raw($query), [':holder_id' => $user->id]);
+        return $result = DB::select(DB::raw($query), [':holder_id' => $user->id]);
 
-        $view = 'partials.profiles.components.qdplay-reports.users-views';
-        $filename = 'Vistas-de-colaboradores' . '.pdf';
-        $now = Carbon::now();
-        return $view = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
-        ->loadView($view, ['result' => $result, 'user' => $user, 'now' => $now])->stream();
-        //$view->render();
-        #return $view->stream();
-        return $view->download($filename);
     }
 
 }
