@@ -28,7 +28,7 @@
                     <td style="text-align: center">
                         <!--Categoría <br>-->
                         <b>{{ $category->name }}</b> <br>
-                        <b>{{ $category->total_views }}</b>Vistas
+                        <b>{{ $category->total_views }} </b> Vistas
                     </td>
                 @endforeach
             </tr>
