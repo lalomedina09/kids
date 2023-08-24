@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\{Request, Response};
-
+use App\Models\User;
 use DB;
 use PDF;
 use Auth;
@@ -72,4 +72,22 @@ class QdPlayReportsController extends Controller
 
     }
 
+    public function general()
+    {
+        $user = Auth::user();
+        $result = $this->collaboration_views();
+        $view = 'partials.profiles.components.qdplay-reports.general';
+        $filename = 'QD-Play-reporte' . '.pdf';
+        $now = Carbon::now();
+
+
+        return $view = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
+        ->loadView($view, [
+            'result' => $result,
+            'user' => $user,
+            'now' => $now
+            ])->stream();
+
+        return $view->download($filename);
+    }
 }

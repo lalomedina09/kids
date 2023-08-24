@@ -152,6 +152,7 @@ Route::prefix('qdplay/bnmx/descuento')
 //uta para descargar informes en pdf acerca de colaboradore
 Route::prefix('qdplay/custom/reports/')
     ->group(function () {
+
         Route::get('/collaboration-views/pdf')
             ->uses('QdPlayReportsController@collaboration_views_pdf')
             ->name('qdplay.custom.report.collaboration.views.pdf');
@@ -159,6 +160,11 @@ Route::prefix('qdplay/custom/reports/')
         Route::get('/collaboration-views/excel')
         ->uses('QdPlayReportsController@collaboration_views_excel')
         ->name('qdplay.custom.report.collaboration.views.excel');
+
+        Route::get('/general')
+        ->uses('QdPlayReportsController@general')
+        ->name('qdplay.custom.report.general.pdf');
+
 });
 
 /*

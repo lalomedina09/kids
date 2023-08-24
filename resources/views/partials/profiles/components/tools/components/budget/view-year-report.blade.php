@@ -46,6 +46,7 @@
     <div class="" style="background-color: #eee;" id="budget-section-year-report">
         {{--@include('partials.profiles.components.tools.components.budget.view-year.pre-load._year_body')--}}
     </div>
+
     <div class="row">
         <!------------------------------->
         <!--<div>
