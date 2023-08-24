@@ -4,7 +4,7 @@
     @php
         $_date = explode('-', $date);
     @endphp
-    {{ getMonthSpanish($_date[1]) }} 20{{ $_date[2]}}
+    {{ getMonthSpanish($_date[1]) }} {{ $_date[0]}}
 </h5>
 	<div class="row mb-2">
         <!---------------------------------------------->
