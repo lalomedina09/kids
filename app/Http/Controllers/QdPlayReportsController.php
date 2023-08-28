@@ -11,6 +11,7 @@ use Carbon\Carbon;
 
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\QdpCollaborationsViewsData;
+use App\Exports\QdpCollaborationsProgressData;
 class QdPlayReportsController extends Controller
 {
 
@@ -88,6 +89,56 @@ class QdPlayReportsController extends Controller
             'now' => $now
             ])->stream();
 
+        return $view->download($filename);
+    }
+
+    public function progress_courses_excel()
+    {
+        $result = $this->coursesDurationAndDurationViews();
+
+        return Excel::download(new QdpCollaborationsProgressData($var = 'sinData', $result), 'avance-de-colaboradores.xlsx');
+    }
+
+    public function coursesDurationAndDurationViews()
+    {
+        $user = Auth::user();
+        $result = DB::table('qdp_views AS views')
+        ->leftJoin('qdp_viewing_times AS tiempoVisualizado', 'views.id', '=', 'tiempoVisualizado.view_id')
+        ->join('qdp_courses AS curso', 'views.course_id', '=', 'curso.id')
+        ->join('qdp_videos AS videos', 'views.video_id', '=', 'videos.id')
+        ->leftJoin('users', 'views.user_id', '=', 'users.id')
+        ->where('views.holder_id', $user->id)
+        ->select(
+            'views.holder_id AS administrador',
+            'views.user_id',
+            'curso.id',
+            'curso.name as curso',
+            DB::raw('CONCAT(users.name, " ", users.last_name) AS nombre_completo'),
+            'users.email',
+            'views.course_id',
+            DB::raw('SUM(tiempoVisualizado.length/60) AS min_vistos')
+        )
+            ->whereNull('videos.deleted_at')
+            ->whereNull('curso.deleted_at')
+            ->groupBy('views.user_id', 'views.course_id')
+            ->orderBy('users.name')
+            ->orderBy('curso.name')
+            ->get();
+
+        return $result;
+    }
+
+    public function progress_courses_pdf(Request $request)
+    {
+        $user = Auth::user();
+
+        $result = $this->coursesDurationAndDurationViews();
+        $view = 'partials.profiles.components.qdplay-reports.progress-courses';
+        $filename = 'Avance-de-colaboradores' . '.pdf';
+        $now = Carbon::now();
+
+        return $view = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
+            ->loadView($view, ['result' => $result, 'user' => $user, 'now' => $now])->stream();
         return $view->download($filename);
     }
 }

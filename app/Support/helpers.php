@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\User;
 use App\Models\Notification;
 use App\Models\Category;
 use App\Models\QzAnswer;
@@ -408,4 +409,28 @@ function getSumForCategory($arrayCategories, $arrayDate, $nameColumn)
         return 0;
     }
 
+}
+
+function getDurationForCourse($id){
+
+    $query = DB::table('qdp_courses AS c')
+    ->join('qdp_courses_qdp_videos AS cyv',
+        'c.id',
+        '=',
+        'cyv.course_id'
+    )
+    ->join('qdp_videos AS v', 'cyv.video_id', '=', 'v.id')
+    ->where('c.id', '=', $id)
+    ->selectRaw('SUM(v.length/60) as duracionCurso')
+    ->first();
+
+    return $query->duracionCurso;
+
+}
+
+function getNameUser($id)
+{
+    $user = User::where('id', $id)->first();
+
+    return $retVal = ($user) ? $user->fullName : null ;
 }

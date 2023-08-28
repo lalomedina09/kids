@@ -161,6 +161,14 @@ Route::prefix('qdplay/custom/reports/')
         ->uses('QdPlayReportsController@collaboration_views_excel')
         ->name('qdplay.custom.report.collaboration.views.excel');
 
+        Route::get('/progress-courses/pdf')
+        ->uses('QdPlayReportsController@progress_courses_pdf')
+    ->name('qdplay.custom.report.progress.courses.pdf');
+
+        Route::get('/progress-courses/excel')
+        ->uses('QdPlayReportsController@progress_courses_excel')
+        ->name('qdplay.custom.report.progress.courses.excel');
+
         Route::get('/general')
         ->uses('QdPlayReportsController@general')
         ->name('qdplay.custom.report.general.pdf');
