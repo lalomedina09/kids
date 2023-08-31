@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
+use DatePeriod;
+use DateInterval;
 use Carbon\Carbon;
 use App\Models\UserLog;
 use Illuminate\Support\Facades\Auth;
@@ -151,5 +154,25 @@ class Controller extends BaseController
             'month' => $month,
             'year' => $year,
         );
+    }
+
+    public static function getRangeDate($date_ini, $date_end, $format)
+    {
+
+        $dt_ini = DateTime::createFromFormat($format, $date_ini);
+        $dt_end = DateTime::createFromFormat($format, $date_end);
+        $period = new DatePeriod(
+            $dt_ini,
+            new DateInterval('P1D'),
+            $dt_end,
+        );
+
+        $range = [];
+        foreach ($period as $date) {
+            $range[] = $date->format($format);
+        }
+
+        $range[] = $date_end;
+        return $range;
     }
 }
