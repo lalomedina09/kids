@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Relations\{BelongsTo, hasOne, hasMany};
 //use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class QzOption extends Model
+class UserQuizInterest extends Model
 {
     use Presentable, SoftDeletes;
 
     protected $fillable = [
-        'option', 'is_correct', 'image'
+        ''
     ];
 
     protected $dates = [
@@ -21,13 +21,19 @@ class QzOption extends Model
     ];
 
     protected $guarded = [
-        'id', 'qz_question_id'
+        'id', 'user_id', 'quiz_id'
     ];
-    //protected $presenter = Presenters\ContactPresenter::class;
 
-    public function question()
+    public function user()
     {
-        // 'foreign_key' , 'local_key'
-        return $this->hasOne(QzQuestion::class, 'id', 'qz_question_id');
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
+
+    public function quiz()
+    {
+        return $this->hasOne(Quiz::class, 'id', 'quiz_id');
+    }
+
+    //Comment reference
+    // 'foreign_key' , 'local_key'
 }
