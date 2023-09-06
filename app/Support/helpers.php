@@ -332,21 +332,33 @@ function customDateSpanish($date)
 {
     $now = Carbon::parse($date)->format('Y-m-d');
     $div = explode("-", $now);
-
+    //dd($div);
     $year = $div[0];
     $month = $div[1];
     $day = $div[2];
     $month_spanish = getMonthSpanish($month);
-
+    //dd($month, " mes y nombre del mes ",$month_spanish);
     return $day . " de " . $month_spanish . " de " . $year;
 }
 
 
 function getMonthSpanish($month)
 {
-    $months = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-
-    return $months[date('n') - 1];
+    $months = array(
+        '01' => "Enero",
+        '02' => "Febrero",
+        '03' => "Marzo",
+        '04' => "Abril",
+        '05' => "Mayo",
+        '06' => "Junio",
+        '07' => "Julio",
+        '08' => "Agosto",
+        '09' => "Septiembre",
+        '10' => "Octubre",
+        '11' => "Noviembre",
+        '12' => "Diciembre"
+    );
+    return $months[$month];
 }
 
 function fechaEspanol($date)
