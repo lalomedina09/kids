@@ -43,7 +43,8 @@ class GarbiController extends Controller
             'Nombre' => 'required|string|min:1|max:255',
             'Apellidos' => 'required|string|min:1|max:255',
             'email' => 'required|email|min:1|max:255',
-            'Celular' => 'required|string|min:1|max:255'
+            'Celular' => 'required|string|min:1|max:255',
+            'g-recaptcha-response' => 'required|recaptcha'
         ]);
         array_forget($params, 'g-recaptcha-response');
 
