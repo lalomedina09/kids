@@ -41,3 +41,19 @@
 .btn-small:hover {
     background-color: #262525 !important;
 }
+
+/*Survey Diagnostic*/
+.modal-show-survey{
+    background-image: url(/etapa1/survey/pop-up.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn-pill-10{
+    border-radius: 10px;
+}
+
+.btn-white:hover{
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
