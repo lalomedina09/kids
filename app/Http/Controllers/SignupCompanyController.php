@@ -38,6 +38,13 @@ class SignupCompanyController extends Controller
         return view('landings.qdplay.bnmx', compact('codeConcept', 'user'));
     }
 
+    public function hsbc()
+    {
+        $codeConcept = "HSBC20";
+        $user = request()->user();
+        return view('landings.qdplay.hsbc', compact('codeConcept', 'user'));
+    }
+
     public function store(RegisterUserResuelveRequest $request)
     {
         $params = $request->all();

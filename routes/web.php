@@ -138,12 +138,15 @@ Route::prefix('qdplay/bnmx/descuento')
         Route::get('/')
             ->uses('SignupCompanyController@bnmx')
             ->name('register.bnmx.signup');
-
-        /*Route::post('/signup')
-        ->uses('SignupCompanyController@store')
-        ->name('register.qdplay.signup.save');*/
 });
 
+//3 Rutas para la empresa de HSBC
+Route::prefix('qdplay/hsbc/descuento')
+    ->group(function () {
+        Route::get('/')
+        ->uses('SignupCompanyController@hsbc')
+        ->name('register.hsbc.signup');
+});
 /*
 |--------------------------------------------------------------------------
 | Routes Custom  Functions Internals
