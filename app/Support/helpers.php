@@ -446,3 +446,14 @@ function getNameUser($id)
 
     return $retVal = ($user) ? $user->fullName : null ;
 }
+
+function numberToFormatHour($hour)
+{
+    // Convierte el número en una hora en formato de 24 horas
+    $hour_24h = $hour . ':00';
+
+    // Convierte la hora de 24 horas a 12 horas con prefijo "am" o "pm"
+    $hour_12h = date('h:i A', strtotime($hour_24h));
+
+    return $hour_12h; // Mostrará la hora en formato "03:00 PM" para el número 15
+}
