@@ -303,6 +303,10 @@ function AvgQuizQdplay($quiz, $user)
     return $data;
 }
 
+function getQuiz($type, $id)
+{
+    return Quiz::where('quizzesable_type',$type)->where('quizzesable_id', $id)->first();
+}
 function getOptionsCorrect($quiz, $user)
 {
     $data = QzAnswer::join('qz_options', 'qz_answers.option_id', '=', 'qz_options.id')
