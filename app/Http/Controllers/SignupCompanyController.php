@@ -45,6 +45,20 @@ class SignupCompanyController extends Controller
         return view('landings.qdplay.hsbc', compact('codeConcept', 'user'));
     }
 
+    public function isic()
+    {
+        $codeConcept = "ISIC20";
+        $user = request()->user();
+        return view('landings.qdplay.isic', compact('codeConcept', 'user'));
+    }
+
+    public function scot()
+    {
+        $codeConcept = "SCOT20";
+        $user = request()->user();
+        return view('landings.qdplay.scot', compact('codeConcept', 'user'));
+    }
+
     public function store(RegisterUserResuelveRequest $request)
     {
         $params = $request->all();

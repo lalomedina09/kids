@@ -120,7 +120,7 @@ Route::prefix('qdplay/unete/expositor')
 | Routes Custom For QD Play Add Companies
 |--------------------------------------------------------------------------
 */
-//2 Rutas para la empresa de resuelve tu deuda
+//1 Rutas para la empresa de resuelve tu deuda
 Route::prefix('qdplay/resuelve/descuento')
     ->group(function () {
         Route::get('/')
@@ -147,6 +147,22 @@ Route::prefix('qdplay/hsbc/descuento')
         ->uses('SignupCompanyController@hsbc')
         ->name('register.hsbc.signup');
 });
+
+//4 Rutas para la empresa de ISIC
+Route::prefix('qdplay/isic/descuento')
+    ->group(function () {
+        Route::get('/')
+            ->uses('SignupCompanyController@isic')
+            ->name('register.isic.signup');
+    });
+
+//4 Rutas para la empresa de SCOT
+Route::prefix('qdplay/scot/descuento')
+    ->group(function () {
+        Route::get('/')
+            ->uses('SignupCompanyController@scot')
+            ->name('register.scot.signup');
+    });
 /*
 |--------------------------------------------------------------------------
 | Routes Custom  Functions Internals
