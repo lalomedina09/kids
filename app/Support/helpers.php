@@ -461,3 +461,13 @@ function numberToFormatHour($hour)
 
     return $hour_12h; // Mostrará la hora en formato "03:00 PM" para el número 15
 }
+
+function convertNumerToHour($minutos)
+{
+    // Calcular las horas y minutos
+    $horas = floor($minutos / 60);
+    $minutosRestantes = $minutos % 60;
+
+    // Formatear la salida
+    return $formatoHorasMinutos = sprintf("%02d:%02d hrs", $horas, $minutosRestantes);
+}
