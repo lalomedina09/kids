@@ -27,7 +27,7 @@
                     <div>{{ $speaker->full_name }}</div>
                     @endforeach
                 </td>
-                <td>{{ $course->level }}</td>
+                <td>{{ $course->level_str }}</td>
                 <td>
                     @foreach ($course->categories as $category)
                     {{ $category->name }}<br />
