@@ -23,7 +23,7 @@ class Quiz extends Model
     ];
 
     protected $fillable = [
-        'title', 'type', 'comments'
+        'title', 'type', 'comments', 'image'
     ];
 
     protected $hidden = [
