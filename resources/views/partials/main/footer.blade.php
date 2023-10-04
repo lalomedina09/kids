@@ -1,9 +1,29 @@
 <footer class="footer box">
     <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-12 text-center mb-4">
+                <!--
+                style="background: linear-gradient(to right, #90d06b, #01dacb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
+                -->
+                <h3 class="text-white font-size-1x text-bold">
+                    <!--Descarga la App <br>
+                    y sigue aprendiendo donde sea-->
+                    Descarga QD Play
+                </h3>
+
+                <a href="{{ env('APP_STORE', 'https://apps.apple.com/mx/app/qd-play/id6445823679') }}">
+                    <img src="{{ asset('etapa1/stores/app-store.png') }}" alt="App Store Apple" width="200">
+                </a>
+
+                <a href="{{ env('APP_STORE', 'https://apps.apple.com/mx/app/qd-play/id6445823679') }}">
+                    <img src="{{ asset('etapa1/stores/play-store.png') }}" alt="App Store Apple" width="200">
+                </a>
+            </div>
+        </div>
         <div class="row footer__sitemap">
             <div class="col-xl-12">
                <div class="row">
-                    <div class="col-sm-3">
+                    {{--<div class="col-sm-3">
                         <h4 class="text-secondary mb-3 ml-5">Descarga QD Play</h4>
                         <ul class="list-unstyled list-inline mb-0 ml-5">
                             <li class="mb-1">
@@ -25,8 +45,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
-                    <div class="col-sm-3">
+                    </div>--}}
+                    <div class="col-sm-4">
                         <h4 class="text-secondary mb-3 ml-5">Por categoría</h4>
                         <ul class="list-unstyled list-inline mb-0 ml-5">
                             {{-- Lista de categorias viene del archivo helpers.php--}}
@@ -37,7 +57,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <h4 class="text-secondary mb-3 ml-5">Por sección</h4>
                         <ul class="list-unstyled list-inline mb-0 ml-5">
                             <li class="mb-1">
@@ -56,17 +76,12 @@
                                     <a href="{{ route('qd.advice.advisors.index') }}" class="text-white">Mentores financieros</a>
                                 </li>
                             @endif
-                            {{--@if (config()->has('money.modules.products'))
-                                <li class="mb-1">
-                                    <a href="{{ route('qd.products.products.index') }}" class="text-white">Productos</a>
-                                </li>
-                            @endif--}}
                             <li class="mb-1">
                                 <a href="{{ config('money.url.store') }}" class="link-white">Libro</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <h4 class="text-secondary mb-3 ml-5">Contáctanos</h4>
                         <ul class="list-unstyled list-inline mb-0 ml-5">
                             <li class="mb-1">
