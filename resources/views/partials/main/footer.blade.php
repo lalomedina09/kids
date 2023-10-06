@@ -15,8 +15,8 @@
                     <img src="{{ asset('etapa1/stores/app-store.png') }}" alt="App Store Apple" width="200">
                 </a>
 
-                <a href="{{ env('APP_STORE', 'https://apps.apple.com/mx/app/qd-play/id6445823679') }}">
-                    <img src="{{ asset('etapa1/stores/play-store.png') }}" alt="App Store Apple" width="200">
+                <a href="{{ env('PLAY_STORE', 'https://play.google.com/store/apps/details?id=com.queridodinero.qdplay') }}">
+                    <img src="{{ asset('etapa1/stores/play-store.png') }}" alt="Play Store" width="200">
                 </a>
             </div>
         </div>
