@@ -120,9 +120,9 @@
 
         <nav class="nav d-none d-lg-flex header__navigation">
 
-            <a href="/" class="nav-link header__navigation-link {{ active_class('descargas*') }}">
+            {{--<a href="/" class="nav-link header__navigation-link {{ active_class('descargas*') }}">
                 Inicio
-            </a>
+            </a>--}}
             <a href="{{ route('qdplay.index') }}" title="QD Play"
                 class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
                 QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">
@@ -157,22 +157,26 @@
                 Contacto
             </a>
 
-            {{--@auth
-                @if (config()->has('money.modules.marketplace'))
-                    <a href="{{ route('qd.marketplace.orders.index') }}" class="nav-link header__navigation-link">
-                        Mis compras
-                    </a>
-                @endif
-            @endauth--}}
+            {{--
+                @auth
+                    @if (config()->has('money.modules.marketplace'))
+                        <a href="{{ route('qd.marketplace.orders.index') }}" class="nav-link header__navigation-link">
+                            Mis compras
+                        </a>
+                    @endif
+                @endauth
+            --}}
 
         </nav>
 
         <ul class="nav">
+            {{--
             <li class="nav-item nav-item-search d-none d-sm-inline">
                 <a href="#" id="nav--search" data-fullmodal="#modal-search">
                     <img src="{{ asset('images/icons/search.svg') }}" class="mb-5px" alt="search icon">
                 </a>
             </li>
+            --}}
             @auth
                 @if (getNotificationsMenu() > 0)
                     <!--<li class="nav-item nav-item-search d-none d-sm-inline">

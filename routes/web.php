@@ -265,7 +265,8 @@ Route::prefix('password')
 Route::get('/')
     #->uses('HomeController@index')
     #->name('home');
-    ->uses('HomeController@blog')
+    //->uses('HomeController@blog')
+    ->uses('\QD\QDPlay\Http\Controllers\Home\HomeController@index')
     ->name('home');
 
 Route::get('/busqueda')
