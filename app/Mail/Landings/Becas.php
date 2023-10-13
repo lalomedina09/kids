@@ -33,7 +33,7 @@ class Becas extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        $emails = ['jose@queridodinero.com','miriam@queridodinero.com','erika.munoz@mb.com.mx','rebeca.feria@mb.com.mx'];
+        $emails = ['lalo@queridodinero.com','miriam@queridodinero.com','erika.munoz@mb.com.mx','rebeca.feria@mb.com.mx'];
 
         $subject = 'Nuevo Lead Mexicana de Becas';
         return $this->subject($subject)
