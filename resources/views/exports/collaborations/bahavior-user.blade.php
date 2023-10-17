@@ -1,10 +1,18 @@
+<div class="btn-group float-right">
+    <a href="{{ route('dashboard.qdplay.reports.behavior.excel') }}" class="btn btn-outline-success">
+        Exportar Datos Excel
+    </a>
+</div>
+
+<br><br><br>
+
 <table class="table table-responsive table-hover table-bordered" data-order='[[ 0, "asc" ]]'>
     <thead>
         <tr>
             <th>@lang('Plan')</th>
             <th>@lang('Colaborador')</th>
-            <th>@lang('User ID')</th>
             <th>@lang('Code')</th>
+            <th>@lang('User ID')</th>
             <th>@lang('Name')</th>
             <th>@lang('Last Name')</th>
             <th>@lang('Email')</th>
@@ -26,9 +34,9 @@
             <td>
                 @if($behavior->area) Colaborador @else Independiente @endif
             </td>
+            <td>{{ $behavior->code }}</td>
             <td>{{ $behavior->id }}</td>
             <td>{{ $behavior->name }}</td>
-            <td>{{ $behavior->code }}</td>
             <td>{{ $behavior->last_name }}</td>
             <td>{{ $behavior->email }}</td>
             <td>{{ $behavior->curso }}</td>
