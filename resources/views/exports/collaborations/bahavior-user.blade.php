@@ -1,4 +1,4 @@
-<table class="table table-responsive table-hover table-bordered" data-order='[[ 0, "asc" ]]'>
+<table>
     <thead>
         <tr>
             <th>@lang('Plan')</th>
@@ -32,7 +32,7 @@
             <td>{{ $behavior->last_name }}</td>
             <td>{{ $behavior->email }}</td>
             <td>{{ $behavior->curso }}</td>
-            <td><b>{{ $behavior->leccion }}</b></td>
+            <td>{{ $behavior->leccion }}</td>
             <td>{{ $behavior->registro }}</td>
             <td>
                 @if ($behavior->origen == "web/qdplay/watch")
@@ -43,12 +43,10 @@
 
             </td>
             <td>
-                {{ \QD\QDPlay\Formats::convertMinutes($behavior->duracion_video_seg) }} <br>
-                {{--{{ round($behavior->duracion_video_seg) }} Seg--}}
+                {{ \QD\QDPlay\Formats::convertMinutes($behavior->duracion_video_seg) }}
             </td>
             <td>
-                {{ \QD\QDPlay\Formats::convertMinutes($behavior->duracion_visualizado_seg) }} <br>
-                {{--{{ round($behavior->duracion_visualizado_seg) }} Seg--}}
+                {{ \QD\QDPlay\Formats::convertMinutes($behavior->duracion_visualizado_seg) }}
             </td>
         </tr>
         @endforeach
