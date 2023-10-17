@@ -26,7 +26,7 @@
     </thead>
 
     <tbody>
-        @foreach($behaviorUsers as $user)
+        @foreach($data as $user)
         @if($user)
         @foreach ($user as $behavior)
         <tr>
