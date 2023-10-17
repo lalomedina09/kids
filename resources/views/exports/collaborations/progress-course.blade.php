@@ -32,19 +32,20 @@
                     {{--<td>{{ $item->course_id }}</td>--}}
                     <td>{{ $item->curso }}</td>
                     <td>
-                        {{--{{ convertNumerToHour(number_format($duration,2)) }}<br>--}}
-                        {{ \QD\QDPlay\Formats::toHoursMinutes($duration*60) }}
+                        {{ (number_format(($duration),2)) }}
+                        {{-- \QD\QDPlay\Formats::toHoursMinutes($duration*60) --}}
                     </td>
                     <td>
+                        {{ (number_format(($item->min_vistos),2)) }}
                         {{--{{ convertNumerToHour(number_format($item->min_vistos,2)) }} <br>--}}
-                        {{ \QD\QDPlay\Formats::toHoursMinutes($item->min_vistos*60) }}
+                        {{-- \QD\QDPlay\Formats::toHoursMinutes($item->min_vistos*60) --}}
                     </td>
                     <td>
                         @php
                         $getPorcent = (($item->min_vistos * 100)/$duration);
                         $avance = ($getPorcent>99) ? 100 : $getPorcent;
                         @endphp
-                        {{ number_format($avance,2) }}%
+                        {{ number_format($avance,2) }}
                     </td>
                 </tr>
                 @endif
