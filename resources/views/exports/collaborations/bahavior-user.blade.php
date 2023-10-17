@@ -1,11 +1,3 @@
-<div class="btn-group float-right">
-    <a href="{{ route('dashboard.qdplay.reports.behavior.excel') }}" class="btn btn-outline-success">
-        Exportar Datos Excel
-    </a>
-</div>
-
-<br><br><br>
-
 <table class="table table-responsive table-hover table-bordered" data-order='[[ 0, "asc" ]]'>
     <thead>
         <tr>
