@@ -151,6 +151,13 @@ Route::prefix('qdplay/bnmx/descuento')
             ->name('register.bnmx.signup');
 });
 
+Route::prefix('qdplay/bnmx-pymes/descuento')
+->group(function () {
+    Route::get('/')
+    ->uses('SignupCompanyController@bnmxPymes')
+    ->name('register.bnmx.signup');
+});
+
 //3 Rutas para la empresa de HSBC
 Route::prefix('qdplay/hsbc/descuento')
     ->group(function () {
