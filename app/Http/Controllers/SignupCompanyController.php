@@ -53,7 +53,7 @@ class SignupCompanyController extends Controller
             return redirect()
             ->route('home')
             ->with([
-                'success' => '¡Lo sentimos! No esta habilitada la promoción'
+                'success' => '¡Lo sentimos! La promoción se encuentra fuera de las vigencias'
             ]);
         }
     }
