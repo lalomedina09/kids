@@ -51,7 +51,7 @@ class SignupCompanyController extends Controller
             return view('landings.qdplay.bnmx', compact('codeConcept', 'user'));
         }else{
             return redirect()
-            ->route('qdplay')
+            ->route('/')
             ->with([
                 'success' => '¡Lo sentimos! No esta habilitada la promoción'
             ]);
