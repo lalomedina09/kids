@@ -471,3 +471,18 @@ function convertNumerToHour($minutos)
     // Formatear la salida
     return $formatoHorasMinutos = sprintf("%02d:%02d hrs", $horas, $minutosRestantes);
 }
+
+
+if (!function_exists('date_mx')) {
+    /**
+     * @param  string  $pattern
+     * @return string
+     */
+    function date_mx($datetime)
+    {
+        $time = strtotime($datetime);
+        $months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+        $str = date('d _ Y', $time);
+        return str_replace('_', $months[intval(date('m', $time)) - 1], $str);
+    }
+}
