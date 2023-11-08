@@ -11,8 +11,9 @@
         @if ($urlQdplayCompany == "register.qdplay.showww")
             @include('partials.main.custom.script-head-qdplay-empresas')
         @else
-            @include('partials.main.script-head')
+        @include('partials.main.script-head')
         @endif
+        @include('partials.main.script-head-newrelic')
     </head>
 
     <body>
