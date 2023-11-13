@@ -101,7 +101,7 @@
                             class="nav-item nav-link text-uppercase c-text-size"
                             data-toggle="tab"
                         >@lang('My personal profile')</a>
-                    @endif--}}
+                    @endif --}}
                     {{--
                     @if ($user->hasPaymentRoles() || $user->hasExhibitorRoles())
                         <a href="#{{ str_slug(__('Payment')) }}"
@@ -115,7 +115,7 @@
                             class="nav-item nav-link text-uppercase c-text-size"
                             data-toggle="tab"
                         >@lang('Advices')</a>
-                    @endif--}}
+                    @endif --}}
 
                     @if (config()->has('money.modules.advice'))
                         <a href="#{{ str_slug(__('Advices')) }}"
@@ -133,7 +133,7 @@
                                 class="nav-item nav-link text-uppercase c-text-size"
                                 data-toggle="tab"
                             >@lang('Calendar & Schedule')</a>
-                        @endif--}}
+                        @endif --}}
                     @endif
 
                     <a href="#{{ str_slug(__('My Company')) }}"
@@ -147,6 +147,12 @@
                         data-toggle="tab"
                         >@lang('QD Play')
                         <img src="{{ asset('etapa1/GIF-NEW-Querido-dinero.gif') }}" alt="new" width="50" />
+                    </a>
+
+                    <a href="#qdplay-learning-paths"
+                        class="nav-item nav-link text-uppercase c-text-size"
+                        data-toggle="tab"
+                        >@lang('Learning Paths')
                     </a>
 
                     <a href="/queridodinero/app_close.html"
@@ -190,6 +196,8 @@
                     @endif
 
 					@include('qd:qdplay::home.partials.profile')
+
+                    @include('qd:qdplay::home.partials.profiles.learning-paths')
                 </div>
             </div>
         </div>
