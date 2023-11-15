@@ -50,9 +50,9 @@
                         <h4 class="text-secondary mb-3 ml-5">Por categoría</h4>
                         <ul class="list-unstyled list-inline mb-0 ml-5">
                             {{-- Lista de categorias viene del archivo helpers.php--}}
-                            @foreach(getCategoriesQD() as $category)
+                            @foreach(getCategoriesQDPlay() as $category)
                                 <li class="mb-1">
-                                    <a href="{{ route('articles.category.index', $category) }}" class="link-white">{{ $category->present()->name }}</a>
+                                    <a href="{{url('/')}}/qdplay/buscar?q={{ $category->present()->name }}" class="link-white">{{ $category->present()->name }}</a>
                                 </li>
                             @endforeach
                         </ul>
