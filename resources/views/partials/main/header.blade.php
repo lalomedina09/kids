@@ -223,7 +223,7 @@
                             Hola, {{ auth()->user()->name }}
                         </span>-->
                         <span class="text-small d-xl-inline-block">
-                            Mi Cuenta
+                            <i class="fa fa-sliders" aria-hidden="true"></i> {{ auth()->user()->name }} <!---Mi Cuenta-->
                         </span>
                         {{--
                             @if (auth()->user()->present()->profile_photo)

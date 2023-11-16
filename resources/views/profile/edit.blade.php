@@ -155,9 +155,9 @@
                         >@lang('Learning Paths')
                     </a>
 
-                    <a href="/queridodinero/app_close.html"
+                    <a href="{{ route('logout') }}"
                     class="nav-item nav-link text-uppercase c-text-size"
-                    >@lang('Salir')</a>
+                    >@lang('Cerrar sesión')</a>
 
                 </nav>
             </div>
