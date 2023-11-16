@@ -13,7 +13,8 @@
         @else
         @include('partials.main.script-head')
         @endif
-        @include('partials.main.script-head-newrelic')
+        {{-- desactive de forma temporal el script de new relic para comprobar que no afecte a tag de facebook--}}
+        {{--@include('partials.main.script-head-newrelic')--}}
     </head>
 
     <body>
