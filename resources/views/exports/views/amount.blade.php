@@ -1,5 +1,4 @@
-<br>
-<table class="table table-hover table-bordered mt-4" data-order='[[ 0, "asc" ]]'>
+<table>
 	<thead>
 		<tr>
 			<th>@lang('Course')</th>
@@ -17,7 +16,6 @@
 			</th>
 		</tr>
 	</thead>
-
 	<tbody>
 	@foreach(($estimated_payments ?? $amount->payments) as $payment)
 		<tr>
