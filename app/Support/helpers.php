@@ -91,6 +91,12 @@ function getCategoriesQD()
     ->get();
 }
 
+function getCategoriesQDPlay()
+{
+    return $categories = Category::whereIn('id', ['75', '101', '77', '78', '81', '79'])
+        ->get();
+}
+
 function legendsReschedule($reschedule)
 {
     $status = $reschedule->status;

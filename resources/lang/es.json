@@ -223,7 +223,7 @@
     "Country Code": "Codigo de tu pais",
     "Ten Digits": "10 Digitos",
     "List Notifications": "Lista de notificaciones",
-    "My Profile" : "Mi perfil",
+    "My Profile": "Mi perfil",
     "coaching": "Mentorías",
     "Experence and Education": "Experencía y Educación",
     "Blog": "Blog",
@@ -243,7 +243,7 @@
     "Rol": "Rol",
     "List Roles": "Lista de Roles",
     "Name Rol": "Nombre del Rol",
-    "Other Actions" : "Otras Acciones",
+    "Other Actions": "Otras Acciones",
     "Delete Account": "Eliminar Cuenta",
     "Repeat password": "Repetir contraseña",
     "Confirm deletion": "Confirmar Eliminacion",
@@ -262,5 +262,6 @@
     "Report": "Reporte",
     "Section View Month": "Seccion Vista Mensual",
     "Section View Year": "Seccion Vista Anual",
-    "Section View Year Report": "Section View Year Report"
+    "Section View Year Report": "Section View Year Report",
+    "Learning Paths": "Rutas de aprendizaje"
 }
