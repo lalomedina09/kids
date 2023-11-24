@@ -315,7 +315,7 @@
             <li class="nav-item dropdown">
                 <a href="https://www.queridodinero.com/qdplay/CdUIuL8sW" class="nav-link text-blue">
                     <span class="text-small d-xl-inline-block">
-                        Prueba Gartis
+                        Prueba Gratis
                     </span>
                 </a>
             </li>
