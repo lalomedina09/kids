@@ -312,13 +312,13 @@
                 </a>
             </li>-->
             <!------------------------------------------------------------------------------------------------------------------------->
-            <li class="nav-item dropdown">
+            {{--<li class="nav-item dropdown">
                 <a href="https://www.queridodinero.com/qdplay/CdUIuL8sW" class="nav-link text-blue">
                     <span class="text-small d-xl-inline-block">
                         Prueba Gratis
                     </span>
                 </a>
-            </li>
+            </li>--}}
             <!-------------------------------------------------------------------------------------------------------------------------->
             {{--
             <li class="nav-item nav-item-search d-none d-sm-inline" style="margin-top:10px;">
