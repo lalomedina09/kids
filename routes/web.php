@@ -143,7 +143,7 @@ Route::prefix('qdplay/resuelve/descuento')
             ->name('register.qdplay.signup.save');
 });
 
-//2 Rutas para la empresa de Citibanamex
+//Rutas para la empresa de Citibanamex
 Route::prefix('qdplay/bnmx/descuento')
     ->group(function () {
         Route::get('/')
@@ -158,7 +158,7 @@ Route::prefix('qdplay/bnmx-pymes/descuento')
     ->name('register.bnmx.signup');
 });
 
-//3 Rutas para la empresa de HSBC
+//Rutas para la empresa de HSBC
 Route::prefix('qdplay/hsbc/descuento')
     ->group(function () {
         Route::get('/')
@@ -166,7 +166,7 @@ Route::prefix('qdplay/hsbc/descuento')
         ->name('register.hsbc.signup');
 });
 
-//4 Rutas para la empresa de ISIC
+//Rutas para la empresa de ISIC
 Route::prefix('qdplay/isic/descuento')
     ->group(function () {
         Route::get('/')
@@ -174,12 +174,20 @@ Route::prefix('qdplay/isic/descuento')
             ->name('register.isic.signup');
     });
 
-//4 Rutas para la empresa de SCOT
+//Rutas para la empresa de SCOT
 Route::prefix('qdplay/scot/descuento')
     ->group(function () {
         Route::get('/')
             ->uses('SignupCompanyController@scot')
             ->name('register.scot.signup');
+    });
+
+//Rutas para la empresa de Ban Banjio
+Route::prefix('qdplay/banbajio/inicio')
+    ->group(function () {
+        Route::get('/')
+            ->uses('SignupCompanyController@banbajio')
+            ->name('register.banbajio.signup');
     });
 /*
 |--------------------------------------------------------------------------

@@ -79,6 +79,14 @@ class SignupCompanyController extends Controller
         return view('landings.qdplay.scot', compact('codeConcept', 'user'));
     }
 
+
+    public function banbajio()
+    {
+        $codeConcept = "BANBAJIO100";
+        $user = request()->user();
+        return view('landings.qdplay.banbajio', compact('codeConcept', 'user'));
+    }
+
     public function store(RegisterUserResuelveRequest $request)
     {
         $params = $request->all();
