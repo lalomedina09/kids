@@ -17,7 +17,7 @@ class Address extends Model
 
     use Morphable, SoftDeletes;
 
-    protected $table = 'addresses';
+    protected $table = 'address';
 
     protected $guarded = [
         'id'
@@ -25,7 +25,7 @@ class Address extends Model
 
     protected $fillable = [
         'name', 'street', 'int_number', 'ext_number', 'zone', 'code',
-        'city', 'state', 'country', 'references', 'comments', '',
+        'city', 'state', 'country', 'references', 'comments', 'addresssable_type', 'addresssable_id'
     ];
 
     protected $hidden = [
@@ -38,14 +38,14 @@ class Address extends Model
 
     protected $casts = [
         'user_id' => 'integer',
-        'adressable_id' => 'integer'
+        'addresssable_id' => 'integer'
     ];
 
-    protected $with = [
+    /*protected $with = [
         'adressable'
-    ];
+    ];*/
 
-    const MORPH_FIELD = 'adressable_type';
+    const MORPH_FIELD = 'addresssable_type';
 
     /*
     |--------------------------------------------------------------------------
@@ -68,4 +68,5 @@ class Address extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
 }
