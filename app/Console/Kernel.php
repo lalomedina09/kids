@@ -62,6 +62,10 @@ class Kernel extends ConsoleKernel
             ->everyMinute()
             ->withoutOverlapping();
 
+        $schedule->command('qd:qdplay:subscriptions:recurringCharge')
+        ->daily()
+            ->at('04:00')
+            ->withoutOverlapping();
     }
 
     /**
