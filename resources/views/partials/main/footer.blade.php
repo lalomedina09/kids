@@ -20,6 +20,11 @@
                 </a>
             </div>
         </div>
+        <div class="row d-none d-sm-block">
+            <div class="col-12">
+                <hr>
+            </div>
+        </div>
         <div class="row footer__sitemap">
             <div class="col-xl-12">
                <div class="row">
