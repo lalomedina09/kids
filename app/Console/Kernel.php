@@ -62,10 +62,20 @@ class Kernel extends ConsoleKernel
             ->everyMinute()
             ->withoutOverlapping();
 
+        /*
         $schedule->command('qd:qdplay:subscriptions:recurringCharge')
         ->daily()
             ->at('04:00')
             ->withoutOverlapping();
+        */
+        $schedule->command('qd:qdplay:subscriptions:recurringCharge')
+        ->daily()
+        ->at('04:00')
+            ->withoutOverlapping()
+            ->when(function () {
+                // Ejecutar el comando solo en el entorno de producción
+                return app()->environment('production');
+            });
     }
 
     /**
