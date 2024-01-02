@@ -91,6 +91,12 @@ function getCategoriesQD()
     ->get();
 }
 
+function getCategoriesQDPlay()
+{
+    return $categories = Category::whereIn('id', ['75', '101', '77', '78', '81', '79'])
+        ->get();
+}
+
 function legendsReschedule($reschedule)
 {
     $status = $reschedule->status;
@@ -303,6 +309,10 @@ function AvgQuizQdplay($quiz, $user)
     return $data;
 }
 
+function getQuiz($type, $id)
+{
+    return Quiz::where('quizzesable_type',$type)->where('quizzesable_id', $id)->first();
+}
 function getOptionsCorrect($quiz, $user)
 {
     $data = QzAnswer::join('qz_options', 'qz_answers.option_id', '=', 'qz_options.id')
@@ -332,21 +342,33 @@ function customDateSpanish($date)
 {
     $now = Carbon::parse($date)->format('Y-m-d');
     $div = explode("-", $now);
-
+    //dd($div);
     $year = $div[0];
     $month = $div[1];
     $day = $div[2];
     $month_spanish = getMonthSpanish($month);
-
+    //dd($month, " mes y nombre del mes ",$month_spanish);
     return $day . " de " . $month_spanish . " de " . $year;
 }
 
 
 function getMonthSpanish($month)
 {
-    $months = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-
-    return $months[date('n') - 1];
+    $months = array(
+        '01' => "Enero",
+        '02' => "Febrero",
+        '03' => "Marzo",
+        '04' => "Abril",
+        '05' => "Mayo",
+        '06' => "Junio",
+        '07' => "Julio",
+        '08' => "Agosto",
+        '09' => "Septiembre",
+        '10' => "Octubre",
+        '11' => "Noviembre",
+        '12' => "Diciembre"
+    );
+    return $months[$month];
 }
 
 function fechaEspanol($date)
@@ -433,4 +455,48 @@ function getNameUser($id)
     $user = User::where('id', $id)->first();
 
     return $retVal = ($user) ? $user->fullName : null ;
+}
+
+function numberToFormatHour($hour)
+{
+    // Convierte el número en una hora en formato de 24 horas
+    $hour_24h = $hour . ':00';
+
+    // Convierte la hora de 24 horas a 12 horas con prefijo "am" o "pm"
+    $hour_12h = date('h:i A', strtotime($hour_24h));
+
+    return $hour_12h; // Mostrará la hora en formato "03:00 PM" para el número 15
+}
+
+function convertNumerToHour($minutos)
+{
+    // Calcular las horas y minutos
+    $horas = floor($minutos / 60);
+    $minutosRestantes = $minutos % 60;
+
+    // Formatear la salida
+    return $formatoHorasMinutos = sprintf("%02d:%02d hrs", $horas, $minutosRestantes);
+}
+
+
+if (!function_exists('date_mx')) {
+    /**
+     * @param  string  $pattern
+     * @return string
+     */
+    function date_mx($datetime)
+    {
+        $time = strtotime($datetime);
+        $months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+        $str = date('d _ Y', $time);
+        return str_replace('_', $months[intval(date('m', $time)) - 1], $str);
+    }
+}
+
+function searchCourseQuiz($courseId)
+{
+    $quiz = Quiz::where('quizzesable_type', "QD\\QDPlay\\Models\\Course")
+        ->where('quizzesable_id', $courseId)
+        ->get();
+    return $quiz;
 }

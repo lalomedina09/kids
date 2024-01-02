@@ -33,7 +33,7 @@ class Nube extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        $emails = ['jose@queridodinero.com','miriam@queridodinero.com','karla.reyes@tiendanube.com'];
+        $emails = ['lalo@queridodinero.com','miriam@queridodinero.com','karla.reyes@tiendanube.com'];
 
         $subject = 'Nuevo Lead Tienda Nube';
         return $this->subject($subject)

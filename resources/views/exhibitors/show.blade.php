@@ -14,7 +14,7 @@ color: black;
 
 @section('profile-content')
 
-    <div class="tab-pane active" id="profile-articles" role="tabpanel">
+    <div class="tab-pane" id="profile-articles" role="tabpanel">
         <h3 class="home__title home__title--danger">
             {{ $user->present()->fullname }}
             <span class="small text-muted">({{ $user->articles->count() }})</span>
@@ -31,11 +31,11 @@ color: black;
         </div>
     </div>
 
-	<div class="tab-pane" id="profile-qdplay" role="tabpanel">
+	<div class="tab-pane active" id="profile-qdplay" role="tabpanel">
 		<div class="row">
 			@foreach ($courses as $course)
 			<div class="video-card col-md-4 col-sm-6 col-12 mb-4">
-				@include('qd:qdplay::home.partials._courseCard', ['course' => $course])
+				@include('qd:qdplay::home.partials._courseCard', ['course' => $course, 'user' => null, 'holder' => null])
 			</div>
 			@endforeach
 		</div>

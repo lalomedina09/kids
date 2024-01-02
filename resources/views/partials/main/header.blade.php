@@ -8,9 +8,8 @@
 
         <div class="collapse navbar-collapse header__menu" id="navbar-collapse">
             <div class="header__menu-wrapper">
-                <h6 class="header__menu-title">Temas</h6>
-
-                <ul class="navbar-nav header__menu-list">
+                <!--<h6 class="header__menu-title">Temas</h6>-->
+                {{--<ul class="navbar-nav header__menu-list">
                     @foreach(getCategoriesQD() as $category)
                         <li class="nav-item">
                             <a href="{{ route('articles.category.index', $category) }}"
@@ -19,11 +18,18 @@
                             </a>
                         </li>
                     @endforeach
-                </ul>
+                </ul>--}}
 
                 <h6 class="header__menu-title">Secciones</h6>
 
                 <ul class="navbar-nav header__menu-list">
+                    <li class="nav-item">
+                        <a href="{{ route('qdplay.index') }}"
+                            class="header__menu-link">
+                            QD Play
+                        </a>
+                    </li>
+
                     @if (config()->has('money.modules.blog'))
                         <li class="nav-item">
                             <a href="{{ route('blog') }}"
@@ -33,12 +39,12 @@
                         </li>
                     @endif
 
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a href="{{ route('courses.index') }}"
                             class="header__menu-link">
                             Talleres Personalizados
                         </a>
-                    </li>
+                    </li>-->
 
                     <!--<li class="nav-item">
                         <a href="{{ route('qdplay.index') }}"
@@ -120,9 +126,9 @@
 
         <nav class="nav d-none d-lg-flex header__navigation">
 
-            <a href="/" class="nav-link header__navigation-link {{ active_class('descargas*') }}">
+            {{--<a href="/" class="nav-link header__navigation-link {{ active_class('descargas*') }}">
                 Inicio
-            </a>
+            </a>--}}
             <a href="{{ route('qdplay.index') }}" title="QD Play"
                 class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
                 QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">
@@ -157,22 +163,26 @@
                 Contacto
             </a>
 
-            {{--@auth
-                @if (config()->has('money.modules.marketplace'))
-                    <a href="{{ route('qd.marketplace.orders.index') }}" class="nav-link header__navigation-link">
-                        Mis compras
-                    </a>
-                @endif
-            @endauth--}}
+            {{--
+                @auth
+                    @if (config()->has('money.modules.marketplace'))
+                        <a href="{{ route('qd.marketplace.orders.index') }}" class="nav-link header__navigation-link">
+                            Mis compras
+                        </a>
+                    @endif
+                @endauth
+            --}}
 
         </nav>
 
         <ul class="nav">
+            {{--
             <li class="nav-item nav-item-search d-none d-sm-inline">
                 <a href="#" id="nav--search" data-fullmodal="#modal-search">
                     <img src="{{ asset('images/icons/search.svg') }}" class="mb-5px" alt="search icon">
                 </a>
             </li>
+            --}}
             @auth
                 @if (getNotificationsMenu() > 0)
                     <!--<li class="nav-item nav-item-search d-none d-sm-inline">
@@ -193,7 +203,7 @@
                             <img src="{{ asset('images/icons/order.svg') }}" class="mb-5px" alt="Order Icon">
                         </a>
                     </li>
-                @endif--}}
+                @endif --}}
             @endauth
 
             <li class="nav-item dropdown">
@@ -204,19 +214,26 @@
 
                     @guest
                         <span class="text-small d-none d-xl-inline-block">
-                            Mi Cuenta
+                            Acceder
                         </span>
                     @endguest
 
                     @auth
-                        <span class="text-small d-none d-xl-inline-block"><!--Hola, -->{{-- auth()->user()->name --}}</span>
+                        <!--<span class="text-small d-none d-xl-inline-block">
+                            Hola, {{ auth()->user()->name }}
+                        </span>-->
+                        <span class="text-small d-xl-inline-block">
+                            <i class="fa fa-sliders" aria-hidden="true"></i> {{ auth()->user()->name }} <!---Mi Cuenta-->
+                        </span>
+                        {{--
                             @if (auth()->user()->present()->profile_photo)
-                                <img src="{{ auth()->user()->present()->profile_photo }}"
-                                    class="rounded-circle"
-                                    width="40px"
-                                    height="40px"
-                                    alt="{{ auth()->user()->name }}">
+                            <img src="{{ auth()->user()->present()->profile_photo }}"
+                                class="rounded-circle"
+                                width="40px"
+                                height="40px"
+                                alt="{{ auth()->user()->name }}">
                             @endif
+                        --}}
                     @endauth
                 </a>
 
@@ -289,13 +306,27 @@
                 </div>
             </li>
             <!---------------------------------------------->
-
-            <!---------------------------------------------->
+            <!--<li class="nav-item nav-item-search d-none d-sm-inline">
+                <a href="{{ route('qd.marketplace.orders.index') }}" id="nav--search" title="Mis Compras">
+                    Prueba Gratis
+                </a>
+            </li>-->
+            <!------------------------------------------------------------------------------------------------------------------------->
+            {{--<li class="nav-item dropdown">
+                <a href="https://www.queridodinero.com/qdplay/CdUIuL8sW" class="nav-link text-blue">
+                    <span class="text-small d-xl-inline-block">
+                        Prueba Gratis
+                    </span>
+                </a>
+            </li>--}}
+            <!-------------------------------------------------------------------------------------------------------------------------->
+            {{--
             <li class="nav-item nav-item-search d-none d-sm-inline" style="margin-top:10px;">
 				<a href="https://www.queridodinero.com/qdplay/CdUIuL8sW" class="nav-link text-blue font-size-sm">
                     Prueba Gratis
                 </a>
 			</li>
+            --}}
         </ul>
     </header>
 </div>

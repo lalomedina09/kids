@@ -33,7 +33,7 @@ class Garbi extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        $emails = ['jose@queridodinero.com','miriam@queridodinero.com','rrivera@garvi.com.mx','scortes@garvi.com.mx'];
+        $emails = ['lalo@queridodinero.com','miriam@queridodinero.com','rrivera@garvi.com.mx','scortes@garvi.com.mx'];
 
         $subject = 'Nuevo Lead Garvi';
         return $this->subject($subject)

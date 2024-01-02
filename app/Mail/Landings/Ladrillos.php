@@ -33,7 +33,7 @@ class Ladrillos extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        $emails = ['jose@queridodinero.com','miriam@queridodinero.com','arturo@100ladrillos.com','adriana@100ladrillos.com'];
+        $emails = ['lalo@queridodinero.com','miriam@queridodinero.com','arturo@100ladrillos.com','adriana@100ladrillos.com'];
 
         $subject = 'Nuevo Lead 100 Ladrillos';
         return $this->subject($subject)

@@ -13,7 +13,7 @@ class QzOption extends Model
     use Presentable, SoftDeletes;
 
     protected $fillable = [
-        'option', 'is_correct'
+        'option', 'is_correct', 'image'
     ];
 
     protected $dates = [

@@ -68,7 +68,7 @@ class Controller extends BaseController
             4 => "Jueves",
             5 => "Viernes",
             6 => "Sabado",
-            7 => "Viernes"
+            7 => "Domingo"
         );
     }
 

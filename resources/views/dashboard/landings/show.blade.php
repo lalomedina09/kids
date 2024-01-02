@@ -40,23 +40,9 @@
     <div class="table-responsive">
 
         <div class="text-right">
-            @if ($getLanding->form == "finanzas-personales-para-empleados")
-                <a class="btn btn-info" href="{{ url("finanzas-personales-para-empleados") }}" target="_blank">
-                    Ver Landing
-                </a>
-             @elseif($getLanding->form == "registro-qdplay-empresas")
-                <a class="btn btn-info" href="{{ url("registro-qdplay-empresas") }}" target="_blank">
-                    Ver Landing
-                </a>
-            @elseif($getLanding->form == "registro-qdplay-personas-fisicas")
-                <a class="btn btn-info" href="{{ url("registro-qdplay-individual") }}" target="_blank">
-                    Ver Landing
-                </a>
-            @else
-                <a class="btn btn-info" href="{{ url($page) }}" target="_blank">
-                    Ver Landing
-                </a>
-            @endif
+            <a class="btn btn-info" href="{{ url($page) }}" target="_blank">
+                Ver Landing
+            </a>
             <a class="btn btn-success" href="{{ route('dashboard.landings.export.results.excel', [$page]) }}">
                 Exportar resultados Excel
             </a>
