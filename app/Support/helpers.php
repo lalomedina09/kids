@@ -492,3 +492,11 @@ if (!function_exists('date_mx')) {
         return str_replace('_', $months[intval(date('m', $time)) - 1], $str);
     }
 }
+
+function searchCourseQuiz($courseId)
+{
+    $quiz = Quiz::where('quizzesable_type', "QD\\QDPlay\\Models\\Course")
+        ->where('quizzesable_id', $courseId)
+        ->get();
+    return $quiz;
+}
