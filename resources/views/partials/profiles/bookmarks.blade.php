@@ -6,7 +6,6 @@
     <h5 class="text-danger text-uppercase mb-5">@lang('My bookmarks')</h5>
 
     <div class="row">
-        {{--
         @forelse($user->bookmarks as $bookmark)
             <div class="col-xl-4 col-lg-4 col-md-6 col-12 videos--item mb-3" @auth data-interactable="{{ $bookmark->bookmarkable->interactable_code }}" @endauth>
                 <a href="{{ $bookmark->bookmarkable->present()->url }}"
@@ -35,6 +34,5 @@
                 <p class="text-muted">No hay articulos guardados</p>
             </div>
         @endforelse
-        --}}
     </div>
 </div>
