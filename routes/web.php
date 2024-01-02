@@ -120,8 +120,8 @@ Route::prefix('qdplay/unete/expositor')
 | Routes Custom For QD Play Add Companies
 |--------------------------------------------------------------------------
 */
-//2 Rutas para la empresa de resuelve tu deuda
-Route::prefix('qdplay/resuelve/descuento')
+//1 Rutas para la empresa de resuelve tu deuda --resuelvemas
+Route::prefix('resuelvemas')
     ->group(function () {
         Route::get('/')
         ->uses('SignupCompanyController@resuelve')
@@ -132,18 +132,63 @@ Route::prefix('qdplay/resuelve/descuento')
         ->name('register.qdplay.signup.save');
 });
 
-//2 Rutas para la empresa de Citibanamex
+Route::prefix('qdplay/resuelve/descuento')
+    ->group(function () {
+        Route::get('/')
+            ->uses('SignupCompanyController@resuelve')
+            ->name('register.resuelve.signup');
+
+        Route::post('/signup')
+            ->uses('SignupCompanyController@store')
+            ->name('register.qdplay.signup.save');
+});
+
+//Rutas para la empresa de Citibanamex
 Route::prefix('qdplay/bnmx/descuento')
     ->group(function () {
         Route::get('/')
             ->uses('SignupCompanyController@bnmx')
             ->name('register.bnmx.signup');
-
-        /*Route::post('/signup')
-        ->uses('SignupCompanyController@store')
-        ->name('register.qdplay.signup.save');*/
 });
 
+Route::prefix('qdplay/bnmx-pymes/descuento')
+->group(function () {
+    Route::get('/')
+    ->uses('SignupCompanyController@bnmxPymes')
+    ->name('register.bnmx.signup');
+});
+
+//Rutas para la empresa de HSBC
+Route::prefix('qdplay/hsbc/descuento')
+    ->group(function () {
+        Route::get('/')
+        ->uses('SignupCompanyController@hsbc')
+        ->name('register.hsbc.signup');
+});
+
+//Rutas para la empresa de ISIC
+Route::prefix('qdplay/isic/descuento')
+    ->group(function () {
+        Route::get('/')
+            ->uses('SignupCompanyController@isic')
+            ->name('register.isic.signup');
+    });
+
+//Rutas para la empresa de SCOT
+Route::prefix('qdplay/scot/descuento')
+    ->group(function () {
+        Route::get('/')
+            ->uses('SignupCompanyController@scot')
+            ->name('register.scot.signup');
+    });
+
+//Rutas para la empresa de Ban Banjio
+Route::prefix('qdplay/banbajio/inicio')
+    ->group(function () {
+        Route::get('/')
+            ->uses('SignupCompanyController@banbajio')
+            ->name('register.banbajio.signup');
+    });
 /*
 |--------------------------------------------------------------------------
 | Routes Custom  Functions Internals
@@ -246,7 +291,8 @@ Route::prefix('password')
 Route::get('/')
     #->uses('HomeController@index')
     #->name('home');
-    ->uses('HomeController@blog')
+    //->uses('HomeController@blog')
+    ->uses('\QD\QDPlay\Http\Controllers\Home\HomeController@index')
     ->name('home');
 
 Route::get('/busqueda')
