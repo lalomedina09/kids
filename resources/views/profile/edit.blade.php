@@ -149,11 +149,11 @@
                         <img src="{{ asset('etapa1/GIF-NEW-Querido-dinero.gif') }}" alt="new" width="50" />
                     </a>
 
-                    {{--<a href="#qdplay-learning-paths"
+                    <a href="#qdplay-learning-paths"
                         class="nav-item nav-link text-uppercase c-text-size"
                         data-toggle="tab"
                         >@lang('Learning Paths')
-                    </a> --}}
+                    </a>
 
                     <a href="{{ route('logout') }}"
                     class="nav-item nav-link text-uppercase c-text-size"
