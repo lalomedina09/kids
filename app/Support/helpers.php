@@ -10,7 +10,8 @@ use App\Models\Quiz;
 use App\Models\TsBudget;
 use App\Models\TsCategory;
 use App\Models\TsCategoryUser;
-
+use QD\QDPlay\Models\LearningPath;
+use QD\QDPlay\Models\LearningPathUser;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Carbon\Carbon;
@@ -499,4 +500,14 @@ function searchCourseQuiz($courseId)
         ->where('quizzesable_id', $courseId)
         ->get();
     return $quiz;
+}
+
+function findUserSavingLearningPath($learning)
+{
+    $user = Auth::user();
+    if($user){
+        return LearningPathUser::where('learning_path_id', $learning->id)->where('user_id', $user->id)->first();
+    }else{
+        return null;
+    }
 }
