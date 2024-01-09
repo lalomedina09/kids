@@ -12,7 +12,7 @@
                 <ul class="navbar-nav header__menu-list">
                     <li class="nav-item">
                         @auth
-                            <a href="{{ route('qdplay.content') }}"
+                            <a href="{{ route('qdplay.go') }}"
                                 class="header__menu-link">
                                 QD Play
                             </a>
@@ -99,7 +99,7 @@
 
         <nav class="nav d-none d-lg-flex header__navigation">
             @auth
-                <a href="{{ route('qdplay.content') }}" title="QD Play"
+                <a href="{{ route('qdplay.go') }}" title="QD Play"
                     class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
                     QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">
                 </a>
@@ -156,7 +156,7 @@
 
                 <div class="dropdown-menu header__dropdown">
                     @auth
-                    <a href="{{ route('qdplay.content') }}"
+                    <a href="{{ route('qdplay.go') }}"
 						class="dropdown-item header__buttons header__dropdown-buttons">
 						QD Play
 					</a>
