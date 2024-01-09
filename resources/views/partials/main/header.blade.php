@@ -11,17 +11,19 @@
                 <h6 class="header__menu-title">Secciones</h6>
                 <ul class="navbar-nav header__menu-list">
                     <li class="nav-item">
+                        <a href="{{ route('qdplay.go') }}"
+                            class="header__menu-link">
+                            QD Play
+                        </a>
+                        {{--
                         @auth
-                            <a href="{{ route('qdplay.go') }}"
-                                class="header__menu-link">
-                                QD Play
-                            </a>
                         @else
                             <a href="{{ route('qdplay.index') }}"
                                 class="header__menu-link">
                                 QD Play
                             </a>
                         @endauth
+                        --}}
                     </li>
                     @if (config()->has('money.modules.blog'))
                         <li class="nav-item">
@@ -93,12 +95,16 @@
             </div>
         </div>
 
-        <a href="{{ route('home') }}">
+        <a href="{{ route('qdplay.go') }}">
             <img src="{{ asset('images/logo_light.svg') }}" class="header__logo" alt="Querido Dinero">
         </a>
 
         <nav class="nav d-none d-lg-flex header__navigation">
-            @auth
+            <a href="{{ route('qdplay.go') }}" title="QD Play"
+                    class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
+                    QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">
+                </a>
+            {{--@auth
                 <a href="{{ route('qdplay.go') }}" title="QD Play"
                     class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
                     QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">
@@ -108,7 +114,7 @@
                     class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
                     QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">
                 </a>
-            @endauth
+            @endauth--}}
             <a href="{{ route('qdplay.business') }}" title="QD Play para empresas"
                 class="newlogo nav-link header__navigation-link {{ active_class('qdplay/empresas*') }}">
                 Para Empresas
