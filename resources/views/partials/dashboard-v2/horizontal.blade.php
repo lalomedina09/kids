@@ -5,7 +5,7 @@
             <div class="collapse navbar-collapse" id="topnav-menu-content">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="index.html" id="topnav-dashboard" role="button"
+                        <a class="nav-link arrow-none" href="{{ route('dashboard.dashboardv2.general') }}" id="topnav-dashboard" role="button"
                             aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-view-dashboard me-1"></i> Panoramico
                         </a>
@@ -13,7 +13,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link arrow-none" href="index.html" id="topnav-dashboard" role="button"
+                        <a class="nav-link arrow-none" href="{{ route('dashboard.dashboardv2.qdplay') }}" id="topnav-dashboard" role="button"
                             aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-view-dashboard me-1"></i> QD Play
                         </a>
@@ -30,6 +30,7 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div>
+                                        <p class="text-center mt-2">Reporte por Contenido</p> <hr>
                                         <a href="ui-buttons.html" class="dropdown-item">Buttons</a>
                                         <a href="ui-cards.html" class="dropdown-item">Cards</a>
                                         <a href="ui-avatars.html" class="dropdown-item">Avatars</a>
@@ -41,6 +42,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div>
+                                        <p class="text-center mt-2">Reporte por Usuarios</p> <hr>
                                         <a href="ui-notifications.html" class="dropdown-item">Notifications</a>
                                         <a href="ui-offcanvas.html" class="dropdown-item">Offcanvas</a>
                                         <a href="ui-placeholders.html" class="dropdown-item">Placeholders</a>
@@ -52,6 +54,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div>
+                                        <p class="text-center mt-2">Reporte por Interacciones</p> <hr>
                                         <a href="ui-video.html" class="dropdown-item">Embed Video</a>
                                         <a href="ui-dropdowns.html" class="dropdown-item">Dropdowns</a>
                                         <a href="ui-tooltips-popovers.html" class="dropdown-item">Tooltips & Popovers</a>
