@@ -7,15 +7,23 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link arrow-none" href="index.html" id="topnav-dashboard" role="button"
                             aria-haspopup="true" aria-expanded="false">
-                            <i class="mdi mdi-view-dashboard me-1"></i> Dashboard
+                            <i class="mdi mdi-view-dashboard me-1"></i> Panoramico
                         </a>
-                        
+
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link arrow-none" href="index.html" id="topnav-dashboard" role="button"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi mdi-view-dashboard me-1"></i> QD Play
+                        </a>
+
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-ui" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="mdi mdi-invert-colors me-1"></i> UI Elements <div class="arrow-down"></div>
+                            <i class="mdi mdi-invert-colors me-1"></i> Reportes <div class="arrow-down"></div>
                         </a>
 
                         <div class="dropdown-menu mega-dropdown-menu dropdown-mega-menu-xl" aria-labelledby="topnav-ui">
@@ -39,7 +47,7 @@
                                         <a href="ui-spinners.html" class="dropdown-item">Spinners</a>
                                         <a href="ui-images.html" class="dropdown-item">Images</a>
                                         <a href="ui-carousel.html" class="dropdown-item">Carousel</a>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -57,7 +65,7 @@
                         </div>
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-apps" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fe-grid me-1"></i> Apps <div class="arrow-down"></div>
@@ -76,7 +84,7 @@
                                     <a href="email-inbox.html" class="dropdown-item">Inbox</a>
                                     <a href="email-templates.html" class="dropdown-item">Email Templates</a>
                                 </div>
-                            </div> 
+                            </div>
 
                             <div class="dropdown">
                                 <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-task"
@@ -87,7 +95,7 @@
                                     <a href="task-details.html" class="dropdown-item">Details</a>
                                     <a href="task-kanban-board.html" class="dropdown-item">Kanban Board</a>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="dropdown">
                                 <a class="dropdown-item arrow-none" href="apps-projects.html" id="topnav-contact"
                                     role="button" aria-haspopup="true" aria-expanded="false">
@@ -106,11 +114,11 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li>-->
 
-                    
 
-                    <li class="nav-item dropdown">
+
+                    <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-lifebuoy me-1"></i> Components <div class="arrow-down"></div>
@@ -197,9 +205,9 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li>-->
 
-                    <li class="nav-item dropdown">
+                    <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-cards-outline me-1"></i> Pages <div class="arrow-down"></div>
@@ -247,8 +255,8 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="nav-item dropdown">
+                    </li>-->
+                    <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-layout" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-card-bulleted-settings-outline me-1"></i> Layouts <div class="arrow-down"></div>
@@ -258,7 +266,7 @@
                             <a href="index.html" class="dropdown-item">Vertical</a>
                             <a href="layouts-preloader.html" class="dropdown-item">Preloader</a>
                         </div>
-                    </li>
+                    </li>-->
                 </ul> <!-- end navbar-->
             </div> <!-- end .collapsed-->
         </nav>
