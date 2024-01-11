@@ -147,15 +147,15 @@
                     <li class="list-group-item">
                         <a href="#" class="user-list-item">
                             <div class="user float-start me-3">
-                                <i class="mdi mdi-human-queue fa-2x text-secondary"></i>
+                                <i class="mdi mdi-google fa-2x text-secondary"></i>
                             </div>
                             <div class="user-desc overflow-hidden">
-                                <h5 class="name mt-0 mb-1">Project Discussion</h5>
+                                <h5 class="name mt-0 mb-1">Inicia campaña Primavera</h5>
                                 <span class="desc font-12 text-truncate d-block">
-                                    February 27, 2019 - 10:30am to 12:45pm
+                                    Inicia campaña Universidades en redes sociales
                                 </span>
                                 <span class="desc text-muted font-12 text-truncate d-block">
-                                    February 27, 2019 - 10:30am to 12:45pm
+                                    25 de Enero 2024
                                 </span>
                             </div>
                         </a>

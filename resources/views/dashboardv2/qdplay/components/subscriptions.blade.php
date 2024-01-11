@@ -28,6 +28,9 @@
                     <li class="list-inline-item">
                         <h5 style="color: #5b69bc;"><i class="fa fa-circle me-1"></i>Banorte</h5>
                     </li>
+                    <li class="list-inline-item">
+                        <h5 style="color: #35b8e0;"><i class="fa fa-circle me-1"></i>BBVA</h5>
+                    </li>
                 </ul>
             </div>
         </div>
