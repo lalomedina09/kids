@@ -94,11 +94,15 @@
                 </div>
             </div>
         </div>
-
-        <a href="{{ route('qdplay.go') }}">
-            <img src="{{ asset('images/logo_light.svg') }}" class="header__logo" alt="Querido Dinero">
-        </a>
-
+        @auth
+            <a href="{{ route('qdplay.go') }}">
+                <img src="{{ asset('images/logo_light.svg') }}" class="header__logo" alt="Querido Dinero">
+            </a>
+        @else
+            <a href="{{ route('home') }}">
+                <img src="{{ asset('images/logo_light.svg') }}" class="header__logo" alt="Querido Dinero">
+            </a>
+        @endauth
         <nav class="nav d-none d-lg-flex header__navigation">
             <a href="{{ route('qdplay.go') }}" title="QD Play"
                     class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
