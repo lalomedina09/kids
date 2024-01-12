@@ -1014,19 +1014,16 @@ Route::prefix('exports')
     });
 });
 
-// Categories
-/*
-$router->resource('categories', 'CategoriesController', ['as' => 'dashboard', 'except' => ['show', 'edit', 'update', 'destroy']]);
-$router->get('categories/{id}/edit', 'CategoriesController@edit')->name('categories.edit');
-$router->patch('categories/{id}', 'CategoriesController@update')->name('categories.update');
-$router->delete('categories/{id}', 'CategoriesController@destroy')->name('categories.destroy');
-$router->post('categories/{id}', 'CategoriesController@restore')->name('categories.restore');
-$router->get('categories/trashed', 'CategoriesController@trashed')->name('categories.trashed');
+//Options
+Route::prefix('v2')
+    ->group(function () {
+        Route::get('/general')
+            ->uses('Dashboardv2Controller@dashboardGeneral')
+            ->name('dashboardv2.general');
+        #->middleware(['permission:blog.quiz.index']);
 
-$router->get('video/categories/create', 'VideoCategoriesController@create')->name('video.categories.create');
-$router->post('video/categories', 'VideoCategoriesController@store')->name('video.categories.store');
-$router->get('video/categories/{id}/edit', 'VideoCategoriesController@edit')->name('video.categories.edit');
-$router->patch('video/categories/{id}', 'VideoCategoriesController@update')->name('video.categories.update');
-$router->delete('video/categories/{id}', 'VideoCategoriesController@destroy')->name('video.categories.destroy');
-$router->post('video/categories/{id}', 'VideoCategoriesController@restore')->name('video.categories.restore');
-*/
+        Route::get('/qdplay')
+            ->uses('Dashboardv2Controller@dashboardQdplay')
+            ->name('dashboardv2.qdplay');
+        #->middleware(['permission:blog.quiz.show']);
+    });
