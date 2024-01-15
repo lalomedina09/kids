@@ -66,7 +66,10 @@
                         <h4 class="text-secondary mb-3 ml-5">Por sección</h4>
                         <ul class="list-unstyled list-inline mb-0 ml-5">
                             <li class="mb-1">
-                                <a href="{{ route('qdplay.index') }}" class="link-white">QD Play</a>
+                                <a href="{{ route('qdplay.go') }}" class="link-white">QD Play</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="{{ route('qdplay.learning-paths.start', ['principal']) }}" class="link-white">Rutas de aprendizaje</a>
                             </li>
                             @if (config()->has('money.modules.blog'))
                                 <li class="mb-1">
