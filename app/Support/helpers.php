@@ -496,10 +496,12 @@ if (!function_exists('date_mx')) {
 
 function searchCourseQuiz($courseId)
 {
+    
     $quiz = Quiz::where('quizzesable_type', "QD\\QDPlay\\Models\\Course")
         ->where('quizzesable_id', $courseId)
         ->get();
-    return $quiz;
+    return  (count($quiz)>0) ? $quiz : null ;
+    //return $quiz;
 }
 
 function findUserSavingLearningPath($learning)
