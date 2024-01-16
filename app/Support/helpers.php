@@ -15,6 +15,7 @@ use QD\QDPlay\Models\LearningPathUser;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Carbon\Carbon;
+//use DB;
 
 if (! function_exists('active_class')) {
     /**
@@ -512,4 +513,42 @@ function findUserSavingLearningPath($learning)
     }else{
         return null;
     }
+}
+
+
+function getProgressCourseByUser($course, $user)
+{
+        $result = DB::table('qdp_views AS views')
+        ->leftJoin('qdp_viewing_times AS tiempoVisualizado', 'views.id', '=', 'tiempoVisualizado.view_id')
+        ->join('qdp_courses AS curso', 'views.course_id', '=', 'curso.id')
+        ->join('qdp_videos AS videos', 'views.video_id', '=', 'videos.id')
+        ->leftJoin('users', 'views.user_id', '=', 'users.id')
+        ->leftJoin('qdp_subscriptions AS subs', 'subs.user_id', '=', 'users.id')
+        ->leftJoin('qdp_landing_pages_tests AS tests', 'tests.id', '=', 'subs.landing_page_test_id')
+        ->select(
+            'views.holder_id AS administrador',
+            'views.user_id',
+            'subs.plan',
+            'tests.code',
+            'curso.id',
+            'curso.name as curso',
+            'curso.public_id',
+            DB::raw('CONCAT(users.name, " ", users.last_name) AS nombre_completo'),
+            'users.email',
+            'views.course_id',
+            DB::raw('SUM(tiempoVisualizado.length/60) AS min_vistos')
+        )
+        ->whereNull('videos.deleted_at')
+        ->whereNull('curso.deleted_at')
+        ->whereNotNull('views.user_id')
+        //->whereNotIn('views.user_id', $usersQd)
+        ->where('views.user_id', $user->id)
+        ->where('curso.id', $course)
+        ->groupBy('views.user_id', 'views.course_id')
+        ->orderBy('users.name')
+        ->orderBy('curso.name')
+        ->first();
+
+
+        return $result;
 }
