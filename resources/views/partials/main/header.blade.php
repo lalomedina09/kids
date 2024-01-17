@@ -95,7 +95,7 @@
             </div>
         </div>
         @auth
-            <a href="{{ route('qdplay.go') }}">
+            <a href="{{ route('home') }}">
                 <img src="{{ asset('images/logo_light.svg') }}" class="header__logo" alt="Querido Dinero">
             </a>
         @else
