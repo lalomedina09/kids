@@ -170,7 +170,7 @@
 						class="dropdown-item header__buttons header__dropdown-buttons">
 						QD Play
 					</a>
-                    <a href="{{ route('profile.edit') }}" class="dropdown-item header__buttons header__dropdown-buttons">
+                    <a href="{{ route('qdplay.learning-paths.start', ['principal']) }}" class="dropdown-item header__buttons header__dropdown-buttons">
                             Rutas de aprendizaje
                     </a>
 					<div class="dropdown-divider header__dropdown-divider"></div>
