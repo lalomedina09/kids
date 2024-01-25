@@ -88,6 +88,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
+                    <th>Email</th>
                     <th>Roles</th>
                     <th>Permisos</th>
                     <th>Acciones</th>
@@ -104,6 +105,11 @@
                         <td>
                             <a href="{{ route('dashboard.authorization.show', [$user->id]) }}">
                                 {{ $user->present()->full_name }}
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ route('dashboard.authorization.show', [$user->id]) }}">
+                                {{ $user->present()->email }}
                             </a>
                         </td>
                         <td>

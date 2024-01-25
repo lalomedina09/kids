@@ -143,7 +143,10 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Email</th>
+                    <th>1er Acceso</th>
+                    <th>Ultimo Acceso</th>
                     <th>Cancelado</th>
+                    <th>Google</th>
                     <th>Creado</th>
                     <th>Acciones</th>
                 </tr>
@@ -157,9 +160,10 @@
                                 {{ $user->present()->email }}
                             </a>
                         </td>
-                        <td>
-                            {{ $user->present()->canceled }}
-                        </td>
+                        <td>{{ $user->present()->first_login }}</td>
+                        <td>{{ $user->present()->last_login }}</td>
+                        <td>{{ $user->present()->canceled }}</td>
+                        <td>@if($user->google_id) Google @else No @endif</td>
                         <td>{{ $user->present()->created_at }}</td>
                         <td>
                             @if(is_null($user->deleted_at))
