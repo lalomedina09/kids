@@ -443,4 +443,14 @@ class User extends Authenticatable implements HasMedia
         // 'foreign_key' , 'local_key'
         return $this->hasMany(CompanyRole::class, 'user_id', 'id');
     }
+
+    public function comments() {
+        return $this->hasMany(\QD\QDPlay\Models\Comment::class);
+    }
+    public function likesqdp() {
+        return $this->hasMany(\QD\QDPlay\Models\Like::class);
+    }
+    public function subscriptions() {
+        return $this->hasMany(\QD\QDPlay\Models\Subscription::class);
+    }
 }
