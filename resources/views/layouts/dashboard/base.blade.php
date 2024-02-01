@@ -84,6 +84,7 @@
             <div class="container">
                 <nav class="nav nav-underline">
                      @yield('dashboard-nav')
+                     <br><br>
                 </nav>
             </div>
         </div>
