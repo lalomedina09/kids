@@ -66,6 +66,30 @@
                 @endpush
             @endif
         @endauth
+
     @endif
 
+
+    @if($course->slug == "finanzas-empleados")
+      @push('scripts')
+        <!-- Google tag (gtag.js) event - delayed navigation helper -->
+        <script>
+          // Helper function to delay opening a URL until a gtag event is sent.
+          // Call it in response to an action that should navigate to a URL.
+          function gtagSendEvent(url) {
+            var callback = function () {
+              if (typeof url === 'string') {
+                window.location = url;
+              }
+            };
+            gtag('event', 'conversion_event_submit_lead_form', {
+              'event_callback': callback,
+              'event_timeout': 2000,
+              // <event_parameters>
+            });
+            return false;
+          }
+        </script>
+      @endpush
+    @endif
 @endsection
