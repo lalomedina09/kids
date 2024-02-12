@@ -1013,7 +1013,7 @@ Route::prefix('exports')
                     ->middleware(['permission:marketplace.orders.index']);
     });
 });
-
+/*
 //Options
 Route::prefix('v2')
     ->group(function () {
@@ -1027,3 +1027,4 @@ Route::prefix('v2')
             ->name('dashboardv2.qdplay');
         #->middleware(['permission:blog.quiz.show']);
     });
+*/
