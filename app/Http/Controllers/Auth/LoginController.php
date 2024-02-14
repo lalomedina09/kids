@@ -66,7 +66,7 @@ class LoginController extends Controller
         LoginLog::create(
             [
                 'user_id' => $user->id,
-                'source' => 'Web Salud Financiera'
+                'source' => 'Web Querido Dinero'
             ]
         );
 
