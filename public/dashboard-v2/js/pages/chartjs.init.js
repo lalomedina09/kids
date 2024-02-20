@@ -183,9 +183,68 @@
                     }]
                 }
             });
+
+            // Inicializar gráfico de líneas v2 vistas por horas
+            this.respChart($("#lineChartHours"), "Line", {
+                labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+                datasets: [{
+                        label: "Vistas",
+                        fill: !1,
+                        lineTension: .1,
+                        backgroundColor: "#039cfd",
+                        borderColor: "#10c469",
+                        borderCapStyle: "butt",
+                        borderDash: [],
+                        borderDashOffset: 0,
+                        borderJoinStyle: "miter",
+                        pointBorderColor: "#039cfd",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "#039cfd",
+                        pointHoverBorderColor: "#eef0f2",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: [30, 40, 45, 50, 56, 55, 40, 50, 60]
+                    },
+                    {
+                        label: "Minutos",
+                        fill: !1,
+                        lineTension: .1,
+                        backgroundColor: "#f1b53d",
+                        borderColor: "#f1b53d",
+                        borderCapStyle: "butt",
+                        borderDash: [],
+                        borderDashOffset: 0,
+                        borderJoinStyle: "miter",
+                        pointBorderColor: "#f1b53d",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "#f1b53d",
+                        pointHoverBorderColor: "#eef0f2",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: [25, 38, 43, 55, 46, 45, 45, 48, 65]
+                    }
+                ]
+            }, {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            max: 100,
+                            min: 20,
+                            stepSize: 10
+                        }
+                    }]
+                }
+            });
+
             // Inicializar gráfico de rosquilla
             this.respChart($("#doughnut"), "Doughnut", {
-                labels: ["Desktops", "Tablets", "Mobiles"],
+                labels: ["Lunes", "Martes", "Miercoles"],
                 datasets: [{
                     data: [300, 50, 100],
                     backgroundColor: ["#0388FD", "#10c469", "#f1b53d"],
