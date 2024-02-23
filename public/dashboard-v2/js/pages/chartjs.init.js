@@ -130,7 +130,7 @@
             this.respChart($("#lineChart2"), "Line", {
                 labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre"],
                 datasets: [{
-                        label: "Analisis de ventas 2",
+                        label: "Cuentas nuevas y sesiones",
                         fill: !1,
                         lineTension: .1,
                         backgroundColor: "#039cfd",
@@ -151,7 +151,7 @@
                         data: [30, 40, 45, 50, 56, 55, 40, 50, 60]
                     },
                     {
-                        label: "Analisis de compras 2",
+                        label: "interacciones en Salud Financiera",
                         fill: !1,
                         lineTension: .1,
                         backgroundColor: "#0388fd",
@@ -242,6 +242,64 @@
                 }
             });
 
+            //lineChartDaysWeek
+            this.respChart($("#lineChartDaysWeek"), "Line", {
+                labels: ["Lun", "Mar", "Mie", "4", "5", "6", "7", "8", "9"],
+                datasets: [{
+                        label: "Vistas",
+                        fill: !1,
+                        lineTension: .1,
+                        backgroundColor: "#039cfd",
+                        borderColor: "#10c469",
+                        borderCapStyle: "butt",
+                        borderDash: [],
+                        borderDashOffset: 0,
+                        borderJoinStyle: "miter",
+                        pointBorderColor: "#039cfd",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "#039cfd",
+                        pointHoverBorderColor: "#eef0f2",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: [30, 40, 45, 50, 56, 55, 40, 50, 60]
+                    },
+                    {
+                        label: "Minutos",
+                        fill: !1,
+                        lineTension: .1,
+                        backgroundColor: "#f1b53d",
+                        borderColor: "#f1b53d",
+                        borderCapStyle: "butt",
+                        borderDash: [],
+                        borderDashOffset: 0,
+                        borderJoinStyle: "miter",
+                        pointBorderColor: "#f1b53d",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "#f1b53d",
+                        pointHoverBorderColor: "#eef0f2",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: [25, 38, 43, 55, 46, 45, 45, 48, 65]
+                    }
+                ]
+            }, {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            max: 100,
+                            min: 20,
+                            stepSize: 10
+                        }
+                    }]
+                }
+            });
+            
             // Inicializar gráfico de rosquilla
             this.respChart($("#doughnut"), "Doughnut", {
                 labels: ["Lunes", "Martes", "Miercoles"],

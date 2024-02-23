@@ -4,7 +4,7 @@ $(document).ready(function() {
     $("#datatable").DataTable();
     var a = $("#datatable-buttons").DataTable({
         lengthChange: !1,
-        buttons: ["copy", "excel", "pdf"]
+        buttons: ["copy", "excel", "pdf"],
     });
     $("#key-table").DataTable({
         keys: !0
@@ -48,3 +48,14 @@ $(document).ready(function() {
 
     /***********************************************************************************************************************/
 });
+
+/*
+
+$(document).ready(function() {
+    $("#datatable").DataTable({
+        "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ], // Opciones de cantidad de registros por página
+        "pageLength": 10 // Valor predeterminado de cantidad de registros por página
+    });
+});
+
+ */
