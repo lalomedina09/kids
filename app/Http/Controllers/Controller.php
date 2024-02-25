@@ -175,4 +175,10 @@ class Controller extends BaseController
         $range[] = $date_end;
         return $range;
     }
+
+    public static function calculatePercent($value1, $value2)
+    {
+        $percentChange = (($value1) / $value2) * 100;
+        return intval(round($percentChange, 0));
+    }
 }
