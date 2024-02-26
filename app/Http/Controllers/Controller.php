@@ -178,6 +178,10 @@ class Controller extends BaseController
 
     public static function calculatePercent($value1, $value2)
     {
+        if ($value2 == 0) {
+            return 0;
+        }
+
         $percentChange = (($value1) / $value2) * 100;
         return intval(round($percentChange, 0));
     }
