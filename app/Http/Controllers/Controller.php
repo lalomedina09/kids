@@ -209,7 +209,7 @@ class Controller extends BaseController
             $monthsArray[] = [
                 'first_day' => $firstDayOfMonth,
                 'last_day' => $lastDayOfMonth,
-                'month' => $date->format('M'),
+                'month' => $date->format('F'),
                 'year' => $date->format('Y'),
             ];
         }
