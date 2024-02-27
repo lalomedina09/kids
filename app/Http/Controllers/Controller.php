@@ -178,11 +178,45 @@ class Controller extends BaseController
 
     public static function calculatePercent($value1, $value2)
     {
-        if ($value2 == 0) {
+        if ($value2 == 0 || $value1 == 0) {
             return 0;
         }
-
-        $percentChange = (($value1) / $value2) * 100;
+        
+        $percentChange = (($value2 - $value1) / $value1) * 100;
         return intval(round($percentChange, 0));
+    }
+
+    public static function buildArrayMonthDinamic($numberOfMonths)
+    {
+        
+        $monthsArray = [];
+
+        // Obtener la fecha actual
+        $currentDate = Carbon::now();
+
+        // Iterar para obtener los últimos $numberOfMonths meses
+        for ($i = 0; $i < $numberOfMonths; $i++) {
+            // Restar $i meses a la fecha actual
+            $date = $currentDate->copy()->subMonths($i);
+
+            // Obtener el primer día del mes
+            $firstDayOfMonth = $date->firstOfMonth()->format('Y-m-d');
+
+            // Obtener el último día del mes
+            $lastDayOfMonth = $date->endOfMonth()->format('Y-m-d');
+
+            // Agregar al array
+            $monthsArray[] = [
+                'first_day' => $firstDayOfMonth,
+                'last_day' => $lastDayOfMonth,
+                'month' => $date->format('M'),
+                'year' => $date->format('Y'),
+            ];
+        }
+
+        // Cambiar el orden del array para que el primer elemento sea el último
+        $monthsArray = array_reverse($monthsArray);
+        
+        return $monthsArray;
     }
 }
