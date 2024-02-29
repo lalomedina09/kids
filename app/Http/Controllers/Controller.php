@@ -186,6 +186,17 @@ class Controller extends BaseController
         return intval(round($percentChange, 0));
     }
 
+    public static function usersQD()
+    {
+        $usersQD = [
+            2, 3, 239, 463, 16065,26301, 16468, 16256, 16124, 15807, 15998, 15861,
+            15784, 15783, 15780, 15772, 15167, 14889, 14858, 14565, 16383,
+            14542, 14726, 15884, 16118, 16290, 16064, 16080
+        ];
+
+        return $usersQD;
+    }
+
     public static function buildArrayMonthDinamic($numberOfMonths)
     {
         
