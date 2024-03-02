@@ -4,8 +4,11 @@ $(document).ready(function() {
     $("#datatable").DataTable();
     var a = $("#datatable-buttons").DataTable({
         lengthChange: true, // Habilitar el menú de selección de cantidad de registros por página
-        pageLength: 25, // Establecer el número predeterminado de registros por página a 20
-        lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "Todos"]], // Menú desplegable para seleccionar la cantidad de registros por página
+        pageLength: 10, // Establecer el número predeterminado de registros por página a 20
+        lengthMenu: [
+            [10, 25, 50, 100, -1],
+            [10, 25, 50, 100, "Todos"]
+        ], // Menú desplegable para seleccionar la cantidad de registros por página
         buttons: ["copy", "excel", {
             extend: 'pdfHtml5',
             orientation: 'landscape', // Configuración para la orientación horizontal del PDF
@@ -42,7 +45,7 @@ $(document).ready(function() {
     });
 
     // Mostrar mensaje de carga al generar PDF
-    a.on('processing', function (e, settings, processing) {
+    a.on('processing', function(e, settings, processing) {
         if (processing) {
             // Mostrar mensaje de carga
             // Puedes utilizar una librería de notificaciones como Toastr
@@ -63,8 +66,11 @@ $(document).ready(function() {
     // Configuración para la segunda tabla
     var b = $("#second-datatable").DataTable({
         lengthChange: true, // Habilitar el menú de selección de cantidad de registros por página
-        pageLength: 25, // Establecer el número predeterminado de registros por página a 20
-        lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "Todos"]], // Menú desplegable para seleccionar la cantidad de registros por página
+        pageLength: 10, // Establecer el número predeterminado de registros por página a 20
+        lengthMenu: [
+            [10, 25, 50, 100, -1],
+            [10, 25, 50, 100, "Todos"]
+        ], // Menú desplegable para seleccionar la cantidad de registros por página
         buttons: ["copy", "excel", {
             extend: 'pdfHtml5',
             orientation: 'landscape', // Configuración para la orientación horizontal del PDF
@@ -101,7 +107,7 @@ $(document).ready(function() {
     });
 
     // Mostrar mensaje de carga al generar PDF
-    b.on('processing', function (e, settings, processing) {
+    b.on('processing', function(e, settings, processing) {
         if (processing) {
             // Mostrar mensaje de carga
             // Puedes utilizar una librería de notificaciones como Toastr
@@ -123,8 +129,11 @@ $(document).ready(function() {
     // Configuración para la tercera tabla
     var c = $("#third-datatable").DataTable({
         lengthChange: true, // Habilitar el menú de selección de cantidad de registros por página
-        pageLength: 25, // Establecer el número predeterminado de registros por página a 20
-        lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "Todos"]], // Menú desplegable para seleccionar la cantidad de registros por página
+        pageLength: 10, // Establecer el número predeterminado de registros por página a 20
+        lengthMenu: [
+            [10, 25, 50, 100, -1],
+            [10, 25, 50, 100, "Todos"]
+        ], // Menú desplegable para seleccionar la cantidad de registros por página
         buttons: ["copy", "excel", {
             extend: 'pdfHtml5',
             orientation: 'landscape', // Configuración para la orientación horizontal del PDF
@@ -161,7 +170,7 @@ $(document).ready(function() {
     });
 
     // Mostrar mensaje de carga al generar PDF
-    c.on('processing', function (e, settings, processing) {
+    c.on('processing', function(e, settings, processing) {
         if (processing) {
             // Mostrar mensaje de carga
             // Puedes utilizar una librería de notificaciones como Toastr
