@@ -447,10 +447,17 @@ class User extends Authenticatable implements HasMedia
     public function comments() {
         return $this->hasMany(\QD\QDPlay\Models\Comment::class);
     }
+
     public function likesqdp() {
         return $this->hasMany(\QD\QDPlay\Models\Like::class);
     }
+
     public function subscriptions() {
         return $this->hasMany(\QD\QDPlay\Models\Subscription::class);
+    }
+
+    public function views()
+    {
+        return $this->hasMany(QD\QDPlay\Models\View::class);
     }
 }
