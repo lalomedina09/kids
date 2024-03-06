@@ -7,8 +7,10 @@ use DatePeriod;
 use DateInterval;
 use Carbon\Carbon;
 use App\Models\UserLog;
-use Illuminate\Support\Facades\Auth;
+use App\Models\UserAgent;
 
+use Jenssegers\Agent\Agent;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -181,7 +183,7 @@ class Controller extends BaseController
         if ($value2 == 0 || $value1 == 0) {
             return 0;
         }
-        
+
         $percentChange = (($value2 - $value1) / $value1) * 100;
         return intval(round($percentChange, 0));
     }
@@ -197,9 +199,52 @@ class Controller extends BaseController
         return $usersQD;
     }
 
+    public static function detectAgent($request, $url)
+    {
+        $agent = new Agent();
+        #$userAgent = $agent->header('User-Agent');
+        $languages = $agent->languages();
+
+        $data = [
+            #'userAgent' => $userAgent,
+            'languages' => $languages[0],
+            'platform' => $agent->platform(),
+            'version_platform' => $agent->version($agent->platform()),
+            'device' => $agent->device(),
+            'browser' => $agent->browser(),
+            'version_browser' => $agent->version($agent->browser()),
+            'is_tablet' => $agent->isTablet(),
+            'is_mobile' => $agent->isMobile(),
+            'is_desktop' => $agent->isDesktop(),
+            'is_robot' => $agent->robot(),
+            'url' => $url
+        ];
+        return $data;
+    }
+
+    public static function saveUserAgent($agent, $user_id)
+    {
+        $userAgent = new UserAgent();
+        $userAgent->user_id = $user_id;
+        $userAgent->url = $agent['url'];
+        #$userAgent->user_agent = $agent['userAgent'];
+        $userAgent->platform = $agent['platform'];
+        $userAgent->platform_version = $agent['version_platform'];
+        $userAgent->browser = $agent['browser'];
+        $userAgent->browser_version = $agent['version_browser'];
+        $userAgent->is_mobile = $agent['is_mobile'];
+        $userAgent->is_tablet = $agent['is_tablet'];
+        $userAgent->is_desktop = $agent['is_desktop'];
+        $userAgent->is_robot = $agent['is_robot'];
+        $userAgent->save();
+
+        return true;
+        #return response()->json(['message' => 'User agent information saved successfully'], 201);
+    }
+
     public static function buildArrayMonthDinamic($numberOfMonths)
     {
-        
+
         $monthsArray = [];
 
         // Obtener la fecha actual
@@ -227,7 +272,7 @@ class Controller extends BaseController
 
         // Cambiar el orden del array para que el primer elemento sea el último
         $monthsArray = array_reverse($monthsArray);
-        
+
         return $monthsArray;
     }
 }
