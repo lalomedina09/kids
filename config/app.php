@@ -186,6 +186,7 @@ return [
         App\Providers\ValidatorServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Jenssegers\Agent\AgentServiceProvider::class,
 
     ],
 
@@ -251,6 +252,7 @@ return [
         'Linkify' => Misd\Linkify\Linkify::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
     ],
 
 ];
