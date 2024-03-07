@@ -208,6 +208,7 @@ class Controller extends BaseController
         $data = [
             #'userAgent' => $userAgent,
             'languages' => $languages[0],
+            'ip' => $request->ip(),
             'platform' => $agent->platform(),
             'version_platform' => $agent->version($agent->platform()),
             'device' => $agent->device(),
@@ -227,8 +228,9 @@ class Controller extends BaseController
         $userAgent = new UserAgent();
         $userAgent->user_id = $user_id;
         $userAgent->url = $agent['url'];
-        #$userAgent->user_agent = $agent['userAgent'];
+        $userAgent->ip = $agent['ip'];
         $userAgent->platform = $agent['platform'];
+        $userAgent->languages = $agent['languages'];
         $userAgent->platform_version = $agent['version_platform'];
         $userAgent->browser = $agent['browser'];
         $userAgent->browser_version = $agent['version_browser'];

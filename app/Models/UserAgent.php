@@ -23,6 +23,8 @@ class UserAgent extends Model
     //protected $fillable = ['user_id', 'source'];
     protected $fillable = [
         'user_id',
+        'ip',
+        'languages',
         'user_agent',
         'platform',
         'platform_version',
