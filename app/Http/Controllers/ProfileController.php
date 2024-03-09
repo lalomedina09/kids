@@ -41,6 +41,13 @@ class ProfileController extends Controller
         $user = $request->user();
         $user_interests = $user->interests->pluck('id')->toArray();
 
+        // Save userAgent
+        $request = request();
+        $user_id = ($user) ? $user->id : null;
+        $userAgent = Controller::detectAgent($request, $request->url());
+        $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
+        // End Save UserAgent
+
         $now = Date::now();
 
         $advice = [

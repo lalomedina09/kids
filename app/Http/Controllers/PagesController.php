@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\{Request, Response};
 use App\Models\Page;
 use Illuminate\View\View;
 
@@ -27,8 +28,15 @@ class PagesController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function contact() : View
+    public function contact(Request $request) : View
     {
+        $user = $request->user();
+        // Save userAgent
+        $request = request();
+        $user_id = ($user) ? $user->id : null;
+        $userAgent = Controller::detectAgent($request, $request->url());
+        $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
+        // End Save UserAgent
         return view('pages.contact');
     }
 

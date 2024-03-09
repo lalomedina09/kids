@@ -15,8 +15,16 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
+        $user = $request->user();
+        // Save userAgent
+        $request = request();
+        $user_id = ($user) ? $user->id : null;
+        $userAgent = Controller::detectAgent($request, $request->url());
+        $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
+        // End Save UserAgent
+
         $featured = Article::recent()
             ->select('id', 'title', 'slug', 'excerpt')
             ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
@@ -48,6 +56,14 @@ class ArticlesController extends Controller
      */
     public function show($slug, Request $request)
     {
+        $user = $request->user();
+        // Save userAgent
+        $request = request();
+        $user_id = ($user) ? $user->id : null;
+        $userAgent = Controller::detectAgent($request, $request->url());
+        $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
+        // End Save UserAgent
+
         $article = Article::published()
             ->whereSlug($slug)
             ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
@@ -74,8 +90,15 @@ class ArticlesController extends Controller
      * @param  string  $slug
      * @return \Illuminate\View\View
      */
-    public function byCategory($slug)
+    public function byCategory($slug, Request $request)
     {
+        $user = $request->user();
+        // Save userAgent
+        $request = request();
+        $user_id = ($user) ? $user->id : null;
+        $userAgent = Controller::detectAgent($request, $request->url());
+        $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
+        // End Save UserAgent
         $category = Category::where('slug', $slug)->firstOrFail();
 
         $articles = $category->articles()
@@ -96,8 +119,16 @@ class ArticlesController extends Controller
      * @param  string  $slug
      * @return \Illuminate\View\View
      */
-    public function byTag($slug)
+    public function byTag($slug, Request $request)
     {
+        $user = $request->user();
+        // Save userAgent
+        $request = request();
+        $user_id = ($user) ? $user->id : null;
+        $userAgent = Controller::detectAgent($request, $request->url());
+        $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
+        // End Save UserAgent
+
         $category = Category::where('slug', $slug)->firstOrFail();
 
         $articles = $category->tagged_articles()

@@ -83,6 +83,13 @@ class HomeController extends Controller
     public function blog(Request $request)
     {
         $covers = Cover::shown()->get()->take(6);
+        $user = $request->user();
+        // Save userAgent
+        $request = request();
+        $user_id = ($user) ? $user->id : null;
+        $userAgent = Controller::detectAgent($request, $request->url());
+        $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
+        // End Save UserAgent
 
         foreach(collect(range(1,6))->diff($covers->pluck('position')->toArray())->values()->all() as $newPosition) {
             $covers->push(Cover::make(['position' => $newPosition]));
