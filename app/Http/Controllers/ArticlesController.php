@@ -54,18 +54,18 @@ class ArticlesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\View\View
      */
-    public function show($slug)
+    public function show($slug, Request $request)
     {
         // Verificar si hay un usuario autenticado
-        /*if (Auth::check()) {
+        if (Auth::check()) {
             $user = Auth::user();
             $user_id = $user->id;
         } else {
             $user_id = null;
-        }*/
+        }
 
         // Save userAgent
-        $request = request();
+        #$request = request();
         /*
         if ($request) {
             $userAgent = Controller::detectAgent($request, $request->url());
