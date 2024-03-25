@@ -56,14 +56,18 @@ class ArticlesController extends Controller
      */
     public function show($slug)
     {
-        #$user = $request->user();
-        $user = Auth::user();
+        // Verificar si hay un usuario autenticado
+        if (Auth::check()) {
+            $user = Auth::user();
+            $user_id = $user->id;
+        } else {
+            $user_id = null;
+        }
+
         // Save userAgent
         $request = request();
 
-        $user_id = ($user) ? $user->id : null;
-
-        if($request){
+        if ($request) {
             $userAgent = Controller::detectAgent($request, $request->url());
             $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
         }
@@ -76,7 +80,7 @@ class ArticlesController extends Controller
 
         $article->checkViewable();
 
-        $related = Article::recommended($request->user())
+        $related = Article::recommended(Auth::user())
             ->exclude($article)
             ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
             ->limit(3)
