@@ -66,11 +66,11 @@ class ArticlesController extends Controller
 
         // Save userAgent
         $request = request();
-
+        /*
         if ($request) {
             $userAgent = Controller::detectAgent($request, $request->url());
             $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
-        }
+        }*/
         // End Save UserAgent
 
         $article = Article::published()
