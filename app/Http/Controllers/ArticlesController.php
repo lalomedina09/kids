@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 use App\Models\Article;
 use App\Models\Category;
 
@@ -54,9 +54,10 @@ class ArticlesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\View\View
      */
-    public function show($slug, Request $request)
+    public function show($slug)
     {
-        $user = $request->user();
+        #$user = $request->user();
+        $user = Auth::user();
         // Save userAgent
         $request = request();
 
