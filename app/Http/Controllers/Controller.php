@@ -199,24 +199,12 @@ class Controller extends BaseController
         return $usersQD;
     }
 
-    public static function isFacebookOrInstagramRequest($request)
-    {
-        $userAgent = $request->header('User-Agent');
-        // Verificar si el User-Agent contiene cadenas específicas de Facebook o Instagram
-        return strpos($userAgent, 'Facebook') !== false || strpos($userAgent, 'Instagram') !== false;
-    }
-
     public static function detectAgent($request, $url)
     {
         $agent = new Agent();
-        #$userAgent = $agent->header('User-Agent');
         $languages = $agent->languages();
 
-        $noFaceInsta = Controller::isFacebookOrInstagramRequest($request);
-
-
         $data = [
-            #'userAgent' => $userAgent,
             'languages' => $languages[0],
             'ip' => $request->ip(),
             'platform' => $agent->platform(),
@@ -230,8 +218,8 @@ class Controller extends BaseController
             'is_robot' => $agent->robot(),
             'url' => $url
         ];
-        return (!$noFaceInsta) ? $data : null ;
-        #return $data;
+
+        return $data;
     }
 
     public static function saveUserAgent($agent, $user_id)
@@ -252,12 +240,11 @@ class Controller extends BaseController
             $userAgent->is_robot = $agent['is_robot'];
             $userAgent->save();
             return true;
-        }else{
+        } else {
             return false;
         }
-
-        #return response()->json(['message' => 'User agent information saved successfully'], 201);
     }
+
 
     public static function buildArrayMonthDinamic($numberOfMonths)
     {
