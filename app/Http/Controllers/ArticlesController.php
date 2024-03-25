@@ -57,12 +57,12 @@ class ArticlesController extends Controller
     public function show($slug, Request $request)
     {
         // Verificar si hay un usuario autenticado
-        if (Auth::check()) {
+        /*if (Auth::check()) {
             $user = Auth::user();
             $user_id = $user->id;
         } else {
             $user_id = null;
-        }
+        }*/
 
         // Save userAgent
         #$request = request();
