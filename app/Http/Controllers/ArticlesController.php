@@ -62,7 +62,7 @@ class ArticlesController extends Controller
 
         $user_id = ($user) ? $user->id : null;
         $userAgent = Controller::detectAgent($request, $request->url());
-        $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
+        #$saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
 
         // End Save UserAgent
 
