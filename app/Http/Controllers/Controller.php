@@ -199,11 +199,21 @@ class Controller extends BaseController
         return $usersQD;
     }
 
+    public static function isFacebookOrInstagramRequest($request)
+    {
+        $userAgent = $request->header('User-Agent');
+        // Verificar si el User-Agent contiene cadenas específicas de Facebook o Instagram
+        return strpos($userAgent, 'Facebook') !== false || strpos($userAgent, 'Instagram') !== false;
+    }
+
     public static function detectAgent($request, $url)
     {
         $agent = new Agent();
         #$userAgent = $agent->header('User-Agent');
         $languages = $agent->languages();
+
+        $noFaceInsta = Controller::isFacebookOrInstagramRequest($request);
+
 
         $data = [
             #'userAgent' => $userAgent,
@@ -220,27 +230,32 @@ class Controller extends BaseController
             'is_robot' => $agent->robot(),
             'url' => $url
         ];
-        return $data;
+        return (!$noFaceInsta) ? $data : null ;
+        #return $data;
     }
 
     public static function saveUserAgent($agent, $user_id)
     {
-        $userAgent = new UserAgent();
-        $userAgent->user_id = $user_id;
-        $userAgent->url = $agent['url'];
-        $userAgent->ip = $agent['ip'];
-        $userAgent->platform = $agent['platform'];
-        $userAgent->languages = $agent['languages'];
-        $userAgent->platform_version = $agent['version_platform'];
-        $userAgent->browser = $agent['browser'];
-        $userAgent->browser_version = $agent['version_browser'];
-        $userAgent->is_mobile = $agent['is_mobile'];
-        $userAgent->is_tablet = $agent['is_tablet'];
-        $userAgent->is_desktop = $agent['is_desktop'];
-        $userAgent->is_robot = $agent['is_robot'];
-        $userAgent->save();
+        if ($agent) {
+            $userAgent = new UserAgent();
+            $userAgent->user_id = $user_id;
+            $userAgent->url = $agent['url'];
+            $userAgent->ip = $agent['ip'];
+            $userAgent->platform = $agent['platform'];
+            $userAgent->languages = $agent['languages'];
+            $userAgent->platform_version = $agent['version_platform'];
+            $userAgent->browser = $agent['browser'];
+            $userAgent->browser_version = $agent['version_browser'];
+            $userAgent->is_mobile = $agent['is_mobile'];
+            $userAgent->is_tablet = $agent['is_tablet'];
+            $userAgent->is_desktop = $agent['is_desktop'];
+            $userAgent->is_robot = $agent['is_robot'];
+            $userAgent->save();
+            return true;
+        }else{
+            return false;
+        }
 
-        return true;
         #return response()->json(['message' => 'User agent information saved successfully'], 201);
     }
 
