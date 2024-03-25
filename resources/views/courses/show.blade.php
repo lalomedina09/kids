@@ -1,4 +1,6 @@
-@extends(($landing) ? 'layouts.landing' : 'layouts.app')
+{{--@extends(($landing) ? 'layouts.landing' : 'layouts.app')--}}
+@extends('layouts.landing')
+
 
 @if (app()->environment() === 'production')
     @push('scripts-inline')
