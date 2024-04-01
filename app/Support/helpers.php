@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
+use App\Models\LoginLog;
+use App\Models\UserAgent;
 use App\Models\Notification;
 use App\Models\Category;
 use App\Models\QzAnswer;
@@ -10,6 +12,7 @@ use App\Models\Quiz;
 use App\Models\TsBudget;
 use App\Models\TsCategory;
 use App\Models\TsCategoryUser;
+use QD\QDPlay\Models\View as ModelView;
 use QD\QDPlay\Models\LearningPath;
 use QD\QDPlay\Models\LearningPathUser;
 use Illuminate\Support\Arr;
@@ -551,4 +554,31 @@ function getProgressCourseByUser($course, $user)
 
 
         return $result;
+}
+
+function lastLogin($user_id)
+{
+    $user_id = 15783;
+    $user = User::where('id', $user_id)->first();
+    $latestLogin = LoginLog::where('user_id', $user_id)->orderBy('created_at', 'desc')->first();
+    $userAgent = UserAgent::where('user_id', $user_id)->orderBy('created_at', 'desc')->first();
+    $view = ModelView::where('user_id', $user_id)->orderBy('created_at', 'desc')->first();
+
+    if ($user->last_login) {
+        //1 - Busca registro en tabla de users columna ultimo acceso
+        return $user->last_login;
+    }
+    elseif ($latestLogin) {
+        //2 - Busca registro en tabla de Login Log
+        return $latestLogin->created_at;
+    } elseif ($userAgent) {
+        //3 - Busca registros en tabla de user agents
+        return $userAgent->created_at;
+    }elseif ($view) {
+        //4 - Busca registros en tabla de vistas
+        return $view->created_at;
+    }else{
+        //5 - No encontro registros devuelve la fecha de creacion
+        return $user->first_login;
+    }
 }
