@@ -15,6 +15,31 @@
 
     @yield('content')
 
+    <!-------------------------->
+    <footer class="footer box bg-white">
+    <div class="container">
+        
+        <div class="row text-center">
+            <div class="col-12">
+                <span>Para más información:</span> 
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <span>
+                    <a href="mailto:{{ config('money.email') }}" class="text-danger">
+                        <img src="{{ asset('images/contact/email.png') }}" width="40" title="email"> {{ config('money.email') }}
+                    </a>
+                </span> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>
+                    <a href="tel:{{ config('money.phone.mty') }}" class="text-danger">
+                        <img src="{{ asset('images/contact/phone.png') }}" width="40" title="phone"> {{ config('money.phone.mty') }}
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-------------------------->
 </div>
 
 @include('partials.main.modals')
