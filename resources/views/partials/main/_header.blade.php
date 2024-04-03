@@ -61,6 +61,20 @@
                             </a>
                         </li>
                     @endif
+
+                    <li class="nav-item">
+                        <a href="{{ route('qdplay.index') }}"
+                            class="header__menu-link">
+                            App Android | Apple
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('qdplay.index') }}"
+                            class="header__menu-link">
+                            QD Play Empresas
+                        </a>
+                    </li>
                 </ul>
 
                 <div class="d-none d-lg-block header__menu-footer">

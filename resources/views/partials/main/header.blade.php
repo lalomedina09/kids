@@ -11,6 +11,10 @@
                 <h6 class="header__menu-title">Secciones</h6>
                 <ul class="navbar-nav header__menu-list">
                     <li class="nav-item">
+                        <a href="{{ route('login') }}"
+                            class="header__menu-link">
+                            Iniciar sesión
+                        </a>
                         <a href="{{ route('qdplay.go') }}"
                             class="header__menu-link">
                             QD Play
@@ -24,6 +28,36 @@
                             </a>
                         @endauth
                         --}}
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="{{ route('qdplay.individual-plans') }}"
+                            class="header__menu-link">
+                            Ver planes
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <span>
+                            <a href="{{ env('APP_STORE', 'https://apps.apple.com/mx/app/qd-play/id6445823679') }}"
+                                class="header__menu-link">
+                                App Store <i class="fa fa-apple" aria-hidden="true"></i> 
+                            </a>
+                        </span>
+                         
+                        <span>
+                            <a href="{{ env('PLAY_STORE', 'https://play.google.com/store/apps/details?id=com.queridodinero.qdplay') }}"
+                                class="header__menu-link">
+                                Google Play <i class="fa fa-android" aria-hidden="true"></i> 
+                            </a>
+                        </span>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="{{ route('qdplay.business') }}"
+                            class="header__menu-link">
+                            QD Play Empresas
+                        </a>
                     </li>
                     @if (config()->has('money.modules.blog'))
                         <li class="nav-item">
