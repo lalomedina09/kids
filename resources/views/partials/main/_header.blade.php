@@ -144,14 +144,14 @@
                 Inicio
             </a>--}}
             @auth
-                <a href="{{ route('qdplay.content') }}" title="QD Play"
+                <a href="{{ route('qdplay.content') }}" title="Planes"
                     class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
-                    QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">
+                    Planes <!--<img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">-->
                 </a>
             @else
-                <a href="{{ route('home') }}" title="QD Play"
+                <a href="{{ route('home') }}" title="Planes"
                     class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
-                    QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">
+                    Planes <!---<img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">-->
                 </a>
             @endauth
             <a href="{{ route('qdplay.business') }}" title="QD Play para empresas"

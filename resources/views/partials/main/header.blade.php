@@ -138,10 +138,10 @@
             </a>
         @endauth
         <nav class="nav d-none d-lg-flex header__navigation">
-            <a href="{{ route('qdplay.go') }}" title="QD Play"
+            <a href="{{ route('qdplay.individual-plans') }}" title="Planes"
                     class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
-                    QD Play <img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">
-                </a>
+                    Planes <!--<img src="{{ asset('images/qdplay/gifs/billetecaalert.gif')}}" width="20">-->
+            </a>
             {{--@auth
                 <a href="{{ route('qdplay.go') }}" title="QD Play"
                     class="newlogo nav-link header__navigation-link {{ active_class('qdplay*') }}">
