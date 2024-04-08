@@ -230,10 +230,10 @@
                                     Mis mentorías
                                 </a>
 
-                                <a href="{{ route('qd.marketplace.orders.index') }}" title="Mis Compras"
+                                <!--<a href="{{ route('qd.marketplace.orders.index') }}" title="Mis Compras"
                                     class="dropdown-item header__buttons header__dropdown-buttons">
                                     Mis compras
-                                </a>
+                                </a>-->
                             @endif
 
                         <div class="dropdown-divider header__dropdown-divider"></div>
