@@ -23,7 +23,8 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = User::role('author')->get();
+        $authorsDearMoney = [14933, 16419, 15557, 16132, 28044, 20183, 15558, 14903, 15206, 15059, 14971, 15109, 15228, 15564, 15559, 15558];
+        $authors = User::role('author')->whereNotIn('users.id', $authorsDearMoney)->get();
 
         list($staff_authors, $guest_authors) = $authors->partition(function ($author) {
             return $author->hasRole('staff');
