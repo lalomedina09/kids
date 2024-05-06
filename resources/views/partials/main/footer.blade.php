@@ -149,6 +149,11 @@
                                     <span class="fa fa-lg fa-instagram text-white" aria-hidden="true"></span>
                                 </a>
                             </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.tiktok.com/@querido_dinero" class="link-white link-icon" target="_blank" rel="noopener noreferrer">
+                                    <i class="lni lni-tiktok-alt text-white fa-lg"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
