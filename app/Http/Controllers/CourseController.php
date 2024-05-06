@@ -236,21 +236,30 @@ class CourseController extends Controller
             switch ($domain[1]) {
                 case 'gmail.com':
                     return false;
-                    //break;
                 case 'outlook.com':
                     return false;
-
                 case 'hotmail.com':
                     return false;
-
                 case 'yaho.com':
                     return false;
-                    //break;
-
                 case 'live.com.mx':
                     return false;
-                    //break;
-
+                case 'icloud.com':
+                    return false;
+                case 'yaho.com':
+                    return false;
+                case 'aol.com':
+                    return false;
+                case 'gmx.com':
+                    return false;
+                case 'zoho.com':
+                    return false;
+                case 'protonmail.com':
+                    return false;
+                case 'yandex.com':
+                    return false;
+                case 'mail.com':
+                    return false;
                 default:
                     return true;
                     break;
