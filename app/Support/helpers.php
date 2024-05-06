@@ -582,3 +582,24 @@ function lastLogin($user_id)
         return $user->first_login;
     }
 }
+
+
+function format_comment_date($date) {
+    // Convertir la fecha a un objeto Carbon para utilizar sus métodos
+    $carbonDate = Carbon::parse($date);
+    
+    // Obtener la diferencia en horas
+    $hoursDiff = $carbonDate->diffInHours();
+
+    // Determinar el formato de salida según la diferencia en horas
+    if ($hoursDiff < 1) {
+        // Menos de una hora
+        return 'hace unos minutos';
+    } elseif ($hoursDiff < 24) {
+        // Menos de un día
+        return 'hace ' . $carbonDate->diffForHumans();
+    } else {
+        // Más de un día
+        return 'hace ' . $carbonDate->diffInDays() . ' días';
+    }
+}
