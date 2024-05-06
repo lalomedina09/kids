@@ -191,14 +191,14 @@ class CourseController extends Controller
             'mail_corporate' => 'required|email|min:1|max:255',
             'movil' => 'required|digits:10',
             'company' => 'required|string|min:1|max:255',
-            'g-recaptcha-response' => 'required|recaptcha'
+            #'g-recaptcha-response' => 'required|recaptcha'
         ]);
 
         $emailCorp = $this->validateEmailCorp($request->mail_corporate);
-
+        #dd($emailCorp);
         array_forget($params, 'g-recaptcha-response');
-        $lead = $this->saveLead($request);
-        return redirect()->back()->with('success', 'Gracias, Pronto nos pondremos en contacto contigo');
+        #$lead = $this->saveLead($request);
+        #return redirect()->back()->with('success', 'Gracias, Pronto nos pondremos en contacto contigo');
         if($emailCorp)
         {
             $lead = $this->saveLead($request);
