@@ -191,7 +191,7 @@ class CourseController extends Controller
             'mail_corporate' => 'required|email|min:1|max:255',
             'movil' => 'required|digits:10',
             'company' => 'required|string|min:1|max:255',
-            #'g-recaptcha-response' => 'required|recaptcha'
+            'g-recaptcha-response' => 'required|recaptcha'
         ]);
 
         $emailCorp = $this->validateEmailCorp($request->mail_corporate);
