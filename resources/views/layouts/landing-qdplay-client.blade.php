@@ -41,7 +41,7 @@
     <!-------------------------->
 </div>
 
-@include('partials.main.modals')
+{{--@include('partials.main.modals')--}}
 @include('partials.main.scripts')
 @include('partials.main.messages')
 
