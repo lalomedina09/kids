@@ -122,7 +122,9 @@
                         </div>
 
                         <div class="col-xl-4 col-lg-4 col-md-4 col-12 text-center">
-                            <button class="btn btn-pill btn-danger mt-3" data-toggle="modal" data-target="#newsletter-modal">Suscribirme al newsletter</button>
+                            {{--<button class="btn btn-pill btn-danger mt-3" data-toggle="modal" data-target="#newsletter-modal">Suscribirme al newsletter</button>--}}
+                            <a class="btn btn-pill btn-danger mt-3" href="https://queridodinero.myflodesk.com/comunidad" target="_blank">
+                                Suscribirme al newsletter</a>
                         </div>
                     </div>
                 </div>

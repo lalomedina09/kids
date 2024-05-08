@@ -37,4 +37,11 @@ class NewsletterController extends Controller
         return redirect()->route('home')->withSuccess('¡Ya no estas inscrito a nuestro Newsletter!');
     }
 
+    public function subscribed()
+    {
+        #dd('en la funcion ');
+        return view('newsletter.index')->with([
+            'test' => true
+        ]);
+    }
 }

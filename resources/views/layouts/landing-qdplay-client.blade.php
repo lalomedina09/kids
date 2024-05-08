@@ -38,6 +38,12 @@
             </div>
         </div>
     </footer>--}}
+    <footer class="footer box text-center text-white font-akshar" style="background: #000000; font-weight: lighter;"
+        style="padding: 0px 0;">
+        <span>Powered by</span>
+        <span> <a style="text-decoration:none; color:white; text-decoration: underline white;"
+                href="http://queridodinero.com/" target="_blank"> Querido Dinero </a> </span>
+    </footer>
     <!-------------------------->
 </div>
 

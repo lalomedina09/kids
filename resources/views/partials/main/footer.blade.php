@@ -28,7 +28,8 @@
         <div class="row footer__sitemap">
             <div class="col-xl-12">
                <div class="row">
-                    {{--<div class="col-sm-3">
+                    {{--
+                        <div class="col-sm-3">
                         <h4 class="text-secondary mb-3 ml-5">Descarga QD Play</h4>
                         <ul class="list-unstyled list-inline mb-0 ml-5">
                             <li class="mb-1">
@@ -50,7 +51,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>--}}
+                        </div>
+                    --}}
                     <div class="col-sm-4">
                         <h4 class="text-secondary mb-3 ml-5">Por categoría</h4>
                         <ul class="list-unstyled list-inline mb-0 ml-5">

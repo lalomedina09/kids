@@ -32,10 +32,17 @@
                                 <img src="{{ asset('images/youtube.svg') }}" alt="Youtube" class="single__social-logo animated slideInLeft">
                             </a>
                         </li>
+                        <li class="single__social-item">
+                            <a href="https://queridodinero.myflodesk.com/comunidad" target="_blank" rel="noopener noreferrer">
+                                <!--<img src="{{ asset('images/email.svg') }}" alt="Email" class="single__social-logo animated slideInLeft">-->
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="row featured__container">
+                    {{-- dd($covers) --}}
                     @foreach($covers as $cover)
                         @include('partials.home.cover', ['loop' => $loop, 'cover' => $cover])
                     @endforeach
@@ -113,7 +120,7 @@
             </article>
         @endisset
 
-        <article class="subscribe box box-danger">
+        {{--<article class="subscribe box box-danger">
             <div class="container">
                 <div class="row d-flex align-items-center">
                     <div class="col-xl-4 col-lg-6">
@@ -132,7 +139,7 @@
                     </div>
                 </div>
             </div>
-        </article>
+        </article>--}}
     </section>
 
 @endsection

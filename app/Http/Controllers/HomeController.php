@@ -83,6 +83,7 @@ class HomeController extends Controller
     public function blog(Request $request)
     {
         $covers = Cover::shown()->get()->take(6);
+        #dd('controlador', $covers);
         $user = $request->user();
         // Save userAgent
         $request = request();
