@@ -126,3 +126,12 @@ Route::prefix('registrogarvi')
             ->uses('GarbiController@store');
     });
 
+Route::prefix('landing/retiro')
+->group(function () {
+    Route::get('/')
+    ->uses('RetiroController@show');
+
+    Route::post('/')
+    ->uses('RetiroController@store');
+});
+

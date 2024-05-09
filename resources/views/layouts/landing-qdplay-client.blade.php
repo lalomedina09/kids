@@ -1,16 +1,20 @@
 @extends('layouts.base')
 
 @section('base')
-
+<style>
+    .header-wrapper {
+        position: absolute;
+    }
+</style>
 <div id="app">
     <div class="header-wrapper">
-        <!--<header class="container navbar header">
+        <header class="container navbar header">
             <div class="text-center mx-auto">
-                <img src="{{ asset('images/qdplay/logo/logo-color-y-blanco.png') }}"
+                <img src="{{ asset('images/logo_light.svg') }}"
                     class="my-1"
                     height="35px" alt="QD Play">
             </div>
-        </header>-->
+        </header>
     </div>
 
     @yield('content')
@@ -48,7 +52,7 @@
 </div>
 
 {{--@include('partials.main.modals')--}}
-@include('partials.main.scripts')
+@include('partials.main.scripts-client')
 @include('partials.main.messages')
 
 @endsection
