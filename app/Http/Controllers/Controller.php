@@ -167,7 +167,7 @@ class Controller extends BaseController
             "52.167.144.186",
             "52.167.144.222",
             "52.167.144.182",
-            
+
             "52.167.144.137",
             "52.167.144.233",
             "52.17.197.221",
@@ -228,7 +228,7 @@ class Controller extends BaseController
 
             "205.210.31.9",
             "207.46.13.153",
-            "207.46.13.151",            
+            "207.46.13.151",
 
             "40.77.167.243",
             "35.213.238.205",
@@ -248,7 +248,7 @@ class Controller extends BaseController
             "157.55.39.54",
             "157.55.39.62",
             "157.55.39.10",
-            
+
             "20.7.221.176",
 
             "207.46.13.127",
@@ -263,12 +263,12 @@ class Controller extends BaseController
             "54.88.179.33",
             "199.45.155.53",
             "104.194.196.124",
-            
+
             "34.125.240.71",
             "35.196.132.85",
 
             "18.201.22.151",
-            
+
             "173.252.87.5",
 
             "199.45.155.16",
@@ -276,12 +276,12 @@ class Controller extends BaseController
             "20.15.133.186",
             "38.65.158.81",
             "18.203.176.135",
-            
+
             "74.125.151.96",
             "66.249.79.4",
             "87.236.176.209",
             "87.236.176.134",
-            
+
         );
         /*
             "",
@@ -498,5 +498,45 @@ class Controller extends BaseController
         $monthsArray = array_reverse($monthsArray);
 
         return $monthsArray;
+    }
+
+    public static function validateEmailCorp($email)
+    {
+        $domain = explode('@', $email ?? null);
+
+        if ($domain) {
+
+            switch ($domain[1]) {
+                case 'gmail.com':
+                    return false;
+                case 'outlook.com':
+                    return false;
+                case 'hotmail.com':
+                    return false;
+                case 'yaho.com':
+                    return false;
+                case 'live.com.mx':
+                    return false;
+                case 'icloud.com':
+                    return false;
+                case 'yaho.com':
+                    return false;
+                case 'aol.com':
+                    return false;
+                case 'gmx.com':
+                    return false;
+                case 'zoho.com':
+                    return false;
+                case 'protonmail.com':
+                    return false;
+                case 'yandex.com':
+                    return false;
+                case 'mail.com':
+                    return false;
+                default:
+                    return true;
+                    break;
+            }
+        }
     }
 }

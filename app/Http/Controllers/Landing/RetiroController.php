@@ -40,8 +40,19 @@ class RetiroController extends Controller
             'g-recaptcha-response' => 'required|recaptcha'
         ]);
 
+        $emailCorp = $this->validateEmailCorp($request->mail_corporate);
         array_forget($params, 'g-recaptcha-response');
 
+        if ($emailCorp) {
+            $lead = $this->saveLead($request);
+            return redirect()->back()->with('success', 'Gracias, Pronto nos pondremos en contacto contigo');
+        } else {
+            return redirect()->back()->with('error', 'El correo debe ser de tu trabajo');
+        }
+    }
+
+    private function saveLead($request)
+    {
         $lead = new Lead;
         $lead->type = 1;
         $lead->status = 0;
@@ -50,12 +61,16 @@ class RetiroController extends Controller
         $lead->mail_corporate = $request->mail_corporate;
         $lead->movil = $request->movil;
         $lead->company = $request->company;
-
-        $lead->interests = 'QD Play para empresas';
-        $lead->form = 'registro-qdplay-empresas';
+        $lead->interests = $request->interests;
+        $lead->form = $request->form;
         $lead->url = $request->url();
         $lead->save();
 
-        return redirect()->back()->with('success', 'Gracias, Pronto nos pondremos en contacto contigo');
+        return $lead;
     }
+
+    /*public function validateEmailCorp($email)
+    {
+
+    }*/
 }

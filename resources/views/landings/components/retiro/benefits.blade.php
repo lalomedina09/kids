@@ -15,7 +15,7 @@
     <div class="text-center font-akshar">
         <div class="benefits-border-white">
             <br>
-            <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
+            <img src="{{ asset('images/landing/retiro/benefits/mayor-lealtad.png')}}" alt="Benefits"
                 style="display: block; margin:auto;">
             <br>
             <p>
@@ -26,7 +26,7 @@
     <div class="text-center font-akshar">
         <div class="benefits-border-white">
             <br>
-            <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
+            <img src="{{ asset('images/landing/retiro/benefits/cursos-con-expertos.png')}}" alt="Benefits"
                 style="display: block; margin:auto;">
             <br>
             <p>
@@ -37,7 +37,7 @@
     <div class="text-center font-akshar">
         <div class="benefits-border-white">
             <br>
-            <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
+            <img src="{{ asset('images/landing/retiro/benefits/retencion-talento.png')}}" alt="Benefits"
                 style="display: block; margin:auto;">
             <br>
             <p>
@@ -48,7 +48,7 @@
     <div class="text-center font-akshar">
         <div class="benefits-border-white">
             <br>
-            <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
+            <img src="{{ asset('images/landing/retiro/benefits/bienestar-financiero.png')}}" alt="Benefits"
                 style="display: block; margin:auto;">
             <br>
             <p>
@@ -60,7 +60,7 @@
     <div class="text-center font-akshar">
         <div class="benefits-border-white">
             <br>
-            <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
+            <img src="{{ asset('images/landing/retiro/benefits/equipos-mas-productivos.png')}}" alt="Benefits"
                 style="display: block; margin:auto;">
             <br>
             <p>
@@ -72,7 +72,7 @@
     <div class="text-center font-akshar">
         <div class="benefits-border-white">
             <br>
-            <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
+            <img src="{{ asset('images/landing/retiro/benefits/menos-prestamos.png')}}" alt="Benefits"
                 style="display: block; margin:auto;">
             <br>
             <p>
