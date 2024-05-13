@@ -227,43 +227,4 @@ class CourseController extends Controller
         return $lead;
     }
 
-    public function validateEmailCorp($email)
-    {
-        $domain = explode('@', $email ?? null);
-
-        if ($domain) {
-
-            switch ($domain[1]) {
-                case 'gmail.com':
-                    return false;
-                case 'outlook.com':
-                    return false;
-                case 'hotmail.com':
-                    return false;
-                case 'yaho.com':
-                    return false;
-                case 'live.com.mx':
-                    return false;
-                case 'icloud.com':
-                    return false;
-                case 'yaho.com':
-                    return false;
-                case 'aol.com':
-                    return false;
-                case 'gmx.com':
-                    return false;
-                case 'zoho.com':
-                    return false;
-                case 'protonmail.com':
-                    return false;
-                case 'yandex.com':
-                    return false;
-                case 'mail.com':
-                    return false;
-                default:
-                    return true;
-                    break;
-            }
-        }
-    }
 }
