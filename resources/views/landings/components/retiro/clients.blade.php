@@ -3,7 +3,6 @@
         <img src="{{ asset('images/landing/retiro/clients/Rectanglefiat.png')}}" alt="Imagen 1">
     </div>
     <div>
-        <br>
         <img src="{{ asset('images/landing/retiro/clients/Rectanglebanorte.png')}}" alt="Imagen 2">
     </div>
     <div>
