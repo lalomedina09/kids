@@ -19,12 +19,12 @@
 
     <!--
     <div class="col-md-6" style="position: relative;">
-        <img src="{{ asset('images/landing/retiro/photos/foto_1.png')}}" alt="Photo" class="img-responsive" style="width: 100%;">
+        <img src="{{ asset('images/landing/retiro/photos/1.png')}}" alt="Photo" class="img-responsive" style="width: 100%;">
         <div class="zoom-circle"></div>
     </div>
     -->
     <div class="col-md-6" style="position: relative;">
-        <img id="dynamic-image" src="{{ asset('images/landing/retiro/photos/foto_1.png')}}" alt="Photo"
+        <img id="dynamic-image" src="{{ asset('images/landing/retiro/photos/1.png')}}" alt="Photo"
             class="img-responsive" style="width: 100%;">
         <div class="zoom-circle"></div>
     </div>
