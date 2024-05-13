@@ -10,9 +10,9 @@
     </div>
 </div>
 <br>
-<div class="row mt-4">
 
-    <div class="col-md-4 text-center font-akshar">
+<div class="benefits-carousel">
+    <div class="text-center font-akshar">
         <div class="benefits-border-white">
             <br>
             <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
@@ -23,7 +23,7 @@
             </p>
         </div>
     </div>
-    <div class="col-md-4 text-center font-akshar">
+    <div class="text-center font-akshar">
         <div class="benefits-border-white">
             <br>
             <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
@@ -34,7 +34,7 @@
             </p>
         </div>
     </div>
-    <div class="col-md-4 text-center font-akshar">
+    <div class="text-center font-akshar">
         <div class="benefits-border-white">
             <br>
             <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
@@ -44,6 +44,43 @@
                 Retención <br> de talento
             </p>
         </div>
+    </div>
+    <div class="text-center font-akshar">
+        <div class="benefits-border-white">
+            <br>
+            <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
+                style="display: block; margin:auto;">
+            <br>
+            <p>
+                Bienestar <br> Financiero
+            </p>
+        </div>
+        <br><br><br>
+    </div>
+    <div class="text-center font-akshar">
+        <div class="benefits-border-white">
+            <br>
+            <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
+                style="display: block; margin:auto;">
+            <br>
+            <p>
+                Equipos más <br> productivos
+            </p>
+        </div>
+        <br><br><br>
+    </div>
+    <div class="text-center font-akshar">
+        <div class="benefits-border-white">
+            <br>
+            <img src="{{ asset('images/landing/retiro/benefits/group 1ilovejob.png')}}" alt="Benefits"
+                style="display: block; margin:auto;">
+            <br>
+            <p>
+                Menos <br> préstamos
+            </p>
+        </div>
         <br><br><br>
     </div>
 </div>
+
+<br><br><br>

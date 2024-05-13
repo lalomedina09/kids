@@ -82,7 +82,7 @@
     </div>
     <div class="col-md-6 d-none d-sm-block" style="position: relative;">
         <img src="{{ asset('images/landing/retiro/gifs/ilustracion.png')}}" width="100%" alt="Ilustracion"
-            style="position: relative; z-index: 1;">
+            style="position: relative; z-index: 1;" class="img-ilustration-banner">
         <img src="{{ asset('images/landing/retiro/gifs/circulo-girando-v2.gif')}}" class="img-ilustracion-more-gif"
             alt="Gif Circulo Girando">
     </div>

@@ -140,6 +140,25 @@
         padding-top: -8px !important;
     }
 
+    @media only screen and (max-width: 830px) {
+        .font-size-quote {
+            font-size: 16px;
+        }
+        .banner-h1{
+            font-size: 35px;
+        }
+        .img-ilustration-banner{
+            margin-top: 100px;
+        }
+        .img-ilustracion-more-gif{
+            width: 50%;
+            margin-top: 80px;
+        }
+        .form-control-lg {
+            font-size: 0.8rem;
+        }
+    }
+
     /* Media query para dispositivos móviles pequeños */
     @media only screen and (max-width: 600px) {
         /* Estilos para dispositivos móviles pequeños */

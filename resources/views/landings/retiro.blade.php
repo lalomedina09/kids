@@ -58,6 +58,7 @@
 @push('scripts-inline')
     <script>
         $(document).ready(function() {
+            //Carrusel de clientes
             $('.clients-carousel').slick({
                 dots: true,
                 infinite: true,
@@ -76,17 +77,27 @@
                         }
                     },
                     {
+                        breakpoint: 830,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            dots: false
+                        }
+                    },
+                    {
                         breakpoint: 600,
                         settings: {
                             slidesToShow: 3,
-                            slidesToScroll: 3
+                            slidesToScroll: 3,
+                            dots: false
                         }
                     },
                     {
                         breakpoint: 480,
                         settings: {
                             slidesToShow: 2,
-                            slidesToScroll: 2
+                            slidesToScroll: 2,
+                            dots: false
                         }
                     }
                     // You can unslick at a given breakpoint now by adding:
@@ -94,7 +105,84 @@
                     // instead of a settings object
                 ]
             });
+            //Termina carrusel de clientes
 
+            //Carrusel de beneficios
+            $('.benefits-carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 830,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: false
+                        }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+            //Termina carrusel de beneficios
         });
+    </script>
+
+    <script>
+        // Array con las rutas de las imágenes
+        var imageSources = [
+            "{{ asset('images/landing/retiro/photos/foto_1.png') }}",
+            "{{ asset('images/landing/retiro/photos/foto_2.png') }}",
+            "{{ asset('images/landing/retiro/photos/foto_3.png') }}"
+        ];
+
+        // Índice de la imagen actual
+        var currentIndex = 0;
+
+        // Función para cambiar la imagen cada 10 segundos
+        function changeImage() {
+            // Incrementa el índice de la imagen
+            currentIndex++;
+            // Si el índice supera el límite, vuelve al principio
+            if (currentIndex >= imageSources.length) {
+                currentIndex = 0;
+            }
+            // Actualiza el src de la imagen
+            document.getElementById('dynamic-image').src = imageSources[currentIndex];
+            console.log('se actualiza foto');
+        }
+
+        // Llama a la función changeImage cada 10 segundos
+        setInterval(changeImage, 5000);
     </script>
 @endpush
