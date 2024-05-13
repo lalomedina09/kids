@@ -161,9 +161,9 @@
     <script>
         // Array con las rutas de las imágenes
         var imageSources = [
-            "{{ asset('images/landing/retiro/photos/foto_1.png') }}",
-            "{{ asset('images/landing/retiro/photos/foto_2.png') }}",
-            "{{ asset('images/landing/retiro/photos/foto_3.png') }}"
+            "{{ asset('/images/landing/retiro/photos/foto_1.png') }}",
+            "{{ asset('/images/landing/retiro/photos/foto_2.png') }}",
+            "{{ asset('/images/landing/retiro/photos/foto_3.png') }}"
         ];
 
         // Índice de la imagen actual
