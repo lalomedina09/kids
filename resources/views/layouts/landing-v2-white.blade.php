@@ -24,7 +24,6 @@
 
 </div>
 
-{{--@include('partials.main.modals')--}}
 @include('partials.main.scripts')
 @include('partials.main.messages')
 
@@ -35,6 +34,8 @@
     FB.CustomerChat.hide();
 </script>
 @endpush
+
 @push('styles')
 <link href="{{ url('css/landing.css') }}" rel="stylesheet">
 @endpush
+

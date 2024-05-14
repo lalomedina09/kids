@@ -1,4 +1,5 @@
 @extends('layouts.landing-v2-white')
+{{--@extends('layouts.landing')--}}
 
 @if (app()->environment() === 'production')
     @push('scripts-inline')
@@ -53,6 +54,7 @@
     <!-- JavaScript de Slick Carousel -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
 @endpush
 
 @push('scripts-inline')
