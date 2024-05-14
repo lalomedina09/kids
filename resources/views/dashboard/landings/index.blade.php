@@ -36,6 +36,9 @@
             class="nav-item nav-link">
             Curso Inversiones Colaboradores
         </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['landing-retiro']) }}" class="nav-item nav-link">
+            Curso de retiro
+        </a>
     </ul>
 
     <div class="alert alert-default">

@@ -34,6 +34,10 @@
             class="nav-item nav-link {{ "inversiones-colaboradores" == $page ? 'active' : '' }}">
             Curso Inversiones Colaboradores
         </a>
+        <a href="{{ route('dashboard.landings.custom.show', ['landing-retiro']) }}" class="nav-item nav-link {{ "
+            landing-retiro"==$page ? 'active' : '' }}">
+            Curso de retiro
+        </a>
 
     </ul>
 
