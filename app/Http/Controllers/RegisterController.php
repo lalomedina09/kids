@@ -72,7 +72,8 @@ class RegisterController extends Controller
         Mailer::sendRegisterMail($user);
 
         return redirect()
-            ->route('home')
+            #->route('home')
+            ->back()
             ->with([
                 'success' => '¡Bienvenido! ahora estás registrado.'
             ]);

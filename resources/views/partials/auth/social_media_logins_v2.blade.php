@@ -8,10 +8,10 @@
 		margin: 5px;
 		font-size: 4.3mm;
 		display: inline-block;
-		padding: 0 3mm 0 13mm;
+		padding: 0 10mm 0 13mm;
 		border-radius: 3px;
 		height: 12mm;
-		background: url('{{ asset("images/qdplay/login/google.png") }}') no-repeat #0aa;
+		/*background: url('{{ asset("images/qdplay/login/google.png") }}') no-repeat #0aa;*/
 		background-position: 2px 2px;
         background-size: contain;
 		line-height: 12mm;
@@ -27,10 +27,10 @@
 		margin: 5px;
 		font-size: 4.3mm;
 		display: inline-block;
-		padding: 0 3mm 0 13mm;
+		padding: 0 10mm 0 13mm;
 		border-radius: 3px;
 		height: 12mm;
-		background: url('{{ asset("images/qdplay/login/facebook.png") }}') no-repeat;
+		/*background: url('{{ asset("images/qdplay/login/facebook.png") }}') no-repeat;*/
 		background-position: 2px 2px;
         background-size: contain;
 		line-height: 12mm;
@@ -46,10 +46,10 @@
 		margin: 5px;
 		font-size: 4.3mm;
 		display: inline-block;
-		padding: 0 3mm 0 13mm;
+		padding: 0 10mm 0 13mm;
 		border-radius: 3px;
 		height: 12mm;
-		background: url('{{ asset("images/qdplay/login/facebook.png") }}') no-repeat;
+		/*background: url('{{ asset("images/qdplay/login/facebook.png") }}') no-repeat;*/
 		background-position: 2px 2px;
         background-size: contain;
 		line-height: 12mm;
@@ -65,10 +65,10 @@
 		margin: 5px;
 		font-size: 4.4mm;
 		display: inline-block;
-		padding: 0 3mm 0 13mm;
+		padding: 0 10mm 0 13mm;
 		border-radius: 3px;
 		height: 12mm;
-		background: url('{{ asset("images/qdplay/login/microsoft.png") }}') no-repeat;
+		/*background: url('{{ asset("images/qdplay/login/microsoft.png") }}') no-repeat;*/
 		background-position: 2px 2px;
         background-size: contain;
 		line-height: 12mm;
@@ -87,7 +87,7 @@
 		margin: 5px;
 		font-size: 4.4mm;
 		display: inline-block;
-		padding: 0 3mm 0 13mm;
+		padding: 0 10mm 0 13mm;
 		border-radius: 3px;
 		height: 12mm;
 		background: url('{{ asset("etapa1/apple_logo.png") }}') no-repeat;
@@ -106,15 +106,18 @@
 </style>
 @endpush
 
-<div class="social-media-logins mt-3">
-	<a href="{{ route('redirects.facebook') }}" class="facebook-button-v2">
-        Iniciar Sesión con Facebook
+<div class="social-media-logins mt-3 text-center">
+	<a href="{{ route('redirects.facebook') }}" class="facebook-button-v2" style="text-align: left;">
+        <img src="{{ asset("images/qdplay/login/facebook.png") }}" alt="Logo Google" width="20">
+        &nbsp;&nbsp; Iniciar Sesión con Facebook
     </a>
 	<a href="{{ route('redirects.google') }}" class="google-button-v2">
-        Iniciar Sesión con Google &nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="{{ asset("images/qdplay/login/google.png") }}" alt="Logo Google" width="20">
+        &nbsp;&nbsp; Iniciar Sesión con Google &nbsp;&nbsp;&nbsp;&nbsp;
     </a>
 	<a href="{{ route('redirects.microsoft') }}" class="microsoft-button-v2">
-        Iniciar Sesión con Microsoft
+        <img src="{{ asset("images/qdplay/login/microsoft.png") }}" alt="Logo Google" width="20">
+        &nbsp;&nbsp; Iniciar Sesión con Microsoft
     </a>
 	{{--<a href="{{ route('redirects.apple') }}" class="apple-button-v2">Iniciar Sesión con Apple</a>--}}
 </div>
