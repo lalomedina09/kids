@@ -13,7 +13,7 @@
             <p class="font-akshar font-size-quote quote-request">
                 Desde pymes hasta corporativos, diseñamos cursos<br> con la base a las necesidades de cada empresa.
             </p>
-            <a class="btn btn-dark text-uppercase font-weight-bold p-3 p-lg-3 mb-2">
+            <a class="btn btn-dark text-uppercase font-weight-bold p-3 p-lg-3 mb-2" href="#form-request">
                 SOLICITAR COTIZACIÓN
             </a>
             <br><br><br>

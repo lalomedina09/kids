@@ -23,6 +23,38 @@
         .form-control {
             background: #ffffff !important;
         }
+
+        /* Estilo base para los dots */
+        .slick-dots li button:before {
+        font-size: 12px; /* Tamaño del punto */
+        color: #f7dc4c; /* Color del punto */
+        opacity: 1;
+        }
+
+        /* Cambiar el color del punto activo */
+        .slick-dots li.slick-active button:before {
+        color: #000; /* Color del punto activo */
+        }
+
+        /* Cambiar el tamaño de los dots */
+        .slick-dots li {
+        margin: 0 5px; /* Espacio entre los puntos */
+        }
+
+        /* Cambiar el tamaño del contenedor de los dots */
+        .slick-dots {
+        bottom: -30px; /* Ajusta la posición vertical de los dots */
+        }
+
+        /* Opcional: Cambiar el contenedor de los dots */
+        .slick-dots {
+        display: flex;
+        justify-content: center; /* Centrar los dots */
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
     </style>
 @endpush
 
@@ -83,7 +115,8 @@
                         settings: {
                             slidesToShow: 3,
                             slidesToScroll: 3,
-                            dots: false
+                            dots: false,
+                            arrows: false,
                         }
                     },
                     {
@@ -91,7 +124,8 @@
                         settings: {
                             slidesToShow: 3,
                             slidesToScroll: 3,
-                            dots: false
+                            dots: true,
+                            arrows: false,
                         }
                     },
                     {
@@ -99,7 +133,8 @@
                         settings: {
                             slidesToShow: 2,
                             slidesToScroll: 2,
-                            dots: false
+                            dots: true,
+                            arrows: false,
                         }
                     }
                     // You can unslick at a given breakpoint now by adding:
@@ -132,7 +167,8 @@
                         settings: {
                             slidesToShow: 2,
                             slidesToScroll: 2,
-                            dots: false
+                            dots: false,
+                            arrows: false,
                         }
                     },
                     {
@@ -140,7 +176,8 @@
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1,
-                            dots: false
+                            dots: true,
+                            arrows: false,
                         }
                     },
                     {
@@ -148,7 +185,8 @@
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1,
-                            dots: false
+                            dots: true,
+                            arrows: false,
                         }
                     }
                     // You can unslick at a given breakpoint now by adding:
@@ -182,9 +220,19 @@
             // Actualiza el src de la imagen
             document.getElementById('dynamic-image').src = imageSources[currentIndex];
             console.log('se actualiza foto');
+            console.log('Resolución: ' + window.screen.width + ' x ' + window.screen.height);
         }
 
         // Llama a la función changeImage cada 10 segundos
         setInterval(changeImage, 5000);
+
+        ///////
+        $('.btn.btn-dark').on('click', function(event) {
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: $('#form-request').offset().top
+            }, 1000); // El número 1000 representa el tiempo de animación en milisegundos
+        });
+
     </script>
 @endpush

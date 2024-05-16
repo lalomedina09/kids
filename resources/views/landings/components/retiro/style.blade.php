@@ -188,6 +188,7 @@
 
         .request-h1{
             line-height: 1.5;
+            font-size: 1.5rem;
         }
 
         .benefits-h1{
@@ -207,6 +208,7 @@
 
     /* Media query para smartphones en modo landscape */
     @media only screen and (min-width: 600px) and (max-width: 900px) {
+
     /* Estilos para smartphones en modo landscape */
     }
 
