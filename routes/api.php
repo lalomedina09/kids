@@ -26,7 +26,12 @@ $router->get('podcast/{category}', 'PodcastController@category');
 */
 $router->get('talleres/{category}', 'CourseController@category');
 
+$router->get('talleres/{category}', 'CourseController@category');
 //$router->delete('users/{user}', 'UserController@destroy');
+
+$router->post('create-meeting', 'ZoomController@createMeeting');
+$router->get('get-meeting-templates', 'ZoomController@getMeetingTemplates');
+
 
 // Likes
 Route::prefix('v1')->group(function () {
