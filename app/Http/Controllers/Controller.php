@@ -533,6 +533,10 @@ class Controller extends BaseController
                     return false;
                 case 'mail.com':
                     return false;
+                case 'test.com':
+                    return false;
+                case 'prueba.com':
+                    return false;
                 default:
                     return true;
                     break;
