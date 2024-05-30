@@ -6,7 +6,8 @@ use Illuminate\Http\Response;
 
 use App\Contracts\Integrations\WebinarConnector;
 use App\Models\User;
-
+use Carbon\Carbon;
+use GuzzleHttp\Client;
 use Exception;
 
 class ZoomConnector implements WebinarConnector
@@ -29,6 +30,7 @@ class ZoomConnector implements WebinarConnector
         $this->users = config('services.zoom.users');
         $this->timezone = config('services.zoom.timezone');
         $this->meeting_type = 2; // 'Scheduled Meeting' https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
+        $this->clientZoom = new Client();
     }
 
     /**
@@ -63,7 +65,9 @@ class ZoomConnector implements WebinarConnector
     public function createMeeting($user_key, $params)
     {
         $user_id = $this->users[$user_key];
-
+        #dd('este es el archivo que hace los enlaces ARCHIVO CONECTOR',$user_key, $params);
+        //Código comentado de zoom v1
+        /*
         $method = 'POST';
         $endpoint = "/users/{$user_id}/meetings";
         $body = [
@@ -83,12 +87,43 @@ class ZoomConnector implements WebinarConnector
                 'auto_recording' => 'cloud'
             ]
         ];
-
+        */
+        /*
         $response = $this->client->doRequest($method, $endpoint, [], [], $body);
         if ($this->client->responseCode() != Response::HTTP_CREATED) {
             throw new Exception("Error creating Zoom Meeting");
         }
-        return $response;
+        */
+        //codigo de version 2
+        try {
+            $response = $this->clientZoom->post("https://api.zoom.us/v2/users/me/meetings", [
+                'headers' => [
+                    'Authorization' => 'Bearer ' . $this->generateTokenZoom(),
+                    'Content-Type' => 'application/json',
+                ],
+                'json' => [
+                    'topic' => (app()->environment() === 'production') ? $params['title'] : '[TESTING] ' . $params['title'],
+                    'type' => 2, // 2 for scheduled meeting
+                    'start_time' => $params['start_time'],
+                    'duration' => $params['duration'],
+                    'settings' => [
+                        'join_before_host' => true, // Permitir que los invitados se unan antes del host
+                        'waiting_room' => false, // Desactivar la sala de espera
+                        'approval_type' => 0, // Permitir que cualquier persona con el enlace se una
+                    ],
+                ],
+            ]);
+
+            $responseBody = json_decode($response->getBody(), true);
+
+            // Imprimir la respuesta para depuración
+            \Log::info('Zoom API Response:', $responseBody);
+
+            return $responseBody;
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+        #return $response;
     }
 
     /**
@@ -142,4 +177,56 @@ class ZoomConnector implements WebinarConnector
         return $response['join_url'];
     }
 
+    public function createMeetingZoom($dateStartZoom, $minutes)
+    {
+        try {
+            $response = $this->clientZoom->post("https://api.zoom.us/v2/users/me/meetings", [
+                'headers' => [
+                    'Authorization' => 'Bearer ' . $this->generateTokenZoom(),
+                    'Content-Type' => 'application/json',
+                ],
+                'json' => [
+                    'topic' => "QD | Mentoría " . $dateStartZoom,
+                    'type' => 2, // 2 for scheduled meeting
+                    'start_time' => Carbon::parse($dateStartZoom)->toIso8601String(),
+                    'duration' => $minutes,
+                    'settings' => [
+                        'join_before_host' => true, // Permitir que los invitados se unan antes del host
+                        'waiting_room' => false, // Desactivar la sala de espera
+                        'approval_type' => 0, // Permitir que cualquier persona con el enlace se una
+                    ],
+                ],
+            ]);
+
+            $responseBody = json_decode($response->getBody(), true);
+
+            // Imprimir la respuesta para depuración
+            \Log::info('Zoom API Response:', $responseBody);
+
+            return $responseBody;
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+
+    public function generateTokenZoom()
+    {
+        try {
+            $base64String = base64_encode(env('ZOOM_CLIENT_ID') . ':' . env('ZOOM_CLIENT_SECRET'));
+            $accountId = env('ZOOM_ACCOUNT_ID');
+
+            $response = $this->clientZoom->post("https://zoom.us/oauth/token?grant_type=account_credentials&account_id={$accountId}", [
+                'headers' => [
+                    "Content-Type" => "application/x-www-form-urlencoded",
+                    "Authorization" => "Basic {$base64String}"
+                ]
+            ]);
+
+            $body = json_decode($response->getBody(), true);
+
+            return $body['access_token'];
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
 }
