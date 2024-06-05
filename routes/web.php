@@ -132,7 +132,11 @@ Route::prefix('indice-de-felicidad')
 });
 
 //Webhook
-Route::post('/typeform-webhook', [TypeformWebhookController::class, 'handleWebhook']);
+#Route::post('/typeform-webhook', [TypeformWebhookController::class, 'handleWebhook']);
+
+Route::post('/typeform-webhook')
+    ->uses('TypeformWebhookController@handleWebhook')
+    ->name('webhook.typeform');
 
 /*
 |--------------------------------------------------------------------------
