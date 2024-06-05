@@ -17,7 +17,7 @@ class TypeformWebhookController extends Controller
         \Log::info('Typeform Webhook Data:', $data);
 
         // Extrae el email de la respuesta (asegúrate de ajustar esto según la estructura de tu respuesta)
-        $email = $data['form_response']['answers'][0]['emailuser'];
+        $email = $data['form_response']['answers'][0]['email'];
 
         // Construye la URL del segundo formulario con el email como parámetro
         $url = 'https://second-typeform-url.com?email=' . urlencode($email);
