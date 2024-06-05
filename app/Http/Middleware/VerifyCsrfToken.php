@@ -22,5 +22,6 @@ class VerifyCsrfToken extends Middleware
         'callbacks/*',
         'qdplay/pagos/callback-3d-secure',
         'yuhu/acceso',
+        '/typeform-webhook',
     ];
 }
