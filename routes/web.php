@@ -117,6 +117,25 @@ Route::prefix('qdplay/unete/expositor')
 
 /*
 |--------------------------------------------------------------------------
+| Routes Custom For Indice financiero O de la felicidad
+|--------------------------------------------------------------------------
+*/
+Route::prefix('indice-de-felicidad')
+->group(function () {
+    Route::get('/')
+        ->uses('IndexHappyController@index')
+        ->name('indice.happy.data.personal');
+
+    Route::get('/gestion-de-recursos')
+        ->uses('IndexHappyController@resourceManagement')
+        ->name('indice.happy.resource.management');
+});
+
+//Webhook
+Route::post('/typeform-webhook', [TypeformWebhookController::class, 'handleWebhook']);
+
+/*
+|--------------------------------------------------------------------------
 | Routes Custom For QD Play Add Companies
 |--------------------------------------------------------------------------
 */
