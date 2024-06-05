@@ -14,13 +14,13 @@ class TypeformWebhookController extends Controller
         $data = $request->all();
 
         // Para propósitos de depuración, puedes registrar la solicitud
-        \Log::info('Typeform Webhook Data:', $data);
+        \Log::info('Typeform Webhook Datos:', $data);
 
         // Extrae el email de la respuesta (asegúrate de ajustar esto según la estructura de tu respuesta)
         $email = $data['form_response']['answers'][0]['email'];
 
         // Construye la URL del segundo formulario con el email como parámetro
-        $url = 'https://second-typeform-url.com?email=' . urlencode($email);
+        $url = 'https://test.queridodinero.com/gestion-de-recursos?email=' . urlencode($email);
 
         // Redirige al usuario al segundo formulario
         return redirect($url);
