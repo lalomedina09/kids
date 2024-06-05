@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+
 
 class TypeformWebhookController extends Controller
 {
@@ -17,24 +19,6 @@ class TypeformWebhookController extends Controller
         // Redirige al segundo formulario con el email como parámetro
         $url = 'https://test.queridodinero.com/indice-de-felicidad/gestion-de-recursos?emailuser=' . urlencode($email);
 
-        /*
-        Route::prefix('indice-de-felicidad')
-        ->group(function () {
-            Route::get('/')
-                ->uses('IndexHappyController@index')
-                ->name('indice.happy.data.personal');
-
-            Route::get('/gestion-de-recursos')
-                ->uses('IndexHappyController@resourceManagement')
-                ->name('indice.happy.resource.management');
-        });
-
-        return redirect()
-            ->route('qdplay.payments.payform', ['concept' => $request->codeConcept])
-            ->with([
-                'success' => '¡Bienvenido! a Querido Dinero'
-            ]);
-        */
         return redirect($url);
     }
 }
