@@ -18,9 +18,9 @@ class TypeformWebhookController extends Controller
 
         // Extrae el email de la respuesta (asegúrate de ajustar esto según la estructura de tu respuesta)
         $email = $data['form_response']['answers'][0]['email'];
-
+        dd($email);
         // Construye la URL del segundo formulario con el email como parámetro
-        $url = 'https://test.queridodinero.com/gestion-de-recursos?email=' . urlencode($email);
+        #$url = 'https://test.queridodinero.com/gestion-de-recursos?email=' . urlencode($email);
 
         // Redirige al usuario al segundo formulario
         return redirect($url);
