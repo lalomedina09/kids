@@ -30,7 +30,7 @@ class TypeformWebhookController extends Controller
         return redirect($url);
     }*/
 
-    public function handleWebhook(Request $request)
+    /*public function handleWebhook(Request $request)
     {
         // Captura la respuesta del formulario
         $data = $request->all();
@@ -43,6 +43,38 @@ class TypeformWebhookController extends Controller
 
         if ($email) {
             // Construye la URL del segundo formulario con el email como parámetro
+            $url = 'https://test.queridodinero.com/indice-de-felicidad/gestion-de-recursos?email=' . urlencode($email);
+
+            return response()->json(['redirect_url' => $url]);
+        }
+
+        // Si no se encuentra el email, devuelve un error
+        return response()->json(['error' => 'Email not found in webhook data'], 400);
+    }*/
+
+    public function handleWebhook(Request $request)
+    {
+        // Captura la respuesta del formulario
+        $data = $request->all();
+
+        // Registra la solicitud completa para inspección
+        Log::info('Typeform Webhook Data:', ['data' => $data]);
+
+        // Verifica la estructura y accede al email de forma segura
+        $email = null;
+        if (isset($data['form_response']['answers'])) {
+            foreach ($data['form_response']['answers'] as $answer) {
+                if (isset($answer['type']) && $answer['type'] == 'email' && isset($answer['email'])
+                ) {
+                    $email = $answer['email'];
+                    break;
+                }
+            }
+        }
+
+        if ($email) {
+            // Construye la URL del segundo formulario con el email como parámetro
+            #$url = 'https://second-typeform-url.com?email=' . urlencode($email);
             $url = 'https://test.queridodinero.com/indice-de-felicidad/gestion-de-recursos?email=' . urlencode($email);
 
             return response()->json(['redirect_url' => $url]);
