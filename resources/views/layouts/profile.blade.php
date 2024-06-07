@@ -44,6 +44,16 @@
                                     <span class="fa fa-2x fa-youtube-play"></span>
                                 </a>
                             @endif
+                            @if ($user->hasMeta('blog', 'tiktok'))
+                                <a href="{{ $user->getMeta('blog', 'tiktok') }}" class="text-danger mr-4" target="_blank" rel="noopener noreferrer">
+                                    <i style="font-size: 1.6em;" class=" lni lni-tiktok"></i>
+                                </a>
+                            @endif
+                            @if ($user->hasMeta('blog', 'tiktok'))
+                            <a href="{{ $user->getMeta('blog', 'tiktok') }}" class="text-danger mr-4" target="_blank" rel="noopener noreferrer">
+                                <i style="font-size: 1.6em;" class="lni lni-linkedin-original"></i>
+                            </a>
+                            @endif
                         </p>
                     </div>
                 </div>
