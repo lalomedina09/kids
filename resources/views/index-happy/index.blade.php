@@ -1,16 +1,22 @@
-@extends('layouts.landing-v2-white')
+@extends('layouts.index-happy')
 {{--@extends('layouts.landing')--}}
 
-@if (app()->environment() === 'production')
 @push('scripts-inline')
-    @include('preQdplay.components.fb-convercion')
+    @if (app()->environment() === 'production')
+        @include('preQdplay.components.fb-convercion')
+    @endif
+    <script type="text/javascript" src="https://s.pointerpro.com/js/embed.js" defer async></script>
 @endpush
-@endif
 
 {{-- Estilos css3- --}}
 @push('styles')
 {{--@include('landings.components.retiro.style')--}}
+<style>
+    #app{
+        background-color: #292729 !important;
+    }
 
+</style>
 
 @endpush
 
@@ -23,8 +29,11 @@
 <div class="container pt-0 pt-lg-4">
     <div class="row">
         <div class="col-md-12">
+            <div class="embed-survey" data-url="qd-indice-felicidad"></div>
+            {{--
             <div data-tf-live="01HZMQ8WRQ96SATTPANJTXBCT8"></div>
             <script src="//embed.typeform.com/next/embed.js"></script>
+            --}}
         </div>
     </div>
 </div>
