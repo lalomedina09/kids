@@ -138,6 +138,10 @@ Route::post('typeform-webhook')
     ->uses('TypeformWebhookController@handleWebhook')
     ->name('webhook.typeform');
 
+
+Route::get('/chat', function () {
+    return redirect()->away('https://wa.me/528116354205');
+});
 /*
 |--------------------------------------------------------------------------
 | Routes Custom For QD Play Add Companies
