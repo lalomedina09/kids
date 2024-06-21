@@ -9,6 +9,12 @@
     }
     #app{
         background-color: #C0C0C0;
+        min-height: 90vh;
+        padding-top: 30px;
+    }
+    body {
+        background-color: #292729;
+        font-weight: normal;
     }
 </style>
 <div id="app">

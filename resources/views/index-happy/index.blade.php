@@ -26,7 +26,7 @@
 
 @section('content')
 
-<div class="container pt-0 pt-lg-4">
+<div class="container-fluid pt-0 pt-lg-0 pb-4 pt-lg-0">
     <div class="row">
         <div class="col-md-12">
             <div class="embed-survey" data-url="qd-indice-felicidad"></div>
