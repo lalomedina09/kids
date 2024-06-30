@@ -30,13 +30,6 @@
 </style>
 <div id="app">
     <div class="header-wrapper">
-        <!--<header class="container navbar header">
-            <div class="text-center mx-auto">
-                <img src="{{ asset('images/logo_light.svg') }}"
-                    class="my-1"
-                    height="35px" alt="QD Play">
-            </div>
-        </header>-->
         <header class="container navbar header">
             <div class="text-left">
                 <img src="{{ asset('images/logo_light.svg') }}" class="my-1" height="35px" alt="QD Play">

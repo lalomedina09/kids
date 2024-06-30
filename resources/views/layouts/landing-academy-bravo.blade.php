@@ -31,9 +31,7 @@
     <div class="header-wrapper">
         <header class="container navbar header">
             <div class="text-left">
-                <img src="{{ asset('images/logo_light.svg') }}"
-                    class="my-1"
-                    height="35px" alt="QD Play">
+                <img src="{{ asset('images/logo_light.svg') }}" class="my-1" height="35px" alt="QD Play">
             </div>
             <div class="text-right">
                 @auth
@@ -49,7 +47,6 @@
                     <span class="text-white font-akshar">
                         Desbloquea más cursos, suscríbete hoy a Querido Dinero Play
                     </span>
-
                     <a class="btn-subscribe">
                         SUSCRIBIRME
                     </a>
