@@ -47,8 +47,8 @@
                     <span class="text-white font-akshar">
                         Desbloquea más cursos, suscríbete hoy a Querido Dinero Play
                     </span>
-                    <a class="btn-subscribe">
-                        SUSCRIBIRME
+                    <a class="btn-subscribe" href="#" data-toggle="modal" data-target="#modalLogin">
+                        Suscribirme <i class="lni lni-crown"></i>
                     </a>
                 @endauth
             </div>
