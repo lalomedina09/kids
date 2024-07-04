@@ -72,6 +72,18 @@ Route::prefix('qdplay-login')
         ->uses('LoginController@login');
 });
 
+Route::prefix('bravo-login')
+->namespace('Auth')
+->group(function () {
+    //login QD Play
+    Route::get('/')
+        ->uses('BravoLoginController@showLoginForm')
+        ->name('bravo-login');
+
+    Route::post('/')
+        ->uses('LoginController@login');
+});
+
 Route::any('cerrar-sesion')
     ->uses('Auth\LoginController@logout')
     ->name('logout');
