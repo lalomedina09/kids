@@ -335,9 +335,6 @@ Route::get('/')
     ->name('home');
 
 Route::get('/play')
-    #->uses('HomeController@index')
-    #->name('home');
-    //->uses('HomeController@blog')
     ->uses('\QD\QDPlay\Http\Controllers\Home\HomeController@index')
     ->name('play');
 
