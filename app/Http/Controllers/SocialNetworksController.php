@@ -27,9 +27,17 @@ class SocialNetworksController extends Controller
         return Socialite::driver('facebook')->stateless()->redirect();
     }
 
+    public function facebookClientRedirect($trackClient)
+    {
+        Session::put('trackClient', $trackClient);
+        $trackClient = Session::get('trackClient');
+
+        return Socialite::driver('facebook')->stateless()->redirect();
+    }
+
     public function facebookCallback() : RedirectResponse {
         $facebook_user = Socialite::driver('facebook')->stateless()->user();
-
+        $trackClient = (Session::get('trackClient')) ? Session::get('trackClient') : "unknown";
 		$user = User::where('facebook_id', $facebook_user->id)->first();
 		if (!($user instanceof User))
 			$user = User::where('email', $facebook_user->email)->first();
@@ -44,6 +52,7 @@ class SocialNetworksController extends Controller
 			$user->email = $facebook_user->email ?? $facebook_user->id;
 			$user->password = '3rd party';
 			$user->facebook_id = $facebook_user->id;
+            $user->source = $trackClient;
 			$this->users->saveProfile([
 				'name' => strtok(trim($facebook_user->name), ' '),
 				'last_name' => strtok(' '),
@@ -54,12 +63,23 @@ class SocialNetworksController extends Controller
 
 		Auth::login($user);
 
+        LoginLog::create(
+            [
+                'user_id' => $user->id,
+                'source' => $trackClient
+            ]
+        );
+
+        if ($trackClient) {
+            Session::forget('trackClient');
+        }
+
         return redirect()
             ->route('home')
             ->with(['success' => '¡Bienvenido!']);
     }
 
-    public function googleClienteRedirect($trackClient) : RedirectResponse {
+    public function googleClientRedirect($trackClient) : RedirectResponse {
 
         Session::put('trackClient', $trackClient);
         $trackClient = Session::get('trackClient');
@@ -126,10 +146,19 @@ class SocialNetworksController extends Controller
         return Socialite::driver('microsoft')->redirect();
     }
 
+    public function microsoftClientRedirect($trackClient): RedirectResponse
+    {
+        Session::put('trackClient', $trackClient);
+        $trackClient = Session::get('trackClient');
+
+        return Socialite::driver('microsoft')->redirect();
+    }
+
     public function microsoftCallback(): RedirectResponse {
 		$microsoft_user = Socialite::driver('microsoft')->user();
-
+        $trackClient = (Session::get('trackClient')) ? Session::get('trackClient') : "unknown";
 		$user = User::where('microsoft_id', $microsoft_user->id)->first();
+
 		if (!($user instanceof User))
 			$user = User::where('email', $microsoft_user->userPrincipalName)->first();
 
@@ -143,6 +172,7 @@ class SocialNetworksController extends Controller
 			$user->email = $microsoft_user->userPrincipalName ?? $microsoft_user->id;
 			$user->password = '3rd party';
 			$user->microsoft_id = $microsoft_user->id;
+            $user->source = $trackClient;
 			$this->users->saveProfile([
 				'name' => $microsoft_user->givenName,
 				'last_name' => $microsoft_user->surname,
@@ -152,6 +182,17 @@ class SocialNetworksController extends Controller
 		}
 
 		Auth::login($user);
+
+        LoginLog::create(
+            [
+                'user_id' => $user->id,
+                'source' => $trackClient
+            ]
+        );
+
+        if ($trackClient) {
+            Session::forget('trackClient');
+        }
 
         return redirect()
             ->route('home')

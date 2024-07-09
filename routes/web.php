@@ -1017,17 +1017,25 @@ Route::name('redirects.')
             ->uses('SocialNetworksController@facebookRedirect')
             ->name('facebook');
 
+        Route::get('/facebook/{trackClient}')
+        ->uses('SocialNetworksController@facebookClientRedirect')
+        ->name('facebook.client');
+
         Route::get('/google')
             ->uses('SocialNetworksController@googleRedirect')
             ->name('google');
 
         Route::get('/google/{trackClient}')
-            ->uses('SocialNetworksController@googleClienteRedirect')
+            ->uses('SocialNetworksController@googleClientRedirect')
             ->name('google.client');
 
         Route::get('/microsoft')
             ->uses('SocialNetworksController@microsoftRedirect')
             ->name('microsoft');
+
+        Route::get('/microsoft/{trackClient}')
+            ->uses('SocialNetworksController@microsoftClientRedirect')
+            ->name('microsoft.client');
 
         Route::get('/apple')
             ->uses('SocialNetworksController@appleRedirect')

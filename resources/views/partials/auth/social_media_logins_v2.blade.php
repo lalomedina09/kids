@@ -107,7 +107,7 @@
 @endpush
 
 <div class="social-media-logins mt-3 text-center">
-	<a href="{{ route('redirects.facebook') }}" class="facebook-button-v2" style="text-align: left;">
+	<a href="{{ route('redirects.facebook.client', [$track_client]) }}" class="facebook-button-v2" style="text-align: left;">
         <img src="{{ asset("images/qdplay/login/facebook.png") }}" alt="Logo Google" width="20">
         &nbsp;&nbsp; Iniciar Sesión con Facebook
     </a>
@@ -115,7 +115,7 @@
         <img src="{{ asset("images/qdplay/login/google.png") }}" alt="Logo Google" width="20">
         &nbsp;&nbsp; Iniciar Sesión con Google &nbsp;&nbsp;&nbsp;&nbsp;
     </a>
-	<a href="{{ route('redirects.microsoft') }}" class="microsoft-button-v2">
+	<a href="{{ route('redirects.microsoft.client', [$track_client]) }}" class="microsoft-button-v2">
         <img src="{{ asset("images/qdplay/login/microsoft.png") }}" alt="Logo Google" width="20">
         &nbsp;&nbsp; Iniciar Sesión con Microsoft
     </a>
