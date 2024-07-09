@@ -65,11 +65,11 @@ Route::prefix('qdplay-registro')
     ->middleware(['guest'])
     ->group(function () {
         Route::get('/')
-            ->uses('RegisterController@showRegistrationForm')
+            ->uses('QdplayRegisterController@showRegistrationForm')
             ->name('qdplay.register');
 
         Route::post('/')
-            ->uses('RegisterController@store')
+            ->uses('QdplayRegisterController@store')
             ->name('qdplay.register.store');
     });
 
