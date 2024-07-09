@@ -1021,6 +1021,10 @@ Route::name('redirects.')
             ->uses('SocialNetworksController@googleRedirect')
             ->name('google');
 
+        Route::get('/google/{trackClient}')
+            ->uses('SocialNetworksController@googleClienteRedirect')
+            ->name('google.client');
+
         Route::get('/microsoft')
             ->uses('SocialNetworksController@microsoftRedirect')
             ->name('microsoft');

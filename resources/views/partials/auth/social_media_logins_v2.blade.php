@@ -111,7 +111,7 @@
         <img src="{{ asset("images/qdplay/login/facebook.png") }}" alt="Logo Google" width="20">
         &nbsp;&nbsp; Iniciar Sesión con Facebook
     </a>
-	<a href="{{ route('redirects.google') }}" class="google-button-v2">
+	<a href="{{ route('redirects.google.client', [$track_client]) }}" class="google-button-v2">
         <img src="{{ asset("images/qdplay/login/google.png") }}" alt="Logo Google" width="20">
         &nbsp;&nbsp; Iniciar Sesión con Google &nbsp;&nbsp;&nbsp;&nbsp;
     </a>
