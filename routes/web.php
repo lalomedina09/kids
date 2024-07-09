@@ -66,7 +66,7 @@ Route::prefix('qdplay-registro')
     ->group(function () {
         Route::get('/')
             ->uses('QdplayRegisterController@showRegistrationForm')
-            ->name('qdplay.register');
+            ->name('qdplay.register.store');
 
         Route::post('/')
             ->uses('QdplayRegisterController@store')
