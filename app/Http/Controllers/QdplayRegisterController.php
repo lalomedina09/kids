@@ -6,7 +6,8 @@ use Illuminate\Http\Response;
 
 use App\Http\Requests\Auth\QdplayRegisterRequest;
 use App\Mail\Auth\Mailer;
-use App\Models\{ Newsletter, User };
+use App\Models\{ Newsletter, User , LoginLog};
+
 use App\Repositories\UserRepository;
 
 use Auth;
@@ -55,6 +56,15 @@ class QdplayRegisterController  extends Controller
         $user = $this->users->saveProfile($params, $user);
 
         Auth::login($user);
+
+        // Log de login
+        LoginLog::create(
+            [
+                'user_id' => $user->id,
+                'source' => $params['source']
+            ]
+        );
+
         Mailer::sendRegisterMail($user);
 
         return redirect()
