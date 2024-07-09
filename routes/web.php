@@ -44,6 +44,37 @@ Route::get('i18n')
 
 /*
 |--------------------------------------------------------------------------
+| Custom Authentication
+|--------------------------------------------------------------------------
+*/
+//Rutas para iniciar sesion desde landing con identificacion de origen
+Route::prefix('qdplay-login')
+    ->namespace('Auth')
+    ->group(function () {
+        //login QD Play
+        Route::get('/')
+            ->uses('QdplayLoginController@showLoginForm')
+            ->name('qdplay-login');
+
+        Route::post('/')
+            ->uses('QdplayLoginController@login');
+    });
+
+//Ruta para crear cuenta desde landing de cliente con identificacion de origen
+Route::prefix('qdplay-registro')
+    ->middleware(['guest'])
+    ->group(function () {
+        Route::get('/')
+            ->uses('RegisterController@showRegistrationForm')
+            ->name('qdplay.register');
+
+        Route::post('/')
+            ->uses('RegisterController@store')
+            ->name('qdplay.register.store');
+    });
+
+/*
+|--------------------------------------------------------------------------
 | Authentication
 |--------------------------------------------------------------------------
 */
@@ -59,30 +90,6 @@ Route::prefix('iniciar-sesion')
         Route::post('/')
             ->uses('LoginController@login');
     });
-
-Route::prefix('qdplay-login')
-->namespace('Auth')
-->group(function () {
-    //login QD Play
-    Route::get('/')
-        ->uses('QdplayLoginController@showLoginForm')
-        ->name('qdplay-login');
-
-    Route::post('/')
-        ->uses('LoginController@login');
-});
-
-Route::prefix('bravo-login')
-->namespace('Auth')
-->group(function () {
-    //login QD Play
-    Route::get('/')
-        ->uses('BravoLoginController@showLoginForm')
-        ->name('bravo-login');
-
-    Route::post('/')
-        ->uses('LoginController@login');
-});
 
 Route::any('cerrar-sesion')
     ->uses('Auth\LoginController@logout')

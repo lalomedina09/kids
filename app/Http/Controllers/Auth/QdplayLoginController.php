@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use App\Models\LoginLog;
 use Illuminate\Http\Request;
 
 class QdplayLoginController extends Controller
@@ -48,6 +48,7 @@ class QdplayLoginController extends Controller
      */
     protected function validateLogin(Request $request)
     {
+        #dd('flex');
         $this->validate($request, [
             'email' => 'required|string|max:255|email',
             'password' => 'required|string|min:8|max:100',
@@ -60,8 +61,17 @@ class QdplayLoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return mixed
      */
-    protected function authenticated(Request $request)
+    protected function authenticated(Request $request, $user)
     {
+        //dd($request->all());
+        // Registra el inicio de sesión en la tabla login_logs
+        LoginLog::create(
+            [
+                'user_id' => $user->id,
+                'source' => $request->source
+            ]
+        );
+
         $request->session()->flash('success', 'Se inició tu sesión correctamente.');
     }
 
