@@ -1,5 +1,5 @@
 @extends('layouts.base')
-
+<title>Academia Bravo | Querido Dinero</title>
 @section('base')
 <style>
     .header-wrapper {
@@ -26,6 +26,12 @@
         background-color: #7BE8ED;
         color: white;
     }
+
+    @media (max-width: 414px) {
+    .text-unlock-header{
+        display: none;
+    }
+    }
 </style>
 <div id="app">
     <div class="header-wrapper">
@@ -44,7 +50,7 @@
                         </span>
                     @endif
                 @else
-                    <span class="text-white font-akshar">
+                    <span class="text-white font-akshar text-unlock-header">
                         Desbloquea más cursos, suscríbete hoy a Querido Dinero Play
                     </span>
                     <a class="btn-subscribe" href="#" data-toggle="modal" data-target="#modalLogin">
