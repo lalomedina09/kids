@@ -54,7 +54,7 @@
                         Desbloquea más cursos, suscríbete hoy a Querido Dinero Play
                     </span>
                     <a class="btn-subscribe" href="#" data-toggle="modal" data-target="#modalLogin">
-                        Entrar <i class="lni lni-crown"></i>
+                        Únete gratis <i class="lni lni-crown"></i>
                     </a>
                 @endauth
             </div>
