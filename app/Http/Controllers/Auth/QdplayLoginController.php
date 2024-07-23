@@ -63,7 +63,6 @@ class QdplayLoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        //dd($request->all());
         // Registra el inicio de sesión en la tabla login_logs
         LoginLog::create(
             [
@@ -72,7 +71,12 @@ class QdplayLoginController extends Controller
             ]
         );
 
-        $request->session()->flash('success', 'Se inició tu sesión correctamente.');
+        if ($request->source == "academia-bravo") {
+            return redirect()->route('qdplay.landing.academy-bravo.watch', ["cOWE8hXyj", "cdWeMjHHh", 'autoplay' => 'false'])
+                ->withSuccess('Tu sesión inicio correctamente.');
+        }else{
+            $request->session()->flash('success', 'Se inició tu sesión correctamente.');
+        }
     }
 
     /**

@@ -62,7 +62,8 @@ class BravoLoginController extends Controller
      */
     protected function authenticated(Request $request)
     {
-        $request->session()->flash('success', 'Se inició tu sesión correctamente.');
+        //$request->session()->flash('success', 'Se inició tu sesión correctamente.');
+        return redirect()->route('qdplay.landing.academy-bravo.watch', ["cOTKL2daG", "cdWeMjHHh", 'autoplay' => 'true'])->withSuccess('Tu sesión se cerró correctamente.');
     }
 
     /**
