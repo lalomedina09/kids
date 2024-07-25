@@ -41,14 +41,55 @@
             </div>
             <div class="text-right">
                 @auth
-                    @if($user)
-                        <span class="font-akshar" style="color: #ffffff;">
-                            Hola,
-                        </span>
-                        <span class="font-akshar" style="color: #7a68eb;">
-                            {{ $user->name }} <i class="lni lni-crown"></i>
-                        </span>
-                    @endif
+                    {{--
+                    
+                    --}}
+                    <ul class="nav">
+                        <li class="nav-item dropdown">
+
+                            <a href="#" class="nav-link dropdown-toggle header__buttons header__buttons--last"
+                                data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">                                
+                                {{--
+                                @auth
+                                    <span class="text-small d-xl-inline-block">
+                                        <i class="fa fa-sliders" aria-hidden="true"></i> {{ auth()->user()->name }}
+                                    </span>
+                                @endauth
+                                --}}
+                                @if($user)
+                                    {{--<span class="font-akshar" style="color: #ffffff;">
+                                        Hola,
+                                    </span>--}}
+                                    <span class="font-akshar" style="color: #7a68eb;">
+                                        {{ $user->name }} <i class="lni lni-crown"></i>
+                                    </span>
+                                @endif
+                            </a>
+
+                            <div class="dropdown-menu header__dropdown">
+                                @auth
+                                    <div class="dropdown-divider header__dropdown-divider"></div>
+                                    <a href="{{ route('profile.edit') }}" class="dropdown-item header__buttons header__dropdown-buttons">
+                                       Mi Perfil
+                                    </a>
+                                    @if($user->id == 33599 || $user->id == 33600 || $user->id == 14542)
+                                        <div class="dropdown-divider header__dropdown-divider"></div>
+                                        <a href="{{route('qdplay.landing.academy-bravo.admin')}}"
+                                            class="dropdown-item header__buttons header__dropdown-buttons">
+                                            Panel Admin
+                                        </a>
+                                    @endif
+
+                                    <div class="dropdown-divider header__dropdown-divider"></div>
+
+                                    <a href="{{ route('logout') }}" class="dropdown-item header__buttons header__dropdown-buttons">
+                                        Cerrar sesión
+                                    </a>
+                                @endauth                               
+                            </div>
+                        </li>
+                    </ul>
                 @else
                     <span class="text-white font-akshar text-unlock-header">
                         Desbloquea más cursos, suscríbete hoy a Querido Dinero Play
