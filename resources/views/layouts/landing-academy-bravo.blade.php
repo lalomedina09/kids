@@ -70,13 +70,13 @@
                             <div class="dropdown-menu header__dropdown">
                                 @auth
                                     <div class="dropdown-divider header__dropdown-divider"></div>
-                                    <a href="{{ route('profile.edit') }}" class="dropdown-item header__buttons header__dropdown-buttons">
+                                    <a href="{{ route('profile.edit') }}" class="dropdown-item header__buttons header__dropdown-buttons show-loading">
                                        Mi Perfil
                                     </a>
                                     @if($user->id == 33599 || $user->id == 33600 || $user->id == 14542)
                                         <div class="dropdown-divider header__dropdown-divider"></div>
                                         <a href="{{route('qdplay.landing.academy-bravo.admin')}}"
-                                            class="dropdown-item header__buttons header__dropdown-buttons">
+                                            class="dropdown-item header__buttons header__dropdown-buttons show-loading">
                                             Panel Admin
                                         </a>
                                     @endif
