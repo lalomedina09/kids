@@ -603,3 +603,17 @@ function format_comment_date($date) {
         return 'hace ' . $carbonDate->diffInDays() . ' días';
     }
 }
+
+function reproductionOfAcademyUsers($userId){
+    #$userId = 15808;
+    $source = "web/qdplay/watch/bravo";
+
+    $totalLength = DB::table('qdp_views as vs')
+        ->join('qdp_viewing_times as vt', 'vt.view_id', '=', 'vs.id')
+        ->where('vs.user_id', $userId)
+        ->where('vs.source', $source)
+        ->sum('vt.length');
+    
+    return round($totalLength);
+    
+}
