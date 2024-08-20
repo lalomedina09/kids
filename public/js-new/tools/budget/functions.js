@@ -1,20 +1,20 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
     let param = 1;
     let section = 'entrances';
-        activeBudgetSectionCreateCategories();
-        activeBudgetSectionYear();
-        activeBudgetSectionMonthMenu(section);
+    //alert('dididid');
+    //console.log('entro a presupuesto');
+    activeBudgetSectionCreateCategories();
+    activeBudgetSectionYear();
+    activeBudgetSectionMonthMenu(section);
 });
 
-function customBeforeLoading()
-{
+function customBeforeLoading() {
     $('#contentLoading').addClass('loading-show');
     $('#contentLoading').removeClass('loading-hidden');
 }
 
-function customCompleteLoading()
-{
+function customCompleteLoading() {
     $('#contentLoading').removeClass('loading-show');
     $('#contentLoading').addClass('loading-hidden');
 }
@@ -31,10 +31,10 @@ function activeBudgetSectionCreateCategories() {
         headers: {
             'X-CSRF-Token': '{{ csrf_token() }}',
         },
-        success: function (data) {
+        success: function(data) {
             //console.log("Se hizo busqueda y creación de categorias");
         },
-        error: function () {
+        error: function() {
             //console.log("No se logro realizar la busqueda de categorias")
         }
     });
@@ -49,10 +49,10 @@ function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmou
     let value = $('#' + nameInput + '_' + id_move).val();
     //console.log(value);
     $.ajax({
-        beforeSend: function () {
+        beforeSend: function() {
             $('#budgetSectionMonthBtnsLoading').css("display", "contents");
         },
-        complete: function () {
+        complete: function() {
             $('#budgetSectionMonthBtnsLoading').css("display", "none");
         },
         url: "/budget/edit/" + section,
@@ -70,7 +70,7 @@ function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmou
         headers: {
             'X-CSRF-Token': '{{ csrf_token() }}',
         },
-        success: function (data) {
+        success: function(data) {
             $("#header-level-month").empty();
             $("#header-level-month").html(data.resumenMonth);
 
@@ -80,36 +80,34 @@ function budgetEditInput(section, nameInput, id_move, divAmountEstimate, divAmou
             $('#' + divAmountEstimate).empty();
             $('#' + divAmountEstimate).html(data.viewHeaderCategoryAmountReal);
 
-            alertify.notify('Actualización realizada con exito', 'success', 5, function ()
-            {
+            alertify.notify('Actualización realizada con exito', 'success', 5, function() {
                 //console.log('Alerta actualizacion de input');
             });
 
         },
-        error: function () {
+        error: function() {
             //console.log("No se hizo el update en la DB")
         }
     });
 
 }
 
-function simpleDeleteMoveOfCategory(moveId, section, categoryId, divArrowsCategory, divAmountReal, divAmountEstimate , categoryUserId)
-{
+function simpleDeleteMoveOfCategory(moveId, section, categoryId, divArrowsCategory, divAmountReal, divAmountEstimate, categoryUserId) {
     let url = '/budget/actions/modal/destroy-move';
     let token = $('#token').val();
 
     $('#budgetSectionMonthBtnsLoading').css("display", "contents");
     $.post(url, {
-        _token: token,
-        moveId: moveId,
-        section: section,
-        categoryId: categoryId,
-        divArrowsCategory: divArrowsCategory,
-        divAmountReal: divAmountReal,
-        divAmountEstimate: divAmountEstimate,
-        categoryUserId: categoryUserId
-    },
-        function (data) {
+            _token: token,
+            moveId: moveId,
+            section: section,
+            categoryId: categoryId,
+            divArrowsCategory: divArrowsCategory,
+            divAmountReal: divAmountReal,
+            divAmountEstimate: divAmountEstimate,
+            categoryUserId: categoryUserId
+        },
+        function(data) {
             $("#header-level-month").empty();
             $("#header-level-month").html(data.resumenMonth);
 
@@ -128,7 +126,7 @@ function simpleDeleteMoveOfCategory(moveId, section, categoryId, divArrowsCatego
             $('#budgetSectionMonthBtnsLoading').css("display", "none");
             $('#row_id_move_' + moveId).hide(4000);
 
-            alertify.notify('Movimiento eliminado con exito a la categoria', 'success', 5, function () {
+            alertify.notify('Movimiento eliminado con exito a la categoria', 'success', 5, function() {
                 //console.log('Movimiento Agregado con exito a la categoria');
             });
         });

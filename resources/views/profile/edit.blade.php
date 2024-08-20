@@ -33,7 +33,18 @@
 
     <script type="text/javascript" src="{{ asset('js-new/models/branches.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js-new/models/companyroles.js') }}"></script>
+
+    <!-- scripts para presupuesto--->
+    <script type="text/javascript" src="{{ asset('js-new/tools/budget/functions.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js-new/tools/budget/functions-modal.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('js-new/tools/budget/month/month.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js-new/tools/budget/month/component-month.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('js-new/tools/budget/year/year.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js-new/tools/budget/year/component-year.js') }}"></script>
 @endpush
+
 
 @section('content')
 
@@ -136,6 +147,10 @@
                         @endif --}}
                     @endif
 
+                    <a href="#{{ str_slug(__('Tools')) }}" class="nav-item nav-link text-uppercase c-text-size"
+                        data-toggle="tab">@lang('Tools')
+                    </a>
+
                     <a href="#{{ str_slug(__('My Company')) }}"
                         class="nav-item nav-link text-uppercase c-text-size"
                         data-toggle="tab"
@@ -170,6 +185,8 @@
                     @include('partials.profiles.company')
                     @include('partials.profiles.branches')
                     @include('partials.profiles.roles')
+
+                    @include('partials.profiles.tools')
                     <!-- Incluir vista para admin de QD Play-->
 					@include('qd:qdplay::home.partials.billingData')
 
