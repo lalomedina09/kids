@@ -42,14 +42,14 @@
             <div class="text-right">
                 @auth
                     {{--
-                    
+
                     --}}
                     <ul class="nav">
                         <li class="nav-item dropdown">
 
                             <a href="#" class="nav-link dropdown-toggle header__buttons header__buttons--last"
                                 data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">                                
+                                aria-haspopup="true" aria-expanded="false">
                                 {{--
                                 @auth
                                     <span class="text-small d-xl-inline-block">
@@ -86,15 +86,15 @@
                                     <a href="{{ route('logout') }}" class="dropdown-item header__buttons header__dropdown-buttons">
                                         Cerrar sesión
                                     </a>
-                                @endauth                               
+                                @endauth
                             </div>
                         </li>
                     </ul>
                 @else
-                    <span class="text-white font-akshar text-unlock-header">
+                    <span class="text-white font-akshar text-unlock-header font-size-p">
                         Desbloquea más cursos, suscríbete hoy a Querido Dinero Play
                     </span>
-                    <a class="btn-subscribe" href="#" data-toggle="modal" data-target="#modalLogin">
+                    <a class="btn-subscribe font-size-p" href="#" data-toggle="modal" data-target="#modalLogin">
                         Únete gratis <i class="lni lni-crown"></i>
                     </a>
                 @endauth
