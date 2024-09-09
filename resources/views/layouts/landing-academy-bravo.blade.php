@@ -13,7 +13,7 @@
         border-radius: 10px;
         text-decoration: none;
         color: white;
-        font-size: 16px;
+        font-size: 14px;
         transition: background-color 0.3s;
     }
 
