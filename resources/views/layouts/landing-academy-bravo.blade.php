@@ -27,7 +27,7 @@
         color: white;
     }
 
-    @media (max-width: 414px) {
+    @media (max-width: 800px) {
     .text-unlock-header{
         display: none;
     }
