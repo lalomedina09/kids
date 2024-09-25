@@ -83,6 +83,22 @@ Route::prefix('blog')
                             ->uses('ArticleController@unpublish')
                             ->name('articles.unpublish')
                             ->middleware(['permission:blog.articles.publish']);
+
+                        /*--- rutas para configurar la publicidad de los articulos ---*/
+                        Route::get('/configure-advertising')
+                            ->uses('ArticleAdvertisingController@show')
+                            ->name('articles.advertising.show')
+                            ->middleware(['permission:blog.articles.update']);
+
+                        Route::post('/configure-advertising/store')
+                            ->uses('ArticleAdvertisingController@store')
+                            ->name('articles.advertising.store')
+                            ->middleware(['permission:blog.articles.update']);
+
+                        Route::put('/configure-advertising/update')
+                        ->uses('ArticleAdvertisingController@update')
+                        ->name('articles.advertising.update')
+                        ->middleware(['permission:blog.articles.update']);
                     });
             });
         // Social Post

@@ -1,5 +1,11 @@
 @extends('layouts.dashboard.blog')
-
+@push('styles-inline')
+<style type="text/css">
+    .container {
+        max-width: 95% !important;
+    }
+</style>
+@endpush
 @section('dashboard-content')
 
     @include('dashboard.articles.partials._header', ['subtitle' => 'Artículos » Todo'])
@@ -69,8 +75,16 @@
                         <td class="small" data-order="{{ optional($article->updated_at)->timestamp }}">{{ $article->present()->updated_at }}</td>
                         <td class="small" data-order="{{ optional($article->published_at)->timestamp }}">{{ $article->present()->published_at }}</td>
                         <td>
-                            <a href="{{ route('dashboard.articles.edit', $article->id) }}" class="btn btn-sm btn-outline-primary">@lang('Edit')</a>
-                            {!! Link::delete('Remover', ['route' => ['dashboard.articles.destroy', $article->id]]) !!}
+                            <a href="{{ route('dashboard.articles.edit', $article->id) }}" class="btn btn-sm btn-outline-primary">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="{{ route('dashboard.articles.advertising.show', $article->id) }}" class="btn btn-sm btn-outline-warning"
+                                title="Administrar publicidad del articulo">
+                                <i class="fa fa-rss" aria-hidden="true"></i>
+                            </a>
+
+                            {!! Link::delete('Quitar', ['route' => ['dashboard.articles.destroy', $article->id]]) !!}
                         </td>
                     </tr>
                 @endforeach
