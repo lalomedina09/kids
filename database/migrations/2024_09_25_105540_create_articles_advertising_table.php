@@ -15,6 +15,7 @@ class CreateArticlesAdvertisingTable extends Migration
     {
         Schema::create('articles_advertising', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('link')->nullable();
             $table->integer('article_id')->nullable()->unsigned()->index();
             $table->integer('updated_by')->nullable()->unsigned()->index();
             $table->string('cover_desktop')->nullable();

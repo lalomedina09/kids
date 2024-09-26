@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\Article;
 use App\Models\Category;
-
+use Carbon\Carbon;
 class ArticlesController extends Controller
 {
 
@@ -87,9 +87,12 @@ class ArticlesController extends Controller
             ->get();
 
         $request->seoable = $article;
+        $advertisingStatus = $this->advertisingStatus($article);
+
         return view('articles.show')->with([
             'article' => $article,
-            'related' => $related
+            'related' => $related,
+            'advertisingStatus' => $advertisingStatus
         ]);
     }
 
@@ -151,4 +154,13 @@ class ArticlesController extends Controller
             'articles' => $articles
         ]);
     }
+
+    public function advertisingStatus($article)
+    {
+        $advertising = $article->advertising;
+
+        // Retorna false si no hay publicidad o si las fechas no están en el rango
+        return $advertising && Carbon::now()->between($advertising->published_at, $advertising->published_at_expired);
+    }
+
 }

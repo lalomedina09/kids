@@ -25,6 +25,7 @@ class AdvertisingRequest extends FormRequest
     {
         return [
             'id' => 'sometimes|nullable|int|min:1',
+            'link' => 'sometimes|nullable|string|min:1',
             'article_id' => 'sometimes|nullable|int|min:1',
             'updated_by' => 'sometimes|nullable|int|min:1',
             'cover_desktop' => 'sometimes|file|image|max:1000',

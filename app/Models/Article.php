@@ -148,11 +148,16 @@ class Article extends Model
      *
      * @param  \Illuminate\Http\UploadedFile
      * @return void
-     */
+    */
     public function saveFeaturedImage($file)
     {
         $this->addMedia($file)->toMediaCollection('featured_image', config('money.filesystem.disk'));
         $this->save();
+    }
+
+    public function advertising()
+    {
+        return $this->hasOne(ArticleAdvertising::class);
     }
 
 }

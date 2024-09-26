@@ -94,6 +94,22 @@
 
                         </div>
                     </div>
+                    <!-- Seccion  para la publicidad -->
+                    @if($advertisingStatus)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="{{ $article->advertising->link }}" target="_blank">
+                                <!-- Imagen para escritorio (visible solo en pantallas md o más grandes) -->
+                                <img src="{{ asset('storage/' . $article->advertising->cover_desktop) }}" alt="Imagen para escritorios"
+                                    id="cover_desktop" class="d-none d-md-block" style="width: 100%;" />
+
+                                <!-- Imagen para móvil (visible solo en pantallas sm o más pequeñas) -->
+                                <img src="{{ asset('storage/' . $article->advertising->cover_movil) }}" alt="Imagen para movil"
+                                    id="cover_movil" class="d-block d-md-none" style="width: 100%;" />
+                            </a>
+                        </div>
+                    </div>
+                    @endif
                 </div>
 
                 <div class="single__content mt-4">

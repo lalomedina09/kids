@@ -4,6 +4,23 @@
 {!! Form::hidden('article_id', old('article_id') ?? (isset($article) ? $article->id : null)) !!}
 {!! Form::hidden('updated_by', old('updated_by') ?? (isset($user) ? $user->id : null)) !!}
 
+
+<div class="form-group">
+    <label for="link" class="form-label">@lang('Destiny League'):</label>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">
+                <span class="fa fa-link"></span>
+            </span>
+        </div>
+        {!! Form::text('link', old('link') ?? (isset($advertising) ? $advertising->link : null),
+        [
+        'class' => 'form-control',
+        'placeholder' => 'Destino',
+        ]) !!}
+    </div>
+</div>
+
 <div class="form-group">
     <label for="published_at" class="form-label">@lang('Publication Date'):</label>
     <div class="input-group mb-3">
@@ -28,11 +45,18 @@
                 <span class="fa fa-calendar"></span>
             </span>
         </div>
-        {!! Form::date('published_at_expired', old('published_at_expired') ?? (isset($advertising) ? $advertising->published_at_expired : null),
+        {{--{!! Form::date('published_at_expired', old('published_at_expired') ?? (isset($advertising) ? $advertising->published_at_expired : null),
         [
             'class' => 'form-control',
             'placeholder' => 'Fecha',
-        ]) !!}
+        ]) !!}--}}
+         {!! Form::date('published_at_expired', old('published_at_expired') ?? (isset($advertising) ? \Carbon\Carbon::parse($advertising->published_at_expired)->format('Y-m-d'): null),
+            [
+            'class' => 'form-control',
+            'placeholder' => 'Fecha',
+            ]
+            )
+        !!}
     </div>
 </div>
 

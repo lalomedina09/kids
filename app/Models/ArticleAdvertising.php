@@ -27,6 +27,7 @@ class ArticleAdvertising extends Model
 
     protected $fillable = [
         'article_id',
+        'link',
         'updated_by',
         'cover_desktop',
         'cover_movil',
