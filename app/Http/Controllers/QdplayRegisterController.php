@@ -53,6 +53,7 @@ class QdplayRegisterController  extends Controller
         $user->email = $params['email'];
         $user->password = bcrypt($params['password']);
         $user->source = $params['source'];
+
         $user = $this->users->saveProfile($params, $user);
 
         Auth::login($user);
