@@ -18,7 +18,7 @@
     }
 
     .btn-subscribe {
-        background-color: #7a68eb;
+        background-color: #ff9300;
     }
 
     .btn-subscribe:hover {
@@ -48,7 +48,7 @@
                                 data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 @if($user)
-                                    <span class="font-akshar" style="color: #7a68eb;">
+                                    <span class="font-akshar" style="color: #ff9300;">
                                         {{ $user->name }} <i class="lni lni-crown"></i>
                                     </span>
                                 @endif
