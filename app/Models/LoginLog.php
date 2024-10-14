@@ -20,7 +20,7 @@ class LoginLog extends Model
      */
     protected $table = 'login_logs';
 
-    protected $fillable = ['user_id', 'source'];
+    protected $fillable = ['user_id', 'source', 'channel'];
 
     public function user()
     {

@@ -32,6 +32,7 @@ class QdplayRegisterRequest extends FormRequest
             'password' => 'required|min:8|max:100|confirmed',
             'password_confirmation' => 'required|min:8|max:100',
             'source' => 'sometimes|string|min:1|max:255',
+            'channel' => 'sometimes|string|min:1|max:255',
             'whatsapp' => 'nullable|min:10',
             'g-recaptcha-response' => 'required|recaptcha'
         ];

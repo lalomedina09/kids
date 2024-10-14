@@ -67,7 +67,8 @@ class QdplayLoginController extends Controller
         LoginLog::create(
             [
                 'user_id' => $user->id,
-                'source' => $request->source
+                'source' => $request->source,
+                'channel' => $request->channel
             ]
         );
 

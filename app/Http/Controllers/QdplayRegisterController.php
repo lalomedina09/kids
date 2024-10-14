@@ -53,6 +53,7 @@ class QdplayRegisterController  extends Controller
         $user->email = $params['email'];
         $user->password = bcrypt($params['password']);
         $user->source = $params['source'];
+        $user->channel = $params['channel'];
 
         $user = $this->users->saveProfile($params, $user);
 
@@ -62,7 +63,8 @@ class QdplayRegisterController  extends Controller
         LoginLog::create(
             [
                 'user_id' => $user->id,
-                'source' => $params['source']
+                'source' => $params['source'],
+                'channel' => $params['channel']
             ]
         );
 
