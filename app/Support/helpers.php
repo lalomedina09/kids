@@ -500,7 +500,7 @@ if (!function_exists('date_mx')) {
 
 function searchCourseQuiz($courseId)
 {
-    
+
     $quiz = Quiz::where('quizzesable_type', "QD\\QDPlay\\Models\\Course")
         ->where('quizzesable_id', $courseId)
         ->get();
@@ -587,7 +587,7 @@ function lastLogin($user_id)
 function format_comment_date($date) {
     // Convertir la fecha a un objeto Carbon para utilizar sus métodos
     $carbonDate = Carbon::parse($date);
-    
+
     // Obtener la diferencia en horas
     $hoursDiff = $carbonDate->diffInHours();
 
@@ -613,7 +613,24 @@ function reproductionOfAcademyUsers($userId){
         ->where('vs.user_id', $userId)
         ->where('vs.source', $source)
         ->sum('vt.length');
-    
+
     return round($totalLength);
-    
+
+}
+
+function nameDaySpanish($stringDay)
+{
+    // Array de traducción de días
+    $days = [
+        'Monday' => 'Lunes',
+        'Tuesday' => 'Martes',
+        'Wednesday' => 'Miércoles',
+        'Thursday' => 'Jueves',
+        'Friday' => 'Viernes',
+        'Saturday' => 'Sábado',
+        'Sunday' => 'Domingo'
+    ];
+
+    // Retorna el día en español si existe en el array, o el mismo día si no está
+    return $days[$stringDay] ?? $stringDay;
 }
