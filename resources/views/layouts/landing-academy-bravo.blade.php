@@ -41,26 +41,15 @@
             </div>
             <div class="text-right">
                 @auth
-                    {{--
 
-                    --}}
                     <ul class="nav">
                         <li class="nav-item dropdown">
 
                             <a href="#" class="nav-link dropdown-toggle header__buttons header__buttons--last"
                                 data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                {{--
-                                @auth
-                                    <span class="text-small d-xl-inline-block">
-                                        <i class="fa fa-sliders" aria-hidden="true"></i> {{ auth()->user()->name }}
-                                    </span>
-                                @endauth
-                                --}}
+
                                 @if($user)
-                                    {{--<span class="font-akshar" style="color: #ffffff;">
-                                        Hola,
-                                    </span>--}}
                                     <span class="font-akshar" style="color: #7a68eb;">
                                         {{ $user->name }} <i class="lni lni-crown"></i>
                                     </span>

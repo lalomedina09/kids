@@ -75,8 +75,14 @@
                     <span class="text-white font-akshar text-unlock-header font-size-p">
                         Desbloquea los cursos, suscríbete hoy a Querido Dinero Play
                     </span>
-                    <a class="btn-subscribe font-size-p" href="#" data-toggle="modal" data-target="#modalLogin">
+                    <!-- Botón para desktop (visible en pantallas grandes) -->
+                    <a class="btn-subscribe font-size-p d-none d-lg-inline-block" href="#" data-toggle="modal" data-target="#modalLogin">
                         COMPRAR AHORA
+                    </a>
+
+                    <!-- Botón para móvil (visible en pantallas pequeñas) -->
+                    <a class="btn-subscribe font-size-p d-inline-block d-lg-none" href="#" data-toggle="modal" data-target="#modalLogin">
+                        COMPRAR
                     </a>
                 @endauth
             </div>
@@ -108,3 +114,5 @@
 @push('styles')
     <link href="{{ url('css/landing.css') }}" rel="stylesheet">
 @endpush
+
+
