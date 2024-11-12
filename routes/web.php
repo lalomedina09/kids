@@ -333,13 +333,22 @@ Route::prefix('password')
 | Static pages
 |--------------------------------------------------------------------------
 */
-
+/*
 Route::get('/')
     #->uses('HomeController@index')
     #->name('home');
     //->uses('HomeController@blog')
     ->uses('\QD\QDPlay\Http\Controllers\Home\HomeController@index')
     ->name('home');
+*/
+Route::get('/')
+    ->uses('HomeController@indexRedesign')
+    ->name('home');
+
+
+Route::get('services')
+    ->uses('HomeController@servicesRedesign')
+    ->name('services');
 
 Route::get('/play')
     ->uses('\QD\QDPlay\Http\Controllers\Home\HomeController@index')

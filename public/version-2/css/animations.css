@@ -1,0 +1,12 @@
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+        /* Ajusta la distancia que quieras que se mueva hacia abajo */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

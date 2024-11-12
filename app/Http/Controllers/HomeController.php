@@ -74,6 +74,20 @@ class HomeController extends Controller
         ]);
     }
 
+    public function indexRedesign()
+    {
+        return view('v2.home.index')->with([
+            'categories' => 0
+        ]);
+    }
+
+    public function servicesRedesign()
+    {
+        return view('v2.home.services')->with([
+            'categories' => 0
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      *

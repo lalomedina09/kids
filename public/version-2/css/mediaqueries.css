@@ -1,0 +1,1242 @@
+/**************************************************************/
+
+
+/**************************************************************/
+
+
+/* Media Queries */
+
+
+/**************************************************************/
+
+@media (min-width: 360px) and (max-width: 480px) {
+
+    .bg-container{
+        left: -15px;
+        width: 107%;
+    }
+
+
+    .col-md-2 col-sm-4 col-6 mb-4 d-flex{
+        margin-top: 0px;
+    }
+    
+    .queremos-que-todos {
+        margin-top: 18px;
+        font-size: 20px;
+        line-height: 35px;
+        font-weight: 400;
+        
+    }
+    .margin-title-solution {
+        margin-top: 1em;
+        margin-bottom: 1em;
+
+    }
+    .input-group {
+        width: 100%;
+    }
+    .subscribe-title {
+        font-size: 40px;
+    }
+    .subscribe-input {
+        font-size: 18px;
+    }
+    .te-ayudamos-a {
+        font-weight: 100;
+        font-size: 20px;
+        line-height: 36px;
+    }
+    .btn-susbcribe {
+        font-size: 22px;
+    }
+    .subscribe-title {
+        font-size: 30px;
+    }
+    /*.social-icon-v2 {
+        font-size: 2em;
+    }*/
+    /* Landing de servicios - seccion de Banner */
+    .stackcapaone::after {
+        width: 450px;
+        height: 450px;
+        bottom: 450px;
+        left: -300px;
+    }
+    .manchas-azul::before {
+        width: 425px;
+        height: 610px;
+        top: 50px;
+        right: -153px;
+    }
+    .lasolucin {
+        font-size: 2.6rem;
+    }
+         /* ################# Landing Home - seccion de sobre nosotros ################# */
+
+    /*Verde*/ 
+    .circle{                        
+        top:30;
+        left: 22%;
+        width: 193;
+        height: 162;
+
+    }
+    /*Amarillo*/ 
+    .circle-2 {              
+        top: 21%;
+        left: 49%;
+        width: 47%;
+        height: 46%;
+    }
+    /*Naranja*/
+    .circle-3{                       
+        top: 51%; 
+        left: 32%;
+        width: 160px;
+        height: 162px;
+    }
+
+    .ellipse {
+        margin-top: 26%;
+        left: 54%;
+    }
+
+    .ellipse-2 {
+        margin-top: 22%;
+        left: 20%;
+    }
+
+    .ellipse-3 {
+        margin-top: 261px;
+        left: 37%;
+    }
+} 
+
+/* Estilos para dispositivos extra pequeños (móviles pequeños en modo vertical) */
+
+@media (max-width: 480px) {
+
+    .img-banner-main-random {
+        max-width: 111%;
+        height: auto;
+        margin-top: -62px;
+        left: -17px;
+
+    }
+    .navbar .collapse {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar .navbar-collapse {
+        background-color: #ffffff;
+        padding: 10px;
+    }
+    .navbar .navbar-toggler,
+    .navbar .navbar-brand,
+    .navbar .btn-dark {
+        display: flex;
+        align-items: center;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar-toggler {
+        margin-right: auto;
+        /* Empuja el botón de hamburguesa hacia la izquierda */
+        order: 1;
+    }
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        order: 1;
+        bottom: 0;
+    }
+    .btn-dark {
+        margin-left: auto;
+        order: 2;
+    }
+    .order-menu-hamburger {
+        order: 0 !important;
+    }
+    .para-todos {
+        margin-top: 0.5em;
+        font-weight: 501;
+        font-size: 2.5rem;
+        line-height: 49.6px;
+    }
+    .movil-only {
+        display: block;
+    }
+    .text-wrapper-27 {
+        font-size: 22px;
+    }
+    .te-ayudamos-a {
+        text-align: center;
+        line-height: normal;
+    }
+    /*Seccion ACERCA DE NOSOTROS*/
+    .title-about-us {
+        margin-top: 3em !important;
+    }
+    .div-btn-about-us {
+        margin-bottom: 15%;
+        margin-left: -166px;
+    }
+    /*Seccion Contenido*/
+    .text-wrapper-21 {
+        font-size: 30px;
+    }
+    .text-wrapper-27 {
+        font-size: 20px;
+        text-align: center;
+        line-height: 25px;
+    }
+    .carousel-indicators {
+        bottom: -10%;
+    }
+    /* Landing Servicios - Seccion Banner*/
+    .lasolucin {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 550px) {
+    
+    /*Landing de SERVICIOS  - Banner*/
+    .lasolucin {
+        font-size: 2.6rem;
+    }
+    .description-1 {
+        font-size: 1.3rem;
+    }
+    .rowarrowup_one {
+        flex-direction: column;
+    }
+    .main-pigeon {
+        width: 215px;
+    }
+    .pigeon-secondary-left {
+        left: 50%;
+        top: 10%;
+    }
+    .pigeon-secondary-right {
+        right: 15%;
+        top: 10%;
+    }
+}
+
+
+/* Estilos para dispositivos pequeños (móviles en modo vertical) */
+
+@media (min-width: 481px) and (max-width: 576px) {
+    
+    .navbar {
+        top: 65px;
+    }
+    .navbar .nav-link {
+        font-size: 13px;
+    }
+    .navbar .btn-dark {
+        font-size: 15px;
+    }
+    .navbar .navbar-brand img {
+        height: 32px;
+    }
+    .content {
+        padding-top: 130px;
+    }
+    .para-todos {
+        margin-top: 0.5em;
+    }
+    .movil-only {
+        display: block;
+    }
+    .text-wrapper-27 {
+        font-size: 22px;
+    }
+    .te-ayudamos-a {
+        text-align: center;
+    }
+    .title-about-us {
+        margin-top: 3em;
+    }
+    
+    /*-----------------------------------------------------------*/
+    /*-------------  Estilos para el Footer ---------------------*/
+    .subscribe-title {
+        font-size: 30px;
+    }
+    .te-ayudamos-a {
+        font-size: 20px;
+    }
+    .btn-susbcribe {
+        font-size: 22px;
+    }
+    /*.social-icon-v2 {
+        font-size: 2em;
+    }*/
+    /*-----------------------------------------------------------*/
+    /*Seccion ACERCA DE NOSOTROS*/
+    .title-about-us {
+        margin-top: 3em;
+    }
+    .div-btn-about-us {
+        margin-bottom: 15%;
+    }
+    /*-----------------------------------------------------------*/
+    /*---------------------- Seccion de contenido ---------------*/
+    .text-wrapper-21 {
+        font-size: 30px;
+    }
+    .text-wrapper-27 {
+        font-size: 20px;
+        text-align: center;
+        line-height: 25px;
+    }
+    .carousel-indicators {
+        bottom: -10%;
+    }
+    /*-----------------------------------------------------------*/
+    /*---------------------- Landing de servicios - Banner principal ---------------*/
+    
+
+     /* ################# Landing Home - seccion de sobre nosotros ################# */
+
+    /*Verde*/ 
+    .circle{                        
+        top:30;
+        left: 22%;
+        width: 193;
+        height: 162;
+
+    }
+    /*Amarillo*/ 
+    .circle-2 {              
+        top: 21%;
+        left: 49%;
+        width: 47%;
+        height: 46%;
+    }
+    /*Naranja*/
+    .circle-3{                       
+        top: 51%;
+        left: 18%;
+        width: 192px;
+        height: 211px;
+    }
+}
+
+
+
+
+/* Estilos para dispositivos medianos (tabletas y móviles en modo horizontal) */
+
+@media (min-width: 577px) and (max-width: 768px) {
+    
+    .navbar {
+        top: 70px;
+    }
+    .navbar .nav-link {
+        font-size: 14px;
+    }
+    .navbar .btn-dark {
+        font-size: 16px;
+    }
+    .navbar .navbar-brand img {
+        height: 34px;
+    }
+    .content {
+        padding-top: 140px;
+    }
+    .movil-only {
+        display: block;
+    }
+    .para-todos {
+        font-family: "Besley", Helvetica;
+        font-weight: 600;
+        color: #000000;
+        font-size: 2em;
+        text-align: center;
+        line-height: 30px;
+        margin-top: 40px;
+    }
+    .queremos-que-todos {
+        font-family: "Akshar", Helvetica;
+        color: #000000;
+        font-size: 18px;
+        text-align: center;
+        line-height: 25px;
+    }
+    .frame-4,
+    .frame-5,
+    .frame-6,
+    .frame-7 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .subtitle-solution {
+        font-size: 18px;
+        line-height: 21px;
+    }
+    .title-about-us {
+        margin-top: 3em;
+    }
+    .main-pigeon {
+        width: 250px;
+    }
+    .banner-title-main {
+        font-size: 2rem;
+    }
+    .description-1 {
+        font-size: 1.1rem;
+    }
+    .number-font-size {
+        font-size: 3rem;
+    }
+    /*----------------------------------------------*/
+    /********* Seccion de contenido******************/
+    .quote-content {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    /*----------------------------------------------*/
+    /********* Landing de Servicios - seccion de banner******************/
+    .stackcapaone::after {
+        width: 450px;
+        height: 450px;
+        bottom: 450px;
+        left: -300px;
+    }
+    .manchas-azul::before {
+        width: 450px;
+        height: 450px;
+    }
+    .pigeon-secondary-left {
+        left: 50%;
+    }
+    .capaone_one,
+    .capaone_two {
+        width: 75%;
+    }
+}
+
+@media (max-width: 767px) {
+    .d-md-flex {
+        display: none !important;
+    }
+    .frame-4,
+    .frame-5,
+    .frame-6,
+    .frame-7 {
+        padding: 20px 40px;
+    }
+    /********************** Landing Home - Seccion de nosotros ****************/
+    .div-text-about-us {
+        margin-bottom: inherit;
+    }
+    /********************** Secion de Servicios ****************/
+    .service-1 {
+        background-color: #DFC654;
+    }
+    .service-2 {
+        background-color: #88BCAF;
+    }
+    .service-3 {
+        background-color: #80809D;
+    }
+    .service-4 {
+        background-color: #C5481C;
+    }
+    .service-5 {
+        background-color: #EC6464;
+    }
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .frame-8 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        text-align: left;
+    }
+    .frame-8 img {
+        width: 38%;
+        margin-right: 15px;
+        flex-shrink: 0;
+        margin-left: -11rem;
+    }
+    .frame-8 .text-wrapper {
+        color: #fff;
+        text-align: left;
+        margin: 0;
+        flex-grow: 1;
+        margin-left: 10rem;
+        margin-top: 51px;
+        position:absolute
+    }
+    .frame-8 .subtext-wrapper {
+        display: none;
+    }
+    .img-2-service {
+        width: 50%;
+    }
+    .d-md-flex {
+        display: none !important;
+    }
+    .frame-4,
+    .frame-5,
+    .frame-6,
+    .frame-7 {
+        padding: 20px 40px;
+    }
+}
+
+@media (min-width: 768px) {
+    
+    .margin-title-solution {
+        margin-top: 9.5em;
+    }
+    
+    .social-row {  
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 75%;
+    }
+    /********************** Landing Home - Seccion de nosotros ****************/
+    .div-text-about-us {
+        margin-bottom: inherit;
+    }
+    /**************************** Seccion de SOLUTIONS ********************/
+    #solucionesCarousel {
+        display: none;
+    }
+    /******************Lading Home - Seccion de servicios *****************/
+    .img-2-service {
+        width: 90px;
+        margin-left: 16px;
+    }
+}
+
+@media (min-width: 810px) and (max-width: 910px) {
+    
+    .text-wrapper-4 {
+        margin-top: 2em;
+    }
+    .title-about-us {
+        margin-top: 3em;
+    }
+    .div-btn-about-us {
+        margin-bottom: 4em;
+        margin-left: -159px;
+    }
+    /********************** Landing Home - Seccion Banner ****************/
+    .para-todos {
+        font-size: 2.5em;
+        line-height: 40.6px;
+    }
+    .queremos-que-todos {
+        font-size: 18px;
+        line-height: 25px;
+    }
+    /********************** Landing Home - Seccion de nosotros ****************/
+    .div-text-about-us {
+        margin-bottom: inherit;
+    }
+    /********************* Seccion de soluciones ************************/
+    .margin-title-solution {
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+    .agencia-creativa-de,
+    .consultor-a-de,
+    .contenidos,
+    .academia-online {
+        font-size: 17px;
+        line-height: 20.4px;
+    }
+    /********************* Seccion de contenido ************************/
+    .quote-content {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .para-todos {
+        font-size: 2.1em;
+        line-height: 35px;
+    }
+    .queremos-que-todos {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .margin-title-solution {
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+    .agencia-creativa-de,
+    .consultor-a-de,
+    .contenidos,
+    .academia-online {
+        font-size: 17px;
+        line-height: 20.4px;
+    }
+    /********************************************************************************/
+    /******************Lading Home - Seccion de servicios *****************/
+    .img-2-service {
+        width: 90px;
+        margin-top: -20px;
+    }
+    .text-wrapper {
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        height: 60px;
+    }
+}
+
+
+/* Estilos para dispositivos grandes (pantallas de escritorio pequeñas) */
+
+@media (min-width: 769px) and (max-width: 992px) {
+
+    .sobre-nosotros{
+        margin-left: 46px;
+        margin-right: 31px;
+    }
+
+
+    .servicio-lr {
+        margin-left: -35px;
+        margin-right: -39px;
+    }
+
+    .frame-8 {
+        padding: 0px;
+    }
+
+    .mr-3 {
+        margin-left: 2rem !important;
+    }
+
+    .ml-3 {
+        margin-right: 1rem !important;
+    }
+
+    .soluciones-margenes {
+        margin-left: -10px;
+        margin-right: -29px;
+    }
+
+    .position-relative{
+        height: 663px;
+    }
+
+    ------------------------------------------------------------------------------------------------------------
+    .navbar {
+        top: 45px;
+    }
+    .navbar .nav-link {
+        font-size: 14px;
+    }
+    .navbar .btn-dark {
+        font-size: 16px;
+    }
+    .navbar .navbar-brand img {
+        height: 35px;
+    }
+    .content {
+        padding-top: 150px;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-link {
+        padding: 15px;
+        border-bottom: 1px solid #ccc;
+    }
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    .para-todos {
+        margin-top: 0.5em;
+    }
+    .desktop-only {
+        display: block;
+    }
+    .title-about-us {
+        margin-top: 3em;
+    }
+    /********************** Landing Home - Seccion Banner ****************/
+
+    .subscribe-title{
+        font-size: 16px;
+    }
+    .para-todos {
+        font-size: 31px;
+        line-height: 40.6px;
+        margin-top: -62px;
+    }
+    .queremos-que-todos {
+        font-size: 16.9px;
+        line-height: 25px;
+    }
+    .img-banner-main-random {
+        height: 380px;
+        max-width: 127%;
+    }
+    .ellipse,
+    .ellipse-2,
+    .ellipse-3 {
+        width: 120px;
+        height: 120px;
+    }
+    /* landing de servicios Banner*/
+    .stackcapaone::after {
+        width: 400px;
+        height: 400px;
+    }
+    .manchas-azul::before {
+        width: 400px;
+        height: 400px;
+    }
+    .main-pigeon {
+        width: 250px;
+    }
+    .pigeon-secondary-right {
+        width: 15%;
+        position: absolute;
+        right: 10%;
+    }
+    .pigeon-secondary-left {
+        width: 15%;
+        left: 50%;
+    }
+    .banner-title-main {
+        font-size: 2rem;
+    }
+    .description-1 {
+        font-size: 1.1rem;
+    }
+    .number-font-size {
+        font-size: 3rem;
+    }
+    .red-blur-secondary {
+        width: 200px;
+        height: 300px;
+        top: -150px;
+        right: 200px;
+        transform: translate(50%, 0) rotate(-130deg);
+    }
+    .red-blur {
+        width: 250px;
+        height: 400px;
+        top: -80px;
+        right: 350px;
+        transform: translate(50%, 0) rotate(130deg);
+    }
+    .btn-susbcribe {
+        width: 40%;
+    }
+    /* ################# Landing Home - seccion de sobre nosotros ################# */
+
+    /*Verde*/ 
+    .circle{                        
+        top:30;
+        left: 22%;
+        width: 193;
+        height: 162;
+
+    }
+    /*Amarillo*/ 
+    .circle-2 {              
+        top: 21%;
+        left: 49%;
+        width: 47%;
+        height: 46%;
+    }
+    /*Naranja*/
+    .circle-3{                       
+        top: 67%;
+        left: 35%;
+        width: 228px;
+        height: 211px;
+    }
+}
+
+
+
+
+
+@media (max-width: 1050px) {
+    /*Landing de SERVICIOS  - Banner*/
+    .stackcapaone {
+        height: auto;
+    }
+    .lasolucin,
+    .description-1 {
+        width: 100%;
+        /*margin-left: 0;*/
+    }
+    .capaone_one,
+    .capaone_two {
+        width: 100%;
+        height: auto;
+    }
+    .image {
+        width: 100%;
+        margin-left: 0;
+    }
+    .arrowup_one {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+
+
+/* Estilos para dispositivos extra grandes (pantallas de escritorio grandes) */
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    .navbar {
+        top: 45px;
+    }
+    .navbar .nav-link {
+        font-size: 14px;
+    }
+    .navbar .btn-dark {
+        font-size: 16px;
+    }
+    .navbar .navbar-brand img {
+        height: 35px;
+    }
+    .content {
+        padding-top: 150px;
+    }
+    .desktop-only {
+        display: block;
+    }
+    .subtitle-solution {
+        font-size: 20px;
+    }
+    .para-todos {
+        font-size: 3em;
+        line-height: 57.6px;
+        margin-top: 48px;
+    }
+    .main-pigeon {
+        width: 250px;
+    }
+    .banner-title-main {
+        font-size: 2rem;
+    }
+    .description-1 {
+        font-size: 1.1rem;
+    }
+
+      /* ################# Landing Home - seccion de sobre nosotros ################# */
+
+    .circle{                                    /*Verde*/
+        top:30%;
+        left: 22%;
+        width: 193;
+        height: 162;
+
+    }
+
+    .circle-2 {                                 /*Amarillo*/ 
+        top: 12%;
+        left: 52%;
+        width: 47%;
+        height: 46%;
+        
+    }
+
+    .circle-3{                                      /*Naranja*/
+        top: 61%;
+        left: 30%;
+        width: 165px;
+        height: 194px;
+    }
+
+}
+
+
+/* Estilos para dispositivos ultra grandes (pantallas de escritorio muy grandes) */
+
+@media (min-width: 1201px) and (max-width: 1440px) {
+
+
+    .img-2-service {
+        width: 167px;
+        margin-left: 3px;
+    }
+
+
+    .text-wrapper-21{
+        margin-left: -10px;
+    }
+
+    .ml-3{
+        margin-right:-3rem !important;
+    }
+
+    .mr-3{
+        margin-left:-3rem !important;
+    }
+
+    .margin-title-solution{
+        margin-top: 6.5rem;
+    }
+
+    .navbar {
+        top: 45px;
+    }
+    .navbar .nav-link {
+        font-size: 14px;
+    }
+    .navbar .btn-dark {
+        font-size: 16px;
+    }
+    .navbar .navbar-brand img {
+        height: 35px;
+        margin-left: -74px;
+    }
+    /* ################# Estilos para landing Home ################# */
+    .content {
+        padding-top: 150px;
+    }
+    .desktop-only {
+        display: block;
+    }
+    .subtitle-solution {
+        font-size: 20px;
+    }
+    .para-todos {
+        font-size: 3.2em;
+        line-height: 62px;
+        margin-top: 32px;
+        margin-left: -54px !important;
+    }
+
+    .queremos-que-todos{
+        margin-left: -74px;
+        font-size: 27px;
+    }
+
+    /* .text-md-left{
+        margin-left: -74px;
+    } */
+
+    .img-banner-main-random{
+        margin-top: 48px;
+    }
+
+    .position-relative{
+        height: 555px;
+    }
+
+    .col-12 col-md-5{
+        margin-top: 674px;
+    }
+    /* ################# Estilos para landing de Servicios ################# */
+
+    .subtext-wrapper{
+        font-size: 14px;
+        font-weight: 400; 
+    }
+
+    .frame-8{
+        padding: 27px;
+    }
+
+    .servicio-lr{
+        margin-left: -168px;
+        margin-right: -151px;
+    }
+
+    .soluciones-margenes{
+        margin-left: -105px;
+        margin-right: -101px;
+    }
+    .main-pigeon {
+        width: 250px;
+        margin-top: 50px;
+    }
+    .banner-title-main {
+        font-size: 2.5rem;
+    }
+    .description-1 {
+        font-size: 1.5rem;
+        /*margin-left: 20%;
+        margin-right: 20%;*/
+    }
+    /* ################# Landing Home - seccion de contenido ################# */
+    .text-wrapper-26 {
+        font-size: 18px;
+        text-align: center;
+        line-height: 22px;
+    }
+    /* ################# Landing Home - seccion de sobre nosotros ################# */
+
+    
+    .circle{                                    /*Verde*/
+        top:30%;
+        left: 22%;
+        width: 193;
+        height: 162;
+
+    }
+
+    .circle-2 {                                 /*Amarillo*/ 
+        top: 12%;
+        left: 52%;
+        width: 35%;
+        height: 46%;
+        
+    }
+
+    .circle-3{                                      /*Naranja*/
+        top: 61%;
+        left: 30%;
+        width: 270px;
+        height: 119px;
+    }
+
+/* Seccion de Footer */
+
+    .sobre-nosotros{
+        margin-left: -34px;
+        margin-right: -31px;
+    }
+    
+    .subscribe-title{
+        font-size: 24px;
+    
+    }
+}
+
+/* Seccion Footer */
+
+
+
+
+
+/* Estilos para dispositivos ultra extra grandes (pantallas de escritorio ultra grandes) */
+
+@media (min-width: 1441px) and (max-width: 1992px) {
+
+    .margen-boton{
+        margin-left: -88px;
+    }
+
+    .ml-3{
+        margin-right:-2rem !important;
+    }
+
+    .mr-3{
+        margin-left:-3rem !important;
+    }
+
+    .img-2-service {
+        width: 167px;
+        margin-left: 3px;
+    }
+
+    .frame-8 {
+        padding: 28px;
+    }
+
+    .servicio-lr {
+        margin-left: -169px;
+        margin-right: -123px;
+    }
+    
+    /* .position-relative{
+        height: 555px;
+    } */
+    
+    .navbar {
+        top: 45px;
+    }
+    .navbar .nav-link {
+        font-size: 15px;
+    }
+    .navbar .btn-dark {
+        font-size: 17px;
+    }
+    .navbar .navbar-brand img {
+        height: 36px;
+        margin-left: -44px;
+    }
+    .content {
+        padding-top: 160px;
+    }
+    .desktop-only {
+        display: block;
+    }
+    .subtitle-solution {
+        font-size: 20px;
+        margin-top: 20;
+    }
+
+    .queremos-que-todos{
+        margin-left: -74px;
+        font-size: 27px;
+    }
+    .para-todos {
+        font-size: 3.3rem;
+        line-height: 62px;
+        margin-top: 78px;
+        margin-left: -55px !important;
+    }
+
+    .subscribe-title{
+        font-size: 25px;
+    }
+
+    .img-banner-main-random{
+        margin-top: 48px;
+        margin-left: 40px;
+    }
+
+    .margin-title-solution {
+        margin-top: 6.5em;
+        }
+    /* ################# Landing Home - seccion de sobre nosotros ################# */
+
+    .circle{                                    /*Verde*/
+        top:30%;
+        left: 22%;
+        width: 193;
+        height: 162;
+
+    }
+
+    .circle-2 {                                 /*Amarillo*/ 
+        top: 12%;
+        left: 40%;
+        width: 47%;
+        height: 46%;
+        
+    }
+
+    .circle-3{                                      /*Naranja*/
+        top: 61%;
+        left: 30%;
+        width: 165px;
+        height: 194px;
+    }
+}
+
+@media only screen and (min-width: 3840px) {
+    .margen-boton{
+        margin-left: -88px;
+    }
+
+    .ml-3{
+        margin-right:-2rem !important;
+    }
+
+    .mr-3{
+        margin-left:-3rem !important;
+    }
+
+    .img-2-service {
+        width: 167px;
+        margin-left: 3px;
+    }
+
+    .frame-8 {
+        padding: 28px;
+    }
+
+    .servicio-lr {
+        margin-left: -169px;
+        margin-right: -123px;
+    }
+    
+    .position-relative{
+        height: 555px;
+    }
+    
+    .navbar {
+        top: 45px;
+    }
+    .navbar .nav-link {
+        font-size: 15px;
+    }
+    .navbar .btn-dark {
+        font-size: 17px;
+        margin-left: 80px;
+    }
+    .navbar .navbar-brand img {
+        height: 36px;
+        margin-left: -45px;
+    }
+    .content {
+        padding-top: 160px;
+    }
+    .desktop-only {
+        display: block;
+    }
+    .subtitle-solution {
+        font-size: 20px;
+        margin-top: 20;
+    }
+
+    .queremos-que-todos{
+        margin-left: -74px;
+        font-size: 27px;
+    }
+    .para-todos {
+        font-size: 3.3rem;
+        line-height: 62px;
+        margin-top: 78px;
+        margin-left: -55px !important;
+    }
+
+    .subscribe-title{
+        font-size: 25px;
+    }
+
+    .img-banner-main-random{
+        margin-top: 48px;
+        margin-left: 40px;
+    }
+
+    .margin-title-solution {
+        margin-top: 4.5em;
+        }
+    /* ################# Landing Home - seccion de sobre nosotros ################# */
+
+    .circle{                                    /*Verde*/
+        top:30%;
+        left: 22%;
+        width: 193;
+        height: 162;
+
+    }
+
+    .circle-2 {                                 /*Amarillo*/ 
+        top: 12%;
+        left: 40%;
+        width: 47%;
+        height: 46%;
+        
+    }
+
+    .circle-3{                                      /*Naranja*/
+        top: 61%;
+        left: 30%;
+        width: 165px;
+        height: 194px;
+    }
+}
+
+
+/************************************************************************************/
