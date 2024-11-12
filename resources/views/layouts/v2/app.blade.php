@@ -10,7 +10,8 @@
 
     @include('layouts.v2.components.footer')
 
-    {{--@include('partials.main.modals')--}}
+    @include('v2.components.modals.login')
+    @include('v2.components.modals.sign-up')
 </div>
 
 {{--

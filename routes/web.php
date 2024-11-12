@@ -346,9 +346,13 @@ Route::get('/')
     ->name('home');
 
 
-Route::get('services')
+Route::get('servicios')
     ->uses('HomeController@servicesRedesign')
     ->name('services');
+
+Route::get('consultoria')
+    ->uses('HomeController@consultingRedesign')
+    ->name('consulting');
 
 Route::get('/play')
     ->uses('\QD\QDPlay\Http\Controllers\Home\HomeController@index')

@@ -915,7 +915,7 @@
     line-height: 24px;
     white-space: nowrap;
 }
-/* 
+/*
 .web .logos {
     position: absolute;
     width: 1330px;
@@ -1431,8 +1431,8 @@
     padding-top: 80px;
 } */
 /*************************Aquí empieza Style 2*********************************/
-    
-#appV2 {
+
+#app {
     min-height: 80vh;
     padding-top: 80px;
     background-color: #F2F2F2;;
@@ -1830,7 +1830,7 @@
     font-weight: 600;
     color: #ffffff;
     font-size: 32px;
-    text-align: center !important; 
+    text-align: center !important;
 }
 
 .p {
@@ -2448,7 +2448,7 @@ a {
     background-color: #EEEEEE; /* Color de fondo de la sección de soluciones */
     color: white;              /* Color del texto */
     padding: 50px;             /* Espaciado interno */
-    text-align: center;   
+    text-align: center;
     margin-top: 464px;     /* Centrar texto */
 }
 
@@ -2469,7 +2469,7 @@ a {
     background-color: #F5F5F5; /* Color de fondo de la sección de soluciones */
     color: white;              /* Color del texto */
     padding: 50px;             /* Espaciado interno */
-    text-align: center;   
+    text-align: center;
     margin-top: 0px;     /* Centrar texto */
 }
 
@@ -2537,14 +2537,14 @@ a {
 .tarjeta {
     font-family: "Akshar", Helvetica;
     background-color: #EEEEEE;  /* Color de fondo */
-    color: #000000;; 
-    width: 268px;     
+    color: #000000;;
+    width: 268px;
     height: 181px;         /* Color del texto */
     /* padding: 84px;              Espaciado interno */
     border-radius: 0px;        /* Bordes redondeados */
     text-align: left;         /* Centrado del texto */
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); Sombra */
-    line-height: 1.6; 
+    line-height: 1.6;
     font-size: 17px;
 }
 
