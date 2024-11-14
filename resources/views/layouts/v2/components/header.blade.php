@@ -24,8 +24,12 @@
                 class="d-inline-block align-top logo-menu-qd">
         </a>
 
-        <!-- Botón de acceso a la derecha -->
-        <a class="btn btn-dark ml-auto order-2" href="#">Acceder</a>
+        <!-- Botón que debe aparecer solo en desktop -->
+        <a class="btn btn-dark ml-auto order-2 d-none d-lg-block" href="#" data-toggle="modal"
+            data-target="#modalLogin">Acceder</a>
+
+        <!-- Botón que debe aparecer solo en móvil -->
+        <a class="btn btn-dark ml-auto order-2 d-lg-none" href="{{ route('login') }}">Acceder</a>
 
         <!-- Contenido del menú colapsable -->
         <div class="collapse navbar-collapse" id="navbarContent">

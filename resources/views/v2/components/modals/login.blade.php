@@ -67,19 +67,21 @@
                             @push('scripts')
                             <script type="text/javascript" src="{{ mix('js/auth/login.js') }}"></script>
                             @endpush
-                            <div class="text-center">
-                                <h4 class="modal-title font-akshar" style="font-weight: 400; letter-spacing: 5px;"
+                            <div class="text-center mb-4">
+                                <h4 class="modal-title text-family-akshar" style="font-weight: 400; letter-spacing: 5px;"
                                     id="exampleModalLabel">
                                     ¡Te extrañabamos!
                                 </h4>
-                                <h2 class="font-akshar">BIENVENID@</h2>
+                                <h2 class="text-family-akshar">BIENVENID@</h2>
+                                <br><br><br>
                             </div>
+
                             <form action="{{ route('qdplay-login') }}" method="POST" id="form-login"
-                                class="form-custom form-modal">
+                                class="form-custom form-modal mb-4">
                                 @csrf
                                 <input type="hidden" name="source" value="{{ $source }}">
                                 <input type="hidden" name="channel" value="{{ $channel }}">
-                                <div class="form-group font-akshar">
+                                <div class="form-group text-family-akshar">
                                     <label for="login-email" class="text-uppercase">* @lang('E-Mail')</label>
                                     <input type="email" name="email" id="login-email" class="form-control">
                                     @if ($errors->has('email'))
@@ -87,7 +89,7 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group font-akshar">
+                                <div class="form-group text-family-akshar">
                                     <label for="login-password" class="text-uppercase">* @lang('Password')</label>
                                     <input type="password" name="password" id="login-password" class="form-control">
                                     @if ($errors->has('password'))
@@ -95,7 +97,7 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group font-akshar">
+                                <div class="form-group text-family-akshar">
                                     <div class="custom-control custom-checkbox mt-1">
                                         <label class="text-uppercase">
                                             <input type="checkbox" id="toggle-login-password"> @lang('View password')
@@ -104,17 +106,17 @@
                                     </div>
                                 </div>
 
-                                <p class="small font-italic font-akshar">
+                                <p class="small font-italic text-family-akshar">
                                     (*) @lang('The field is required')
                                 </p>
 
-                                <div class="text-center mt-4 font-akshar">
+                                <div class="text-center mt-4 text-family-akshar">
                                     <input type="submit" name="submit" value="@lang('Login')"
                                         class="btn bg-green-blue btn-login-v2">
                                 </div>
                             </form>
 
-                            <p class="text-center font-akshar my-3">
+                            <p class="text-center text-family-akshar my-3">
                                 <a href="{{ route('password.request') }}" class=" text-underline text-xsmall text-dark">
                                     @lang('Forgot Your Password?')
                                 </a>
@@ -123,14 +125,14 @@
                             @include('partials.auth.social_media_logins_v2', array('track_client' => $source))
                             <br>
                             <hr style="width: 70%; border-top: 1px solid #000; margin: 0 auto;">
-                            <div class="text-center mt-4 font-akshar">
+                            <div class="text-center mt-4 text-family-akshar">
                                 <p class="">¿No estás registrado aún?</p>
                                 <a href="{{-- route('register') --}}#" class="btn btn-pill bg-green-blue btn-login-v2"
                                     id="btn-open-modal-register" data-toggle="modal" data-target="#modalSignUp">
                                     Registrate aquí
                                 </a>
 
-                                <div class="text-center font-akshar mt-4">
+                                <div class="text-center text-family-akshar mt-4">
                                     <p class=" text-xsmall mb-0 text-dark">Al iniciar sesión estás aceptando nuestros
                                     </p>
                                     <a href="{{ route('terms') }}" target="_blank"

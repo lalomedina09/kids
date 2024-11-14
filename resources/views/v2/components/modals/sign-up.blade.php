@@ -88,10 +88,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="text-center">
-                                <!--<h4 class="modal-title font-akshar" style="font-weight: 400; letter-spacing: 5px;" id="exampleModalLabel">
+                                <!--<h4 class="modal-title text-family-akshar" style="font-weight: 400; letter-spacing: 5px;" id="exampleModalLabel">
                                     ¡Te extrañabamos!
                                 </h4>-->
-                                <h2 class="font-akshar">
+                                <h2 class="text-family-akshar">
                                     ¡Registrate Gratis!
                                 </h2>
                             </div>
@@ -107,7 +107,7 @@
                     <input type="hidden" name="channel" value="{{ $channel }}">
                     <!------------------------------------->
                     <!-- row -->
-                    <div class="row font-akshar ml-2 mr-2">
+                    <div class="row text-family-akshar ml-2 mr-2">
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="name" class="text-uppercase">* @lang('First Name')</label>
@@ -207,12 +207,12 @@
                             <div class="form-group text-center">
 
                                 <button type="submit"
-                                    class="btn btn-danger btn-pill btn-login-v2">@lang('Registrarme')</button>
+                                    class="btn btn-pill btn-login-v2">@lang('Registrarme')</button>
                             </div>
                         </div>
 
                         <div class="col-lg-12">
-                            <div class="text-center font-akshar mt-2">
+                            <div class="text-center text-family-akshar mt-2">
                                 <p class=" text-xsmall mb-0 text-dark">Al registrarte estás aceptando nuestros</p>
                                 <a href="{{ route('terms') }}" target="_blank"
                                     class=" text-underline text-xsmall text-dark text-bold">

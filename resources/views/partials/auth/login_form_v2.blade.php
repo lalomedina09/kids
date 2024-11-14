@@ -1,12 +1,9 @@
 @push('scripts')
     <script type="text/javascript" src="{{ mix('js/auth/login.js') }}"></script>
-    <script type="text/javascript" src="{{ mix('js/vendor/moment.js') }}"></script>
-    <script type="text/javascript" src="{{ mix('js/vendor/datetimepicker.js') }}"></script>
-    <script type="text/javascript" src="{{ mix('js/auth/register.js') }}"></script>
 @endpush
-
-<p class="text-danger text-uppercase text-center mb-0 mt-4 text-family-akshar" style="font-size: xx-large;">¡Te extrañábamos!</p>
-<p class="modal__title text-uppercase text-center mb-5 text-family-akshar text-white mt-2" style="font-size: xx-large;">Bienvenido</p>
+{{------
+<p class="text-danger text-uppercase text-center mb-0 mt-4 text-family-akshar">¡Te extrañábamos!</p>
+<p class="modal__title text-uppercase text-center mb-5 text-family-akshar text-white mt-2">Bienvenido</p>
 
 <form action="{{ route('login') }}" method="POST"
     id="form-login" class="form-custom form-modal">
@@ -42,7 +39,7 @@
     </p>
 
     <div class="text-center mt-4">
-        <input type="submit" name="submit" value="@lang('Login')" class="btn btn-danger btn-pill text-family-akshar">
+        <input type="submit" name="submit" value="@lang('Login')" class="btn btn-danger btn-pill">
     </div>
 </form>
 
@@ -66,3 +63,4 @@
     <p class="text-white text-family-akshar mb-2">¿No estás registrado aún?</p>
     <a href="{{ route('register') }}" class="btn btn-pill btn-danger text-family-akshar">Registrate aquí</a>
 </div>
+--------}}

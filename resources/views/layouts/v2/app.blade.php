@@ -3,6 +3,7 @@
 @section('base')
 
 <div id="app">
+
     @include('layouts.v2.components.header')
     {{--@include('partials.main.header')--}}
 
@@ -10,14 +11,15 @@
 
     @include('layouts.v2.components.footer')
 
-    @include('v2.components.modals.login')
-    @include('v2.components.modals.sign-up')
+    @if(isset($source) && isset($channel))
+        @include('v2.components.modals.login')
+        @include('v2.components.modals.sign-up')
+    @endif
+
 </div>
 
-{{--
     @include('partials.main.scripts')
-    @include('partials.main.messages')
-    @include('partials.modals.adviceStatus')
---}}
+    @include('layouts.v2.components.messages')
+    @include('layouts.v2.components.scripts')
 
 @endsection
