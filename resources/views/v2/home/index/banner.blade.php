@@ -30,7 +30,7 @@
         <div class="col-12 col-md-5 position-relative ajustarcirculos">
             <div class="bg-container">
                 <div class="gradent mx-auto"></div>
-                <div class="position-relative d-flex justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center"><!--removi esta clase position-relative-->
                     <div class="ellipse"></div>
                     <div class="ellipse-2"></div>
                     <div class="ellipse-3"></div>
@@ -77,8 +77,8 @@
 
     // Intercambiar colores y agregar movimiento cada 2 segundos
     setInterval(() => {
-        swapColors();
-        addRandomMovement();
+        //swapColors();
+        //addRandomMovement();
     }, 2000);
 </script>
 

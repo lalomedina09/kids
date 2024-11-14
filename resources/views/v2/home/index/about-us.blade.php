@@ -13,7 +13,7 @@
 
             <div class="d-flex mt-4 py-0 px-0 div-btn-about-us justify-content-center justify-content-lg-start"
                 style="margin-bottom;">
-                <a href="#" title="" class="btn bg-white btn-link-about-us" style="margin-left: 173px">Conoce más</a>
+                <a href="#" title="" class="btn bg-white btn-link-about-us">Conoce más</a>
             </div>
             <br><br>
         </div>

@@ -4,14 +4,13 @@
     }
 </style>
 <footer class="element">
-    <div class="container">
+    <div class="container" style="background-color: #000000;">
         <br><br><br>
         <div class="row justify-content-center text-center social-row">
             <div class="col-2 col-md-2 text-center">
                 <a href="#" class="link-social">
                     <img src="{{ asset('version-2/images/redesfooter/facebook.png') }}" alt="icono-facebook">
                 </a>
-
             </div>
             <div class="col-2 col-md-2 text-center">
                 <a href="#" class="link-social">
