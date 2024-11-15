@@ -1,5 +1,5 @@
 @extends('layouts.base')
-<title>Academia Bravo | Querido Dinero</title>
+<title>Kardmatch | Querido Dinero</title>
 @section('base')
 <style>
     .header-wrapper {
