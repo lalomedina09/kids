@@ -36,9 +36,6 @@
         font-family: "Akshar", Helvetica;
     }
 
-    .d-none {
-        display: none !important;
-    }
 </style>
 
 <div class="container-fluid bg-dark">
