@@ -20,7 +20,7 @@
             <div class="row mt-4 margen-boton">
                 <div class="col-md-12 ml-4">
                     <div class="text-md-left text-center mt-3 w-100">
-                        <a href="#" class="btn btn-dark boton-conoce-servicios">Conoce nuestros servicios</a>
+                        <a href="{{ route('services') }}" class="btn btn-dark boton-conoce-servicios">Conoce nuestros servicios</a>
                     </div>
                 </div>
             </div>

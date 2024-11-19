@@ -91,7 +91,7 @@
                                 <!--<h4 class="modal-title text-family-akshar" style="font-weight: 400; letter-spacing: 5px;" id="exampleModalLabel">
                                     ¡Te extrañabamos!
                                 </h4>-->
-                                <h2 class="text-family-akshar">
+                                <h2 class="text-family-akshar" style="font-size: x-large;">
                                     ¡Registrate Gratis!
                                 </h2>
                             </div>

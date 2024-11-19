@@ -68,11 +68,11 @@
                             <script type="text/javascript" src="{{ mix('js/auth/login.js') }}"></script>
                             @endpush
                             <div class="text-center mb-4">
-                                <h4 class="modal-title text-family-akshar" style="font-weight: 400; letter-spacing: 5px;"
+                                <h4 class="modal-title text-family-akshar" style="font-weight: 400; letter-spacing: 5px; font-size: x-large;"
                                     id="exampleModalLabel">
                                     ¡Te extrañabamos!
                                 </h4>
-                                <h2 class="text-family-akshar">BIENVENID@</h2>
+                                <h2 class="text-family-akshar" style="font-size: x-large;">BIENVENID@</h2>
                                 <br><br><br>
                             </div>
 
