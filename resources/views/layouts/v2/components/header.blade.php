@@ -1,17 +1,44 @@
+@php
+    $getActiveAd = getActiveAd();
+@endphp
+@if(!$getActiveAd)
+    <style>
+        .navbar {
+            top: 0px;
+        }
+    </style>
+@else
+    <style>
+        #add-top{
+            background-color: {{ $getActiveAd->background_color }};
+        }
+        .anuncio{
+            background-color: {{ $getActiveAd->background_color }};
+        }
+        .anuncio:hover{
+            background-color: {{ $getActiveAd->background_color }};
+        }
+    </style>
+@endif
 
+@if($getActiveAd)
+    <div id="add-top" class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center py-3 anuncio">
+                <p class="m-0 text-anuncio" style="color: #fff;">
+                    ⚡️
+                    {!! $getActiveAd->content !!}
 
-<div class="container-fluid bg-dark">
-    <div class="row">
-        <div class="col-12 bg-dark text-center py-3 anuncio">
-            <p class="m-0 text-anuncio">
-                <span class="text-white">⚡️Abre tu cuenta de BBVA en minutos desde la comodidad de tu hogar.</span>
-                <span class="font-weight-bold text-white text-decoration-underline">¡Sin filas, sin papeleo! Apertura de
-                    Cuenta Fácil y Rápida</span>
-                <span class="font-weight-bold text-warning">→</span>
-            </p>
+                    @if($getActiveAd->has_countdown && $getActiveAd->end_date)
+                        <i class="fa-solid fa-clock fa-beat ml-2"></i>
+                        <span class="ml-1" id="countdown" style="font-weight: 700;"></span>
+                    @endif
+                </p>
+            </div>
         </div>
     </div>
-</div>
+@endif
+<!------------------------------------------------------------------------------------------------------->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-menu">
     <div class="container d-flex justify-content-between align-items-center">
         <!-- Botón de toggling para pantallas pequeñas -->
@@ -211,3 +238,32 @@
         });
     });
 </script>
+
+@if($getActiveAd)
+    @if($getActiveAd->has_countdown && $getActiveAd->end_date)
+        <script>
+            const countdownElement = document.getElementById('countdown');
+            const endTime = new Date("{{ $getActiveAd->end_date }}").getTime();
+
+            const updateCountdown = () => {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+
+                if (distance <= 0) {
+                    countdownElement.innerHTML = "¡El anuncio ha terminado!";
+                    return clearInterval(interval);
+                }
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+            };
+
+            const interval = setInterval(updateCountdown, 1000);
+            updateCountdown();
+        </script>
+    @endif
+
+@endif

@@ -23,6 +23,7 @@
 <script src="{{ asset('version-2/js/iziToast.min.js') }}?v={{ (rand(1,500)) }}" type="text/javascript"></script>
 
 <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
