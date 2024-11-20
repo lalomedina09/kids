@@ -1,5 +1,6 @@
 @php
     $getActiveAd = getActiveAd();
+    $user = Auth::user();
 @endphp
 @if(!$getActiveAd)
     <style>
@@ -66,30 +67,30 @@
                         <img src="{{ asset('version-2/images/components/user.png') }}" alt="Imagen de perfil" width="60">
                     </div>
                     <div style="flex: 1 1 70%; padding-left: 10px; text-align: left;">
-                        <p style="margin: 0; font-weight: bold;">Nombre del usuario</p>
-                        <p style="margin: 0; color: gray; font-size: 0.9rem;">correo@ejemplo.com</p>
+                        <p style="margin: 0; font-weight: bold;">{{ $user->name }}</p>
+                        <p style="margin: 0; color: gray; font-size: 0.9rem;">{{ $user->email }}</p>
                     </div>
                 </div>
                 <ul class="profile-options">
                     <hr style="border-top: 1px solid #ffffff;">
                     @can('blog.dashboard.show')
                         <li>
-                            <a href="/dashboard" target="_blank">
+                            <a href="{{ route('dashboard.index') }}" target="_blank">
                                 <img src="{{ asset('version-2/images/components/svg/gear-1.svg') }}" alt="Editar" width="20"> Dashboard
                             </a>
                         </li>
                         <li>
-                            <a href="/dashboard" target="_blank">
+                            <a href="{{ route('dashboard.articles.index') }}" target="_blank">
                                 <img src="{{ asset('version-2/images/components/svg/gear-1.svg') }}" alt="Editar" width="20"> Blog
                             </a>
                         </li>
                         <li>
-                            <a href="/dashboard" target="_blank">
+                            <a href="{{ route('dashboard.qdplay') }}" target="_blank">
                                 <img src="{{ asset('version-2/images/components/svg/gear-1.svg') }}" alt="Editar" width="20"> QD Play
                             </a>
                         </li>
                         <li>
-                            <a href="/dashboard" target="_blank">
+                            <a href="{{ route('dashboard.qdplay.v2.panoramic') }}" target="_blank">
                                 <img src="{{ asset('version-2/images/components/svg/gear-1.svg') }}" alt="Editar" width="20"> Admin V2
                             </a>
                         </li>
