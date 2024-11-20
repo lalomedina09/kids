@@ -2614,3 +2614,79 @@ a {
     border-radius: 5px;
     padding: 12px 24px;
 }
+
+/****************** Seccion del menu de perfil superior para desktop ********************/
+.profile-menu {
+    position: absolute;
+    top: 15px;
+    /* Ajustar según la altura del header */
+    right: 170px;
+    background: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    width: 300px;
+    color: #ffffff;
+    font-family: "Akshar", Helvetica;
+}
+
+.profile-menu .profile-info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-menu .profile-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-menu .profile-options li {
+    margin: 10px 5px;
+}
+
+.profile-menu .profile-options li:hover {
+    margin: 10px 5px;
+    border-left: 3px solid #c54a1d;
+}
+
+.profile-menu .profile-options li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-family: "Akshar", Helvetica;
+}
+
+.profile-options {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    margin: 0;
+}
+
+/* Estilo del scrollbar del menu de perfil */
+.profile-options::-webkit-scrollbar {
+    width: 8px;
+    background-color: #495057;
+    border-radius: 10px;
+}
+
+/* Estilo del "thumb" (la parte que se mueve) */
+.profile-options::-webkit-scrollbar-thumb {
+    background-color: #b0b0b0;
+    border-radius: 10px;
+    border: 2px solid #495057;
+}
+
+/* Estilo del thumb cuando está activo (al hacer clic) */
+.profile-options::-webkit-scrollbar-thumb:active {
+    background-color: #888;
+}
+
+/* Estilo opcional para Firefox */
+.profile-options {
+    scrollbar-width: thin;
+    scrollbar-color: #000 #495057;
+}

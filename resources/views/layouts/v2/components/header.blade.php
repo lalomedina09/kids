@@ -1,42 +1,4 @@
-<style>
-    .profile-menu {
-        position: absolute;
-        top: 70px; /* Ajustar según la altura del header */
-        right: 10px;
-        background: #000000;
-        border: 1px solid #000000;
-        border-radius: 5px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        z-index: 1000;
-        width: 300px;
-        color: #ffffff;
-        font-family: "Akshar", Helvetica;
-    }
 
-    .profile-menu .profile-info {
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .profile-menu .profile-options {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .profile-menu .profile-options li {
-        margin: 15px 5px;
-    }
-
-    .profile-menu .profile-options li a {
-        text-decoration: none;
-        color: #FFFFFF;
-        font-size: 16px;
-        font-family: "Akshar", Helvetica;
-    }
-
-</style>
 
 <div class="container-fluid bg-dark">
     <div class="row">
@@ -83,6 +45,29 @@
                 </div>
                 <ul class="profile-options">
                     <hr style="border-top: 1px solid #ffffff;">
+                    @can('blog.dashboard.show')
+                        <li>
+                            <a href="/dashboard" target="_blank">
+                                <img src="{{ asset('version-2/images/components/svg/gear-1.svg') }}" alt="Editar" width="20"> Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/dashboard" target="_blank">
+                                <img src="{{ asset('version-2/images/components/svg/gear-1.svg') }}" alt="Editar" width="20"> Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/dashboard" target="_blank">
+                                <img src="{{ asset('version-2/images/components/svg/gear-1.svg') }}" alt="Editar" width="20"> QD Play
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/dashboard" target="_blank">
+                                <img src="{{ asset('version-2/images/components/svg/gear-1.svg') }}" alt="Editar" width="20"> Admin V2
+                            </a>
+                        </li>
+                        <hr style="border-top: 1px solid #ffffff;">
+                    @endcan
                     <li>
                         <a href="#">
                             <img src="{{ asset('version-2/images/components/svg/pencil-1.svg') }}" alt="Editar" width="20"> Mi perfil
@@ -94,62 +79,68 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/cart-2.svg') }}" alt="Compras" width="20"> Cerrar sesión
+                        <a href="{{ route('logout') }}">
+                            <img src="{{ asset('version-2/images/components/svg/exit.svg') }}" alt="Compras" width="20"> Cerrar sesión
                         </a>
                     </li>
                     <hr style="border-top: 1px solid #ffffff;">
                     <li>
                         <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/cart-2.svg') }}" alt="Compras" width="20"> Academia virtual
+                            <img src="{{ asset('version-2/images/components/svg/youtube.svg') }}" alt="Compras" width="20"> Academia
+                            virtual
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/cart-2.svg') }}" alt="Compras" width="20"> Rutas de aprendizaje
+                            <img src="{{ asset('version-2/images/components/svg/route-1.svg') }}" alt="Compras" width="20"> Rutas de
+                            aprendizaje
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/cart-2.svg') }}" alt="Compras" width="20"> Membresía
-                        </a>
-                    </li>
-                    <hr style="border-top: 1px solid #ffffff;">
-                    <li>
-                        <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/cart-2.svg') }}" alt="Compras" width="20"> Herramienta
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/cart-2.svg') }}" alt="Compras" width="20"> Juegos
+                            <img src="{{ asset('version-2/images/components/svg/star-fat.svg') }}" alt="Compras" width="20"> Membresía
                         </a>
                     </li>
                     <hr style="border-top: 1px solid #ffffff;">
                     <li>
                         <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/cart-2.svg') }}" alt="Compras" width="20"> Blog
+                            <img src="{{ asset('version-2/images/components/svg/calculator-1.svg') }}" alt="Compras" width="20">
+                            Herramientas
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/cart-2.svg') }}" alt="Compras" width="20"> Marcadores
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/cart-2.svg') }}" alt="Compras" width="20"> Newsletter
+                            <img src="{{ asset('version-2/images/components/svg/game-pad-modern-1.svg') }}" alt="Compras" width="20">
+                            Juegos
                         </a>
                     </li>
                     <hr style="border-top: 1px solid #ffffff;">
                     <li>
                         <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/bell-1.svg') }}" alt="Compras" width="20"> Ayuda
+                            <img src="{{ asset('version-2/images/components/svg/blogger.svg') }}" alt="Compras" width="20"> Blog
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/comment-1.svg') }}" alt="Compras" width="20"> Enviar comentarios
+                            <img src="{{ asset('version-2/images/components/svg/layers-1.svg') }}" alt="Compras" width="20"> Marcadores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="{{ asset('version-2/images/components/svg/envelope-1.svg') }}" alt="Compras" width="20">
+                            Newsletter
+                        </a>
+                    </li>
+                    <hr style="border-top: 1px solid #ffffff;">
+                    <li>
+                        <a href="#">
+                            <img src="{{ asset('version-2/images/components/svg/helicopter-2.svg') }}" alt="Compras" width="20"> Ayuda
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="{{ asset('version-2/images/components/svg/comment-1.svg') }}" alt="Compras" width="20"> Enviar
+                            comentarios
                         </a>
                     </li>
                 </ul>
