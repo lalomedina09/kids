@@ -12,6 +12,7 @@ class Ad extends Model
         'content',
         'background_color',
         'has_countdown',
+        'destination_url',
         'start_date',
         'end_date',
     ];

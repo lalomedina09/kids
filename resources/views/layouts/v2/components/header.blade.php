@@ -26,15 +26,15 @@
     <div id="add-top" class="container-fluid">
         <div class="row">
             <div class="col-12 text-center py-3 anuncio">
-                <p class="m-0 text-anuncio" style="color: #fff;">
+                <a href="{{ $getActiveAd->destination_url }}" style="text-decoration: none; color: #fff;" class="m-0 text-anuncio">
                     ⚡️
-                    {!! $getActiveAd->content !!}
-
+                    {{ $getActiveAd->content }}
+                    ⚡️
                     @if($getActiveAd->has_countdown && $getActiveAd->end_date)
                         <i class="fa-solid fa-clock fa-beat ml-2"></i>
                         <span class="ml-1" id="countdown" style="font-weight: 700;"></span>
                     @endif
-                </p>
+                </a>
             </div>
         </div>
     </div>
