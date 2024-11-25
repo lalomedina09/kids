@@ -69,6 +69,11 @@
         padding: 10px;
     }
 
+    .img-title-game-calendar{
+        margin-top: 5%;
+        margin-bottom:5%;
+        width: 75%;
+    }
     /* Extra Small Devices (Teléfonos pequeños, menos de 576px) */
     @media (max-width: 575.98px) {
         .calendar-item-inner {
@@ -82,6 +87,11 @@
         .advent-calendar .calendar-item {
             width: 30%;
             padding: 1px;
+        }
+        .img-title-game-calendar{
+            width: 100%;
+            margin-top: 10%;
+            margin-bottom:10%;
         }
     }
 
@@ -116,7 +126,7 @@
 </style>
 <div class="bg-adviento">
     <div class="container text-center ">
-        <img src="/images/games/titulo.png" width="70%" alt="Titulo" style="margin-top: 5%; margin-bottom:5%;">
+        <img src="/images/games/titulo.png" alt="Titulo" class="img-title-game-calendar">
         <div class="row advent-calendar">
             <!-- Casillas del calendario se generan aquí -->
         </div>
