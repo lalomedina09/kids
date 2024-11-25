@@ -39,7 +39,7 @@
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
-        /*border-radius: 10px;*/
+        border-radius: 10px;
         overflow: hidden;
     }
 
@@ -69,12 +69,12 @@
         padding: 10px;
     }
 </style>
-
-<div class="container text-center bg-adviento">
-
-    <img src="/images/games/titulo.png" width="70%" alt="Titulo" style="margin-top: 5%; margin-bottom:5%;">
-    <div class="row advent-calendar">
-        <!-- Casillas del calendario se generan aquí -->
+<div class="bg-adviento">
+    <div class="container text-center ">
+        <img src="/images/games/titulo.png" width="70%" alt="Titulo" style="margin-top: 5%; margin-bottom:5%;">
+        <div class="row advent-calendar">
+            <!-- Casillas del calendario se generan aquí -->
+        </div>
     </div>
 </div>
 
