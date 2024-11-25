@@ -1067,3 +1067,21 @@ Route::name('callbacks.')
 Route::post('quiz/course/save')
 ->uses('HomeController@quizCourseSave')
 ->name('quiz.course.save');
+
+
+/*
+|--------------------------------------------------------------------------
+| Juegos
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('juegos')
+    ->group(function () {
+        Route::get('/calendario/adviento')
+            ->uses('GamesController@calendar_adviento')
+            ->name('games.calendar_adviento');
+
+        /*Route::get('/{slug}')
+            ->uses('JuegosController@show')
+            ->name('videos.show');*/
+    });
