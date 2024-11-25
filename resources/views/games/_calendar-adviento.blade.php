@@ -1,7 +1,7 @@
 <style>
 
     .bg-adviento {
-        background-image: url('img/bg-white.jpg');
+        background-image: url('/images/games/bg-white.jpg');
         background-size: cover;
         background-position: center;
     }
