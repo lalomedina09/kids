@@ -23,8 +23,8 @@
 
     .calendar-item-inner {
         position: relative;
-        width: 100%;
-        height: 150px;
+        width: 90%;
+        height: 165px;
         transform-style: preserve-3d;
         transition: transform 0.6s;
     }
@@ -39,7 +39,7 @@
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
-        border-radius: 10px;
+        /*border-radius: 10px;*/
         overflow: hidden;
     }
 
