@@ -100,7 +100,7 @@
                                 <div class="form-group text-family-akshar">
                                     <div class="custom-control custom-checkbox mt-1">
                                         <label class="text-uppercase">
-                                            <input type="checkbox" id="toggle-login-password"> @lang('View password')
+                                            <input type="checkbox" style="width: 40px; margin-left: -20px;" id="toggle-login-password"> @lang('View password')
                                             <!--<span class="custom-control-indicator"></span>-->
                                         </label>
                                     </div>
@@ -133,12 +133,11 @@
                                 </a>
 
                                 <div class="text-center text-family-akshar mt-4">
-                                    <p class=" text-xsmall mb-0 text-dark">Al iniciar sesión estás aceptando nuestros
-                                    </p>
-                                    <a href="{{ route('terms') }}" target="_blank"
-                                        class=" text-underline text-xsmall text-dark text-bold">
-                                        Términos y Condiciones
-                                    </a>
+                                    <p class=" text-xsmall mb-0 text-dark">Al iniciar sesión estás aceptando nuestros</p>
+                                        <a href="{{ route('terms') }}" target="_blank"
+                                            class=" text-underline text-xsmall text-dark text-bold">
+                                            Términos y Condiciones
+                                        </a>
                                     </p>
                                 </div>
                             </div>

@@ -97,7 +97,7 @@
                         <hr style="border-top: 1px solid #ffffff;">
                     @endcan
                     <li>
-                        <a href="#">
+                        <a href="{{ route('profile.edit') }}">
                             <img src="{{ asset('version-2/images/components/svg/pencil-1.svg') }}" alt="Editar" width="20"> Mi perfil
                         </a>
                     </li>
@@ -113,19 +113,19 @@
                     </li>
                     <hr style="border-top: 1px solid #ffffff;">
                     <li>
-                        <a href="#">
+                        <a href="{{ route('qdplay') }}">
                             <img src="{{ asset('version-2/images/components/svg/youtube.svg') }}" alt="Compras" width="20"> Academia
                             virtual
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('qdplay.learning-paths.start', ['principal']) }}">
                             <img src="{{ asset('version-2/images/components/svg/route-1.svg') }}" alt="Compras" width="20"> Rutas de
                             aprendizaje
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('qdplay.individual-plans') }}">
                             <img src="{{ asset('version-2/images/components/svg/star-fat.svg') }}" alt="Compras" width="20"> Membresía
                         </a>
                     </li>
@@ -144,30 +144,30 @@
                     </li>
                     <hr style="border-top: 1px solid #ffffff;">
                     <li>
-                        <a href="#">
+                        <a href="{{ route('blog') }}">
                             <img src="{{ asset('version-2/images/components/svg/blogger.svg') }}" alt="Compras" width="20"> Blog
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('blog') }}">
                             <img src="{{ asset('version-2/images/components/svg/layers-1.svg') }}" alt="Compras" width="20"> Marcadores
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('blog') }}">
                             <img src="{{ asset('version-2/images/components/svg/envelope-1.svg') }}" alt="Compras" width="20">
                             Newsletter
                         </a>
                     </li>
                     <hr style="border-top: 1px solid #ffffff;">
                     <li>
-                        <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/helicopter-2.svg') }}" alt="Compras" width="20"> Ayuda
+                        <a href="{{ route('contact') }}">
+                            <img src="{{ asset('version-2/images/components/svg/helicopter-2.svg') }}" alt="Ayuda" width="20"> Ayuda
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <img src="{{ asset('version-2/images/components/svg/comment-1.svg') }}" alt="Compras" width="20"> Enviar
+                        <a href="{{ route('contact') }}">
+                            <img src="{{ asset('version-2/images/components/svg/comment-1.svg') }}" alt="Enviar comentarios" width="20"> Enviar
                             comentarios
                         </a>
                     </li>
