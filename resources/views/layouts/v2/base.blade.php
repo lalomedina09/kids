@@ -7,8 +7,8 @@
     <title>Home | Querido Dinero</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {{--@include('partials.main.favicon')--}}
-    {{--@include('partials.main.meta')--}}
+    @include('partials.main.favicon')
+    @include('partials.main.meta')
     {{--@include('partials.main.styles')--}}
     @include('layouts.v2.components.styles')
 
@@ -36,7 +36,9 @@
             @include('partials.main.script-body')
         @endif
     --}}
+
     @include('partials.main.script-body')
+
     @yield('base')
 </body>
 

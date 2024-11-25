@@ -1,5 +1,7 @@
 @extends('layouts.v2.app')
 
+<title>Home | Querido Dinero</title>
+
 @section('content')
 
 <section style="background-color: #f2f2f2;">

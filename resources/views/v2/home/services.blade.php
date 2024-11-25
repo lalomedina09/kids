@@ -1,7 +1,8 @@
 @extends('layouts.v2.app')
 
-@section('content')
+<title>Servicios | Querido Dinero</title>
 
+@section('content')
 
 @include('v2.home.services.banner')
 

@@ -1,5 +1,7 @@
 @extends('layouts.v2.app')
 
+<title>Consultoría | Querido Dinero</title>
+
 @section('content')
 
 
