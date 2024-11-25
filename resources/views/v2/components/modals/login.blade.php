@@ -101,7 +101,7 @@
                                     <div class="custom-control custom-checkbox mt-1">
                                         <label class="text-uppercase">
                                             <input type="checkbox" id="toggle-login-password"> @lang('View password')
-                                            <span class="custom-control-indicator"></span>
+                                            <!--<span class="custom-control-indicator"></span>-->
                                         </label>
                                     </div>
                                 </div>
