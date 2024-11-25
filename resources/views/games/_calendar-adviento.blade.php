@@ -68,6 +68,51 @@
         text-align: center;
         padding: 10px;
     }
+
+    /* Extra Small Devices (Teléfonos pequeños, menos de 576px) */
+    @media (max-width: 575.98px) {
+        .calendar-item-inner {
+            position: relative;
+        }
+        .calendar-item-inner {
+            position: relative;
+            margin-bottom: 10px;
+            height: 100px;
+        }
+        .advent-calendar .calendar-item {
+            width: 30%;
+            padding: 1px;
+        }
+    }
+
+    /* Small Devices (Teléfonos, entre 576px y 767.98px) */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        .calendar-item-inner {
+            position: relative;
+        }
+        .calendar-item-inner {
+            position: relative;
+            margin-bottom: 10px;
+            height: 100px;
+
+        }
+        .advent-calendar .calendar-item {
+            width: 30%;
+            padding: 1px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 810px) {
+        .calendar-item-inner {
+            position: relative;
+            margin-bottom: 10px;
+            height: 110px;
+        }
+        .advent-calendar .calendar-item {
+            width: 30%;
+            padding: 1px;
+        }
+    }
 </style>
 <div class="bg-adviento">
     <div class="container text-center ">
