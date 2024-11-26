@@ -91,9 +91,10 @@
 }
 
 .ui.text.size-text2xl {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     font-style: normal;
+    line-height: 25px;
     @media only screen and (max-width: 1050px) {
         font-size: 22px;
     }

@@ -5,7 +5,7 @@
             <div class="stackview">
                 <div class="view bg-light"></div>
                 <img src="{{ asset('version-2/images/services/black-academia.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-none d-lg-block" />
-                <img src="{{ asset('version-2/images/services/black-academia.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-lg-none" />
+                <img src="{{ asset('version-2/images/services/color-academia.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-lg-none" />
             </div>
         </div>
 

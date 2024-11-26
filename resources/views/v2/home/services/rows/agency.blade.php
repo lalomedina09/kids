@@ -15,7 +15,7 @@
                 <button class="btn btn-dark mt-3 btn-learn-more">Conoce más</button>
             </div>
         </div>
-        <div class="col-md-6 d-flex flex-column justify-content-center text-right order-1 order-md-2">
+        <div class="col-md-6 d-flex flex-column justify-content-center text-center text-md-right order-1 order-md-2">
             <div class="stackview">
                 <div class="view bg-light"></div>
                 <img src="{{ asset('version-2/images/services/black-agencia-creativa.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-none d-lg-block" />

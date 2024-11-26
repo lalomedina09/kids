@@ -110,7 +110,12 @@
         },
         // Configuración de breakpoints para diferentes tamaños de pantalla
         breakpoints: {
-            // cuando el ancho de la ventana es >= 576px
+            // cuando el ancho de la ventana es >= 350px
+            350: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            },
+            // cuando el ancho de la ventana es >= 400px
             400: {
                 slidesPerView: 1,
                 spaceBetween: 10
