@@ -1,10 +1,23 @@
+<style>
+    #img-service-qdplay-desktop {
+        transition: opacity 0.3s ease;
+        /* Transición suave */
+    }
+
+    /* Cambiar la imagen en hover */
+    #img-service-qdplay-desktop:hover {
+        content: url('{{ asset("version-2/images/services/hover/color-academia.png") }}');
+        max-width: 100%;
+        height: auto;
+    }
+</style>
 <div class="container" style="margin-bottom: 0px;">
     <div class="row mb-4">
         <!-- Columna que aparece primero en móviles y después en pantallas grandes -->
         <div class="col-md-6 d-flex align-items-center justify-content-center order-1 order-md-2">
             <div class="stackview">
                 <div class="view bg-light"></div>
-                <img src="{{ asset('version-2/images/services/black-academia.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-none d-lg-block" />
+                <img src="{{ asset('version-2/images/services/black-academia.png') }}" id="img-service-qdplay-desktop" alt="Imagefortyeight" class="img-fluid imagefortyeight d-none d-lg-block" />
                 <img src="{{ asset('version-2/images/services/color-academia.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-lg-none" />
             </div>
         </div>
