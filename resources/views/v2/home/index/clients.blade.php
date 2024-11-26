@@ -1,3 +1,33 @@
+<style>
+    .mySwiper {
+    display: flex;
+    justify-content: center; /* Centra el contenedor Swiper */
+    align-items: center; /* Alinea los elementos verticalmente */
+    width: 100%; /* Asegúrate de que el carrusel ocupe todo el ancho */
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center; /* Centra el contenido de cada slide */
+        align-items: center; /* Alinea verticalmente el contenido */
+        text-align: center; /* Asegura que el texto también esté centrado */
+    }
+    /* Cambiar los dots a líneas horizontales */
+    .swiper-pagination-bullet {
+        width: 30px; /* Ancho de la línea */
+        height: 4px; /* Alto de la línea */
+        background-color: #ccc; /* Color inicial */
+        border-radius: 0; /* Eliminar bordes redondeados */
+        margin: 5px; /* Espaciado entre líneas */
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Animación */
+    }
+
+    /* Línea activa */
+    .swiper-pagination-bullet-active {
+        background-color: #ffffff; /* Color activo */
+        transform: scale(1.2); /* Aumentar ligeramente el tamaño */
+    }
+</style>
 <div class="logos">
     <div class="row" style="margin-left: 5%; margin-right: 5%;">
         <div class="col-md-12">
@@ -40,22 +70,22 @@
 
             <!-- Mostrar el layout original en pantallas más grandes -->
             <div class="row d-none d-md-flex d-flex justify-content-center align-items-center d-xs-none">
-                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
                     <img class="logotipos--" src="{{ asset('version-2/images/clients/fiat.png') }}" style="width: 50%"/>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
                     <img class="--logotipos-2" src="{{ asset('version-2/images/clients/banorte.png') }}" style="width: 100%;" />
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
                     <img class="--logotipos-3" src="{{ asset('version-2/images/clients/vector.png') }}" style="width: 80%;" />
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
                     <img class="--logotipos-4" src="{{ asset('version-2/images/clients/home-depot.png') }}" style="width: 50%;" />
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
                     <img class="--logotipos-5" src="{{ asset('version-2/images/clients/amis.png') }}" style="width: 80%;" />
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
                     <img class="--logotipos-6" src="{{ asset('version-2/images/clients/hir-casa.png') }}" style="width: 80%;" />
                 </div>
             </div>
@@ -69,6 +99,7 @@
         slidesPerView: 2, // Configuración por defecto
         spaceBetween: 10,
         loop: true,
+        centeredSlides: true, // Centrar los slides
         autoplay: {
             delay: 1000,
             disableOnInteraction: false,
@@ -81,12 +112,12 @@
         breakpoints: {
             // cuando el ancho de la ventana es >= 576px
             400: {
-                slidesPerView: 2,
+                slidesPerView: 1,
                 spaceBetween: 10
             },
             // cuando el ancho de la ventana es >= 576px
             576: {
-                slidesPerView: 2,
+                slidesPerView: 1,
                 spaceBetween: 10
             },
             // cuando el ancho de la ventana es >= 768px

@@ -18,10 +18,14 @@
                 </a>
             </div>
             <div class="col-2 col-md-2 text-center">
-                <a href="#" class="link-social"><i class="lni lni-instagram social-icon-v2"></i></a>
+                <a href="#" class="link-social">
+                    <i class="lni lni-instagram social-icon-v2"></i>
+                </a>
             </div>
             <div class="col-2 col-md-2 text-center">
-                <a href="#" class="link-social"><i class="lni lni-youtube social-icon-v2"></i></a>
+                <a href="#" class="link-social">
+                    <i class="lni lni-youtube social-icon-v2"></i>
+                </a>
             </div>
             <div class="col-2 col-md-2 text-center">
                 <a href="#" class="link-social">
@@ -29,7 +33,9 @@
                 </a>
             </div>
             <div class="col-2 col-md-2 text-center">
-                <a href="#" class="link-social"><i class="lni lni-tiktok-alt social-icon-v2"></i></a>
+                <a href="#" class="link-social">
+                    <i class="lni lni-tiktok-alt social-icon-v2"></i>
+                </a>
             </div>
         </div>
 
@@ -47,15 +53,29 @@
                 <div class="col-md-7 d-flex justify-content-center justify-content-md-end">
                     <!-- Este div se muestra solo en dispositivos móviles -->
                     <div class="input-group no-gap d-md-none flex-column">
-                        <input type="email" class="form-control subscribe-input mb-2"
-                            style="width: 100%; border-radius: 1px;" placeholder="Correo electrónico">
-                        <button class="btn btn-dark btn-susbcribe btn-susc-margin">Suscríbete</button>
+                        <input type="email" class="form-control subscribe-input mb-2" style="width: 100%; border-radius: 1px;"
+                            placeholder="Correo electrónico">
+                        <button class="btn btn-dark btn-susbcribe btn-susc-margin mb-2">Suscríbete</button>
+                        <div class="form-check mt-2 mb-3">
+                            <input type="checkbox" class="form-check-input" id="acceptTerms" style="margin-top: -.1rem;">
+                            <label class="form-check-label text-dark font-akshar" for="acceptTerms">
+                                Al suscribirte estás aceptando nuestros <a href="enlace-a-terminos-y-condiciones" target="_blank">Términos y
+                                    Condiciones</a>
+                            </label>
+                        </div>
                     </div>
 
                     <!-- Este div se oculta en dispositivos móviles y se muestra en pantallas más grandes -->
                     <div class="input-group no-gap d-none d-md-flex">
                         <input type="email" class="form-control subscribe-input" placeholder="Correo electrónico">
                         <button class="btn btn-dark btn-susbcribe">Suscríbete</button>
+                        <div class="form-check mt-2">
+                            <input type="checkbox" class="form-check-input" id="acceptTerms" style="margin-top: -.1rem;">
+                            <label class="form-check-label text-dark font-akshar" for="acceptTerms" >
+                                Al suscribirte estás aceptando nuestros <a href="enlace-a-terminos-y-condiciones" target="_blank">Términos y
+                                    Condiciones</a>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>

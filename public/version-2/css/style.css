@@ -299,6 +299,10 @@
     object-fit: cover;
 }
 
+.font-akshar {
+    font-family: "Akshar", Helvetica;
+}
+
 .overlap-3 {
     position: absolute;
     width: 1446px;
@@ -1830,7 +1834,8 @@
 }
 
 .btn-link-about-us:hover {
-    background-color: #C5481C;
+    background-color: #C5481C !important;
+    color: #ffffff !important;
 }
 
 .text-wrapper-4 {
@@ -2072,6 +2077,17 @@
     width: 100%;
     margin-bottom: 15%;
     margin-top: -2%;
+}
+
+.icon-hover img {
+    filter: invert(1);
+    /* Invertir el color blanco a negro */
+    transition: filter 0.3s ease;
+    /* Transición suave */
+}
+
+.icon-hover img:hover {
+    filter: invert(48%) sepia(54%) saturate(618%) hue-rotate(341deg) brightness(97%) contrast(98%);
 }
 
 /**********************************************************************/

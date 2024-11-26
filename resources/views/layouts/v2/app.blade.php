@@ -18,7 +18,7 @@
 
 </div>
 
-    @include('partials.main.scripts')
+    {{--@include('partials.main.scripts')---}}
     @include('layouts.v2.components.messages')
     @include('layouts.v2.components.scripts')
 
