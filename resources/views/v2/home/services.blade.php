@@ -4,7 +4,7 @@
 
 @section('content')
 
-@include('v2.home.services.banner')
+    @include('v2.home.services.banner')
 
     {{--@include('v2.home.services.section-info-1')--}}
 

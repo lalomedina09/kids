@@ -19,13 +19,58 @@
         .anuncio:hover{
             background-color: {{ $getActiveAd->background_color }};
         }
+
+        .countdown-container {
+        display: inline-block; /* Valor predeterminado */
+        }
+
+        @media (max-width: 768px) { /* Estilo para dispositivos móviles */
+        .countdown-container {
+        display: block; /* Fuerza un salto de línea */
+        margin-top: 10px; /* Opcional: Espacio adicional entre las líneas */
+        }
+        }
     </style>
 @endif
 
+<style>
+    /* Contenedor del efecto */
+    @keyframes color-change {
+        0% {
+        background: conic-gradient(from 0deg, #88bcaf, #c54619, #dfc655, #8686a1);
+        }
+        50% {
+        background: conic-gradient(from 180deg, #c54619,#8686a1, #dfc655, #88bcaf);
+        }
+        100% {
+        background: conic-gradient(from 360deg, #dfc655,#88bcaf, #c54619, #8686a1);
+        }
+    }
+
+    /* Aplicar el efecto */
+    .profile-image-wrapper {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        border-radius: 50%;
+        background: conic-gradient(from 0deg, #88bcaf, #c54619, #dfc655, #8686a1);
+        animation: color-change 2s infinite linear;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile-image {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+    }
+</style>
 @if($getActiveAd)
     <div id="add-top" class="container-fluid">
         <div class="row">
             <div class="col-12 text-center py-3 anuncio">
+                {{----
                 <a href="{{ $getActiveAd->destination_url }}" style="text-decoration: none; color: #fff;" class="m-0 text-anuncio">
                     ⚡️
                     {{ $getActiveAd->content }}
@@ -33,6 +78,18 @@
                     @if($getActiveAd->has_countdown && $getActiveAd->end_date)
                         <i class="fa-solid fa-clock fa-beat ml-2"></i>
                         <span class="ml-1" id="countdown" style="font-weight: 700;"></span>
+                    @endif
+                </a>
+                ------}}
+                <a href="{{ $getActiveAd->destination_url }}" style="text-decoration: none; color: #fff;" class="m-0 text-anuncio">
+                    ⚡️
+                    {{ $getActiveAd->content }}
+                    ⚡️
+                    @if($getActiveAd->has_countdown && $getActiveAd->end_date)
+                    <div class="countdown-container">
+                        <i class="fa-solid fa-clock fa-beat ml-2"></i>
+                        <span class="ml-1" id="countdown" style="font-weight: 700;"></span>
+                    </div>
                     @endif
                 </a>
             </div>
@@ -56,8 +113,16 @@
 
         @auth
             <!-- Enlace de perfil -->
-            <a class="ml-auto order-2 profile-trigger" href="#">
+            {{--<a class="ml-auto order-2 profile-trigger" href="#">
                 <img src="{{ asset('version-2/images/components/user.png') }}" alt="Imagen de perfil" width="45">
+            </a>--}}
+
+            <!-- Enlace de perfil -->
+            <a class="ml-auto order-2 profile-trigger profile-link" href="#">
+                <div class="profile-image-wrapper">
+                    <img src="{{ asset('version-2/images/components/user.png') }}" alt="." class="profile-image"
+                        width="45">
+                </div>
             </a>
 
             <!-- Menú desplegable del perfil -->

@@ -95,6 +95,7 @@
     font-weight: 400;
     font-style: normal;
     line-height: 25px;
+
     @media only screen and (max-width: 1050px) {
         font-size: 22px;
     }
@@ -114,9 +115,11 @@
     font-size: 40px;
     font-weight: 500;
     font-style: bold;
+
     @media only screen and (max-width: 1050px) {
         font-size: 38px;
     }
+
     @media only screen and (max-width: 550px) {
         font-size: 36px;
     }
@@ -126,6 +129,7 @@
     font-size: 23px;
     font-weight: 600;
     font-style: bold;
+
     @media only screen and (max-width: 1050px) {
         font-size: 21px;
     }
@@ -135,9 +139,11 @@
     font-size: 48px;
     font-weight: 600;
     font-style: bold;
+
     @media only screen and (max-width: 1050px) {
         font-size: 44px;
     }
+
     @media only screen and (max-width: 550px) {
         font-size: 38px;
     }
@@ -147,6 +153,7 @@
     font-size: 80px;
     font-weight: 700;
     font-style: bold;
+
     @media only screen and (max-width: 1050px) {
         font-size: 48px;
     }
@@ -342,6 +349,9 @@
     font-family: "Akshar", Helvetica;
 }
 
+.btn-learn-more:hover {
+    background-color: #c5481c !important;
+}
 .number-font-size {
     font-size: 4rem;
 }

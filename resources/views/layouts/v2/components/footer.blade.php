@@ -59,8 +59,8 @@
                         <div class="form-check mt-2 mb-3">
                             <input type="checkbox" class="form-check-input" id="acceptTerms" style="margin-top: -.1rem;">
                             <label class="form-check-label text-dark font-akshar" for="acceptTerms">
-                                Al suscribirte estás aceptando nuestros <a href="enlace-a-terminos-y-condiciones" target="_blank">Términos y
-                                    Condiciones</a>
+                                Al suscribirte estás aceptando nuestros
+                                <a href="enlace-a-terminos-y-condiciones" target="_blank">Términos y Condiciones</a>
                             </label>
                         </div>
                     </div>

@@ -159,6 +159,9 @@
         margin-left: auto;
         order: 2;
     }
+    .btn-dark:hover{
+        background-color: #C5481C !important;
+    }
     .order-menu-hamburger {
         order: 0 !important;
     }
@@ -904,7 +907,7 @@
     }
     .navbar .navbar-brand img {
         height: 35px;
-        margin-left: -74px;
+        margin-left: -40px;
     }
     /* ################# Estilos para landing Home ################# */
     .content {
@@ -1071,7 +1074,7 @@
     }
     .navbar .navbar-brand img {
         height: 36px;
-        margin-left: -44px;
+        margin-left: 0px;
     }
     .content {
         padding-top: 160px;
