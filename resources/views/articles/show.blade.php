@@ -127,6 +127,12 @@
             </article>
         </section>
 
+        <section>
+            @if ($article->id == 1375)
+                @include('games._calendar-adviento')
+            @endif
+        </section>
+
         <section class="my-5 px-lg-5">
             <div class="card">
                 <img class="card-img-top" src="{{ asset('/images/newsletter.gif') }}" alt="Subscribe to newsletter">
