@@ -2,6 +2,12 @@
     .social-icon-v2 {
         font-size: 2em;
     }
+    .btn-border-r-1{
+        border-radius: 1px;
+    }
+    .fw-bold{
+        font-weight: bold;
+    }
 </style>
 <footer class="element">
     <div class="container" style="background-color: #000000;">
@@ -55,7 +61,7 @@
                     <div class="input-group no-gap d-md-none flex-column">
                         <input type="email" class="form-control subscribe-input mb-2" style="width: 100%; border-radius: 1px;"
                             placeholder="Correo electrónico">
-                        <button class="btn btn-dark btn-susbcribe btn-susc-margin mb-2">Suscríbete</button>
+                        <button class="btn btn-dark btn-susbcribe btn-susc-margin mb-2 btn-border-r-1">Suscríbete</button>
                         <div class="form-check mt-2 mb-3">
                             <input type="checkbox" class="form-check-input" id="acceptTerms" style="margin-top: -.1rem;">
                             <label class="form-check-label text-dark font-akshar" for="acceptTerms">
@@ -68,12 +74,14 @@
                     <!-- Este div se oculta en dispositivos móviles y se muestra en pantallas más grandes -->
                     <div class="input-group no-gap d-none d-md-flex">
                         <input type="email" class="form-control subscribe-input" placeholder="Correo electrónico">
-                        <button class="btn btn-dark btn-susbcribe">Suscríbete</button>
+                        <button class="btn btn-dark btn-susbcribe btn-border-r-1">Suscríbete</button>
                         <div class="form-check mt-2">
                             <input type="checkbox" class="form-check-input" id="acceptTerms" style="margin-top: -.1rem;">
                             <label class="form-check-label text-dark font-akshar" for="acceptTerms" >
-                                Al suscribirte estás aceptando nuestros <a href="enlace-a-terminos-y-condiciones" target="_blank">Términos y
-                                    Condiciones</a>
+                                Al suscribirte estás aceptando nuestros
+                                <a href="enlace-a-terminos-y-condiciones" target="_blank" class="text-dark fw-bold">
+                                    Términos y Condiciones
+                                </a>
                             </label>
                         </div>
                     </div>
@@ -133,11 +141,12 @@
                 </p>
             </div>
         </div>
-        <br><br><br>
+        <br>
         <div class="footer-line mt-4"></div>
-        <p class="footer-text mt-4">©<span id="current-year"></span> QUERIDO DINERO S.A. DE C.V. TODOS LOS DERECHOS
-            RESERVADOS</p>
-
+        <p class="footer-text mt-4">©<span id="current-year"></span>
+            QUERIDO DINERO S.A. DE C.V. TODOS LOS DERECHOS RESERVADOS
+        </p>
+        <br>
     </div>
 </footer>
 

@@ -27,6 +27,16 @@
         background-color: #ffffff; /* Color activo */
         transform: scale(1.2); /* Aumentar ligeramente el tamaño */
     }
+
+    .break-mobile {
+        display: none; /* Oculta el salto de línea por defecto */
+    }
+
+    @media (max-width: 768px) { /* Aplica en pantallas móviles */
+        .break-mobile {
+            display: inline;
+        }
+    }
 </style>
 <div class="logos">
     <div class="row" style="margin-left: 5%; margin-right: 5%;">
@@ -35,8 +45,11 @@
                 <div class="col-md-12 mt-4 mb-4">
                     <br>
                     <br>
-                    <p class="marcas-que-han">Nos gusta trabajar con los mejores</p>
-
+                    <p class="marcas-que-han">
+                        Nos gusta trabajar
+                        <span class="break-mobile"><br></span>
+                        con los mejores
+                    </p>
                 </div>
             </div>
             <!-- Va hacer visible para pantallas pequeñas -->

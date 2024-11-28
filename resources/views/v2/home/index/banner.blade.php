@@ -5,7 +5,7 @@
             <h2 class="para-todos ml-md-4 ml-4 text-md-left text-center">
                 Educación financiera <br> para todos
             </h2> <!-- Ajuste de margen para móvil -->
-            <div class="text-md-left text-center mt-4 mt-md-5 ml-4">
+            <div class="text-md-left text-center mt-4 mt-md-5 ml-md-4">
                 <p class="queremos-que-todos d-none d-md-block text-md-left text-center">
                     Queremos que todos
                     <span class="f-weight-500">mejoren sus finanzas personales.</span><br />

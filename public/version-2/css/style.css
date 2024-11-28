@@ -2032,12 +2032,12 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-
+/*
 .no-gap .btn {
     margin-left: -1px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-}
+}*/
 
 .input-group {
     width: 75%;
