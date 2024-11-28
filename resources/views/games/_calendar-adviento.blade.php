@@ -126,7 +126,15 @@
 </style>
 <div class="bg-adviento">
     <div class="container text-center ">
-        <img src="/images/games/titulo.png" alt="Titulo" class="img-title-game-calendar">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="/images/games/logo_mente.png" alt="Mente" width="300" class="mt-4">
+            </div>
+            <div class="col-md-12">
+                <img src="/images/games/titulo.png" alt="Titulo" class="img-title-game-calendar">
+            </div>
+        </div>
+
         <div class="row advent-calendar">
             <!-- Casillas del calendario se generan aquí -->
         </div>
