@@ -128,6 +128,7 @@
     <div class="container text-center ">
         <div class="row">
             <div class="col-md-12">
+                <img src="/images/games/logo-qd.png" alt="querido dinero" width="300" class="mt-4">
                 <img src="/images/games/logo_mente.png" alt="Mente" width="300" class="mt-4">
             </div>
             <div class="col-md-12">
