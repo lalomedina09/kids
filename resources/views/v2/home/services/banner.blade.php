@@ -18,7 +18,7 @@
                 </div>
 
                 <!-- Título principal -->
-                <h1 class="lasolucin banner-title-main mt-2">La solución integral <br>de Educación Financiera</h1>
+                <h1 class="lasolucin banner-title-main mt-2">La solución de <br>Educación Financiera</h1>
 
                 <!-- Descripción para escritorio -->
                 <p class="description-1 mt-3 d-none d-lg-block">
@@ -29,9 +29,7 @@
 
                 <!-- Descripción para móvil -->
                 <p class="description-1 mt-3 d-lg-none">
-                    Creemos en el poder de las Finanzas Personales para mejorar
-                    la vida de las personas, el ambiente en los espacios de trabajo
-                    y la cultura del dinero en México.
+                    Finanzas personales para mejorar la calidad de vida, el ambiente laboral y la cultura del dinero en México
                 </p>
 
                 <!-- Botón de contáctanos -->

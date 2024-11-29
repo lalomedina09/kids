@@ -15,7 +15,7 @@
         <!-- Sección B con Manchas Rojas -->
         <div class="position-relative">
             <div class="red-blur"></div>
-            <div class="red-blur-secondary"></div>
+            <div class="red-blur-secondary d-none d-md-block"></div>
             @include('v2.home.services.rows.numbers-qd')
         </div>
 
@@ -42,7 +42,7 @@
 
         <div class="position-relative">
             <div class="blue-blur"></div>
-            <div class="blue-blur-secondary"></div>
+            <div class="blue-blur-secondary d-none d-md-block"></div>
             @include('v2.home.services.rows.numbers-qdplay')
         </div>
 

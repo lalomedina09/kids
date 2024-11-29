@@ -4,7 +4,7 @@
 
     <div class="position-relative">
         <div class="blue-blur"></div>
-        <div class="blue-blur-secondary"></div>
+        <div class="blue-blur-secondary d-none d-md-block"></div>
         @include('v2.home.services.rows.numbers-qdplay')
     </div>
 

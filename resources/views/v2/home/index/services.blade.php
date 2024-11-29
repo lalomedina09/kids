@@ -24,7 +24,7 @@
             <div class="frame-8 service-3 d-flex flex-column justify-content-between">
             <div class="text-wrapper ">Newsletter</div>
                 <img class="img-2-service" src="{{ asset('version-2/images/imgservices/nesletter-1.gif') }}" />
-                <div class="subtext-wrapper">Suscríbete para nuevas noticias</div>
+                <div class="subtext-wrapper">Recibe nuevas noticias</div>
             </div>
         </div>
 
