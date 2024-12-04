@@ -26,6 +26,7 @@ class MessageiCalendarAdvised extends Mailable
     public function build()
     {
         return $this->to($this->userEmail)
+            ->bcc(env('QDPLAY_BCC', 'soporte@queridodinero.com'))
             ->subject("Querido Dinero - Mentoría Programada #ID" . $this->advice->id)
             ->markdown('emails.calendar.invite')
             ->attachData($this->calendar->get(), 'invite.ics', [
