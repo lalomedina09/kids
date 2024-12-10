@@ -2032,6 +2032,7 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+
 /*
 .no-gap .btn {
     margin-left: -1px;
@@ -2705,4 +2706,1091 @@ a {
 .profile-options {
     scrollbar-width: thin;
     scrollbar-color: #000 #495057;
+}
+
+/****************************************************************************************/
+/****************************************************************************************/
+
+/*************************** Aquí empieza consulting *********************/
+
+/* Seccion Banner */
+
+/* Contenedor para aislar las imágenes cultura-mobil */
+.cultura-mobil-container {
+    position: relative;
+    /* Asegura que los márgenes no afecten a otros elementos */
+    display: flex;
+    /* Opcional: Puedes usar flexbox para alinear imágenes */
+    flex-direction: column;
+    /* Alinea las imágenes verticalmente si es necesario */
+    justify-content: center;
+    /* Centra las imágenes verticalmente */
+    align-items: center;
+    /* Centra las imágenes horizontalmente */
+}
+
+/* Margen específico para las imágenes cultura-mobil */
+.cultura-mobil {
+    margin-top: 20px;
+    /* Ajusta este valor según sea necesario */
+}
+
+.cultura-mobil {
+    display: none;
+}
+
+.cultura-der {
+    display: none;
+}
+
+.cultura-izq {
+    display: none;
+}
+
+.cultura-img {
+
+    margin-bottom: -255px;
+}
+
+.stack-section {
+    height: auto;
+    position: relative;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+.stack-section {
+    height: auto;
+    position: relative;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+.stack-section::before,
+.stack-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.yellow-mark::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background-color: rgb(223 198 84);
+    top: 430px;
+    right: 70px;
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba(255, 255, 0, 0.3);
+    z-index: 1;
+    border-radius: 60%;
+    filter: blur(80px);
+    transform: rotate(45deg);
+}
+
+
+.red-mark {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: #C5481C;
+    top: -300px;
+    left: -600px;
+    transform: translate(50%, 0) rotate(130deg);
+    border-radius: 50%;
+    filter: blur(300px);
+    z-index: 0;
+}
+
+.culturaf {
+    color: var(--black_900);
+    font-family: Besley, serif;
+    text-align: center;
+    width: 100%;
+    line-height: 1.2;
+    margin-top: 118px;
+    margin-left: 0;
+}
+
+.segundot {
+    color: var(--black_900);
+    font-family: Besley, serif;
+    width: 172%;
+    line-height: 1.2;
+    margin-top: 118px;
+    margin-left: -118px;
+    font-size: 3.5rem;
+}
+
+/* Texto Banner */
+
+.main-solution-title {
+    font-size: 4.5rem;
+    font-family: "Besley", Helvetica;
+    margin-top: 281px;
+}
+
+/* Mostrar el párrafo original por defecto */
+.original-paragraph {
+    display: block;
+}
+
+/* Mostrar el H1 original por defecto */
+.original-heading {
+    display: block;
+}
+
+/* Ocultar el H1 alternativo por defecto */
+.alternative-heading {
+    display: none;
+}
+
+/* Ocultar el párrafo alternativo por defecto */
+.alternative-paragraph {
+    display: none;
+}
+
+.description-tx {
+    color: var(--black_900);
+    margin-bottom: 248px;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-family: "Akshar", Helvetica;
+    transform: translateX(3px);
+    /* Centrado */
+}
+
+/* Boton contáctanos */
+.btn-learn {
+    font-family: "Akshar", Helvetica;
+    margin-top: 137px !important;
+    position: relative;
+    left: 0px;
+    top: -120px;
+}
+
+/* Imagenes banner */
+
+.img-movimiento {
+    margin-top: -206px;
+    width: 249px;
+}
+
+.moneda {
+    margin-top: 20px;
+}
+
+.bg-banner-consulting::before {
+    /* content: url("../public/images/consulting/imgbanner/image 81.png"); Cambia "/ruta/a/imagen-izquierda.png" a la ruta de tu imagen izquierda */
+    position: absolute;
+    left: 248px;
+    /* Ajusta la distancia desde el borde izquierdo */
+    top: 22%;
+    /* Centra verticalmente */
+    transform: translateY(-50%);
+    z-index: 1;
+    /* Asegúrate de que esté detrás del texto */
+}
+
+.bg-banner-consulting::after {
+    /* content: url("../public/images/consulting/imgbanner/image 82.png"); Cambia "/ruta/a/imagen-derecha.png" a la ruta de tu imagen derecha */
+    position: absolute;
+    right: 152px;
+    /* Ajusta la distancia desde el borde derecho */
+    top: 23%;
+    /* Centra verticalmente */
+    transform: translateY(-50%);
+    z-index: 1;
+    /* Asegúrate de que esté detrás del texto */
+}
+
+.left-content {
+    position: absolute;
+    left: 17%;
+    /* Ajusta según necesites */
+    top: 37%;
+    /* Ajusta según necesites */
+    transform: translateY(-50%);
+    z-index: 2;
+    /* Asegúrate de que esté por encima de las imágenes de fondo */
+    text-align: left;
+    max-width: 400px;
+    /* Ajusta el ancho según necesites */
+}
+
+.left-content h1 {
+    font-size: 3.8em;
+    /* Ajusta el tamaño del título */
+    margin-bottom: 38px;
+    text-align: left;
+}
+
+.left-content-m {
+    text-align: left;
+    line-height: 1.4;
+    font-size: 1.5rem;
+    font-family: "Akshar", Helvetica;
+    width: 600px;
+    margin-left: -113px;
+}
+
+.left-content .btn-learn {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.image-container {
+    position: relative;
+    width: 300px;
+    /* Ajusta al tamaño de las imágenes */
+    height: 300px;
+    /* Ajusta al tamaño de las imágenes */
+    margin: 0 auto;
+}
+
+.fondo-circulo {
+    margin-left: -166px;
+    margin-top: -65px;
+}
+
+.base-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 87%;
+    height: 87%;
+    z-index: 2;
+    animation: rotateFlechas 10s linear infinite;
+}
+
+@keyframes rotateFlechas {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+/**********Sección Solutions****************/
+
+.description-s {
+    color: var(--black_900);
+    margin-bottom: 248px;
+    text-align: center;
+    line-height: 1.4;
+    margin: 0 auto;
+    margin-top: 0px;
+    font-size: 1.5rem;
+    font-family: "Akshar", Helvetica;
+    transform: translateX(3px);
+    margin-bottom: 47px;
+}
+
+.text-solutions {
+
+    font-family: "Besley";
+    font-weight: 500;
+    color: #000000;
+    font-size: 3.8rem;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 46.1px;
+    white-space: nowrap;
+    margin-bottom: 3rem;
+}
+
+.solutions {
+    background-color: #EEEEEE;
+    /* Color de fondo de la sección de soluciones */
+    color: white;
+    /* Color del texto */
+    /* padding: 50px;             Espaciado interno */
+    text-align: center;
+    margin-top: 330px;
+    /* Centrar texto */
+    height: 94rem;
+}
+
+/* Cuadro somos tu aliado */
+.cuadro {
+    background-image: url(../images/consulting/bg/bt.png);
+    /* padding: 371px; */
+    border-radius: 0px;
+    color: white;
+    text-align: center;
+    margin: 20px auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 85%;
+    /* Ancho del cuadro */
+    height: 1000px;
+    /*Alto del cuadro */
+    background-color: #f0f0f0;
+}
+
+/* Botón general */
+.btn-s {
+    background-color: #000;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    /* Espaciado uniforme entre botones */
+    font-size: 25px;
+    font-weight: bold;
+    width: 62px;
+    font-family: Belsey;
+    text-align: center;
+    height: 47px;
+}
+
+/* Contenedor de botones de la izquierda */
+.left-buttons-c {
+    display: flex;
+    flex-direction: column;
+    /* Alinea los botones en vertical */
+    align-items: flex-start;
+    /* Alinea a la izquierda */
+    gap: 10px;
+    /* Espaciado entre botones */
+    padding-left: 20px;
+    /* Espaciado del contenedor respecto al borde izquierdo */
+}
+
+/* Botones específicos de la izquierda */
+
+/* Contenedor de botones de la derecha */
+.right-buttons-c {
+    display: flex;
+    flex-direction: column;
+    /* Alinea los botones en vertical */
+    align-items: flex-end;
+    /* Alinea a la derecha */
+    gap: 10px;
+    /* Espaciado entre botones */
+    padding-right: 20px;
+    /* Espaciado del contenedor respecto al borde derecho */
+}
+
+/* Estilo base para todos los botones */
+.btn-wrapper {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.text-container {
+    position: absolute;
+    top: 228px;
+    margin-left: -250px;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+    font-family: "Akshar", Helvetica;
+    width: 275px;
+    background: transparent;
+    text-align: left;
+}
+
+#text-1 {
+    position: absolute;
+    top: 145px;
+    margin-left: -288px;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+    font-family: "Akshar", Helvetica;
+    width: 275px;
+    background: #EEE;
+    text-align: left;
+
+}
+
+#text-3 {
+    position: absolute;
+    top: 380px;
+    margin-left: 304px;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+    font-family: "Akshar", Helvetica;
+    width: 275px;
+    background: transparent;
+    text-align: center;
+}
+
+#text-4 {
+    position: absolute;
+    top: 140px;
+    margin-left: 92px;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+    font-family: "Akshar", Helvetica;
+    width: 275px;
+    background: transparent;
+    text-align: right;
+}
+
+#text-5 {
+    position: absolute;
+    top: 1px;
+    margin-left: 58px;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+    font-family: "Akshar", Helvetica;
+    width: 275px;
+    background: transparent;
+    text-align: right;
+}
+
+.line-h-diagram {
+    height: 5.5px;
+    background-color: #000;
+    margin-right: -12px;
+    border-radius: 1rem;
+}
+
+.custom-title {
+    font-size: 31px;
+    text-align: left;
+    margin-bottom: 15px;
+    font-family: "Akshar", Helvetica;
+    font-weight: 500;
+}
+
+.custom-title2 {
+    font-size: 31px;
+    text-align: left;
+    margin-bottom: 15px;
+    font-family: "Akshar", Helvetica;
+    font-weight: 500;
+}
+
+.custom-title3 {
+    font-size: 31px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: "Akshar", Helvetica;
+    font-weight: 500;
+}
+
+.custom-title4 {
+    font-size: 31px;
+    text-align: right;
+    margin-bottom: 15px;
+    font-family: "Akshar", Helvetica;
+    font-weight: 500;
+}
+
+.custom-title5 {
+    font-size: 31px;
+    text-align: right;
+    margin-bottom: 15px;
+    font-family: "Akshar", Helvetica;
+    font-weight: 500;
+}
+
+
+/* .btn-s:hover {
+    background-color: #0056b3;
+} */
+
+/* Estilos iniciales para las líneas diagonales */
+.diagonal-line {
+    display: none;
+    /* Ocultar inicialmente */
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    /* Color de la línea */
+    transform: rotate(45deg);
+    /* Hacerla diagonal */
+    margin: 10px 0;
+    /* Espaciado opcional */
+}
+
+.diagonal-line1 {
+    display: none;
+    position: absolute;
+    top: 264px;
+    left: -33px;
+    width: 114px;
+    height: 6px;
+    background-color: black;
+    transform: rotate(-131deg);
+    border-radius: 1rem;
+}
+
+.diagonal-line2 {
+    position: absolute;
+    top: 257px;
+    left: 16px;
+    width: 56px;
+    height: 6px;
+    background-color: black;
+    transform: rotate(-226deg);
+    border-radius: 1rem;
+}
+
+.diagonal-line3 {
+    position: absolute;
+    top: 333px;
+    left: 406px;
+    width: 58px;
+    height: 6px;
+    background-color: black;
+    transform: rotate(-91deg);
+}
+
+.diagonal-line4 {
+    position: absolute;
+    top: 260px;
+    left: 12px;
+    width: 114px;
+    height: 6px;
+    background-color: black;
+    border-radius: 1rem;
+    transform: rotate(-51deg);
+}
+
+.diagonal-line5 {
+    position: absolute;
+    top: 56px;
+    left: 25px;
+    width: 56px;
+    height: 6px;
+    background-color: black;
+    transform: rotate(-128deg);
+}
+
+
+/* Estilos específicos para cada botón */
+.btn-wrapper-1 {
+    position: relative;
+    /* Posiciona los elementos relativos al contenedor */
+    display: inline-block;
+    /* Puedes ajustar el margen para posicionar este botón */
+}
+
+.btn-wrapper-3 {
+    position: relative;
+    /* Posiciona los elementos relativos al contenedor */
+    display: inline-block;
+}
+
+.btn-wrapper-5 {
+    position: relative;
+    /* Posiciona los elementos relativos al contenedor */
+    display: inline-block;
+}
+
+.btn-wrapper-2 {
+    position: relative;
+    /* Posiciona los elementos relativos al contenedor */
+    display: inline-block;
+}
+
+.btn-wrapper-4 {
+    position: relative;
+    /* Posiciona los elementos relativos al contenedor */
+    display: inline-block;
+}
+
+.btn-1 {
+    background-color: #000;
+    /* Color específico para el botón 2 */
+    margin-top: 313px;
+    margin-left: 23px;
+}
+
+.btn-3 {
+    background-color: #000;
+    /* Color específico para el botón 2 */
+    margin-top: 211px;
+    margin-left: 25px;
+}
+
+.btn-5 {
+    background-color: #000;
+    /* Color específico para el botón 3 */
+    margin-top: 278px;
+    margin-left: 400px;
+}
+
+.btn-2 {
+    background-color: #000;
+    margin-top: 310px;
+    margin-bottom: 219px;
+    margin-right: 37px;
+}
+
+.btn-4 {
+    background-color: #000;
+    margin-top: 6px;
+    margin-bottom: 200px;
+    margin-right: 43px;
+}
+
+.flecha {
+    margin-left: 6px;
+}
+
+
+.content-wrapper {
+    display: flex;
+    /* Activar Flexbox en el contenedor */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    gap: 20px;
+    /* Espacio entre el cuadro y el botón */
+}
+
+/****************** Seccion about-us *************************/
+.about-us {
+    background-color: #F5F5F5;
+    /* Color de fondo de la sección de soluciones */
+    color: white;
+    /* Color del texto */
+    padding: 50px;
+    /* Espaciado interno */
+    text-align: center;
+    margin-top: 0px;
+    /* Centrar texto */
+}
+
+.margin-title-about-us {
+    font-size: 3.5rem;
+    font-family: "Besley", Helvetica;
+    font-weight: 600;
+    margin-top: 80px;
+    line-height: 71px;
+    margin-top: -3px;
+}
+
+.description-aboutus {
+    color: var(--black_900);
+    margin-bottom: 248px;
+    text-align: center;
+    line-height: 1.4;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-family: "Akshar", Helvetica;
+    transform: translateX(3px);
+    /* Centrado */
+}
+
+/* Circulos colores seccion 3 */
+
+.blue-mark-aboutus::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 447px;
+    background-color: rgb(136 188 175);
+    top: 1000px;
+    right: 1277px;
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba(0, 0, 255, 0.3);
+    z-index: 1;
+    border-radius: 60%;
+    filter: blur(80px);
+    transform: rotate(45deg);
+}
+
+.red-mark-aboutus {
+    position: absolute;
+    width: 697px;
+    height: 400px;
+    background-color: #C5481C;
+    top: -41px;
+    right: 350px;
+    transform: translate(50%, 0) rotate(130deg);
+    border-radius: 50%;
+    filter: blur(300px);
+    z-index: 0;
+}
+
+/* Contenedor para alinear las tarjetas */
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Dos columnas de igual tamaño */
+    gap: 26px;
+    /* Espacio entre las tarjetas */
+    width: 57%;
+    /* Ancho del contenedor */
+    margin-left: 538px;
+    /* Alineado a la derecha */
+    padding: 20px;
+    margin-top: -250px;
+}
+
+/* Estilo para cada tarjeta */
+.tarjeta {
+    font-family: "Akshar", Helvetica;
+    background-color: #EEEEEE;
+    /* Color de fondo */
+    color: #000000;
+    ;
+    width: 268px;
+    height: 181px;
+    /* Color del texto */
+    /* padding: 84px;              Espaciado interno */
+    border-radius: 0px;
+    /* Bordes redondeados */
+    text-align: left;
+    /* Centrado del texto */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); Sombra */
+    line-height: 1.6;
+    font-size: 17px;
+    transition: background-color 0.3s ease;
+}
+
+#tarjeta-1:hover {
+    background-color: #ffd1d1;
+    /* Rojo claro */
+}
+
+#tarjeta-2:hover {
+    background-color: #d1ffd1;
+    /* Verde claro */
+}
+
+#tarjeta-3:hover {
+    background-color: #d1e7ff;
+    /* Azul claro */
+}
+
+#tarjeta-4:hover {
+    background-color: #ffd1d1;
+    /* Rojo claro */
+}
+
+#tarjeta-5:hover {
+    background-color: #d1ffd1;
+    /* Verde claro */
+}
+
+#tarjeta-6:hover {
+    background-color: #d1e7ff;
+    /* Azul claro */
+}
+
+
+
+.texto-tarjeta {
+    margin-top: 43px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.contenido-tarjeta {
+    margin-left: 20px;
+}
+
+/* Hacer que las tarjetas tengan un buen espaciado entre ellas */
+/*.row-cols-md-2 .col {
+    padding: 15px;
+}
+*/
+/* Espaciado y márgenes de las tarjetas */
+/*.row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}*/
+
+/* Para las filas de tarjetas y la alineación centrada */
+/*.row-cols-1 .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+/****************Sección Formulario********************/
+
+
+body {
+
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #333;
+    font-size: 20px;
+    font-family: "Akshar", Helvetica;
+    /* margin-bottom: 16px;
+        margin-left: -121px;
+        margin-top: 29px; */
+}
+
+.form-control {
+    background-color: #f0f0f0;
+    /* Fondo gris claro */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    padding: 29px;
+    /* Espaciado interno */
+    font-size: 20px;
+    font-family: "Akshar", Helvetica;
+    /* width: 315px;
+        margin-left: -122px; */
+}
+
+.form-control::placeholder {
+    color: #a9a9a9;
+    /* Color gris claro para los placeholders */
+    opacity: 1;
+}
+/*
+.mb-3 .row {
+    margin-bottom: 2rem;
+}
+*/
+.btn-custom {
+    background-color: #000;
+    /* Fondo negro */
+    color: #fff;
+    /* Texto blanco */
+    width: 167px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0px;
+    font-family: "Akshar", Helvetica;
+    ;
+}
+
+.btn-custom:hover {
+    background-color: #333;
+    /* Fondo gris oscuro en hover */
+}
+
+.text-muted {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.form-check-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Estilos para el checkbox personalizado */
+.form-check-input {
+    width: 20px;
+    height: 33px;
+    margin-left: -23px;
+}
+
+/* Espaciado y alineación de texto */
+.text-formulario {
+    text-align: center;
+    font-size: 36px;
+    font-family: "Akshar", Helvetica;
+    font-weight: 500;
+    margin-top: -10rem;
+
+}
+
+.text-end {
+
+    text-align: right;
+}
+
+.imagen-cap {
+    margin-bottom: -17px;
+    margin-left: 14px;
+}
+
+/* Seccion captcha */
+.captcha-izquierda {
+    background-color: #dedede;
+    width: 11rem;
+    margin-left: -11px;
+    height: 3rem;
+}
+
+/* Estilo del texto de condiciones */
+.text-cap-derecha {
+    font-family: "Akshar", Helvetica;
+    font-size: 17px;
+    margin-left: -201px;
+}
+
+.bold-text-cap {
+    font-weight: bold;
+}
+
+.btn-top {
+    margin-top: -186px;
+    margin-right: 23px;
+}
+
+
+
+/* Ajustes responsivos */
+/* @media (max-width: 768px) {
+
+    .btn-custom {
+        width: 100%; /* Botón al 100% de ancho en pantallas pequeñas */
+/* } */
+
+/* .text-end {
+        text-align: center;
+    }
+
+    .text-muted {
+        text-align: center;
+    }
+    } */
+
+/**********Ultima seccion***********/
+
+
+.benefits-section {
+    background-color: #f8f9fa;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.benefits-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+.benefits-description {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+}
+
+.contact-button {
+    display: block;
+    margin: 0 auto;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+}
+
+.cards-container {
+    margin-top: 2rem;
+}
+
+.benefit-card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* padding: 6.5rem; */
+    text-align: center;
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 300px;
+    margin: 0px;
+}
+
+.benefit-card h3 {
+    font-size: 23px;
+    font-weight: bold;
+    color: #000;
+    font-family: "Besley";
+    line-height: 2rem;
+    margin-bottom: 2.8rem;
+    margin-top: 25px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.contenido-tarjeta-services {
+    color: #333;
+    font-size: 20px;
+    font-family: "Akshar", Helvetica;
+    margin-top: -20px;
+    line-height: 1.9rem;
+}
+
+/*
+    .titulos-tarjetas-service{
+        margin-bottom: 20px;
+    }
+     */
+.card-button {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    width: 80%;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 3em;
+}
+
+.card-button:hover {
+    background-color: #333;
+}
+
+/* Diseño imagenes tarjetas */
+/*
+    .imagen-tarjeta{
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-left: 25px;
+
+    } */
+
+.mt-custom {
+    margin-top: 90px !important;
+    /* Ajusta el valor según prefieras */
+}
+
+/* .custom-gap {
+        gap: 30px; /* Ajusta este valor al tamaño deseado */
+.font-beley {
+    font-family: "Besley";
 }

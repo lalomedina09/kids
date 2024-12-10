@@ -4,20 +4,20 @@
 
 @section('content')
 
-
-@include('v2.home.services.banner')
-
-@include('v2.home.services.section-info-1')
-
-<section class="section-logos">
-    <div class="container">
-        @include('v2.home.index.clients')
-        <br><br>
-    </div>
+<section>
+    @include('v2.home.consulting.__banner')
 </section>
 
 <section>
-    @include('v2.home.services.section-info-2')
+    @include('v2.home.consulting.benefits')
+</section>
+
+<section>
+    @include('v2.home.consulting.form')
+</section>
+
+<section>
+    @include('v2.home.consulting.products')
 </section>
 
 @endsection
