@@ -94,7 +94,7 @@ class HomeController extends Controller
 
     public function consultingRedesign()
     {
-        return view('v2.home.consulting')->with([
+        return view('v2.home.consultingv2')->with([
             'categories' => 0,
             'channel' => 0,
             'source' => 0

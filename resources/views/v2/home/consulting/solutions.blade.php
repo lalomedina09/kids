@@ -25,7 +25,7 @@
                     <!-- Botón 1 -->
                     <div class="btn-wrapper btn-wrapper-1">
                         <div class="diagonal-line diagonal-line1" id="line-1"></div>
-                        <button class="btn-s btn-right btn-1" data-text-id="text-1" data-line-id="line-1"
+                        <button class="btn-s btn-right btn-diagram-1" data-text-id="text-1" data-line-id="line-1"
                             onclick="toggleText(this)">
                             1<img src="{{ asset("version-2/images/consulting/bg/flechatxt.png") }}"
                                 alt="flecha cuadro" class="flecha">
@@ -43,7 +43,7 @@
                     <!-- Botón 3 -->
                     <div class="btn-wrapper btn-wrapper-3">
                         <div class="diagonal-line diagonal-line2" id="line-2"></div>
-                        <button class="btn-s btn-right btn-3" data-text-id="text-2" data-line-id="line-2"
+                        <button class="btn-s btn-right btn-diagram-3" data-text-id="text-2" data-line-id="line-2"
                             onclick="toggleText(this)">
                             3<img src="{{ asset("version-2/images/consulting/bg/flechatxt.png") }}"
                                 alt="flecha cuadro" class="flecha">
@@ -60,7 +60,7 @@
                     <!-- Botón 5 -->
                     <div class="btn-wrapper btn-wrapper-5">
                         <div class="diagonal-line diagonal-line3" id="line-3"></div>
-                        <button class="btn-s btn-right btn-5" data-text-id="text-3" data-line-id="line-3"
+                        <button class="btn-s btn-right btn-diagram-5" data-text-id="text-3" data-line-id="line-3"
                             onclick="toggleText(this)">
                             5<img src="{{ asset("version-2/images/consulting/bg/flechatxt.png") }}"
                                 alt="flecha cuadro" class="flecha">
@@ -80,7 +80,7 @@
                     <!-- Botón 2 -->
                     <div class="btn-wrapper btn-wrapper-2">
                         <div class="diagonal-line diagonal-line4" id="line-4"></div>
-                        <button class="btn-s btn-right btn-2" data-text-id="text-4" data-line-id="line-4"
+                        <button class="btn-s btn-right btn-diagram-2" data-text-id="text-4" data-line-id="line-4"
                             onclick="toggleText(this)">
                             2<img src="{{ asset("version-2/images/consulting/bg/flechatxt.png") }}"
                                 alt="flecha cuadro" class="flecha">
@@ -97,7 +97,7 @@
                     <!-- Botón 4 -->
                     <div class="btn-wrapper btn-wrapper-4">
                         <div class="diagonal-line diagonal-line5" id="line-5"></div>
-                        <button class="btn-s btn-right btn-4" data-text-id="text-5" data-line-id="line-5"
+                        <button class="btn-s btn-right btn-diagram-4" data-text-id="text-5" data-line-id="line-5"
                             onclick="toggleText(this)">
                             4<img src="{{ asset("version-2/images/consulting/bg/flechatxt.png") }}"
                                 alt="flecha cuadro" class="flecha">

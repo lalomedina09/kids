@@ -2502,7 +2502,7 @@ a {
     /* Color de fondo */
     width: 300px;
     /* Ancho del cuadro */
-    padding: 371px;
+    /*padding: 371px;*/
     /* Espaciado interno */
     border-radius: 0px;
     /* Bordes redondeados */
@@ -2597,20 +2597,10 @@ a {
 .tarjeta {
     font-family: "Akshar", Helvetica;
     background-color: #EEEEEE;
-    /* Color de fondo */
     color: #000000;
-    ;
-    width: 268px;
-    height: 181px;
-    /* Color del texto */
-    /* padding: 84px;              Espaciado interno */
+    width: 100%;
+    height: 240;
     border-radius: 0px;
-    /* Bordes redondeados */
-    text-align: left;
-    /* Centrado del texto */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); Sombra */
-    line-height: 1.6;
-    font-size: 17px;
 }
 
 .texto-tarjeta {
@@ -2793,11 +2783,11 @@ a {
 
 .red-mark {
     position: absolute;
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     background-color: #C5481C;
-    top: -300px;
-    left: -600px;
+    top: -100px;
+    left: -321px;
     transform: translate(50%, 0) rotate(130deg);
     border-radius: 50%;
     filter: blur(300px);
@@ -3041,7 +3031,7 @@ a {
     margin: 20px auto;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 85%;
+    width: 95%;
     /* Ancho del cuadro */
     height: 1000px;
     /*Alto del cuadro */
@@ -3331,35 +3321,35 @@ a {
     display: inline-block;
 }
 
-.btn-1 {
+.btn-diagram-1 {
     background-color: #000;
     /* Color específico para el botón 2 */
     margin-top: 313px;
     margin-left: 23px;
 }
 
-.btn-3 {
+.btn-diagram-3 {
     background-color: #000;
     /* Color específico para el botón 2 */
     margin-top: 211px;
     margin-left: 25px;
 }
 
-.btn-5 {
+.btn-diagram-5 {
     background-color: #000;
     /* Color específico para el botón 3 */
     margin-top: 278px;
     margin-left: 400px;
 }
 
-.btn-2 {
+.btn-diagram-2 {
     background-color: #000;
     margin-top: 310px;
     margin-bottom: 219px;
     margin-right: 37px;
 }
 
-.btn-4 {
+.btn-diagram-4 {
     background-color: #000;
     margin-top: 6px;
     margin-bottom: 200px;
@@ -3461,7 +3451,7 @@ a {
 }
 
 /* Estilo para cada tarjeta */
-.tarjeta {
+.tarjeta-benefit {
     font-family: "Akshar", Helvetica;
     background-color: #EEEEEE;
     /* Color de fondo */
@@ -3481,33 +3471,33 @@ a {
     transition: background-color 0.3s ease;
 }
 
-#tarjeta-1:hover {
-    background-color: #ffd1d1;
+.t-b-1:hover {
+    background-color: #88BCAF;
     /* Rojo claro */
 }
 
-#tarjeta-2:hover {
-    background-color: #d1ffd1;
+.t-b-2:hover {
+    background-color: #C5481C;
     /* Verde claro */
 }
 
-#tarjeta-3:hover {
-    background-color: #d1e7ff;
+.t-b-3:hover {
+    background-color: #DFC654;
     /* Azul claro */
 }
 
-#tarjeta-4:hover {
-    background-color: #ffd1d1;
+.t-b-4:hover {
+    background-color: #88BCAF;
     /* Rojo claro */
 }
 
-#tarjeta-5:hover {
-    background-color: #d1ffd1;
+.t-b-5:hover {
+    background-color: #C5481C;
     /* Verde claro */
 }
 
-#tarjeta-6:hover {
-    background-color: #d1e7ff;
+.t-b-6:hover {
+    background-color: #DFC654;
     /* Azul claro */
 }
 
@@ -3515,12 +3505,15 @@ a {
 
 .texto-tarjeta {
     margin-top: 43px;
-    font-weight: 500;
+    font-weight: 600;
     margin-left: 20px;
+    font-size: 1.3rem;
 }
 
 .contenido-tarjeta {
     margin-left: 20px;
+    line-height: 1.4;
+    margin-top: 20px;
 }
 
 /* Hacer que las tarjetas tengan un buen espaciado entre ellas */
@@ -3544,130 +3537,12 @@ a {
 /****************Sección Formulario********************/
 
 
-body {
 
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
-}
-
-h2 {
-    font-weight: bold;
-    color: #333;
-}
-
-.form-label {
-    font-weight: bold;
-    color: #333;
-    font-size: 20px;
-    font-family: "Akshar", Helvetica;
-    /* margin-bottom: 16px;
-        margin-left: -121px;
-        margin-top: 29px; */
-}
-
-.form-control {
-    background-color: #f0f0f0;
-    /* Fondo gris claro */
-    border: none;
-    /* Sin borde */
-    border-radius: 5px;
-    /* Bordes redondeados */
-    padding: 29px;
-    /* Espaciado interno */
-    font-size: 20px;
-    font-family: "Akshar", Helvetica;
-    /* width: 315px;
-        margin-left: -122px; */
-}
-
-.form-control::placeholder {
-    color: #a9a9a9;
-    /* Color gris claro para los placeholders */
-    opacity: 1;
-}
 /*
-.mb-3 .row {
-    margin-bottom: 2rem;
-}
-*/
-.btn-custom {
-    background-color: #000;
-    /* Fondo negro */
-    color: #fff;
-    /* Texto blanco */
-    width: 167px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 0px;
-    font-family: "Akshar", Helvetica;
-    ;
-}
-
-.btn-custom:hover {
-    background-color: #333;
-    /* Fondo gris oscuro en hover */
-}
-
-.text-muted {
-    font-size: 0.8rem;
-    color: #666;
-}
-
-.form-check-label {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Estilos para el checkbox personalizado */
-.form-check-input {
-    width: 20px;
-    height: 33px;
-    margin-left: -23px;
-}
-
-/* Espaciado y alineación de texto */
-.text-formulario {
-    text-align: center;
-    font-size: 36px;
-    font-family: "Akshar", Helvetica;
-    font-weight: 500;
-    margin-top: -10rem;
-
-}
-
-.text-end {
-
-    text-align: right;
-}
-
-.imagen-cap {
-    margin-bottom: -17px;
-    margin-left: 14px;
-}
-
-/* Seccion captcha */
-.captcha-izquierda {
-    background-color: #dedede;
-    width: 11rem;
-    margin-left: -11px;
-    height: 3rem;
-}
-
-/* Estilo del texto de condiciones */
-.text-cap-derecha {
-    font-family: "Akshar", Helvetica;
-    font-size: 17px;
-    margin-left: -201px;
-}
-
-.bold-text-cap {
-    font-weight: bold;
-}
-
 .btn-top {
     margin-top: -186px;
     margin-right: 23px;
-}
+}*/
 
 
 

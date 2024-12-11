@@ -557,7 +557,7 @@
         width: 38%;
         margin-right: 15px;
         flex-shrink: 0;
-        margin-left: -11rem;
+        /*margin-left: -11rem;*/
     }
 
     .frame-8 .text-wrapper {
@@ -1704,12 +1704,10 @@
         margin-bottom: -86px;
     }
 
-    .form-control {
+    /*.form-control {
         width: 100%;
-        /* Expandir a todo el ancho */
         margin-bottom: 10px;
-        /* Espaciado entre campos */
-    }
+    }*/
 
     .captcha-section {
         flex-direction: column;
