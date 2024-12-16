@@ -2322,6 +2322,11 @@ a {
 
 /* Seccion Banner */
 
+.bg-banner-consulting-v2 {
+    background-image: url('../images/consulting/bg/bg-banner.png');
+    background-size: cover;
+}
+
 .stack-section {
     height: auto;
     position: relative;
@@ -2807,11 +2812,11 @@ a {
 .segundot {
     color: var(--black_900);
     font-family: Besley, serif;
-    width: 172%;
     line-height: 1.2;
+    /*width: 172%;
     margin-top: 118px;
-    margin-left: -118px;
-    font-size: 3.5rem;
+    margin-left: -118px;*/
+    font-size: 3rem;
 }
 
 /* Texto Banner */
@@ -2819,7 +2824,7 @@ a {
 .main-solution-title {
     font-size: 4.5rem;
     font-family: "Besley", Helvetica;
-    margin-top: 281px;
+    /*margin-top: 281px;*/
 }
 
 /* Mostrar el párrafo original por defecto */
@@ -2925,8 +2930,8 @@ a {
     line-height: 1.4;
     font-size: 1.5rem;
     font-family: "Akshar", Helvetica;
-    width: 600px;
-    margin-left: -113px;
+    /*width: 600px;
+    margin-left: -113px;*/
 }
 
 .left-content .btn-learn {
@@ -2936,33 +2941,34 @@ a {
 
 .image-container {
     position: relative;
-    width: 300px;
+    width: 280px;
     /* Ajusta al tamaño de las imágenes */
-    height: 300px;
+    height: 280px;
     /* Ajusta al tamaño de las imágenes */
-    margin: 0 auto;
+    margin: 10% auto;
 }
 
 .fondo-circulo {
-    margin-left: -166px;
-    margin-top: -65px;
+    /*margin-left: -166px;
+    margin-top: -65px;*/
+    width: 500px;
 }
 
 .base-image {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 75px;
+    left: 145px;
+    width: 45%;
+    /*height: 90%;*/
     z-index: 1;
 }
 
 .overlay-image {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 87%;
-    height: 87%;
+    top: 91px;
+    left: 161px;
+    width: 39%;
+    /*height: 75%;*/
     z-index: 2;
     animation: rotateFlechas 10s linear infinite;
 }
@@ -2976,10 +2982,6 @@ a {
         transform: rotate(360deg);
     }
 }
-
-
-
-
 
 /**********Sección Solutions****************/
 
@@ -2997,7 +2999,6 @@ a {
 }
 
 .text-solutions {
-
     font-family: "Besley";
     font-weight: 500;
     color: #000000;
@@ -3014,7 +3015,7 @@ a {
     color: white;
     text-align: center;
     margin-top: 20px;
-    height: 91rem;
+    /*height: 91rem;*/
 }
 
 /* Cuadro somos tu aliado */
@@ -3032,6 +3033,7 @@ a {
     height: 100%;
     /*Alto del cuadro */
     background-color: #f0f0f0;
+    margin-bottom: 160px;
 }
 
 /* Botón general */
@@ -3517,15 +3519,16 @@ a {
     background-image: url(../images/consulting/bg/bg-products-v2.png);
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: -110px;
 }
 
 .bg-benefits-desktop {
     background-size: cover;
-    background-image: url(../images/consulting/bg/bg-benefitsv2.png);
+    background-image: url(../images/consulting/bg/bg-benefits-v2.png);
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 10rem;
-    margin-top: 5rem;
+    /*margin-top: 5rem;*/
 }
 
 /* Hacer que las tarjetas tengan un buen espaciado entre ellas */
