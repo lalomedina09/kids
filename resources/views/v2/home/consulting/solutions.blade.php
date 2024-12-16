@@ -1,4 +1,4 @@
-<section class="solutions">
+
     <div class="container">
         <div class="row justify-content-center" style="margin:0 !important;">
             <!-- Título y descripción -->
@@ -123,7 +123,6 @@
             <button class="circular-btn btn-circular-5" onclick="alert('Botón 5')">5</button>
         </div>
     </div>
-</section>
 
 <script>
     function toggleText(button) {
