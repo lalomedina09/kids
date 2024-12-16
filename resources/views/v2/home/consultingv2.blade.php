@@ -4,17 +4,24 @@
 
 @section('content')
 
-<section>
-    @include('v2.home.consulting.benefits')
-</section>
-
-<section>
-    @include('v2.home.consulting.form')
-</section>
+    <section>
+        @include('v2.home.consulting.banner')
+    </section>
 
 
-<section>
-    @include('v2.home.consulting.products')
-</section>
+    @include('v2.home.consulting.solutions')
+
+
+    <section>
+        @include('v2.home.consulting.benefits')
+    </section>
+
+    <section>
+        @include('v2.home.consulting.form')
+    </section>
+
+    <section>
+        @include('v2.home.consulting.products')
+    </section>
 
 @endsection
