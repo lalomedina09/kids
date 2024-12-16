@@ -12,7 +12,6 @@
     @include('v2.home.consulting.form')
 </section>
 
-
 <section>
     @include('v2.home.consulting.products')
 </section>
