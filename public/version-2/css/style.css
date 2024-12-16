@@ -2327,6 +2327,56 @@ a {
     background-size: cover;
 }
 
+/* Imágenes flotantes */
+.cofre-img {
+    width: 170px;
+    max-width: 100%;
+}
+
+.floating-element {
+    position: absolute;
+    animation: float 1.5s ease-in-out infinite;
+}
+
+.moneda1 {
+    top: 30px;
+    left: -150px;
+    width: 100px;
+    animation-delay: 0s;
+    /* Sin retraso */
+}
+
+.moneda2 {
+    top: 44px;
+    right: -130px;
+    width: 100px;
+    animation-delay: 0.5s;
+    /* Retraso de 0.5 segundos */
+}
+
+.tapa {
+    top: -10px;
+    left: 15%;
+    transform: translateX(-50%);
+    width: 180px;
+    animation-delay: 1s;
+    /* Retraso de 1 segundo */
+}
+
+/* Efecto de "zumbido" */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
 .stack-section {
     height: auto;
     position: relative;

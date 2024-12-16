@@ -1,5 +1,5 @@
 <section class="about-us bg-benefits-desktop">
-    <div class="container-fluid position-relative stack-section-aboutus" style="height: 60rem;">
+    <div class="container-fluid position-relative stack-section-aboutus"> <!---- style="height: 60rem;" ---->
         <!-- Marcas decorativas -->
         <!--<div class="blue-mark-aboutus"></div>
         <div class="red-mark-aboutus"></div>-->

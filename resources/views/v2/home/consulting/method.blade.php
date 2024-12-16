@@ -10,16 +10,22 @@
 
             <!-- H1 alternativo (oculto por defecto) -->
             <h1 class="segundot main-solution-title2 mt-2 alternative-heading">
-                Bienestar Financiero
+                Bienestar <br> Financiero
             </h1>
 
-            <!-- Descripción duplicada para la izquierda -->
+            <!-- Este texto solo debe aparecer en dispositivos desktop -->
             <p class="left-content-m mt-3 d-none d-lg-block">
                 Nuestra metodología analiza la situación específica de los
                 colaboradores y <span style="font-weight: bold;">genera soluciones de Educación
-                    Financiera</span></b>
+                    Financiera</span>
                 a través de una estrategia integral híbrida con herramientas
                 digitales y contacto humano.
+            </p>
+
+            <!-- Este texto solo debe aparecer en dispositivos móviles -->
+            <p class="left-content-m mt-3 mb-5 d-block d-lg-none">
+                Analizamos la situación <br>específica de los colaboradores <br>
+                y generamos soluciones.
             </p>
         </div>
         <!-- Columna de imágenes -->
@@ -31,5 +37,5 @@
             </div>
         </div>
     </div>
-    <br><br><br><br><br><br><br><br>
+    <!--<br><br><br><br><br><br><br><br>-->
 </div>

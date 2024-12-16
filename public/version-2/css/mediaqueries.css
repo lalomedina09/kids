@@ -588,6 +588,46 @@
     .frame-7 {
         padding: 20px 40px;
     }
+
+    /*------------------- Empieza Landing de consultoria ----------------------------- */
+    .bg-banner-consulting-v2 {
+        background-image: url('../images/consulting/bg/bg-banner-movil.png');
+        background-size: cover;
+        margin-top: -25px;
+    }
+
+    /* Imágenes flotantes */
+    .cofre-img {
+        width: 150px;
+        max-width: 100%;
+    }
+
+    .moneda1 {
+        top: 30px;
+        left: -90px;
+        width: 80px;
+        animation-delay: 0s;
+        /* Sin retraso */
+    }
+
+    .moneda2 {
+        top: 44px;
+        right: -95px;
+        width: 80px;
+        animation-delay: 0.5s;
+        /* Retraso de 0.5 segundos */
+    }
+
+    .tapa {
+        top: -10px;
+        left: 15%;
+        transform: translateX(-50%);
+        width: 170px;
+        animation-delay: 1s;
+        /* Retraso de 1 segundo */
+    }
+
+    /*------------------- Termina Landing de consultoria ----------------------------- */
 }
 
 @media (min-width: 768px) {
@@ -662,6 +702,7 @@
     .academia-online {
         font-size: 17px;
         line-height: 20.4px;
+        color: #ffffff;
     }
 
     /********************* Seccion de contenido ************************/
@@ -1500,7 +1541,7 @@
         margin-top: 20px !important;
         font-size: 47px;
         width: 25rem;
-        margin-left: -29px;
+        /*margin-left: -29px;*/
         margin-top: 33px;
     }
 
@@ -1546,7 +1587,7 @@
     }
 
     .left-content-m {
-        font-size: 1rem;
+        font-size: 1.3rem;
         width: auto;
         margin-left: 0;
         text-align: center;
@@ -1573,10 +1614,11 @@
 
     /* Título secundario */
     .segundot {
-        font-size: 2rem;
+        font-size: 2.3rem;
         margin-left: 0;
         width: 100%;
         text-align: center;
+        font-weight: 700;
     }
 
     /* ----------------------------------Sección ilustración giratoria -------------------------------------------------- */
@@ -1626,8 +1668,8 @@
         height: auto;
         /* Ajustar altura según el contenido */
         padding: 20px;
-        margin-left: -47px;
-        width: 25rem;
+        /*margin-left: -47px;
+        width: 25rem;*/
     }
 
     .cuadro {
@@ -1636,6 +1678,7 @@
         height: auto;
         /* Ajustar altura según el contenido */
         margin: 10px auto;
+        margin-bottom: 120px;
     }
 
     .btn-s {
@@ -1757,6 +1800,10 @@
         height: 200px;
     }
 
+    .cuadro {
+        box-shadow: none;
+    }
+
     .circular-btn {
         display: inline-flex;
         /* Mostrar botones circulares */
@@ -1779,8 +1826,8 @@
 
     .circular-btn.btn-circular-1 {
         position: absolute;
-        top: 317px;
-        left: 21px;
+        top: 1520px;
+        left: 50px;
         margin: 0px;
         width: 32px;
         height: 32px;
@@ -1788,8 +1835,8 @@
 
     .circular-btn.btn-circular-2 {
         position: absolute;
-        top: 383px;
-        left: 79px;
+        top: 1520px;
+        left: 330px;
         margin: 0px;
         width: 32px;
         height: 32px;
@@ -1797,7 +1844,7 @@
 
     .circular-btn.btn-circular-3 {
         position: absolute;
-        top: 491px;
+        top: 1700px;
         left: 40px;
         margin: 0px;
         width: 32px;
@@ -1806,8 +1853,8 @@
 
     .circular-btn.btn-circular-4 {
         position: absolute;
-        top: 458px;
-        left: 278px;
+        top: 1650px;
+        left: 330px;
         margin: 0px;
         width: 32px;
         height: 31px;
@@ -1815,8 +1862,8 @@
 
     .circular-btn.btn-circular-5 {
         position: absolute;
-        top: 325px;
-        left: 275px;
+        top: 1725px;
+        left: 240px;
         margin: 0px;
         width: 32px;
         height: 32px;
@@ -1836,12 +1883,16 @@
         flex-direction: column;
         align-items: center;
         background-color: #D94D00;
+        color: #ffffff !important;
         padding: 20px;
         transition: background-color 0.3s ease;
         justify-content: space-between;
         height: 100%;
         margin: auto;
-        height: auto;
+        height: 200px;
+        width: 270px;
+        align-items: center;
+        justify-content: center;
     }
 
     .original-title-aboutus {
@@ -1852,8 +1903,8 @@
     .alternative-title-aboutus {
         display: block !important;
         font-size: 41px;
-        width: 25rem;
-        margin-left: -86px;
+        /*width: 25rem;
+        margin-left: -86px;*/
         margin-top: -9rem;
         line-height: 49px;
     }
@@ -1880,7 +1931,7 @@
     .form-check-label {
 
         margin-top: 15px;
-        margin-left: -55px;
+        /*margin-left: -55px;*/
     }
 
     .form-check-input {
