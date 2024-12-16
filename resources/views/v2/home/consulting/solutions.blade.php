@@ -1,6 +1,6 @@
 <section class="solutions">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="margin:0 !important;">
             <!-- Título y descripción -->
             <div class="col-md-12">
                 <div class="text-solutions margin-title-s">Somos tu aliado estratégico</div>

@@ -3011,14 +3011,10 @@ a {
 
 .solutions {
     background-color: #EEEEEE;
-    /* Color de fondo de la sección de soluciones */
     color: white;
-    /* Color del texto */
-    /* padding: 50px;             Espaciado interno */
     text-align: center;
-    margin-top: 330px;
-    /* Centrar texto */
-    height: 94rem;
+    margin-top: 20px;
+    height: 91rem;
 }
 
 /* Cuadro somos tu aliado */
@@ -3031,9 +3027,9 @@ a {
     margin: 20px auto;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 95%;
+    width: 90%;
     /* Ancho del cuadro */
-    height: 1000px;
+    height: 100%;
     /*Alto del cuadro */
     background-color: #f0f0f0;
 }
@@ -3514,6 +3510,22 @@ a {
     margin-left: 20px;
     line-height: 1.4;
     margin-top: 20px;
+}
+
+.bg-products-desktop {
+    background-size: cover;
+    background-image: url(../images/consulting/bg/bg-products-v2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-benefits-desktop {
+    background-size: cover;
+    background-image: url(../images/consulting/bg/bg-benefitsv2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 10rem;
+    margin-top: 5rem;
 }
 
 /* Hacer que las tarjetas tengan un buen espaciado entre ellas */

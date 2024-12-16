@@ -16,4 +16,15 @@
     @include('v2.home.consulting.products')
 </section>
 
+
+    @include('v2.home.consulting.solutions')
+
+
+
+
+    <section>
+        @include('v2.home.consulting.products')
+    </section>
+
+
 @endsection
