@@ -30,10 +30,10 @@
 
                     <!-- Sección tarjetas -->
 
-                    @include('v2.home.consulting.benefits.desktop')
-
-                    @include('v2.home.consulting.benefits.movil')
                 </div>
             </div>
+            @include('v2.home.consulting.benefits.desktop')
+
+            @include('v2.home.consulting.benefits.movil')
         </div>
 </section>

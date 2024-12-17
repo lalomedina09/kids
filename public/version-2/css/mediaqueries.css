@@ -627,6 +627,7 @@
         /* Retraso de 1 segundo */
     }
 
+
     /*------------------- Termina Landing de consultoria ----------------------------- */
 }
 
@@ -656,6 +657,24 @@
     .img-2-service {
         width: 90px;
         margin-left: 16px;
+    }
+
+    /******************Lading Consultoria - Seccion de metodologia *****************/
+    .base-image {
+        top: 75px;
+        left: 220px;
+        width: 35%;
+        height: 90%;
+        z-index: 1;
+    }
+
+    .overlay-image {
+        top: 91px;
+        left: 238px;
+        width: 30%;
+        height: 75%;
+        z-index: 2;
+        animation: rotateFlechas 10s linear infinite;
     }
 }
 
@@ -747,6 +766,24 @@
         margin-bottom: 10px;
         height: 60px;
     }
+
+    /******************Lading Consultoria - Seccion de metodologia *****************/
+    .base-image {
+        top: 75px;
+        left: 220px;
+        width: 35%;
+        height: 90%;
+        z-index: 1;
+    }
+
+    .overlay-image {
+        top: 91px;
+        left: 238px;
+        width: 30%;
+        height: 75%;
+        z-index: 2;
+        animation: rotateFlechas 10s linear infinite;
+    }
 }
 
 
@@ -782,11 +819,7 @@
         margin-right: -29px;
     }
 
-    .position-relative {
-        height: 663px;
-    }
-
-    ------------------------------------------------------------------------------------------------------------ .navbar {
+    .navbar {
         top: 45px;
     }
 
@@ -944,6 +977,123 @@
         width: 228px;
         height: 211px;
     }
+
+    /******************Lading Consultoria - Seccion de metodologia *****************/
+    .base-image {
+        top: 75px;
+        left: 220px;
+        width: 230px;
+        height: 230px;
+        z-index: 1;
+    }
+
+    .overlay-image {
+        top: 90px;
+        left: 235px;
+        width: 200px;
+        height: 200px;
+        z-index: 2;
+        animation: rotateFlechas 10s linear infinite;
+    }
+
+    .text-solutions {
+        font-size: 3.2rem;
+        margin-bottom: 5rem;
+        margin-top: 5rem;
+    }
+
+    .cuadro {
+        color: white;
+        background-repeat: no-repeat;
+        margin-bottom: 160px;
+        /*background-position: center;*/
+        background-size: contain;
+    }
+
+    .btn-diagram-1 {
+        background-color: #000;
+        margin-top: 180px;
+        margin-left: 150px;
+    }
+
+    .btn-diagram-2 {
+        background-color: #000;
+        margin-top: 130px;
+        margin-bottom: 245px;
+        margin-right: 140px;
+    }
+
+    .btn-diagram-3 {
+        background-color: #000;
+        margin-top: 170px;
+        margin-left: 150px;
+    }
+
+    .btn-diagram-4 {
+        background-color: #000;
+        margin-top: 6px;
+        margin-bottom: 190px;
+        margin-right: 150px;
+    }
+
+    .btn-diagram-5 {
+        background-color: #000;
+        margin-top: 100px;
+        margin-left: 270px;
+    }
+
+    .text-container {
+        top: 228px;
+        margin-left: -100px;
+        background: #EEEEEE91;
+    }
+
+
+    #text-1 {
+        top: -60px;
+        margin-left: -100px;
+        background: #EEEEEE91;
+    }
+
+    #text-4 {
+        top: -90px;
+        margin-left: 30px;
+        background: #EEEEEE91;
+    }
+
+    #text-5 {
+        top: 1px;
+        margin-left: 0px;
+        background: #EEEEEE91;
+    }
+
+    .diagonal-line1 {
+        top: 110px;
+        left: 88px;
+        width: 180px;
+        transform: rotate(-90deg);
+    }
+
+    .diagonal-line2 {
+        top: 240px;
+        left: 138px;
+        width: 80px;
+        transform: rotate(-90deg);
+    }
+
+    .diagonal-line4 {
+        top: 55px;
+        left: -27px;
+        width: 140px;
+        transform: rotate(-90deg);
+    }
+
+    .diagonal-line5 {
+        top: 56px;
+        left: -15px;
+        width: 56px;
+        transform: rotate(-90deg);
+    }
 }
 
 
@@ -1060,13 +1210,27 @@
         height: 194px;
     }
 
+    /* ################# Landing Consultoria - seccion de metodologia ################# */
+    .base-image {
+        top: 70px;
+        left: 155px;
+        width: 230px;
+        height: 230px;
+    }
+
+    .overlay-image {
+        top: 85px;
+        left: 170px;
+        width: 200px;
+        height: 200px;
+        animation: rotateFlechas 10s linear infinite;
+    }
 }
 
 
 /* Estilos para dispositivos ultra grandes (pantallas de escritorio muy grandes) */
 
 @media (min-width: 1201px) and (max-width: 1440px) {
-
 
     .img-2-service {
         width: 167px;
@@ -1231,6 +1395,22 @@
         font-size: 24px;
 
     }
+
+    /* ################# Landing Consultoria - seccion de metodologia ################# */
+    .base-image {
+        top: 70px;
+        left: 155px;
+        width: 230px;
+        height: 230px;
+    }
+
+    .overlay-image {
+        top: 85px;
+        left: 170px;
+        width: 200px;
+        height: 200px;
+        animation: rotateFlechas 10s linear infinite;
+    }
 }
 
 /* Seccion Footer */
@@ -1355,6 +1535,22 @@
         width: 165px;
         height: 194px;
     }
+
+    /* ################# Landing Consultoria - seccion de metodologia ################# */
+    .base-image {
+        top: 70px;
+        left: 155px;
+        width: 230px;
+        height: 230px;
+    }
+
+    .overlay-image {
+        top: 85px;
+        left: 170px;
+        width: 200px;
+        height: 200px;
+        animation: rotateFlechas 10s linear infinite;
+    }
 }
 
 @media only screen and (min-width: 3840px) {
@@ -1471,12 +1667,29 @@
         width: 165px;
         height: 194px;
     }
+
+    /* ################# Landing Consultoria - seccion de metodologia ################# */
+    .base-image {
+        top: 70px;
+        left: 155px;
+        width: 230px;
+        height: 230px;
+    }
+
+    .overlay-image {
+        top: 85px;
+        left: 170px;
+        width: 200px;
+        height: 200px;
+        animation: rotateFlechas 10s linear infinite;
+    }
 }
 
 
 /************************************************************************************/
 
 /****************************************Aquí empieza consulting***************************************/
+
 
 
 @media (min-width: 360px) and (max-width: 480px) {
@@ -1540,7 +1753,7 @@
         font-size: 2.5rem;
         margin-top: 20px !important;
         font-size: 47px;
-        width: 25rem;
+        /*width: 25rem;*/
         /*margin-left: -29px;*/
         margin-top: 33px;
     }
@@ -1656,7 +1869,7 @@
         color: #000000;
         text-align: center;
         line-height: 1.4;
-        margin-left: 20px;
+        /*margin-left: 20px;*/
         font-size: 21px;
         font-family: "Akshar", Helvetica;
         width: 18rem;
@@ -1826,7 +2039,7 @@
 
     .circular-btn.btn-circular-1 {
         position: absolute;
-        top: 1520px;
+        top: 1635px;
         left: 50px;
         margin: 0px;
         width: 32px;
@@ -1835,7 +2048,7 @@
 
     .circular-btn.btn-circular-2 {
         position: absolute;
-        top: 1520px;
+        top: 1620px;
         left: 330px;
         margin: 0px;
         width: 32px;
@@ -1844,7 +2057,7 @@
 
     .circular-btn.btn-circular-3 {
         position: absolute;
-        top: 1700px;
+        top: 1800px;
         left: 40px;
         margin: 0px;
         width: 32px;
@@ -1853,7 +2066,7 @@
 
     .circular-btn.btn-circular-4 {
         position: absolute;
-        top: 1650px;
+        top: 1850px;
         left: 330px;
         margin: 0px;
         width: 32px;
@@ -1862,8 +2075,8 @@
 
     .circular-btn.btn-circular-5 {
         position: absolute;
-        top: 1725px;
-        left: 240px;
+        top: 1900px;
+        left: 160px;
         margin: 0px;
         width: 32px;
         height: 32px;
@@ -1888,9 +2101,9 @@
         transition: background-color 0.3s ease;
         justify-content: space-between;
         height: 100%;
-        margin: auto;
+        /*margin: auto;*/
         height: 200px;
-        width: 270px;
+        width: 370px;
         align-items: center;
         justify-content: center;
     }
@@ -1930,7 +2143,7 @@
 
     .form-check-label {
 
-        margin-top: 15px;
+        /*margin-top: 15px;*/
         /*margin-left: -55px;*/
     }
 
@@ -1951,5 +2164,22 @@
         font-weight: 700;
         font-style: italic;
 
+    }
+}
+
+@media (min-width: 360px) and (max-width: 375px) {
+    .circular-btn.btn-circular-2 {
+        top: 1520px;
+        left: 300px;
+    }
+
+    .circular-btn.btn-circular-4 {
+        top: 1630px;
+        left: 300px;
+    }
+
+    .circular-btn.btn-circular-5 {
+        top: 1765px;
+        left: 240px;
     }
 }

@@ -115,7 +115,7 @@
         </div>
 
 
-        <div class="circular-buttons d-none d-block d-xl-none">
+        <div class="circular-buttons d-none d-block d-md-none d-xl-none">
             <button class="circular-btn btn-circular-1" onclick="alert('Botón 1')">1</button>
             <button class="circular-btn btn-circular-2" onclick="alert('Botón 2')">2</button>
             <button class="circular-btn btn-circular-3" onclick="alert('Botón 3')">3</button>
