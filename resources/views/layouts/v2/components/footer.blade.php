@@ -60,10 +60,10 @@
                     <!-- Este div se muestra solo en dispositivos móviles -->
                     <div class="input-group no-gap d-md-none flex-column">
                         <input type="email" class="form-control subscribe-input mb-2" style="width: 100%; border-radius: 1px;"
-                            placeholder="Correo electrónico">
+                            placeholder="Correo electrónico" style="width:auto;">
                         <button class="btn btn-dark btn-susbcribe btn-susc-margin mb-2 btn-border-r-1">Suscríbete</button>
                         <div class="form-check mt-2 mb-3">
-                            <input type="checkbox" class="form-check-input" id="acceptTerms" style="margin-top: -.1rem;">
+                            <input type="checkbox" class="form-check-input" id="acceptTerms" style="margin-top: -.1rem; ">
                             <label class="form-check-label text-dark font-akshar" for="acceptTerms">
                                 Al suscribirte estás aceptando nuestros
                                 <a href="enlace-a-terminos-y-condiciones" target="_blank">Términos y Condiciones</a>
@@ -73,7 +73,7 @@
 
                     <!-- Este div se oculta en dispositivos móviles y se muestra en pantallas más grandes -->
                     <div class="input-group no-gap d-none d-md-flex">
-                        <input type="email" class="form-control subscribe-input" placeholder="Correo electrónico">
+                        <input type="email" class="form-control subscribe-input" placeholder="Correo electrónico" style="width:auto;">
                         <button class="btn btn-dark btn-susbcribe btn-border-r-1">Suscríbete</button>
                         <div class="form-check mt-2">
                             <input type="checkbox" class="form-check-input" id="acceptTerms" style="margin-top: -.1rem;">
