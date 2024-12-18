@@ -354,6 +354,10 @@ Route::get('consultoriav2')
     ->uses('HomeController@consultingRedesign')
     ->name('consulting');
 
+Route::get('contacto')
+    ->uses('HomeController@contacto')
+    ->name('contact');
+
 Route::get('/play')
     ->uses('\QD\QDPlay\Http\Controllers\Home\HomeController@index')
     ->name('play');
@@ -361,11 +365,11 @@ Route::get('/play')
 Route::get('/busqueda')
     ->uses('SearchController@index')
     ->name('search');
-
+/*
 Route::get('/contacto')
     ->uses('PagesController@contact')
     ->name('contact');
-
+*/
 Route::get('/sobre-nosotros')
     ->uses('PagesController@about')
     ->name('about');
