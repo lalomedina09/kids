@@ -101,6 +101,14 @@ class HomeController extends Controller
         ]);
     }
 
+    public function contacto()
+    {
+        return view('v2.home.contact')->with([
+            'categories' => 0,
+            'channel' => 0,
+            'source' => 0
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *

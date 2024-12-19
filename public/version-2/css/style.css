@@ -3734,3 +3734,74 @@ a {
 .font-beley {
     font-family: "Besley";
 }
+
+/* Estilo del texto de condiciones */
+.text-cap-derecha {
+    font-family: "Akshar", Helvetica;
+    font-size: 13px;
+    margin-left: 54rem;
+    margin-top: 4rem;
+    width: 22rem;
+    margin-top: -11.3rem;
+    position: absolute;
+    line-height: 1.3;
+}
+
+.bold-text-cap {
+    font-weight: bold;
+}
+
+.contact-section {
+    display: -webkit-inline-box;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    margin-left: 29rem;
+}
+
+.contact-info,
+.address-info {
+
+    flex: 1;
+}
+
+.contact-info p,
+.address-info p {
+    font-family: "Akshar", Helvetica;
+    font-size: 24px;
+    color: #000;
+    margin: 10px 0;
+    /* display: flex; */
+    /* align-items: center; */
+    margin-top: revert-layer;
+    line-height: 2rem;
+}
+
+.contact-info p i,
+.address-info p i {
+    margin-right: 10px;
+    color: #000;
+}
+
+.divider {
+    width: 1px;
+    background-color: #e0e0e0;
+    margin: 0 20px;
+    height: auto;
+}
+
+/* Por defecto, oculta el párrafo para móvil */
+.parrafo-movil {
+    display: none;
+}
+
+/* Por defecto, muestra el párrafo para escritorio */
+.parrafo-banner {
+    font-family: "Akshar", Helvetica;
+    font-size: 2.1rem;
+    margin-top: 5rem;
+    text-align: center;
+    /* margin-left: -6rem; */
+    /* width: 86rem; */
+    line-height: 3.5rem;
+}
