@@ -1,14 +1,14 @@
 <style>
-    #img-service-agency-desktop {
-    transition: opacity 0.3s ease; /* Transición suave */
+    /*#img-service-agency-desktop {
+    transition: opacity 0.3s ease;
     }
 
-    /* Cambiar la imagen en hover */
+
     #img-service-agency-desktop:hover {
     content: url('{{ asset("version-2/images/services/hover/color-agencia-creativa.png") }}');
     max-width: 100%;
     height: auto;
-    }
+    }*/
 </style>
 <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
     <div class="row mb-4 mt-4">
@@ -30,8 +30,8 @@
         <div class="col-md-6 d-flex flex-column justify-content-center text-center text-md-right order-1 order-md-2">
             <div class="stackview">
                 <div class="view bg-light"></div>
-                <img src="{{ asset('version-2/images/services/black-agencia-creativa.png') }}" id="img-service-agency-desktop" alt="Imagefortyeight" class="img-fluid imagefortyeight d-none d-lg-block" />
-                <img src="{{ asset('version-2/images/services/color-agencia-creativa.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-lg-none" />
+                <img src="{{ asset('version-2/images/services/color-agencia-creativa.png') }}" id="img-service-agency-desktop" alt="Imagefortyeight" class="img-fluid imagefortyeight d-none d-lg-block" />
+                <!--<img src="{{ asset('version-2/images/services/color-agencia-creativa.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-lg-none" />-->
             </div>
         </div>
     </div>

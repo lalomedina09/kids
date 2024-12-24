@@ -7,18 +7,18 @@
         <div class="row ">
             <div class="col-12 col-md-12 text-center justify-content-center align-items-center h-100" style="position: relative; z-index: 2;">
                 <div class="position-relative d-flex justify-content-center align-items-center">
-                    <img src="{{ asset('version-2/images/img_capa_1.png') }}" alt="Capa Imagen Izquierda"
-                        class="img-fluid capaone_one pigeon-secondary-left">
+                    <!--<img src="{{ asset('version-2/images/img_capa_1.png') }}" alt="Capa Imagen Izquierda"
+                        class="img-fluid capaone_one pigeon-secondary-left">-->
 
-                    <img src="{{ asset('version-2/images/paloma-principal.png') }}" alt="Paloma Principal"
+                    <img src="{{ asset('version-2/images/services/icon-service.png') }}" alt="Paloma Principal"
                         class="img-fluid main-pigeon">
 
-                    <img src="{{ asset('version-2/images/img_capa_1.png') }}" alt="Capa Imagen Derecha"
-                        class="img-fluid capaone_two pigeon-secondary-right">
+                    <!--<img src="{{ asset('version-2/images/img_capa_1.png') }}" alt="Capa Imagen Derecha"
+                        class="img-fluid capaone_two pigeon-secondary-right">-->
                 </div>
 
                 <!-- Título principal -->
-                <h1 class="lasolucin banner-title-main mt-2">La solución de <br>Educación Financiera</h1>
+                <h1 class="lasolucin banner-title-main mt-2">La solución integral <br>de Educación Financiera</h1>
 
                 <!-- Descripción para escritorio -->
                 <p class="description-1 mt-3 d-none d-lg-block">
