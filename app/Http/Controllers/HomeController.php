@@ -101,6 +101,15 @@ class HomeController extends Controller
         ]);
     }
 
+    public function agencyRedesign()
+    {
+        return view('v2.home.agency')->with([
+            'categories' => 0,
+            'channel' => 0,
+            'source' => 0
+        ]);
+    }
+
     public function contacto()
     {
         return view('v2.home.contact')->with([

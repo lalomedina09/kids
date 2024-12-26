@@ -106,7 +106,7 @@
         </button>
 
         <!-- Logo en el centro -->
-        <a class="navbar-brand mx-auto order-menu-hamburger" href="#">
+        <a class="navbar-brand mx-auto order-menu-hamburger" href="{{ route('home') }}">
             <img src="{{ asset('version-2/images/imglogomenu/group-127-1.png') }}" alt="Logo"
                 class="d-inline-block align-top logo-menu-qd">
         </a>
@@ -251,16 +251,16 @@
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Para empresas</a>
+                    <a class="nav-link text-dark" href="{{ route('qdplay.business') }}">Para empresas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Editorial</a>
+                    <a class="nav-link text-dark" href="{{ route('blog') }}">Editorial</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Cursos Online</a>
+                    <a class="nav-link text-dark" href="{{ route('qdplay') }}">Cursos Online</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Contacto</a>
+                    <a class="nav-link text-dark" href="{{ route('contact') }}">Contacto</a>
                 </li>
             </ul>
         </div>

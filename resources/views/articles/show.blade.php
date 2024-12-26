@@ -1,4 +1,5 @@
-@extends('layouts.app')
+{{--@extends('layouts.app')--}}
+@extends('layouts.v2.app')
 
 @if (app()->environment() === 'production')
     @push('scripts-inline')

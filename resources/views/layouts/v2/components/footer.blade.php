@@ -14,32 +14,32 @@
         <br><br><br>
         <div class="row justify-content-center text-center social-row">
             <div class="col-2 col-md-2 text-center">
-                <a href="#" class="link-social">
+                <a href="{{ config('money.url.facebook') }}" class="link-social" target="_blank">
                     <img src="{{ asset('version-2/images/redesfooter/facebook.png') }}" alt="icono-facebook">
                 </a>
             </div>
             <div class="col-2 col-md-2 text-center">
-                <a href="#" class="link-social">
+                <a href="{{ config('money.url.twitter') }}" class="link-social" target="_blank">
                     <img src="{{ asset('version-2/images/redesfooter/twitter.png') }}" alt="icono-twitter">
                 </a>
             </div>
             <div class="col-2 col-md-2 text-center">
-                <a href="#" class="link-social">
+                <a href="{{ config('money.url.instagram') }}" class="link-social" target="_blank">
                     <i class="lni lni-instagram social-icon-v2"></i>
                 </a>
             </div>
             <div class="col-2 col-md-2 text-center">
-                <a href="#" class="link-social">
+                <a href="{{ config('money.url.youtube') }}" class="link-social" target="_blank">
                     <i class="lni lni-youtube social-icon-v2"></i>
                 </a>
             </div>
             <div class="col-2 col-md-2 text-center">
-                <a href="#" class="link-social">
+                <a href="https://mx.linkedin.com/company/querido-dinero" class="link-social" target="_blank">
                     <img src="{{ asset('version-2/images/redesfooter/linkedin.png') }}" alt="icono-linkedin">
                 </a>
             </div>
             <div class="col-2 col-md-2 text-center">
-                <a href="#" class="link-social">
+                <a href="https://www.tiktok.com/@querido_dinero" class="link-social" target="_blank">
                     <i class="lni lni-tiktok-alt social-icon-v2"></i>
                 </a>
             </div>
@@ -103,7 +103,7 @@
                     trabajo.
                 </p>
                 <br>
-                <a class="btn btn-white btn-susbcribe d-none d-md-block">
+                <a href="{{ route('contact')}}" class="btn btn-white btn-susbcribe d-none d-md-block" style="width:auto;">
                     Contáctanos
                 </a>
             </div>
@@ -115,15 +115,31 @@
             <!-- Columna "Nosotros" que se oculta en dispositivos móviles -->
             <div class="col-md-2 d-none d-md-block">
                 <div class="footer-title">Nosotros</div>
-                <p class="footer-links">
-                    Sobre Nosotros<br />
-                    Contacto<br />
-                    Newsletter<br />
-                    Podcast<br />
-                    Libro<br />
-                    Colaboraciones<br />
-                    QD Play en iOS<br />
-                    QD Play en Android
+                <p class="footer-links text-white">
+                    <a href="{{ route('contact')}}" class="text-white text-decoration-none">
+                        Sobre Nosotros
+                    </a><br />
+                    <a href="{{ route('contact')}}" class="text-white text-decoration-none">
+                        Contacto
+                    </a><br />
+                    <a href="https://queridodinero.myflodesk.com/comunidad" class="text-white text-decoration-none">
+                        Newsletter
+                    </a><br />
+                    <a href="{{ route('podcasts.index') }}" class="text-white text-decoration-none">
+                        Podcast
+                    </a><br />
+                    <a href="{{ config('money.url.store') }}" class="text-white text-decoration-none">
+                        Libro
+                    </a><br />
+                    <a href="enlace-a-colaboraciones" class="text-white text-decoration-none">
+                        Colaboraciones
+                    </a><br />
+                    <a href="{{ env('APP_STORE', 'https://apps.apple.com/mx/app/qd-play/id6445823679') }}" class="text-white text-decoration-none">
+                        QD Play en iOS
+                    </a><br />
+                    <a href="{{ env('PLAY_STORE', 'https://play.google.com/store/apps/details?id=com.queridodinero.qdplay') }}" class="text-white text-decoration-none">
+                        QD Play en Android
+                    </a>
                 </p>
             </div>
 
@@ -131,13 +147,27 @@
             <div class="col-md-2 d-none d-md-block">
                 <div class="footer-title">Secciones</div>
                 <p class="footer-links">
-                    Empresas<br />
-                    Editorial<br />
-                    Cursos Online<br />
-                    Planes QD Play<br />
-                    Rutas de Aprendizaje<br />
-                    Talleres en vivo<br />
-                    Mentorías
+                    <a href="{{ route('qdplay.business') }}" class="text-white text-decoration-none">
+                        Empresas
+                    </a><br />
+                    <a href="{{ route('blog') }}" class="text-white text-decoration-none">
+                        Editorial
+                    </a><br />
+                    <a href="{{ url('qdplay') }}" class="text-white text-decoration-none">
+                        Cursos Online
+                    </a><br />
+                    <a href="{{ route('qdplay.individual-plans') }}" class="text-white text-decoration-none">
+                        Planes QD Play
+                    </a><br />
+                    <a href="{{ route('qdplay.learning-paths.start', ['principal'])}}" class="text-white text-decoration-none">
+                        Rutas de Aprendizaje
+                    </a><br />
+                    <a href="{{ route('courses.index') }}" class="text-white text-decoration-none">
+                        Talleres en vivo
+                    </a><br />
+                    <a href="{{ route('qd.advice.advisors.index') }}" class="text-white text-decoration-none">
+                        Mentorías
+                    </a>
                 </p>
             </div>
         </div>

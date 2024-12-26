@@ -2068,6 +2068,7 @@
 .social-row {
     margin-left: 1rem;
     margin-right: 1rem;
+    max-width: 100%;
 }
 
 .social-icon-v2 {
@@ -3715,35 +3716,18 @@ a {
     background-color: #333;
 }
 
-/* Diseño imagenes tarjetas */
-/*
-    .imagen-tarjeta{
-        margin-left: 20px;
-        margin-top: 20px;
-        margin-left: 25px;
-
-    } */
 
 .mt-custom {
     margin-top: 90px !important;
-    /* Ajusta el valor según prefieras */
 }
 
-/* .custom-gap {
-        gap: 30px; /* Ajusta este valor al tamaño deseado */
 .font-beley {
     font-family: "Besley";
 }
 
-/* Estilo del texto de condiciones */
 .text-cap-derecha {
     font-family: "Akshar", Helvetica;
     font-size: 13px;
-    margin-left: 54rem;
-    margin-top: 4rem;
-    width: 22rem;
-    margin-top: -11.3rem;
-    position: absolute;
     line-height: 1.3;
 }
 

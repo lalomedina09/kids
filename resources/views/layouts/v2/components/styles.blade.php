@@ -1,10 +1,10 @@
 <!-- agregue version rand para actualizar la cache de los navegadores -->
-{{--<link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">--}}
+<link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
 
-{{--
+
 <link href="{{ asset('css/custom.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
 <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
---}}
+
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -15,8 +15,12 @@
 <link rel="stylesheet" href="{{ asset('version-2/css/mediaqueries.css') }}?v={{ (rand(1,500)) }}" />
 
 <!---------------->
-<!---<link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">--->
-<!--<link href="{{ asset('css/custom.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">-->
+
+@if (!in_array(Route::currentRouteName(), ['home', 'servicios', 'consulting']))
+<link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
+<link href="{{ asset('css/custom.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
+@endif
+
 <!---------------->
 
 <link rel="stylesheet" href="{{ asset('version-2/css/iziToast.min.css') }}?v={{ (rand(1,500)) }}">

@@ -11,6 +11,11 @@
 
 @media (min-width: 360px) and (max-width: 480px) {
 
+    .profile-menu {
+        right: 10px;
+    }
+
+
     .bg-container {
         left: -15px;
         width: 107%;
@@ -130,6 +135,10 @@
 
 @media (max-width: 480px) {
 
+    .profile-menu {
+        right: 10px;
+    }
+
     .img-banner-main-random {
         max-width: 111%;
         height: auto;
@@ -241,6 +250,10 @@
 
 @media (max-width: 550px) {
 
+    .profile-menu {
+        right: 10px;
+    }
+
     /*Landing de SERVICIOS  - Banner*/
     .lasolucin {
         font-size: 2.6rem;
@@ -273,6 +286,10 @@
 /* Estilos para dispositivos pequeños (móviles en modo vertical) */
 
 @media (min-width: 481px) and (max-width: 576px) {
+
+    .profile-menu {
+        right: 10px;
+    }
 
     .navbar {
         top: 65px;
@@ -396,6 +413,10 @@
 
 @media (min-width: 577px) and (max-width: 768px) {
 
+    .profile-menu {
+        right: 10px;
+    }
+
     .navbar {
         top: 70px;
     }
@@ -503,6 +524,10 @@
 }
 
 @media (max-width: 767px) {
+    .profile-menu {
+        right: 10px;
+    }
+
     .d-md-flex {
         display: none !important;
     }
@@ -680,6 +705,10 @@
 
 @media (min-width: 810px) and (max-width: 910px) {
 
+    .social-row {
+        max-width: 100%;
+    }
+
     .text-wrapper-4 {
         margin-top: 2em;
     }
@@ -790,6 +819,14 @@
 /* Estilos para dispositivos grandes (pantallas de escritorio pequeñas) */
 
 @media (min-width: 769px) and (max-width: 992px) {
+
+    .profile-menu {
+        right: 10px;
+    }
+
+    .social-row {
+        max-width: 100%;
+    }
 
     .sobre-nosotros {
         margin-left: 46px;
@@ -1103,6 +1140,10 @@
 @media (max-width: 1050px) {
 
     /*Landing de SERVICIOS  - Banner*/
+    .social-row {
+        max-width: 100%;
+    }
+
     .stackcapaone {
         height: auto;
     }
@@ -1151,6 +1192,11 @@
     .navbar .navbar-brand img {
         height: 35px;
     }
+
+    .social-row {
+        max-width: 100%;
+    }
+
 
     .content {
         padding-top: 150px;
@@ -1235,6 +1281,11 @@
     .img-2-service {
         width: 167px;
         margin-left: 3px;
+    }
+
+
+    .social-row {
+        max-width: 100%;
     }
 
 
@@ -1427,6 +1478,10 @@
         margin-left: -88px;
     }
 
+    .social-row {
+        max-width: 100%;
+    }
+
     .ml-3 {
         margin-right: -2rem !important;
     }
@@ -1558,6 +1613,10 @@
         margin-left: -88px;
     }
 
+    .social-row {
+        max-width: 100%;
+    }
+
     .ml-3 {
         margin-right: -2rem !important;
     }
@@ -1683,6 +1742,10 @@
         height: 200px;
         animation: rotateFlechas 10s linear infinite;
     }
+
+    .social-row {
+        max-width: 100%;
+    }
 }
 
 
@@ -1693,6 +1756,10 @@
 
 
 @media (min-width: 360px) and (max-width: 480px) {
+
+    .profile-menu {
+        right: 10px;
+    }
 
     /* Ocultar el H1 original */
     .original-heading {
@@ -2168,6 +2235,10 @@
 }
 
 @media (min-width: 360px) and (max-width: 375px) {
+    .profile-menu {
+        right: 10px;
+    }
+
     .circular-btn.btn-circular-2 {
         top: 1520px;
         left: 300px;

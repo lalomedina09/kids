@@ -1,103 +1,77 @@
 <style>
-    /* Estilos generales (Se mantienen iguales para otros tamaños de pantalla) */
-
     .form-label {
-    font-weight: bold;
-    color: #333;
-    font-size: 20px;
-    font-family: "Akshar", Helvetica;
-    /* margin-bottom: 16px;
-    margin-left: -121px;
-    margin-top: 29px; */
+        font-weight: bold;
+        color: #333;
+        font-size: 20px;
+        font-family: "Akshar", Helvetica;
     }
 
     .form-control {
-    background-color: #f0f0f0;
-    /* Fondo gris claro */
-    border: none;
-    /* Sin borde */
-    border-radius: 5px;
-    /* Bordes redondeados */
-    padding: 29px;
-    /* Espaciado interno */
-    font-size: 20px;
-    font-family: "Akshar", Helvetica;
-    /* width: 315px;
-    margin-left: -122px; */
+        background-color: #f0f0f0;
+        border: none;
+        border-radius: 5px;
+        padding: 29px;
+        font-size: 20px;
+        font-family: "Akshar", Helvetica;
     }
 
     .form-control::placeholder {
-    color: #a9a9a9;
-    /* Color gris claro para los placeholders */
-    opacity: 1;
+        color: #a9a9a9;
+        opacity: 1;
     }
 
-    /*
-    .mb-3 .row {
-    margin-bottom: 2rem;
-    }
-    */
     .btn-custom {
-    background-color: #000;
-    /* Fondo negro */
-    color: #fff;
-    /* Texto blanco */
-    width: 167px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 0px;
-    font-family: "Akshar", Helvetica;
-    ;
+        background-color: #000;
+        color: #fff;
+        width: 167px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0px;
+        font-family: "Akshar", Helvetica;
     }
 
     .btn-custom:hover {
-    background-color: #333;
-    /* Fondo gris oscuro en hover */
+        background-color: #333;
     }
 
     .text-muted {
-    font-size: 0.8rem;
-    color: #666;
+        font-size: 0.8rem;
+        color: #666;
     }
 
     .form-check-label {
-    font-size: 0.9rem;
-    color: #666;
+        font-size: 0.9rem;
+        color: #666;
     }
 
-    /* Estilos para el checkbox personalizado */
     .form-check-input {
-    width: 20px;
-    margin-left: -23px;
-    /*height: 33px;*/
+        width: 20px;
+        margin-left: -23px;
     }
 
-    /* Espaciado y alineación de texto */
     .text-formulario {
-    text-align: center;
-    font-size: 36px;
-    font-family: "Akshar", Helvetica;
-    font-weight: 500;
-    margin-top: -10rem;
-
+        text-align: center;
+        font-size: 36px;
+        font-family: "Akshar", Helvetica;
+        font-weight: 500;
+        margin-top: -10rem;
     }
 
     .text-end {
-
-    text-align: right;
+        text-align: right;
     }
 
     .imagen-cap {
-    margin-bottom: -17px;
-    margin-left: 14px;
+        margin-bottom: -17px;
+        margin-left: 14px;
     }
 
     /* Seccion captcha */
     .captcha-izquierda {
-    background-color: #dedede;
-    width: 11rem;
-    margin-left: -11px;
-    height: 3rem;
+        background-color: #dedede;
+        width: 11rem;
+        margin-left: -11px;
+        height: 3rem;
     }
 
     /* Estilo del texto de condiciones */

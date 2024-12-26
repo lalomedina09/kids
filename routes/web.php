@@ -350,7 +350,11 @@ Route::get('servicios')
     ->uses('HomeController@servicesRedesign')
     ->name('services');
 
-Route::get('consultoriav2')
+Route::get('agencia')
+->uses('HomeController@agencyRedesign')
+->name('agency');
+
+Route::get('consultoria')
     ->uses('HomeController@consultingRedesign')
     ->name('consulting');
 
