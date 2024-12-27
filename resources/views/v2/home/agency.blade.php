@@ -1,13 +1,15 @@
 @extends('layouts.v2.app')
 
-<title>Servicios | Querido Dinero</title>
+<title>Agencia Creativa | Querido Dinero</title>
 
 @section('content')
 
-@include('v2.home.services.banner')
+@include('v2.home.agency.banner')
+
+@include('v2.home.agency.features')
 
 {{--@include('v2.home.services.section-info-1')--}}
-
+{{--
 <section style="background-color: #F3F3F3;">
     <!-- Sección A -->
     @include('v2.home.services.rows.consultancy')
@@ -43,4 +45,5 @@
     <!-- Sección C -->
     @include('v2.home.services.rows.qdplay')
 </section>
+--}}
 @endsection

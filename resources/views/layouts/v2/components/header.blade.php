@@ -257,7 +257,7 @@
                     <a class="nav-link text-dark" href="{{ route('blog') }}">Editorial</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="{{ route('qdplay') }}">Cursos Online</a>
+                    <a class="nav-link text-dark" href="{{ url('qdplay') }}">Cursos Online</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="{{ route('contact') }}">Contacto</a>

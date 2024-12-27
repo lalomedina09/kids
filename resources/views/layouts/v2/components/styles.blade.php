@@ -17,8 +17,8 @@
 <!---------------->
 
 @if (!in_array(Route::currentRouteName(), ['home', 'servicios', 'consulting']))
-<link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
-<link href="{{ asset('css/custom.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
 @endif
 
 <!---------------->
