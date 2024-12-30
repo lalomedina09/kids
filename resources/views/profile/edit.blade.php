@@ -1,4 +1,4 @@
-@extends('layouts.v2.app')
+@extends('layouts.app-v1')
 
 @push('styles')
     <link href="{{ mix('css/vendor/datetimepicker.css') }}" rel="stylesheet">

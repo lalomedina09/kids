@@ -1,3 +1,4 @@
+{{--
 @php $category = $categories->where('code', $code)->first() @endphp
     @if ($category)
     <div class="form-group">
@@ -12,3 +13,4 @@
         @endforeach
     </div>
 @endif
+--}}

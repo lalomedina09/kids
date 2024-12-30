@@ -6,7 +6,7 @@
 <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
 
 
- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" /> -->
 
 
 <link rel="stylesheet" href="{{ asset('version-2/css/globals.css') }}?v={{ (rand(1,500)) }}" />
@@ -17,9 +17,9 @@
 
 <!---------------->
 
-@if (!in_array(Route::currentRouteName(), ['home', 'services', 'consulting', 'contact']))
-    <link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
-    <link href="{{ asset('css/custom.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
+@if (!in_array(Route::currentRouteName(), ['home', 'servicios', 'consulting', 'contact']))
+<link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
+<link href="{{ asset('css/custom.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
 @endif
 
 <!---------------->

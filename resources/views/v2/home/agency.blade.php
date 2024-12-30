@@ -1,4 +1,4 @@
-@extends('layouts.v2.app')
+@extends('layouts.app-v2-redesign')
 
 <title>Agencia Creativa | Querido Dinero</title>
 

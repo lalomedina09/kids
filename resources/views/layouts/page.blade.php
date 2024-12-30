@@ -1,5 +1,5 @@
 {{--@extends('layouts.app')--}}
-@extends('layouts.v2.app')
+@extends('layouts.app-v1')
 @section('content')
 
     <div class="container">
