@@ -8,6 +8,7 @@ use App\Models\{ Article, Cover, Podcast, Quote, Video };
 
 use QD\Advice\Models\Advice;
 use App\Models\Quiz;
+use App\Models\FormContact;
 use App\Models\QzAnswer;
 use QD\QDPlay\Models\Course;
 use App\Models\QzQuestion;
@@ -117,6 +118,29 @@ class HomeController extends Controller
             'channel' => 0,
             'source' => 0
         ]);
+    }
+
+    public function saveDataContact(Request $request)
+    {
+        $data = $request->validate([
+            'nombre' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'telefono' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'motivo' => 'required|string|max:255',
+            'mensaje' => 'required|string',
+        ]);
+
+        $newModel = new FormContact();
+        $newModel->name = $data['nombre'] . ' ' . $data['apellidos'];
+        $newModel->phone = $data['telefono'];
+        $newModel->email = $data['email'];
+        $newModel->subject = $data['motivo'];
+        $newModel->message = $data['mensaje'];
+        // Add more fields as necessary
+        $newModel->save();
+
+        return redirect()->back()->with('success', 'Solicitud enviada correctamente');
     }
     /**
      * Display a listing of the resource.

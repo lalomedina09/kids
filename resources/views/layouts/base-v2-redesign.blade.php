@@ -9,6 +9,7 @@
 
     @include('partials.main.favicon')
     {{--@include('partials.main.meta')--}}
+    @include('layouts.v2.components.metas')
     {{--@include('partials.main.styles')--}}
     @include('layouts.v2.components.styles')
 

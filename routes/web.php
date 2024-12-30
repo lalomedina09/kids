@@ -362,6 +362,11 @@ Route::get('contacto')
     ->uses('HomeController@contacto')
     ->name('contact');
 
+
+Route::post('contacto')
+    ->uses('HomeController@saveDataContact')
+    ->name('contact.save');
+
 Route::get('/play')
     ->uses('\QD\QDPlay\Http\Controllers\Home\HomeController@index')
     ->name('play');

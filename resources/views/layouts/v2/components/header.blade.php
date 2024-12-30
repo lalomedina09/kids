@@ -194,6 +194,7 @@
                             <img src="{{ asset('version-2/images/components/svg/star-fat.svg') }}" alt="Compras" width="20"> Membresía
                         </a>
                     </li>
+                    {{--
                     <hr style="border-top: 1px solid #ffffff;">
                     <li>
                         <a href="#">
@@ -207,6 +208,7 @@
                             Juegos
                         </a>
                     </li>
+                    --}}
                     <hr style="border-top: 1px solid #ffffff;">
                     <li>
                         <a href="{{ route('blog') }}">
@@ -219,11 +221,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('blog') }}">
+                        <a href="https://queridodinero.myflodesk.com/comunidad" target="_blank">
                             <img src="{{ asset('version-2/images/components/svg/envelope-1.svg') }}" alt="Compras" width="20">
                             Newsletter
                         </a>
                     </li>
+                    {{--
                     <hr style="border-top: 1px solid #ffffff;">
                     <li>
                         <a href="{{ route('contact') }}">
@@ -236,6 +239,7 @@
                             comentarios
                         </a>
                     </li>
+                    --}}
                 </ul>
             </div>
         @else
