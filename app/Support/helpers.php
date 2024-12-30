@@ -2,19 +2,21 @@
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Ad;
 use App\Models\User;
+use App\Models\Quiz;
 use App\Models\LoginLog;
-use App\Models\UserAgent;
-use App\Models\Notification;
 use App\Models\Category;
 use App\Models\QzAnswer;
-use App\Models\Quiz;
 use App\Models\TsBudget;
+use App\Models\UserAgent;
 use App\Models\TsCategory;
+use App\Models\Notification;
 use App\Models\TsCategoryUser;
-use QD\QDPlay\Models\View as ModelView;
 use QD\QDPlay\Models\LearningPath;
 use QD\QDPlay\Models\LearningPathUser;
+use QD\QDPlay\Models\View as ModelView;
+
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Carbon\Carbon;
@@ -633,4 +635,9 @@ function nameDaySpanish($stringDay)
 
     // Retorna el día en español si existe en el array, o el mismo día si no está
     return $days[$stringDay] ?? $stringDay;
+}
+
+function getActiveAd()
+{
+    return Ad::active()->inRandomOrder()->first();
 }

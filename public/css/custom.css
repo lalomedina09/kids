@@ -1,32 +1,37 @@
-.custom-hidden
-{
+body{
+    /*background: #000000;*/
+}
+.navbar {
+    /*position: fixed;*/
+}
+
+.custom-hidden {
     display: none;
 }
 
-.mb-5px
-{
+.mb-5px {
     margin-bottom: 5px;
 }
 
-.btn-blue{
+.btn-blue {
     background-color: #4ECFD2;
     color: #ffffff;
 }
 
-.btn-green{
+.btn-green {
     background-color: #9ccd5f;
     color: #ffffff;
 }
 
-.custom-filter-gray{
+.custom-filter-gray {
     filter: grayscale(100%);
 }
 
-.custom-f-s-small{
+.custom-f-s-small {
     font-size: 15px;
 }
 
-.badge-secondary{
+.badge-secondary {
     font-size: 15px;
 }
 
@@ -43,17 +48,17 @@
 }
 
 /*Survey Diagnostic*/
-.modal-show-survey{
+.modal-show-survey {
     background-image: url(/etapa1/survey/pop-up.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.btn-pill-10{
+.btn-pill-10 {
     border-radius: 10px;
 }
 
-.btn-white:hover{
+.btn-white:hover {
     border: 1px solid #ffffff;
     color: #ffffff;
 }

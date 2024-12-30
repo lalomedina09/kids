@@ -8,6 +8,7 @@ use App\Models\{ Article, Cover, Podcast, Quote, Video };
 
 use QD\Advice\Models\Advice;
 use App\Models\Quiz;
+use App\Models\FormContact;
 use App\Models\QzAnswer;
 use QD\QDPlay\Models\Course;
 use App\Models\QzQuestion;
@@ -50,7 +51,7 @@ class HomeController extends Controller
             $answer->save();
         }
 
-        return redirect()->back()->with('success', 'Quiz enviado con exito');;
+        return redirect()->back()->with('success', 'Quiz enviado con exito');
     }
 
     /**
@@ -74,6 +75,73 @@ class HomeController extends Controller
         ]);
     }
 
+    public function indexRedesign()
+    {
+        return view('v2.home.index')->with([
+            'categories' => 0,
+            'channel' => 0,
+            'source' => 0
+        ]);
+    }
+
+    public function servicesRedesign()
+    {
+        return view('v2.home.services')->with([
+            'categories' => 0,
+            'channel' => 0,
+            'source' => 0
+        ]);
+    }
+
+    public function consultingRedesign()
+    {
+        return view('v2.home.consultingv2')->with([
+            'categories' => 0,
+            'channel' => 0,
+            'source' => 0
+        ]);
+    }
+
+    public function agencyRedesign()
+    {
+        return view('v2.home.agency')->with([
+            'categories' => 0,
+            'channel' => 0,
+            'source' => 0
+        ]);
+    }
+
+    public function contacto()
+    {
+        return view('v2.home.contact')->with([
+            'categories' => 0,
+            'channel' => 0,
+            'source' => 0
+        ]);
+    }
+
+    public function saveDataContact(Request $request)
+    {
+        $data = $request->validate([
+            'nombre' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'telefono' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'motivo' => 'required|string|max:255',
+            'mensaje' => 'required|string',
+        ]);
+
+        $newModel = new FormContact();
+        $newModel->name = $data['nombre'] . ' ' . $data['apellidos'];
+        $newModel->phone = $data['telefono'];
+        $newModel->email = $data['email'];
+        $newModel->subject = $data['motivo'];
+        $newModel->message = $data['mensaje'];
+        // Add more fields as necessary
+        $newModel->save();
+
+        return redirect()->back()->with('success', 'Solicitud enviada correctamente');
+    }
     /**
      * Display a listing of the resource.
      *

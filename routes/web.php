@@ -333,13 +333,39 @@ Route::prefix('password')
 | Static pages
 |--------------------------------------------------------------------------
 */
-
+/*
 Route::get('/')
     #->uses('HomeController@index')
     #->name('home');
     //->uses('HomeController@blog')
     ->uses('\QD\QDPlay\Http\Controllers\Home\HomeController@index')
     ->name('home');
+*/
+Route::get('/')
+    ->uses('HomeController@indexRedesign')
+    ->name('home');
+
+
+Route::get('servicios')
+    ->uses('HomeController@servicesRedesign')
+    ->name('services');
+
+Route::get('agencia')
+->uses('HomeController@agencyRedesign')
+->name('agency');
+
+Route::get('consultoria')
+    ->uses('HomeController@consultingRedesign')
+    ->name('consulting');
+
+Route::get('contacto')
+    ->uses('HomeController@contacto')
+    ->name('contact');
+
+
+Route::post('contacto')
+    ->uses('HomeController@saveDataContact')
+    ->name('contact.save');
 
 Route::get('/play')
     ->uses('\QD\QDPlay\Http\Controllers\Home\HomeController@index')
@@ -348,11 +374,11 @@ Route::get('/play')
 Route::get('/busqueda')
     ->uses('SearchController@index')
     ->name('search');
-
+/*
 Route::get('/contacto')
     ->uses('PagesController@contact')
     ->name('contact');
-
+*/
 Route::get('/sobre-nosotros')
     ->uses('PagesController@about')
     ->name('about');
