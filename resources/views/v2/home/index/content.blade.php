@@ -15,14 +15,14 @@
             <!-- Contenido del carrusel -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="#" class="link-content">
+                    <a href="https://www.queridodinero.com/articulos/como-escoger-un-seguro-de-auto" class="link-content">
                         <img class="image-3 img-fluid" src="{{ asset('version-2/images/content/left-1.png') }}" alt="El verano y tu cartera">
                         <div class="text-wrapper-24 mt-2">
                             Artículo
                         </div>
                         <br>
                         <div class="text-wrapper-27 mt-4">
-                            El verano & tu cartera: Combate el calor estas vacaciones
+                            ¿Cómo escoger un Seguro de Auto?
                         </div>
                         <br><br>
                         <div>
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="carousel-item">
-                    <a href="#" class="link-content">
+                    <a href="https://www.queridodinero.com/qdplay/ver/CCbLHCkxq" class="link-content">
                         <img class="image-5 img-fluid" src="{{ asset('version-2/images/content/left-2.png') }}" alt="Salir de deudas">
                         <div class="text-wrapper-24 mt-2">
                             Curso online
@@ -50,14 +50,14 @@
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="" class="link-content-main">
+                    <a href="https://www.queridodinero.com/articulos/calendario-de-adviento-financiero-para-ninos" class="link-content-main">
                         <img class="estres-financiero img-fluid" src="{{ asset('version-2/images/content/main.png') }}" alt="Estrés financiero">
                         <div class="text-wrapper-28 mt-3">
                             Artículo
                         </div>
                         <br>
                         <div class="text-wrapper-27 mt-4">
-                            Dile adiós al estrés financiero
+                            Calendario de adviento financiero para niños
                         </div>
                         <br><br>
                         <div>
@@ -67,7 +67,7 @@
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="#" class="link-content">
+                    <a href="https://www.queridodinero.com/qdplay/ver/CGEKs1YRx/CbELQXUDi" class="link-content">
                         <img class="image-2 img-fluid" src="{{ asset('version-2/images/content/right-1.png') }}" alt="Tarjetas de crédito">
                         <div class="text-wrapper-22 mt-2">
                             Curso online
@@ -84,15 +84,14 @@
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="#" class="link-content">
+                    <a href="https://www.queridodinero.com/articulos/disfruta-la-navidad-tu-esfuerzo-del-ano-valio-la-pena" class="link-content">
                         <img class="image-4 img-fluid" src="{{ asset('version-2/images/content/right-2.png') }}" alt="GAT real y nominal">
                         <div class="text-wrapper-25 mt-2">
-                            Anuncio
+                            Artículo
                         </div>
                         <br>
                         <div class="text-wrapper-27 mt-4">
-                            Abre una cuenta de Citibanamex <br>
-                            Haciendo clic aqui
+                            ¡Disfruta la Navidad! <br> Tu esfuerzo del año valió la pena
                         </div>
                         <br><br>
                         <div>
@@ -118,18 +117,18 @@
             <div class="col-md-3 col-lg-3">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 mb-4">
-                        <a href="#" class="link-content">
+                        <a href="https://www.queridodinero.com/articulos/como-escoger-un-seguro-de-auto" class="link-content">
                             <img class="image-3 img-fluid" src="{{ asset('version-2/images/content/left-1.png') }}" alt="El verano y tu cartera">
                             <div class="text-wrapper-24 mt-2">
                                 Artículo
                             </div>
                             <p class="text-wrapper-23 quote-content mt-2">
-                                El verano & tu cartera: Combate el calor estas vacaciones
+                                ¿Cómo escoger un Seguro de Auto?
                             </p>
                         </a>
                     </div>
                     <div class="col-md-12 col-lg-12 mb-4">
-                        <a href="#" class="link-content">
+                        <a href="https://www.queridodinero.com/qdplay/ver/CCbLHCkxq" class="link-content">
                             <img class="image-5 img-fluid" src="{{ asset('version-2/images/content/left-2.png') }}" alt="Salir de deudas">
                             <div class="text-wrapper-24 mt-2">
                                 Curso online
@@ -144,17 +143,17 @@
             <div class="col-md-6 col-lg-6">
                 <div class="row">
                     <div class="col-12">
-                        <a href="" class="link-content-main">
+                        <a href="https://www.queridodinero.com/articulos/calendario-de-adviento-financiero-para-ninos" class="link-content-main">
                             <img class="estres-financiero img-fluid" src="{{ asset('version-2/images/content/main.png') }}" alt="Estrés financiero">
                             <div class="text-wrapper-28 mt-3">
                                 Artículo
                             </div>
                             <div class="text-wrapper-27 mt-4">
-                                Dile adiós al estrés financiero
+                                Calendario de adviento <br> financiero para niños
                             </div>
                             <p class="text-wrapper-26 quote-content d-none d-lg-block mt-3">
-                                El dinero es una preocupación común para la mayoría de las personas, incluso para los que ganan bien.
-                                La clave es ver cómo manejas tus finanzas, lidiar con la ansiedad y llevar control sobre tu salud en general.
+                                Este calendario está pensado para que, mientras esperan la Navidad, los niños descubran el mundo del dinero de una forma
+                                amena y entretenida.
                             </p>
                         </a>
                     </div>
@@ -163,7 +162,7 @@
             <div class="col-md-3 col-lg-3">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 mb-4">
-                        <a href="#" class="link-content">
+                        <a href="https://www.queridodinero.com/qdplay/ver/CGEKs1YRx/CbELQXUDi" class="link-content">
                             <img class="image-2 img-fluid" src="{{ asset('version-2/images/content/right-1.png') }}" alt="Tarjetas de crédito">
                             <div class="text-wrapper-22 mt-2">
                                 Curso online
@@ -174,14 +173,13 @@
                         </a>
                     </div>
                     <div class="col-md-12 col-lg-12 mb-4">
-                        <a href="#" class="link-content">
+                        <a href="https://www.queridodinero.com/articulos/disfruta-la-navidad-tu-esfuerzo-del-ano-valio-la-pena" class="link-content">
                             <img class="image-4 img-fluid" src="{{ asset('version-2/images/content/right-2.png') }}" alt="GAT real y nominal">
                             <div class="text-wrapper-25 mt-2">
-                                Anuncio
+                                Artículo
                             </div>
                             <p class="qu-es-el-GAT-real-y quote-content mt-2">
-                                Abre una cuenta de Citibanamex <br>
-                                Haciendo clic aqui
+                                ¡Disfruta la Navidad! <br>Tu esfuerzo del año valió la pena
                             </p>
                         </a>
                     </div>
