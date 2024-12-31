@@ -17,7 +17,7 @@
 
 <!---------------->
 
-@if (!in_array(Route::currentRouteName(), ['home', 'services', 'consulting', 'contact']))
+@if (!in_array(Route::currentRouteName(), ['home', 'services', 'consulting', 'contact', 'agency']))
     <link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
 @endif

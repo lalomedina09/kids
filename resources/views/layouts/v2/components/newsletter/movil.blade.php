@@ -25,7 +25,7 @@
         let acceptTerms = document.getElementById('acceptTermsvMovil').checked;
 
         if (!acceptTerms) {
-            alert('Debes aceptar los Términos y Condiciones.');
+            alertify.error('Debes aceptar los Términos y Condiciones.');
             return;
         }
 

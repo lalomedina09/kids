@@ -129,11 +129,11 @@
             </div>
             <!-- Columna de Texto -->
             <div class="col-md-6 content-text">
-                <span class="badge bg-warning text-dark">IDENTIDAD</span>
+                <span class="font-akshar badge bg-warning text-dark">IDENTIDAD</span>
                 <br>
-                <h2>Agencia creativa <br>de nicho financiera</h2>
+                <h2 class="font-akshar">Agencia creativa <br>de nicho financiera</h2>
                 <br>
-                <p>
+                <p class="font-akshar">
                     Con 10 años de experiencia y una red de colaboradores especialistas, resolvemos desde proyectos
                     puntuales hasta la planeación estratégica a largo plazo.
                 </p>
@@ -149,11 +149,11 @@
         <div class="row align-items-center mb-5">
             <!-- Columna de Texto -->
             <div class="col-md-6 content-text">
-                <span class="badge bg-danger">CONTENIDO</span>
+                <span class="font-akshar badge bg-danger">CONTENIDO</span>
                 <br>
-                <h2>Generación de contenido <br>y community management</h2>
+                <h2 class="font-akshar">Generación de contenido <br>y community management</h2>
                 <br>
-                <p>
+                <p class="font-akshar">
                     Adaptamos la comunicación en redes sociales para que las empresas puedan delegar estrategia,
                     generación
                     y mantenimiento de contenido.
@@ -170,11 +170,11 @@
         <div class="row align-items-center mb-5">
             <!-- Columna de Texto -->
             <div class="col-md-6 content-text">
-                <span class="badge bg-danger">CONTENIDO</span>
+                <span class="font-akshar badge bg-danger">CONTENIDO</span>
                 <br>
-                <h2>Producción <br> audiovisual</h2>
+                <h2 class="font-akshar">Producción <br> audiovisual</h2>
                 <br>
-                <p>
+                <p class="font-akshar">
                     Adaptamos la comunicación en redes sociales para que las empresas puedan delegar estrategia,
                     generación
                     y mantenimiento de contenido.
@@ -191,11 +191,11 @@
         <div class="row align-items-center mb-5">
             <!-- Columna de Texto -->
             <div class="col-md-6 content-text">
-                <span class="badge bg-danger">CONTENIDO</span>
+                <span class="font-akshar badge bg-danger">CONTENIDO</span>
                 <br>
-                <h2>Conceptos creativos <br> y proyectos especiales</h2>
+                <h2 class="font-akshar">Conceptos creativos <br> y proyectos especiales</h2>
                 <br>
-                <p>
+                <p class="font-akshar">
                     Adaptamos la comunicación en redes sociales para que las empresas puedan delegar estrategia,
                     generación
                     y mantenimiento de contenido.

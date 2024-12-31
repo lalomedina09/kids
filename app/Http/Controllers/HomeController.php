@@ -104,7 +104,7 @@ class HomeController extends Controller
 
     public function agencyRedesign()
     {
-        return view('v2.home.agency')->with([
+        return view('v2.home.agency-creative')->with([
             'categories' => 0,
             'channel' => 0,
             'source' => 0
