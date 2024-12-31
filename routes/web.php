@@ -367,6 +367,10 @@ Route::post('contacto')
     ->uses('HomeController@saveDataContact')
     ->name('contact.save');
 
+Route::post('newsletter-v2')
+    ->uses('NewsletterV2Controller@store')
+    ->name('newsletter.v2.store');
+
 Route::get('/play')
     ->uses('\QD\QDPlay\Http\Controllers\Home\HomeController@index')
     ->name('play');

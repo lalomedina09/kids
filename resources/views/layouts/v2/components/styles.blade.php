@@ -1,8 +1,8 @@
 <!-- agregue version rand para actualizar la cache de los navegadores -->
-<!--
+{{--
 <link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
 <link href="{{ asset('css/custom.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
--->
+--}}
 <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
 
 
@@ -24,9 +24,33 @@
 
 <!---------------->
 
-<link rel="stylesheet" href="{{ asset('version-2/css/iziToast.min.css') }}?v={{ (rand(1,500)) }}">
-<script src="{{ asset('version-2/js/iziToast.min.js') }}?v={{ (rand(1,500)) }}" type="text/javascript"></script>
+<link rel="stylesheet" href="{{ asset('version-2/css/iziToast.min.css') }}">
+<script src="{{ asset('version-2/js/iziToast.min.js') }}" type="text/javascript"></script>
 
+<!---------------->
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css" />
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.min.css" />
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.min.css" />
+
+<!--
+    RTL version
+-->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.rtl.min.css" />
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.rtl.min.css" />
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.rtl.min.css" />
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.rtl.min.css" />
+<!---------------->
 <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 

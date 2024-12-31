@@ -36,8 +36,13 @@
     </div>
     <div class="form-check mb-3">
         <input type="checkbox" class="form-check-input" id="acceptTerms" required>
-        <label class="form-check-label" for="acceptTerms">Al hacer clic en el botón “Enviar” aceptarás nuestros
-            <br><span class="bold-text-cap">Términos, Condiciones y Política de Privacidad</span></label>
+        <label class="form-check-label" for="acceptTerms">
+            Al hacer clic en el botón “Enviar” aceptarás nuestros
+            <br>
+            <a href="{{ url('terminos-y-condiciones') }}" target="_blank" class="text-dark fw-bold">
+                <span class="bold-text-cap">Términos, Condiciones y Política de Privacidad</span>
+            </a>
+            </label>
     </div>
     <div class="text-end">
         <button type="submit" class="btn btn-enviar btn-dark" id="submitBtn" disabled>Enviar</button>
