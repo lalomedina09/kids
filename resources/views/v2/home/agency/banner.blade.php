@@ -19,27 +19,22 @@
                 </div>
 
                 <!-- Título principal -->
-                <h1 class="lasolucin banner-title-main mt-2">La solución integral <br>de Educación Financiera</h1>
+                <h1 class="lasolucin banner-title-main mt-2">Creatividad financiera <br>a la medida</h1>
 
                 <!-- Descripción para escritorio -->
                 <p class="description-1 mt-3 d-none d-lg-block">
-                    Creemos en el poder de las Finanzas Personales para mejorar <br>
-                    la vida de las personas, el ambiente en los espacios de trabajo <br>
-                    y la cultura del dinero en México.
+                    Creamos estrategias de comunicación y proyectos especiales
+                    de marca blanca para empresas del nicho financiero
                 </p>
 
                 <!-- Descripción para móvil -->
                 <p class="description-1 mt-3 d-lg-none">
-                    Finanzas personales para mejorar la calidad de vida, el ambiente laboral y la cultura del dinero en
-                    México
+                    Creamos estrategias de comunicación y proyectos especiales
+                    de marca blanca para empresas del nicho financiero
                 </p>
 
                 <!-- Botón de contáctanos -->
-                <a href="#" class="btn btn-dark mt-4 btn-learn-more">Contáctanos</a>
+                <a href="{{ route('contact') }}" class="btn btn-dark mt-4 btn-learn-more">Contáctanos</a>
             </div>
-
-            {{--<div class="col-12 col-md-12 text-center">
-                @include('v2.home.services.solutions')
-            </div>--}}
         </div>
 </section>

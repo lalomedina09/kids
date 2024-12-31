@@ -125,11 +125,15 @@
     <section class=" content-section container py-5 bg-features-agency">
         <div class="row align-items-center mb-5">
             <div class="col-md-12">
-                <h1 class="color-white text-center">Hagamos que tu audiencia <br>conecte con las finanzas ✨</h1>
+                <h1 class="color-white text-center font-akshar font-weight-normal display-4">
+                    Hagamos que tu audiencia <br>conecte con las finanzas ✨
+                </h1>
             </div>
             <!-- Columna de Texto -->
-            <div class="col-md-6 content-text">
-                <span class="font-akshar badge bg-warning text-dark">IDENTIDAD</span>
+            <div class="col-md-6 order-2 order-md-1 content-text text-center text-md-left">
+                <span class="font-akshar badge bg-warning text-dark">
+                    IDENTIDAD
+                </span>
                 <br>
                 <h2 class="font-akshar">Agencia creativa <br>de nicho financiera</h2>
                 <br>
@@ -138,73 +142,73 @@
                     puntuales hasta la planeación estratégica a largo plazo.
                 </p>
                 <br>
-                <button class="btn btn-light">Contáctanos</button>
             </div>
             <!-- Columna de Imagen con Efecto -->
-            <div class="col-md-6 content-image identity">
+            <div class="col-md-6 order-1 order-md-2 content-image identity text-center">
                 <img src="{{ asset('version-2/images/agency/identidad.png') }}" alt="Identidad Financiera">
             </div>
         </div>
 
         <div class="row align-items-center mb-5">
             <!-- Columna de Texto -->
-            <div class="col-md-6 content-text">
+            <div class="col-md-6 order-2 order-md-1 content-text text-center text-md-left">
                 <span class="font-akshar badge bg-danger">CONTENIDO</span>
                 <br>
                 <h2 class="font-akshar">Generación de contenido <br>y community management</h2>
                 <br>
                 <p class="font-akshar">
-                    Adaptamos la comunicación en redes sociales para que las empresas puedan delegar estrategia,
-                    generación
-                    y mantenimiento de contenido.
+                    Adaptados al tono y lineamientos de marca, llevamos
+                    la comunicación de redes sociales y otros canales
+                    para que las empresas puedan delegar la estrategia, generación y mantenimiento del contenido.
+                    <br><br>
+                    Somos expertos creando distintos formatos como:
+                    Posts de Redes Sociales (visuales, infografías,
+                    videos cortos, textos, memes, etc), community management, artículos escritos, newsletters,
+                    entrevistas, entre otros.
                 </p>
                 <br>
-                <button class="btn btn-light">Contáctanos</button>
             </div>
             <!-- Columna de Imagen con Efecto -->
-            <div class="col-md-6 content-image community">
+            <div class="col-md-6 order-1 order-md-2 content-image community text-center">
                 <img src="{{ asset('version-2/images/agency/contenido.png') }}" alt="Contenido y Community Management">
             </div>
         </div>
 
         <div class="row align-items-center mb-5">
             <!-- Columna de Texto -->
-            <div class="col-md-6 content-text">
-                <span class="font-akshar badge bg-danger">CONTENIDO</span>
+            <div class="col-md-6 order-2 order-md-1 content-text text-center text-md-left">
+                <span class="font-akshar badge bg-danger">MEDIA</span>
                 <br>
                 <h2 class="font-akshar">Producción <br> audiovisual</h2>
                 <br>
                 <p class="font-akshar">
-                    Adaptamos la comunicación en redes sociales para que las empresas puedan delegar estrategia,
-                    generación
-                    y mantenimiento de contenido.
+                    Generamos material multimedia para que bancos, fintechs y otras empresas financieras logren transmitir sus mensajes en
+                    distintos canales audiovisuales.
                 </p>
                 <br>
-                <button class="btn btn-light">Contáctanos</button>
             </div>
             <!-- Columna de Imagen con Efecto -->
-            <div class="col-md-6 content-image community">
+            <div class="col-md-6 order-1 order-md-2 content-image community text-center">
                 <img src="{{ asset('version-2/images/agency/media.png') }}" alt="Contenido y Community Management">
             </div>
         </div>
 
         <div class="row align-items-center mb-5">
             <!-- Columna de Texto -->
-            <div class="col-md-6 content-text">
-                <span class="font-akshar badge bg-danger">CONTENIDO</span>
+            <div class="col-md-6 order-2 order-md-1 content-text text-center text-md-left">
+                <span class="font-akshar badge bg-danger">FLEXIBLE</span>
                 <br>
                 <h2 class="font-akshar">Conceptos creativos <br> y proyectos especiales</h2>
                 <br>
                 <p class="font-akshar">
-                    Adaptamos la comunicación en redes sociales para que las empresas puedan delegar estrategia,
-                    generación
-                    y mantenimiento de contenido.
+                    Sumamos fuerzas como aliados estratégicos de empresas financieras para apoyar con la generación de conceptos creativos,
+                    experiencias de marca, campañas publicitarias, aplicaciones digitales, eventos, merchendise y otros proyectos
+                    especiales.
                 </p>
                 <br>
-                <button class="btn btn-light">Contáctanos</button>
             </div>
             <!-- Columna de Imagen con Efecto -->
-            <div class="col-md-6 content-image community">
+            <div class="col-md-6 order-1 order-md-2 content-image community text-center">
                 <img src="{{ asset('version-2/images/agency/flexible.png') }}" alt="Contenido y Community Management">
             </div>
         </div>
