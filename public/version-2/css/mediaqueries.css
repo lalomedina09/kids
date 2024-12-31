@@ -654,6 +654,12 @@
 
 
     /*------------------- Termina Landing de consultoria ----------------------------- */
+    /********************** Empieza seccion de contacto ********************************/
+    .img-ilus-contact {
+        width: 100%;
+    }
+
+    /********************** Termina seccion de contacto ********************************/
 }
 
 @media (min-width: 768px) {
@@ -701,6 +707,13 @@
         z-index: 2;
         animation: rotateFlechas 10s linear infinite;
     }
+
+    /********************** Empieza seccion de contacto ********************************/
+    .img-ilus-contact {
+        width: 100%;
+    }
+
+    /********************** Termina seccion de contacto ********************************/
 }
 
 @media (min-width: 810px) and (max-width: 910px) {
@@ -1169,6 +1182,13 @@
         width: 100%;
         margin-left: 0;
     }
+
+    /********************** Empieza seccion de contacto ********************************/
+    .img-ilus-contact {
+        width: 100%;
+    }
+
+    /********************** Termina seccion de contacto ********************************/
 }
 
 
@@ -1271,6 +1291,13 @@
         height: 200px;
         animation: rotateFlechas 10s linear infinite;
     }
+
+    /********************** Empieza seccion de contacto ********************************/
+    .img-ilus-contact {
+        width: 100%;
+    }
+
+    /********************** Termina seccion de contacto ********************************/
 }
 
 
@@ -1462,6 +1489,13 @@
         height: 200px;
         animation: rotateFlechas 10s linear infinite;
     }
+
+    /********************** Empieza seccion de contacto ********************************/
+    .img-ilus-contact {
+        width: 100%;
+    }
+
+    /********************** Termina seccion de contacto ********************************/
 }
 
 /* Seccion Footer */
@@ -1606,6 +1640,13 @@
         height: 200px;
         animation: rotateFlechas 10s linear infinite;
     }
+
+    /********************** Empieza seccion de contacto ********************************/
+    .img-ilus-contact {
+        width: 100%;
+    }
+
+    /********************** Termina seccion de contacto ********************************/
 }
 
 @media only screen and (min-width: 3840px) {
@@ -1746,6 +1787,13 @@
     .social-row {
         max-width: 100%;
     }
+
+    /********************** Empieza seccion de contacto ********************************/
+    .img-ilus-contact {
+        width: 90%;
+    }
+
+    /********************** Termina seccion de contacto ********************************/
 }
 
 

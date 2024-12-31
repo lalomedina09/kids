@@ -1,6 +1,6 @@
 @extends('layouts.app-v2-redesign')
 
-<title>Consultoria Cultura | Querido Dinero</title>
+<title>Contacto | Querido Dinero</title>
 
 @section('content')
 

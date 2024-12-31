@@ -1,4 +1,4 @@
-<div class="container position-relative mt-5">
+<div class="container mt-5">
     <div class="row mx-0">
         <!-- Ajuste de margen horizontal para mayor responsividad -->
         <div class="col-12 col-md-12 d-flex flex-column mb-5">
@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-6">
             <div class="img-banner-contacto">
-                <img class="imagen-mobil" src="{{ asset('version-2/images/contacto/ilustration.png')}}" alt="imagen-contacto">
+                <img class="imagen-mobil img-ilus-contact" src="{{ asset('version-2/images/contacto/ilustration.png')}}" alt="imagen-contacto">
             </div>
         </div>
         <div class="col-md-6">

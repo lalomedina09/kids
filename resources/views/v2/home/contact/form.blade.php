@@ -9,7 +9,15 @@
     </script>
 @endif
 
-<form action="{{ route('contact.save') }}" method="POST">
+<style>
+    .form-control {
+        border-radius: 3px;
+        border: 1px solid #C8C8C8;
+        background-color: #C8C8C8;
+        font-family: "Akshar", Helvetica, sans-serif;
+    }
+</style>
+<form action="{{ route('contact.save') }}" method="POST" class="mt-4">
     @csrf
     <div class="form-group mb-3">
         <input type="text" name="nombre" class="form-control" placeholder="Nombre*" required>
@@ -35,17 +43,17 @@
         <textarea name="mensaje" class="form-control" placeholder="Mensaje*" rows="4" required></textarea>
     </div>
     <div class="form-check mb-3">
-        <input type="checkbox" class="form-check-input" id="acceptTerms" required>
-        <label class="form-check-label" for="acceptTerms">
+        <input type="checkbox" class="form-check-input " id="acceptTerms" required>
+        <label class="form-check-label font-akshar" for="acceptTerms">
             Al hacer clic en el botón “Enviar” aceptarás nuestros
             <br>
-            <a href="{{ url('terminos-y-condiciones') }}" target="_blank" class="text-dark fw-bold">
+            <a href="{{ url('terminos-y-condiciones') }}" target="_blank" class="text-dark fw-bold font-akshar">
                 <span class="bold-text-cap">Términos, Condiciones y Política de Privacidad</span>
             </a>
             </label>
     </div>
-    <div class="text-end">
-        <button type="submit" class="btn btn-enviar btn-dark" id="submitBtn" disabled>Enviar</button>
+    <div class="text-center">
+        <button type="submit" class="btn btn-enviar btn-dark font-akshar" id="submitBtn" disabled>Enviar</button>
     </div>
 </form>
 
