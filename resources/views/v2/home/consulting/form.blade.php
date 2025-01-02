@@ -125,12 +125,21 @@
         <div class="mb-3">
             <label class="form-label mb-4">Cuéntanos más de ti</label>
             <div class="row">
-                <div class="col-md-4">
-                    <input type="text" class="form-control ml-2 mr-2 mb-2" name="nombre" placeholder="Nombre*" required>
-                </div>
-                <div class="col-md-4">
-                    <input type="text" class="form-control mb-2" name="apellidos" placeholder="Apellido*" required>
-                </div>
+                @if(Auth::check())
+                    <div class="col-md-4">
+                        <input type="text" class="form-control ml-2 mr-2 mb-2" name="nombre" placeholder="Nombre*" value="{{ Auth::user()->name }}" required>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control mb-2" name="apellidos" placeholder="Apellido*" value="{{ Auth::user()->last_name }}" required>
+                    </div>
+                @else
+                    <div class="col-md-4">
+                        <input type="text" class="form-control ml-2 mr-2 mb-2" name="nombre" placeholder="Nombre*" required>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control mb-2" name="apellidos" placeholder="Apellido*" required>
+                    </div>
+                @endif
                 <div class="col-md-4">
                     <input type="text" class="form-control mb-2" name="job_position" placeholder="Puesto laboral" required>
                 </div>
@@ -145,7 +154,11 @@
                     <input type="tel" class="form-control mb-2" name="telefono" placeholder="Número de celular*" required>
                 </div>
                 <div class="col-md-6">
-                    <input type="email" class="form-control mb-2" name="email" placeholder="Email empresarial*" required>
+                    @if(Auth::check())
+                        <input type="email" class="form-control mb-2" name="email" placeholder="Email empresarial*" required value="{{ Auth::user()->email }}">
+                    @else
+                        <input type="email" class="form-control mb-2" name="email" placeholder="Email empresarial*" required>
+                    @endif
                 </div>
             </div>
         </div>
@@ -162,7 +175,7 @@
                 </div>
                 <div class="col-md-12">
                     <input type="text" class="form-control mb-2" name="mensaje" placeholder="Mensaje" required>
-                    <input type="hidden" class="form-control mb-2" name="motivo" placeholder="motivo" value="consultoria" required>
+                    <input type="hidden" class="form-control mb-2" name="motivo" placeholder="motivo" value="Consultoria" required>
                 </div>
             </div>
         </div>

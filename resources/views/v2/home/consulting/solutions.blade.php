@@ -34,9 +34,9 @@
 
                             <h3 class="custom-title">Setup<br>& Kickoff</h3>
                             <hr class="line-h-diagram">
-                            <p style="position: relative;">In hac habitasse platea dictumst. Nullam nulla eros,
+                            <!--<p style="position: relative;">In hac habitasse platea dictumst. Nullam nulla eros,
                                 ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea
-                                dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>
+                                dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>-->
                         </div>
                     </div>
 
@@ -51,9 +51,9 @@
                         <div class="text-container" id="text-2">
                             <h3 class="custom-title2">Diagnóstico</h3>
                             <hr class="line-h-diagram">
-                            <p style="position: relative;">In hac habitasse platea dictumst. Nullam nulla eros,
+                            <!--<p style="position: relative;">In hac habitasse platea dictumst. Nullam nulla eros,
                                 ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea
-                                dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>
+                                dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>-->
                         </div>
                     </div>
 
@@ -68,9 +68,9 @@
                         <div class="text-container" id="text-3">
                             <h3 class="custom-title3">Aprendizaje continuo</h3>
                             <!-- <hr class="line-h-diagram"> -->
-                            <p style="position: relative;">In hac habitasse platea dictumst. Nullam nulla eros,
+                            <!--<p style="position: relative;">In hac habitasse platea dictumst. Nullam nulla eros,
                                 ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea
-                                dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>
+                                dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>-->
                         </div>
                     </div>
                 </div>
@@ -88,9 +88,9 @@
                         <div class="text-container" id="text-4">
                             <h3 class="custom-title4">Semana<br>Financiera</h3>
                             <hr class="line-h-diagram">
-                            <p style="position: relative;">In hac habitasse platea dictumst. Nullam nulla eros,
+                            <!--<p style="position: relative;">In hac habitasse platea dictumst. Nullam nulla eros,
                                 ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea
-                                dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>
+                                dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>-->
                         </div>
                     </div>
 
@@ -105,9 +105,9 @@
                         <div class="text-container" id="text-5">
                             <h3 class="custom-title5">Semana<br>Financiera</h3>
                             <hr class="line-h-diagram">
-                            <p style="position: relative;">In hac habitasse platea dictumst. Nullam nulla eros,
+                            <!--<p style="position: relative;">In hac habitasse platea dictumst. Nullam nulla eros,
                                 ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea
-                                dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>
+                                dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>-->
                         </div>
                     </div>
                 </div>

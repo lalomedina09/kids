@@ -17,7 +17,7 @@
                     Hagamos equipo para llevar las finanzas al siguiente nivel
                 </h2>
                 <br><br>
-                @include('v2.home.contact.form')
+                @include('v2.home.agency.form')
             </div>
         </div>
     </div>

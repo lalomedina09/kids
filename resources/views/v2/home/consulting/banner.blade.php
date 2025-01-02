@@ -23,7 +23,7 @@
             para el talento más importante
         </p>
         <div class="mt-4">
-            <a href="#" class="btn btn-dark mt-4 btn-learn">Contáctanos</a>
+            <a href="{{ route('contact') }}" class="btn btn-dark mt-4 btn-learn">Contáctanos</a>
         </div>
     </div>
 </div>

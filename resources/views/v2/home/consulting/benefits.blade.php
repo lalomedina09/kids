@@ -26,7 +26,7 @@
                         Las ayuda a cumplir con la NOM 035 y aumenta la productividad, por mencionar algunos. <br>
                     </p>
 
-                    <a href="#" class="btn btn-dark mt-4 btn-learn">Contáctanos</a>
+                    <a href="{{ route('contact') }}" class="btn btn-dark mt-4 btn-learn">Contáctanos</a>
 
                     <!-- Sección tarjetas -->
 

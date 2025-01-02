@@ -257,7 +257,7 @@
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="{{ route('qdplay.business') }}">Para empresas</a>
+                    <a class="nav-link text-dark" href="{{ route('consulting') }}">Para empresas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="{{ route('blog') }}">Editorial</a>
