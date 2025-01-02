@@ -126,9 +126,13 @@ class HomeController extends Controller
             'nombre' => 'required|string|max:255',
             'apellidos' => 'required|string|max:255',
             'telefono' => 'required|string|max:20',
+            'motivo' => 'required|string|max:200',
+            'mensaje' => 'required|string|max:200',
+
+            'company' => 'nullable|string|max:255',
             'email' => 'required|email|max:255',
-            'motivo' => 'required|string|max:255',
-            'mensaje' => 'required|string',
+            'address' => 'nullable|string|max:255',
+            'job_position' => 'nullable|string|max:255',
         ]);
 
         $newModel = new FormContact();
@@ -137,7 +141,10 @@ class HomeController extends Controller
         $newModel->email = $data['email'];
         $newModel->subject = $data['motivo'];
         $newModel->message = $data['mensaje'];
-        // Add more fields as necessary
+
+        $newModel->company = $data['company'] ?? null;
+        $newModel->address = $data['address'] ?? null;
+        $newModel->job_position = $data['job_position'] ?? null;
         $newModel->save();
 
         return redirect()->back()->with('success', 'Solicitud enviada correctamente');

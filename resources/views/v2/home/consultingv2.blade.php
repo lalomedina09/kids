@@ -4,6 +4,8 @@
 
 @section('content')
 
+@include('v2.components.messages')
+
 <section>
     @include('v2.home.consulting.banner')
 </section>

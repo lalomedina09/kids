@@ -15,6 +15,7 @@ class FormContact extends Model
         'job_position',
         'subject',
         'message',
+        'company',
         'address'
     ];
 }

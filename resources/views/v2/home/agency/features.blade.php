@@ -137,7 +137,7 @@
                 <br>
                 <h2 class="font-akshar">Agencia creativa <br>de nicho financiera</h2>
                 <br>
-                <p class="font-akshar">
+                <p class="font-akshar lead" style="font-size: 1.2rem;">
                     Con 10 años de experiencia y una red de colaboradores especialistas, resolvemos desde proyectos
                     puntuales hasta la planeación estratégica a largo plazo.
                 </p>
@@ -156,7 +156,7 @@
                 <br>
                 <h2 class="font-akshar">Generación de contenido <br>y community management</h2>
                 <br>
-                <p class="font-akshar">
+                <p class="font-akshar lead" style="font-size: 1.2rem;">
                     Adaptados al tono y lineamientos de marca, llevamos
                     la comunicación de redes sociales y otros canales
                     para que las empresas puedan delegar la estrategia, generación y mantenimiento del contenido.
@@ -181,7 +181,7 @@
                 <br>
                 <h2 class="font-akshar">Producción <br> audiovisual</h2>
                 <br>
-                <p class="font-akshar">
+                <p class="font-akshar lead" style="font-size: 1.2rem;">
                     Generamos material multimedia para que bancos, fintechs y otras empresas financieras logren transmitir sus mensajes en
                     distintos canales audiovisuales.
                 </p>
@@ -200,7 +200,7 @@
                 <br>
                 <h2 class="font-akshar">Conceptos creativos <br> y proyectos especiales</h2>
                 <br>
-                <p class="font-akshar">
+                <p class="font-akshar lead" style="font-size: 1.2rem;">
                     Sumamos fuerzas como aliados estratégicos de empresas financieras para apoyar con la generación de conceptos creativos,
                     experiencias de marca, campañas publicitarias, aplicaciones digitales, eventos, merchendise y otros proyectos
                     especiales.
