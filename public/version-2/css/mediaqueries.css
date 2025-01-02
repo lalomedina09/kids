@@ -582,7 +582,7 @@
         width: 38%;
         margin-right: 15px;
         flex-shrink: 0;
-        /*margin-left: -11rem;*/
+        margin-left: -11rem;
     }
 
     .frame-8 .text-wrapper {

@@ -15,7 +15,7 @@
             <!-- Contenido del carrusel -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="https://www.queridodinero.com/articulos/como-escoger-un-seguro-de-auto" class="link-content">
+                    <a target="_blank" href="https://www.queridodinero.com/articulos/como-escoger-un-seguro-de-auto" class="link-content">
                         <img class="image-3 img-fluid" src="{{ asset('version-2/images/content/left-1.png') }}" alt="El verano y tu cartera">
                         <div class="text-wrapper-24 mt-2">
                             Artículo
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="carousel-item">
-                    <a href="https://www.queridodinero.com/qdplay/ver/CCbLHCkxq" class="link-content">
+                    <a target="_blank" href="https://www.queridodinero.com/qdplay/ver/CCbLHCkxq" class="link-content">
                         <img class="image-5 img-fluid" src="{{ asset('version-2/images/content/left-2.png') }}" alt="Salir de deudas">
                         <div class="text-wrapper-24 mt-2">
                             Curso online
@@ -50,7 +50,7 @@
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="https://www.queridodinero.com/articulos/calendario-de-adviento-financiero-para-ninos" class="link-content-main">
+                    <a target="_blank" href="https://www.queridodinero.com/articulos/calendario-de-adviento-financiero-para-ninos" class="link-content-main">
                         <img class="estres-financiero img-fluid" src="{{ asset('version-2/images/content/main.png') }}" alt="Estrés financiero">
                         <div class="text-wrapper-28 mt-3">
                             Artículo
@@ -67,7 +67,7 @@
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="https://www.queridodinero.com/qdplay/ver/CGEKs1YRx/CbELQXUDi" class="link-content">
+                    <a target="_blank" href="https://www.queridodinero.com/qdplay/ver/CGEKs1YRx/CbELQXUDi" class="link-content">
                         <img class="image-2 img-fluid" src="{{ asset('version-2/images/content/right-1.png') }}" alt="Tarjetas de crédito">
                         <div class="text-wrapper-22 mt-2">
                             Curso online
@@ -84,7 +84,7 @@
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a href="https://www.queridodinero.com/articulos/disfruta-la-navidad-tu-esfuerzo-del-ano-valio-la-pena" class="link-content">
+                    <a target="_blank" href="https://www.queridodinero.com/articulos/disfruta-la-navidad-tu-esfuerzo-del-ano-valio-la-pena" class="link-content">
                         <img class="image-4 img-fluid" src="{{ asset('version-2/images/content/right-2.png') }}" alt="GAT real y nominal">
                         <div class="text-wrapper-25 mt-2">
                             Artículo
@@ -102,11 +102,11 @@
                 </div>
             </div>
             <!-- Controles del carrusel -->
-            <!---<a class="carousel-control-prev" href="#contentCarousel" role="button" data-slide="prev">
+            <!---<a class="carousel-control-prev" target="_blank" href="#contentCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Anterior</span>
             </a>
-            <a class="carousel-control-next" href="#contentCarousel" role="button" data-slide="next">
+            <a class="carousel-control-next" target="_blank" href="#contentCarousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Siguiente</span>
             </a>-->
@@ -117,7 +117,7 @@
             <div class="col-md-3 col-lg-3">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 mb-4">
-                        <a href="https://www.queridodinero.com/articulos/como-escoger-un-seguro-de-auto" class="link-content">
+                        <a target="_blank" href="https://www.queridodinero.com/articulos/como-escoger-un-seguro-de-auto" class="link-content">
                             <img class="image-3 img-fluid" src="{{ asset('version-2/images/content/left-1.png') }}" alt="El verano y tu cartera">
                             <div class="text-wrapper-24 mt-2">
                                 Artículo
@@ -128,7 +128,7 @@
                         </a>
                     </div>
                     <div class="col-md-12 col-lg-12 mb-4">
-                        <a href="https://www.queridodinero.com/qdplay/ver/CCbLHCkxq" class="link-content">
+                        <a target="_blank" href="https://www.queridodinero.com/qdplay/ver/CCbLHCkxq" class="link-content">
                             <img class="image-5 img-fluid" src="{{ asset('version-2/images/content/left-2.png') }}" alt="Salir de deudas">
                             <div class="text-wrapper-24 mt-2">
                                 Curso online
@@ -143,7 +143,7 @@
             <div class="col-md-6 col-lg-6">
                 <div class="row">
                     <div class="col-12">
-                        <a href="https://www.queridodinero.com/articulos/calendario-de-adviento-financiero-para-ninos" class="link-content-main">
+                        <a target="_blank" href="https://www.queridodinero.com/articulos/calendario-de-adviento-financiero-para-ninos" class="link-content-main">
                             <img class="estres-financiero img-fluid" src="{{ asset('version-2/images/content/main.png') }}" alt="Estrés financiero">
                             <div class="text-wrapper-28 mt-3">
                                 Artículo
@@ -162,7 +162,7 @@
             <div class="col-md-3 col-lg-3">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 mb-4">
-                        <a href="https://www.queridodinero.com/qdplay/ver/CGEKs1YRx/CbELQXUDi" class="link-content">
+                        <a target="_blank" href="https://www.queridodinero.com/qdplay/ver/CGEKs1YRx/CbELQXUDi" class="link-content">
                             <img class="image-2 img-fluid" src="{{ asset('version-2/images/content/right-1.png') }}" alt="Tarjetas de crédito">
                             <div class="text-wrapper-22 mt-2">
                                 Curso online
@@ -173,7 +173,7 @@
                         </a>
                     </div>
                     <div class="col-md-12 col-lg-12 mb-4">
-                        <a href="https://www.queridodinero.com/articulos/disfruta-la-navidad-tu-esfuerzo-del-ano-valio-la-pena" class="link-content">
+                        <a target="_blank" href="https://www.queridodinero.com/articulos/disfruta-la-navidad-tu-esfuerzo-del-ano-valio-la-pena" class="link-content">
                             <img class="image-4 img-fluid" src="{{ asset('version-2/images/content/right-2.png') }}" alt="GAT real y nominal">
                             <div class="text-wrapper-25 mt-2">
                                 Artículo

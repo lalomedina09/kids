@@ -81,7 +81,7 @@
                     trabajo.
                 </p>
                 <br>
-                <a href="{{ route('contact')}}" class="btn btn-white btn-susbcribe d-none d-md-block" style="width:auto;">
+                <a href="{{ route('contact')}}" class="btn btn-white btn-susbcribe d-none d-md-block justify-content-center p-2">
                     Contáctanos
                 </a>
             </div>

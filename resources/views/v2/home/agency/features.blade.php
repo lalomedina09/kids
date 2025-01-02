@@ -116,6 +116,9 @@
         font-weight: bold;
         border-radius: 5px;
     }
+    .text-primary {
+        color: #82b3a7 !important;
+    }
 </style>
 <!---
 <section class="hero-section text-center text-white py-5">
@@ -131,11 +134,11 @@
             </div>
             <!-- Columna de Texto -->
             <div class="col-md-6 order-2 order-md-1 content-text text-center text-md-left">
-                <span class="font-akshar badge bg-warning text-dark">
+                <span class="font-akshar badge text-warning">
                     IDENTIDAD
                 </span>
                 <br>
-                <h2 class="font-akshar">Agencia creativa <br>de nicho financiera</h2>
+                <h2 class="font-akshar">Agencia creativa <br>de nicho financiero</h2>
                 <br>
                 <p class="font-akshar lead" style="font-size: 1.3rem;">
                     Con 10 años de experiencia y una red de colaboradores especialistas, resolvemos desde proyectos
@@ -152,7 +155,9 @@
         <div class="row align-items-center mb-5">
             <!-- Columna de Texto -->
             <div class="col-md-6 order-2 order-md-1 content-text text-center text-md-left">
-                <span class="font-akshar badge bg-danger">CONTENIDO</span>
+                <span class="font-akshar badge text-danger">
+                    CONTENIDO
+                </span>
                 <br>
                 <h2 class="font-akshar">Generación de contenido <br>y community management</h2>
                 <br>
@@ -177,7 +182,9 @@
         <div class="row align-items-center mb-5">
             <!-- Columna de Texto -->
             <div class="col-md-6 order-2 order-md-1 content-text text-center text-md-left">
-                <span class="font-akshar badge bg-danger">MEDIA</span>
+                <span class="font-akshar badge text-primary">
+                    MEDIA
+                </span>
                 <br>
                 <h2 class="font-akshar">Producción <br> audiovisual</h2>
                 <br>
@@ -196,7 +203,9 @@
         <div class="row align-items-center mb-5">
             <!-- Columna de Texto -->
             <div class="col-md-6 order-2 order-md-1 content-text text-center text-md-left">
-                <span class="font-akshar badge bg-danger">FLEXIBLE</span>
+                <span class="font-akshar badge text-secondary">
+                    FLEXIBLE
+                </span>
                 <br>
                 <h2 class="font-akshar">Conceptos creativos <br> y proyectos especiales</h2>
                 <br>

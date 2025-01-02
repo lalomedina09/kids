@@ -38,7 +38,7 @@
             </a>
         </div>
         <div class="carousel-item">
-            <a href="{{ route('qdplay') }}">
+            <a href="{{ url('qdplay') }}">
                 <div class="frame-7">
                     <img class="computadora img-fluid img-solution" style="height:100%;"
                         src="{{ asset('version-2/images/imgsoluciones/computadora-1.gif') }}" />

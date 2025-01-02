@@ -47,11 +47,13 @@
 
         <!-- Item 5 -->
         <div class="col-md-2 col-sm-4 col-6 mb-4 d-flex">
-            <div class="frame-8 service-5 d-flex flex-column justify-content-between">
-            <div class="text-wrapper ">Podcast</div>
-                <img class="img-2 img-2-service" src="{{ asset('version-2/images/imgservices/podcast-1.gif') }}"  />
-                <div class="subtext-wrapper">Escucha el último capítulo</div>
-            </div>
+            <a href="{{ route('podcasts.index') }}">
+                <div class="frame-8 service-5 d-flex flex-column justify-content-between">
+                <div class="text-wrapper ">Podcast</div>
+                    <img class="img-2 img-2-service" src="{{ asset('version-2/images/imgservices/podcast-1.gif') }}"  />
+                    <div class="subtext-wrapper">Escucha el último capítulo</div>
+                </div>
+            </a>
         </div>
     </div>
     <br><br><br><br><br><br>

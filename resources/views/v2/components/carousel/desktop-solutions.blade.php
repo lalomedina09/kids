@@ -35,7 +35,7 @@
         </a>
     </div>
     <div class="col-md-3 col-sm-6 mb-4">
-        <a href="{{ route('qdplay') }}">
+        <a href="{{ url('qdplay') }}">
             <div class="frame-7">
                 <img class="computadora img-fluid" src="{{ asset('version-2/images/imgsoluciones/computadora-1.gif') }}" />
                 <p class="academia-online text-center subtitle-solution">
