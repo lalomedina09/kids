@@ -53,6 +53,13 @@
             </label>
     </div>
     <div class="text-center">
+        <div class="form-group mx-auto">
+            <div class="g-recaptcha" data-theme="dark" data-sitekey="{{ config('money.recaptcha.key') }}"></div>
+
+            @if ($errors->has('g-recaptcha-response'))
+            <span class="small text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+            @endif
+        </div>
         <button type="submit" class="btn btn-enviar btn-dark font-akshar" id="submitBtn" disabled>Enviar</button>
     </div>
 </form>

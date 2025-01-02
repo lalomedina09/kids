@@ -133,6 +133,7 @@ class HomeController extends Controller
             'email' => 'required|email|max:255',
             'address' => 'nullable|string|max:255',
             'job_position' => 'nullable|string|max:255',
+            'g-recaptcha-response' => 'required|recaptcha',
         ]);
 
         $newModel = new FormContact();
