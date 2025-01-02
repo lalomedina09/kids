@@ -3057,7 +3057,7 @@ a {
     text-align: center;
     letter-spacing: 0;
     line-height: 46.1px;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     margin-bottom: 3rem;
 }
 
@@ -3518,6 +3518,36 @@ a {
     line-height: 1.6;
     font-size: 17px;
     transition: background-color 0.3s ease;
+}
+
+.t-b-1 {
+    background-color: #88BCAF;
+    /* Rojo claro */
+}
+
+.t-b-2 {
+    background-color: #C5481C;
+    /* Verde claro */
+}
+
+.t-b-3 {
+    background-color: #DFC654;
+    /* Azul claro */
+}
+
+.t-b-4 {
+    background-color: #88BCAF;
+    /* Rojo claro */
+}
+
+.t-b-5 {
+    background-color: #C5481C;
+    /* Verde claro */
+}
+
+.t-b-6 {
+    background-color: #DFC654;
+    /* Azul claro */
 }
 
 .t-b-1:hover {

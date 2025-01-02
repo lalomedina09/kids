@@ -115,14 +115,107 @@
         </div>
 
 
-        <div class="circular-buttons d-none d-block d-md-none d-xl-none">
-            <button class="circular-btn btn-circular-1" onclick="alert('Botón 1')">1</button>
-            <button class="circular-btn btn-circular-2" onclick="alert('Botón 2')">2</button>
-            <button class="circular-btn btn-circular-3" onclick="alert('Botón 3')">3</button>
-            <button class="circular-btn btn-circular-4" onclick="alert('Botón 4')">4</button>
-            <button class="circular-btn btn-circular-5" onclick="alert('Botón 5')">5</button>
+        <div class="circular-buttons d-block d-md-none d-lg-none d-xl-none">
+            <button class="circular-btn btn-circular-1" onclick="alert('Setup & Kickoff')">1</button>
+            <button class="circular-btn btn-circular-2" onclick="alert('Semana Financiera')">2</button>
+            <button class="circular-btn btn-circular-3" onclick="alert('Diagnóstico')">3</button>
+            <button class="circular-btn btn-circular-4" onclick="alert('Semana Financiera')">4</button>
+            <button class="circular-btn btn-circular-5" onclick="alert('Aprendizaje continuo')">5</button>
+        </div>
+    <!-- Floating divs for displaying text -->
+    <div id="floating-div-1" class="floating-div">
+        <div class="floating-content">
+            <button class="close-btn" onclick="closeFloatingDiv('floating-div-1')">&times;</button>
+            <h3 class="font-akshar">Setup & Kickoff</h3>
+            <!---<p>In hac habitasse platea dictumst. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>---->
         </div>
     </div>
+    <div id="floating-div-2" class="floating-div">
+        <div class="floating-content">
+            <button class="close-btn" onclick="closeFloatingDiv('floating-div-2')">&times;</button>
+            <h3 class="font-akshar">Semana Financiera</h3>
+            <!---<p>In hac habitasse platea dictumst. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>---->
+        </div>
+    </div>
+    <div id="floating-div-3" class="floating-div">
+        <div class="floating-content">
+            <button class="close-btn" onclick="closeFloatingDiv('floating-div-3')">&times;</button>
+            <h3 class="font-akshar">Diagnóstico</h3>
+            <!---<p>In hac habitasse platea dictumst. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>---->
+        </div>
+    </div>
+    <div id="floating-div-4" class="floating-div">
+        <div class="floating-content">
+            <button class="close-btn" onclick="closeFloatingDiv('floating-div-4')">&times;</button>
+            <h3 class="font-akshar">Semana Financiera</h3>
+            <!---<p>In hac habitasse platea dictumst. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>---->
+        </div>
+    </div>
+    <div id="floating-div-5" class="floating-div">
+        <div class="floating-content">
+            <button class="close-btn" onclick="closeFloatingDiv('floating-div-5')">&times;</button>
+            <h3 class="font-akshar">Aprendizaje continuo</h3>
+            <!---<p>In hac habitasse platea dictumst. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>---->
+        </div>
+    </div>
+
+    <style>
+        .floating-div {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+        .floating-content {
+            position: relative;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        function showFloatingDiv(divId) {
+            document.getElementById(divId).style.display = 'block';
+        }
+
+        function closeFloatingDiv(divId) {
+            document.getElementById(divId).style.display = 'none';
+        }
+
+        document.querySelector('.btn-circular-1').onclick = function() {
+            showFloatingDiv('floating-div-1');
+        };
+        document.querySelector('.btn-circular-2').onclick = function() {
+            showFloatingDiv('floating-div-2');
+        };
+        document.querySelector('.btn-circular-3').onclick = function() {
+            showFloatingDiv('floating-div-3');
+        };
+        document.querySelector('.btn-circular-4').onclick = function() {
+            showFloatingDiv('floating-div-4');
+        };
+        document.querySelector('.btn-circular-5').onclick = function() {
+            showFloatingDiv('floating-div-5');
+        };
+    </script>
+    </div>
+
+
+
 
 <script>
     function toggleText(button) {

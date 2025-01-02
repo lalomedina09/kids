@@ -1,3 +1,9 @@
+<style>
+    .carousel-inner .active{
+        background-color: black;
+        margin-bottom: 20px;
+    }
+</style>
 <div class="row">
     <div class="col-md-12">
         <!-- Carrusel para dispositivos móviles -->
@@ -50,6 +56,7 @@
                         <div class="arrow-right-5"></div>
                     </div>
                 </div>
+
                 </a>
             </div>
         </div>

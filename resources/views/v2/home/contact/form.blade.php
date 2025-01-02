@@ -17,6 +17,120 @@
         font-family: "Akshar", Helvetica, sans-serif;
     }
 </style>
+<style>
+    .form-label {
+        font-weight: bold;
+        color: #333;
+        font-size: 20px;
+        font-family: "Akshar", Helvetica;
+    }
+
+    .form-control {
+        background-color: #f0f0f0;
+        border: none;
+        border-radius: 5px;
+        padding: 29px;
+        font-size: 20px;
+        font-family: "Akshar", Helvetica;
+    }
+
+    .form-control::placeholder {
+        color: #a9a9a9;
+        opacity: 1;
+    }
+
+    .btn-custom {
+        background-color: #000;
+        color: #fff;
+        width: 167px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0px;
+        font-family: "Akshar", Helvetica;
+    }
+
+    .btn-custom:hover {
+        background-color: #333;
+    }
+
+    .text-muted {
+        font-size: 0.8rem;
+        color: #666;
+    }
+
+    .form-check-label {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .form-check-input {
+        width: 20px;
+        margin-left: -23px;
+    }
+
+    .text-formulario {
+        text-align: center;
+        font-size: 36px;
+        font-family: "Akshar", Helvetica;
+        font-weight: 500;
+        margin-top: -10rem;
+    }
+
+    .text-end {
+        text-align: right;
+    }
+
+    .imagen-cap {
+        margin-bottom: -17px;
+        margin-left: 14px;
+    }
+
+    /* Seccion captcha */
+    .captcha-izquierda {
+        background-color: #dedede;
+        width: 11rem;
+        margin-left: -11px;
+        height: 3rem;
+    }
+
+    /* Estilo del texto de condiciones */
+    .text-cap-derecha {
+        font-family: "Akshar", Helvetica;
+        font-size: 17px;
+        /*margin-left: -201px;*/
+    }
+
+    .bold-text-cap {
+        font-weight: bold;
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        background-color: #dedede;
+        border: none;
+    }
+
+    .captcha-section {
+        background-color: #eeeeee;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .text-and-image {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .text-and-image img {
+        max-width: 100px;
+        height: auto;
+        margin-left: 15px;
+    }
+</style>
 <form action="{{ route('contact.save') }}" method="POST" class="mt-4">
     @csrf
     <div class="form-group mb-3">
