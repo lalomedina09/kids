@@ -14,7 +14,7 @@
         <div class="col-md-6 d-flex align-items-center justify-content-center">
             <div class="stackview">
                 <div class="view bg-light"></div>
-                <img src="{{ asset('version-2/images/services/color-publicidad.png') }}" id="img-service-digital-desktop" alt="Imagefortyeight" class="img-fluid imagefortyeight d-none d-lg-block" />
+                <img src="{{ asset('version-2/images/services/color-publicidad.png') }}" id="img-service-digital-desktop" alt="Imagefortyeight" class="img-fluid imagefortyeight" />
                 <!----<img src="{{ asset('version-2/images/services/color-publicidad.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-lg-none" />-->
             </div>
         </div>
@@ -33,7 +33,7 @@
                     información práctica y divertida a una
                     audiencia interesada en las finanzas.
                 </p>
-                <button class="btn btn-dark mt-3 btn-learn-more">Conoce más</button>
+                <a href="https://www.instagram.com/stories/highlights/18056495176788717/" class="btn btn-dark mt-3 btn-learn-more">Conoce más</a>
             </div>
         </div>
     </div>

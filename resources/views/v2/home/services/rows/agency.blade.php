@@ -24,13 +24,13 @@
                     Como agencia creativa del nicho financiero, generamos soluciones y contenidos editoriales para marcas y empresas que apoyan
                     la Educación Financiera.
                 </p>
-                <button class="btn btn-dark mt-3 btn-learn-more">Conoce más</button>
+                <a href="{{ route('agency')}}" class="btn btn-dark mt-3 btn-learn-more">Conoce más</a>
             </div>
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-center text-center text-md-right order-1 order-md-2">
             <div class="stackview">
                 <div class="view bg-light"></div>
-                <img src="{{ asset('version-2/images/services/color-agencia-creativa.png') }}" id="img-service-agency-desktop" alt="Imagefortyeight" class="img-fluid imagefortyeight d-none d-lg-block" />
+                <img src="{{ asset('version-2/images/services/color-agencia-creativa.png') }}" id="img-service-agency-desktop" alt="Imagefortyeight" class="img-fluid imagefortyeight" />
                 <!--<img src="{{ asset('version-2/images/services/color-agencia-creativa.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-lg-none" />-->
             </div>
         </div>

@@ -15,7 +15,7 @@
         <div class="col-md-6 d-flex align-items-center justify-content-center order-1 order-md-2">
             <div class="stackview">
                 <div class="view bg-light"></div>
-                <img src="{{ asset('version-2/images/services/color-academia.png') }}" id="img-service-qdplay-desktop" alt="Imagefortyeight" class="img-fluid imagefortyeight d-none d-lg-block" />
+                <img src="{{ asset('version-2/images/services/color-academia.png') }}" id="img-service-qdplay-desktop" alt="Imagefortyeight" class="img-fluid imagefortyeight" />
                 <!----<img src="{{ asset('version-2/images/services/color-academia.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-lg-none" />--->
             </div>
         </div>
@@ -34,7 +34,7 @@
                     tu propia academia con nosotros. Sumamos fuerzas con las empresas comprometidas para llevar la educación a sus usuarios
                     a través del aprendizaje en línea.
                 </p>
-                <button class="btn btn-dark mt-3 btn-learn-more mt-4">Conoce más</button>
+                <a href="{{ url('qdplay') }}" class="btn btn-dark mt-3 btn-learn-more mt-4">Conoce más</a>
             </div>
         </div>
     </div>

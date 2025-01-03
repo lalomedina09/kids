@@ -33,7 +33,7 @@
                 </p>
 
                 <!-- Botón de contáctanos -->
-                <a href="#" class="btn btn-dark mt-4 btn-learn-more">Contáctanos</a>
+                <a href="{{ route('contact') }}" class="btn btn-dark mt-4 btn-learn-more">Contáctanos</a>
             </div>
 
             <div class="col-12 col-md-12 text-center">

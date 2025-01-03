@@ -16,7 +16,7 @@
             <div class="stackview">
                 <div class="view bg-light"></div>
                 <img src="{{ asset('version-2/images/services/color-consultoria.png') }}" alt="Imagefortyeight"
-                    class="img-fluid imagefortyeight d-none d-lg-block" width="100%"
+                    class="img-fluid imagefortyeight" width="100%"
                     id="img-service-consulting-desktop" />
 
                 <!--<img src="{{ asset('version-2/images/services/color-consultoria.png') }}" alt="Imagefortyeight" width="100%" class="img-fluid imagefortyeight d-lg-none" />-->
@@ -35,7 +35,7 @@
                     productividad, reducir ausencias y generar un impacto positivo para su negocio a través de la educación
                     financiera.
                 </p>
-                <button class="btn btn-dark mt-3 btn-learn-more">Conoce más</button>
+                <a href="{{ route('consulting') }}" class="btn btn-dark mt-3 btn-learn-more">Conoce más</a>
             </div>
         </div>
     </div>
