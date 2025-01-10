@@ -57,22 +57,22 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img class="logotipos--" src="{{ asset('version-2/images/clients/fiat.png') }}" style="width: 50%;" />
+                            <img class="logotipos--" src="{{ asset('version-2/images/clients/google.png') }}" style="width: 50%;" />
                         </div>
                         <div class="swiper-slide">
-                            <img class="--logotipos-2" src="{{ asset('version-2/images/clients/banorte.png') }}" style="width:80%;" />
+                            <img class="--logotipos-2" src="{{ asset('version-2/images/clients/quickbooks.png') }}" style="width:80%;" />
                         </div>
                         <div class="swiper-slide">
-                            <img class="--logotipos-3" src="{{ asset('version-2/images/clients/vector.png') }}" style="width: 80%;" />
+                            <img class="--logotipos-3" src="{{ asset('version-2/images/clients/profuturo.png') }}" style="width: 80%;" />
                         </div>
                         <div class="swiper-slide">
-                            <img class="--logotipos-4" src="{{ asset('version-2/images/clients/home-depot.png') }}" style="width: 50%;" />
+                            <img class="--logotipos-4" src="{{ asset('version-2/images/clients/vector.png') }}" style="width: 50%;" />
                         </div>
                         <div class="swiper-slide">
-                            <img class="--logotipos-5" src="{{ asset('version-2/images/clients/amis.png') }}" style="width: 80%;" />
+                            <img class="--logotipos-5" src="{{ asset('version-2/images/clients/moneyfest.png') }}" style="width: 60%;" />
                         </div>
                         <div class="swiper-slide">
-                            <img class="--logotipos-6" src="{{ asset('version-2/images/clients/hir-casa.png') }}" style="width: 80%;" />
+                            <img class="--logotipos-6" src="{{ asset('version-2/images/clients/home-depot.png') }}" style="width: 40%;" />
                         </div>
                     </div>
                     <br><br><br>
@@ -84,22 +84,22 @@
             <!-- Mostrar el layout original en pantallas más grandes -->
             <div class="row d-none d-md-flex d-flex justify-content-center align-items-center d-xs-none">
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="logotipos--" src="{{ asset('version-2/images/clients/fiat.png') }}" style="width: 50%"/>
+                    <img class="logotipos--" src="{{ asset('version-2/images/clients/google.png') }}" style="width: 80%"/>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="--logotipos-2" src="{{ asset('version-2/images/clients/banorte.png') }}" style="width: 100%;" />
+                    <img class="--logotipos-2" src="{{ asset('version-2/images/clients/quickbooks.png') }}" style="width: 100%;" />
                 </div>
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="--logotipos-3" src="{{ asset('version-2/images/clients/vector.png') }}" style="width: 80%;" />
+                    <img class="--logotipos-3" src="{{ asset('version-2/images/clients/profuturo.png') }}" style="width: 100%;" />
                 </div>
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="--logotipos-4" src="{{ asset('version-2/images/clients/home-depot.png') }}" style="width: 50%;" />
+                    <img class="--logotipos-4" src="{{ asset('version-2/images/clients/vector.png') }}" style="width: 72%;" />
                 </div>
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="--logotipos-5" src="{{ asset('version-2/images/clients/amis.png') }}" style="width: 80%;" />
+                    <img class="--logotipos-5" src="{{ asset('version-2/images/clients/moneyfest.png') }}" style="width: 100%;" />
                 </div>
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="--logotipos-6" src="{{ asset('version-2/images/clients/hir-casa.png') }}" style="width: 80%;" />
+                    <img class="--logotipos-6" src="{{ asset('version-2/images/clients/home-depot.png') }}" style="width: 53%;" />
                 </div>
             </div>
         </div>
