@@ -12,7 +12,7 @@
 
                 <!-- texto para mobil -->
                 <!-- texto para mobil -->
-                <div class="mobil-solutions d-block d-md-none">
+                <div class="mobil-solutions d-block d-md-none d-sm-none d-xs-none">
                     Creamos una estrategia integral de la mano de los líderes empresariales y las metas corporativas.
                 </div>
             </div>

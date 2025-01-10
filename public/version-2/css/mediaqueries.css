@@ -376,8 +376,6 @@
 
     /*-----------------------------------------------------------*/
     /*---------------------- Landing de servicios - Banner principal ---------------*/
-
-
     /* ################# Landing Home - seccion de sobre nosotros ################# */
 
     /*Verde*/
@@ -404,6 +402,9 @@
         width: 192px;
         height: 211px;
     }
+
+    /*-----------------------------------------------------------*/
+    /*---------------------- Landing de consultoria - Sección de somos tu aliado estrategico ---------------*/
 }
 
 
@@ -521,6 +522,31 @@
     .capaone_two {
         width: 75%;
     }
+
+    /*----------------------------------------------*/
+    /********* Seccion de somos tu aliado estrategico ******************/
+    .text-solutions {
+        line-height: 60px;
+    }
+
+    .cuadro {
+        background-image: url(../images/consulting/bg/bt.png);
+        background-size: contain;
+    }
+
+    .btn-diagram-1 {
+        background-color: #000;
+        margin-top: 90px;
+        margin-left: 0px;
+    }
+
+    .btn-s {
+        background-color: #000;
+        font-size: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
 }
 
 @media (max-width: 767px) {
@@ -1278,18 +1304,24 @@
 
     /* ################# Landing Consultoria - seccion de metodologia ################# */
     .base-image {
+        /*
         top: 70px;
         left: 155px;
         width: 230px;
         height: 230px;
+        */
+        display: none;
     }
 
     .overlay-image {
+        /*
         top: 85px;
         left: 170px;
         width: 200px;
         height: 200px;
         animation: rotateFlechas 10s linear infinite;
+        */
+        display: none;
     }
 
     /********************** Empieza seccion de contacto ********************************/
