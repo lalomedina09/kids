@@ -11,6 +11,18 @@
 
 @media (min-width: 360px) and (max-width: 480px) {
 
+    .texto-animado {
+        margin-top: 2rem;
+    }
+
+    .puntos-animados {
+        margin-top: 2rem;
+    }
+
+    .nube-flotante {
+        margin-left: -14rem !important;
+    }
+
     .profile-menu {
         right: 10px;
     }
@@ -414,6 +426,7 @@
 
 @media (min-width: 577px) and (max-width: 768px) {
 
+
     .profile-menu {
         right: 10px;
     }
@@ -550,6 +563,8 @@
 }
 
 @media (max-width: 767px) {
+
+
     .profile-menu {
         right: 10px;
     }
@@ -690,6 +705,7 @@
 
 @media (min-width: 768px) {
 
+
     .margin-title-solution {
         margin-top: 9.5em;
     }
@@ -743,6 +759,7 @@
 }
 
 @media (min-width: 810px) and (max-width: 910px) {
+
 
     .social-row {
         max-width: 100%;
@@ -858,6 +875,8 @@
 /* Estilos para dispositivos grandes (pantallas de escritorio pequeñas) */
 
 @media (min-width: 769px) and (max-width: 992px) {
+
+
 
     .profile-menu {
         right: 10px;
@@ -1212,6 +1231,7 @@
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
         width: 100%;
+        margin-left: -2rem;
     }
 
     /********************** Termina seccion de contacto ********************************/

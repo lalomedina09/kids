@@ -89,7 +89,7 @@
     const mensaje = document.getElementById("mensaje");
 
     // Array de mensajes en diferentes idiomas
-    const mensajes = ["Hello", "Hola", "Bonjour", "Hallo", "Ciao", "你好",];
+    const mensajes = ["Hola", "Hi", "Hello", "Bonjour",];
     let indexMensaje = 0;
     let estado = "puntos"; // Alternar entre "puntos" y "mensaje"
     let puntosActuales = 0;
