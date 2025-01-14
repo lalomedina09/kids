@@ -13,18 +13,6 @@
 
 @media (min-width: 360px) and (max-width: 480px) {
 
-    .texto-animado {
-        margin-top: 2rem;
-    }
-
-    .puntos-animados {
-        margin-top: 2rem;
-    }
-
-    .nube-flotante {
-        margin-left: -14rem !important;
-    }
-
     .profile-menu {
         right: 10px;
     }
