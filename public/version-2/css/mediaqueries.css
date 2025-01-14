@@ -9,6 +9,8 @@
 
 /**************************************************************/
 
+
+
 @media (min-width: 360px) and (max-width: 480px) {
 
     .texto-animado {
@@ -706,7 +708,7 @@
 @media (min-width: 768px) {
 
     .img-ilus-contact {
-        margin-top: 15rem;
+        margin-top: 8rem;
     }
 
     .nube-flotante {
@@ -761,7 +763,8 @@
 
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
-        width: 100%;
+        width: 114%;
+        margin-top: 17rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
@@ -884,16 +887,6 @@
 /* Estilos para dispositivos grandes (pantallas de escritorio pequeñas) */
 
 @media (min-width: 769px) and (max-width: 992px) {
-
-    .img-ilus-contact {
-        margin-top: 15rem;
-    }
-
-    .nube-flotante {
-        margin-top: 1rem !important;
-        margin-left: 5rem;
-    }
-
 
     .profile-menu {
         right: 10px;
@@ -1206,6 +1199,22 @@
         width: 56px;
         transform: rotate(-90deg);
     }
+
+/******************* Seccion contacto *********************/
+
+    .parrafo-banner {
+        font-size: 2.4rem;
+    }
+
+    .img-ilus-contact {
+        margin-top: 17rem;
+        width: 115%;
+    }
+
+    .nube-flotante {
+        margin-top: 1rem !important;
+        margin-left: 5rem;
+    }
 }
 
 
@@ -1247,9 +1256,13 @@
 
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
-        width: 100%;
         margin-left: -2rem;
     }
+
+    .parrafo-banner {
+        font-size: 2.5rem;
+    }
+
 
     /********************** Termina seccion de contacto ********************************/
 }
@@ -1260,6 +1273,8 @@
 /* Estilos para dispositivos extra grandes (pantallas de escritorio grandes) */
 
 @media (min-width: 993px) and (max-width: 1200px) {
+
+
     .navbar {
         top: 45px;
     }
@@ -1364,6 +1379,7 @@
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
         width: 100%;
+        margin-top: 13rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
@@ -1561,7 +1577,8 @@
 
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
-        width: 100%;
+        width: 90%;
+        margin-top: 11rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
@@ -1713,6 +1730,7 @@
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
         width: 100%;
+        margin-top: 8rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
@@ -1860,6 +1878,7 @@
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
         width: 90%;
+        margin-top: 11rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
