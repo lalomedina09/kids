@@ -9,6 +9,8 @@
 
 /**************************************************************/
 
+
+
 @media (min-width: 360px) and (max-width: 480px) {
 
     .profile-menu {
@@ -414,6 +416,7 @@
 
 @media (min-width: 577px) and (max-width: 768px) {
 
+
     .profile-menu {
         right: 10px;
     }
@@ -550,6 +553,8 @@
 }
 
 @media (max-width: 767px) {
+
+
     .profile-menu {
         right: 10px;
     }
@@ -690,6 +695,16 @@
 
 @media (min-width: 768px) {
 
+    .img-ilus-contact {
+        margin-top: 8rem;
+    }
+
+    .nube-flotante {
+        margin-top: 1rem !important;
+        margin-left: 5rem;
+    }
+
+
     .margin-title-solution {
         margin-top: 9.5em;
     }
@@ -736,13 +751,15 @@
 
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
-        width: 100%;
+        width: 114%;
+        margin-top: 17rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
 }
 
 @media (min-width: 810px) and (max-width: 910px) {
+
 
     .social-row {
         max-width: 100%;
@@ -1170,6 +1187,22 @@
         width: 56px;
         transform: rotate(-90deg);
     }
+
+/******************* Seccion contacto *********************/
+
+    .parrafo-banner {
+        font-size: 2.4rem;
+    }
+
+    .img-ilus-contact {
+        margin-top: 17rem;
+        width: 115%;
+    }
+
+    .nube-flotante {
+        margin-top: 1rem !important;
+        margin-left: 5rem;
+    }
 }
 
 
@@ -1211,8 +1244,13 @@
 
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
-        width: 100%;
+        margin-left: -2rem;
     }
+
+    .parrafo-banner {
+        font-size: 2.5rem;
+    }
+
 
     /********************** Termina seccion de contacto ********************************/
 }
@@ -1222,7 +1260,13 @@
 
 /* Estilos para dispositivos extra grandes (pantallas de escritorio grandes) */
 
+<<<<<<< HEAD
 @media (min-width: 1200px) and (max-width: 720px) {
+=======
+@media (min-width: 993px) and (max-width: 1200px) {
+
+
+>>>>>>> 6f0f3efd22f03718021b8a00529bdeed9d46dd4f
     .navbar {
         top: 45px;
     }
@@ -1327,6 +1371,7 @@
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
         width: 100%;
+        margin-top: 13rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
@@ -1524,7 +1569,8 @@
 
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
-        width: 100%;
+        width: 90%;
+        margin-top: 11rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
@@ -1676,6 +1722,7 @@
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
         width: 100%;
+        margin-top: 8rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
@@ -1823,6 +1870,7 @@
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
         width: 90%;
+        margin-top: 11rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
