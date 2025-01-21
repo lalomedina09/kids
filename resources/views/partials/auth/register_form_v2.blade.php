@@ -346,7 +346,7 @@
                 <div class="col-lg-12">
                     <div class="form-group text-center">
 
-                        <button type="submit" class="btn btn-pill btn-login-v2">@lang('Registrarme')</button>
+                        <button type="submit" class="btn btn-pill btn-login-v2" style="color: aliceblue;margin-left: -53rem;">@lang('Registrarme')</button>
                     </div>
                 </div>
 

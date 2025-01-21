@@ -718,18 +718,18 @@
 
     /******************Lading Consultoria - Seccion de metodologia *****************/
     .base-image {
-        top: 75px;
-        left: 220px;
-        width: 35%;
-        height: 90%;
+        top: 70px;
+        left: 114px;
+        width: 230px;
+        height: 230px;
         z-index: 1;
     }
 
     .overlay-image {
-        top: 91px;
-        left: 238px;
-        width: 30%;
-        height: 75%;
+        top: 85px;
+        left: 129px;
+        width: 200px;
+        height: 200px;
         z-index: 2;
         animation: rotateFlechas 10s linear infinite;
     }
@@ -1222,7 +1222,7 @@
 
 /* Estilos para dispositivos extra grandes (pantallas de escritorio grandes) */
 
-@media (min-width: 993px) and (max-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 720px) {
     .navbar {
         top: 45px;
     }
