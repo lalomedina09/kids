@@ -33,29 +33,32 @@
 <style>
 
 /* Animación de flotación */
-.imagen-mobil img-ilus-contact {
+/* .imagen-mobil img-ilus-contact {
     animation: flotar 3s ease-in-out infinite;
     position: relative;
     margin-bottom: -8rem;
-}
+} */
 
 .nube-flotante {
     animation: flotar 3s ease-in-out infinite;
-    position: relative;
     margin-bottom: -8rem;
     margin-left: -16rem;
     margin-top: -4rem;
+    width: 14rem;
+    height: 13rem;
+    position: relative;
 }
 
 /* Estilos de los puntos */
 .puntos-animados {
-    font-size: 1.5rem;
+    font-size: 4.5rem;
     color: #333;
     text-align: center;
     width: 1.5rem;
-    margin-left: 2rem;
-    position: relative;
+    margin-left: -1.5;
     font-family: "Akshar", Helvetica;
+    position: relative;
+
 }
 
 /* Estilos del mensaje */
@@ -64,8 +67,8 @@
     color: #333;
     text-align: center;
     margin-left: -8.5rem;
-    position: relative;
     font-family: "Akshar", Helvetica;
+    position: relative;
 }
 
 /* Flotación de la nube */
@@ -77,59 +80,6 @@
         transform: translateY(-10px);
     }
 }
-
-</style>
-
-/* Animación de flotación */
-.imagen-mobil.img-ilus-contact {
-    animation: flotar 3s ease-in-out infinite;
-    position: relative;
-    margin-bottom: -8rem;
-}
-
-.nube-flotante {
-    animation: flotar 3s ease-in-out infinite;
-    position: absolute; /* Cambiado a absolute para evitar desplazar otros elementos */
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: -8rem;
-}
-
-/* Contenedor de la nube y mensaje */
-.img-nube-container {
-    position: relative;
-    height: 200px; /* Altura fija para evitar movimientos */
-    overflow: hidden; /* Oculta contenido que pueda salir del contenedor */
-}
-
-/* Estilos de los puntos */
-.puntos-animados {
-    font-size: 1.5rem;
-    color: #333;
-    display: inline-block; /* No afecta otros elementos */
-    font-family: "Akshar", Helvetica;
-}
-
-/* Estilos del mensaje */
-.texto-animado {
-    font-size: 1.5rem;
-    color: #333;
-    display: inline-block; /* No afecta otros elementos */
-    font-family: "Akshar", Helvetica;
-}
-
-/* Flotación de la nube */
-@keyframes flotar {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-
 </style>
 
 <script>
@@ -139,7 +89,7 @@
     const mensaje = document.getElementById("mensaje");
 
     // Array de mensajes en diferentes idiomas
-    const mensajes = ["Hello", "Hola", "Bonjour", "Hallo", "Ciao", "こんにちは", "你好", "Привет"];
+    const mensajes = ["Hola", "Hi", "Hello", "Bonjour",];
     let indexMensaje = 0;
     let estado = "puntos"; // Alternar entre "puntos" y "mensaje"
     let puntosActuales = 0;
