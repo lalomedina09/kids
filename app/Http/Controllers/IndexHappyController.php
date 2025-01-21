@@ -38,4 +38,10 @@ class IndexHappyController extends Controller
         return view('index-happy.resourceManagement', compact('codeConcept', 'user'));
     }
 
+    public function companyOne()
+    {
+        $codeConcept = "RESUELVE";
+        $user = request()->user();
+        return view('index-happy.company-one', compact('codeConcept', 'user'));
+    }
 }

@@ -145,10 +145,15 @@ Route::prefix('indice-de-felicidad')
         ->uses('IndexHappyController@index')
         ->name('indice.happy.data.personal');
 
+    Route::get('/company-one')
+        ->uses('IndexHappyController@companyOne')
+        ->name('indice.happy.company.one');
+
     Route::get('/gestion-de-recursos')
         ->uses('IndexHappyController@resourceManagement')
         ->name('indice.happy.resource.management');
 });
+
 
 //Webhook
 #Route::post('/typeform-webhook', [TypeformWebhookController::class, 'handleWebhook']);
