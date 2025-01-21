@@ -1206,6 +1206,48 @@
 }
 
 
+@media (min-width: 993px) and (max-width: 1024px) {
+    .overlay-image {
+        position: absolute;
+        top: 87px;
+        left: 133px;
+        width: 40%;
+        height: 75%;
+        z-index: 2;
+        animation: rotateFlechas 10s linear infinite;
+    }
+
+    .base-image {
+        position: absolute;
+        top: 75px;
+        left: 118px;
+        width: 47%;
+        height: 85%;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1025px) {
+    .overlay-image {
+        position: absolute;
+        top: 89px;
+        left: 135px;
+        width: 39%;
+        height: 75%;
+        z-index: 2;
+        animation: rotateFlechas 10s linear infinite;
+    }
+
+    .base-image {
+        position: absolute;
+        top: 75px;
+        left: 122px;
+        width: 45%;
+        height: 90%;
+        z-index: 1;
+    }
+}
+
 
 
 

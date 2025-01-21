@@ -226,7 +226,7 @@
                         <!--<h4 class="modal-title text-family-akshar" style="font-weight: 400; letter-spacing: 5px;" id="exampleModalLabel">
                                             ¡Te extrañabamos!
                                         </h4>-->
-                        <h1 class="text-family-akshar text-white" style="font-size: xx-large;">
+                        <h1 class="text-family-akshar text-white" style="font-size: xx-large;margin-left: -48rem;">
                             ¡Registrate Gratis!
                         </h1>
                         <br>
@@ -346,14 +346,14 @@
                 <div class="col-lg-12">
                     <div class="form-group text-center">
 
-                        <button type="submit" class="btn btn-pill btn-login-v2" style="color: aliceblue;margin-left: -53rem;">@lang('Registrarme')</button>
+                        <button type="submit" style="margin-left: -48rem;color: aliceblue;" class="btn btn-pill btn-login-v2" style="color: aliceblue;margin-left: -53rem;">@lang('Registrarme')</button>
                     </div>
                 </div>
 
 
 
                 <div class="col-lg-12">
-                    <div class="text-center text-family-akshar mt-2">
+                    <div class="text-center text-family-akshar mt-2" style="margin-left: -47rem;">
                         <p class=" text-xsmall mb-0 text-white">Al registrarte estás aceptando nuestros</p>
                         <a href="{{ route('terms') }}" target="_blank" class=" text-underline text-xsmall text-white text-bold">
                             Términos y Condiciones
