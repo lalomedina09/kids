@@ -1,5 +1,5 @@
 
-<div class="row row-cols-1 row-cols-md-3 row-cols-xl-3 justify-content-center mt-n5 d-none d-xl-flex">
+<div class="row row-cols-1 row-cols-md-3 row-cols-xl-3 justify-content-center mt-n5">
     <!-- Tarjeta 1 -->
     <div class="col mb-4">
         <div class="card tarjeta t-b-1 text-center p-4">

@@ -734,7 +734,7 @@
     /******************Lading Consultoria - Seccion de metodologia *****************/
     .base-image {
         top: 70px;
-        left: 114px;
+        left: 109px;
         width: 230px;
         height: 230px;
         z-index: 1;
@@ -742,7 +742,7 @@
 
     .overlay-image {
         top: 85px;
-        left: 129px;
+        left: 123px;
         width: 200px;
         height: 200px;
         z-index: 2;
@@ -870,6 +870,26 @@
         animation: rotateFlechas 10s linear infinite;
     }
 }
+
+/* @media screen and (max-width: 768px) {
+
+    .base-image {
+        top: 75px;
+        left: 220px;
+        width: 35%;
+        height: 90%;
+        z-index: 1;
+    }
+
+    .overlay-image {
+        top: 91px;
+        left: 238px;
+        width: 30%;
+        height: 75%;
+        z-index: 2;
+        animation: rotateFlechas 10s linear infinite;
+    }
+} */
 
 
 /* Estilos para dispositivos grandes (pantallas de escritorio pequeñas) */
@@ -1074,7 +1094,7 @@
     /******************Lading Consultoria - Seccion de metodologia *****************/
     .base-image {
         top: 75px;
-        left: 220px;
+        left: 233px;
         width: 230px;
         height: 230px;
         z-index: 1;
@@ -1082,7 +1102,7 @@
 
     .overlay-image {
         top: 90px;
-        left: 235px;
+        left: 248px;
         width: 200px;
         height: 200px;
         z-index: 2;

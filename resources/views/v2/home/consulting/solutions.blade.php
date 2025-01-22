@@ -115,7 +115,7 @@
         </div>
 
 
-        <div class="circular-buttons d-block d-md-none d-lg-none d-xl-none">
+        {{-- <div class="circular-buttons d-block d-md-none d-lg-none d-xl-none">
             <button class="circular-btn btn-circular-1" onclick="alert('Setup & Kickoff')">1</button>
             <button class="circular-btn btn-circular-2" onclick="alert('Semana Financiera')">2</button>
             <button class="circular-btn btn-circular-3" onclick="alert('Diagnóstico')">3</button>
@@ -157,7 +157,7 @@
             <h3 class="font-akshar">Aprendizaje continuo</h3>
             <!---<p>In hac habitasse platea dictumst. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>---->
         </div>
-    </div>
+    </div> --}}
 
     <style>
         .floating-div {
