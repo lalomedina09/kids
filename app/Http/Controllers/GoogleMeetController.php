@@ -12,6 +12,7 @@ class GoogleMeetController extends Controller
     // Autentica la cuenta anfitrión y redirige al usuario a Google OAuth
     public function authenticate()
     {
+        dd('bombabababababab');
         $client = new Client();
         $client->setAuthConfig(config('google.credentials_path'));
         $client->addScope(Calendar::CALENDAR);
