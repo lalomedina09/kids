@@ -9,9 +9,7 @@
 
 /**************************************************************/
 
-
-
-@media (min-width: 360px) and (max-width: 480px) {
+@media (min-width: 360px) and (max-width: 481px) {
 
     .profile-menu {
         right: 10px;
@@ -752,7 +750,8 @@
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
         width: 114%;
-        margin-top: 17rem;
+        margin-top: 10rem;
+        margin-left: -5rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
@@ -1092,6 +1091,22 @@
     }
 
     /******************Lading Consultoria - Seccion de metodologia *****************/
+
+/* Seccion Tarjetas */
+.texto-tarjeta {
+    margin-top: 43px;
+    font-weight: 600;
+    margin-left: -18px;
+    font-size: 1.3rem;
+}
+    .contenido-tarjeta {
+        margin-left: -12px;
+        line-height: 1.4;
+        margin-top: 20px;
+        width: 12rem;
+    }
+/* Termina seccion tarjetas  */
+
     .base-image {
         top: 75px;
         left: 233px;
@@ -1627,6 +1642,7 @@
     .img-ilus-contact {
         width: 90%;
         margin-top: 11rem;
+        margin-left: 2rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
@@ -1777,8 +1793,9 @@
 
     /********************** Empieza seccion de contacto ********************************/
     .img-ilus-contact {
-        width: 100%;
-        margin-top: 8rem;
+        width: 93%;
+        margin-top: 10rem;
+        margin-left: -1rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
@@ -1927,6 +1944,7 @@
     .img-ilus-contact {
         width: 90%;
         margin-top: 11rem;
+        margin-left: 2rem;
     }
 
     /********************** Termina seccion de contacto ********************************/
@@ -2366,11 +2384,19 @@
 
     .alternative-title-aboutus {
         display: block !important;
-        font-size: 41px;
+        font-size: 34px;
         /*width: 25rem;
         margin-left: -86px;*/
-        margin-top: -9rem;
+        margin-top: 2rem;
         line-height: 49px;
+    }
+
+    .contenido-tarjeta {
+        margin-left: 11px;
+    }
+
+    .texto-tarjeta {
+        margin-left: 7px;
     }
 
     .red-mark-aboutus {

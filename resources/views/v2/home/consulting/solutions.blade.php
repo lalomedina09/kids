@@ -10,7 +10,7 @@
                     corporativas.<br>
                 </p>
 
-                <!-- texto para mobil -->
+
                 <!-- texto para mobil -->
                 <div class="mobil-solutions d-block d-md-none d-sm-none d-xs-none">
                     Creamos una estrategia integral de la mano de los líderes empresariales y las metas corporativas.
@@ -115,13 +115,15 @@
         </div>
 
 
-        {{-- <div class="circular-buttons d-block d-md-none d-lg-none d-xl-none">
+        <div class="circular-buttons d-block d-md-none">
             <button class="circular-btn btn-circular-1" onclick="alert('Setup & Kickoff')">1</button>
             <button class="circular-btn btn-circular-2" onclick="alert('Semana Financiera')">2</button>
             <button class="circular-btn btn-circular-3" onclick="alert('Diagnóstico')">3</button>
             <button class="circular-btn btn-circular-4" onclick="alert('Semana Financiera')">4</button>
             <button class="circular-btn btn-circular-5" onclick="alert('Aprendizaje continuo')">5</button>
         </div>
+
+
     <!-- Floating divs for displaying text -->
     <div id="floating-div-1" class="floating-div">
         <div class="floating-content">
@@ -157,7 +159,7 @@
             <h3 class="font-akshar">Aprendizaje continuo</h3>
             <!---<p>In hac habitasse platea dictumst. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea dictumst. Sed lectus. Nullam accumsan lorem in dui.</p>---->
         </div>
-    </div> --}}
+    </div>
 
     <style>
         .floating-div {
