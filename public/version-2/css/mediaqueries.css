@@ -1322,13 +1322,7 @@
 
 /* Estilos para dispositivos extra grandes (pantallas de escritorio grandes) */
 
-<<<<<<< HEAD
 @media (min-width: 1200px) and (max-width: 720px) {
-=======
-@media (min-width: 993px) and (max-width: 1200px) {
-
-
->>>>>>> 6f0f3efd22f03718021b8a00529bdeed9d46dd4f
     .navbar {
         top: 45px;
     }
