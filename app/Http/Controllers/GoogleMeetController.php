@@ -11,14 +11,15 @@ class GoogleMeetController extends Controller
 {
     // Autentica la cuenta anfitrión y redirige al usuario a Google OAuth
     public function authenticate()
-    {
-        ///dd('bombabababababab');
-        $client = new Client();
+    {        
+        $client = new Client();        
         $client->setAuthConfig(config('google.credentials_path'));
+        dd('urururur');
         $client->addScope(Calendar::CALENDAR);
+        
         $client->setAccessType('offline'); // Necesario para generar el refresh token
         $client->setPrompt('consent'); // Solicita confirmación para acceso
-
+        dd('mimimimi');
         $redirectUri = route('google.callback');
         //dd($redirectUri, 'bombabababababab');
         $client->setRedirectUri($redirectUri);
