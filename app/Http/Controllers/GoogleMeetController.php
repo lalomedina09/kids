@@ -42,7 +42,7 @@ class GoogleMeetController extends Controller
         }
 
         // Guarda el token anfitrión en un archivo
-        file_put_contents(storage_path('app\conector\token_host.json'), json_encode($token));
+        file_put_contents(storage_path('app/conector/token_host.json'), json_encode($token));
 
         // Redirige al usuario a la página principal con un mensaje de éxito
         return redirect('/')->with('success', 'Cuenta anfitrión autenticada con éxito.');
@@ -55,7 +55,7 @@ class GoogleMeetController extends Controller
         $client->setAuthConfig(config('google.credentials_path'));
 
         // Carga el token anfitrión
-        $tokenPath = storage_path('app\conector\token_host.json');
+        $tokenPath = storage_path('app/conector/token_host.json');
         if (!file_exists($tokenPath)) {
             return response()->json(['error' => 'La cuenta anfitriona no está autenticada.'], 401);
         }
