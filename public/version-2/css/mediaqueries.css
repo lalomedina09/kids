@@ -9,7 +9,10 @@
 
 /**************************************************************/
 
-@media (min-width: 360px) and (max-width: 481px) {
+
+
+
+@media (min-width: 360px) and (max-width: 480px) {
 
     .profile-menu {
         right: 10px;
@@ -131,6 +134,8 @@
     }
 }
 
+
+
 /* Estilos para dispositivos extra pequeños (móviles pequeños en modo vertical) */
 
 @media (max-width: 480px) {
@@ -247,6 +252,9 @@
         font-size: 2.6rem;
     }
 }
+
+
+
 
 @media (max-width: 550px) {
 
@@ -690,6 +698,8 @@
 
     /********************** Termina seccion de contacto ********************************/
 }
+
+
 
 @media (min-width: 768px) {
 
@@ -1320,6 +1330,7 @@
     }
 
     /********************** Empieza seccion de contacto ********************************/
+
     .img-ilus-contact {
         margin-left: -2rem;
     }
@@ -1332,7 +1343,11 @@
     /********************** Termina seccion de contacto ********************************/
 }
 
-
+@media (min-width: 412px) {
+    .nube-flotante{
+        margin-left: 5rem;
+    }
+}
 
 
 /* Estilos para dispositivos extra grandes (pantallas de escritorio grandes) */

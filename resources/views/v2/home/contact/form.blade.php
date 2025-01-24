@@ -175,6 +175,7 @@
             @endif
         </div>
         <button type="submit" class="btn btn-enviar btn-dark font-akshar" id="submitBtn" disabled>Enviar</button>
+        {{-- <p class="campos">*Los campos marcados con asterisco son obligatorios</p> --}}
     </div>
 </form>
 

@@ -1,3 +1,7 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
+
 <div class="container mt-5">
     <div class="row mx-0">
         <!-- Ajuste de margen horizontal para mayor responsividad -->
@@ -55,8 +59,9 @@
     color: #333;
     text-align: center;
     width: 1.5rem;
-    margin-left: -1.5;
-    font-family: "Akshar", Helvetica;
+    margin-left: -3.5;
+    font-family: 'Besley', serif;
+    font-style: italic;
     position: relative;
 
 }
@@ -66,8 +71,9 @@
     font-size: 1.5rem;
     color: #333;
     text-align: center;
-    margin-left: -8.5rem;
-    font-family: "Akshar", Helvetica;
+    margin-left: -9rem;
+    font-family: 'Besley', serif;
+    font-style: italic;
     position: relative;
 }
 

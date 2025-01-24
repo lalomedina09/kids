@@ -3818,8 +3818,43 @@ a {
     /* margin-left: -6rem; */
     /* width: 86rem; */
     line-height: 3.5rem;
+    margin-bottom: 4rem;
+}
+
+.negrita-parrafo-banner {
+    font-weight: 500;
 }
 
 .img-ilus-contact {
     width: 100%;
+}
+
+.btn-enviar {
+    margin-left: 23rem;
+    margin-top: -57px;
+    width: 10rem;
+}
+
+.campos {
+    font-family: "Akshar", Helvetica;
+    font-size: 10px;
+}
+
+.campos {
+    font-family: "Akshar", Helvetica;
+    font-size: 16px;
+    margin-left: 22rem;
+    margin-top: -141px;
+    position: absolute;
+    font-weight: normal;
+}
+
+.line-separator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 33%; /* Ubicación entre las dos columnas */
+    width: 2px;
+    background-color: #ccc; /* Color de la línea */
+    z-index: 1;
 }
