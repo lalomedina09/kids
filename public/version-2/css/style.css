@@ -1942,8 +1942,8 @@
 /* Seccion de FOOTER*/
 
 .sobre-nosotros {
-    /*margin-left: -34px;
-    margin-right: -31px;*/
+    margin-left: -34px;
+    margin-right: -31px;
 }
 
 .element {
@@ -3065,7 +3065,7 @@ a {
     background-color: #EEEEEE;
     color: white;
     text-align: center;
-    margin-top: 20px;
+    margin-top: -62px;
     /*height: 91rem;*/
 }
 

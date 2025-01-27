@@ -48,7 +48,7 @@
     }
 
     .content-text .badge {
-        font-size: 0.9rem;
+        font-size: 21px;
         margin-bottom: 10px;
     }
 
@@ -142,7 +142,8 @@
                 <br>
                 <p class="font-akshar lead" style="font-size: 1.3rem;">
                     Con 10 años de experiencia y una red de colaboradores especialistas, resolvemos desde proyectos
-                    puntuales hasta la planeación estratégica a largo plazo.
+                    puntuales hasta la planeación <br>
+                    estratégica a largo plazo.
                 </p>
                 <br>
             </div>
@@ -166,7 +167,7 @@
                     la comunicación de redes sociales y otros canales
                     para que las empresas puedan delegar la estrategia, generación y mantenimiento del contenido.
                     <br><br>
-                    Somos expertos creando distintos formatos como:
+                    Somos expertos creando distintos formatos como: <br>
                     Posts de Redes Sociales (visuales, infografías,
                     videos cortos, textos, memes, etc), community management, artículos escritos, newsletters,
                     entrevistas, entre otros.
@@ -189,8 +190,9 @@
                 <h2 class="font-akshar">Producción <br> audiovisual</h2>
                 <br>
                 <p class="font-akshar lead" style="font-size: 1.3rem;">
-                    Generamos material multimedia para que bancos, fintechs y otras empresas financieras logren transmitir sus mensajes en
-                    distintos canales audiovisuales.
+                    Generamos material multimedia para que bancos, fintechs <br>
+                    y otras empresas financieras logren transmitir sus mensajes <br>
+                    en distintos canales audiovisuales.
                 </p>
                 <br>
             </div>
@@ -210,9 +212,10 @@
                 <h2 class="font-akshar">Conceptos creativos <br> y proyectos especiales</h2>
                 <br>
                 <p class="font-akshar lead" style="font-size: 1.3rem;">
-                    Sumamos fuerzas como aliados estratégicos de empresas financieras para apoyar con la generación de conceptos creativos,
-                    experiencias de marca, campañas publicitarias, aplicaciones digitales, eventos, merchendise y otros proyectos
-                    especiales.
+                    Sumamos fuerzas como aliados estratégicos de empresas financieras <br>
+                    para apoyar con la generación de conceptos creativos, experiencias <br>
+                    de marca, campañas publicitarias, aplicaciones digitales, <br>
+                    eventos, merchendise y otros proyectos especiales.
                 </p>
                 <br>
             </div>

@@ -129,7 +129,7 @@
             </div>
             @else
             <div class="col-md-4">
-                <input type="text" class="form-control ml-2 mr-2 mb-2" name="nombre" placeholder="Nombre*" required>
+                <input type="text" class="form-control mr-2 mb-2" name="nombre" placeholder="Nombre*" required>
             </div>
             <div class="col-md-4">
                 <input type="text" class="form-control mb-2" name="apellidos" placeholder="Apellido*" required>

@@ -132,6 +132,7 @@
         margin-top: -180px;
         left: 37%;
     }
+
 }
 
 
@@ -251,8 +252,9 @@
     .lasolucin {
         font-size: 2.6rem;
     }
-}
 
+
+}
 
 
 
@@ -362,9 +364,9 @@
         margin-top: 3em;
     }
 
-    .div-btn-about-us {
+    /* .div-btn-about-us { */
         /*margin-bottom: 15%;*/
-    }
+    /* } */
 
     /*-----------------------------------------------------------*/
     /*---------------------- Seccion de contenido ---------------*/
@@ -662,10 +664,11 @@
     .cofre-img {
         width: 150px;
         max-width: 100%;
+        margin-top: 5rem;
     }
 
     .moneda1 {
-        top: 30px;
+        top: 127px;
         left: -90px;
         width: 80px;
         animation-delay: 0s;
@@ -673,7 +676,7 @@
     }
 
     .moneda2 {
-        top: 44px;
+        top: 119px;
         right: -95px;
         width: 80px;
         animation-delay: 0.5s;
@@ -681,7 +684,7 @@
     }
 
     .tapa {
-        top: -10px;
+        top: 84px;
         left: 15%;
         transform: translateX(-50%);
         width: 170px;
@@ -701,6 +704,7 @@
 
 
 
+
 @media (min-width: 768px) {
 
     .img-ilus-contact {
@@ -715,6 +719,7 @@
 
     .margin-title-solution {
         margin-top: 9.5em;
+        margin-bottom: 4rem;
     }
 
     .social-row {
@@ -765,6 +770,41 @@
     }
 
     /********************** Termina seccion de contacto ********************************/
+
+
+    /* Imágenes flotantes */
+    .cofre-img {
+        width: 150px;
+        max-width: 100%;
+        margin-top: 3rem;
+        margin-bottom: 0rem;
+    }
+
+    .moneda1 {
+        top: 85px;
+        left: -119px;
+        width: 80px;
+        animation-delay: 0s;
+        /* Sin retraso */
+    }
+
+    .moneda2 {
+        top: 83px;
+        right: -133px;
+        width: 80px;
+        animation-delay: 0.5s;
+        /* Retraso de 0.5 segundos */
+    }
+
+    .tapa {
+        top: 46px;
+        left: 15%;
+        transform: translateX(-50%);
+        width: 170px;
+        animation-delay: 1s;
+        /* Retraso de 1 segundo */
+    }
+
 }
 
 @media (min-width: 810px) and (max-width: 910px) {
@@ -1248,7 +1288,44 @@
         margin-top: 1rem !important;
         margin-left: 5rem;
     }
+
+
+    /* Imágenes flotantes */
+    .cofre-img {
+        width: 150px;
+        max-width: 100%;
+        margin-top: 1rem;
+        margin-bottom: -1rem;
+    }
+
+    .moneda1 {
+        top: 50px;
+        left: -124px;
+        width: 80px;
+        animation-delay: 0s;
+        /* Sin retraso */
+    }
+
+    .moneda2 {
+        top: 39px;
+        right: -95px;
+        width: 80px;
+        animation-delay: 0.5s;
+        margin-right: -3rem;
+        /* Retraso de 0.5 segundos */
+    }
+
+    .tapa {
+        top: 24px;
+        left: 15%;
+        transform: translateX(-50%);
+        width: 170px;
+        animation-delay: 1s;
+        /* Retraso de 1 segundo */
+    }
+
 }
+
 
 
 @media (min-width: 993px) and (max-width: 1024px) {
@@ -1270,6 +1347,39 @@
         height: 85%;
         z-index: 1;
     }
+
+    /* Imágenes flotantes */
+    .cofre-img {
+        width: 150px;
+        max-width: 100%;
+        margin-top: 5rem;
+    }
+
+    .moneda1 {
+        top: 127px;
+        left: -90px;
+        width: 80px;
+        animation-delay: 0s;
+        /* Sin retraso */
+    }
+
+    .moneda2 {
+        top: 119px;
+        right: -95px;
+        width: 80px;
+        animation-delay: 0.5s;
+        /* Retraso de 0.5 segundos */
+    }
+
+    .tapa {
+        top: 84px;
+        left: 15%;
+        transform: translateX(-50%);
+        width: 170px;
+        animation-delay: 1s;
+        /* Retraso de 1 segundo */
+    }
+
 }
 
 @media (min-width: 1200px) and (max-width: 1025px) {
@@ -1343,11 +1453,7 @@
     /********************** Termina seccion de contacto ********************************/
 }
 
-@media (min-width: 412px) {
-    .nube-flotante{
-        margin-left: 5rem;
-    }
-}
+
 
 
 /* Estilos para dispositivos extra grandes (pantallas de escritorio grandes) */
@@ -1464,6 +1570,10 @@
 }
 
 
+
+
+
+
 /* Estilos para dispositivos ultra grandes (pantallas de escritorio muy grandes) */
 
 @media (min-width: 1201px) and (max-width: 1440px) {
@@ -1493,6 +1603,7 @@
 
     .margin-title-solution {
         margin-top: 6.5rem;
+        margin-bottom: 4rem;
     }
 
     .navbar {
@@ -1663,6 +1774,8 @@
     /********************** Termina seccion de contacto ********************************/
 }
 
+
+
 /* Seccion Footer */
 
 
@@ -1760,6 +1873,7 @@
 
     .margin-title-solution {
         margin-top: 6.5em;
+        margin-bottom: 4rem;
     }
 
     /* ################# Landing Home - seccion de sobre nosotros ################# */
@@ -1815,6 +1929,8 @@
 
     /********************** Termina seccion de contacto ********************************/
 }
+
+
 
 @media only screen and (min-width: 3840px) {
     .margen-boton {
@@ -1966,6 +2082,8 @@
 }
 
 
+
+
 /************************************************************************************/
 
 /****************************************Aquí empieza consulting***************************************/
@@ -1973,6 +2091,11 @@
 
 
 @media (min-width: 360px) and (max-width: 480px) {
+
+    .nube-flotante{
+        margin-right: 5rem;
+        margin-top: 5rem;
+    }
 
     .profile-menu {
         right: 10px;
@@ -2433,15 +2556,15 @@
         margin: 82px;
     }
 
-    .form-check-label {
+    /* .form-check-label {
 
         /*margin-top: 15px;*/
         /*margin-left: -55px;*/
-    }
+    /* } */
 
-    .form-check-input {
-        /*margin-left: -83px;*/
-    }
+    /* .form-check-input {
+        margin-left: -83px;
+    } */
 
     /******************************************Seccion Services***************************/
     .benefit-card h3 {
@@ -2460,6 +2583,8 @@
 }
 
 @media (min-width: 360px) and (max-width: 375px) {
+
+
     .profile-menu {
         right: 10px;
     }
