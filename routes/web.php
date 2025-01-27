@@ -1119,4 +1119,40 @@ Route::prefix('juegos')
         /*Route::get('/{slug}')
             ->uses('JuegosController@show')
             ->name('videos.show');*/
+});
+
+/*
+|--------------------------------------------------------------------------
+| Ruta para conector de Google Calendar API
+|--------------------------------------------------------------------------
+*/
+Route::prefix('google')
+    ->group(function () {
+        Route::get('/authenticate')
+            ->uses('GoogleMeetController@authenticate')
+            ->name('google.authenticate');
+
+        Route::get('/callback-meet')
+            ->uses('GoogleMeetController@callback')
+            ->name('google.callback');
+
+        Route::get('/create-meeting')
+            ->uses('GoogleMeetController@createMeeting')
+            ->name('google.createMeeting');
+
+        Route::get('/meetings')
+        ->uses('GoogleMeetController@getMeetings')
+        ->name('google.meetings');
+});
+
+//callbacksv2/google/authenticate
+/*
+google/authenticate
+google/callback-meet
+    Route::prefix('google')->group(function () {
+        Route::get('/authenticate', [GoogleMeetController::class, 'authenticate'])->name('google.authenticate');
+        Route::get('/callback', [GoogleMeetController::class, 'callback'])->name('google.callback');
+        Route::post('/create-meeting', [GoogleMeetController::class, 'createMeeting'])->name('google.createMeeting');
+        Route::get('/meetings', [GoogleMeetController::class, 'getMeetings'])->name('google.getMeetings');
     });
+*/
