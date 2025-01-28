@@ -4,7 +4,7 @@
             style="background-color: #000000;">
             <div class="rectangle"></div>
             <div class="text-wrapper-4 title-about-us text-lg-left text-sm-center text-center"
-                style="margin-top: 83px;">
+                style="margin-top: 98px;">
                 Sobre nosotros
             </div>
             <p class="p mt-4 mb-3 text-lg-left text-sm-center text-center" style="margin-top: 50px !important;">

@@ -18,7 +18,7 @@
             <p class="left-content-m mt-3 d-none d-lg-block">
                 Nuestra metodología analiza la situación específica de los
                 colaboradores y <span style="font-weight: bold;">genera soluciones de Educación
-                    Financiera</span>
+                Financiera</span>
                 a través de una estrategia integral híbrida con herramientas
                 digitales y contacto humano.
             </p>

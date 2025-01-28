@@ -17,7 +17,7 @@
             <a href="{{ url('qdplay') }}">
                 <div class="frame-8 service-2 d-flex flex-column justify-content-between">
                 <div class="text-wrapper ">Cursos online</div>
-                    <img class="img-2 img-2-service" src="{{ asset('version-2/images/imgservices/untitled-artwork-8-1.gif') }}" style="margin-bottom: 1rem; margin-top: auto;">
+                    <img class="img-2 img-2-service" src="{{ asset('version-2/images/imgservices/untitled-artwork-8-1.gif') }}" style="margin-bottom: 1rem; margin-top: 15px;">
                     <div class="subtext-wrapper">Aprende con expertos</div>
                 </div>
             </a>

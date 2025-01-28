@@ -84,22 +84,23 @@
             <!-- Mostrar el layout original en pantallas más grandes -->
             <div class="row d-none d-md-flex d-flex justify-content-center align-items-center d-xs-none">
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="logotipos--" src="{{ asset('version-2/images/clients/google.png') }}" style="width: 80%"/>
+                    <img class="logotipos--" src="{{ asset('version-2/images/clients/google.png') }}" style="width: 80%;margin-left: -10rem;"/>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="--logotipos-2" src="{{ asset('version-2/images/clients/quickbooks.png') }}" style="width: 100%;" />
+                    <img class="--logotipos-2" src="{{ asset('version-2/images/clients/quickbooks.png') }}" style="width: 100%;margin-left: -5rem;"/>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="--logotipos-3" src="{{ asset('version-2/images/clients/profuturo.png') }}" style="width: 100%;" />
+                    <img class="--logotipos-3" src="{{ asset('version-2/images/clients/profuturo.png') }}" style="width: 100%;margin-left: -1rem;"/>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="--logotipos-4" src="{{ asset('version-2/images/clients/vector.png') }}" style="width: 72%;" />
+                    <img class="--logotipos-4" src="{{ asset('version-2/images/clients/vector.png') }}" style="width: 72%;margin-left: -5rem;"/>
+                </div>" />
                 </div>
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="--logotipos-5" src="{{ asset('version-2/images/clients/moneyfest.png') }}" style="width: 100%;" />
+                    <img class="--logotipos-5" src="{{ asset('version-2/images/clients/moneyfest.png') }}" style="width: 100%;margin-left: -8rem;"/>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center align-items-center text-center">
-                    <img class="--logotipos-6" src="{{ asset('version-2/images/clients/home-depot.png') }}" style="width: 53%;" />
+                    <img class="--logotipos-6" src="{{ asset('version-2/images/clients/home-depot.png') }}" style="width: 53%;margin-left: -11rem;"/>
                 </div>
             </div>
         </div>
