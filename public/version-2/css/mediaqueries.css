@@ -38,7 +38,7 @@
     }
 
     .margin-title-solution {
-        margin-top: 1em;
+        margin-top: 3em;
         margin-bottom: 1em;
 
     }
@@ -204,7 +204,7 @@
     }
 
     .para-todos {
-        margin-top: 0.5em;
+        margin-top: -0.5em;
         font-weight: 501;
         font-size: 2.5rem;
         line-height: 49.6px;
@@ -225,7 +225,7 @@
 
     /*Seccion ACERCA DE NOSOTROS*/
     .title-about-us {
-        margin-top: 3em !important;
+        margin-top: 4em !important;
     }
 
     .div-btn-about-us {
@@ -236,6 +236,7 @@
     /*Seccion Contenido*/
     .text-wrapper-21 {
         font-size: 30px;
+        margin-top: -3rem;
     }
 
     .text-wrapper-27 {
@@ -1908,7 +1909,7 @@
     }
 
     .margin-title-solution {
-        margin-top: 6.5em;
+        margin-top: 3.4em;
         margin-bottom: 4rem;
     }
 
