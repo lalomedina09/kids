@@ -2459,6 +2459,7 @@
 
     .cuadro {
         box-shadow: none;
+        margin-top: 3rem;
     }
 
     .circular-btn {
@@ -2483,7 +2484,7 @@
 
     .circular-btn.btn-circular-1 {
         position: absolute;
-        top: 1635px;
+        top: 1741px;
         left: 50px;
         margin: 0px;
         width: 32px;
@@ -2492,7 +2493,7 @@
 
     .circular-btn.btn-circular-2 {
         position: absolute;
-        top: 1620px;
+        top: 1741px;
         left: 330px;
         margin: 0px;
         width: 32px;
@@ -2501,8 +2502,8 @@
 
     .circular-btn.btn-circular-3 {
         position: absolute;
-        top: 1800px;
-        left: 40px;
+        top: 1855px;
+        left: 50px;
         margin: 0px;
         width: 32px;
         height: 32px;
@@ -2510,7 +2511,7 @@
 
     .circular-btn.btn-circular-4 {
         position: absolute;
-        top: 1850px;
+        top: 1855px;
         left: 330px;
         margin: 0px;
         width: 32px;
@@ -2519,7 +2520,7 @@
 
     .circular-btn.btn-circular-5 {
         position: absolute;
-        top: 1900px;
+        top: 2001px;
         left: 160px;
         margin: 0px;
         width: 32px;
@@ -2626,18 +2627,29 @@
         right: 10px;
     }
 
+    .circular-btn.btn-circular-1 {
+        top: 1848px;
+        left: 50px;
+    }
+
     .circular-btn.btn-circular-2 {
-        top: 1520px;
-        left: 300px;
+        top: 1848px;
+        left: 285px;
+    }
+
+    .circular-btn.btn-circular-3 {
+        top: 1973px;
+        left: 50px;
     }
 
     .circular-btn.btn-circular-4 {
-        top: 1630px;
-        left: 300px;
+        top: 1967px;
+        left: 285px;
     }
 
     .circular-btn.btn-circular-5 {
-        top: 1765px;
-        left: 240px;
+        top: 2104px;
+        left: 165px;
     }
+
 }
