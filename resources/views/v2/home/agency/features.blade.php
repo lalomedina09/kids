@@ -37,6 +37,10 @@
         padding: 20px;
     }
 
+    .content-text br {
+        display: none; /* Oculta los saltos de línea en móviles */
+    }
+
     .content-text h2 {
         margin-top: 10px;
         font-size: 1.8rem;
@@ -149,7 +153,7 @@
             </div>
             <!-- Columna de Imagen con Efecto -->
             <div class="col-md-6 order-1 order-md-2 content-image identity text-center">
-                <img src="{{ asset('version-2/images/agency/identidad.png') }}" alt="Identidad Financiera">
+                <img src="{{ asset('version-2/images/agency/imgamarillo.png') }}" alt="Identidad Financiera">
             </div>
         </div>
 
@@ -176,7 +180,7 @@
             </div>
             <!-- Columna de Imagen con Efecto -->
             <div class="col-md-6 order-1 order-md-2 content-image community text-center">
-                <img src="{{ asset('version-2/images/agency/contenido.png') }}" alt="Contenido y Community Management">
+                <img src="{{ asset('version-2/images/agency/imgrojo.png') }}" alt="Contenido y Community Management">
             </div>
         </div>
 
@@ -198,7 +202,7 @@
             </div>
             <!-- Columna de Imagen con Efecto -->
             <div class="col-md-6 order-1 order-md-2 content-image community text-center">
-                <img src="{{ asset('version-2/images/agency/media.png') }}" alt="Contenido y Community Management">
+                <img src="{{ asset('version-2/images/agency/imgverde.png') }}" alt="Contenido y Community Management">
             </div>
         </div>
 

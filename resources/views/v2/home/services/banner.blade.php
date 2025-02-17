@@ -29,7 +29,9 @@
 
                 <!-- Descripción para móvil -->
                 <p class="description-1 mt-3 d-lg-none">
-                    Finanzas personales para mejorar la calidad de vida, el ambiente laboral y la cultura del dinero en México
+                    Finanzas personales para mejorar <br>
+                    la calidad de vida, el ambiente laboral <br>
+                    y la cultura del dinero en México
                 </p>
 
                 <!-- Botón de contáctanos -->
