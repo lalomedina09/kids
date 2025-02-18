@@ -108,12 +108,14 @@
 
 
 /*-------------------------------------
-  2. Heading CSS
+2. Heading CSS
 --------------------------------------*/
 
 .ui.heading.size-text3xl {
     font-size: 40px;
     font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     font-style: bold;
 
     @media only screen and (max-width: 1050px) {
@@ -325,7 +327,7 @@
 .main-pigeon {
     width: 245px;
     z-index: 2;
-    margin-top: 10rem;
+    margin-top: 4rem;
 }
 
 .banner-title-main {

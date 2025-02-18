@@ -3024,7 +3024,9 @@ a {
     animation: rotateFlechas 10s linear infinite;
 }
 
-@keyframes rotateFlechas {
+/* Animacion de circulo girando */
+
+/* @keyframes rotateFlechas {
     0% {
         transform: rotate(0deg);
     }
@@ -3032,7 +3034,7 @@ a {
     100% {
         transform: rotate(360deg);
     }
-}
+} */
 
 /**********Sección Solutions****************/
 
@@ -3832,7 +3834,7 @@ a {
 
 .btn-enviar {
     margin-left: 23rem;
-    margin-top: -57px;
+    margin-top: 27px;
     width: 10rem;
 }
 

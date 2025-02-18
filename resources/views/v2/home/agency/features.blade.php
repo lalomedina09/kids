@@ -177,6 +177,8 @@
                     entrevistas, entre otros.
                 </p>
                 <br>
+
+
             </div>
             <!-- Columna de Imagen con Efecto -->
             <div class="col-md-6 order-1 order-md-2 content-image community text-center">
