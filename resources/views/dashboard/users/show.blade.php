@@ -170,12 +170,32 @@
                                                 <label for="confirm-password">Confirmar contraseña</label>
                                                 <input type="password" class="form-control" id="confirm-password" name="confirm_password" required>
                                             </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="show-passwords">
+                                                <label class="form-check-label" for="show-passwords">Mostrar contraseñas</label>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                             <button type="submit" class="btn btn-primary">Restablecer</button>
                                         </div>
                                     </form>
+
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#show-passwords').change(function() {
+                                                var newPassword = $('#new-password');
+                                                var confirmPassword = $('#confirm-password');
+                                                if ($(this).is(':checked')) {
+                                                    newPassword.attr('type', 'text');
+                                                    confirmPassword.attr('type', 'text');
+                                                } else {
+                                                    newPassword.attr('type', 'password');
+                                                    confirmPassword.attr('type', 'password');
+                                                }
+                                            });
+                                        });
+                                    </script>
                                 </div>
                             </div>
                         </div>
