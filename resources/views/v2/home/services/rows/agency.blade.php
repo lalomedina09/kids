@@ -16,23 +16,37 @@
             <div class="columnprice text-md-left text-center mt-3 mt-md-0">
                 <p class="price ui text size-text2xl" style="color: #C5481C;">
                     AGENCIA CREATIVA
-                </p><br>
+                </p>
                 <h2 class="finanzassanas ui heading size-text3xl text-dark">
-                    Creatividad financiera<br />personalizada
-                </h2><br>
-                <p class="description-2 ui text size-text2xl text-dark">
-                    Como agencia creativa del nicho financiero, generamos soluciones y contenidos editoriales para marcas y empresas que apoyan
+                    Creatividad financiera personalizada
+                </h2>
+
+                <!-- Versión con saltos de línea para escritorio -->
+                <p class="description-2 ui text size-text2xl text-dark d-none d-md-block">
+                    Como agencia creativa del nicho financiero, generamos soluciones <br>
+                    y contenidos editoriales para marcas y empresas que apoyan <br>
                     la Educación Financiera.
                 </p>
+
+                <!-- Versión sin saltos de línea para móviles -->
+                <p class="description-2 ui text size-text2xl text-dark d-md-none">
+                    Como agencia creativa del nicho financiero, generamos soluciones y contenidos editoriales
+                    para marcas y empresas que apoyan la Educación Financiera.
+                </p>
+
                 <a href="{{ route('agency')}}" class="btn btn-dark mt-3 btn-learn-more">Conoce más</a>
             </div>
         </div>
+
         <div class="col-md-6 d-flex flex-column justify-content-center text-center text-md-right order-1 order-md-2">
             <div class="stackview">
                 <div class="view bg-light"></div>
-                <img src="{{ asset('version-2/images/services/color-agencia-creativa.png') }}" id="img-service-agency-desktop" alt="Imagefortyeight" class="img-fluid imagefortyeight" />
-                <!--<img src="{{ asset('version-2/images/services/color-agencia-creativa.png') }}" alt="Imagefortyeight" class="img-fluid imagefortyeight d-lg-none" />-->
+                <img src="{{ asset('version-2/images/services/color-agencia-creativa.png') }}"
+                    id="img-service-agency-desktop"
+                    alt="Imagefortyeight"
+                    class="img-fluid imagefortyeight" />
             </div>
         </div>
     </div>
 </div>
+

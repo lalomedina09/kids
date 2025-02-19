@@ -14,6 +14,7 @@
 
 @media (min-width: 360px) and (max-width: 480px) {
 
+
     .profile-menu {
         right: 10px;
     }
@@ -38,7 +39,7 @@
     }
 
     .margin-title-solution {
-        margin-top: 3em;
+        margin-top: 2.8rem;
         margin-bottom: 1em;
 
     }
@@ -141,6 +142,7 @@
 
 @media (max-width: 480px) {
 
+
     .profile-menu {
         right: 10px;
     }
@@ -191,7 +193,7 @@
     }
 
     .btn-dark {
-        margin-left: auto;
+        margin-left: -1.5rem;
         order: 2;
     }
 
@@ -208,7 +210,9 @@
         font-weight: 501;
         font-size: 2.5rem;
         line-height: 49.6px;
+        margin-right: 1rem;
     }
+
 
     .movil-only {
         display: block;
@@ -261,13 +265,15 @@
 
 @media (max-width: 550px) {
 
+
+
     .profile-menu {
         right: 10px;
     }
 
     /*Landing de SERVICIOS  - Banner*/
     .lasolucin {
-        font-size: 2.6rem;
+        font-size: 2.1rem;
     }
 
     .description-1 {
@@ -297,6 +303,7 @@
 /* Estilos para dispositivos pequeños (móviles en modo vertical) */
 
 @media (min-width: 481px) and (max-width: 576px) {
+
 
     .profile-menu {
         right: 10px;
@@ -741,6 +748,7 @@
 
 @media (min-width: 768px) {
 
+
     .img-ilus-contact {
         margin-top: 8rem;
     }
@@ -981,6 +989,7 @@
 /* Estilos para dispositivos grandes (pantallas de escritorio pequeñas) */
 
 @media (min-width: 769px) and (max-width: 992px) {
+
 
     .profile-menu {
         right: 10px;
@@ -2301,7 +2310,7 @@
     }
 
     .overlay-image {
-        top: 9px;
+        top: 11px;
         left: 33%;
         width: 34%;
         margin: auto;

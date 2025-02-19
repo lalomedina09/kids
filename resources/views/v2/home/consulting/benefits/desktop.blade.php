@@ -63,3 +63,28 @@
     </div>
 </div>
 
+<style>
+
+/* Color inicial de todas las tarjetas */
+.card.tarjeta {
+    background-color: #dedede;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Colores al pasar el mouse (más suaves pero aún intensos) */
+.t-b-1:hover { background-color: #A9CFE8; } /* Rojo más suave */
+.t-b-2:hover { background-color: #F5B7B1; } /* Verde más suave */
+.t-b-3:hover { background-color: #F7C28B; } /* Azul más suave */
+.t-b-4:hover { background-color: #A9CFE8; } /* Amarillo más suave */
+.t-b-5:hover { background-color: #F5B7B1; } /* Morado más suave */
+.t-b-6:hover { background-color: #F7C28B; } /* Naranja más suave */
+
+/* Mantener el color de las letras en negro */
+.card.tarjeta .texto-tarjeta,
+.card.tarjeta .contenido-tarjeta {
+    color: black;
+}
+
+
+</style>
+
