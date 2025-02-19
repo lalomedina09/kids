@@ -9,10 +9,7 @@
 
 /**************************************************************/
 
-
-
-
-@media (min-width: 360px) and (max-width: 480px) {
+@media (min-width: 360px) and (max-width: 915px) {
 
 
     .profile-menu {
@@ -257,15 +254,10 @@
     .lasolucin {
         font-size: 2.6rem;
     }
-
-
 }
 
 
-
 @media (max-width: 550px) {
-
-
 
     .profile-menu {
         right: 10px;
@@ -789,7 +781,7 @@
     /******************Lading Consultoria - Seccion de metodologia *****************/
     .base-image {
         top: 70px;
-        left: 109px;
+        left: 158px;
         width: 230px;
         height: 230px;
         z-index: 1;
@@ -797,7 +789,7 @@
 
     .overlay-image {
         top: 85px;
-        left: 123px;
+        left: 173px;
         width: 200px;
         height: 200px;
         z-index: 2;
@@ -2662,3 +2654,6 @@
     }
 
 }
+
+
+/* @media (min-width: 482px) and (max-width: 915px) */
