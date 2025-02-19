@@ -20,7 +20,9 @@ return [
         'subscriptor' => 'Suscriptor',
         'administration' => 'Administracion',
         'exhibitor' => 'Expositor',
-        'seller' => 'Vendedor'
+        'seller' => 'Vendedor',
+        'student' => 'Estudiante',
+        'teacher' => 'Profesor'
     ],
     'permissions' => [
         'blog' => [
