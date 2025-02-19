@@ -12,6 +12,23 @@
 @media (min-width: 360px) and (max-width: 915px) {
 
 
+    .puntos-animados {
+        margin-left: -165.5;
+        position: absolute;
+        margin-top: -3rem;
+    }
+
+    .texto-animado {
+        margin-left: -11rem;
+        position: absolute;
+        margin-top: 0rem;
+    }
+
+    .nube-flotante {
+        margin-left: 10rem;
+    }
+
+
     .profile-menu {
         right: 10px;
     }
@@ -2655,5 +2672,8 @@
 
 }
 
-
-/* @media (min-width: 482px) and (max-width: 915px) */
+@media (min-width: 412px) {
+    .nube-flotante {
+        margin-left: 10rem;
+    }
+}

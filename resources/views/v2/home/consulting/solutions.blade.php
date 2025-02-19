@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="row justify-content-center" style="margin:0 !important;">
         <!-- Título y descripción -->
@@ -11,9 +10,11 @@
             </p>
 
 
-            <div class="mobil-solutions d-block d-md-none d-lg-block">
+            <!-- texto para mobil -->
+            <div class="mobil-solutions d-block d-md-none d-sm-none d-xs-none">
                 Creamos una estrategia integral de la mano de los líderes empresariales y las metas corporativas.
             </div>
+        </div>
 
 
     <!-- Contenedor principal -->
@@ -161,12 +162,9 @@
 
 <style>
 
-    @media (min-width: 482px) and (max-width: 915px) {
-        .hide-in-mediaquery {
-            display: none !important;
-        }
+    .hide-in-mediaquery {
+        display: none !important;
     }
-
     .floating-div {
         display: none;
         position: fixed;
@@ -193,7 +191,6 @@
         cursor: pointer;
     }
 </style>
-
 <script>
     function showFloatingDiv(divId) {
         document.getElementById(divId).style.display = 'block';
