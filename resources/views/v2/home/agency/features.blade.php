@@ -54,6 +54,7 @@
     .content-text .badge {
         font-size: 21px;
         margin-bottom: 10px;
+        margin-left: -0.5rem
     }
 
     /* Imagen con fondo de mancha y animación */
@@ -144,10 +145,11 @@
                 <br>
                 <h2 class="font-akshar">Agencia creativa <br>de nicho financiero</h2>
                 <br>
-                <p class="font-akshar lead" style="font-size: 1.3rem;">
-                    Con 10 años de experiencia y una red de colaboradores especialistas, resolvemos desde proyectos
-                    puntuales hasta la planeación <br>
-                    estratégica a largo plazo.
+                <p class="font-akshar lead" style="font-size: 1.3rem; white-space: pre-line;">
+                    Con 10 años de experiencia y una red de colaboradores especialistas, <br>
+                    resolvemos desde proyectos puntuales hasta la planeación <br>
+                    estratégica a largo plazo.<br>
+
                 </p>
                 <br>
             </div>
@@ -166,15 +168,16 @@
                 <br>
                 <h2 class="font-akshar">Generación de contenido <br>y community management</h2>
                 <br>
-                <p class="font-akshar lead" style="font-size: 1.3rem;">
-                    Adaptados al tono y lineamientos de marca, llevamos
-                    la comunicación de redes sociales y otros canales
-                    para que las empresas puedan delegar la estrategia, generación y mantenimiento del contenido.
-                    <br><br>
+                <p class="font-akshar lead" style="font-size: 1.3rem; white-space: pre-line;">
+                    Adaptados al tono y lineamientos de marca, llevamos la comunicación <br>
+                    de redes sociales y otros canales para que las empresas puedan <br>
+                    delegar la estrategia, generación y mantenimiento del contenido.
+                    <br>
                     Somos expertos creando distintos formatos como: <br>
-                    Posts de Redes Sociales (visuales, infografías,
-                    videos cortos, textos, memes, etc), community management, artículos escritos, newsletters,
-                    entrevistas, entre otros.
+                    Posts de Redes Sociales (visuales, infografías, videos cortos, <br>
+                    textos, memes, etc), community management, artículos escritos, <br>
+                    newsletters, entrevistas, entre otros.
+
                 </p>
                 <br>
 
@@ -195,7 +198,7 @@
                 <br>
                 <h2 class="font-akshar">Producción <br> audiovisual</h2>
                 <br>
-                <p class="font-akshar lead" style="font-size: 1.3rem;">
+                <p class="font-akshar lead" style="font-size: 1.3rem; white-space: pre-line;">
                     Generamos material multimedia para que bancos, fintechs <br>
                     y otras empresas financieras logren transmitir sus mensajes <br>
                     en distintos canales audiovisuales.
@@ -217,7 +220,7 @@
                 <br>
                 <h2 class="font-akshar">Conceptos creativos <br> y proyectos especiales</h2>
                 <br>
-                <p class="font-akshar lead" style="font-size: 1.3rem;">
+                <p class="font-akshar lead" style="font-size: 1.3rem; white-space: pre-line;">
                     Sumamos fuerzas como aliados estratégicos de empresas financieras <br>
                     para apoyar con la generación de conceptos creativos, experiencias <br>
                     de marca, campañas publicitarias, aplicaciones digitales, <br>
