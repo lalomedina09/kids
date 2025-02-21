@@ -5,7 +5,7 @@
     </button>
     <div class="form-check mt-2">
         <input type="checkbox" class="form-check-input" id="acceptTermsvDesktop" style="margin-top: -.1rem;">
-        <label class="form-check-label text-dark font-akshar" for="acceptTermsvDesktop">
+        <label class="form-check-label font-akshar" style="color: #000000" for="acceptTermsvDesktop">
             Al suscribirte estás aceptando nuestros
             <a href="{{ url('terminos-y-condiciones')}}" target="_blank" class="text-dark fw-bold">
                 Términos y Condiciones

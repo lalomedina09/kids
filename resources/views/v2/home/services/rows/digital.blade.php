@@ -26,19 +26,19 @@
                 <p class="price ui text size-text2xl" style="color: #C5481C;">
                     PUBLICIDAD DIGITAL
                 </p>
-                <h2 class="finanzassanas ui heading size-text3xl text-dark">
+                <h2 class="finanzassanas ui heading size-text3xl" style="color: #000000">
                     Hablemos de dinero en todas partes
                 </h2>
 
                 <!-- Versión con saltos de línea para escritorio -->
-                <p class="description-2 ui text size-text2xl text-dark d-none d-md-block">
+                <p class="description-2 ui text size-text2xl d-none d-md-block" style="color: #000000">
                     Con un lenguaje simple y coloquial, utilizamos distintos canales <br>
                     de comunicación para llevar información práctica y divertida <br>
                     a una audiencia interesada en las finanzas.
                 </p>
 
                 <!-- Versión sin saltos de línea para móviles -->
-                <p class="description-2 ui text size-text2xl text-dark d-md-none">
+                <p class="description-2 ui text size-text2xl d-md-none" style="color: #000000">
                     Con un lenguaje simple y coloquial, utilizamos distintos canales de comunicación
                     para llevar información práctica y divertida a una audiencia interesada en las finanzas.
                 </p>

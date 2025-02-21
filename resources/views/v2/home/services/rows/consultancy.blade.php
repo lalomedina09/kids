@@ -17,20 +17,20 @@
                 <p class="price ui text size-text2xl" style="color: #C5481C;">
                     CONSULTORÍA EMPRESARIAL
                 </p>
-                <h2 class="finanzassanas ui heading size-text3xl text-dark">
+                <h2 class="finanzassanas ui heading size-text3xl"; style="color: #000000">
                     Finanzas Sanas en las empresas
                 </h2>
 
                 <!-- Versión para escritorio con saltos de línea -->
-                <p class="description-2 ui text size-text2xl text-dark d-none d-md-block">
+                <p class="description-2 ui text size-text2xl d-none d-md-block" style="color: #000000">
                     Ayudamos a los líderes empresariales a mejorar la relación <br>
                     con sus colaboradores, incrementar la productividad, <br>
-                    reducir ausencias y generar un impacto positivo <br>
-                    para su negocio a través de la educación financiera.
+                    reducir ausencias y generar un impacto positivo para <br>
+                    su negocio a través de la educación financiera.
                 </p>
 
                 <!-- Versión para móviles sin saltos de línea -->
-                <p class="description-2 ui text size-text2xl text-dark d-md-none">
+                <p class="description-2 ui text size-text2xl d-md-none" style="color: #000000">
                     Ayudamos a los líderes empresariales a mejorar la relación con sus colaboradores,
                     incrementar la productividad, reducir ausencias y generar un impacto positivo para
                     su negocio a través de la educación financiera.
