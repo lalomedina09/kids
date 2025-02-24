@@ -589,6 +589,11 @@ Route::prefix('administration')
                             ->uses('UsersController@reset')
                             ->name('users.password')
                             ->middleware(['permission:blog.users.update']);
+
+                        Route::post('/password/new')
+                            ->uses('UsersController@updatePassword')
+                            ->name('users.password.update')
+                            ->middleware(['permission:blog.users.update']);
                     });
             });
 

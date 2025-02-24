@@ -18,6 +18,7 @@
         margin-top: -3rem;
     }
 
+<<<<<<< HEAD
     .texto-animado {
         margin-left: -11rem;
         position: absolute;
@@ -28,6 +29,9 @@
         margin-left: 10rem;
     }
 
+=======
+@media (max-width: 360px) and (max-width: 480px) {
+>>>>>>> 1cbb557458f05b89993102ffa9a18850b15ea7b8
 
     .profile-menu {
         right: 10px;
@@ -207,7 +211,7 @@
     }
 
     .btn-dark {
-        margin-left: -1.5rem;
+        margin-left: -0.5rem;
         order: 2;
     }
 
@@ -225,6 +229,7 @@
         font-size: 2.5rem;
         line-height: 49.6px;
         margin-right: 1rem;
+        margin-bottom: 4rem;
     }
 
 
@@ -460,6 +465,7 @@
 
     .navbar .navbar-brand img {
         height: 34px;
+        margin-left: 8rem;
     }
 
     .content {
@@ -764,7 +770,7 @@
 
     .nube-flotante {
         margin-top: 1rem !important;
-        margin-left: 5rem;
+        margin-left: -16rem;
     }
 
 
@@ -814,11 +820,11 @@
     }
 
     /********************** Empieza seccion de contacto ********************************/
-    .img-ilus-contact {
+    /* .img-ilus-contact {
         width: 114%;
         margin-top: 10rem;
         margin-left: -5rem;
-    }
+    } */
 
     /********************** Termina seccion de contacto ********************************/
 
@@ -1050,6 +1056,7 @@
 
     .navbar .navbar-brand img {
         height: 35px;
+        margin-left: 6rem;
     }
 
     .content {
@@ -1341,7 +1348,7 @@
 
     .nube-flotante {
         margin-top: 1rem !important;
-        margin-left: 5rem;
+        margin-left: -14rem;
     }
 
 
@@ -1496,8 +1503,14 @@
 
     /********************** Empieza seccion de contacto ********************************/
 
+    .btn-enviar {
+        margin-left: -9.5rem;
+        margin-top: 0rem;
+    }
+
     .img-ilus-contact {
         margin-left: -2rem;
+        margin-top: 17rem;
     }
 
     .parrafo-banner {
@@ -1507,8 +1520,6 @@
 
     /********************** Termina seccion de contacto ********************************/
 }
-
-
 
 
 /* Estilos para dispositivos extra grandes (pantallas de escritorio grandes) */
@@ -1820,6 +1831,11 @@
     }
 
     /********************** Empieza seccion de contacto ********************************/
+
+    .btn-enviar{
+        margin-top: -9rem;
+    }
+
     .img-ilus-contact {
         width: 90%;
         margin-top: 11rem;
@@ -1885,11 +1901,12 @@
 
     .navbar .btn-dark {
         font-size: 17px;
+        margin-right: -3rem;
     }
 
     .navbar .navbar-brand img {
         height: 36px;
-        margin-left: 0px;
+        margin-left: -2.5rem;
     }
 
     .content {
@@ -1927,7 +1944,7 @@
     }
 
     .margin-title-solution {
-        margin-top: 5.4em;
+        margin-top: 2.4em;
         margin-bottom: 4rem;
     }
 
@@ -1976,6 +1993,20 @@
     }
 
     /********************** Empieza seccion de contacto ********************************/
+
+    .btn-enviar {
+        margin-top: -9rem;
+    }
+
+    .puntos-animados {
+        margin-left: 0.5rem;
+    }
+
+    .nube-flotante{
+        margin-left: -18rem;
+        position: relative;
+
+    }
     .img-ilus-contact {
         width: 93%;
         margin-top: 10rem;
@@ -2127,6 +2158,10 @@
     }
 
     /********************** Empieza seccion de contacto ********************************/
+    .btn-enviar {
+        margin-top: -9rem;
+    }
+
     .img-ilus-contact {
         width: 90%;
         margin-top: 11rem;
@@ -2146,10 +2181,21 @@
 
 
 @media (min-width: 360px) and (max-width: 480px) {
+    .img-ilus-contact {
+        margin-top: 10rem;
+    }
+
+    .btn-enviar {
+        margin-left: 0rem;
+    }
+
+    .puntos-animados {
+        margin-left: 1.5rem;
+    }
 
     .nube-flotante{
-        margin-right: 5rem;
-        margin-top: 5rem;
+        margin-left: -13rem;
+        position: absolute;
     }
 
     .profile-menu {
@@ -2672,8 +2718,33 @@
 
 }
 
+<<<<<<< HEAD
 @media (min-width: 412px) {
     .nube-flotante {
         margin-left: 10rem;
     }
 }
+=======
+/*
+@media (min-width: 600px) and (max-width: 960px) {
+    .nube-flotante {
+        position: relative;
+    } */
+
+
+
+    /* .nube-flotante {
+        margin-top: 3rem;
+        margin-left: -15rem;
+        position: absolute;
+    }
+
+    .texto-animado {
+        margin-left: -10rem;
+    }
+
+    .puntos-animados {
+        margin-left: 0.5rem;
+    } */
+
+>>>>>>> 1cbb557458f05b89993102ffa9a18850b15ea7b8

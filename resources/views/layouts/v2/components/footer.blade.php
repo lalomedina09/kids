@@ -50,7 +50,7 @@
             <div class="row align-items-center bg-white mt-4 mb-4"> <!-- sobre-nosotros -->
                 <div class="col-md-5 text-md-right text-center mt-3 mt-md-0">
                     <br><br>
-                    <div class="subscribe-title text-dark text-left text-md-left text-center" style="margin-top: 15px;">
+                    <div class="subscribe-title text-left text-md-left text-center" style="margin-top: -3px; color: #000;">
                         Suscríbete a nuestros newsletters
                     </div>
                     <br><br>
@@ -152,7 +152,8 @@
         <br>
         <div class="footer-line mt-4"></div>
         <p class="footer-text mt-4">©<span id="current-year"></span>
-            QUERIDO DINERO S.A. DE C.V. TODOS LOS DERECHOS RESERVADOS
+            QUERIDO DINERO S.A. DE C.V. <br>
+            TODOS LOS DERECHOS RESERVADOS
         </p>
         <br>
     </div>

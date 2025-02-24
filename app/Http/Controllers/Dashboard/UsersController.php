@@ -346,4 +346,15 @@ class UsersController extends Controller
         ];
     }
 
+    public function updatePassword($id, Request $request)
+    {
+        $user = User::find($id);
+        $user->password = bcrypt($request->new_password);
+        $user->save();
+
+        return redirect()
+            ->route('dashboard.users.edit', $user->id)
+            ->with('success', 'Se actualizó la contraseña de ' . $user->name . ' correctamente');
+    }
+
 }

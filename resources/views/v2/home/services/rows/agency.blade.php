@@ -17,19 +17,19 @@
                 <p class="price ui text size-text2xl" style="color: #C5481C;">
                     AGENCIA CREATIVA
                 </p>
-                <h2 class="finanzassanas ui heading size-text3xl text-dark">
+                <h2 class="finanzassanas ui heading size-text3xl" style="color: #000000">
                     Creatividad financiera personalizada
                 </h2>
 
                 <!-- Versión con saltos de línea para escritorio -->
-                <p class="description-2 ui text size-text2xl text-dark d-none d-md-block">
+                <p class="description-2 ui text size-text2xl d-none d-md-block"; style="color: #000000">
                     Como agencia creativa del nicho financiero, generamos soluciones <br>
                     y contenidos editoriales para marcas y empresas que apoyan <br>
                     la Educación Financiera.
                 </p>
 
                 <!-- Versión sin saltos de línea para móviles -->
-                <p class="description-2 ui text size-text2xl text-dark d-md-none">
+                <p class="description-2 ui text size-text2xl d-md-none" style="color: #000000">
                     Como agencia creativa del nicho financiero, generamos soluciones y contenidos editoriales
                     para marcas y empresas que apoyan la Educación Financiera.
                 </p>

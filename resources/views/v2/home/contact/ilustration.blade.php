@@ -4,24 +4,31 @@
 
 <div class="container mt-5">
     <div class="row mx-0">
+
         <!-- Ajuste de margen horizontal para mayor responsividad -->
         <div class="col-12 col-md-12 d-flex flex-column mb-5">
-            <p class="parrafo-banner">
+            <!-- Párrafo para pantallas grandes (oculto en móviles) -->
+            <p class="parrafo-banner d-none d-md-block">
                 Si quieres que colaboremos juntos, si tienes alguna duda, comentario o sugerencia,<br>
                 <span class="negrita-parrafo-banner">¡contáctanos y tendrás noticias nuestras muy pronto!</span>
             </p>
-            <p class="parrafo-movil">
+
+
+            <!-- Párrafo solo para móviles (oculto en pantallas grandes) -->
+            <p class="parrafo-movil d-block d-md-none">
                 Si quieres que colaboremos juntos, si tienes alguna duda, comentario o sugerencia <br>
-                <span class="negrita-parrafo-movil">¡contáctanos y tendrás noticias nuestras muy pronto!</span>
+                <span class="negrita-parrafo-movil">¡Contáctanos!</span>
             </p>
         </div>
+
+
         <div class="col-md-6">
             <div class="img-banner-contacto">
                 <img class="imagen-mobil img-ilus-contact" src="{{ asset('version-2/images/contacto/banner.png')}}" alt="imagen-contacto">
             </div>
         </div>
 
-        <div class="img-nube position-relative">
+        <div class="img-nube">
             <img class="nube-flotante" src="{{ asset('version-2/images/contacto/nube.png')}}" alt="imagen-nube" >
             <span id="mensaje" class="texto-animado"></span>
             <span id="puntos" class="puntos-animados"></span>
@@ -43,14 +50,28 @@
     margin-bottom: -8rem;
 } */
 
+
+.negrita-parrafo-movil {
+    font-weight: bold;
+}
+.parrafo-movil {
+    font-family: "Akshar", Helvetica;
+    font-size: 1.9rem;
+    margin-top: 5rem;
+    text-align: center;
+    line-height: 3.1rem;
+    margin-bottom: 4rem;
+
+}
+
 .nube-flotante {
     animation: flotar 3s ease-in-out infinite;
     margin-bottom: -8rem;
-    margin-left: -16rem;
-    margin-top: -4rem;
+    /* margin-left: -13rem; */
+    margin-top: -1rem;
     width: 14rem;
     height: 13rem;
-    position: relative;
+    /* position: absolute; */
 }
 
 /* Estilos de los puntos */
@@ -58,8 +79,7 @@
     font-size: 4.5rem;
     color: #333;
     text-align: center;
-    width: 1.5rem;
-    margin-left: -3.5;
+    margin-left: 1.5rem;
     font-family: 'Besley', serif;
     font-style: italic;
     position: relative;
@@ -86,6 +106,7 @@
         transform: translateY(-10px);
     }
 }
+
 </style>
 
 <script>

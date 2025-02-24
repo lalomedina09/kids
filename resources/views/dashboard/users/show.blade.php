@@ -145,12 +145,60 @@
                             Dar de baja
                         </a>
                         <hr/>
-                        <a href="{{ route('dashboard.users.password', $user->id) }}" class="btn btn-outline-warning btn-block"
-                            data-method="post"
-                            data-token="{{ csrf_token() }}"
-                            data-confirm="Se enviará un correo electrónico al usuario para que reestablezca su contraseña. Presiona OK para confirmar">
-                            Restablecer contraseña
+                        <a href="#" class="btn btn-outline-warning btn-block" data-toggle="modal" data-target="#resetPasswordModal">
+                            Restablecer contraseña <span class="badge badge-pill badge-info">Nuevo</span>
                         </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="resetPasswordModal" tabindex="-1" role="dialog" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="resetPasswordModalLabel">Restablecer contraseña</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="{{ route('dashboard.users.password.update', $user->id) }}" method="POST">
+                                        @csrf
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="new-password">Nueva contraseña</label>
+                                                <input type="password" class="form-control" id="new-password" name="new_password" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="confirm-password">Confirmar contraseña</label>
+                                                <input type="password" class="form-control" id="confirm-password" name="confirm_password" required>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="show-passwords">
+                                                <label class="form-check-label" for="show-passwords">Mostrar contraseñas</label>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary">Restablecer</button>
+                                        </div>
+                                    </form>
+
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#show-passwords').change(function() {
+                                                var newPassword = $('#new-password');
+                                                var confirmPassword = $('#confirm-password');
+                                                if ($(this).is(':checked')) {
+                                                    newPassword.attr('type', 'text');
+                                                    confirmPassword.attr('type', 'text');
+                                                } else {
+                                                    newPassword.attr('type', 'password');
+                                                    confirmPassword.attr('type', 'password');
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
                     @else
                         <a href="{{ route('dashboard.users.restore', $user->id) }}" class="btn btn-outline-primary btn-block"
                             data-method="post"
