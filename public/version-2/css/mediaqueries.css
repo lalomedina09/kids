@@ -18,20 +18,7 @@
         margin-top: -3rem;
     }
 
-<<<<<<< HEAD
-    .texto-animado {
-        margin-left: -11rem;
-        position: absolute;
-        margin-top: 0rem;
-    }
-
-    .nube-flotante {
-        margin-left: 10rem;
-    }
-
-=======
 @media (max-width: 360px) and (max-width: 480px) {
->>>>>>> 1cbb557458f05b89993102ffa9a18850b15ea7b8
 
     .profile-menu {
         right: 10px;
@@ -2718,13 +2705,6 @@
 
 }
 
-<<<<<<< HEAD
-@media (min-width: 412px) {
-    .nube-flotante {
-        margin-left: 10rem;
-    }
-}
-=======
 /*
 @media (min-width: 600px) and (max-width: 960px) {
     .nube-flotante {
@@ -2746,5 +2726,3 @@
     .puntos-animados {
         margin-left: 0.5rem;
     } */
-
->>>>>>> 1cbb557458f05b89993102ffa9a18850b15ea7b8
