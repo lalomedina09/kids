@@ -764,7 +764,7 @@
 
     .nube-flotante {
         margin-top: 1rem !important;
-        margin-left: 5rem;
+        margin-left: -16rem;
     }
 
 
@@ -1341,7 +1341,7 @@
 
     .nube-flotante {
         margin-top: 1rem !important;
-        margin-left: 5rem;
+        margin-left: -14rem;
     }
 
 
@@ -1841,6 +1841,11 @@
 
 @media (min-width: 1441px) and (max-width: 1992px) {
 
+    .nube-flotante {
+        margin-left: -18rem;
+        position: relative;
+    }
+
     .margen-boton {
         margin-left: -88px;
     }
@@ -2147,9 +2152,9 @@
 
 @media (min-width: 360px) and (max-width: 480px) {
 
-    .nube-flotante{
-        margin-right: 5rem;
-        margin-top: 5rem;
+    .nube-flotante {
+        margin-left: -13rem;
+        position: absolute;
     }
 
     .profile-menu {
@@ -2159,6 +2164,10 @@
     /* Ocultar el H1 original */
     .original-heading {
         display: none;
+    }
+
+    .img-ilus-contact {
+        margin-top: 10rem;
     }
 
     /* Mostrar el H1 alternativo */
@@ -2670,10 +2679,4 @@
         left: 165px;
     }
 
-}
-
-@media (min-width: 412px) {
-    .nube-flotante {
-        margin-left: 10rem;
-    }
 }
