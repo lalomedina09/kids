@@ -344,9 +344,9 @@
                 </div>
 
                 <div class="col-lg-12">
-                    <div class="form-group text-center">
+                    <div class="btn-register form-group">
 
-                        <button type="submit" style="margin-left: -48rem;color: aliceblue;" class="btn btn-pill btn-login-v2" style="color: aliceblue;margin-left: -53rem;">@lang('Registrarme')</button>
+                        <button type="submit" class="btn btn-pill btn-login-v2" style="color: aliceblue">@lang('Registrarme')</button>
                     </div>
                 </div>
 
