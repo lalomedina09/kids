@@ -11,6 +11,14 @@
 
 @media (min-width: 360px) and (max-width: 915px) {
 
+    .btn-register {
+        margin-right: 2rem;
+    }
+
+
+    .register-btn {
+        margin-right: 2rem;
+    }
 
     .puntos-animados {
         margin-left: -165.5;
@@ -157,6 +165,7 @@
 @media (max-width: 480px) {
 
 
+
     .profile-menu {
         right: 10px;
     }
@@ -276,6 +285,7 @@
 
 @media (max-width: 550px) {
 
+
     .profile-menu {
         right: 10px;
     }
@@ -312,6 +322,7 @@
 /* Estilos para dispositivos pequeños (móviles en modo vertical) */
 
 @media (min-width: 481px) and (max-width: 576px) {
+
 
 
     .profile-menu {
@@ -1894,7 +1905,7 @@
 
     .navbar .navbar-brand img {
         height: 36px;
-        margin-left: 0px;
+        margin-left: -2rem;
     }
 
     .content {
@@ -1932,7 +1943,7 @@
     }
 
     .margin-title-solution {
-        margin-top: 5.4em;
+        margin-top: 6.4em;
         margin-bottom: 4rem;
     }
 

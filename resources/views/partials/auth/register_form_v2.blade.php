@@ -353,8 +353,8 @@
 
 
                 <div class="col-lg-12">
-                    <div class="text-center text-family-akshar mt-2" style="margin-left: -47rem;">
-                        <p class=" text-xsmall mb-0 text-white">Al registrarte estás aceptando nuestros</p>
+                    <div class="register-btn text-family-akshar mt-2;">
+                        <p class="text-xsmall mb-0 text-white">Al registrarte estás aceptando nuestros</p>
                         <a href="{{ route('terms') }}" target="_blank" class=" text-underline text-xsmall text-white text-bold">
                             Términos y Condiciones
                         </a>
