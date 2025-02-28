@@ -18,7 +18,7 @@
             <br><br>
             <div class="benefit-card mt-5 mb-5">
                 <img src="{{ asset("version-2/images/imgtarjetas/img2.png") }}" alt="imagen2" class="imagen-tarjeta">
-                <h3>Charlas y talleres<br>de educación financiera</h3>
+                <h3> y talleres<br>de educación financiera</h3>
                 <p class="contenido-tarjeta-services">In hac habitasse platea dictumst. Nullam nulla eros, ultricies
                     sit amet, nonummy id, imperdiet feugiat, pede. In hac habitasse platea dictumst. Sed lectus.
                     Nullam accumsan lorem in dui.</p>
