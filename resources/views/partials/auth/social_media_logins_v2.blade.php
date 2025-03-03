@@ -121,3 +121,5 @@
     </a>
 	{{--<a href="{{ route('redirects.apple') }}" class="apple-button-v2">Iniciar Sesión con Apple</a>--}}
 </div>
+
+

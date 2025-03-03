@@ -453,6 +453,7 @@
 @media (min-width: 577px) and (max-width: 768px) {
 
 
+
     .profile-menu {
         right: 10px;
     }
@@ -986,6 +987,7 @@
 }
 
 /* @media screen and (max-width: 768px) {
+
 
     .base-image {
         top: 75px;
