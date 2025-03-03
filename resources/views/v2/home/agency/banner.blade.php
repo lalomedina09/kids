@@ -11,7 +11,7 @@
                     <img src="{{ asset('version-2/images/img_capa_1.png') }}" alt="Capa Imagen Izquierda"
                         class="img-fluid capaone_one pigeon-secondary-left">
 
-                    <img src="{{ asset('version-2/images/paloma-principal.png') }}" alt="Paloma Principal"
+                    <img src="{{ asset('version-2/images/banner-service.png') }}" alt="Paloma Principal"
                         class="img-fluid main-pigeon">
 
                     <img src="{{ asset('version-2/images/img_capa_1.png') }}" alt="Capa Imagen Derecha"
