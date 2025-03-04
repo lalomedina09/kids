@@ -478,6 +478,10 @@ Route::get('/blog')
     ->uses('HomeController@blog')
     ->name('blog');
 
+Route::get('/articles/search')
+    ->uses('HomeController@search')
+    ->name('articles.search');
+
 Route::prefix('articulos')
     ->group(function () {
         Route::get('/')

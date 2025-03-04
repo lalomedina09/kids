@@ -7,19 +7,19 @@
             <a href="#" class="red-link">Ver más</a>
         </div>
     </div>
+
     <div class="row mb-4">
         @foreach ($recents as $recent)
-            <div class="col-md-4">
-                <a href="{{ route('articles.show', [$recent->slug]) }}" style="text-decoration: none;">
-                    <div>
-                        <img src="{{ $recent->present()->featured_image }}"
-                            class="img-fluid mb-2 mt-2" alt="{{ $recent->title }}">
-                    </div>
-                    <p class="article-title text-dark">
-                        {{ $recent->title }}
-                    </p>
-                </a>
-            </div>
+        <div class="col-md-4">
+            <a href="{{ route('articles.show', [$recent->slug]) }}" style="text-decoration: none;">
+                <div
+                    style="height: 180px; background-image: url('{{ $recent->present()->featured_image }}'); background-size: cover; background-position: center;">
+                </div>
+                <p class="article-title text-dark mt-2">
+                    {{ $recent->title }}
+                </p>
+            </a>
+        </div>
         @endforeach
     </div>
 
@@ -36,10 +36,10 @@
         @foreach ($mostViewedArticles as $read)
         <div class="col-md-4">
             <a href="{{ route('articles.show', [$read->slug]) }}" style="text-decoration: none;">
-                <div>
-                    <img src="{{ $read->present()->featured_image }}" class="img-fluid mb-2 mt-2" alt="{{ $read->title }}">
+                <div
+                    style="height: 180px; background-image: url('{{ $read->present()->featured_image }}'); background-size: cover; background-position: center;">
                 </div>
-                <p class="article-title text-dark">
+                <p class="article-title text-dark mt-2">
                     {{ $read->title }}
                 </p>
             </a>
@@ -59,10 +59,10 @@
         @foreach ($seasonalArticles as $seasonal)
         <div class="col-md-4">
             <a href="{{ route('articles.show', [$seasonal->slug]) }}" style="text-decoration: none;">
-                <div title="{{ $seasonal->title }} - Pub: {{ \Carbon\Carbon::parse($seasonal->published_at)->format('M Y') }}">
-                    <img src="{{ $seasonal->present()->featured_image }}" class="img-fluid mb-2 mt-2" alt="{{ $seasonal->title }} - Pub: {{ \Carbon\Carbon::parse($seasonal->published_at)->format('M Y') }}">
+                <div
+                    style="height: 180px; background-image: url('{{ $seasonal->present()->featured_image }}'); background-size: cover; background-position: center;">
                 </div>
-                <p class="article-title text-dark">
+                <p class="article-title text-dark mt-2">
                     {{ $seasonal->title }}
                 </p>
             </a>

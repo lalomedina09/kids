@@ -225,6 +225,19 @@ class HomeController extends Controller
         ]);
     }
 
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        // Buscar artículos que coincidan con el término de búsqueda
+        $results = Article::where('site', env('SITE_ARTICLES', "queridodinero.com"))
+            ->where('title', 'LIKE', "%{$query}%")
+            ->orWhere('excerpt', 'LIKE', "%{$query}%")
+            ->limit(20) // Limitar a 20 resultados
+            ->get(['id', 'title', 'slug']);
+
+        return response()->json($results);
+    }
     /**
      * Resolve old wordpress routes
      *
