@@ -56,10 +56,10 @@
                                     // Mostrar resultados
                                     data.forEach(item => {
                                         const resultItem = document.createElement('a');
-                                        resultItem.href =
-                                        `/articulos/${item.slug}`; // Enlace al artículo
+                                        resultItem.href = `/articulos/${item.slug}`; // Enlace al artículo
                                         resultItem.classList.add('dropdown-item', 'd-block', 'p-2');
                                         resultItem.textContent = item.title;
+                                        resultItem.setAttribute('title', 'Ir al artículo');
                                         searchResults.appendChild(resultItem);
                                     });
 
@@ -69,7 +69,7 @@
                                 }
                             })
                             .catch(error => {
-                                console.error('Error fetching search results:', error);
+                                console.error('Error al obtener los resultados de la búsqueda:', error);
                             });
                     } else {
                         searchResults.style.display = 'none'; // Ocultar si el input está vacío
