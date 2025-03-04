@@ -231,10 +231,12 @@ class HomeController extends Controller
 
         // Buscar artículos que coincidan con el término de búsqueda
         $results = Article::where('site', env('SITE_ARTICLES', "queridodinero.com"))
-            ->where('title', 'LIKE', "%{$query}%")
-            ->orWhere('excerpt', 'LIKE', "%{$query}%")
-            ->limit(20) // Limitar a 20 resultados
-            ->get(['id', 'title', 'slug']);
+            ->where(function ($queryBuilder) use ($query) {
+                $queryBuilder->where('title', 'LIKE', "%{$query}%")
+                    ->orWhere('excerpt', 'LIKE', "%{$query}%");
+        })
+    ->limit(20)
+    ->get(['id', 'title', 'slug']);
 
         return response()->json($results);
     }
