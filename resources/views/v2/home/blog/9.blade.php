@@ -15,7 +15,7 @@
                 <div
                     style="height: 180px; background-image: url('{{ $recent->present()->featured_image }}'); background-size: cover; background-position: center;">
                 </div>
-                <p class="article-title text-dark mt-2">
+                <p class="article-title text-dark mt-2 mb-5">
                     {{ $recent->title }}
                 </p>
             </a>
@@ -39,7 +39,7 @@
                 <div
                     style="height: 180px; background-image: url('{{ $read->present()->featured_image }}'); background-size: cover; background-position: center;">
                 </div>
-                <p class="article-title text-dark mt-2">
+                <p class="article-title text-dark mt-2 mb-5">
                     {{ $read->title }}
                 </p>
             </a>
@@ -62,7 +62,7 @@
                 <div
                     style="height: 180px; background-image: url('{{ $seasonal->present()->featured_image }}'); background-size: cover; background-position: center;">
                 </div>
-                <p class="article-title text-dark mt-2">
+                <p class="article-title text-dark mt-2 mb-5">
                     {{ $seasonal->title }}
                 </p>
             </a>
