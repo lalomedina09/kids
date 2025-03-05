@@ -59,5 +59,5 @@
 </section>
 
 
-
+@include('v2.components.loading')
 @endsection
