@@ -4,10 +4,9 @@
     <div class="row mb-4">
         <div class="col-md-12 d-flex justify-content-between align-items-center">
             <h2 class="section-title font-akshar">Lo más reciente</h2>
-            <a href="{{ route('articles.by.word',['recent'])}}" class="red-link">Ver más</a>
+            <a href="{{ route('articles.by.word', ['recent']) }}" class="red-link">Ver más</a>
         </div>
     </div>
-
     <div class="row mb-4">
         @foreach ($recents as $recent)
         <div class="col-md-4">
@@ -23,16 +22,14 @@
         @endforeach
     </div>
 
-
     <!-- Sección: Lo más leído -->
     <div class="row mb-4 mt-4">
         <div class="col-md-12 d-flex justify-content-between align-items-center">
             <h2 class="section-title font-akshar">Lo más leído</h2>
-            <a href="{{ route('articles.by.word',['vieweds'])}}" class="red-link">Ver más</a>
+            <a href="{{ route('articles.by.word', ['vieweds']) }}" class="red-link">Ver más</a>
         </div>
     </div>
     <div class="row mb-4">
-        <!-- Artículo 1 -->
         @foreach ($mostViewedArticles as $read)
         <div class="col-md-4">
             <a href="{{ route('articles.show', [$read->slug]) }}" style="text-decoration: none;">
@@ -51,11 +48,10 @@
     <div class="row mb-4">
         <div class="col-md-12 d-flex justify-content-between align-items-center">
             <h2 class="section-title font-akshar">De temporada</h2>
-            <a href="{{ route('articles.by.word',['seasonal'])}}" class="red-link">Ver más</a>
+            <a href="{{ route('articles.by.word', ['seasonal']) }}" class="red-link">Ver más</a>
         </div>
     </div>
     <div class="row mb-4">
-        <!-- Artículo 1 -->
         @foreach ($seasonalArticles as $seasonal)
         <div class="col-md-4">
             <a href="{{ route('articles.show', [$seasonal->slug]) }}" style="text-decoration: none;">
