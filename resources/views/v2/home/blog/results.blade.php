@@ -28,7 +28,7 @@
         </div>
         <div class="row my-4">
             @foreach ($articles as $article)
-            <div class="col-md-12 mb-3 shadow rounded">
+            <div class="col-md-12 mb-5 shadow-sm rounded" style="border-left: solid;">
                 <a href="{{ route('articles.show', [$article->slug]) }}" style="text-decoration: none;"
                     title="Ir al articulo {{ $article->title }}">
                     <div class="row">

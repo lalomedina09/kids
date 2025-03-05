@@ -22,8 +22,8 @@ class BlogController extends Controller
             ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
             ->limit(2)->get();
 
-        $recents = Article::recent()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(6)->get();
-        $trendings = Article::trending()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(6)->get();
+        $recents = Article::recent()->whereNotNull('published_at')->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(6)->get();
+        $trendings = Article::trending()->whereNotNull('published_at')->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(6)->get();
         $mostViewedArticles = $this->mostViewedArticles(6);
         $seasonalArticles = $this->seasonalArticles(6);
 
@@ -48,6 +48,7 @@ class BlogController extends Controller
 
         // Buscar artículos que coincidan con el término de búsqueda
         $results = Article::where('site', env('SITE_ARTICLES', "queridodinero.com"))
+            ->whereNotNull('published_at')
             ->where(function ($queryBuilder) use ($query) {
                 $queryBuilder->where('title', 'LIKE', "%{$query}%")
                     ->orWhere('excerpt', 'LIKE', "%{$query}%");
@@ -70,6 +71,7 @@ class BlogController extends Controller
         }
 
         $articlesQuery = Article::where('site', env('SITE_ARTICLES', "queridodinero.com"))
+            ->whereNotNull('published_at')
             ->latest()
             ->limit(100);
         if (!empty($articleIds)) {
@@ -92,6 +94,7 @@ class BlogController extends Controller
     {
         $this->saveAgent($request);
         $articlesQuery = Article::where('site', env('SITE_ARTICLES', "queridodinero.com"))
+            ->whereNotNull('published_at')
             ->latest()
             ->limit(100);
         $words = null;
@@ -104,7 +107,7 @@ class BlogController extends Controller
                 $words = "Trending";
                 $articlesQuery->trending();
                 break;
-            case 'most_viewed':
+            case 'vieweds':
                 $words = "Lo más leído";
                 $articlesQuery->orderBy('views_count', 'desc');
                 break;
@@ -122,7 +125,6 @@ class BlogController extends Controller
                 break;
         }
 
-        //dd('llego aqui');
         return view('v2.home.blog.results')->with([
             'category' => null,
             'words' => $words,
@@ -144,6 +146,7 @@ class BlogController extends Controller
         }
 
         $articlesQuery = Article::where('site', env('SITE_ARTICLES', "queridodinero.com"))
+            ->whereNotNull('published_at')
             ->where(function ($query) use ($request) {
             $query->where('title', 'LIKE', "%{$request->words}%")
                 ->orWhere('excerpt', 'LIKE', "%{$request->words}%");
@@ -172,6 +175,7 @@ class BlogController extends Controller
 
         $result = Article::published()
             ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
+            ->whereNotNull('published_at')
             ->where(function ($query) {
                 $query->whereMonth('published_at', now()->subMonth()->month)
                     ->orWhereMonth('published_at', now()->month)
@@ -189,6 +193,7 @@ class BlogController extends Controller
         $result = Article::published()
             ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
             ->orderBy('views_count', 'desc')
+            ->whereNotNull('published_at')
             ->limit($limit)
             ->get();
 

@@ -28,7 +28,7 @@
     <div class="row mb-4 mt-4">
         <div class="col-md-12 d-flex justify-content-between align-items-center">
             <h2 class="section-title font-akshar">Lo más leído</h2>
-            <a href="{{ route('articles.by.word',['most_viewed'])}}" class="red-link">Ver más</a>
+            <a href="{{ route('articles.by.word',['vieweds'])}}" class="red-link">Ver más</a>
         </div>
     </div>
     <div class="row mb-4">
