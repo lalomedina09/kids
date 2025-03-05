@@ -8,9 +8,8 @@
             <div class="text-md-left text-center mt-4 mt-md-5 ml-md-4">
                 <p class="queremos-que-todos d-none d-md-block text-md-left text-center">
                     Queremos que todos <span class="f-weight-500">mejoren sus finanzas personales.</span><br />
-                    Por eso apoyamos a empresas e individuos <br>
-                    con herramientas, servicios y contenidos <br>
-                    que los ayudan a llegar al siguiente nivel.
+                    Por eso apoyamos a empresas e individuos con herramientas,<br>
+                    servicios y contenidos que los ayudan a llegar al siguiente nivel.
                 </p>
                 <p class="queremos-que-todos d-block d-md-none text-md-left text-center">
                     Herramientas y contenidos que te ayudan a llegar al siguiente nivel.
