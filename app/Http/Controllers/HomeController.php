@@ -165,88 +165,8 @@ class HomeController extends Controller
 
         return redirect()->back()->with('success', 'Solicitud enviada correctamente');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function blog(Request $request)
-    {
-        $user = $request->user();
-        // Save userAgent
-        $request = request();
-        $user_id = ($user) ? $user->id : null;
-        $userAgent = Controller::detectAgent($request, $request->url());
-        $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
-        // End Save UserAgent
 
-        // Obtener 2 cursos aleatorios
-        $randomCourses = Course::whereNotNull('thumbnail')->inRandomOrder()->limit(2)->get();
 
-        // Obtener el artículo más reciente y los 2 artículos anteriores más recientes
-        $latestArticle = Article::published()->latest()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->first();
-        $previousArticles = Article::published()->where('id', '!=', $latestArticle->id)
-        ->latest()
-        ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
-        ->limit(2)->get();
-
-        $recents = Article::recent()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(6)->get();
-
-        $trendings = Article::trending()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(6)->get();
-
-        $mostViewedArticles = Article::published()
-            ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
-            ->orderBy('views_count', 'desc')
-            ->limit(6)
-            ->get();
-
-        $seasonalArticles = Article::published()
-            ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
-            ->where(function ($query) {
-                $query->whereMonth('published_at', now()->subMonth()->month)
-                    ->orWhereMonth('published_at', now()->month)
-                    ->orWhereMonth('published_at', now()->addMonth()->month);
-            })
-            ->whereYear('published_at', '<', now()->year)
-            ->latest()
-            ->limit(6)
-            ->get();
-
-        // Pasar la información a la vista
-        return view('v2.home.blog.index')->with([
-            'randomCourses' => $randomCourses,
-            'latestArticle' => $latestArticle,
-            'previousArticles' => $previousArticles,
-            'recents' => $recents,
-            'trendings' => $trendings,
-            'mostViewedArticles' => $mostViewedArticles,
-            'seasonalArticles' => $seasonalArticles
-        ]);
-    }
-
-    public function search(Request $request)
-    {
-        $query = $request->input('query');
-
-        // Buscar artículos que coincidan con el término de búsqueda
-        $results = Article::where('site', env('SITE_ARTICLES', "queridodinero.com"))
-            ->where(function ($queryBuilder) use ($query) {
-                $queryBuilder->where('title', 'LIKE', "%{$query}%")
-                    ->orWhere('excerpt', 'LIKE', "%{$query}%");
-        })
-    ->limit(20)
-    ->get(['id', 'title', 'slug']);
-
-        return response()->json($results);
-    }
-    /**
-     * Resolve old wordpress routes
-     *
-     * @param  string  $slug
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function resolve($slug, Request $request)
     {
         if ($article = Article::where('slug', $slug)->first()) {

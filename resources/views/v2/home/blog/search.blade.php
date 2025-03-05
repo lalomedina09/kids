@@ -15,25 +15,30 @@
     }
 </style>
 <div class="row my-4">
-    <div class="col-md-12 mt-4 mb-4 d-flex align-items-center position-relative">
-        <!-- Select de categorías -->
-        <select class="form-select custom-select me-2 font-akshar" style="width: 200px;">
-            <option selected>Categorías</option>
-            <option value="1">Finanzas</option>
-            <option value="2">Ahorro</option>
-            <option value="3">Inversiones</option>
-        </select>
-        <!-- Input de búsqueda -->
-        <input type="text" id="searchInput" class="form-control custom-input me-2 font-akshar"
-            placeholder="Explora nuestros artículos...">
-        <!-- Botón de búsqueda -->
-        <button class="btn custom-btn" style="height: 43px;">
-            <i class="fas fa-search"></i>
-        </button>
-        <!-- Lista de resultados -->
-        <div id="searchResults" class="position-absolute bg-white border mt-1 w-100 font-akshar"
-            style="top: 100%; z-index: 1000; display: none;"></div>
-    </div>
+    <form action="{{ route('articles.search.full') }}" method="POST" class="d-flex w-100">
+        @csrf
+        <div class="col-md-12 mt-4 mb-4 d-flex align-items-center position-relative">
+            <!-- Select de categorías -->
+            <select class="form-select custom-select me-2 font-akshar" style="width: 200px;" name="slug">
+                <option class="font-akshar" value="" disabled {{ old('slug', $selectedCategory ?? '') == '' ? 'selected' : '' }}>Categorías</option>
+                @foreach($categories as $category)
+                    <option class="font-akshar" value="{{ $category->slug }}" {{ old('slug', $selectedCategory ?? '') == $category->slug ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+            <!-- Input de búsqueda -->
+            <input type="text" id="searchInput" class="form-control custom-input me-2 font-akshar" name="words"
+                placeholder="Explora nuestros artículos..." value="{{ old('words', $words ?? '') }}">
+            <!-- Botón de búsqueda -->
+            <button class="btn custom-btn" style="height: 43px;" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+            <!-- Lista de resultados -->
+            <div id="searchResults" class="position-absolute bg-white border mt-1 w-100 font-akshar"
+                style="top: 100%; z-index: 1000; display: none;"></div>
+        </div>
+    </form>
 </div>
 
 
