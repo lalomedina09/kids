@@ -82,14 +82,32 @@
         const titles = document.querySelectorAll('.article-title');
         const excerpts = document.querySelectorAll('.article-excerpt');
 
-        // Función para resaltar palabras
+        // Función para normalizar texto y eliminar acentos
+        function removeAccents(str) {
+            return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        }
+
+        // Función para resaltar palabras ignorando acentos
         function highlightText(element, words) {
             let text = element.getAttribute('data-text');
             if (!text || words.length === 0) return;
 
-            // Crear una expresión regular para todas las palabras (insensible a mayúsculas/minúsculas)
-            const regex = new RegExp(`\\b(${words.map(word => word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')).join('|')})\\b`, 'gi');
-            const highlightedText = text.replace(regex, '<span class="highlight">$&</span>');
+            // Normalizar el texto original y las palabras buscadas
+            const normalizedText = removeAccents(text);
+            const normalizedWords = words.map(word => removeAccents(word));
+
+            // Crear una expresión regular con las palabras normalizadas (insensible a mayúsculas/minúsculas)
+            const regex = new RegExp(`\\b(${normalizedWords.map(word => word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')).join('|')})\\b`, 'gi');
+
+            // Encontrar coincidencias en el texto normalizado
+            let match;
+            let highlightedText = text;
+            while ((match = regex.exec(normalizedText)) !== null) {
+                const start = match.index;
+                const end = start + match[0].length;
+                const originalMatch = text.substring(start, end); // Usar el texto original para conservar acentos
+                highlightedText = highlightedText.replace(originalMatch, `<span class="highlight">${originalMatch}</span>`);
+            }
 
             // Actualizar el contenido del elemento
             element.innerHTML = highlightedText;
