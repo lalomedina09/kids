@@ -55,7 +55,7 @@
 
 <style>
     #searchResults {
-        max-height: 200px;
+        max-height: 180px;
         overflow-y: auto;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
@@ -135,7 +135,7 @@
     /* En pantallas grandes, mantener diseño horizontal */
     @media (min-width: 768px) {
         .custom-select {
-            max-width: 200px;
+            max-width: 180px;
             /* Limita el ancho del select */
         }
 

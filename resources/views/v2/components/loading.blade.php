@@ -2,6 +2,7 @@
 <div id="loadingModal" class="modal-loading" style="display: none;">
     <div class="modal-content-loading shadow">
         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        <br>
         <p class="mt-2 font-akshar">Cargando...</p>
     </div>
 </div>
