@@ -11,6 +11,7 @@ use App\Models\Quiz;
 use App\Models\FormContact;
 use App\Models\QzAnswer;
 use QD\QDPlay\Models\Course;
+
 use App\Models\QzQuestion;
 use App\Models\QzOption;
 class HomeController extends Controller
@@ -77,7 +78,21 @@ class HomeController extends Controller
 
     public function indexRedesign()
     {
+        // Obtener 2 cursos aleatorios
+        $randomCourses = Course::whereNotNull('thumbnail')->inRandomOrder()->limit(2)->get();
+
+        // Obtener el artículo más reciente y los 2 artículos anteriores más recientes
+        $latestArticle = Article::published()->latest()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->first();
+        $previousArticles = Article::published()->where('id', '!=', $latestArticle->id)
+            ->latest()
+            ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
+            ->limit(2)->get();
+
+        // Pasar la información a la vista
         return view('v2.home.index')->with([
+            'randomCourses' => $randomCourses,
+            'latestArticle' => $latestArticle,
+            'previousArticles' => $previousArticles,
             'categories' => 0,
             'channel' => 0,
             'source' => 0
@@ -150,50 +165,8 @@ class HomeController extends Controller
 
         return redirect()->back()->with('success', 'Solicitud enviada correctamente');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function blog(Request $request)
-    {
-        $covers = Cover::shown()->get()->take(6);
-        #dd('controlador', $covers);
-        $user = $request->user();
-        // Save userAgent
-        $request = request();
-        $user_id = ($user) ? $user->id : null;
-        $userAgent = Controller::detectAgent($request, $request->url());
-        $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
-        // End Save UserAgent
 
-        foreach(collect(range(1,6))->diff($covers->pluck('position')->toArray())->values()->all() as $newPosition) {
-            $covers->push(Cover::make(['position' => $newPosition]));
-        }
 
-        $covers = $covers->sort(function ($cover1, $cover2) {
-            return $cover1->position < $cover2->position ? -1 : 1;
-        });
-
-        return view('home.index')->with([
-            'recommended' => Article::recommended($request->user())->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(15)->get(),
-            'trending' => Article::trending()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(6)->get(),
-            'latest' => Article::recent()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->take(9)->get(),
-            'radio' => Podcast::recent()->take(9)->get(),
-            'videos' => Video::recent()->take(9)->get(),
-            'covers' => $covers,
-            'quote' => Quote::latest()->first(),
-        ]);
-    }
-
-    /**
-     * Resolve old wordpress routes
-     *
-     * @param  string  $slug
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function resolve($slug, Request $request)
     {
         if ($article = Article::where('slug', $slug)->first()) {
