@@ -152,6 +152,10 @@ Route::prefix('indice-de-felicidad')
     Route::get('/gestion-de-recursos')
         ->uses('IndexHappyController@resourceManagement')
         ->name('indice.happy.resource.management');
+
+    Route::get('/company/{client}')
+        ->uses('IndexHappyController@client')
+        ->name('indice.happy.client');
 });
 
 
