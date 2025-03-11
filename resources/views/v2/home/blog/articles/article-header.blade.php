@@ -9,7 +9,7 @@
                     class="single-featured__image" width="100%">--}}
             </div>
         </div>
-        <section class="single px-lg-5">
+        <section class="single px-lg-0">
 
 
             <article class="single__wrapper">

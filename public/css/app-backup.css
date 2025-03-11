@@ -9198,6 +9198,15 @@ div.overlay {
     width: 100%;
 }
 
+.single__content blockquote a {
+    color: #FF6161;
+    text-decoration: none;    
+}
+.single__content a{
+    color: #FF6161;
+    text-decoration: none;    
+}
+
 @media (min-width: 800px) {
     .box {
         padding: 50px 0;
@@ -11252,6 +11261,28 @@ input:-webkit-autofill:active {
         font-size: 1.5rem;
     }
 }
+@media (min-width: 800px) {
+  .single__content h1, .single__content h2, .single__content h3, .single__content h4, .single__content h5, .single__content h6 {
+    margin: 50px 0;
+  }
+}
+
+h5, .h5 {
+  /*font-size: 1.75rem;*/
+  font-style: italic;
+}
+
+h3, .h3 {
+  font-size: 1.75rem;
+  font-style: italic;
+}
 
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #262525;
+}
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIvY3NzL2FwcC5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/

@@ -27,6 +27,7 @@
 @include('v2.home.blog.articles.bar-tags-search')
 
 @include('v2.home.blog.articles.data-article')
+
 @include('v2.home.blog.articles.article-header')
 
 
