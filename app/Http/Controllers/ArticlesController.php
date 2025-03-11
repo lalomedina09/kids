@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use Auth;
 use App\Models\Article;
 use App\Models\Category;
@@ -56,23 +57,6 @@ class ArticlesController extends Controller
      */
     public function show($slug, Request $request)
     {
-        // Verificar si hay un usuario autenticado
-        /*if (Auth::check()) {
-            $user = Auth::user();
-            $user_id = $user->id;
-        } else {
-            $user_id = null;
-        }*/
-
-        // Save userAgent
-        #$request = request();
-        /*
-        if ($request) {
-            $userAgent = Controller::detectAgent($request, $request->url());
-            $saveUserAgent = Controller::saveUserAgent($userAgent, $user_id);
-        }*/
-        // End Save UserAgent
-
         $article = Article::published()
             ->whereSlug($slug)
             ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
@@ -89,10 +73,14 @@ class ArticlesController extends Controller
         $request->seoable = $article;
         $advertisingStatus = $this->advertisingStatus($article);
 
-        return view('articles.show')->with([
+        $topTags = $this->getCategoriesTop();
+
+        #return view('articles.show')->with([
+        return view('v2.home.blog.articles.show')->with([
             'article' => $article,
             'related' => $related,
-            'advertisingStatus' => $advertisingStatus
+            'advertisingStatus' => $advertisingStatus,
+            'topTags' => $topTags
         ]);
     }
 
@@ -163,4 +151,26 @@ class ArticlesController extends Controller
         return $advertising && Carbon::now()->between($advertising->published_at, $advertising->published_at_expired);
     }
 
+    public function getCategoriesTop()
+    {
+        // Obtener 8 IDs de categorías aleatorias con conteo
+        $categoryStats = DB::table('categorizables')
+            ->select('category_id', DB::raw('COUNT(*) AS repetition_count'))
+            ->where('categorizable_type', 'article')
+            ->groupBy('category_id')
+            ->orderByRaw('RAND()')
+            ->limit(8)
+            ->get()
+            ->pluck('repetition_count', 'category_id') // Array con category_id => repetition_count
+            ->toArray();
+
+        $categoryIds = array_keys($categoryStats);
+
+        $topCategories = Category::whereIn('id', $categoryIds)
+            ->select('slug', 'name') // Seleccionar solo slug y name
+            ->get()
+            ->toArray(); // Convertir a array
+
+        return $topCategories;
+    }
 }

@@ -20,12 +20,15 @@
 @if (!in_array(Route::currentRouteName(), [
     'home', 'services', 'consulting', 'contact',
     'agency', 'blog', 'articles.search.full', 'articles.by.tag',
-    'articles.by.word'
+    'articles.by.word','articles.show'
     ]))
-    <link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
 @endif
 
+@if (in_array(Route::currentRouteName(), ['articles.show']))
+    <link href="{{ asset('css/app-backup.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
+@endif
 <!---------------->
 
 <link rel="stylesheet" href="{{ asset('version-2/css/iziToast.min.css') }}">
