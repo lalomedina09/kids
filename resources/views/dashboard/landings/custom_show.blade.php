@@ -53,7 +53,7 @@
                     <a class="btn btn-info" href="{{ url("talleres/inversiones-colaboradores") }}" target="_blank">
                         Ver Landing
                     </a>
-                @elseif ($getLanding->form == "landing-retiro")
+                @elseif ($getLanding->form == "landing/retiro/store")
                     <a class="btn btn-info" href="{{ url("landing/retiro") }}" target="_blank">
                         Ver Landing
                     </a>
