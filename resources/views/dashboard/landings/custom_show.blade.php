@@ -36,7 +36,7 @@
             class="nav-item nav-link {{ "inversiones-colaboradores" == $custom_page ? 'active' : '' }}">
             Curso Inversiones Colaboradores
         </a>
-        <a href="{{ route('dashboard.landings.custom.show', ['landing/retiro']) }}" class="nav-item nav-link {{ "
+        <a href="{{ route('dashboard.landings.custom.show', ['landing-retiro']) }}" class="nav-item nav-link {{ "
             landing-retiro"==$custom_page ? 'active' : '' }}">
             Curso de retiro
         </a>
