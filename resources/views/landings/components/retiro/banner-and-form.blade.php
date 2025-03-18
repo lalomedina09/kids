@@ -19,7 +19,7 @@
 
             <img src="{{ asset('images/landing/retiro/gifs/circulo-girando-v2.gif')}}" class="img-ilustracion-more-gif" alt="Gif Circulo Girando">
         </div>
-        <form action="{{ url('landing-retiro') }}" method="POST" class=" movil-form-center">
+        <form action="{{ url('landing/retiro/store') }}" method="POST" class=" movil-form-center">
 
             @csrf
 

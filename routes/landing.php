@@ -127,11 +127,11 @@ Route::prefix('registrogarvi')
     });
 
 Route::prefix('landing/retiro')
-->group(function () {
-    Route::get('/')
-    ->uses('RetiroController@show');
+    ->group(function () {
+        Route::get('/')
+            ->uses('RetiroController@show');
 
-    Route::post('/')
-    ->uses('RetiroController@store');
-});
+        Route::post('/store')
+            ->uses('RetiroController@store');
+    });
 

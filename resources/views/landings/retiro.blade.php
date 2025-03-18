@@ -227,12 +227,13 @@
         setInterval(changeImage, 5000);
 
         ///////
-        $('.btn.btn-dark').on('click', function(event) {
+        /*$('.btn.btn-dark').on('click', function(event) {
             event.preventDefault();
             $('html, body').animate({
                 scrollTop: $('#form-request').offset().top
-            }, 1000); // El número 1000 representa el tiempo de animación en milisegundos
-        });
+            }, 1000);
+            // El número 1000 representa el tiempo de animación en milisegundos
+        });*/
 
     </script>
 @endpush
