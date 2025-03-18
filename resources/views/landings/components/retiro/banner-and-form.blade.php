@@ -24,7 +24,7 @@
             @csrf
 
             <input type="hidden" name="interests" value="Curso de Planeación del retiro para tu equipo">
-            <input type="hidden" name="form" value="landing/retiro">
+            <input type="hidden" name="form" value="landing-retiro">
 
             <div class="row pl-2 pt-2 pb-3 font-akshar">
                 <div class="col-12 padding-custom-regis-qdp mb-2">
