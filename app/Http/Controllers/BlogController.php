@@ -13,8 +13,7 @@ class BlogController extends Controller
     public function blog(Request $request)
     {
         $this->saveAgent($request);
-        $randomCourses = Course::whereNotNull('thumbnail')->inRandomOrder()->limit(2)->get();
-
+        $randomCourses = Course::whereHas('custoMfreeVideos')->whereNotNull('thumbnail')->inRandomOrder()->limit(2)->get();
 
         $latestArticle = Article::published()->latest()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->first();
         $previousArticles = Article::published()->where('id', '!=', $latestArticle->id)
