@@ -36,7 +36,7 @@
             class="nav-item nav-link {{ "inversiones-colaboradores" == $custom_page ? 'active' : '' }}">
             Curso Inversiones Colaboradores
         </a>
-        <a href="{{ route('dashboard.landings.custom.show', ['landing-retiro']) }}" class="nav-item nav-link {{ "
+        <a href="{{ route('dashboard.landings.custom.show', ['landing/retiro']) }}" class="nav-item nav-link {{ "
             landing-retiro"==$custom_page ? 'active' : '' }}">
             Curso de retiro
         </a>
@@ -53,7 +53,7 @@
                     <a class="btn btn-info" href="{{ url("talleres/inversiones-colaboradores") }}" target="_blank">
                         Ver Landing
                     </a>
-                @elseif ($getLanding->form == "landing/retiro/store")
+                @elseif ($getLanding->form == "landing/retiro")
                     <a class="btn btn-info" href="{{ url("landing/retiro") }}" target="_blank">
                         Ver Landing
                     </a>
