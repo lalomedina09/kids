@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use Auth;
 use App\Models\Article;
+use App\Models\Bookmark;
+use App\Models\Like;
 use App\Models\Category;
 use Carbon\Carbon;
 class ArticlesController extends Controller
@@ -67,9 +69,10 @@ class ArticlesController extends Controller
         $related = Article::recommended(Auth::user())
             ->exclude($article)
             ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
+            ->orderBy('id', 'desc')
             ->limit(3)
             ->get();
-
+        //dd($related);
         $request->seoable = $article;
         $advertisingStatus = $this->advertisingStatus($article);
 
@@ -181,40 +184,56 @@ class ArticlesController extends Controller
 
     public function bookmark(Request $request, Article $article)
     {
+        //dd($article);
         $user = $request->user();
-        //dd('llega al controlador');
-        if ($user->bookmarks()->where('bookmarkable_type', 'article')->where('bookmarkable_id', $article->id)->exists()) {
-            $user->bookmarks()->where('bookmarkable_type', 'article')->where('bookmarkable_id', $article->id)->delete();
+        $bookmark = Bookmark::where('user_id', $user->id)
+            ->where('bookmarkable_type', "article")
+            ->where('bookmarkable_id', $article->id)
+            ->first();
+
+        if ($bookmark) {
+            $bookmark->delete();
             return response()->json(['message' => 'Artículo eliminado de guardados']);
         } else {
-            $user->bookmarks()->create(
-                [
-                    'bookmarkable_id' => $article->id,
-                    'bookmarkable_type' => 'article'
-                ]
-            );
+            $bookmark = new Bookmark();
+            $bookmark->bookmarkable_id = $article->id;
+            $bookmark->bookmarkable_type = "article";
+            $bookmark->user_id = $user->id;
+            $bookmark->save();
             return response()->json(['message' => 'Artículo guardado']);
         }
     }
 
     public function like(Request $request, Article $article)
     {
-        //dd('llega al controlador');
         $user = $request->user();
 
-        if ($user->likes()->where('likeable_type', 'article')->where('likeable_id', $article->id)->exists()) {
-            $user->likes()->where('likeable_type', 'article')->where('likeable_id', $article->id)->delete();
-            return response()->json(
-                ['message' => 'Me gusta eliminado']
-            );
-        } else {
-            $user->likes()->create(
-                [
-                    'likeable_id' => $article->id,
-                    'likeable_type' => 'article'
-                ]
-            );
-            return response()->json(['message' => 'Me gusta agregado']);
+        // Validate that the user is authenticated
+        if (!$user) {
+            return response()->json(['message' => 'User not authenticated'], 401);
+        }
+
+        // Check if a "like" already exists for this article by this user
+        $like = Like::where('user_id', $user->id)
+            ->where('likeable_type', "article")
+            ->where('likeable_id', $article->id)
+            ->first();
+        dd($like, $article->id, $user->id);
+        try {
+            if ($like) {
+                $like->delete();
+                return response()->json(['message' => 'Me gusta eliminado']);
+            } else {
+                $like = new Like();
+                $like->likeable_id = $article->id;
+                $like->likeable_type = 'article';
+                $like->user_id = $user->id;
+                $like->save();
+                return response()->json(['message' => 'Me gusta agregado']);
+            }
+        } catch (\Exception $e) {
+            \Log::error($e->getMessage());
+            return response()->json(['message' => 'Error al procesar la solicitud'], 500);
         }
     }
 }

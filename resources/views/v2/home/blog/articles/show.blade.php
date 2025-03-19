@@ -18,10 +18,6 @@
     @endpush
 @endif
 
-{{--<section style="background-color: #000;">
-    @include('v2.home.index.content')
-</section>--}}
-
 @include('v2.home.blog.styles')
 
 @include('v2.home.blog.articles.bar-tags-search')
@@ -29,6 +25,8 @@
 @include('v2.home.blog.articles.data-article')
 
 @include('v2.home.blog.articles.article-header')
+
+@include('v2.home.blog.articles.article-relations')
 
 @include('v2.components.modals.login', ['source' => 'blog', 'channel' => 'article'])
 @include('v2.components.modals.sign-up', ['source' => 'blog', 'channel' => 'article'])
