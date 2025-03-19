@@ -30,6 +30,8 @@
 
 @include('v2.home.blog.articles.article-header')
 
+@include('v2.components.modals.login', ['source' => 'blog', 'channel' => 'article'])
+@include('v2.components.modals.sign-up', ['source' => 'blog', 'channel' => 'article'])
 
 @include('v2.components.loading')
 @endsection

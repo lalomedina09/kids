@@ -11613,13 +11613,13 @@ input:-webkit-autofill:active {
 }
 
 .single-tags__headline {
-    color: #FF6161;
+    color: #000000;
     margin-right: 10px;
     text-transform: uppercase;
 }
 
 .single-tags__item {
-    color: #D8D8D8;
+    color: #FF6161;
 }
 
 .single-tags__item+.single-tags__item:before {

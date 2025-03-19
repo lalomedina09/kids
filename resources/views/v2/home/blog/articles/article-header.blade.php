@@ -89,7 +89,7 @@
                 <div class="single-tags">
                     <h6 class="single-tags__headline">Etiquetas:</h6>
                     @foreach($article->tags as $tag)
-                    <a href="{{ route('articles.tags.index', $tag) }}" class="single-tags__item">{{ $tag->present()->name }}</a>
+                    <a href="{{ route('articles.by.tag', $tag) }}" class="single-tags__item">{{ $tag->present()->name }}</a>
                     @endforeach
                 </div>
                 @endunless

@@ -75,12 +75,17 @@ class ArticlesController extends Controller
 
         $topTags = $this->getCategoriesTop();
 
-        #return view('articles.show')->with([
+        $user = $request->user();
+        $isBookmarked = $user ? $user->bookmarks()->where('bookmarkable_type', 'article')->where('bookmarkable_id', $article->id)->exists() : false;
+        $isLiked = $user ? $user->likes()->where('likeable_type', 'article')->where('likeable_id', $article->id)->exists() : false;
+
         return view('v2.home.blog.articles.show')->with([
             'article' => $article,
             'related' => $related,
             'advertisingStatus' => $advertisingStatus,
-            'topTags' => $topTags
+            'topTags' => $topTags,
+            'isBookmarked' => $isBookmarked,
+            'isLiked' => $isLiked
         ]);
     }
 
@@ -172,5 +177,44 @@ class ArticlesController extends Controller
             ->toArray(); // Convertir a array
 
         return $topCategories;
+    }
+
+    public function bookmark(Request $request, Article $article)
+    {
+        $user = $request->user();
+        //dd('llega al controlador');
+        if ($user->bookmarks()->where('bookmarkable_type', 'article')->where('bookmarkable_id', $article->id)->exists()) {
+            $user->bookmarks()->where('bookmarkable_type', 'article')->where('bookmarkable_id', $article->id)->delete();
+            return response()->json(['message' => 'Artículo eliminado de guardados']);
+        } else {
+            $user->bookmarks()->create(
+                [
+                    'bookmarkable_id' => $article->id,
+                    'bookmarkable_type' => 'article'
+                ]
+            );
+            return response()->json(['message' => 'Artículo guardado']);
+        }
+    }
+
+    public function like(Request $request, Article $article)
+    {
+        //dd('llega al controlador');
+        $user = $request->user();
+
+        if ($user->likes()->where('likeable_type', 'article')->where('likeable_id', $article->id)->exists()) {
+            $user->likes()->where('likeable_type', 'article')->where('likeable_id', $article->id)->delete();
+            return response()->json(
+                ['message' => 'Me gusta eliminado']
+            );
+        } else {
+            $user->likes()->create(
+                [
+                    'likeable_id' => $article->id,
+                    'likeable_type' => 'article'
+                ]
+            );
+            return response()->json(['message' => 'Me gusta agregado']);
+        }
     }
 }
