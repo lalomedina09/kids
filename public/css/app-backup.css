@@ -3217,7 +3217,7 @@ body {
     font-size: 20px;
     font-weight: normal;
     line-height: 1.5;
-    color: #212529;
+    color: #000000;
     text-align: left;
 }
 
@@ -3255,6 +3255,24 @@ html[xmlns] .flexslider .slides {
 
 .no-js .flexslider .slides>li:first-child {
     display: block;
+}
+
+
+
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    color: #6c757d;
+    text-align: left;
+    caption-side: bottom;
+}
+
+th {
+    text-align: inherit;
 }
 
 
@@ -9777,13 +9795,12 @@ div.overlay {
 }
 
 .single__content blockquote a {
-    color: #FF6161;
-    text-decoration: none;
+    color: #FF6161 !important;
 }
 
 .single__content a {
     color: #FF6161;
-    text-decoration: none;
+    text-decoration: underline !important;
 }
 
 @media (min-width: 800px) {
