@@ -11934,3 +11934,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     max-width: 100%;
     height: auto;
 }
+
+.single__content h3 span {
+    color: #000000 !important;
+}
+
+.single__content h5 span {
+    color: #000000 !important;
+}
