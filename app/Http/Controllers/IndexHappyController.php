@@ -44,4 +44,10 @@ class IndexHappyController extends Controller
         $user = request()->user();
         return view('index-happy.company-one', compact('codeConcept', 'user'));
     }
+
+    public function client($client)
+    {
+        $user = request()->user();
+        return view('index-happy.client', compact('client', 'user'));
+    }
 }

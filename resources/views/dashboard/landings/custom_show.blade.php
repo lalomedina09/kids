@@ -43,6 +43,7 @@
     </ul>
 
     <div class="table-responsive">
+
         @if ($getLanding)
             <div class="text-right">
                 @if ($getLanding->form == "finanzas-personales-para-empleados")
@@ -69,6 +70,13 @@
             </div>
 
         @endif
+        <div class="">
+            @if ($custom_page == "landing-retiro")
+                <a class="btn btn-info" href="{{ url("landing/retiro") }}" target="_blank">
+                    Ver Landing
+                </a>
+            @endif
+        </div>
         <br>
         <table class="table table-hover table-bordered" data-order='[[ 0, "asc" ]]'>
             <thead>

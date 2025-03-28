@@ -9,10 +9,33 @@
 
 /**************************************************************/
 
+@media (min-width: 360px) and (max-width: 915px) {
+
+    .btn-register {
+        margin-right: 3rem;
+    }
 
 
+    .register-btn {
+        margin-right: 2rem;
+    }
 
-@media (max-width: 360px) and (max-width: 480px) {
+    .puntos-animados {
+        margin-left: -165.5;
+        position: absolute;
+        margin-top: -3rem;
+    }
+
+    .texto-animado {
+        margin-left: -11rem;
+        position: absolute;
+        margin-top: 0rem;
+    }
+
+    .nube-flotante {
+        margin-left: 10rem;
+    }
+
 
     .register-btn {
         margin-left: -2rem;
@@ -146,6 +169,7 @@
 @media (max-width: 480px) {
 
 
+
     .profile-menu {
         right: 10px;
     }
@@ -196,7 +220,7 @@
     }
 
     .btn-dark {
-        margin-left: -0.5rem;
+        margin-left: -1.5rem;
         order: 2;
     }
 
@@ -214,7 +238,6 @@
         font-size: 2.5rem;
         line-height: 49.6px;
         margin-right: 1rem;
-        margin-bottom: 4rem;
     }
 
 
@@ -261,14 +284,10 @@
     .lasolucin {
         font-size: 2.6rem;
     }
-
-
 }
 
 
-
 @media (max-width: 550px) {
-
 
 
     .profile-menu {
@@ -307,6 +326,7 @@
 /* Estilos para dispositivos pequeños (móviles en modo vertical) */
 
 @media (min-width: 481px) and (max-width: 576px) {
+
 
 
     .profile-menu {
@@ -437,6 +457,7 @@
 @media (min-width: 577px) and (max-width: 768px) {
 
 
+
     .profile-menu {
         right: 10px;
     }
@@ -455,7 +476,6 @@
 
     .navbar .navbar-brand img {
         height: 34px;
-        margin-left: 8rem;
     }
 
     .content {
@@ -794,7 +814,7 @@
     /******************Lading Consultoria - Seccion de metodologia *****************/
     .base-image {
         top: 70px;
-        left: 109px;
+        left: 158px;
         width: 230px;
         height: 230px;
         z-index: 1;
@@ -802,7 +822,7 @@
 
     .overlay-image {
         top: 85px;
-        left: 123px;
+        left: 173px;
         width: 200px;
         height: 200px;
         z-index: 2;
@@ -810,11 +830,11 @@
     }
 
     /********************** Empieza seccion de contacto ********************************/
-    /* .img-ilus-contact {
+    .img-ilus-contact {
         width: 114%;
         margin-top: 10rem;
         margin-left: -5rem;
-    } */
+    }
 
     /********************** Termina seccion de contacto ********************************/
 
@@ -972,6 +992,7 @@
 
 /* @media screen and (max-width: 768px) {
 
+
     .base-image {
         top: 75px;
         left: 220px;
@@ -1046,7 +1067,6 @@
 
     .navbar .navbar-brand img {
         height: 35px;
-        margin-left: 6rem;
     }
 
     .content {
@@ -1493,14 +1513,8 @@
 
     /********************** Empieza seccion de contacto ********************************/
 
-    .btn-enviar {
-        margin-left: -9.5rem;
-        margin-top: 0rem;
-    }
-
     .img-ilus-contact {
         margin-left: -2rem;
-        margin-top: 17rem;
     }
 
     .parrafo-banner {
@@ -1510,6 +1524,8 @@
 
     /********************** Termina seccion de contacto ********************************/
 }
+
+
 
 
 /* Estilos para dispositivos extra grandes (pantallas de escritorio grandes) */
@@ -1821,11 +1837,6 @@
     }
 
     /********************** Empieza seccion de contacto ********************************/
-
-    .btn-enviar{
-        margin-top: -9rem;
-    }
-
     .img-ilus-contact {
         width: 90%;
         margin-top: 11rem;
@@ -1846,6 +1857,11 @@
 /* Estilos para dispositivos ultra extra grandes (pantallas de escritorio ultra grandes) */
 
 @media (min-width: 1441px) and (max-width: 1992px) {
+
+    .nube-flotante {
+        margin-left: -18rem;
+        position: relative;
+    }
 
     .margen-boton {
         margin-left: -88px;
@@ -1891,12 +1907,11 @@
 
     .navbar .btn-dark {
         font-size: 17px;
-        margin-right: -3rem;
     }
 
     .navbar .navbar-brand img {
         height: 36px;
-        margin-left: -2.5rem;
+        margin-left: -2rem;
     }
 
     .content {
@@ -1934,7 +1949,7 @@
     }
 
     .margin-title-solution {
-        margin-top: 2.4em;
+        margin-top: 7.4em;
         margin-bottom: 4rem;
     }
 
@@ -1983,20 +1998,6 @@
     }
 
     /********************** Empieza seccion de contacto ********************************/
-
-    .btn-enviar {
-        margin-top: -9rem;
-    }
-
-    .puntos-animados {
-        margin-left: 0.5rem;
-    }
-
-    .nube-flotante{
-        margin-left: -18rem;
-        position: relative;
-
-    }
     .img-ilus-contact {
         width: 93%;
         margin-top: 10rem;
@@ -2148,10 +2149,6 @@
     }
 
     /********************** Empieza seccion de contacto ********************************/
-    .btn-enviar {
-        margin-top: -9rem;
-    }
-
     .img-ilus-contact {
         width: 90%;
         margin-top: 11rem;
@@ -2171,19 +2168,8 @@
 
 
 @media (min-width: 360px) and (max-width: 480px) {
-    .img-ilus-contact {
-        margin-top: 10rem;
-    }
 
-    .btn-enviar {
-        margin-left: 0rem;
-    }
-
-    .puntos-animados {
-        margin-left: 1.5rem;
-    }
-
-    .nube-flotante{
+    .nube-flotante {
         margin-left: -13rem;
         position: absolute;
     }
@@ -2195,6 +2181,10 @@
     /* Ocultar el H1 original */
     .original-heading {
         display: none;
+    }
+
+    .img-ilus-contact {
+        margin-top: 10rem;
     }
 
     /* Mostrar el H1 alternativo */
@@ -2707,26 +2697,3 @@
     }
 
 }
-
-/*
-@media (min-width: 600px) and (max-width: 960px) {
-    .nube-flotante {
-        position: relative;
-    } */
-
-
-
-    /* .nube-flotante {
-        margin-top: 3rem;
-        margin-left: -15rem;
-        position: absolute;
-    }
-
-    .texto-animado {
-        margin-left: -10rem;
-    }
-
-    .puntos-animados {
-        margin-left: 0.5rem;
-    } */
-

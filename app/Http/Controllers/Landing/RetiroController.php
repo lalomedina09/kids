@@ -31,6 +31,7 @@ class RetiroController extends Controller
 
     public function store(Request $request)
     {
+
         $params = $request->validate([
             'name' => 'required|string|min:1|max:255',
             'last_name' => 'required|string|min:1|max:255',

@@ -152,6 +152,10 @@ Route::prefix('indice-de-felicidad')
     Route::get('/gestion-de-recursos')
         ->uses('IndexHappyController@resourceManagement')
         ->name('indice.happy.resource.management');
+
+    Route::get('/company/{client}')
+        ->uses('IndexHappyController@client')
+        ->name('indice.happy.client');
 });
 
 
@@ -475,8 +479,24 @@ Route::get('/boletin')
 */
 
 Route::get('/blog')
-    ->uses('HomeController@blog')
+    ->uses('BlogController@blog')
     ->name('blog');
+
+Route::get('/articles/search')
+    ->uses('BlogController@search')
+    ->name('articles.search');
+
+Route::post('/articles/search/full')
+    ->uses('BlogController@searchFull')
+    ->name('articles.search.full');
+
+Route::get('/articles/tag/{slug}')
+    ->uses('BlogController@getByTag')
+    ->name('articles.by.tag');
+
+Route::get('/articles/word/{slug}')
+    ->uses('BlogController@getByWord')
+    ->name('articles.by.word');
 
 Route::prefix('articulos')
     ->group(function () {
