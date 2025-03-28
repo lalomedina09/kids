@@ -12,4 +12,5 @@
     <!-- Columnas para pantallas más grandes -->
     @include('v2.components.carousel.desktop-solutions')
     <br><br><br><br>
+    
 </div>
