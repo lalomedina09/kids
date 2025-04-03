@@ -6,20 +6,20 @@
 <div class="container mt-5">
     <!-- Error Messages -->
     @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
 
     <!-- Success Message -->
     @if (session('success'))
-        <div class="alert alert-success font-akshar">
-            {{ session('success') }}
-        </div>
+    <div class="alert alert-success font-akshar">
+        {{ session('success') }}
+    </div>
     @endif
 
     <form action="{{ route('qdplay.payments.payformStore') }}" method="POST" id="payment-form">
@@ -35,8 +35,8 @@
                         Membresía: <strong>Querido Dinero Play</strong>
                     </h2>
                     <p class="font-akshar text-muted">
-                        Suscripción que incluye acceso a cursos online hechos por expertos financieros y certificados por
-                        curso completado.
+                        Suscripción que incluye acceso a cursos online hechos por expertos financieros y certificados
+                        por curso completado.
                     </p>
                     <!-- Coupon Section -->
                     <div class="mt-3">
@@ -46,7 +46,7 @@
                                 placeholder="Ingresa tu código">
                             <button type="button" class="btn btn-dark font-akshar" id="apply-coupon">Aplicar</button>
                         </div>
-                        <div id="coupon-message font-akshar" class="mt-2"></div>
+                        <div id="coupon-message" class="font-akshar mt-2"></div>
                     </div>
                     <hr>
                     <ul class="font-akshar mt-3">
@@ -66,14 +66,16 @@
                     <!-- Virtual Card -->
                     <div class="virtual-card mb-4">
                         <div class="card-inner">
+                            <div class="card-chip"></div>
                             <div class="card-number font-akshar">
-                                Número: **** **** **** <span id="card-last4">0000</span>
+                                Número: <span id="card-number-display">**** **** **** ****</span>
                             </div>
                             <div class="card-expiry mt-2 font-akshar">
                                 Expira: <span id="card-expiry">MM/AA</span>
                             </div>
                             <div class="card-holder mt-2 font-akshar">
-                                Titular: {{ Auth::user()->name }} {{ Auth::user()->last_name }}
+                                Titular: <span id="card-holder-name">{{ Auth::user()->name }} {{ Auth::user()->last_name
+                                    }}</span>
                             </div>
                         </div>
                     </div>
@@ -87,7 +89,8 @@
                         Total: <strong id="total-amount">${{ $concept->price }} MXN</strong>
                     </h2>
                     <p class="my-4 font-akshar">
-                        Los cargos se realizarán de forma recurrente.
+                        *Los cargos se realizarán de forma recurrente. <br>
+                        *Cancela cuando quieras
                     </p>
                     <button type="submit" class="btn btn-dark font-akshar mt-4 w-100">Suscribirme</button>
                 </div>
@@ -106,7 +109,6 @@
             .text-muted {
                 font-size: 0.9rem;
                 color: #6c757d;
-                /* Bootstrap's muted text color */
             }
         </style>
     </form>
@@ -114,6 +116,7 @@
 @endsection
 
 @section('scripts')
+
 <script src="https://js.stripe.com/v3/"></script>
 <style>
     .hover-card {
@@ -126,24 +129,14 @@
     }
 
     .virtual-card {
-    background: linear-gradient(135deg, #5c6366, #1c1f2d);
-    border-radius: 10px;
-    padding: 20px;
-    color: white;
-    height: 120px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    }
-
-    .card-number {
-        font-size: 1.1rem; /* Reducido ligeramente para que quepa todo */
-        margin-bottom: 5px;
-    }
-
-    .card-expiry, .card-holder {
-        font-size: 0.9rem; /* Tamaño más pequeño para ajustar el contenido */
-        margin-bottom: 5px;
+        background: linear-gradient(135deg, #5c6366, #1c1f2d);
+        border-radius: 10px;
+        padding: 20px;
+        color: white;
+        height: 150px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
     }
 
     .virtual-card.active {
@@ -155,13 +148,27 @@
         z-index: 1;
     }
 
+    .card-chip {
+        width: 40px;
+        height: 30px;
+        background: #d4af37;
+        border-radius: 5px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
     .card-number {
         font-size: 1.2rem;
+        margin-top: 50px;
         margin-bottom: 10px;
     }
 
-    .card-expiry {
+    .card-expiry,
+    .card-holder {
         font-size: 1rem;
+        margin-bottom: 5px;
     }
 
     .title-card {
@@ -197,16 +204,19 @@
     card.mount('#card-element');
 
     const virtualCard = document.querySelector('.virtual-card');
-    const cardLast4 = document.getElementById('card-last4');
+    const cardNumberDisplay = document.getElementById('card-number-display');
     const cardExpiry = document.getElementById('card-expiry');
+    const cardHolderName = document.getElementById('card-holder-name');
     const totalAmount = document.getElementById('total-amount');
     const couponCodeInput = document.getElementById('coupon-code');
     const applyCouponButton = document.getElementById('apply-coupon');
     const couponMessage = document.getElementById('coupon-message');
 
-    // Update virtual card on card input change
+    // Debug and update virtual card
     card.on('change', function (event) {
+        console.log('Card change event:', event); // Full event log
         const displayError = document.getElementById('card-errors');
+
         if (event.error) {
             displayError.textContent = event.error.message;
             virtualCard.classList.remove('active');
@@ -214,15 +224,21 @@
             displayError.textContent = '';
             virtualCard.classList.add('active');
 
-            // Actualizar fecha de vencimiento tan pronto como se ingrese
+            // Update expiration date
+            console.log('expMonth:', event.expMonth, 'expYear:', event.expYear); // Debug specific fields
             if (event.expMonth && event.expYear) {
                 const expiry = `${event.expMonth.toString().padStart(2, '0')}/${event.expYear.toString().slice(-2)}`;
+                console.log('Updating expiry to:', expiry); // Confirm update
                 cardExpiry.textContent = expiry;
+            } else {
+                cardExpiry.textContent = 'MM/AA';
             }
 
-            // Actualizar últimos 4 dígitos solo cuando el campo esté completo
+            // Card number placeholder
             if (event.complete) {
-                cardLast4.textContent = '0000'; // Placeholder hasta crear PaymentMethod
+                cardNumberDisplay.textContent = '**** **** **** ****'; // Placeholder until submission
+            } else {
+                cardNumberDisplay.textContent = '**** **** **** ****';
             }
         }
     });
@@ -283,8 +299,9 @@
             document.getElementById('card-errors').textContent = error.message;
             virtualCard.classList.remove('active');
         } else {
-            // Actualizar los últimos 4 dígitos reales después de crear el PaymentMethod
-            cardLast4.textContent = paymentMethod.card.last4;
+            console.log('PaymentMethod created:', paymentMethod);
+            cardNumberDisplay.textContent = `**** **** **** ${paymentMethod.card.last4}`;
+            cardExpiry.textContent = `${paymentMethod.card.exp_month.toString().padStart(2, '0')}/${paymentMethod.card.exp_year.toString().slice(-2)}`;
 
             const hiddenInput = document.createElement('input');
             hiddenInput.setAttribute('type', 'hidden');
