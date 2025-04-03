@@ -7,31 +7,34 @@ use Illuminate\Support\Facades\Auth;
 use Stripe\Stripe;
 use Stripe\Subscription as StripeSubscription;
 use Stripe\Customer;
+use QD\QDPlay\Models\Concept;
 
 class PaymentsController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
-        Stripe::setApiKey(config('services.stripe.secret'));
+        Stripe::setApiKey(config('services.stripe.secret_key'));
     }
 
-    public function form()
+    public function form($code)
     {
-        return view('v2.home.payments.index');
+        $concept = Concept::where('code',$code)->first();
+
+        return view('v2.home.payments.index', compact('concept'));
     }
 
-    public function subscribe(Request $request)
+    public function subscribeSave(Request $request)
     {
         $user = Auth::user();
-        $plan = $request->input('plan');
         $paymentMethod = $request->input('payment_method');
+        $coupon = $request->input('coupon'); // O usa 'TESTCOUPON' si sigues probando con hardcode
+        $plan = $request->input('plan_price');
 
-        // Usa los IDs reales de Stripe
         $plans = [
-            'monthly' => 'price_1R98qV4QzCg0iCy7uRvwanwp',   // Reemplaza con tu ID real
-            'semiannual' => 'price_1Ndef456xyz', // Reemplaza con tu ID real
-            'annual' => 'price_1Nghi789xyz',    // Reemplaza con tu ID real
+            'monthly' => 'price_1R9Csk4QzCg0iCy7d2jSTO9a',
+            'semiannual' => 'price_1Ndef456xyz',
+            'annual' => 'price_1Nghi789xyz',
         ];
 
         if (!array_key_exists($plan, $plans)) {
@@ -39,22 +42,35 @@ class PaymentsController extends Controller
         }
 
         try {
-            // Crear cliente en Stripe
-            $customer = Customer::create([
+            // Crear cliente en Stripe directamente sin guardar en DB
+            $customer = \Stripe\Customer::create([
                 'email' => $user->email,
                 'payment_method' => $paymentMethod,
                 'invoice_settings' => ['default_payment_method' => $paymentMethod],
             ]);
 
-            // Crear suscripción
-            $subscription = StripeSubscription::create([
+            // Crear suscripción usando el ID del cliente recién creado
+            $subscription = \Stripe\Subscription::create([
                 'customer' => $customer->id,
                 'items' => [['price' => $plans[$plan]]],
+                'coupon' => $coupon ?: null,
             ]);
 
-            return redirect()->route('dashboard')->with('success', "Suscripción creada con éxito. ID: {$subscription->id}");
+            return redirect()->route('payments.v2',[ 'id' => 'coin'])->with('success', "Pago realizado con éxito. ID: {$subscription->id}");
         } catch (\Exception $e) {
+            \Log::error('Subscription failed: ' . $e->getMessage());
             return redirect()->back()->withErrors(['payment' => $e->getMessage()]);
+        }
+    }
+
+    public function validateCoupon(Request $request)
+    {
+        $coupon = $request->input('coupon');
+        try {
+            $stripeCoupon = \Stripe\Coupon::retrieve($coupon);
+            return response()->json(['valid' => true, 'discount' => $stripeCoupon->percent_off]);
+        } catch (\Exception $e) {
+            return response()->json(['valid' => false]);
         }
     }
 }

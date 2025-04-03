@@ -1199,4 +1199,8 @@ google/callback-meet
             Route::post('/store')
                 ->uses('PaymentsController@subscribeSave')
                 ->name('subscribe');
+
+            Route::post('/validate-coupon')
+                ->uses('PaymentsController@validateCoupon')
+                ->name('validate-coupon');
     });

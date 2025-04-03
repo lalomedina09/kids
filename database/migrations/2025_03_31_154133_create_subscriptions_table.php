@@ -15,7 +15,7 @@ class CreateSubscriptionsTable extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedBigInteger('user_id');
+            $table->integer('user_id')->nullable()->unsigned()->index();
             $table->string('stripe_id')->unique();
             $table->string('stripe_status');
             $table->string('stripe_price');
