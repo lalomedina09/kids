@@ -16,7 +16,9 @@ class FormContact extends Model
         'subject',
         'message',
         'company',
-        'address'
+        'address',
+        'status',
+        'notes'
     ];
 }
 ?>

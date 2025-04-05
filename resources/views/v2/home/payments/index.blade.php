@@ -28,17 +28,12 @@
         <input type="hidden" name="conceptCode" value="{{ $concept->code }}">
         <!-- Payment Section -->
         <div class="row justify-content-center equal-height-cards">
+            <div class="col-md-12">
+                <h1 class="display-4 text-center font-beley my-4">Activa tu Membresía QD Play</h1>
+            </div>
             <div class="col-md-6">
-                <div class="card shadow-sm p-4">
-                    <h2 class="mb-3 font-akshar title-card">Resumen de compra</h2>
-                    <h2 class="font-akshar label-card">
-                        Membresía: <strong>Querido Dinero Play</strong>
-                    </h2>
-                    <p class="font-akshar text-muted">
-                        Suscripción que incluye acceso a cursos online hechos por expertos financieros y certificados
-                        por curso completado.
-                    </p>
-                    <!-- Coupon Section -->
+                <div class="card shadow-sm p-4 w-100">
+                    <h2 class="mb-3 font-akshar title-card">Ingresa tus datos de pago</h2>
                     <div class="mt-3">
                         <label for="coupon-code" class="font-akshar label-card mb-2">Código de descuento</label>
                         <div class="input-group">
@@ -46,53 +41,67 @@
                                 placeholder="Ingresa tu código">
                             <button type="button" class="btn btn-dark font-akshar" id="apply-coupon">Aplicar</button>
                         </div>
-                        <div id="coupon-message" class="font-akshar mt-2"></div>
                     </div>
+
+                    <label for="card-element" class="form-label font-akshar mt-4">
+                        <h2 class="label-card">Datos de la tarjeta</h2>
+                    </label>
+                    <div id="card-element" class="form-control"></div>
+                    <div id="card-errors" class="text-danger mt-2"></div>
+
                     <hr>
                     <ul class="font-akshar mt-3">
                         <li class="mb-2">* IVA Incluido en el total.</li>
+                        <li class="mb-2">* Cancela cuando quieras.</li>
                         <li class="mb-2">* No se aplican comisiones extra.</li>
                         <li class="mb-2">* Los montos pagados no son reembolsables.</li>
+                        <li class="mb-2">*Los cargos se realizarán de forma recurrente.</li>
                         <li class="mb-2">* Si es un regalo, una membresía no es autorenovable.</li>
-                        <li class="mb-2">* Al hacer clic en “Suscribirme” acepta nuestro Contrato de Prestación de
-                            Servicios.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="col-md-6">
-                <div class="card shadow-sm p-4 w-100">
-                    <h2 class="mb-3 font-akshar title-card">Ingresa tus datos de pago</h2>
-                    <!-- Virtual Card -->
-                    <div class="virtual-card mb-4">
-                        <div class="card-inner">
-                            <div class="card-chip"></div>
-                            <div class="card-number font-akshar">
-                                Número: <span id="card-number-display">**** **** **** ****</span>
-                            </div>
-                            <div class="card-expiry mt-2 font-akshar">
-                                Expira: <span id="card-expiry">MM/AA</span>
-                            </div>
-                            <div class="card-holder mt-2 font-akshar">
-                                Titular: <span id="card-holder-name">{{ Auth::user()->name }} {{ Auth::user()->last_name
-                                    }}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Stripe Card Field -->
-                    <label for="card-element" class="form-label font-akshar">
-                        <h2 class="label-card">Datos de la tarjeta</h2>
-                    </label>
-                    <div id="card-element" class="form-control"></div>
-                    <div id="card-errors" class="text-danger mt-2"></div>
-                    <h2 class="font-akshar label-card mt-3">
-                        Total: <strong id="total-amount">${{ $concept->price }} MXN</strong>
-                    </h2>
-                    <p class="my-4 font-akshar">
-                        *Los cargos se realizarán de forma recurrente. <br>
-                        *Cancela cuando quieras
+                <div class="card shadow-sm p-4">
+                    <h2 class="mb-3 font-akshar title-card">Resumen de compra</h2>
+                    <table class="table font-akshar">
+                        <tbody>
+                            <tr>
+                                <td>Membresía: <span class="fw-bold">{{ $concept->name }}</span></td>
+                                <td>${{ $concept->price }} MXN</td>
+                            </tr>
+                            <tr id="discount-row">
+                                <td>Descuento aplicado</td>
+                                <td id="discount-amount">-$0 MXN</td>
+                            </tr>
+                            <tr class="total">
+                                <td>Total a pagar</td>
+                                <td class="fw-bold" id="total-amount">${{ $concept->price }} MXN</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="coupon-message" class="font-akshar mt-2"></div> <!-- Moved here -->
+
+                    <hr>
+                    <h2 class="font-akshar label-card">Beneficios de la membresía</h2>
+                    <ul class="font-akshar mt-1">
+                        <li class="mb-2">✅ Acceso ilimitado al contenido QD Play.</li>
+                        <li class="mb-2">✅ Insignias por categorías.</li>
+                        <li class="mb-2">✅ Certificados al terminar los cursos.</li>
+                        <li class="mb-2">✅ Acceso a la comunidad QD Play.</li>
+                        <li class="mb-2">✅ Acceso a rutas de aprendizaje.</li>
+                    </ul>
+                    <hr>
+
+                    <button type="submit" class="btn btn-dark font-akshar mt-4 w-100">
+                        Confirmar y suscribirme
+                    </button>
+
+                    <p class="text-center secure-text">
+                        🔒 Pago 100% seguro con encriptación SSL<br>
+                        Al hacer clic, aceptas los <a href="{{ url('terminos-y-condiciones')}}">términos y
+                            condiciones</a>.
                     </p>
-                    <button type="submit" class="btn btn-dark font-akshar mt-4 w-100">Suscribirme</button>
                 </div>
             </div>
         </div>
@@ -110,13 +119,19 @@
                 font-size: 0.9rem;
                 color: #6c757d;
             }
+
+            .secure-text {
+                font-size: 0.9rem;
+                color: #6c757d;
+                font-family: 'Akshar', sans-serif;
+                margin-top: 10px;
+            }
         </style>
     </form>
 </div>
 @endsection
 
 @section('scripts')
-
 <script src="https://js.stripe.com/v3/"></script>
 <style>
     .hover-card {
@@ -208,40 +223,13 @@
     const cardExpiry = document.getElementById('card-expiry');
     const cardHolderName = document.getElementById('card-holder-name');
     const totalAmount = document.getElementById('total-amount');
+    const discountAmount = document.getElementById('discount-amount');
     const couponCodeInput = document.getElementById('coupon-code');
     const applyCouponButton = document.getElementById('apply-coupon');
     const couponMessage = document.getElementById('coupon-message');
 
-    // Debug and update virtual card
-    card.on('change', function (event) {
-        console.log('Card change event:', event); // Full event log
-        const displayError = document.getElementById('card-errors');
-
-        if (event.error) {
-            displayError.textContent = event.error.message;
-            virtualCard.classList.remove('active');
-        } else {
-            displayError.textContent = '';
-            virtualCard.classList.add('active');
-
-            // Update expiration date
-            console.log('expMonth:', event.expMonth, 'expYear:', event.expYear); // Debug specific fields
-            if (event.expMonth && event.expYear) {
-                const expiry = `${event.expMonth.toString().padStart(2, '0')}/${event.expYear.toString().slice(-2)}`;
-                console.log('Updating expiry to:', expiry); // Confirm update
-                cardExpiry.textContent = expiry;
-            } else {
-                cardExpiry.textContent = 'MM/AA';
-            }
-
-            // Card number placeholder
-            if (event.complete) {
-                cardNumberDisplay.textContent = '**** **** **** ****'; // Placeholder until submission
-            } else {
-                cardNumberDisplay.textContent = '**** **** **** ****';
-            }
-        }
-    });
+    // Original price from the concept
+    const originalPrice = {{ $concept->price }};
 
     // Handle coupon application
     applyCouponButton.addEventListener('click', async function () {
@@ -268,18 +256,30 @@
 
             const result = await response.json();
             if (result.valid) {
-                const discount = result.discount || 0;
-                const originalPrice = {{ $concept->price }};
-                const newPrice = discount > 0 ? (originalPrice - (originalPrice * discount / 100)) : originalPrice;
+                const discount = result.discount || 0; // Discount percentage
+                const discountValue = originalPrice * (discount / 100); // Calculate discount amount
+                const newPrice = originalPrice - discountValue;
+
+                // Update table
+                discountAmount.textContent = `-$${discountValue.toFixed(2)} MXN`;
                 totalAmount.textContent = `$${newPrice.toFixed(2)} MXN`;
+
+                // Success message
                 couponMessage.textContent = '¡Cupón aplicado con éxito!';
                 couponMessage.style.color = '#28a745';
             } else {
+                // Reset table if coupon is invalid
+                discountAmount.textContent = '-$0 MXN';
+                totalAmount.textContent = `$${originalPrice.toFixed(2)} MXN`;
+
+                // Error message
                 couponMessage.textContent = 'Código inválido o expirado.';
                 couponMessage.style.color = '#dc3545';
             }
         } catch (error) {
             console.error('Error validating coupon:', error);
+            discountAmount.textContent = '-$0 MXN';
+            totalAmount.textContent = `$${originalPrice.toFixed(2)} MXN`;
             couponMessage.textContent = 'Error al validar el cupón.';
             couponMessage.style.color = '#dc3545';
         }
@@ -297,12 +297,7 @@
 
         if (error) {
             document.getElementById('card-errors').textContent = error.message;
-            virtualCard.classList.remove('active');
         } else {
-            console.log('PaymentMethod created:', paymentMethod);
-            cardNumberDisplay.textContent = `**** **** **** ${paymentMethod.card.last4}`;
-            cardExpiry.textContent = `${paymentMethod.card.exp_month.toString().padStart(2, '0')}/${paymentMethod.card.exp_year.toString().slice(-2)}`;
-
             const hiddenInput = document.createElement('input');
             hiddenInput.setAttribute('type', 'hidden');
             hiddenInput.setAttribute('name', 'payment_method');
@@ -322,5 +317,4 @@
     });
 });
 </script>
-
 @endsection
