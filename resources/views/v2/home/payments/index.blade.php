@@ -41,6 +41,12 @@
                                 placeholder="Ingresa tu código">
                             <button type="button" class="btn btn-dark font-akshar" id="apply-coupon">Aplicar</button>
                         </div>
+                        <div id="coupon-spinner" class="d-none mt-2 text-center">
+                            <div class="spinner-border text-dark" role="status">
+                                <span class="visually-hidden"></span>
+                            </div>
+                            <p class="font-akshar mt-1">Espere un momento</p>
+                        </div>
                     </div>
 
                     <label for="card-element" class="form-label font-akshar mt-4">
@@ -80,7 +86,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div id="coupon-message" class="font-akshar mt-2"></div> <!-- Moved here -->
+                    <div id="coupon-message" class="font-akshar mt-2"></div>
 
                     <hr>
                     <h2 class="font-akshar label-card">Beneficios de la membresía</h2>
@@ -93,9 +99,15 @@
                     </ul>
                     <hr>
 
-                    <button type="submit" class="btn btn-dark font-akshar mt-4 w-100">
+                    <button type="submit" class="btn btn-dark font-akshar mt-4 w-100" id="submit-button">
                         Confirmar y suscribirme
                     </button>
+                    <div id="payment-spinner" class="d-none mt-2 text-center">
+                        <div class="spinner-border text-dark" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        <p class="font-akshar mt-1">Espere mientras procesamos el pago</p>
+                    </div>
 
                     <p class="text-center secure-text">
                         🔒 Pago 100% seguro con encriptación SSL<br>
@@ -200,121 +212,135 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-    const stripe = Stripe('{{ config('services.stripe.public_key') }}');
-    const elements = stripe.elements();
-    const card = elements.create('card', {
-        style: {
-            base: {
-                fontSize: '16px',
-                color: '#32325d',
-                '::placeholder': {
-                    color: '#aab7c4',
+        const stripe = Stripe('{{ config('services.stripe.public_key') }}');
+        const elements = stripe.elements();
+        const card = elements.create('card', {
+            style: {
+                base: {
+                    fontSize: '16px',
+                    color: '#32325d',
+                    '::placeholder': {
+                        color: '#aab7c4',
+                    },
+                },
+                invalid: {
+                    color: '#dc3545',
                 },
             },
-            invalid: {
-                color: '#dc3545',
-            },
-        },
-    });
-    card.mount('#card-element');
+        });
+        card.mount('#card-element');
 
-    const virtualCard = document.querySelector('.virtual-card');
-    const cardNumberDisplay = document.getElementById('card-number-display');
-    const cardExpiry = document.getElementById('card-expiry');
-    const cardHolderName = document.getElementById('card-holder-name');
-    const totalAmount = document.getElementById('total-amount');
-    const discountAmount = document.getElementById('discount-amount');
-    const couponCodeInput = document.getElementById('coupon-code');
-    const applyCouponButton = document.getElementById('apply-coupon');
-    const couponMessage = document.getElementById('coupon-message');
+        const totalAmount = document.getElementById('total-amount');
+        const discountAmount = document.getElementById('discount-amount');
+        const couponCodeInput = document.getElementById('coupon-code');
+        const applyCouponButton = document.getElementById('apply-coupon');
+        const couponMessage = document.getElementById('coupon-message');
+        const couponSpinner = document.getElementById('coupon-spinner');
+        const submitButton = document.getElementById('submit-button');
+        const paymentSpinner = document.getElementById('payment-spinner');
 
-    // Original price from the concept
-    const originalPrice = {{ $concept->price }};
+        // Original price from the concept
+        const originalPrice = {{ $concept->price }};
 
-    // Handle coupon application
-    applyCouponButton.addEventListener('click', async function () {
-        const coupon = couponCodeInput.value.trim();
-        if (!coupon) {
-            couponMessage.textContent = 'Por favor, ingresa un código válido.';
-            couponMessage.style.color = '#dc3545';
-            return;
-        }
-
-        try {
-            const response = await fetch("{{ route('validate-coupon') }}", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                },
-                body: JSON.stringify({ coupon: coupon }),
-            });
-
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+        // Handle coupon application with spinner
+        applyCouponButton.addEventListener('click', async function () {
+            const coupon = couponCodeInput.value.trim();
+            if (!coupon) {
+                couponMessage.textContent = 'Por favor, ingresa un código válido.';
+                couponMessage.style.color = '#dc3545';
+                return;
             }
 
-            const result = await response.json();
-            if (result.valid) {
-                const discount = result.discount || 0; // Discount percentage
-                const discountValue = originalPrice * (discount / 100); // Calculate discount amount
-                const newPrice = originalPrice - discountValue;
+            // Show spinner
+            couponSpinner.classList.remove('d-none');
+            applyCouponButton.disabled = true;
 
-                // Update table
-                discountAmount.textContent = `-$${discountValue.toFixed(2)} MXN`;
-                totalAmount.textContent = `$${newPrice.toFixed(2)} MXN`;
+            try {
+                const response = await fetch("{{ route('validate-coupon') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    },
+                    body: JSON.stringify({ coupon: coupon }),
+                });
 
-                // Success message
-                couponMessage.textContent = '¡Cupón aplicado con éxito!';
-                couponMessage.style.color = '#28a745';
-            } else {
-                // Reset table if coupon is invalid
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const result = await response.json();
+                if (result.valid) {
+                    const discount = result.discount || 0; // Discount percentage
+                    const discountValue = originalPrice * (discount / 100); // Calculate discount amount
+                    const newPrice = originalPrice - discountValue;
+
+                    // Update table
+                    discountAmount.textContent = `-$${discountValue.toFixed(2)} MXN`;
+                    totalAmount.textContent = `$${newPrice.toFixed(2)} MXN`;
+
+                    // Success message
+                    couponMessage.textContent = '¡Cupón aplicado con éxito!';
+                    couponMessage.style.color = '#28a745';
+                } else {
+                    // Reset table if coupon is invalid
+                    discountAmount.textContent = '-$0 MXN';
+                    totalAmount.textContent = `$${originalPrice.toFixed(2)} MXN`;
+
+                    // Error message
+                    couponMessage.textContent = 'Código inválido o expirado.';
+                    couponMessage.style.color = '#dc3545';
+                }
+            } catch (error) {
+                console.error('Error validating coupon:', error);
                 discountAmount.textContent = '-$0 MXN';
                 totalAmount.textContent = `$${originalPrice.toFixed(2)} MXN`;
-
-                // Error message
-                couponMessage.textContent = 'Código inválido o expirado.';
+                couponMessage.textContent = 'Error al validar el cupón.';
                 couponMessage.style.color = '#dc3545';
+            } finally {
+                // Hide spinner
+                couponSpinner.classList.add('d-none');
+                applyCouponButton.disabled = false;
             }
-        } catch (error) {
-            console.error('Error validating coupon:', error);
-            discountAmount.textContent = '-$0 MXN';
-            totalAmount.textContent = `$${originalPrice.toFixed(2)} MXN`;
-            couponMessage.textContent = 'Error al validar el cupón.';
-            couponMessage.style.color = '#dc3545';
-        }
-    });
-
-    // Form submission
-    const form = document.getElementById('payment-form');
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        const { paymentMethod, error } = await stripe.createPaymentMethod({
-            type: 'card',
-            card: card,
         });
 
-        if (error) {
-            document.getElementById('card-errors').textContent = error.message;
-        } else {
-            const hiddenInput = document.createElement('input');
-            hiddenInput.setAttribute('type', 'hidden');
-            hiddenInput.setAttribute('name', 'payment_method');
-            hiddenInput.setAttribute('value', paymentMethod.id);
-            form.appendChild(hiddenInput);
+        // Form submission with spinner
+        const form = document.getElementById('payment-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
 
-            if (couponCodeInput.value) {
-                const couponInput = document.createElement('input');
-                couponInput.setAttribute('type', 'hidden');
-                couponInput.setAttribute('name', 'coupon');
-                couponInput.setAttribute('value', couponCodeInput.value);
-                form.appendChild(couponInput);
+            // Show payment spinner and disable button
+            submitButton.classList.add('d-none');
+            paymentSpinner.classList.remove('d-none');
+
+            const { paymentMethod, error } = await stripe.createPaymentMethod({
+                type: 'card',
+                card: card,
+            });
+
+            if (error) {
+                document.getElementById('card-errors').textContent = error.message;
+                // Hide spinner and re-enable button on error
+                submitButton.classList.remove('d-none');
+                paymentSpinner.classList.add('d-none');
+            } else {
+                const hiddenInput = document.createElement('input');
+                hiddenInput.setAttribute('type', 'hidden');
+                hiddenInput.setAttribute('name', 'payment_method');
+                hiddenInput.setAttribute('value', paymentMethod.id);
+                form.appendChild(hiddenInput);
+
+                if (couponCodeInput.value) {
+                    const couponInput = document.createElement('input');
+                    couponInput.setAttribute('type', 'hidden');
+                    couponInput.setAttribute('name', 'coupon');
+                    couponInput.setAttribute('value', couponCodeInput.value);
+                    form.appendChild(couponInput);
+                }
+
+                form.submit();
             }
-
-            form.submit();
-        }
+        });
     });
-});
 </script>
 @endsection

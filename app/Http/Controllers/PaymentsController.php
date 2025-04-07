@@ -31,15 +31,17 @@ class PaymentsController extends Controller
         $coupon = $request->input('coupon'); // O usa 'TESTCOUPON' si sigues probando con hardcode
         $plan = $request->input('plan_price');
 
-        $plans = [
-            'monthly' => 'price_1R9Csk4QzCg0iCy7d2jSTO9a',
-            'semiannual' => 'price_1Ndef456xyz',
-            'annual' => 'price_1Nghi789xyz',
-        ];
+        /*
+            $plans = [
+                'monthly' => 'price_1R9Csk4QzCg0iCy7d2jSTO9a',
+                'semiannual' => 'price_1Ndef456xyz',
+                'annual' => 'price_1Nghi789xyz',
+            ];
 
-        if (!array_key_exists($plan, $plans)) {
-            return redirect()->back()->withErrors(['plan' => 'Plan inválido']);
-        }
+            if (!array_key_exists($plan, $plans)) {
+                return redirect()->back()->withErrors(['plan' => 'Plan inválido']);
+            }
+        */
 
         try {
             // Crear cliente en Stripe directamente sin guardar en DB
