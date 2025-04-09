@@ -1176,3 +1176,31 @@ google/callback-meet
         Route::get('/meetings', [GoogleMeetController::class, 'getMeetings'])->name('google.getMeetings');
     });
 */
+
+    Route::prefix('subscribe')
+        ->group(function () {
+            Route::get('/form')
+            ->uses('SubscriptionController@showSubscriptionForm')
+            ->name('subscribe.form');
+
+            Route::post('/store')
+            ->uses('SubscriptionController@subscribe')
+            ->name('subscribe');
+
+    });
+
+
+    Route::prefix('pagos')
+        ->group(function () {
+            Route::get('/{conceptId}')
+                ->uses('PaymentsController@form')
+                ->name('payments.v2');
+
+            Route::post('/store')
+                ->uses('PaymentsController@subscribeSave')
+                ->name('subscribe');
+
+            Route::post('/validate-coupon')
+                ->uses('PaymentsController@validateCoupon')
+                ->name('validate-coupon');
+    });
