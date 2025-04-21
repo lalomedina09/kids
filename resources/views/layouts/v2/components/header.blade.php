@@ -118,10 +118,9 @@
             </a>--}}
 
             <!-- Enlace de perfil -->
-            <a class="ml-auto order-2 profile-trigger profile-link" href="#">
+            <a class="ml-auto order-2 profile-trigger profile-link" id="menu-profile" href="#">
                 <div class="profile-image-wrapper">
-                    <img src="{{ asset('version-2/images/components/user.png') }}" alt="." class="profile-image"
-                        width="45">
+                    <img src="{{ asset('version-2/images/components/user.png') }}" alt="." class="profile-image" width="45">
                 </div>
             </a>
 

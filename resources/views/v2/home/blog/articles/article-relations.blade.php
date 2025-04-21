@@ -20,7 +20,7 @@
                     </a>
 
                     <a href="{{ route('articles.show', ['slug' => $relatedArticle->slug]) }}">
-                        <h6 class="card-title font-beley" style="font-weight: 500;"><em>{{ $relatedArticle->present()->title }}</em></h6>
+                        <h6 class="card-title font-beley" style="font-weight: 500; font-style:italic;"><em>{{ $relatedArticle->present()->title }}</em></h6>
                     </a>
                 </div>
             @endforeach

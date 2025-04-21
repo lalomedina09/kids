@@ -62,7 +62,7 @@
         links.forEach(link => {
             link.addEventListener('click', function(e) {
                 // Verificar si el enlace tiene target="_blank"
-                if (this.getAttribute('target') !== '_blank') {
+                if (this.getAttribute('target') !== '_blank' && this.id !== 'menu-profile') {
                     loadingModal.style.display = 'flex';
                     setTimeout(() => {}, 300); // Pequeño retraso para visualizar el modal
                 }
@@ -77,3 +77,4 @@
         });
     });
 </script>
+
