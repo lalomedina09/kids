@@ -9,13 +9,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @include('partials.main.favicon')
-    {{--@include('partials.main.meta')--}}
+    @include('partials.main.meta')
     @include('layouts.v2.components.metas')
     {{--@include('partials.main.styles')--}}
     @include('layouts.v2.components.styles')
 
     @php //$urlQdplayCompany = Route::currentRouteName(); @endphp
-{{-- dd('en base v2')--}}
+    {{-- dd('en base v2')--}}
     {{--
     @if ($urlQdplayCompany == "register.qdplay.showww")
         @include('partials.main.custom.script-head-qdplay-empresas')

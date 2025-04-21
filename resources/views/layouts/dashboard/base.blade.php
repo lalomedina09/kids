@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="{{ mix('css/vendor/datetimepicker.css') }}">
         <link rel="stylesheet" href="{{ mix('css/vendor/datatables.css') }}">
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/version-2/css/editor.css') }}">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
