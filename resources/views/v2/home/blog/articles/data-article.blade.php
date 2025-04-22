@@ -34,35 +34,74 @@
                     </div>
                     <div class="col-md-6" style="position: relative;">
                         <div class="d-flex justify-content-end gap-2" style="position: absolute; bottom: 0; right: 0;">
-                            <!-- Botón de compartir -->
-                            <button class="btn btn-sm btn-dark font-akshar btn-share" title="Compartir"
-                                style="margin-right: 10px;">
-                                <i class="fas fa-share-alt"></i> Compartir
+                            <!-- Botón de menú para pantallas pequeñas -->
+                            <button class="btn btn-sm btn-dark font-akshar btn-reaction d-block d-md-none" title="Acciones"
+                                style="margin-right: 10px;" onclick="toggleReactionMenu()">
+                                <i class="fas fa-ellipsis-v"></i> <!-- Icono de menú (puedes cambiarlo) -->
                             </button>
 
-                            <!-- Botón de me gusta -->
-                            <button class="btn btn-sm btn-dark font-akshar btn-like"
-                                data-article-id="{{ $article->id }}" title="Me gusta" style="margin-right: 10px;" @guest
-                                data-toggle="modal" data-target="#modalLogin" @endguest>
-                                <i class="fas fa-heart"></i>
-                                @if ($isLiked)
-                                Te gusta
-                                @else
-                                Me gusta
-                                @endif
-                            </button>
+                            <!-- Menú desplegable para pantallas pequeñas -->
+                            <div id="reaction-menu" class="reaction-menu d-none"
+                                style="position: absolute; bottom: 40px; right: 10px; background: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 1000;">
+                                <button class="btn btn-sm btn-dark font-akshar btn-share w-100 text-left" title="Compartir"
+                                    style="border-radius: 0;">
+                                    <i class="fas fa-share-alt"></i> Compartir
+                                </button>
+                                <button class="btn btn-sm btn-dark font-akshar btn-like w-100 text-left" data-article-id="{{ $article->id }}"
+                                    title="Me gusta" @guest data-toggle="modal" data-target="#modalLogin" @endguest>
+                                    <i class="fas fa-heart"></i>
+                                    @if ($isLiked)
+                                        Te gusta
+                                    @else
+                                        Me gusta
+                                    @endif
+                                </button>
+                                <button class="btn btn-sm btn-dark font-akshar btn-bookmark w-100 text-left"
+                                    data-article-id="{{ $article->id }}" title="Guardar" @guest data-toggle="modal" data-target="#modalLogin"
+                                    @endguest>
+                                    <i class="fas fa-bookmark"></i>
+                                    @if ($isBookmarked)
+                                        Guardado
+                                    @else
+                                        Guardar
+                                    @endif
+                                </button>
+                            </div>
 
-                            <!-- Botón de guardar -->
-                            <button class="btn btn-sm btn-dark font-akshar btn-bookmark"
-                                data-article-id="{{ $article->id }}" title="Guardar" @guest data-toggle="modal"
-                                data-target="#modalLogin" @endguest>
-                                <i class="fas fa-bookmark"></i>
-                                @if ($isBookmarked)
-                                Guardado
-                                @else
-                                Guardar
-                                @endif
-                            </button>
+                            <!-- Botones originales para pantallas medianas y grandes -->
+                            <div class="d-none d-md-flex gap-2">
+                                <!-- Botón de compartir -->
+                                <button class="btn btn-sm btn-dark font-akshar btn-share" title="Compartir" style="margin-right: 10px;">
+                                    <i class="fas fa-share-alt"></i>
+                                    <span class="d-none d-sm-inline"> Compartir</span>
+                                </button>
+
+                                <!-- Botón de me gusta -->
+                                <button class="btn btn-sm btn-dark font-akshar btn-like" data-article-id="{{ $article->id }}" title="Me gusta"
+                                    style="margin-right: 10px;" @guest data-toggle="modal" data-target="#modalLogin" @endguest>
+                                    <i class="fas fa-heart"></i>
+                                    <span class="d-none d-sm-inline">
+                                        @if ($isLiked)
+                                            Te gusta
+                                        @else
+                                            Me gusta
+                                        @endif
+                                    </span>
+                                </button>
+
+                                <!-- Botón de guardar -->
+                                <button class="btn btn-sm btn-dark font-akshar btn-bookmark" data-article-id="{{ $article->id }}"
+                                    title="Guardar" @guest data-toggle="modal" data-target="#modalLogin" @endguest>
+                                    <i class="fas fa-bookmark"></i>
+                                    <span class="d-none d-sm-inline">
+                                        @if ($isBookmarked)
+                                            Guardado
+                                        @else
+                                            Guardar
+                                        @endif
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -111,6 +150,26 @@
     }
 </style>
 
+<!-- CSS para el menú desplegable -->
+<style>
+    .reaction-menu {
+        min-width: 150px;
+    }
+
+    .reaction-menu button {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .reaction-menu button:last-child {
+        border-bottom: none;
+    }
+
+    .reaction-menu button:hover {
+        background-color: #f8f9fa;
+    }
+</style>
 
 <script>
     $(document).ready(function() {
@@ -257,6 +316,23 @@
                     text: 'No se pudo copiar el enlace.',
                 });
             });
+        }
+    });
+</script>
+
+<!-- JavaScript para togglear el menú -->
+<script>
+    function toggleReactionMenu() {
+        const menu = document.getElementById('reaction-menu');
+        menu.classList.toggle('d-none');
+    }
+
+    // Cerrar el menú si se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+        const menu = document.getElementById('reaction-menu');
+        const button = document.querySelector('.btn-reaction');
+        if (!menu.contains(event.target) && !button.contains(event.target)) {
+            menu.classList.add('d-none');
         }
     });
 </script>
