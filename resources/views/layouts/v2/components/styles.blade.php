@@ -27,8 +27,8 @@
 @endif
 
 @if (in_array(Route::currentRouteName(), ['articles.show']))
-    <link href="{{ asset('css/app-backup.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
 @endif
+<link href="{{ asset('css/app-backup.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
 <!---------------->
 
 <link rel="stylesheet" href="{{ asset('version-2/css/iziToast.min.css') }}">

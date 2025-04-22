@@ -11995,6 +11995,7 @@ input:-webkit-autofill:active {
     color: #000000;
     margin-right: 10px;
     text-transform: uppercase;
+    font-weight: 500;
 }
 
 .single-tags__item {
