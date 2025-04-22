@@ -515,6 +515,14 @@ Route::prefix('articulos')
         Route::get('/etiquetas/{slug}')
             ->uses('ArticlesController@byTag')
             ->name('articles.tags.index');
+
+        Route::post('/{article}/guardar')
+            ->uses('ArticlesController@bookmark')
+            ->name('articles.bookmark');
+
+        Route::post('/{article}/me-gusta')
+        ->uses('ArticlesController@like')
+            ->name('articles.like');
     });
 
 /*

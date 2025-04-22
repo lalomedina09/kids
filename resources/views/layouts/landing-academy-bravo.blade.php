@@ -28,10 +28,15 @@
     }
 
     @media (max-width: 800px) {
-    .text-unlock-header{
-        display: none;
+        .text-unlock-header{
+            display: none;
+        }
     }
-    }
+    @auth
+        .header-wrapper{
+            background-color: #7a68eb;
+        }
+    @endauth
 </style>
 <div id="app">
     <div class="header-wrapper">
@@ -84,7 +89,7 @@
                         Desbloquea más cursos, suscríbete hoy a Querido Dinero Play
                     </span>
                     <a class="btn-subscribe font-size-p" href="#" data-toggle="modal" data-target="#modalLogin">
-                        Únete gratis <i class="lni lni-crown"></i>
+                        Entrar
                     </a>
                 @endauth
             </div>

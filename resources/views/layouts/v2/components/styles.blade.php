@@ -20,12 +20,15 @@
 @if (!in_array(Route::currentRouteName(), [
     'home', 'services', 'consulting', 'contact',
     'agency', 'blog', 'articles.search.full', 'articles.by.tag',
-    'articles.by.word','payments.v2'
+    'articles.by.word','articles.show','articles.by.word','payments.v2'
     ]))
-    <link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
 @endif
 
+@if (in_array(Route::currentRouteName(), ['articles.show']))
+@endif
+<link href="{{ asset('css/app-backup.css') }}?v={{ (rand(1,500)) }}" rel="stylesheet">
 <!---------------->
 
 <link rel="stylesheet" href="{{ asset('version-2/css/iziToast.min.css') }}">
@@ -55,6 +58,11 @@
 <!-- Bootstrap theme -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.rtl.min.css" />
 <!---------------->
+<!-- SweetAlert CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+
+
 <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 

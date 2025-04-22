@@ -118,10 +118,9 @@
             </a>--}}
 
             <!-- Enlace de perfil -->
-            <a class="ml-auto order-2 profile-trigger profile-link" href="#">
+            <a class="ml-auto order-2 profile-trigger profile-link" id="menu-profile" href="#">
                 <div class="profile-image-wrapper">
-                    <img src="{{ asset('version-2/images/components/user.png') }}" alt="." class="profile-image"
-                        width="45">
+                    <img src="{{ asset('version-2/images/components/user.png') }}" alt="." class="profile-image" width="45">
                 </div>
             </a>
 
@@ -244,13 +243,13 @@
             </div>
         @else
             <!-- Botón que debe aparecer solo en desktop -->
-            {{--
+
             <a class="btn btn-dark ml-auto order-2 d-none d-lg-block" href="#" data-toggle="modal"
-                data-target="#modalLogin">Acceder</a>
-            --}}
-            <a class="btn btn-dark ml-auto order-2 d-none d-lg-block" href="{{ route('login') }}">Acceder</a>
+                data-target="#modalLogin" id="modal-for-login">Acceder</a>
+
+            {{--<a class="btn btn-dark ml-auto order-2 d-none d-lg-block" href="{{ route('login') }}">Acceder</a>--}}
             <!-- Botón que debe aparecer solo en móvil -->
-            <a class="btn btn-dark ml-auto order-2 d-lg-none" href="{{ route('login') }}">Acceder</a>
+            {{--<a class="btn btn-dark ml-auto order-2 d-lg-none" href="{{ route('login') }}">Acceder</a>--}}
         @endauth
 
         <!-- Contenido del menú colapsable -->

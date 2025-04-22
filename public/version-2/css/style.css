@@ -316,7 +316,7 @@
 .element {
     /* position: absolute; */
     width: 1446px;
-    height: 765px;
+    /*height: 765px;*/
     top: 0;
     left: 0;
     background-color: #000000;

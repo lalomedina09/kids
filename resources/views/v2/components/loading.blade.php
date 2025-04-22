@@ -62,7 +62,10 @@
         links.forEach(link => {
             link.addEventListener('click', function(e) {
                 // Verificar si el enlace tiene target="_blank"
-                if (this.getAttribute('target') !== '_blank') {
+                if (this.getAttribute('target') !== '_blank'
+                    && this.id !== 'menu-profile'
+                    && this.id !== 'modal-for-login'
+                    && this.id !== 'btn-open-modal-register') {
                     loadingModal.style.display = 'flex';
                     setTimeout(() => {}, 300); // Pequeño retraso para visualizar el modal
                 }
@@ -77,3 +80,4 @@
         });
     });
 </script>
+

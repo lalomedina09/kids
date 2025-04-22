@@ -99,9 +99,9 @@
 
                                 <div class="form-group text-family-akshar">
                                     <div class="custom-control custom-checkbox mt-1">
-                                        <label class="text-uppercase">
-                                            <input type="checkbox" style="width: 40px; margin-left: -20px;" id="toggle-login-password"> @lang('View password')
-                                            <!--<span class="custom-control-indicator"></span>-->
+                                        <label class="text-uppercase text-family-akshar text-dark">
+                                            <input type="checkbox" id="toggle-login-password"> @lang('View password')
+                                            <span class="custom-control-indicator"></span>
                                         </label>
                                     </div>
                                 </div>
@@ -150,3 +150,13 @@
         </div>
     </div>
 </div>
+<script>
+    document.getElementById('toggle-login-password').addEventListener('change', function() {
+        const passwordInput = document.getElementById('login-password');
+            if (this.checked) {
+                passwordInput.type = 'text'; // Muestra la contraseña
+            } else {
+                passwordInput.type = 'password'; // Oculta la contraseña
+            }
+    });
+</script>
