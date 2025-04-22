@@ -31,7 +31,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         );
 
         View::composer(
-            ['layouts.base'],
+            ['layouts.base', 'layouts.base-v2-redesign'],
             SeoViewComposer::class
         );
 

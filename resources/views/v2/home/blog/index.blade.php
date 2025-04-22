@@ -19,9 +19,9 @@
 <section>
     <div class="container">
         <div class="row">
-            @include('v2.home.blog.9')
+            @include('v2.home.blog.blog.9')
 
-            @include('v2.home.blog.3')
+            @include('v2.home.blog.blog.3')
         </div>
     </div>
 </section>

@@ -12,8 +12,9 @@
     @include('layouts.v2.components.footer')
 
     @if(isset($source) && isset($channel))
-    @include('v2.components.modals.login')
-    @include('v2.components.modals.sign-up')
+    {{--dd($source)--}}
+        @include('v2.components.modals.login')
+        @include('v2.components.modals.sign-up')
     @endif
 
 </div>

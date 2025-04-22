@@ -61,13 +61,20 @@
 
 <script type="text/javascript" src="{{ asset('js/advices/advisorPricexTime.js') }}"></script>
 
-<!-- script para zoho -->
-<script>
-    window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}
-</script>
-<script id="zsiqscript"
-    src="https://salesiq.zohopublic.com/widget?wc=siq6b3fee2ee017eee9ec27d03434ab542ecf8f2baadacdf37e233b95c3ae9b0dc3"
-    defer></script>
+@if (app()->environment() === 'production')
+    <!-- script para zoho -->
+    <script>
+        window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}
+    </script>
+    <script id="zsiqscript"
+        src="https://salesiq.zohopublic.com/widget?wc=siq6b3fee2ee017eee9ec27d03434ab542ecf8f2baadacdf37e233b95c3ae9b0dc3"
+        defer>
+
+    </script>
+@endif
+
+<!-- SweetAlert JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!--------------------->
 @stack('scripts')
 @stack('scripts-inline')
