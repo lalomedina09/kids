@@ -37,6 +37,10 @@
     }
 
 
+    .register-btn {
+        margin-left: -2rem;
+    }
+
     .profile-menu {
         right: 10px;
     }

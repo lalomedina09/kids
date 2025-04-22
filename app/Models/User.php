@@ -460,4 +460,14 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->hasMany(QD\QDPlay\Models\View::class);
     }
+
+    public function customSubscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
+    public function customHasActiveSubscription()
+    {
+        return $this->subscriptions()->where('stripe_status', 'active')->exists();
+    }
 }

@@ -19,12 +19,12 @@
 
             <img src="{{ asset('images/landing/retiro/gifs/circulo-girando-v2.gif')}}" class="img-ilustracion-more-gif" alt="Gif Circulo Girando">
         </div>
-        <form action="{{ url('landing-retiro') }}" method="POST" class=" movil-form-center">
+        <form action="{{ url('landing/retiro/store') }}" method="POST" class=" movil-form-center">
 
             @csrf
 
             <input type="hidden" name="interests" value="Curso de Planeación del retiro para tu equipo">
-            <input type="hidden" name="form" value="landing/retiro">
+            <input type="hidden" name="form" value="landing-retiro">
 
             <div class="row pl-2 pt-2 pb-3 font-akshar">
                 <div class="col-12 padding-custom-regis-qdp mb-2">

@@ -45,8 +45,9 @@
 
     @include('partials.main.script-body')
 
-    @yield('base')
 
+    @yield('base')
+    @yield('scripts')
 
 </body>
 

@@ -79,10 +79,10 @@ class HomeController extends Controller
     public function indexRedesign()
     {
         // Obtener 2 cursos aleatorios
-        $randomCourses = Course::whereNotNull('thumbnail')->inRandomOrder()->limit(2)->get();
+        $randomCourses = Course::whereHas('custoMfreeVideos')->whereNotNull('thumbnail')->inRandomOrder()->limit(2)->get();
 
-        // Obtener el artículo más reciente y los 2 artículos anteriores más recientes
-        $latestArticle = Article::published()->latest()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->first();
+            // Obtener el artículo más reciente y los 2 artículos anteriores más recientes
+            $latestArticle = Article::published()->latest()->where('site', env('SITE_ARTICLES', "queridodinero.com"))->first();
         $previousArticles = Article::published()->where('id', '!=', $latestArticle->id)
             ->latest()
             ->where('site', env('SITE_ARTICLES', "queridodinero.com"))
