@@ -11927,7 +11927,7 @@ input:-webkit-autofill:active {
 .single__content h4,
 .single__content h5,
 .single__content h6 {
-    color: #FF6161;
+    color: #000000;
     font-weight: 700;
     margin: 30px 15px;
 }
