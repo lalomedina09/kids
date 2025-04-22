@@ -1,7 +1,7 @@
 <div class="input-group no-gap d-md-none flex-column">
     <input type="email" name="emailMovil" class="form-control subscribe-input mb-2"
         style="width: 100%; border-radius: 1px;" placeholder="Correo electrónico" style="width:auto;">
-    <button class="btn btn-dark btn-susbcribe btn-susc-margin mb-2 btn-border-r-1" id="suscribe-movil">
+    <button class="btn btn-dark btn-susbcribe btn-susc-margin mb-2 btn-border-r-1 ml-1" id="suscribe-movil">
         Suscríbete
     </button>
     <div class="form-check mt-2 mb-3">

@@ -14,7 +14,7 @@
     <div class="row mb-4 mt-4">
         <div class="col-md-6 d-flex align-items-center justify-content-center order-2 order-md-1">
             <div class="columnprice text-md-left text-center mt-3 mt-md-0">
-                <p class="price ui text size-text2xl" style="color: #C5481C;">
+                <p class="price ui text size-text2xl mt-4" style="color: #C5481C;">
                     AGENCIA CREATIVA
                 </p>
                 <h2 class="finanzassanas ui heading size-text3xl" style="color: #000000">

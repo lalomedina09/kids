@@ -1,5 +1,5 @@
 <!doctype html>
-<html itemscope itemtype="http://schema.org/Article" lang="{{ config('app.locale') }}" style="background-color: #F2F2F2;">
+<html itemscope itemtype="http://schema.org/Article" lang="{{ config('app.locale') }}" style="background-color: #F5F5F5;">
 
 <head>
     {{--<title>{{ $metadata->title }}</title>--}}

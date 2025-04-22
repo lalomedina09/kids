@@ -12,7 +12,7 @@
                     servicios y contenidos que los ayudan a llegar al siguiente nivel.
                 </p>
                 <p class="queremos-que-todos d-block d-md-none text-md-left text-center">
-                    Herramientas y contenidos que te ayudan a llegar al siguiente nivel.
+                    Herramientas y contenidos <br> que te ayudan a llegar al siguiente nivel.
                 </p>
             </div>
 

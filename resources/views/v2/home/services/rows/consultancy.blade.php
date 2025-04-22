@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-6 d-flex flex-column justify-content-center px-3">
             <div class="columnprice text-md-left text-center mt-3 mt-md-0">
-                <p class="price ui text size-text2xl" style="color: #C5481C;">
+                <p class="price ui text size-text2xl mt-4" style="color: #C5481C;">
                     CONSULTORÍA EMPRESARIAL
                 </p>
                 <h2 class="finanzassanas ui heading size-text3xl"; style="color: #000000">

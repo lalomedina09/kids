@@ -65,8 +65,8 @@
     }
 
     .margin-title-solution {
-        margin-top: 2.8rem;
-        margin-bottom: 1em;
+        margin-top: 5.8rem;
+        margin-bottom: 1.5em;
 
     }
 
@@ -178,7 +178,7 @@
         max-width: 111%;
         height: auto;
         margin-top: -62px;
-        left: -17px;
+        left: -1px;
 
     }
 
@@ -237,7 +237,7 @@
         font-weight: 501;
         font-size: 2.5rem;
         line-height: 49.6px;
-        margin-right: 1rem;
+        margin-right: 2rem;
     }
 
 
@@ -309,6 +309,7 @@
 
     .main-pigeon {
         width: 215px;
+        margin-top: 3rem;
     }
 
     .pigeon-secondary-left {
@@ -1674,8 +1675,12 @@
     }
 
     .margin-title-solution {
-        margin-top: 6.5rem;
+        margin-top: 8.5rem;
         margin-bottom: 4rem;
+    }
+
+    .boton-conoce-servicios {
+        margin-left: -4.5rem;
     }
 
     .navbar {
@@ -1711,7 +1716,7 @@
     .para-todos {
         font-size: 3.2em;
         line-height: 62px;
-        margin-top: 32px;
+        margin-top: 8rem;
         margin-left: -54px !important;
     }
 
@@ -1748,8 +1753,9 @@
     }
 
     .servicio-lr {
-        margin-left: -100px;
+        margin-left: -127px;
         margin-right: -100px;
+        margin-top: 2rem;
     }
 
     .soluciones-margenes {
@@ -1795,7 +1801,7 @@
         /*Amarillo*/
         top: 12%;
         left: 52%;
-        width: 35%;
+        width: 26%;
         height: 46%;
 
     }

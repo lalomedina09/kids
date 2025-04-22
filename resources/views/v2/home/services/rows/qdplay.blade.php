@@ -23,7 +23,7 @@
         <!-- Columna que aparece después en móviles y primero en pantallas grandes -->
         <div class="col-md-6 d-flex flex-column justify-content-center text-right order-2 order-md-1">
             <div class="columnprice text-md-left text-center mt-3 mt-md-0">
-                <p class="price ui text size-text2xl" style="color: #C5481C;">
+                <p class="price ui text size-text2xl mt-4" style="color: #C5481C;">
                     ONLINE LEARNING
                 </p><br>
                 <h2 class="finanzassanas ui heading size-text3xl" style="color: #000000">
