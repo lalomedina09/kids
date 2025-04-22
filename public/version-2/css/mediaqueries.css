@@ -844,7 +844,7 @@
     .cofre-img {
         width: 150px;
         max-width: 100%;
-        margin-top: 3rem;
+        margin-top: 1rem;
         margin-bottom: 0rem;
     }
 
@@ -866,7 +866,7 @@
 
     .tapa {
         top: 46px;
-        left: 15%;
+        left: -6%;
         transform: translateX(-50%);
         width: 170px;
         animation-delay: 1s;
@@ -1955,7 +1955,7 @@
     }
 
     .margin-title-solution {
-        margin-top: 7.4em;
+        margin-top: 4.4em;
         margin-bottom: 4rem;
     }
 

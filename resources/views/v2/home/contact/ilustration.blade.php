@@ -24,7 +24,7 @@
 
         <div class="col-md-6">
             <div class="img-banner-contacto">
-                <img class="imagen-mobil img-ilus-contact" src="{{ asset('version-2/images/contacto/banner.png')}}" alt="imagen-contacto">
+                <img class="imagen-mobil img-ilus-contact mb-5" src="{{ asset('version-2/images/contacto/banner.png')}}" alt="imagen-contacto">
             </div>
         </div>
 
