@@ -184,23 +184,43 @@ class ArticlesController extends Controller
 
     public function bookmark(Request $request, Article $article)
     {
-        //dd($article);
         $user = $request->user();
-        $bookmark = Bookmark::where('user_id', $user->id)
-            ->where('bookmarkable_type', "article")
+
+        // Buscar un bookmark existente (incluyendo soft-deleted)
+        $bookmark = Bookmark::withTrashed()
+            ->where('user_id', $user->id)
+            ->where('bookmarkable_type', 'article')
             ->where('bookmarkable_id', $article->id)
             ->first();
 
         if ($bookmark) {
-            $bookmark->delete();
-            return response()->json(['message' => 'Artículo eliminado de guardados']);
+            if ($bookmark->trashed()) {
+                // Restaurar bookmark eliminado
+                $bookmark->restore();
+                return response()->json([
+                    'is_bookmarked' => true,
+                    'message' => 'Artículo restaurado en guardados'
+                ]);
+            } else {
+                // Eliminar bookmark existente
+                $bookmark->delete();
+                return response()->json([
+                    'is_bookmarked' => false,
+                    'message' => 'Artículo eliminado de guardados'
+                ]);
+            }
         } else {
+            // Crear nuevo bookmark
             $bookmark = new Bookmark();
             $bookmark->bookmarkable_id = $article->id;
-            $bookmark->bookmarkable_type = "article";
+            $bookmark->bookmarkable_type = 'article';
             $bookmark->user_id = $user->id;
             $bookmark->save();
-            return response()->json(['message' => 'Artículo guardado']);
+
+            return response()->json([
+                'is_bookmarked' => true,
+                'message' => 'Artículo guardado'
+            ]);
         }
     }
 
@@ -208,32 +228,41 @@ class ArticlesController extends Controller
     {
         $user = $request->user();
 
-        // Validate that the user is authenticated
-        if (!$user) {
-            return response()->json(['message' => 'User not authenticated'], 401);
-        }
-
-        // Check if a "like" already exists for this article by this user
-        $like = Like::where('user_id', $user->id)
-            ->where('likeable_type', "article")
+        // Buscar un like existente (incluyendo soft-deleted)
+        $like = Like::withTrashed()
+            ->where('user_id', $user->id)
+            ->where('likeable_type', 'article')
             ->where('likeable_id', $article->id)
             ->first();
-        dd($like, $article->id, $user->id);
-        try {
-            if ($like) {
-                $like->delete();
-                return response()->json(['message' => 'Me gusta eliminado']);
+
+        if ($like) {
+            if ($like->trashed()) {
+                // Restaurar like eliminado
+                $like->restore();
+                return response()->json([
+                    'is_liked' => true,
+                    'message' => 'Artículo restaurado en me gusta'
+                ]);
             } else {
-                $like = new Like();
-                $like->likeable_id = $article->id;
-                $like->likeable_type = 'article';
-                $like->user_id = $user->id;
-                $like->save();
-                return response()->json(['message' => 'Me gusta agregado']);
+                // Eliminar like existente
+                $like->delete();
+                return response()->json([
+                    'is_liked' => false,
+                    'message' => 'Artículo eliminado de me gusta'
+                ]);
             }
-        } catch (\Exception $e) {
-            \Log::error($e->getMessage());
-            return response()->json(['message' => 'Error al procesar la solicitud'], 500);
+        } else {
+            // Crear nuevo like
+            $like = new Like();
+            $like->likeable_id = $article->id;
+            $like->likeable_type = 'article';
+            $like->user_id = $user->id;
+            $like->save();
+
+            return response()->json([
+                'is_liked' => true,
+                'message' => 'Artículo me gusta'
+            ]);
         }
     }
 }

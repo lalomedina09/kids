@@ -17,7 +17,7 @@
                     <ul class="list-unstyled single__social">
                         @if ($article->author->hasMeta('blog', 'facebook'))
                         <li class="single__social-item">
-                            <a href="{{ $article->author->getMeta('blog', 'facebook') }}" class="text-danger" target="_blank"
+                            <a href="{{ $article->author->getMeta('blog', 'facebook') }}" class="text-dark" target="_blank"
                                 rel="noopener noreferrer">
                                 <!--<span class="fa fa-2x fa-facebook"></span>-->
                                 <i class="lni lni-facebook-original" style="font-size: 2em"></i>
@@ -26,7 +26,7 @@
                         @endif
                         @if ($article->author->hasMeta('blog', 'twitter'))
                         <li class="single__social-item">
-                            <a href="{{ $article->author->getMeta('blog', 'twitter') }}" class="text-danger" target="_blank"
+                            <a href="{{ $article->author->getMeta('blog', 'twitter') }}" class="text-dark" target="_blank"
                                 rel="noopener noreferrer">
                                 <span class="fa fa-2x fa-twitter"></span>
                             </a>
@@ -34,7 +34,7 @@
                         @endif
                         @if ($article->author->hasMeta('blog', 'instagram'))
                         <li class="single__social-item">
-                            <a href="{{ $article->author->getMeta('blog', 'instagram') }}" class="text-danger" target="_blank"
+                            <a href="{{ $article->author->getMeta('blog', 'instagram') }}" class="text-dark" target="_blank"
                                 rel="noopener noreferrer">
                                 <!--<span class="fa fa-2x fa-instagram"></span>-->
                                 <i class="lni lni-instagram-filled" style="font-size: 2em"></i>
@@ -43,7 +43,7 @@
                         @endif
                         @if ($article->author->hasMeta('blog', 'tiktok'))
                         <li class="single__social-item">
-                            <a href="{{ $article->author->getMeta('blog', 'tiktok') }}" class="text-danger" target="_blank"
+                            <a href="{{ $article->author->getMeta('blog', 'tiktok') }}" class="text-dark" target="_blank"
                                 rel="noopener noreferrer">
                                 <i class="lni fa-2x lni-tiktok" style="font-size: 2em"></i>
                             </a>
@@ -51,7 +51,7 @@
                         @endif
                         @if ($article->author->hasMeta('blog', 'youtube'))
                         <li class="single__social-item">
-                            <a href="{{ $article->author->getMeta('blog', 'youtube') }}" class="text-danger" target="_blank"
+                            <a href="{{ $article->author->getMeta('blog', 'youtube') }}" class="text-dark" target="_blank"
                                 rel="noopener noreferrer">
                                 <span class="fa fa-2x fa-youtube-play"></span>
                             </a>
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="single__featured">
-                    
+
                     <!-- Seccion  para la publicidad -->
                     @if($advertisingStatus)
                     <div class="row">
