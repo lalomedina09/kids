@@ -3014,7 +3014,7 @@ a {
 .fondo-circulo {
     /*margin-left: -166px;
     margin-top: -65px;*/
-    width: 500px;
+    width: 100%;
 }
 
 .base-image {
