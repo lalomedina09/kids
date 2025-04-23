@@ -1,6 +1,6 @@
 @extends('layouts.app-v2-redesign')
 
-<title>Home | Querido Dinero</title>
+<title>Blog | Querido Dinero</title>
 
 @section('content')
 
