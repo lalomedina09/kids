@@ -23,7 +23,7 @@
     ];
 @endphp
 
-<div class="row ml-3 mr-3 d-none d-md-flex">
+<div class="row ml-3 mr-3 d-none d-lg-flex">
     <!-- Columna izquierda -->
     <div class="col-md-3 col-lg-3">
         <div class="row">
@@ -32,7 +32,7 @@
                 @if($item['type'] === 'article')
                 <!-- Mostrar artículo -->
                 <a target="_blank" href="{{ route('articles.show', [$item['data']->slug]) }}" class="link-content">
-                    <img class="image-3 img-fluid" style="height: 150px;"
+                    <img class="image-3 img-content-cover-lateral"
                         src="{{ $item['data']->present()->featured_image }}" alt="{{ $item['data']->title }}">
                     <div class="text-wrapper-24 mt-2">
                         Artículo
@@ -44,7 +44,7 @@
                 @elseif($item['type'] === 'course')
                 <!-- Mostrar curso -->
                 <a target="_blank" href="{{ route('qdplay.watch', [$item['data']->public_id]) }}" class="link-content">
-                    <img class="image-2 img-fluid" style="height: 150px;"
+                    <img class="image-2 img-content-cover-lateral"
                         src="{{ asset('storage/' . $item['data']->thumbnail) }}" alt="{{ $item['data']->name }}">
                     <div class="text-wrapper-22 mt-2">
                         Curso online
@@ -87,7 +87,7 @@
                 @if($item['type'] === 'article')
                 <!-- Mostrar artículo -->
                 <a target="_blank" href="{{ route('articles.show', [$item['data']->slug]) }}" class="link-content">
-                    <img class="image-3 img-fluid" style="height: 150px;"
+                    <img class="image-3 img-content-cover-lateral"
                         src="{{ $item['data']->present()->featured_image }}" alt="{{ $item['data']->title }}">
                     <div class="text-wrapper-24 mt-2">
                         Artículo
@@ -99,7 +99,7 @@
                 @elseif($item['type'] === 'course')
                 <!-- Mostrar curso -->
                 <a target="_blank" href="{{ route('qdplay.watch', [$item['data']->public_id]) }}" class="link-content">
-                    <img class="image-2 img-fluid" style="height: 150px;"
+                    <img class="image-2 img-content-cover-lateral"
                         src="{{ asset('storage/' . $item['data']->thumbnail) }}" alt="{{ $item['data']->name }}">
                     <div class="text-wrapper-22 mt-2">
                         Curso online

@@ -291,6 +291,11 @@
     .lasolucin {
         font-size: 2.6rem;
     }
+
+    /*Pagina de inicio - contenido */
+    .carousel-inner .carousel-item img {
+        height: 200px;
+    }
 }
 
 
@@ -405,7 +410,7 @@
     }
 
     /* .div-btn-about-us { */
-        /*margin-bottom: 15%;*/
+    /*margin-bottom: 15%;*/
     /* } */
 
     /*-----------------------------------------------------------*/
@@ -793,7 +798,7 @@
 
 
     .margin-title-solution {
-        margin-top: 9.5em;
+        margin-top: 3.5em;
         margin-bottom: 4rem;
     }
 
@@ -931,7 +936,7 @@
     .academia-online {
         font-size: 17px;
         line-height: 20.4px;
-        color: #ffffff;
+        color: #000000;
     }
 
     /********************* Seccion de contenido ************************/
@@ -1222,20 +1227,22 @@
 
     /******************Lading Consultoria - Seccion de metodologia *****************/
 
-/* Seccion Tarjetas */
-.texto-tarjeta {
-    margin-top: 43px;
-    font-weight: 600;
-    margin-left: -18px;
-    font-size: 1.3rem;
-}
+    /* Seccion Tarjetas */
+    .texto-tarjeta {
+        margin-top: 43px;
+        font-weight: 600;
+        margin-left: -18px;
+        font-size: 1.3rem;
+    }
+
     .contenido-tarjeta {
         margin-left: -12px;
         line-height: 1.4;
         margin-top: 20px;
         width: 12rem;
     }
-/* Termina seccion tarjetas  */
+
+    /* Termina seccion tarjetas  */
 
     .base-image {
         top: 75px;
@@ -1353,7 +1360,7 @@
         transform: rotate(-90deg);
     }
 
-/******************* Seccion contacto *********************/
+    /******************* Seccion contacto *********************/
 
     .parrafo-banner {
         font-size: 2.4rem;
@@ -2256,7 +2263,7 @@
         font-size: 47px;
         /*width: 25rem;*/
         /*margin-left: -29px;*/
-        margin-top: 4rem!important;
+        margin-top: 4rem !important;
     }
 
     /* Botón contáctanos */
@@ -2337,51 +2344,51 @@
     }
 
 
-    .top {
-        margin-top: 1rem;
-    }
+        .top {
+            margin-top: 1rem;
+        }
 
-    /* ----------------------------------Sección ilustración giratoria -------------------------------------------------- */
-    .fondo-circulo {
-        /* margin-top: 50px; */
-        width: 265px;
-        display: block;
-        margin: auto;
-    }
+        /* ----------------------------------Sección ilustración giratoria -------------------------------------------------- */
+        .fondo-circulo {
+            /* margin-top: 50px; */
+            width: 265px;
+            display: block;
+            margin: auto;
+        }
 
-    .base-image {
-        position: absolute;
-        top: 0;
-        left: 30%;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
+        .base-image {
+            position: absolute;
+            top: 0;
+            left: 30%;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
 
-    .base-image, .overlay-image {
-        width: 40%;
-        height: auto;
-    }
+        .base-image, .overlay-image {
+            width: 40%;
+            height: auto;
+        }
 
-    .overlay-image {
-        top: 11px;
-        left: 33%;
-        width: 34%;
-        margin: auto;
-    }
+        .overlay-image {
+            top: 11px;
+            left: 33%;
+            width: 34%;
+            margin: auto;
+        }
 
-    /************************************************Seccion solutions***********************************************/
+        /************************************************Seccion solutions***********************************************/
 
-    .mobil-solutions {
-        color: #000000;
-        text-align: center;
-        line-height: 1.4;
-        /*margin-left: 20px;*/
-        font-size: 21px;
-        font-family: "Akshar", Helvetica;
-        width: 18rem;
-        margin-bottom: 10px;
-    }
+        .mobil-solutions {
+            color: #000000;
+            text-align: center;
+            line-height: 1.4;
+            /*margin-left: 20px;*/
+            font-size: 21px;
+            font-family: "Akshar", Helvetica;
+            width: 18rem;
+            margin-bottom: 10px;
+        }
 
     .solutions {
         margin-top: -5rem;
@@ -2390,236 +2397,236 @@
         padding: 20px;
         /*margin-left: -47px;
         width: 25rem;*/
-    }
+        }
 
-    .cuadro {
-        width: 88%;
-        /* Ajustar ancho del cuadro */
-        height: auto;
-        /* Ajustar altura según el contenido */
-        margin: 10px auto;
-        margin-bottom: 120px;
-    }
+        .cuadro {
+            width: 88%;
+            /* Ajustar ancho del cuadro */
+            height: auto;
+            /* Ajustar altura según el contenido */
+            margin: 10px auto;
+            margin-bottom: 120px;
+        }
 
-    .btn-s {
-        font-size: 1rem;
-        width: 50px;
-        height: 40px;
-        margin: 5px 0;
-    }
+        .btn-s {
+            font-size: 1rem;
+            width: 50px;
+            height: 40px;
+            margin: 5px 0;
+        }
 
-    .left-buttons-c,
-    .right-buttons-c {
-        justify-content: space-between;
-        gap: 5px;
-        padding-left: 10px;
-        /* Reducir padding izquierdo */
-        padding-right: 10px;
-        /* Reducir padding derecho */
-        margin-top: 126px;
-    }
+        .left-buttons-c,
+        .right-buttons-c {
+            justify-content: space-between;
+            gap: 5px;
+            padding-left: 10px;
+            /* Reducir padding izquierdo */
+            padding-right: 10px;
+            /* Reducir padding derecho */
+            margin-top: 126px;
+        }
 
-    .btn-wrapper {
-        margin-bottom: 15px;
-        /* Reducir margen inferior */
-    }
+        .btn-wrapper {
+            margin-bottom: 15px;
+            /* Reducir margen inferior */
+        }
 
-    .text-container {
-        position: relative;
-        /* Cambiar posición a relativa */
-        top: 0;
-        margin-left: 0;
-        width: 100%;
-        /* Hacer que ocupe casi todo el ancho */
-        text-align: center;
-        /* Centrar texto */
-        display: none;
-        /* Asegurar que los textos se ocultan inicialmente */
-    }
+        .text-container {
+            position: relative;
+            /* Cambiar posición a relativa */
+            top: 0;
+            margin-left: 0;
+            width: 100%;
+            /* Hacer que ocupe casi todo el ancho */
+            text-align: center;
+            /* Centrar texto */
+            display: none;
+            /* Asegurar que los textos se ocultan inicialmente */
+        }
 
-    .custom-title {
-        font-size: 1.2rem;
-        text-align: center;
-    }
+        .custom-title {
+            font-size: 1.2rem;
+            text-align: center;
+        }
 
-    .description-s {
-        font-size: 1rem;
-        margin-bottom: 20px;
-        transform: translateX(0);
-        text-align: justify;
-        /* Mejor alineación */
-    }
+        .description-s {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            transform: translateX(0);
+            text-align: justify;
+            /* Mejor alineación */
+        }
 
-    .text-solutions {
-        font-size: 2.2rem;
-        line-height: 1.2;
-        white-space: normal;
-        margin-bottom: 20px;
-    }
+        .text-solutions {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            white-space: normal;
+            margin-bottom: 20px;
+        }
 
-    .diagonal-line {
-        display: none;
-        /* Ocultar líneas diagonales */
-    }
+        .diagonal-line {
+            display: none;
+            /* Ocultar líneas diagonales */
+        }
 
-    .content {
-        margin-top: -46rem;
-        margin-bottom: -86px;
-    }
+        .content {
+            margin-top: -46rem;
+            margin-bottom: -86px;
+        }
 
-    /*.form-control {
+        /*.form-control {
         width: 100%;
         margin-bottom: 10px;
     }*/
 
-    .captcha-section {
-        flex-direction: column;
-        text-align: center;
-    }
+        .captcha-section {
+            flex-direction: column;
+            text-align: center;
+        }
 
-    .captcha-izquierda {
-        margin-bottom: 56px;
-        margin-left: 85px;
-        margin-top: -34px;
-        width: 191px;
-        height: 61px;
-    }
+        .captcha-izquierda {
+            margin-bottom: 56px;
+            margin-left: 85px;
+            margin-top: -34px;
+            width: 191px;
+            height: 61px;
+        }
 
-    .imagen-cap {
-        display: block;
-        margin: 0 auto;
-        margin-top: -23px;
-        margin-left: 118px;
-    }
+        .imagen-cap {
+            display: block;
+            margin: 0 auto;
+            margin-top: -23px;
+            margin-left: 118px;
+        }
 
-    .text-cap-derecha {
-        font-size: 14px;
-        line-height: 1.5;
-        margin-bottom: 10px;
-        margin-top: -18px;
-        margin-left: 38px;
-    }
+        .text-cap-derecha {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            margin-top: -18px;
+            margin-left: 38px;
+        }
 
-    .btn-custom {
-        width: 100%;
-        /* Botón ocupa todo el ancho */
-        padding: 10px;
-        font-size: 16px;
-        margin-left: 26px;
-    }
+        .btn-custom {
+            width: 100%;
+            /* Botón ocupa todo el ancho */
+            padding: 10px;
+            font-size: 16px;
+            margin-left: 26px;
+        }
 
-    .flecha {
-        margin-left: 2px;
-        width: 12px;
-    }
+        .flecha {
+            margin-left: 2px;
+            width: 12px;
+        }
 
-    /* Seccion de botones circulares */
-    .btn-s {
-        display: none;
-        /* Ocultar botones actuales */
-        height: 200px;
-    }
+        /* Seccion de botones circulares */
+        .btn-s {
+            display: none;
+            /* Ocultar botones actuales */
+            height: 200px;
+        }
 
-    .cuadro {
-        box-shadow: none;
-        margin-top: 3rem;
-    }
+        .cuadro {
+            box-shadow: none;
+            margin-top: 3rem;
+        }
 
-    .circular-btn {
-        display: inline-flex;
-        /* Mostrar botones circulares */
-        justify-content: center;
-        align-items: center;
-        background-color: #000;
-        color: #fff;
-        border-radius: 50%;
-        /* Hacerlos circulares */
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        border: none;
-        /* Sin borde adicional */
-        margin: 5px;
-        cursor: pointer;
-    }
+        .circular-btn {
+            display: inline-flex;
+            /* Mostrar botones circulares */
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            border-radius: 50%;
+            /* Hacerlos circulares */
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            /* Sin borde adicional */
+            margin: 5px;
+            cursor: pointer;
+        }
 
-    .circular-btn.btn-circular-1 {
-        position: absolute;
-        top: 1741px;
-        left: 50px;
-        margin: 0px;
-        width: 32px;
-        height: 32px;
-    }
+        .circular-btn.btn-circular-1 {
+            position: absolute;
+            top: 1741px;
+            left: 50px;
+            margin: 0px;
+            width: 32px;
+            height: 32px;
+        }
 
-    .circular-btn.btn-circular-2 {
-        position: absolute;
-        top: 1741px;
-        left: 330px;
-        margin: 0px;
-        width: 32px;
-        height: 32px;
-    }
+        .circular-btn.btn-circular-2 {
+            position: absolute;
+            top: 1741px;
+            left: 330px;
+            margin: 0px;
+            width: 32px;
+            height: 32px;
+        }
 
-    .circular-btn.btn-circular-3 {
-        position: absolute;
-        top: 1855px;
-        left: 50px;
-        margin: 0px;
-        width: 32px;
-        height: 32px;
-    }
+        .circular-btn.btn-circular-3 {
+            position: absolute;
+            top: 1855px;
+            left: 50px;
+            margin: 0px;
+            width: 32px;
+            height: 32px;
+        }
 
-    .circular-btn.btn-circular-4 {
-        position: absolute;
-        top: 1855px;
-        left: 330px;
-        margin: 0px;
-        width: 32px;
-        height: 31px;
-    }
+        .circular-btn.btn-circular-4 {
+            position: absolute;
+            top: 1855px;
+            left: 330px;
+            margin: 0px;
+            width: 32px;
+            height: 31px;
+        }
 
-    .circular-btn.btn-circular-5 {
-        position: absolute;
-        top: 2001px;
-        left: 160px;
-        margin: 0px;
-        width: 32px;
-        height: 32px;
-    }
+        .circular-btn.btn-circular-5 {
+            position: absolute;
+            top: 2001px;
+            left: 160px;
+            margin: 0px;
+            width: 32px;
+            height: 32px;
+        }
 
-    /* Aquí empieza la sección de botones circulares */
+        /* Aquí empieza la sección de botones circulares */
 
-    /************************** seccion about us **********************************/
+        /************************** seccion about us **********************************/
 
-    .framecolor-4,
-    .framecolor-5,
-    .framecolor-6,
-    .framecolor-7,
-    .framecolor-8,
-    .framecolor-9 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #D94D00;
-        color: #ffffff !important;
-        padding: 20px;
-        transition: background-color 0.3s ease;
-        justify-content: space-between;
-        height: 100%;
-        /*margin: auto;*/
-        height: 200px;
-        width: 370px;
-        align-items: center;
-        justify-content: center;
-    }
+        .framecolor-4,
+        .framecolor-5,
+        .framecolor-6,
+        .framecolor-7,
+        .framecolor-8,
+        .framecolor-9 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #D94D00;
+            color: #ffffff !important;
+            padding: 20px;
+            transition: background-color 0.3s ease;
+            justify-content: space-between;
+            height: 100%;
+            /*margin: auto;*/
+            height: 200px;
+            width: 370px;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .original-title-aboutus {
-        display: none !important;
+        .original-title-aboutus {
+            display: none !important;
 
-    }
+        }
 
     .alternative-title-aboutus {
         display: block !important;
@@ -2631,88 +2638,89 @@
         margin-bottom: 5rem;
     }
 
-    .contenido-tarjeta {
-        margin-left: 11px;
-    }
+        .contenido-tarjeta {
+            margin-left: 11px;
+        }
 
-    .texto-tarjeta {
-        margin-left: 7px;
-    }
+        .texto-tarjeta {
+            margin-left: 7px;
+        }
 
-    .red-mark-aboutus {
-        display: none;
-    }
+        .red-mark-aboutus {
+            display: none;
+        }
 
-    /***************************************seccion content****************************************/
-    .text-formulario {
-        text-align: center;
-        font-size: 36px;
-        font-family: "Akshar", Helvetica;
-        font-weight: 500;
-        margin-top: -10rem;
-    }
+        /***************************************seccion content****************************************/
+        .text-formulario {
+            text-align: center;
+            font-size: 36px;
+            font-family: "Akshar", Helvetica;
+            font-weight: 500;
+            margin-top: -10rem;
+        }
 
-    .text-end {
-        text-align: right;
-        width: 180px;
-        margin: 82px;
-    }
+        .text-end {
+            text-align: right;
+            width: 180px;
+            margin: 82px;
+        }
 
-    /* .form-check-label {
+        /* .form-check-label {
 
         /*margin-top: 15px;*/
         /*margin-left: -55px;*/
-    /* } */
+        /* } */
 
-    /* .form-check-input {
+        /* .form-check-input {
         margin-left: -83px;
     } */
 
-    /******************************************Seccion Services***************************/
-    .benefit-card h3 {
+        /******************************************Seccion Services***************************/
+        .benefit-card h3 {
 
-        font-size: 23px;
-        font-weight: bold;
-        color: #000;
-        font-family: "Besley";
-        line-height: 2rem;
-        margin-bottom: 2.8rem;
-        margin-top: 25px;
-        font-weight: 700;
-        font-style: italic;
+            font-size: 23px;
+            font-weight: bold;
+            color: #000;
+            font-family: "Besley";
+            line-height: 2rem;
+            margin-bottom: 2.8rem;
+            margin-top: 25px;
+            font-weight: 700;
+            font-style: italic;
 
-    }
-}
-
-@media (min-width: 360px) and (max-width: 375px) {
-
-
-    .profile-menu {
-        right: 10px;
+        }
     }
 
-    .circular-btn.btn-circular-1 {
-        top: 1848px;
-        left: 50px;
-    }
+    @media (min-width: 360px) and (max-width: 375px) {
 
-    .circular-btn.btn-circular-2 {
-        top: 1848px;
-        left: 285px;
-    }
 
-    .circular-btn.btn-circular-3 {
-        top: 1973px;
-        left: 50px;
-    }
+        .profile-menu {
+            right: 10px;
+        }
 
-    .circular-btn.btn-circular-4 {
-        top: 1967px;
-        left: 285px;
-    }
+        .circular-btn.btn-circular-1 {
+            top: 1848px;
+            left: 50px;
+        }
+
+        .circular-btn.btn-circular-2 {
+            top: 1848px;
+            left: 285px;
+        }
+
+        .circular-btn.btn-circular-3 {
+            top: 1973px;
+            left: 50px;
+        }
+
+        .circular-btn.btn-circular-4 {
+            top: 1967px;
+            left: 285px;
+        }
 
     .circular-btn.btn-circular-5 {
         top: 2104px;
         left: 165px;
     }
+
 }
