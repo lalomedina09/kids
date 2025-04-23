@@ -820,8 +820,8 @@
 
     /******************Lading Home - Seccion de servicios *****************/
     .img-2-service {
-        width: 90px;
-        margin-left: 16px;
+        /*width: 90px;
+        margin-left: 16px;*/
     }
 
     /******************Lading Consultoria - Seccion de metodologia *****************/
@@ -1666,8 +1666,8 @@
 @media (min-width: 1201px) and (max-width: 1440px) {
 
     .img-2-service {
-        width: 167px;
-        margin-left: 3px;
+        /*width: 167px;
+        margin-left: 3px;*/
     }
 
 
@@ -1767,8 +1767,8 @@
     }
 
     .servicio-lr {
-        margin-left: -127px;
-        margin-right: -100px;
+        /*margin-left: -127px;
+        margin-right: -100px;*/
         margin-top: 2rem;
     }
 
@@ -1900,8 +1900,8 @@
     }
 
     .img-2-service {
-        width: 167px;
-        margin-left: 3px;
+        /*width: 167px;
+        margin-left: 3px;*/
     }
 
     .frame-8 {
