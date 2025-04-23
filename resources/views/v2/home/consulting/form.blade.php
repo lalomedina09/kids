@@ -54,7 +54,7 @@
         font-size: 36px;
         font-family: "Akshar", Helvetica;
         font-weight: 500;
-        margin-top: -10rem;
+        margin-top: -12rem;
     }
 
     .text-end {

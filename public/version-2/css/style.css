@@ -1953,7 +1953,7 @@
     background-color: #000000;
     color: #ffffff;
     padding: 30px 0;
-    margin-top: 107px;
+    margin-top: 5rem;
 }
 
 .footer-text {
@@ -2381,6 +2381,13 @@ a {
     }
 }
 
+.espacio-banner {
+    margin-top: -2rem
+}
+
+.top {
+    margin-top: -6rem;
+}
 
 .stack-section {
     height: auto;
@@ -2860,7 +2867,7 @@ a {
     text-align: center;
     width: 100%;
     line-height: 1.2;
-    margin-top: 118px;
+    margin-top: 6rem;
     margin-left: 0;
 }
 
@@ -2922,6 +2929,7 @@ a {
     position: relative;
     left: 0px;
     top: -120px;
+    margin-bottom: 2.5rem;
 }
 
 /* Imagenes banner */
@@ -3052,7 +3060,7 @@ a {
     font-size: 1.5rem;
     font-family: "Akshar", Helvetica;
     transform: translateX(3px);
-    margin-bottom: 47px;
+    margin-bottom: 5rem;
 }
 
 .text-solutions {
@@ -3071,7 +3079,7 @@ a {
     background-color: #EEEEEE;
     color: white;
     text-align: center;
-    margin-top: -62px;
+    margin-top: -4rem;
     /*height: 91rem;*/
 }
 
@@ -3434,7 +3442,7 @@ a {
     padding: 50px;
     /* Espaciado interno */
     text-align: center;
-    margin-top: 0px;
+    margin-top: -6rem;
     /* Centrar texto */
 }
 

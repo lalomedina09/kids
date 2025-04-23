@@ -1,11 +1,11 @@
 
-<div class="container mb-4">
+<div class="container top">
     <br>
     <div class="row align-items-center mb-4">
         <!-- Columna de texto -->
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <!-- H1 visible por defecto -->
-            <h1 class="segundot  mt-1 main-solution-title2 mt-2 original-heading text-center text-lg-left">
+            <h1 class="segundot main-solution-title2 original-heading text-center text-lg-left">
                 Metodología del<br>Bienestar Financiero
             </h1>
 

@@ -1,4 +1,4 @@
-<div class="bg-banner-consulting-v2">
+<div class="bg-banner-consulting-v2 espacio-banner">
     <div class="container text-center py-5">
         <div class="position-relative d-inline-block" style="margin-top: 60px;">
             <br><br><br><br>

@@ -11,6 +11,11 @@
 
 @media (min-width: 360px) and (max-width: 915px) {
 
+
+    .tapa {
+        top: 84px;
+    }
+
     .btn-register {
         margin-right: 3rem;
     }
@@ -168,7 +173,9 @@
 
 @media (max-width: 480px) {
 
-
+    .espacio-banner {
+        margin-top: 10rem;
+    }
 
     .profile-menu {
         right: 10px;
@@ -691,7 +698,7 @@
     .bg-banner-consulting-v2 {
         background-image: url('../images/consulting/bg/bg-banner-movil.png');
         background-size: cover;
-        margin-top: -25px;
+        margin-top: -8rem;
     }
 
     /* Imágenes flotantes */
@@ -2249,7 +2256,7 @@
         font-size: 47px;
         /*width: 25rem;*/
         /*margin-left: -29px;*/
-        margin-top: 33px;
+        margin-top: 4rem!important;
     }
 
     /* Botón contáctanos */
@@ -2326,6 +2333,10 @@
         width: 100%;
         text-align: center;
         font-weight: 700;
+        margin-top: -1rem !important;
+
+    .top {
+        margin-top: 1rem;
     }
 
     /* ----------------------------------Sección ilustración giratoria -------------------------------------------------- */
