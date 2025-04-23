@@ -2919,7 +2919,9 @@ a {
 }
 
 .fondo-circulo {
-    width: 500px;
+    /*margin-left: -166px;
+    margin-top: -65px;*/
+    width: 100%;
 }
 
 .base-image {

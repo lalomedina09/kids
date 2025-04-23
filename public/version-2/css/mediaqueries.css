@@ -2341,6 +2341,8 @@
         text-align: center;
         font-weight: 700;
         margin-top: -1rem !important;
+    }
+
 
         .top {
             margin-top: 1rem;
@@ -2715,9 +2717,9 @@
             left: 285px;
         }
 
-        .circular-btn.btn-circular-5 {
-            top: 2104px;
-            left: 165px;
-        }
-
+    .circular-btn.btn-circular-5 {
+        top: 2104px;
+        left: 165px;
     }
+
+}
