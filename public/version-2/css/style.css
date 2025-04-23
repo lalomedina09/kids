@@ -1,5 +1,3 @@
-
-
 .web {
     background-color: #f2f2f2;
     display: flex;
@@ -313,10 +311,10 @@
     left: -6px;
 }
 
+
+
 .element {
-    /* position: absolute; */
     width: 1446px;
-    /*height: 765px;*/
     top: 0;
     left: 0;
     background-color: #000000;
@@ -336,8 +334,6 @@
 }
 
 .te-ayudamos-a {
-    /* position: absolute; */
-    /*width: 445px;*/
     top: 352px;
     left: 104px;
     font-family: "Akshar", Helvetica;
@@ -921,75 +917,6 @@
     line-height: 24px;
     white-space: nowrap;
 }
-
-/*
-.web .logos {
-    position: absolute;
-    width: 1330px;
-    height: 334px;
-    top: 3359px;
-    left: 41px;
-    background-color: #ffffff;
-}
-
-.web .overlap-4 {
-    position: relative;
-    height: 334px;
-    background-color: #ededed;
-}
-
-.web .logotipos {
-    left: 92px;
-    position: absolute;
-    width: 141px;
-    height: 141px;
-    top: 147px;
-    object-fit: cover;
-}
-
-.web .logotipos-2 {
-    left: 274px;
-    position: absolute;
-    width: 141px;
-    height: 141px;
-    top: 147px;
-    object-fit: cover;
-}
-
-.web .logotipos-3 {
-    left: 483px;
-    position: absolute;
-    width: 141px;
-    height: 141px;
-    top: 147px;
-    object-fit: cover;
-}
-
-.web .logotipos-4 {
-    left: 667px;
-    position: absolute;
-    width: 141px;
-    height: 141px;
-    top: 147px;
-    object-fit: cover;
-}
-
-.web .logotipos-5 {
-    left: 858px;
-    position: absolute;
-    width: 141px;
-    height: 141px;
-    top: 147px;
-    object-fit: cover;
-}
-
-.web .logotipos-6 {
-    left: 1042px;
-    position: absolute;
-    width: 141px;
-    height: 141px;
-    top: 147px;
-    object-fit: cover; */
 
 .web .marcas-que-han {
     position: absolute;
@@ -2229,6 +2156,10 @@
     width: 100%;
 }
 
+.img-content-cover-lateral {
+    height: 150px;
+}
+
 .link-content>img {
     width: 100%;
     filter: grayscale(100%);
@@ -2282,7 +2213,7 @@ a {
 
 .carousel-inner .carousel-item img {
     width: 100%;
-    height: 250px;
+    height: 350px;
     object-fit: cover;
 }
 
@@ -2772,24 +2703,17 @@ a {
 
 /* Seccion Banner */
 
-/* Contenedor para aislar las imágenes cultura-mobil */
+
 .cultura-mobil-container {
     position: relative;
-    /* Asegura que los márgenes no afecten a otros elementos */
     display: flex;
-    /* Opcional: Puedes usar flexbox para alinear imágenes */
     flex-direction: column;
-    /* Alinea las imágenes verticalmente si es necesario */
     justify-content: center;
-    /* Centra las imágenes verticalmente */
     align-items: center;
-    /* Centra las imágenes horizontalmente */
 }
 
-/* Margen específico para las imágenes cultura-mobil */
 .cultura-mobil {
     margin-top: 20px;
-    /* Ajusta este valor según sea necesario */
 }
 
 .cultura-mobil {
@@ -2944,46 +2868,33 @@ a {
 }
 
 .bg-banner-consulting::before {
-    /* content: url("../public/images/consulting/imgbanner/image 81.png"); Cambia "/ruta/a/imagen-izquierda.png" a la ruta de tu imagen izquierda */
     position: absolute;
     left: 248px;
-    /* Ajusta la distancia desde el borde izquierdo */
     top: 22%;
-    /* Centra verticalmente */
     transform: translateY(-50%);
     z-index: 1;
-    /* Asegúrate de que esté detrás del texto */
 }
 
 .bg-banner-consulting::after {
-    /* content: url("../public/images/consulting/imgbanner/image 82.png"); Cambia "/ruta/a/imagen-derecha.png" a la ruta de tu imagen derecha */
     position: absolute;
     right: 152px;
-    /* Ajusta la distancia desde el borde derecho */
     top: 23%;
-    /* Centra verticalmente */
     transform: translateY(-50%);
     z-index: 1;
-    /* Asegúrate de que esté detrás del texto */
 }
 
 .left-content {
     position: absolute;
     left: 17%;
-    /* Ajusta según necesites */
     top: 37%;
-    /* Ajusta según necesites */
     transform: translateY(-50%);
     z-index: 2;
-    /* Asegúrate de que esté por encima de las imágenes de fondo */
     text-align: left;
     max-width: 400px;
-    /* Ajusta el ancho según necesites */
 }
 
 .left-content h1 {
     font-size: 3.8em;
-    /* Ajusta el tamaño del título */
     margin-bottom: 38px;
     text-align: left;
 }
@@ -2993,8 +2904,6 @@ a {
     line-height: 1.4;
     font-size: 1.5rem;
     font-family: "Akshar", Helvetica;
-    /*width: 600px;
-    margin-left: -113px;*/
 }
 
 .left-content .btn-learn {
@@ -3005,15 +2914,11 @@ a {
 .image-container {
     position: relative;
     width: 280px;
-    /* Ajusta al tamaño de las imágenes */
     height: 280px;
-    /* Ajusta al tamaño de las imágenes */
     margin: 10% auto;
 }
 
 .fondo-circulo {
-    /*margin-left: -166px;
-    margin-top: -65px;*/
     width: 500px;
 }
 
@@ -3022,7 +2927,6 @@ a {
     top: 75px;
     left: 145px;
     width: 45%;
-    /*height: 90%;*/
     z-index: 1;
 }
 
@@ -3031,22 +2935,10 @@ a {
     top: 91px;
     left: 161px;
     width: 39%;
-    /*height: 75%;*/
     z-index: 2;
     animation: rotateFlechas 10s linear infinite;
 }
 
-/* Animacion de circulo girando */
-
-/* @keyframes rotateFlechas {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-} */
 
 /**********Sección Solutions****************/
 
@@ -3071,7 +2963,6 @@ a {
     text-align: center;
     letter-spacing: 0;
     line-height: 46.1px;
-    /*white-space: nowrap;*/
     margin-bottom: 3rem;
 }
 
@@ -3080,13 +2971,11 @@ a {
     color: white;
     text-align: center;
     margin-top: -4rem;
-    /*height: 91rem;*/
 }
 
 /* Cuadro somos tu aliado */
 .cuadro {
     background-image: url(../images/consulting/bg/bt.png);
-    /* padding: 371px; */
     border-radius: 0px;
     color: white;
     text-align: center;
@@ -3094,9 +2983,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     width: 90%;
-    /* Ancho del cuadro */
     height: 100%;
-    /*Alto del cuadro */
     background-color: #f0f0f0;
     margin-bottom: 160px;
 }
@@ -3112,7 +2999,6 @@ a {
     text-decoration: none;
     border-radius: 5px;
     margin: 10px 0;
-    /* Espaciado uniforme entre botones */
     font-size: 25px;
     font-weight: bold;
     width: 62px;
@@ -3125,28 +3011,20 @@ a {
 .left-buttons-c {
     display: flex;
     flex-direction: column;
-    /* Alinea los botones en vertical */
     align-items: flex-start;
-    /* Alinea a la izquierda */
     gap: 10px;
-    /* Espaciado entre botones */
     padding-left: 20px;
-    /* Espaciado del contenedor respecto al borde izquierdo */
 }
 
-/* Botones específicos de la izquierda */
+
 
 /* Contenedor de botones de la derecha */
 .right-buttons-c {
     display: flex;
     flex-direction: column;
-    /* Alinea los botones en vertical */
     align-items: flex-end;
-    /* Alinea a la derecha */
     gap: 10px;
-    /* Espaciado entre botones */
     padding-right: 20px;
-    /* Espaciado del contenedor respecto al borde derecho */
 }
 
 /* Estilo base para todos los botones */
@@ -3279,22 +3157,13 @@ a {
 }
 
 
-/* .btn-s:hover {
-    background-color: #0056b3;
-} */
-
-/* Estilos iniciales para las líneas diagonales */
 .diagonal-line {
     display: none;
-    /* Ocultar inicialmente */
     width: 100%;
     height: 2px;
     background-color: #000;
-    /* Color de la línea */
     transform: rotate(45deg);
-    /* Hacerla diagonal */
     margin: 10px 0;
-    /* Espaciado opcional */
 }
 
 .diagonal-line1 {
@@ -3355,52 +3224,43 @@ a {
 /* Estilos específicos para cada botón */
 .btn-wrapper-1 {
     position: relative;
-    /* Posiciona los elementos relativos al contenedor */
     display: inline-block;
-    /* Puedes ajustar el margen para posicionar este botón */
 }
 
 .btn-wrapper-3 {
     position: relative;
-    /* Posiciona los elementos relativos al contenedor */
     display: inline-block;
 }
 
 .btn-wrapper-5 {
     position: relative;
-    /* Posiciona los elementos relativos al contenedor */
     display: inline-block;
 }
 
 .btn-wrapper-2 {
     position: relative;
-    /* Posiciona los elementos relativos al contenedor */
     display: inline-block;
 }
 
 .btn-wrapper-4 {
     position: relative;
-    /* Posiciona los elementos relativos al contenedor */
     display: inline-block;
 }
 
 .btn-diagram-1 {
     background-color: #000;
-    /* Color específico para el botón 2 */
     margin-top: 313px;
     margin-left: 23px;
 }
 
 .btn-diagram-3 {
     background-color: #000;
-    /* Color específico para el botón 2 */
     margin-top: 211px;
     margin-left: 25px;
 }
 
 .btn-diagram-5 {
     background-color: #000;
-    /* Color específico para el botón 3 */
     margin-top: 278px;
     margin-left: 400px;
 }
@@ -3426,24 +3286,17 @@ a {
 
 .content-wrapper {
     display: flex;
-    /* Activar Flexbox en el contenedor */
     align-items: center;
-    /* Centra los elementos verticalmente */
     gap: 20px;
-    /* Espacio entre el cuadro y el botón */
 }
 
 /****************** Seccion about-us *************************/
 .about-us {
     background-color: #F5F5F5;
-    /* Color de fondo de la sección de soluciones */
     color: white;
-    /* Color del texto */
     padding: 50px;
-    /* Espaciado interno */
     text-align: center;
     margin-top: -6rem;
-    /* Centrar texto */
 }
 
 .margin-title-about-us {
@@ -3502,13 +3355,9 @@ a {
 .contenedor-tarjetas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Dos columnas de igual tamaño */
     gap: 26px;
-    /* Espacio entre las tarjetas */
     width: 57%;
-    /* Ancho del contenedor */
     margin-left: 538px;
-    /* Alineado a la derecha */
     padding: 20px;
     margin-top: -250px;
 }
@@ -3517,18 +3366,11 @@ a {
 .tarjeta-benefit {
     font-family: "Akshar", Helvetica;
     background-color: #EEEEEE;
-    /* Color de fondo */
     color: #000000;
-    ;
     width: 268px;
     height: 181px;
-    /* Color del texto */
-    /* padding: 84px;              Espaciado interno */
     border-radius: 0px;
-    /* Bordes redondeados */
     text-align: left;
-    /* Centrado del texto */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); Sombra */
     line-height: 1.6;
     font-size: 17px;
     transition: background-color 0.3s ease;
@@ -3868,8 +3710,10 @@ a {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 33%; /* Ubicación entre las dos columnas */
+    left: 33%;
+    /* Ubicación entre las dos columnas */
     width: 2px;
-    background-color: #ccc; /* Color de la línea */
+    background-color: #ccc;
+    /* Color de la línea */
     z-index: 1;
 }

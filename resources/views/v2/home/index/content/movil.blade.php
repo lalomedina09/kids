@@ -24,7 +24,7 @@
                 }
             }
 @endphp
-<div id="contentCarousel" class="carousel slide d-md-none" data-ride="carousel">
+<div id="contentCarousel" class="carousel slide d-lg-none" data-ride="carousel">
     <!-- Indicadores del carrusel -->
     <ol class="carousel-indicators">
         @foreach($carouselItems as $index => $item)
@@ -48,11 +48,11 @@
                 <div class="text-wrapper-27 mt-4">
                     {{ $item['data']->title }}
                 </div>
-                <br><br>
-                <div>
+
+                <!--<div>
                     <a class="btn-link-content">Ver más</a>
-                </div>
-                <br><br>
+                </div>-->
+
             </a>
             @elseif($item['type'] === 'course')
             <!-- Mostrar curso -->
@@ -65,11 +65,11 @@
                 <div class="text-wrapper-27 mt-4">
                     {{ $item['data']->name }}
                 </div>
-                <br><br>
-                <div>
+
+                <!--<div>
                     <a class="btn-link-content">Ver más</a>
-                </div>
-                <br><br>
+                </div>-->
+
             </a>
             @endif
         </div>
