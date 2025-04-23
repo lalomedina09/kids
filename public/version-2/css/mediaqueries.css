@@ -2384,7 +2384,7 @@
     }
 
     .solutions {
-        margin-top: 100px;
+        margin-top: -5rem;
         height: auto;
         /* Ajustar altura según el contenido */
         padding: 20px;
@@ -2623,11 +2623,12 @@
 
     .alternative-title-aboutus {
         display: block !important;
-        font-size: 34px;
+        font-size: 2.2rem;
         /*width: 25rem;
         margin-left: -86px;*/
-        margin-top: 2rem;
+        margin-top: 4rem;
         line-height: 49px;
+        margin-bottom: 5rem;
     }
 
     .contenido-tarjeta {
