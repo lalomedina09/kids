@@ -12348,9 +12348,19 @@ blockquote {
 
 b,
 strong {
-    font-weight: bolder;
+    font-weight: 700;
 }
 
 small {
     font-size: 80%;
+}
+
+.single__content ol {
+    padding-left: 1.5rem;
+    list-style-type: decimal;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
 }
