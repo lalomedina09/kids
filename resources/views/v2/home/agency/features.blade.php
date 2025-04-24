@@ -24,6 +24,7 @@
 
     .bg-features-agency {
         background: linear-gradient(180deg, #121212, #1e1e1e);
+        margin-top: -0.7rem
     }
 
     .hero-section h1 {
@@ -42,19 +43,20 @@
     }
 
     .content-text h2 {
-        margin-top: 10px;
         font-size: 1.8rem;
+        font-weight: 500;
     }
 
     .content-text p {
         font-size: 1rem;
-        margin: 10px 0 20px;
+        margin: -26px 0 20px;
     }
 
     .content-text .badge {
         font-size: 21px;
         margin-bottom: 10px;
-        margin-left: -0.5rem
+        margin-left: -0.5rem;
+        margin-top: 6rem;
     }
 
     /* Imagen con fondo de mancha y animación */
@@ -175,6 +177,7 @@
                     <br>
                     Somos expertos creando distintos formatos como: <br>
                     Posts de Redes Sociales (visuales, infografías, videos cortos, <br>
+
                     textos, memes, etc), community management, artículos escritos, <br>
                     newsletters, entrevistas, entre otros.
 
