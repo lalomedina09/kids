@@ -11,14 +11,14 @@
     </div>
 
     <!-- Tarjeta 2 -->
-    {{-- <div class="col mb-4">
+    <div class="col mb-4">
         <div class="card tarjeta t-b-2 text-center p-1">
             <h3 class="texto-tarjeta mt-4 font-beley"><strong>Menor rotación, <br>mayor retención</strong></h3>
             <p class="contenido-tarjeta">
-                Buscar hard fact de un tercero.
+                57% de los empleados dicen que las finanzas son la principal causa de estrés en su vida. *PwC's Employee Financial Wellness Survey, USA, 2023
             </p>
         </div>
-    </div> --}}
+    </div>
 
     <!-- Tarjeta 3 -->
     <div class="col mb-4">
