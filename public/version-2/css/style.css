@@ -1589,6 +1589,7 @@
     justify-content: center;
     color: #ffffff;
     text-decoration: none;
+    margin-top: -0.8rem;
 }
 
 .boton-conoce-servicios:hover {
@@ -3376,6 +3377,11 @@ a {
     line-height: 1.6;
     font-size: 17px;
     transition: background-color 0.3s ease;
+}
+
+.margenes {
+    margin-left: -5rem;
+    margin-right: -5rem;
 }
 
 .t-b-1 {

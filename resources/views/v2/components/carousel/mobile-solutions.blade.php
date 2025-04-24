@@ -7,7 +7,7 @@
         <li data-target="#solucionesCarousel" data-slide-to="3"></li>
     </ol>
 
-    <div class="carousel-inner mb-5">
+    <div class="carousel-inner">
         <div class="carousel-item active">
             <a href="{{ route('agency') }}">
                 <div class="frame-4">

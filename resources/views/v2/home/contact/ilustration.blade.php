@@ -6,7 +6,7 @@
     <div class="row mx-0">
 
         <!-- Ajuste de margen horizontal para mayor responsividad -->
-        <div class="col-12 col-md-12 d-flex flex-column mb-5">
+        <div class="col-12 col-md-12 d-flex flex-column mb-4">
             <!-- Párrafo para pantallas grandes (oculto en móviles) -->
             <p class="parrafo-banner d-none d-md-block">
                 Si quieres que colaboremos juntos, si tienes alguna duda, comentario o sugerencia,<br>
@@ -57,7 +57,6 @@
 .parrafo-movil {
     font-family: "Akshar", Helvetica;
     font-size: 1.9rem;
-    margin-top: 5rem;
     text-align: center;
     line-height: 3.1rem;
     margin-bottom: 4rem;

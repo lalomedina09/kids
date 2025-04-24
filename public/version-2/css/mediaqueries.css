@@ -54,6 +54,7 @@
     .bg-container {
         left: -15px;
         width: 107%;
+        top: 45px;
     }
 
 
@@ -127,7 +128,7 @@
 
     /*Verde*/
     .circle {
-        top: 30;
+        top: 61;
         left: 22%;
         width: 193;
         height: 162;
@@ -147,7 +148,7 @@
         top: 51%;
         left: 32%;
         width: 160px;
-        height: 162px;
+        height: 95px;
     }
 
     .ellipse {
@@ -185,7 +186,7 @@
         max-width: 111%;
         height: auto;
         margin-top: -62px;
-        left: -1px;
+        left: 22px;
 
     }
 
@@ -226,8 +227,11 @@
         bottom: 0;
     }
 
+    .altura {
+        margin-top: -3rem;
+    }
+
     .btn-dark {
-        margin-left: -1.5rem;
         order: 2;
     }
 
@@ -245,6 +249,15 @@
         font-size: 2.5rem;
         line-height: 49.6px;
         margin-right: 2rem;
+    }
+
+    .articulos {
+        margin-top: -4rem;
+        margin-bottom: -6rem;
+    }
+
+    .div-text-about-us {
+        margin-top: -7.5rem;
     }
 
 
@@ -321,7 +334,7 @@
 
     .main-pigeon {
         width: 215px;
-        margin-top: 3rem;
+        margin-top: 5rem;
     }
 
     .pigeon-secondary-left {
@@ -1502,6 +1515,7 @@
 
     .stackcapaone {
         height: auto;
+        margin-top: -2rem;
     }
 
     .lasolucin,
@@ -1969,8 +1983,8 @@
     }
 
     .margin-title-solution {
-        margin-top: 4.4em;
-        margin-bottom: 4rem;
+        margin-top: 6.4em;
+        margin-bottom: 6rem;
     }
 
     /* ################# Landing Home - seccion de sobre nosotros ################# */
@@ -2343,6 +2357,11 @@
         margin-top: -1rem !important;
     }
 
+    .margenes {
+        margin-left: -5rem;
+        margin-right: -5rem;
+    }
+
 
         .top {
             margin-top: 1rem;
@@ -2512,7 +2531,7 @@
             /* Botón ocupa todo el ancho */
             padding: 10px;
             font-size: 16px;
-            margin-left: 26px;
+            margin-left: -10.5rem;
         }
 
         .flecha {

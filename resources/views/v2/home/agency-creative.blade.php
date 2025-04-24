@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-12">
                 <br><br>
-                <h2 class="text-dark font-akshar text-center font-weight-bold display-4">
+                <h2 class="negro font-akshar text-center font-weight-bold display-4 altura">
                     Hagamos equipo para llevar las finanzas al siguiente nivel
                 </h2>
                 <br><br>

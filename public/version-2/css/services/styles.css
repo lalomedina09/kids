@@ -327,7 +327,7 @@
 .main-pigeon {
     width: 245px;
     z-index: 2;
-    margin-top: 8rem;
+    margin-top: 12rem;
 }
 
 .banner-title-main {
@@ -361,9 +361,13 @@
     font-style: normal;
 }
 
+.altura {
+    margin-top: 2rem;
+}
+
 .display-4 {
     font-size: 2.2rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .text-muted {
@@ -384,8 +388,12 @@
     background-color: #000000;
 }
 
+.negro {
+    color: #000000;
+}
+
 .text-dark {
-    color: #000;
+    color: #000000;
 }
 
 .text-family-akshar {
