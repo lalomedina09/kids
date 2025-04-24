@@ -354,8 +354,11 @@
 .btn-learn-more:hover {
     background-color: #c5481c !important;
 }
+
 .number-font-size {
     font-size: 4rem;
+    font-family: "Akshar", Helvetica;
+    font-style: normal;
 }
 
 .altura {

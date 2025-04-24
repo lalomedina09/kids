@@ -300,7 +300,7 @@
 }
 
 .font-akshar {
-    font-family: "Akshar", Helvetica;
+    font-family: "Akshar", Helvetica !important;
 }
 
 .overlap-3 {
