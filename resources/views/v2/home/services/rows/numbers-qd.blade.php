@@ -4,21 +4,21 @@
             <!-- Div que cambia dinámicamente en móviles -->
             <div class="col-md-3 text-family-akshar" id="div-variable-qdplay">
                 <h4 class="text-white font-weight-bold number-font-size" id="dynamic-number">120</h4>
-                <p class="h5 text-white" id="dynamic-text">Talleres impartidos</p>
+                <p class="h5 text-white font-akshar" style="font-style: normal;" id="dynamic-text">Talleres impartidos</p>
             </div>
 
             <!-- Columnas visibles en escritorio (contenido estático) -->
             <div class="col-md-3 text-family-akshar d-none d-md-block">
                 <h4 class="text-white font-weight-bold number-font-size">100</h4>
-                <p class="h5 text-white">Cursos Online</p>
+                <p class="h5 text-white font-akshar" style="font-style: normal;">Cursos Online</p>
             </div>
             <div class="col-md-3 text-family-akshar d-none d-md-block">
                 <h4 class="text-white font-weight-bold number-font-size">690</h4>
-                <p class="h5 text-white">Mentorías</p>
+                <p class="h5 text-white font-akshar" style="font-style: normal;">Mentorías</p>
             </div>
             <div class="col-md-3 text-family-akshar d-none d-md-block">
                 <h4 class="text-white font-weight-bold number-font-size">400K</h4>
-                <p class="h5 text-white">Seguidores</p>
+                <p class="h5 text-white font-akshar" style="font-style: normal;">Seguidores</p>
             </div>
         </div>
     </div>
