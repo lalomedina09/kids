@@ -1703,7 +1703,7 @@
     }
 
     .margin-title-solution {
-        margin-top: 8.5rem;
+        margin-top: 11.5rem;
         margin-bottom: 4rem;
     }
 
@@ -1746,6 +1746,16 @@
         line-height: 62px;
         margin-top: 8rem;
         margin-left: -1rem !important;
+    }
+
+    .marcas-que-han {
+        margin-top: -1rem;
+    }
+
+    .soluciones-home {
+        margin-left: -5.5rem;
+        margin-right: -6.5rem;
+        margin-bottom: -3rem;
     }
 
     .queremos-que-todos {
