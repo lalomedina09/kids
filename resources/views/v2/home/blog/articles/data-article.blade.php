@@ -32,10 +32,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6" style="position: relative;">
+                    <div class="col-md-6 d-flex " style="position: relative;">
                         <!--  ============================================================================================== -->
                         <div class="d-flex justify-content-end gap-2 reaction-container"
-                            style="position: absolute; bottom: 0; right: 0;">
+                            style="position: absolute; bottom: 0; right: 15px;">
                             <!-- Botón de menú para pantallas pequeñas -->
                             <button class="btn btn-sm btn-dark font-akshar btn-reaction d-block d-md-none"
                                 title="Acciones" style="margin-right: 10px;" onclick="toggleReactionMenu()">

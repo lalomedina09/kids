@@ -9,7 +9,7 @@
                         <ul class="nav flex-row flex-wrap">
                             @foreach ($topTags as $tag)
                             <li class="nav-item">
-                                <a href="{{ route('articles.by.tag', $tag['slug']) }}" 
+                                <a href="{{ route('articles.by.tag', $tag['slug']) }}"
                                     class="nav-link px-2 mt-2 font-akshar text-decoration-none"
                                     style="font-size: 1rem;"
                                     title="Ver artículos de {{ $tag['name'] }}">
@@ -22,11 +22,11 @@
 
                     <!-- 2 columnas para el buscador -->
                     <div class="col-md-3">
-                        <form action="{{ route('articles.search.full') }}" method="POST" class="d-flex" id="searchForm">
+                        <form action="{{ route('articles.search.full') }}" method="POST" class="d-flex align-items-center" id="searchForm">
                             @csrf
-                            <input type="text" name="words" class="form-control me-2 font-akshar" placeholder="Buscar artículos"
+                            <input type="text" name="words" class="form-control me-2 mt-2 font-akshar" placeholder="Buscar artículos"
                                 aria-label="Buscar">
-                            <button type="submit" class="btn btn-dark">
+                            <button type="submit" class="btn btn-dark mt-2">
                                 <i class="fas fa-search"></i>
                             </button>
                         </form>

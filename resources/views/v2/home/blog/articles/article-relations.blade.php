@@ -12,7 +12,7 @@
                         <img src="{{ $relatedArticle->present()->featured_image }}" class="card-img-top" alt="{{ $relatedArticle->present()->title }}" style="height: 200px; object-fit: cover;">
                     </a>
 
-                    <p class="small text-muted mb-2">{{ $relatedArticle->present()->published_at }}</p>
+                    <p class="small text-muted my-2">{{ $relatedArticle->present()->published_at }}</p>
 
                     <a href="{{ route('articles.category.index', $relatedArticle->category()->slug) }}"
                         class="article__category single__category text-category mb-2" style="font-weight: normal;">
