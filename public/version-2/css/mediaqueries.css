@@ -1725,7 +1725,7 @@
 
     .navbar .navbar-brand img {
         height: 35px;
-        margin-left: -40px;
+        /*margin-left: -40px;*/
     }
 
     /* ################# Estilos para landing Home ################# */
@@ -1945,7 +1945,7 @@
 
     .navbar .navbar-brand img {
         height: 36px;
-        margin-left: -2rem;
+        /*margin-left: -2rem;*/
     }
 
     .content {
@@ -2099,7 +2099,7 @@
 
     .navbar .navbar-brand img {
         height: 36px;
-        margin-left: -45px;
+        /*margin-left: -45px;*/
     }
 
     .content {
