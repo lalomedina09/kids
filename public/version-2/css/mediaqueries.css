@@ -1708,7 +1708,7 @@
     }
 
     .boton-conoce-servicios {
-        margin-left: -4.5rem;
+        margin-left: -2rem;
     }
 
     .navbar {
@@ -1742,14 +1742,14 @@
     }
 
     .para-todos {
-        font-size: 3.2em;
+        font-size: 2.8em;
         line-height: 62px;
         margin-top: 8rem;
-        margin-left: -54px !important;
+        margin-left: -1rem !important;
     }
 
     .queremos-que-todos {
-        margin-left: -74px;
+        margin-left: -2rem;
         font-size: 27px;
     }
 
