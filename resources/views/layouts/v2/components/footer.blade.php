@@ -1,59 +1,88 @@
+@php
+    $socials = [
+        [
+            'url' => config('money.url.facebook'),
+            'icon' => asset('version-2/images/redesfooter/facebook.png'),
+            'alt' => 'icono-facebook',
+            'is_image' => true,
+        ],
+        [
+            'url' => config('money.url.twitter'),
+            'icon' => asset('version-2/images/redesfooter/twitter.png'),
+            'alt' => 'icono-twitter',
+            'is_image' => true,
+        ],
+        [
+            'url' => config('money.url.instagram'),
+            'icon' => 'lni lni-instagram social-icon-v2',
+            'alt' => 'icono-instagram',
+            'is_image' => false,
+        ],
+        [
+            'url' => config('money.url.youtube'),
+            'icon' => 'lni lni-youtube social-icon-v2',
+            'alt' => 'icono-youtube',
+            'is_image' => false,
+        ],
+        [
+            'url' => 'https://mx.linkedin.com/company/querido-dinero',
+            'icon' => asset('version-2/images/redesfooter/linkedin.png'),
+            'alt' => 'icono-linkedin',
+            'is_image' => true,
+        ],
+        [
+            'url' => 'https://www.tiktok.com/@querido_dinero',
+            'icon' => 'lni lni-tiktok-alt social-icon-v2',
+            'alt' => 'icono-tiktok',
+            'is_image' => false,
+        ],
+    ];
+@endphp
 <style>
     .social-icon-v2 {
         font-size: 2em;
     }
-    .btn-border-r-1{
+
+    .btn-border-r-1 {
         border-radius: 1px;
     }
-    .fw-bold{
+
+    .fw-bold {
         font-weight: bold;
     }
 </style>
 <footer class="element">
     <div class="container" style="background-color: #000000;">
         <br><br><br>
-        <div class="row justify-content-center text-center social-row">
-            <div class="col-2 col-md-2 text-center">
-                <a href="{{ config('money.url.facebook') }}" class="link-social" target="_blank">
-                    <img src="{{ asset('version-2/images/redesfooter/facebook.png') }}" alt="icono-facebook">
-                </a>
-            </div>
-            <div class="col-2 col-md-2 text-center">
-                <a href="{{ config('money.url.twitter') }}" class="link-social" target="_blank">
-                    <img src="{{ asset('version-2/images/redesfooter/twitter.png') }}" alt="icono-twitter">
-                </a>
-            </div>
-            <div class="col-2 col-md-2 text-center">
-                <a href="{{ config('money.url.instagram') }}" class="link-social" target="_blank">
-                    <i class="lni lni-instagram social-icon-v2"></i>
-                </a>
-            </div>
-            <div class="col-2 col-md-2 text-center">
-                <a href="{{ config('money.url.youtube') }}" class="link-social" target="_blank">
-                    <i class="lni lni-youtube social-icon-v2"></i>
-                </a>
-            </div>
-            <div class="col-2 col-md-2 text-center">
-                <a href="https://mx.linkedin.com/company/querido-dinero" class="link-social" target="_blank">
-                    <img src="{{ asset('version-2/images/redesfooter/linkedin.png') }}" alt="icono-linkedin">
-                </a>
-            </div>
-            <div class="col-2 col-md-2 text-center">
-                <a href="https://www.tiktok.com/@querido_dinero" class="link-social" target="_blank">
-                    <i class="lni lni-tiktok-alt social-icon-v2"></i>
-                </a>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 ">
+                <div class="row justify-content-center text-center social-row">
+                    @foreach ($socials as $social)
+                        <div class="col-2 col-md-2 text-center">
+                            <a href="{{ $social['url'] }}" class="link-social" target="_blank">
+                                @if ($social['is_image'])
+                                    <img src="{{ $social['icon'] }}" alt="{{ $social['alt'] }}">
+                                @else
+                                    <i class="{{ $social['icon'] }}"></i>
+                                @endif
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
 
         <br><br><br>
         <div>
-            <div class="row align-items-center bg-white mt-4 mb-4"> <!-- sobre-nosotros -->
-                <div class="col-md-5 text-md-right text-center mt-3 mt-md-0">
-                    <br><br>
-                    <div class="subscribe-title text-left text-md-left text-center" style="margin-top: -3px; color: #000;">
+            <div class="row align-items-center bg-white mt-2 mb-2 ml-0 mr-0"> <!-- sobre-nosotros -->
+                <div class="col-md-5 text-md-right text-center mt-4">
+                    <br>
+                    <div class="subscribe-title text-left text-md-left text-center"
+                        style="margin-top: -3px; color: #000;">
                         Suscríbete a nuestros newsletters
                     </div>
-                    <br><br>
+                    <br>
                 </div>
 
                 <div class="col-md-7 d-flex justify-content-center justify-content-md-end">
@@ -81,7 +110,8 @@
                     trabajo.
                 </p>
                 <br>
-                <a href="{{ route('contact')}}" class="btn btn-white btn-susbcribe d-none d-md-block justify-content-center p-2">
+                <a href="{{ route('contact') }}"
+                    class="btn btn-white btn-susbcribe d-none d-md-block justify-content-center p-2">
                     Contáctanos
                 </a>
             </div>
@@ -94,10 +124,10 @@
             <div class="col-md-2 d-none d-md-block">
                 <div class="footer-title">Nosotros</div>
                 <p class="footer-links text-white">
-                    <a href="{{ route('contact')}}" class="text-white text-decoration-none">
+                    <a href="{{ route('contact') }}" class="text-white text-decoration-none">
                         Sobre Nosotros
                     </a><br />
-                    <a href="{{ route('contact')}}" class="text-white text-decoration-none">
+                    <a href="{{ route('contact') }}" class="text-white text-decoration-none">
                         Contacto
                     </a><br />
                     <a href="https://queridodinero.myflodesk.com/comunidad" class="text-white text-decoration-none">
@@ -112,10 +142,12 @@
                     <a href="enlace-a-colaboraciones" class="text-white text-decoration-none">
                         Colaboraciones
                     </a><br />
-                    <a href="{{ env('APP_STORE', 'https://apps.apple.com/mx/app/qd-play/id6445823679') }}" class="text-white text-decoration-none">
+                    <a href="{{ env('APP_STORE', 'https://apps.apple.com/mx/app/qd-play/id6445823679') }}"
+                        class="text-white text-decoration-none">
                         QD Play en iOS
                     </a><br />
-                    <a href="{{ env('PLAY_STORE', 'https://play.google.com/store/apps/details?id=com.queridodinero.qdplay') }}" class="text-white text-decoration-none">
+                    <a href="{{ env('PLAY_STORE', 'https://play.google.com/store/apps/details?id=com.queridodinero.qdplay') }}"
+                        class="text-white text-decoration-none">
                         QD Play en Android
                     </a>
                 </p>
@@ -137,7 +169,8 @@
                     <a href="{{ route('qdplay.individual-plans') }}" class="text-white text-decoration-none">
                         Planes QD Play
                     </a><br />
-                    <a href="{{ route('qdplay.learning-paths.start', ['principal'])}}" class="text-white text-decoration-none">
+                    <a href="{{ route('qdplay.learning-paths.start', ['principal']) }}"
+                        class="text-white text-decoration-none">
                         Rutas de Aprendizaje
                     </a><br />
                     <a href="{{ route('courses.index') }}" class="text-white text-decoration-none">
