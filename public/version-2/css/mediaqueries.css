@@ -1979,12 +1979,18 @@
 
     .img-banner-main-random {
         margin-top: 48px;
-        margin-left: 40px;
+        margin-left: 10rem;
     }
 
     .margin-title-solution {
         margin-top: 6.4em;
         margin-bottom: 6rem;
+    }
+
+    .ellipse,
+    .ellipse-2,
+    .ellipse-3 {
+        margin-left: 7rem;
     }
 
     /* ################# Landing Home - seccion de sobre nosotros ################# */
