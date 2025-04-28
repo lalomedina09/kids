@@ -10157,11 +10157,11 @@ div.overlay {
 }
 
 .single__content blockquote a {
-    color: #FF6161 !important;
+    color: #D51500 !important;
 }
 
 .single__content a {
-    color: #FF6161;
+    color: #D51500;
     text-decoration: underline !important;
 }
 
@@ -11125,7 +11125,7 @@ input:-webkit-autofill:active {
 }
 
 .single-featured__title {
-    font-weight: 700;
+    /*font-weight: 700;*/
     margin-bottom: 20px;
     font-family: "Besley", Helvetica;
     font-size: 2.5rem;
@@ -11198,7 +11198,7 @@ input:-webkit-autofill:active {
 .legals-content h4,
 .legals-content h5,
 .legals-content h6 {
-    color: #FF6161 !important;
+    color: #D51500 !important;
 }
 
 
@@ -11999,7 +11999,7 @@ input:-webkit-autofill:active {
 }
 
 .single-tags__item {
-    color: #FF6161;
+    color: #D51500;
 }
 
 .single-tags__item+.single-tags__item:before {
