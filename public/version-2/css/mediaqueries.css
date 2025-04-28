@@ -1923,8 +1923,8 @@
     }
 
     .servicio-lr {
-        margin-left: -169px;
-        margin-right: -123px;
+        margin-left: -8rem;
+        margin-right: -8rem;
     }
 
     /* .position-relative{
@@ -1962,15 +1962,18 @@
     }
 
     .queremos-que-todos {
-        margin-left: -74px;
-        font-size: 27px;
+        margin-left: -2.4rem;
+    }
+
+    .boton-conoce-servicios {
+        margin-left: 2.1rem;
     }
 
     .para-todos {
         font-size: 3.3rem;
         line-height: 62px;
         margin-top: 200px;
-        margin-left: -55px !important;
+        margin-left: -1rem !important;
     }
 
     .subscribe-title {
