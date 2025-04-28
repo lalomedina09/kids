@@ -147,7 +147,7 @@
     </div>
     <div class="form-group mb-3">
         <select name="motivo" class="form-control" required>
-            <option value="" disabled selected>Motivo de contacto*</option>
+            <option value="" selected>Motivo de contacto*</option>
             <option value="consulta">Consulta</option>
             <option value="soporte">Soporte</option>
             <option value="otro">Otro</option>
@@ -155,16 +155,6 @@
     </div>
     <div class="form-group mb-3">
         <textarea name="mensaje" class="form-control" placeholder="Mensaje*" rows="4" required></textarea>
-    </div>
-    <div class="form-check mb-3">
-        <input type="checkbox" class="form-check-input " id="acceptTerms" required>
-        <label class="form-check-label font-akshar" for="acceptTerms">
-            Al hacer clic en el botón “Enviar” aceptarás nuestros
-            <br>
-            <a href="{{ url('terminos-y-condiciones') }}" target="_blank" class="text-dark fw-bold font-akshar">
-                <span class="bold-text-cap">Términos, Condiciones y Política de Privacidad</span>
-            </a>
-            </label>
     </div>
     <div class="text-center">
         <div class="form-group mx-auto">
@@ -174,9 +164,24 @@
             <span class="small text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
             @endif
         </div>
-        <button type="submit" class="btn btn-enviar btn-dark font-akshar" id="submitBtn" disabled>Enviar</button>
+
         {{-- <p class="campos">*Los campos marcados con asterisco son obligatorios</p> --}}
     </div>
+    <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input " id="acceptTerms" required>
+        <label class="form-check-label font-akshar" for="acceptTerms">
+            Al hacer clic en el botón “Enviar” aceptarás nuestros
+
+            <a href="{{ url('terminos-y-condiciones') }}" target="_blank" class="text-dark fw-bold font-akshar">
+                <span class="bold-text-cap">Términos, Condiciones y Política de Privacidad</span>
+            </a>
+        </label>
+    </div>
+    <!------------------>
+    <div class="form-group mb-3">
+        <button type="submit" class="btn btn-dark font-akshar w-100" id="submitBtn">Enviar</button>
+    </div>
+    <!------------------->
 </form>
 
 <script>
