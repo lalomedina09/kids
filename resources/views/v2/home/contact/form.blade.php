@@ -147,7 +147,7 @@
     </div>
     <div class="form-group mb-3">
         <select name="motivo" class="form-control" required>
-            <option value="" disabled selected>Motivo de contacto*</option>
+            <option value="" selected>Motivo de contacto*</option>
             <option value="consulta">Consulta</option>
             <option value="soporte">Soporte</option>
             <option value="otro">Otro</option>
