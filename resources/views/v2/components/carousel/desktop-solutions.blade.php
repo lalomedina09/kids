@@ -1,5 +1,5 @@
 <!-- Columnas para pantallas más grandes -->
-<div class="row justify-content-center d-none d-md-flex">
+<div class="row justify-content-center d-none d-md-flex soluciones-home">
     <div class="col-md-3 col-sm-6 mb-4" style="margin-left: -4rem;">
         <a href="{{ route('agency') }}">
             <div class="frame-4">
