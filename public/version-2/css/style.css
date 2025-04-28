@@ -3716,12 +3716,11 @@ a {
 
 .line-separator {
     position: absolute;
-    top: 0;
+    top: 20px;
     bottom: 0;
     left: 33%;
-    /* Ubicación entre las dos columnas */
+    height: 80%;
     width: 2px;
     background-color: #ccc;
-    /* Color de la línea */
     z-index: 1;
 }
