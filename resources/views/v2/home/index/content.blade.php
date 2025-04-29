@@ -1,5 +1,5 @@
-<div class="articulos container py-5">
-    <div class="overlap-5 py-5">
+<div class="articulos container">
+    <div class="overlap-5 pt-5">
         <div class="text-wrapper-21 mb-5">Contenidos destacados</div>
 
         <!-- Carrusel para dispositivos móviles -->

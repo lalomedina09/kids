@@ -23,7 +23,7 @@
     ];
 @endphp
 
-<div class="row ml-2 mr-2 d-none d-lg-flex">
+<div class="row d-none d-lg-flex">
     <!-- Columna izquierda -->
     <div class="col-md-3 col-lg-3">
         <div class="row">

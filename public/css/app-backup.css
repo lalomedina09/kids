@@ -11071,7 +11071,7 @@ input:-webkit-autofill:active {
 .article__category,
 .article__more {
     text-decoration: underline;
-    text-transform: uppercase;
+    text-transform: lowercase;
 }
 
 .article__author {
@@ -11932,6 +11932,7 @@ input:-webkit-autofill:active {
     margin: 30px 15px;
 }
 
+
 @media (min-width: 800px) {
 
     .single__content h1,
@@ -11994,7 +11995,7 @@ input:-webkit-autofill:active {
 .single-tags__headline {
     color: #000000;
     margin-right: 10px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 500;
 }
 
@@ -12295,7 +12296,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     line-height: 1.1;
-    color: #262525;
+    color: #000000;
 }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIvY3NzL2FwcC5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
