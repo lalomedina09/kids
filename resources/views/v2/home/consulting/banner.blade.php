@@ -4,9 +4,9 @@
             <br><br><br><br>
             <img src="{{ asset('version-2/images/consulting/imgbanner/cultura-mobil.png') }}" alt="Cofre"
                 class="cofre-img">
-            <img src="{{ asset('version-2/images/consulting/imgbanner/cultura-der.png') }}" alt="Moneda 1"
+            <img src="{{ asset('version-2/images/consulting/imgbanner/cultura-izq.png') }}" alt="Moneda 1"
                 class="floating-element moneda1">
-            <img src="{{ asset('version-2/images/consulting/imgbanner/cultura-izq.png') }}" alt="Moneda 2"
+            <img src="{{ asset('version-2/images/consulting/imgbanner/cultura-der.png') }}" alt="Moneda 2"
                 class="floating-element moneda2">
             <img src="{{ asset('version-2/images/consulting/imgbanner/cultura-mobil1.png') }}" alt="Tapa"
                 class="floating-element tapa">

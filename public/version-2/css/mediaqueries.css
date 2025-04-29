@@ -865,16 +865,20 @@
     /********************** Termina seccion de contacto ********************************/
 
 
+    .culturaf {
+        margin-top: 4rem;
+    }
+
     /* Imágenes flotantes */
     .cofre-img {
         width: 150px;
         max-width: 100%;
-        margin-top: 1rem;
+        margin-top: -5rem;
         margin-bottom: 0rem;
     }
 
     .moneda1 {
-        top: 85px;
+        top: 1rem;
         left: -119px;
         width: 80px;
         animation-delay: 0s;
@@ -882,7 +886,7 @@
     }
 
     .moneda2 {
-        top: 83px;
+        top: 1rem;
         right: -133px;
         width: 80px;
         animation-delay: 0.5s;
@@ -890,12 +894,16 @@
     }
 
     .tapa {
-        top: 46px;
+        top: 1rem;
         left: -6%;
         transform: translateX(-50%);
         width: 170px;
         animation-delay: 1s;
         /* Retraso de 1 segundo */
+    }
+
+    .original-title-aboutus {
+        margin-top: 3rem;
     }
 
 
