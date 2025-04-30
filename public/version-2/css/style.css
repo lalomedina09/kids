@@ -2600,6 +2600,7 @@ a {
     width: 100%;
     height: 240;
     border-radius: 0px;
+    border: none;
 }
 
 .texto-tarjeta {
@@ -3379,10 +3380,6 @@ a {
     transition: background-color 0.3s ease;
 }
 
-.margenes {
-    margin-left: -5rem;
-    margin-right: -5rem;
-}
 
 .t-b-1 {
     background-color: #88BCAF;
@@ -3455,9 +3452,9 @@ a {
 }
 
 .contenido-tarjeta {
-    margin-left: 20px;
+    margin-left: 1rem;
     line-height: 1.4;
-    margin-top: 20px;
+    margin-right: 1rem;
 }
 
 .bg-products-desktop {
