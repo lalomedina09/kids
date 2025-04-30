@@ -12,7 +12,12 @@
         <div class="col-md-4">
             <a href="{{ route('articles.show', [$recent->slug]) }}" style="text-decoration: none;">
                 <div
-                    style="height: 180px; background-image: url('{{ $recent->present()->featured_image }}'); background-size: cover; background-position: center;">
+                    style="
+                    height: 160px;
+                    background-image: url('{{ $recent->present()->featured_image }}');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;">
                 </div>
                 <p class="article-title text-dark mt-2 mb-5">
                     {{ $recent->title }}
@@ -34,7 +39,11 @@
         <div class="col-md-4">
             <a href="{{ route('articles.show', [$read->slug]) }}" style="text-decoration: none;">
                 <div
-                    style="height: 180px; background-image: url('{{ $read->present()->featured_image }}'); background-size: cover; background-position: center;">
+                    style="
+                    height: 160px;
+                    background-image: url('{{ $read->present()->featured_image }}');
+                    background-size: cover;
+                    background-position: center;">
                 </div>
                 <p class="article-title text-dark mt-2 mb-5">
                     {{ $read->title }}
@@ -56,7 +65,12 @@
         <div class="col-md-4">
             <a href="{{ route('articles.show', [$seasonal->slug]) }}" style="text-decoration: none;">
                 <div
-                    style="height: 180px; background-image: url('{{ $seasonal->present()->featured_image }}'); background-size: cover; background-position: center;">
+                    style="
+                    height: 160px;
+                    background-image: url('{{ $seasonal->present()->featured_image }}');
+                    background-size: cover;
+                    background-position: center;
+                    ">
                 </div>
                 <p class="article-title text-dark mt-2 mb-5">
                     {{ $seasonal->title }}
