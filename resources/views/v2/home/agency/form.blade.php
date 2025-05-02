@@ -95,7 +95,6 @@
     }
 
     .captcha-section {
-        background-color: #eeeeee;
         padding: 15px;
         border-radius: 10px;
     }

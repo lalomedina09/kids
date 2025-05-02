@@ -8,7 +8,7 @@
         @include('v2.home.index.banner')
     </section>
 
-    <section style="margin-left: 10%; margin-right: 10%;">
+    <section style="margin-left: 14%; margin-right: 10%;">
         @include('v2.home.index.solutions')
     </section>
 

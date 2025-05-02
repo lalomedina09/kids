@@ -10157,11 +10157,11 @@ div.overlay {
 }
 
 .single__content blockquote a {
-    color: #FF6161 !important;
+    color: #D51500 !important;
 }
 
 .single__content a {
-    color: #FF6161;
+    color: #D51500;
     text-decoration: underline !important;
 }
 
@@ -11071,7 +11071,7 @@ input:-webkit-autofill:active {
 .article__category,
 .article__more {
     text-decoration: underline;
-    text-transform: uppercase;
+    text-transform: lowercase;
 }
 
 .article__author {
@@ -11125,7 +11125,7 @@ input:-webkit-autofill:active {
 }
 
 .single-featured__title {
-    font-weight: 700;
+    /*font-weight: 700;*/
     margin-bottom: 20px;
     font-family: "Besley", Helvetica;
     font-size: 2.5rem;
@@ -11198,7 +11198,7 @@ input:-webkit-autofill:active {
 .legals-content h4,
 .legals-content h5,
 .legals-content h6 {
-    color: #FF6161 !important;
+    color: #D51500 !important;
 }
 
 
@@ -11932,6 +11932,7 @@ input:-webkit-autofill:active {
     margin: 30px 15px;
 }
 
+
 @media (min-width: 800px) {
 
     .single__content h1,
@@ -11994,12 +11995,12 @@ input:-webkit-autofill:active {
 .single-tags__headline {
     color: #000000;
     margin-right: 10px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 500;
 }
 
 .single-tags__item {
-    color: #FF6161;
+    color: #D51500;
 }
 
 .single-tags__item+.single-tags__item:before {
@@ -12295,7 +12296,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     line-height: 1.1;
-    color: #262525;
+    color: #000000;
 }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIvY3NzL2FwcC5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/

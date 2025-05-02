@@ -13,7 +13,83 @@
     #searchResults a:hover {
         background-color: #f8f9fa;
     }
+
+    #searchResults {
+        max-height: 180px;
+        overflow-y: auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #searchResults a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    #searchResults .fw-bold {
+        font-size: 14px;
+        color: #333;
+    }
+
+    #searchResults a:hover {
+        background-color: #f8f9fa;
+    }
+
+    #searchLoading {
+        color: #666;
+    }
+
+    #searchLoading .spinner-border {
+        margin-right: 8px;
+    }
+
+    .custom-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+
+    .spinner-border {
+        vertical-align: middle;
+    }
+
+    .custom-select,
+    .custom-input,
+    .custom-btn {
+        height: 43px;
+    }
+
+    @media (max-width: 767px) {
+        .custom-select {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .custom-input {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .custom-btn {
+            width: 100%;
+        }
+
+        #searchResults {
+            width: 100%;
+            top: calc(100% + 10px);
+        }
+    }
+
+
+    @media (min-width: 768px) {
+        .custom-select {
+            max-width: 180px;
+        }
+
+        .custom-input {
+            flex-grow: 1;
+        }
+    }
 </style>
+
 <div class="row my-4">
     <form action="{{ route('articles.search.full') }}" method="POST" class="d-flex w-100" id="searchForm">
         @csrf
@@ -43,7 +119,7 @@
             <!-- Lista de resultados -->
             <div id="searchResults" class="position-absolute bg-white border mt-1 w-100 font-akshar"
                 style="top: 100%; z-index: 1000; display: none;">
-                <!-- Spinner de loading para búsqueda en tiempo real -->
+
                 <div id="searchLoading" class="text-center p-2 d-none">
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     <span>Cargando...</span>
@@ -53,99 +129,6 @@
     </form>
 </div>
 
-<style>
-    #searchResults {
-        max-height: 180px;
-        overflow-y: auto;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    #searchResults a {
-        color: #333;
-        text-decoration: none;
-    }
-
-    #searchResults .fw-bold {
-    font-size: 14px; /* Tamaño del texto */
-    color: #333; /* Color del texto */
-    }
-
-    #searchResults a:hover {
-        background-color: #f8f9fa;
-    }
-
-    #searchLoading {
-        color: #666;
-    }
-
-    #searchLoading .spinner-border {
-        margin-right: 8px;
-    }
-
-    .custom-btn:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-    }
-
-    .spinner-border {
-        vertical-align: middle;
-    }
-</style>
-
-<style>
-    /* Ajustes generales */
-    .custom-select,
-    .custom-input,
-    .custom-btn {
-        height: 43px;
-        /* Altura uniforme para todos los elementos */
-    }
-
-    /* En móviles, apilar elementos y ajustar tamaños */
-    @media (max-width: 767px) {
-
-        /* Hasta md */
-        .custom-select {
-            margin-bottom: 10px;
-            /* Espacio entre select e input */
-            width: 100%;
-            /* Ocupa todo el ancho disponible */
-        }
-
-        .custom-input {
-            margin-bottom: 10px;
-            /* Espacio entre input y botón */
-            width: 100%;
-            /* Ocupa todo el ancho disponible */
-        }
-
-        .custom-btn {
-            width: 100%;
-            /* Botón ocupa todo el ancho */
-        }
-
-        #searchResults {
-            width: 100%;
-            /* Asegurar que los resultados no se desborden */
-            top: calc(100% + 10px);
-            /* Ajustar posición para evitar solapamiento */
-        }
-    }
-
-    /* En pantallas grandes, mantener diseño horizontal */
-    @media (min-width: 768px) {
-        .custom-select {
-            max-width: 180px;
-            /* Limita el ancho del select */
-        }
-
-        .custom-input {
-            flex-grow: 1;
-            /* El input ocupa el espacio restante */
-        }
-    }
-</style>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const searchInput = document.getElementById('searchInput');
@@ -154,12 +137,12 @@
 
         searchInput.addEventListener('input', function() {
         const query = this.value.trim();
-        if (query.length >= 2) { // Solo buscar si el usuario ha escrito al menos 2 caracteres
-        // Mostrar el spinner de loading
-        searchResults.style.display = 'block'; // Asegurar que el contenedor sea visible
-        searchLoading.classList.remove('d-none'); // Mostrar el loading
-        searchResults.innerHTML = ''; // Limpiar resultados anteriores
-        searchResults.appendChild(searchLoading); // Asegurar que el loading esté dentro
+        if (query.length >= 2) {
+
+        searchResults.style.display = 'block';
+        searchLoading.classList.remove('d-none');
+        searchResults.innerHTML = '';
+        searchResults.appendChild(searchLoading);
 
         fetch(`/articles/search?query=${encodeURIComponent(query)}`)
         .then(response => response.json())
@@ -198,8 +181,8 @@
         searchResults.innerHTML = '<div class="p-2 text-danger">Error al buscar</div>';
         });
         } else {
-        searchResults.style.display = 'none'; // Ocultar si el input está vacío
-        searchLoading.classList.add('d-none'); // Asegurar que el loading esté oculto
+        searchResults.style.display = 'none';
+        searchLoading.classList.add('d-none');
         }
         });
 

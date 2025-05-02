@@ -9,7 +9,6 @@
     */
     h1 {
         font-size: 2.5rem;
-        font-weight: bold;
         color: #fff
     }
 
@@ -57,6 +56,7 @@
         margin-bottom: 10px;
         margin-left: -0.5rem;
         margin-top: 6rem;
+        color: #8690B5;
     }
 
     /* Imagen con fondo de mancha y animación */
@@ -176,8 +176,7 @@
                     delegar la estrategia, generación y mantenimiento del contenido.
                     <br>
                     Somos expertos creando distintos formatos como: <br>
-                    Posts de Redes Sociales (visuales, infografías, videos cortos, <br>
-
+                    Posts de Redes Sociales (visuales, infografías, videos cortos,
                     textos, memes, etc), community management, artículos escritos, <br>
                     newsletters, entrevistas, entre otros.
 
@@ -217,7 +216,7 @@
         <div class="row align-items-center mb-5">
             <!-- Columna de Texto -->
             <div class="col-md-6 order-2 order-md-1 content-text text-center text-md-left">
-                <span class="font-akshar badge text-secondary">
+                <span class="font-akshar badge">
                     FLEXIBLE
                 </span>
                 <br>

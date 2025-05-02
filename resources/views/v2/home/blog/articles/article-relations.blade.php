@@ -1,4 +1,4 @@
-<section style="background-color: #eeeeee;">
+<section style="background-color: #eeeeee; margin-bottom:-5rem;">
     <div class="container">
         <div class="row">
             <div class="col-12 my-4">
@@ -12,19 +12,21 @@
                         <img src="{{ $relatedArticle->present()->featured_image }}" class="card-img-top" alt="{{ $relatedArticle->present()->title }}" style="height: 200px; object-fit: cover;">
                     </a>
 
-                    <p class="small text-muted">{{ $relatedArticle->present()->published_at }}</p>
+                    <p class="small text-muted my-2">{{ $relatedArticle->present()->published_at }}</p>
 
                     <a href="{{ route('articles.category.index', $relatedArticle->category()->slug) }}"
-                        class="article__category single__category text-category " style="font-weight: normal;">
+                        class="article__category single__category text-category mb-2" style="font-weight: normal;">
                         {{ $relatedArticle->category()->present()->name }}
                     </a>
 
                     <a href="{{ route('articles.show', ['slug' => $relatedArticle->slug]) }}">
-                        <h6 class="card-title font-beley" style="font-weight: 500; font-style:italic;"><em>{{ $relatedArticle->present()->title }}</em></h6>
+                        <h6 class="card-title font-beley" style="font-weight: 500; font-style:italic; font-size: smaller;">
+                            {{ $relatedArticle->present()->title }}
+                        </h6>
                     </a>
                 </div>
             @endforeach
         </div>
-        <br><br>
+        <br>
     </div>
 </section>

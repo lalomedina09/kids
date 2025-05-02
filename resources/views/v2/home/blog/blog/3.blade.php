@@ -1,5 +1,8 @@
 <div class="col-md-3">
-    <h3 class="section-title mb-4 font-akshar">Trends</h3>
+    <h3 class="section-title mb-4 font-akshar"
+    style="font-style: normal;">
+        Trends
+    </h3>
     <!-- Trend 1 -->
     @foreach ($trendings as $trend)
         <div class="mb-3">

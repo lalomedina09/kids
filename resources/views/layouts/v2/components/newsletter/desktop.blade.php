@@ -1,9 +1,30 @@
+
 <div class="input-group no-gap d-none d-md-flex">
     <input type="email" name="emailDesktop" class="form-control subscribe-input" placeholder="Correo electrónico" style="width:auto;">
     <button class="btn btn-dark btn-susbcribe btn-border-r-1" id="suscribe-desktop">
         Suscríbete
     </button>
-    <div class="form-check mt-2">
+    <div class="form-check mt-2 ">
+        <input type="checkbox" class="form-check-input" id="acceptTermsvDesktop" style="margin-top: -.1rem;">
+        <label class="form-check-label font-akshar small" style="color: #000000" for="acceptTermsvDesktop">
+            Al suscribirte estás aceptando nuestros
+            <a href="{{ url('terminos-y-condiciones')}}" target="_blank" class="text-dark fw-bold">
+                Términos y Condiciones
+            </a>
+        </label>
+    </div>
+</div>
+
+{{--
+<div class="input-group no-gap d-none d-md-flex flex-column align-items-center">
+    <div class="d-flex">
+        <input type="email" name="emailDesktop" class="form-control subscribe-input" placeholder="Correo electrónico"
+            style="width:auto;">
+        <button class="btn btn-dark btn-susbcribe btn-border-r-1" id="suscribe-desktop">
+            Suscríbete
+        </button>
+    </div>
+    <div class="form-check mt-2 text-center">
         <input type="checkbox" class="form-check-input" id="acceptTermsvDesktop" style="margin-top: -.1rem;">
         <label class="form-check-label font-akshar" style="color: #000000" for="acceptTermsvDesktop">
             Al suscribirte estás aceptando nuestros
@@ -13,6 +34,7 @@
         </label>
     </div>
 </div>
+--}}
 <script>
     alertify.defaults.transition = "zoom";
     alertify.defaults.theme.ok = "ui positive button";

@@ -2057,7 +2057,7 @@
     font-family: "Besley", Helvetica, sans-serif;
     font-weight: 500;
     color: #000;
-    font-size: 22px;
+    font-size: 19px;
     line-height: 1.3;
 }
 
@@ -2318,7 +2318,7 @@ a {
 }
 
 .top {
-    margin-top: -6rem;
+    margin-top: -9rem;
 }
 
 .stack-section {
@@ -2600,6 +2600,7 @@ a {
     width: 100%;
     height: 240;
     border-radius: 0px;
+    border: none;
 }
 
 .texto-tarjeta {
@@ -2809,7 +2810,7 @@ a {
 /* Texto Banner */
 
 .main-solution-title {
-    font-size: 4.5rem;
+    font-size: 3.3rem;
     font-family: "Besley", Helvetica;
     /*margin-top: 281px;*/
 }
@@ -3379,10 +3380,6 @@ a {
     transition: background-color 0.3s ease;
 }
 
-.margenes {
-    margin-left: -5rem;
-    margin-right: -5rem;
-}
 
 .t-b-1 {
     background-color: #88BCAF;
@@ -3455,9 +3452,9 @@ a {
 }
 
 .contenido-tarjeta {
-    margin-left: 20px;
+    margin-left: 1rem;
     line-height: 1.4;
-    margin-top: 20px;
+    margin-right: 1rem;
 }
 
 .bg-products-desktop {
@@ -3678,12 +3675,8 @@ a {
 .parrafo-banner {
     font-family: "Akshar", Helvetica;
     font-size: 2.1rem;
-    margin-top: 5rem;
     text-align: center;
-    /* margin-left: -6rem; */
-    /* width: 86rem; */
     line-height: 3.5rem;
-    margin-bottom: 4rem;
 }
 
 .negrita-parrafo-banner {
@@ -3716,12 +3709,11 @@ a {
 
 .line-separator {
     position: absolute;
-    top: 0;
+    top: 20px;
     bottom: 0;
     left: 33%;
-    /* Ubicación entre las dos columnas */
+    height: 80%;
     width: 2px;
     background-color: #ccc;
-    /* Color de la línea */
     z-index: 1;
 }

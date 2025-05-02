@@ -865,16 +865,22 @@
     /********************** Termina seccion de contacto ********************************/
 
 
+    .culturaf {
+        margin-top: 4rem;
+    }
+
     /* Imágenes flotantes */
     .cofre-img {
         width: 150px;
         max-width: 100%;
-        margin-top: 1rem;
+        margin-top: -5rem;
         margin-bottom: 0rem;
     }
 
+
+
     .moneda1 {
-        top: 85px;
+        top: 1rem;
         left: -119px;
         width: 80px;
         animation-delay: 0s;
@@ -882,7 +888,7 @@
     }
 
     .moneda2 {
-        top: 83px;
+        top: 1rem;
         right: -133px;
         width: 80px;
         animation-delay: 0.5s;
@@ -890,12 +896,16 @@
     }
 
     .tapa {
-        top: 46px;
+        top: 1rem;
         left: -6%;
         transform: translateX(-50%);
         width: 170px;
         animation-delay: 1s;
         /* Retraso de 1 segundo */
+    }
+
+    .original-title-aboutus {
+        margin-top: 3rem;
     }
 
 
@@ -1703,12 +1713,12 @@
     }
 
     .margin-title-solution {
-        margin-top: 8.5rem;
+        margin-top: 6.5rem;
         margin-bottom: 4rem;
     }
 
     .boton-conoce-servicios {
-        margin-left: -4.5rem;
+        margin-left: -2rem;
     }
 
     .navbar {
@@ -1725,7 +1735,7 @@
 
     .navbar .navbar-brand img {
         height: 35px;
-        margin-left: -40px;
+        /*margin-left: -40px;*/
     }
 
     /* ################# Estilos para landing Home ################# */
@@ -1742,14 +1752,24 @@
     }
 
     .para-todos {
-        font-size: 3.2em;
+        font-size: 2.8em;
         line-height: 62px;
         margin-top: 8rem;
-        margin-left: -54px !important;
+        margin-left: -1rem !important;
+    }
+
+    .marcas-que-han {
+        margin-top: -1rem;
+    }
+
+    .soluciones-home {
+        margin-left: -5.5rem;
+        margin-right: -6.5rem;
+        margin-bottom: -3rem;
     }
 
     .queremos-que-todos {
-        margin-left: -74px;
+        margin-left: -2rem;
         font-size: 27px;
     }
 
@@ -1793,17 +1813,26 @@
 
     .main-pigeon {
         width: 200px;
-        margin-top: 100px;
+        margin-top: 7.5rem;
     }
 
     .banner-title-main {
         font-size: 2.5rem;
+        margin-bottom: 2rem
+    }
+
+    .btn-custom {
+        margin-left: 12rem;
     }
 
     .description-1 {
         font-size: 1.5rem;
         /*margin-left: 20%;
         margin-right: 20%;*/
+    }
+
+    .content-image img {
+        margin-right: -13rem;
     }
 
     /* ################# Landing Home - seccion de contenido ################# */
@@ -1923,8 +1952,8 @@
     }
 
     .servicio-lr {
-        margin-left: -169px;
-        margin-right: -123px;
+        margin-left: -8rem;
+        margin-right: -8rem;
     }
 
     /* .position-relative{
@@ -1945,7 +1974,7 @@
 
     .navbar .navbar-brand img {
         height: 36px;
-        margin-left: -2rem;
+        /*margin-left: -2rem;*/
     }
 
     .content {
@@ -1962,15 +1991,18 @@
     }
 
     .queremos-que-todos {
-        margin-left: -74px;
-        font-size: 27px;
+        margin-left: -2.4rem;
+    }
+
+    .boton-conoce-servicios {
+        margin-left: 2.1rem;
     }
 
     .para-todos {
         font-size: 3.3rem;
         line-height: 62px;
         margin-top: 200px;
-        margin-left: -55px !important;
+        margin-left: -1rem !important;
     }
 
     .subscribe-title {
@@ -1979,12 +2011,18 @@
 
     .img-banner-main-random {
         margin-top: 48px;
-        margin-left: 40px;
+        margin-left: 10rem;
     }
 
     .margin-title-solution {
-        margin-top: 6.4em;
+        margin-top: 4.4em;
         margin-bottom: 6rem;
+    }
+
+    .ellipse,
+    .ellipse-2,
+    .ellipse-3 {
+        margin-left: 7rem;
     }
 
     /* ################# Landing Home - seccion de sobre nosotros ################# */
@@ -2093,7 +2131,7 @@
 
     .navbar .navbar-brand img {
         height: 36px;
-        margin-left: -45px;
+        /*margin-left: -45px;*/
     }
 
     .content {

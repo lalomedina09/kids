@@ -1,10 +1,10 @@
 <div class="container-fluid">
-    <div class="row" style="background-color: #000000; margin-bottom:100px;">
+    <div class="row" style="background-color: #000000; margin-bottom:5rem;">
         <div class="col-12 col-lg-6 d-flex flex-column justify-content-center div-text-about-us"
             style="background-color: #000000;">
             <div class="rectangle"></div>
             <div class="text-wrapper-4 title-about-us text-lg-left text-sm-center text-center"
-                style="margin-top: 98px;">
+                style="margin-top: 61px;">
                 Sobre nosotros
             </div>
             <p class="p mt-4 mb-3 text-lg-left text-sm-center text-center" style="margin-top: 50px !important;">

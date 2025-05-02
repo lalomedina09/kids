@@ -72,12 +72,12 @@
 }
 
 /* Colores al pasar el mouse (más suaves pero aún intensos) */
-.t-b-1:hover { background-color: #A9CFE8; } /* Rojo más suave */
-.t-b-2:hover { background-color: #F5B7B1; } /* Verde más suave */
-.t-b-3:hover { background-color: #F7C28B; } /* Azul más suave */
-.t-b-4:hover { background-color: #A9CFE8; } /* Amarillo más suave */
-.t-b-5:hover { background-color: #F5B7B1; } /* Morado más suave */
-.t-b-6:hover { background-color: #F7C28B; } /* Naranja más suave */
+.t-b-1:hover { background-color: #88BCAF; } /* Rojo más suave */
+.t-b-2:hover { background-color: #DE6C51; } /* Verde más suave */
+.t-b-3:hover { background-color: #F7DC4C; } /* Azul más suave */
+.t-b-4:hover { background-color: #88BCAF; } /* Amarillo más suave */
+.t-b-5:hover { background-color: #DE6C51; } /* Morado más suave */
+.t-b-6:hover { background-color: #F7DC4C; } /* Naranja más suave */
 
 /* Mantener el color de las letras en negro */
 .card.tarjeta .texto-tarjeta,

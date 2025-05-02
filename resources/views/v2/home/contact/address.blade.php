@@ -1,3 +1,8 @@
+<style>
+    .color-back{
+        background-color: #EBEBEB;
+    }
+</style>
 <!-- Cuadro información de contacto -->
 <div class="container">
     <div class="row color-back mt-5 position-relative">

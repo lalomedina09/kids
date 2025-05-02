@@ -1,7 +1,3 @@
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@1,500&display=swap" rel="stylesheet">
-</head>
-
 <div class="container mt-5">
     <div class="row mx-0">
 
