@@ -811,7 +811,7 @@
 
 
     .margin-title-solution {
-        margin-top: 3.5em;
+        margin-top: 7.5em;
         margin-bottom: 4rem;
     }
 
@@ -1713,7 +1713,7 @@
     }
 
     .margin-title-solution {
-        margin-top: 6.5rem;
+        margin-top: 8.5rem;
         margin-bottom: 4rem;
     }
 
@@ -1763,8 +1763,8 @@
     }
 
     .soluciones-home {
-        margin-left: -5.5rem;
-        margin-right: -6.5rem;
+        /* margin-left: -5.5rem;
+        margin-right: -6.5rem; */
         margin-bottom: -3rem;
     }
 
@@ -1811,9 +1811,13 @@
         margin-right: -101px;
     }
 
+    .mespecialistas {
+        margin-right: -4rem;
+    }
+
     .main-pigeon {
         width: 200px;
-        margin-top: 7.5rem;
+        margin-top: 5.5rem;
     }
 
     .banner-title-main {
@@ -2015,7 +2019,7 @@
     }
 
     .margin-title-solution {
-        margin-top: 4.4em;
+        margin-top: 5.4em;
         margin-bottom: 6rem;
     }
 

@@ -4,7 +4,7 @@
         <div class="manchas-azul"></div>
 
         <!-- Contenido central -->
-        <div class="row ">
+        <div class="row " style="background-color: #F2F2F2;">
             <div class="col-12 col-md-12 text-center justify-content-center align-items-center h-100" style="position: relative; z-index: 2;">
                 <div class="position-relative d-flex justify-content-center align-items-center">
                     <!--<img src="{{ asset('version-2/images/img_capa_1.png') }}" alt="Capa Imagen Izquierda"
