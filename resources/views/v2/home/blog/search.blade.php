@@ -81,7 +81,7 @@
 
     @media (min-width: 768px) {
         .custom-select {
-            max-width: 180px;
+            max-width: 220px;
         }
 
         .custom-input {
