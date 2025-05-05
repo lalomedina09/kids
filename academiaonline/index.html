@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Querido Dinero</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts: Akshar y Besley -->
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@400&family=Besley:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 22px 20px;
+        }
+        .logo img {
+            height: 2rem;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-family: 'Akshar', sans-serif;
+        }
+        .login-btn {
+            background-color: #000;
+            color: #fff;
+            padding: 5px 15px;
+            text-decoration: none;
+        }
+        @media (max-width: 767px) {
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links a {
+                margin: 5px 0;
+            }
+            .login-btn {
+                margin-top: 10px;
+            }
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to bottom, #fff9e6 50%, #f5f5f5 50%);
+        }
+        .hero h1 {
+            font-family: 'Besley', serif;
+            font-weight: 600;
+            font-size: 2.5rem;
+            margin: 0 0 20px;
+        }
+        .hero p {
+            font-family: 'Akshar', sans-serif;
+            font-size: 1.2rem;
+            color: #000000;
+            margin: 0 0 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-btn {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        .video-section {
+            background-color: #e6e6e6;
+            padding: 20px 0;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            max-width: 95vw;
+            margin: 0 auto;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .mancha-amarilla {
+            position: absolute;
+            top: 80px;
+            left: 20px;
+            width: 150px;
+            height: auto;
+            z-index: 1;
+        }
+        .categories-section {
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+        .category-btn {
+            padding: 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 10px;
+            color: #000000;
+            font-family: 'Akshar', sans-serif;
+            font-size: 1.1rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .category-btn.inversion { background-color: #A7E4D5; }
+        .category-btn.deuda { background-color: #F1592A; }
+        .category-btn.credito { background-color: #FFC107; }
+        .category-btn.ahorro { background-color: #6B7280; }
+        .category-btn.presupuesto { background-color: #A7E4D5; }
+        .category-btn.riesgo { background-color: #6B7280; }
+        .category-btn.retiro { background-color: #FFC107; }
+        .category-btn.criptomonedas { background-color: #A7E4D5; }
+        .category-btn.fiscal { background-color: #F1592A; }
+        .category-btn.trading { background-color: #000; }
+        .category-btn.testan { background-color: #6B7280; }
+        .category-btn.seguros { background-color: #A7E4D5; }
+        .category-btn.productividad { background-color: #F1592A; }
+        .category-btn.startups { background-color: #FFC107; }
+        .category-btn.wellness { background-color: #6B7280; }
+        .category-btn.patrimonio { background-color: #A7E4D5; }
+        .carousel-section {
+            background-color: #000;
+            padding: 50px 20px;
+            color: #fff;
+        }
+        .carousel-section h2 {
+            font-family: 'Besley', serif;
+            font-weight: 600;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .carousel-section p {
+            font-family: 'Akshar', sans-serif;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+        .carousel {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .carousel-inner {
+            display: flex;
+            flex-wrap: nowrap;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            flex: 0 0 20%; /* Muestra 5 imágenes a la vez */
+            padding: 0 10px;
+            float: left;
+        }
+        .carousel-item img {
+            border-radius: 10px;
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid #fff;
+        }
+        .carousel-caption {
+            position: static;
+            background: none;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .carousel-caption h5 {
+            font-family: 'Akshar', sans-serif;
+            font-size: 0.9rem;
+            color: #fff;
+            margin: 0;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+        @media (max-width: 992px) {
+            .carousel-item {
+                flex: 0 0 33.33%; /* Muestra 3 imágenes a la vez */
+            }
+        }
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .video-container {
+                max-width: 100vw;
+            }
+            .mancha-amarilla {
+                width: 100px;
+                top: 60px;
+                left: 10px;
+            }
+            .category-btn {
+                font-size: 0.9rem;
+                padding: 10px;
+                margin: 3px;
+            }
+            .carousel-section h2 {
+                font-size: 1.5rem;
+            }
+            .carousel-section p {
+                font-size: 0.9rem;
+            }
+            .carousel-item {
+                flex: 0 0 50%; /* Muestra 2 imágenes a la vez */
+            }
+            .carousel-item img {
+                height: 120px;
+            }
+            .carousel-caption h5 {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <img src="img/logoq.png" alt="Querido Dinero Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="#">Para empresas</a>
+                <a href="#">Editorial</a>
+                <a href="#">Cursos Online</a>
+                <a href="#">Contacto</a>
+            </nav>
+            <a href="#" class="login-btn">Acceder</a>
+        </div>
+    </header>
+
+    <img src="img/mancha-amarilla.png" alt="Mancha Amarilla" class="mancha-amarilla">
+
+    <section class="hero">
+        <h1>La academia online <br>
+            más completa de México</h1>
+        <p>Querido Dinero Play es nuestro proyecto de e-learning para llevar contenido de finanzas personales de calidad a través del streaming on demand.</p>
+        <a href="#" class="cta-btn">Conoce más</a>
+    </section>
+
+    <section class="video-section">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ENWXnHidQVk?start=12" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="categories-section">
+        <div class="container">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2">
+                <div class="col">
+                    <div class="category-btn inversion">Inversión</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn deuda">Deuda</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn credito">Crédito</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn ahorro">Ahorro</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn presupuesto">Presupuesto</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn riesgo">Riesgo</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn retiro">Retiro</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn criptomonedas">Criptomonedas</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn fiscal">Fiscal</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn trading">Trading</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn testan">Testan</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn seguros">Seguros</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn productividad">Productividad</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn startups">Startups</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn wellness">Wellness</div>
+                </div>
+                <div class="col">
+                    <div class="category-btn patrimonio">Patrimonio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <h2>Cursos estelares</h2>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+        <div id="carouselCourses" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselCourses" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselCourses" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselCourses" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselCourses" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselCourses" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/carrusel1.png" alt="Curso 1">
+                    <div class="carousel-caption">
+                        <h5>Lo que debo saber antes de invertir</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/carrusel2.png" alt="Curso 2">
+                    <div class="carousel-caption">
+                        <h5>Mi primera inversión patrimonial</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/carrusel3.png" alt="Curso 3">
+                    <div class="carousel-caption">
+                        <h5>Calcula tu valor patrimonial</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/carrusel4.png" alt="Curso 4">
+                    <div class="carousel-caption">
+                        <h5>Cetes y otras inversiones</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/carrusel5.png" alt="Curso 5">
+                    <div class="carousel-caption">
+                        <h5>Introducción al trading</h5>
+                    </div>
+                </div>
+                <!-- Duplico los ítems para simular desplazamiento continuo -->
+                <div class="carousel-item">
+                    <img src="img/carrusel1.png" alt="Curso 1">
+                    <div class="carousel-caption">
+                        <h5>Lo que debo saber antes de invertir</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/carrusel2.png" alt="Curso 2">
+                    <div class="carousel-caption">
+                        <h5>Mi primera inversión patrimonial</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/carrusel3.png" alt="Curso 3">
+                    <div class="carousel-caption">
+                        <h5>Calcula tu valor patrimonial</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/carrusel4.png" alt="Curso 4">
+                    <div class="carousel-caption">
+                        <h5>Cetes y otras inversiones</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/carrusel5.png" alt="Curso 5">
+                    <div class="carousel-caption">
+                        <h5>Introducción al trading</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCourses" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselCourses" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
