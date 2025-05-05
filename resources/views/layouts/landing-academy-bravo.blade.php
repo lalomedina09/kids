@@ -42,7 +42,7 @@
     <div class="header-wrapper">
         <header class="container navbar header">
             <div class="text-left">
-                <img src="{{ asset('images/logo_light.svg') }}" class="my-1" height="35px" alt="QD Play">
+                <img src="{{ asset('images/qdplay/academia-bravo/logo-bravo.png') }}" class="my-1" height="45px" alt="QD Play">
             </div>
             <div class="text-right">
                 @auth
@@ -55,7 +55,7 @@
                                 aria-haspopup="true" aria-expanded="false">
 
                                 @if($user)
-                                    <span class="font-akshar" style="color: #7a68eb;">
+                                    <span class="font-akshar" style="color: #ffffff;">
                                         {{ $user->name }} <i class="lni lni-crown"></i>
                                     </span>
                                 @endif
