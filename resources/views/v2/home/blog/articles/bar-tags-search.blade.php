@@ -26,7 +26,7 @@
                             @csrf
                             <input type="text" name="words" class="form-control me-2 mt-2 font-akshar" placeholder="Buscar artículos"
                                 aria-label="Buscar">
-                            <button type="submit" class="btn btn-dark mt-2">
+                            <button type="submit" class="btn btn-dark mt-2" style="height: 35px;">
                                 <i class="fas fa-search"></i>
                             </button>
                         </form>
