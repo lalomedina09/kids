@@ -4,7 +4,7 @@
         <div class="manchas-azul"></div>
 
         <!-- Contenido central -->
-        <div class="row ">
+        <div class="row">
             <div class="col-12 col-md-12 text-center justify-content-center align-items-center h-100"
                 style="position: relative; z-index: 2; margin-bottom: 10rem;" >
                 <div class="position-relative d-flex justify-content-center align-items-center">

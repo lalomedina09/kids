@@ -1,6 +1,6 @@
 <div class="bg-black text-center" style="margin-bottom: 100px;">
     <div class="container">
-        <div class="row text-center mb-4 mt-4">
+        <div class="row mespecialistas text-center mb-4 mt-4 ml-4">
             <!-- Columna 1 -->
             <div class="col-md-1 mb-4 mt-4">
             </div>

@@ -20,11 +20,11 @@
             <br><br>
         </div>
         <div class="col-12 col-lg-6 position-relative p-0">
-            <div class="overlap-group position-absolute w-100 h-100">
+            {{-- <div class="overlap-group position-absolute w-100 h-100">
                 <div class="circle"></div>
                 <div class="circle-2"></div>
                 <div class="circle-3"></div>
-            </div>
+            </div> --}}
             <img class="image w-100 h-auto" src="{{ asset('version-2/images/imgnosotros/equipo-qd.png') }}" alt="Equipo QD" />
         </div>
     </div>
