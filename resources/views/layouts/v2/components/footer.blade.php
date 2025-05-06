@@ -122,7 +122,7 @@
 
             <!-- Columna "Nosotros" que se oculta en dispositivos móviles -->
             <div class="col-md-2 d-none d-md-block">
-                <div class="footer-title">Nosotros</div>
+                <div class="footer-title mt-3">Nosotros</div>
                 <p class="footer-links text-white">
                     <a href="{{ route('contact') }}" class="text-white text-decoration-none">
                         Sobre Nosotros
@@ -155,7 +155,7 @@
 
             <!-- Columna "Secciones" que se oculta en dispositivos móviles -->
             <div class="col-md-2 d-none d-md-block">
-                <div class="footer-title">Secciones</div>
+                <div class="footer-title mt-3">Secciones</div>
                 <p class="footer-links">
                     <a href="{{ route('qdplay.business') }}" class="text-white text-decoration-none">
                         Empresas
