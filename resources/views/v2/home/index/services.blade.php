@@ -9,7 +9,7 @@
 
     <div class="container">
         <br><br><br><br><br><br>
-        <div class="row justify-content-center align-items-stretch servicio-lr">
+        <div class="row justify-content-center align-items-stretch">
             <!-- Item 1 -->
             <div class="col-lg-1-5 col-md-4 col-sm-6 col-12 mb-4 d-flex">
                 <a href="{{ route('blog') }}" class="w-100">

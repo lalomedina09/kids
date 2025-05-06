@@ -30,7 +30,7 @@
             <span id="puntos" class="puntos-animados"></span>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 ml-3">
             @include('v2.home.contact.form')
         </div>
     </div>
