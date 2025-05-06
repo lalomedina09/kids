@@ -108,6 +108,15 @@ class HomeController extends Controller
         ]);
     }
 
+    public function academyRedesign()
+    {
+        return view('v2.home.academyOnline')->with([
+            'categories' => 0,
+            'channel' => 0,
+            'source' => 0
+        ]);
+    }
+
     public function consultingRedesign()
     {
         return view('v2.home.consultingv2')->with([
