@@ -76,7 +76,6 @@
     text-align: center;
     margin-left: 1.5rem;
     font-family: 'Besley', serif;
-    font-style: italic;
     position: relative;
 
 }
@@ -86,7 +85,7 @@
     font-size: 1.5rem;
     color: #333;
     text-align: center;
-    margin-left: -9rem;
+    margin-left: -10.5rem;
     font-family: 'Besley', serif;
     font-style: italic;
     position: relative;
