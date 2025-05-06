@@ -355,6 +355,10 @@ Route::get('/')
     ->name('home');
 
 
+Route::get('academia-online')
+    ->uses('HomeController@academyRedesign')
+    ->name('academyOnline');
+
 Route::get('servicios')
     ->uses('HomeController@servicesRedesign')
     ->name('services');
