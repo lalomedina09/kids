@@ -10,14 +10,6 @@
 @endif
 
 <style>
-    .form-control {
-        border-radius: 3px;
-        border: 1px solid #C8C8C8;
-        background-color: #C8C8C8;
-        font-family: "Akshar", Helvetica, sans-serif;
-    }
-</style>
-<style>
     .form-label {
         font-weight: bold;
         color: #333;
@@ -26,7 +18,7 @@
     }
 
     .form-control {
-        background-color: #f0f0f0;
+        background-color: #dedede;
         border: none;
         border-radius: 5px;
         padding: 29px;
@@ -51,6 +43,21 @@
 
     .btn-custom:hover {
         background-color: #333;
+    }
+
+    #submitBtn {
+        background-color: #000;
+        color: #fff;
+        font-family: "Akshar", Helvetica;
+        border: 1px solid #000;
+        border-radius: 0px;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    #submitBtn:hover {
+        background-color: #C5481C;
+        border: 1px solid #000;
     }
 
     .text-muted {
@@ -97,20 +104,10 @@
     .text-cap-derecha {
         font-family: "Akshar", Helvetica;
         font-size: 17px;
-        /*margin-left: -201px;*/
     }
 
     .bold-text-cap {
         font-weight: bold;
-    }
-
-    .form-label {
-        font-weight: bold;
-    }
-
-    .form-control {
-        background-color: #dedede;
-        border: none;
     }
 
     .captcha-section {
@@ -131,6 +128,7 @@
         margin-left: 15px;
     }
 </style>
+
 <form action="{{ route('contact.save') }}" method="POST" class="mt-4">
     @csrf
     <div class="form-group mb-3">
@@ -164,24 +162,19 @@
             <span class="small text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
             @endif
         </div>
-
-        {{-- <p class="campos">*Los campos marcados con asterisco son obligatorios</p> --}}
     </div>
     <div class="form-check mb-3">
-        <input type="checkbox" class="form-check-input " id="acceptTerms" required>
+        <input type="checkbox" class="form-check-input" id="acceptTerms" required>
         <label class="form-check-label font-akshar" for="acceptTerms">
             Al hacer clic en el botón “Enviar” aceptarás nuestros
-
             <a href="{{ url('terminos-y-condiciones') }}" target="_blank" class="text-dark fw-bold font-akshar">
                 <span class="bold-text-cap">Términos, Condiciones y Política de Privacidad</span>
             </a>
         </label>
     </div>
-    <!------------------>
     <div class="form-group mb-3">
-        <button type="submit" class="btn btn-dark font-akshar w-100" id="submitBtn">Enviar</button>
+        <button type="submit" class="btn font-akshar" id="submitBtn">Enviar</button>
     </div>
-    <!------------------->
 </form>
 
 <script>
