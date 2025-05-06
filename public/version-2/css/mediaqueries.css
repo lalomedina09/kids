@@ -906,6 +906,8 @@
 
     .original-title-aboutus {
         margin-top: 3rem;
+        font-size: 3.3rem;
+        line-height: 1.2;
     }
 
 
@@ -1815,9 +1817,17 @@
         margin-right: -4rem;
     }
 
+    .facademia {
+        margin-top: -2rem;
+    }
+
+    .pacademia {
+        margin-top: -2rem;
+    }
+
     .main-pigeon {
         width: 200px;
-        margin-top: 5.5rem;
+        margin-top: 7.5rem;
     }
 
     .banner-title-main {
@@ -1836,7 +1846,7 @@
     }
 
     .content-image img {
-        margin-right: -13rem;
+        margin-right: -11rem;
     }
 
     /* ################# Landing Home - seccion de contenido ################# */
@@ -2573,7 +2583,7 @@
             /* Botón ocupa todo el ancho */
             padding: 10px;
             font-size: 16px;
-            margin-left: -10.5rem;
+            margin-left: -0.5rem;
         }
 
         .flecha {

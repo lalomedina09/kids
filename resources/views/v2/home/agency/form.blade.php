@@ -7,12 +7,13 @@
     }
 
     .form-control {
-        background-color: #f0f0f0;
+        background-color: #dedede;
         border: none;
         border-radius: 5px;
         padding: 29px;
         font-size: 20px;
         font-family: "Akshar", Helvetica;
+        height: 3rem;
     }
 
     .form-control::placeholder {
@@ -24,10 +25,11 @@
         background-color: #000;
         color: #fff;
         width: 167px;
-        padding: 10px 20px;
+        padding: 14px 20px;
         border: none;
         border-radius: 0px;
         font-family: "Akshar", Helvetica;
+        font-size: 20px;
     }
 
     .btn-custom:hover {
@@ -66,7 +68,6 @@
         margin-left: 14px;
     }
 
-    /* Seccion captcha */
     .captcha-izquierda {
         background-color: #dedede;
         width: 11rem;
@@ -74,28 +75,16 @@
         height: 3rem;
     }
 
-    /* Estilo del texto de condiciones */
     .text-cap-derecha {
         font-family: "Akshar", Helvetica;
         font-size: 17px;
-        /*margin-left: -201px;*/
     }
 
     .bold-text-cap {
         font-weight: bold;
     }
 
-    .form-label {
-        font-weight: bold;
-    }
-
-    .form-control {
-        background-color: #dedede;
-        border: none;
-    }
-
     .captcha-section {
-        padding: 15px;
         border-radius: 10px;
     }
 
@@ -111,8 +100,10 @@
         margin-left: 15px;
     }
 </style>
+
 <form action="{{ route('contact.save') }}" method="POST">
     @csrf
+
     <!-- Sección: Cuéntanos más de ti -->
     <div class="mb-3">
         <label class="form-label mb-4">Cuéntanos más de ti</label>
@@ -171,42 +162,32 @@
             </div>
             <div class="col-md-12">
                 <input type="text" class="form-control mb-2" name="mensaje" placeholder="Mensaje" required>
-                <input type="hidden" class="form-control mb-2" name="motivo" placeholder="motivo" value="Agencia Creativa"
-                    required>
+                <input type="hidden" class="form-control mb-2" name="motivo" placeholder="motivo"
+                    value="Agencia Creativa" required>
             </div>
         </div>
     </div>
 
     <!-- Sección del reCAPTCHA y Condiciones -->
     <div class="captcha-section mb-3">
-        <div class="row">
-            <div class="col-md-4">
-                {{--
-                <div class="form-check captcha-izquierda mb-3">
-                    <input type="checkbox" class="form-check-input" id="recaptcha">
-                    <label class="form-check-label" for="recaptcha">I'm not a robot</label>
-                    <img class="imagen-cap" src="{{ asset(" version-2/images/consulting/imgcaptcha/captcha.png") }}"
-                        alt="Captcha" />
-                </div>
-                --}}
-                <div class="form-group mx-auto">
-                    <div class="g-recaptcha" data-theme="dark" data-sitekey="{{ config('money.recaptcha.key') }}"></div>
-
+        <div class="row align-items-center">
+            <!-- reCAPTCHA -->
+            <div class="col-md-4 d-flex justify-content-start">
+                <div class="form-group">
+                    <div class="g-recaptcha" data-theme="dark"
+                        data-sitekey="{{ config('money.recaptcha.key') }}"></div>
                     @if ($errors->has('g-recaptcha-response'))
                     <span class="small text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
                     @endif
                 </div>
             </div>
-            <div class="col-md-4 text-and-image mb-3">
-                {{--
-                <p class="text-cap-derecha">Al hacer clic en el botón “Enviar” aceptarás nuestros <br><span
-                        class="bold-text-cap">Términos, Condiciones y Política de Privacidad</span></p>
-                --}}
+
+            <!-- Términos centrados -->
+            <div class="col-md-4 d-flex justify-content-center text-center">
                 <div class="form-check mb-3">
-                    <input type="checkbox" class="form-check-input " id="acceptTerms" required>
+                    <input type="checkbox" class="form-check-input" id="acceptTerms" required>
                     <label class="form-check-label font-akshar" for="acceptTerms">
-                        Al hacer clic en el botón “Enviar” aceptarás nuestros
-                        <br>
+                        Al hacer clic en el botón “Enviar” aceptarás nuestros<br>
                         <a href="{{ url('terminos-y-condiciones') }}" target="_blank"
                             class="text-dark fw-bold font-akshar">
                             <span class="bold-text-cap">Términos, Condiciones y Política de Privacidad</span>
@@ -214,14 +195,17 @@
                     </label>
                 </div>
             </div>
-            <div class="col-md-4">
+
+            <!-- Botón a la derecha -->
+            <div class="col-md-4 d-flex justify-content-end">
                 <button type="submit" class="btn btn-custom" id="submitBtn">Enviar</button>
             </div>
         </div>
     </div>
 </form>
+
 <script>
-    document.getElementById('acceptTerms').addEventListener('change', function() {
+    document.getElementById('acceptTerms').addEventListener('change', function () {
         document.getElementById('submitBtn').disabled = !this.checked;
     });
 </script>

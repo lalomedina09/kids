@@ -7,12 +7,13 @@
     }
 
     .form-control {
-        background-color: #f0f0f0;
+        background-color: #dedede;
         border: none;
         border-radius: 5px;
-        padding: 29px;
+        padding: 20px;
         font-size: 20px;
         font-family: "Akshar", Helvetica;
+        height: 4rem;
     }
 
     .form-control::placeholder {
@@ -26,27 +27,12 @@
         width: 167px;
         padding: 10px 20px;
         border: none;
-        border-radius: 0px;
+        border-radius: 0;
         font-family: "Akshar", Helvetica;
     }
 
     .btn-custom:hover {
         background-color: #333;
-    }
-
-    .text-muted {
-        font-size: 0.8rem;
-        color: #666;
-    }
-
-    .form-check-label {
-        font-size: 0.9rem;
-        color: #666;
-    }
-
-    .form-check-input {
-        width: 20px;
-        margin-left: -23px;
     }
 
     .text-formulario {
@@ -57,83 +43,66 @@
         margin-top: -12rem;
     }
 
-    .text-end {
-        text-align: right;
-    }
-
-    .imagen-cap {
-        margin-bottom: -17px;
-        margin-left: 14px;
-    }
-
-    /* Seccion captcha */
-    .captcha-izquierda {
-        background-color: #dedede;
-        width: 11rem;
-        margin-left: -11px;
-        height: 3rem;
-    }
-
-    /* Estilo del texto de condiciones */
     .text-cap-derecha {
-    font-family: "Akshar", Helvetica;
-    font-size: 17px;
-    /*margin-left: -201px;*/
+        font-family: "Akshar", Helvetica;
+        font-size: 17px;
     }
 
     .bold-text-cap {
-    font-weight: bold;
-    }
-    .form-label {
         font-weight: bold;
     }
 
-    .form-control {
-        background-color: #dedede;
-        border: none;
-    }
-
     .captcha-section {
-        padding: 15px;
         border-radius: 10px;
     }
 
-    .text-and-image {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .form-check-label {
+        font-size: 0.95rem;
+        color: #333;
     }
 
-    .text-and-image img {
-        max-width: 100px;
-        height: auto;
-        margin-left: 15px;
+    .form-check-input {
+        width: 20px;
+        margin-right: 10px;
     }
 
+    @media (max-width: 768px) {
+        .text-formulario {
+            font-size: 24px;
+            margin-top: -6rem;
+        }
+
+        .btn-custom {
+            width: 100%;
+        }
+
+        .form-check {
+            text-align: center;
+        }
+    }
 </style>
 
-<br>
-<br>
-<br>
+<br><br><br>
 <div class="container my-5">
     <h2 class="text-formulario mb-4">Agenda una llamada informativa con nosotros</h2>
 
     <form action="{{ route('contact.save') }}" method="POST">
         @csrf
-        <!-- Sección: Cuéntanos más de ti -->
+
+        <!-- Cuéntanos más de ti -->
         <div class="mb-3">
             <label class="form-label mb-4">Cuéntanos más de ti</label>
             <div class="row">
                 @if(Auth::check())
                     <div class="col-md-4">
-                        <input type="text" class="form-control ml-2 mr-2 mb-2" name="nombre" placeholder="Nombre*" value="{{ Auth::user()->name }}" required>
+                        <input type="text" class="form-control mb-2" name="nombre" placeholder="Nombre*" value="{{ Auth::user()->name }}" required>
                     </div>
                     <div class="col-md-4">
                         <input type="text" class="form-control mb-2" name="apellidos" placeholder="Apellido*" value="{{ Auth::user()->last_name }}" required>
                     </div>
                 @else
                     <div class="col-md-4">
-                        <input type="text" class="form-control  mr-2 mb-2" name="nombre" placeholder="Nombre*" required>
+                        <input type="text" class="form-control mb-2" name="nombre" placeholder="Nombre*" required>
                     </div>
                     <div class="col-md-4">
                         <input type="text" class="form-control mb-2" name="apellidos" placeholder="Apellido*" required>
@@ -145,7 +114,7 @@
             </div>
         </div>
 
-        <!-- Sección: ¿Cómo podemos comunicarnos contigo? -->
+        <!-- ¿Cómo podemos comunicarnos contigo? -->
         <div class="mb-3">
             <label class="form-label mb-4">¿Cómo podemos comunicarnos contigo?</label>
             <div class="row">
@@ -154,7 +123,7 @@
                 </div>
                 <div class="col-md-6">
                     @if(Auth::check())
-                        <input type="email" class="form-control mb-2" name="email" placeholder="Email empresarial*" required value="{{ Auth::user()->email }}">
+                        <input type="email" class="form-control mb-2" name="email" placeholder="Email empresarial*" value="{{ Auth::user()->email }}" required>
                     @else
                         <input type="email" class="form-control mb-2" name="email" placeholder="Email empresarial*" required>
                     @endif
@@ -162,7 +131,7 @@
             </div>
         </div>
 
-        <!-- Sección: Cuéntanos más sobre tu empresa -->
+        <!-- Cuéntanos más sobre tu empresa -->
         <div class="mb-3">
             <label class="form-label mb-4">Cuéntanos más sobre tu empresa</label>
             <div class="row">
@@ -174,37 +143,28 @@
                 </div>
                 <div class="col-md-12">
                     <input type="text" class="form-control mb-2" name="mensaje" placeholder="Mensaje" required>
-                    <input type="hidden" class="form-control mb-2" name="motivo" placeholder="motivo" value="Consultoria" required>
+                    <input type="hidden" name="motivo" value="Consultoria">
                 </div>
             </div>
         </div>
 
-        <!-- Sección del reCAPTCHA y Condiciones -->
+        <!-- Captcha, términos y botón -->
         <div class="captcha-section mb-3">
-            <div class="row">
-                <div class="col-md-4">
-                    {{--
-                    <div class="form-check captcha-izquierda mb-3">
-                        <input type="checkbox" class="form-check-input" id="recaptcha">
-                        <label class="form-check-label" for="recaptcha">I'm not a robot</label>
-                        <img class="imagen-cap" src="{{ asset("version-2/images/consulting/imgcaptcha/captcha.png") }}" alt="Captcha" />
-                    </div>
-                    --}}
+            <div class="row align-items-center">
+                <!-- reCAPTCHA -->
+                <div class="col-md-4 mb-3 mb-md-0">
                     <div class="form-group mx-auto">
                         <div class="g-recaptcha" data-theme="dark" data-sitekey="{{ config('money.recaptcha.key') }}"></div>
-
                         @if ($errors->has('g-recaptcha-response'))
-                        <span class="small text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                            <span class="small text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
                         @endif
                     </div>
                 </div>
-                <div class="col-md-4 text-and-image mb-3">
-                    {{--
-                    <p class="text-cap-derecha">Al hacer clic en el botón “Enviar” aceptarás nuestros <br><span
-                            class="bold-text-cap">Términos, Condiciones y Política de Privacidad</span></p>
-                    --}}
-                    <div class="form-check mb-3">
-                        <input type="checkbox" class="form-check-input " id="acceptTerms" required>
+
+                <!-- Términos -->
+                <div class="col-md-4 d-flex justify-content-center mb-3 mb-md-0">
+                    <div class="form-check text-center">
+                        <input type="checkbox" class="form-check-input" id="acceptTerms" required>
                         <label class="form-check-label font-akshar" for="acceptTerms">
                             Al hacer clic en el botón “Enviar” aceptarás nuestros
                             <br>
@@ -214,15 +174,18 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-md-4">
+
+                <!-- Botón -->
+                <div class="col-md-4 d-flex justify-content-md-end justify-content-center">
                     <button type="submit" class="btn btn-custom" id="submitBtn">Enviar</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
+
 <script>
-    document.getElementById('acceptTerms').addEventListener('change', function() {
+    document.getElementById('acceptTerms').addEventListener('change', function () {
         document.getElementById('submitBtn').disabled = !this.checked;
     });
 </script>

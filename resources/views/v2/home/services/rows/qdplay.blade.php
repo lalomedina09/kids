@@ -26,10 +26,10 @@
                 <p class="price ui text size-text2xl mt-4" style="color: #C5481C;">
                     ONLINE LEARNING
                 </p><br>
-                <h2 class="finanzassanas ui heading size-text3xl" style="color: #000000">
+                <h2 class="facademia finanzassanas ui heading size-text3xl" style="color: #000000">
                     Academia online de <br> educación financiera
                 </h2><br>
-                <p class="description-2 ui text size-text2xl" style="color: #000000">
+                <p class="pacademia description-2 ui text size-text2xl" style="color: #000000">
                     Utiliza nuestra plataforma online, o crea
                     tu propia academia con nosotros. Sumamos fuerzas con las empresas comprometidas para llevar la educación a sus usuarios
                     a través del aprendizaje en línea.
