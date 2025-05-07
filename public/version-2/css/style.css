@@ -2319,7 +2319,7 @@ a {
 }
 
 .top {
-    margin-top: -9rem;
+    margin-top: -4rem;
 }
 
 .stack-section {
@@ -3447,6 +3447,7 @@ a {
     font-weight: 600;
     font-size: 1.3rem;
     font-style: italic;
+    line-height: 1.5;
 }
 
 .contenido-tarjeta {

@@ -23,7 +23,7 @@
 
     .bg-features-agency {
         background: linear-gradient(180deg, #121212, #1e1e1e);
-        margin-top: -0.7rem
+        margin-top: 7.3rem
     }
 
     .hero-section h1 {

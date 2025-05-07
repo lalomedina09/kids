@@ -49,7 +49,7 @@
                     <div class="text-wrapper-22 mt-2">
                         Curso online
                     </div>
-                    <p class="tarjetas-de-cr-dito quote-content mt-2">
+                    <p class="tarjetas-de-cr-dito quote-content mb-4">
                         {{ $item['data']->name }}
                     </p>
                 </a>
