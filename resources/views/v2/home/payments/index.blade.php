@@ -68,25 +68,29 @@
             </div>
 
             <div class="col-md-6">
-                <div class="card shadow-sm p-4">
+                <div class="card shadow-sm p-4 w-100">
                     <h2 class="mb-3 font-akshar title-card">Resumen de compra</h2>
                     <table class="table font-akshar" style="border-collapse: collapse !important;">
                         <tbody>
                             <tr>
-                                <td>Membresía:</td>
-                                <td><span class="fw-bold">{{ $concept->name }}</span></td>
+                                <td class="font-akshar">Membresía:</td>
+                                <td class="font-akshar text-right">
+                                    <span class="text-danger ">{{ $concept->name }}</span>
+                                </td>
                             </tr>
                             <tr id="discount-row">
-                                <td>Descuento aplicado</td>
-                                <td id="discount-amount">-$0 MXN</td>
+                                <td class="font-akshar">Descuento aplicado</td>
+                                <td class="text-danger text-right" id="discount-amount">-$0 MXN</td>
                             </tr>
                             <tr>
-                                <td>Subtotal</td>
-                                <td>${{ $concept->price }} MXN</td>
+                                <td class="font-akshar">Subtotal</td>
+                                <td class="text-danger text-right">${{ $concept->price }} MXN</td>
                             </tr>
                             <tr class="total">
-                                <td>Total a pagar</td>
-                                <td class="fw-bold" id="total-amount">${{ $concept->price }} MXN</td>
+                                <td class="font-akshar">Total a pagar</td>
+                                <td class="text-danger text-right" id="total-amount">
+                                    ${{ $concept->price }} MXN
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -204,7 +208,7 @@
 
     .title-card {
         font-size: 1.2rem;
-        font-weight: bold;
+        font-weight: 400;
         text-align: center;
     }
 
