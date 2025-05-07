@@ -50,13 +50,13 @@
                     </div>
 
                     <label for="card-element" class="form-label font-akshar mt-4">
-                        <h2 class="label-card">Datos de la tarjeta</h2>
+                        Datos de la tarjeta
                     </label>
                     <div id="card-element" class="form-control"></div>
                     <div id="card-errors" class="text-danger mt-2"></div>
 
                     <hr>
-                    <ul class="font-akshar mt-3">
+                    <ul class="font-akshar mt-3" style="font-size: medium;">
                         <li class="mb-2">* IVA Incluido en el total.</li>
                         <li class="mb-2">* Cancela cuando quieras.</li>
                         <li class="mb-2">* No se aplican comisiones extra.</li>
@@ -70,15 +70,19 @@
             <div class="col-md-6">
                 <div class="card shadow-sm p-4">
                     <h2 class="mb-3 font-akshar title-card">Resumen de compra</h2>
-                    <table class="table font-akshar">
+                    <table class="table font-akshar" style="border-collapse: collapse !important;">
                         <tbody>
                             <tr>
-                                <td>Membresía: <span class="fw-bold">{{ $concept->name }}</span></td>
-                                <td>${{ $concept->price }} MXN</td>
+                                <td>Membresía:</td>
+                                <td><span class="fw-bold">{{ $concept->name }}</span></td>
                             </tr>
                             <tr id="discount-row">
                                 <td>Descuento aplicado</td>
                                 <td id="discount-amount">-$0 MXN</td>
+                            </tr>
+                            <tr>
+                                <td>Subtotal</td>
+                                <td>${{ $concept->price }} MXN</td>
                             </tr>
                             <tr class="total">
                                 <td>Total a pagar</td>
@@ -86,11 +90,11 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div id="coupon-message" class="font-akshar mt-2"></div>
+                    <div id="coupon-message" style="font-size: smaller;" class="font-akshar mt-2"></div>
 
                     <hr>
                     <h2 class="font-akshar label-card">Beneficios de la membresía</h2>
-                    <ul class="font-akshar mt-1">
+                    <ul class="font-akshar mt-1" style="font-size: medium;">
                         <li class="mb-2">✅ Acceso ilimitado al contenido QD Play.</li>
                         <li class="mb-2">✅ Insignias por categorías.</li>
                         <li class="mb-2">✅ Certificados al terminar los cursos.</li>
