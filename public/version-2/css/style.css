@@ -1411,6 +1411,7 @@
 
 .navbar .btn-dark:hover {
     background-color: #c54a1d;
+    border: 1px solid #c54a1d;
 }
 
 .navbar .navbar-brand img {

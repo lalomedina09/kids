@@ -33,7 +33,8 @@
     }
 
     .btn-custom:hover {
-        background-color: #333;
+        background-color: #c54a1d;
+        border: 1px solid #c54a1d;
     }
 
     .text-muted {

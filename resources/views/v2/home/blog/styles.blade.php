@@ -22,6 +22,10 @@
         font-size: 1.2rem;
     }
 
+    .custom-btn:hover {
+        background-color: #C5481C;
+        color: #ffffff;
+    }
     .custom-btn i {
         color: white;
     }

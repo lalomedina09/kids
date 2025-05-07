@@ -57,7 +57,7 @@
 
     #submitBtn:hover {
         background-color: #C5481C;
-        border: 1px solid #000;
+        border: 1px solid #C5481C;
     }
 
     .text-muted {
