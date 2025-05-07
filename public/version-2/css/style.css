@@ -2857,6 +2857,12 @@ a {
     margin-bottom: 2.5rem;
 }
 
+.btn-learn:hover {
+    background-color: #C5481C;
+    border: 1px solid #C5481C;
+    color: #fff
+}
+
 /* Imagenes banner */
 
 .img-movimiento {
