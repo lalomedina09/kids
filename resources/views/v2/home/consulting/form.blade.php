@@ -32,7 +32,9 @@
     }
 
     .btn-custom:hover {
-        background-color: #333;
+        background-color: #C5481C;
+        border: 1px solid #C5481C;
+        color: #fff
     }
 
     .text-formulario {
