@@ -32,10 +32,10 @@
         <!-- Columna de imágenes -->
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 text-center">
             <div class="d-flex justify-content-center align-items-center position-relative">
-                <img src="{{ asset('version-2/images/consulting/imgbanner/metodologia.png') }}" alt="Metodología del Bienestar Financiero" class="img-fluid" style="width: 100%; max-width: 500px; height: auto;">
-                <!--<img src="{{ asset('version-2/images/consulting/imgbanner/fondocirculo.png') }}" alt="Fondo principal" class="fondo-circulo">
-                <img src="{{ asset('version-2/images/consulting/imgbanner/moneda.png') }}" alt="Moneda" class="base-image">
-                <img src="{{ asset('version-2/images/consulting/imgbanner/flechas.png') }}" alt="Flechas" class="overlay-image">-->
+                <div style="position: relative; display: inline-block; width: 100%; max-width: 500px;">
+                    <img src="{{ asset('version-2/images/consulting/imgbanner/metodologia.png') }}" alt="Metodología del Bienestar Financiero" class="img-fluid" style="width: 100%; height: auto; clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);">
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 20%; background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #f2f2f2 100%);"></div>
+                </div>
             </div>
         </div>
     </div>
