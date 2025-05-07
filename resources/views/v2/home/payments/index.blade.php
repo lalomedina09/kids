@@ -55,6 +55,46 @@
                     <div id="card-element" class="form-control"></div>
                     <div id="card-errors" class="text-danger mt-2"></div>
 
+                    @if (request()->has('giveDigitalCard') && in_array(request()->giveDigitalCard, [0, 1, 2, 3]))
+
+                        <div class="mt-3 mb-0">
+                            <h2 class="font-akshar mb-2">
+                                Datos de la tarjeta de regalo
+                            </h2>
+                            <p class="font-akshar" style="font-size: medium;">
+                                <span>Nombre de mi amig@</span>
+                                <span class="text-danger">{{ request()->nameFrom }}</span>
+                                <br>
+                                <span>Correo de mi amig@</span>
+                                <span class="text-danger">{{ request()->nameFriend }}</span>
+                                <br>
+                                <span>Mensaje</span>
+                                <span class="text-danger">{{ request()->message }}</span>
+                                <br>
+                            </p>
+                            <p class="font-akshar" style="font-size: medium;">
+                                <span class="">Recuerda que la tarjeta de regalo es solo para uso personal.</span>
+                            </p>
+
+                        </div>
+                        <!--<label for="coupon-code" class="font-akshar label-card mb-2"> Correo de mi amigo</label>-->
+
+                        <!-- datos de quien regala-->
+                        <input type="hidden" name="sendFrom" value="{{ request()->nameFrom }}">
+
+                        <!-- datos de beneficiaro-->
+                        <input type="hidden" name="sendTo" value="{{ request()->nameFriend }}">
+                        <input type="hidden" name="reservedEmail" value="{{ request()->emailToFriend }}">
+                        <input type="hidden" name="sendMsg" value="{{ request()->message }}">
+
+                        <!-- datos de la tarjeta -->
+                        <input type="hidden" name="card_design" value="{{ request()->giveDigitalCard }}">
+                        <input type="hidden" name="sendEmailDate" value="{{ request()->sendEmailDate }}">
+                        <input type="hidden" name="sendDate" value="{{ request()->year }}-{{ request()->month }}-{{ request()->day }}">
+                        <input type="hidden" name="hour" value="{{ request()->hour }}">
+                        <!---->
+
+                    @endif
                     <hr>
                     <ul class="font-akshar mt-3" style="font-size: medium;">
                         <li class="mb-2">* IVA Incluido en el total.</li>
