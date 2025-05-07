@@ -11917,7 +11917,7 @@ input:-webkit-autofill:active {
 .single__content img {
     display: block;
     margin: 40px auto;
-    width: 100%;
+    width: auto;
     height: auto;
 }
 

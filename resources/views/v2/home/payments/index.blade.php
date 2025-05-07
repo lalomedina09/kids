@@ -50,13 +50,53 @@
                     </div>
 
                     <label for="card-element" class="form-label font-akshar mt-4">
-                        <h2 class="label-card">Datos de la tarjeta</h2>
+                        Datos de la tarjeta
                     </label>
                     <div id="card-element" class="form-control"></div>
                     <div id="card-errors" class="text-danger mt-2"></div>
 
+                    @if (request()->has('giveDigitalCard') && in_array(request()->giveDigitalCard, [0, 1, 2, 3]))
+
+                        <div class="mt-3 mb-0">
+                            <h2 class="font-akshar mb-2">
+                                Datos de la tarjeta de regalo
+                            </h2>
+                            <p class="font-akshar" style="font-size: medium;">
+                                <span>Nombre de mi amig@</span>
+                                <span class="text-danger">{{ request()->nameFrom }}</span>
+                                <br>
+                                <span>Correo de mi amig@</span>
+                                <span class="text-danger">{{ request()->nameFriend }}</span>
+                                <br>
+                                <span>Mensaje</span>
+                                <span class="text-danger">{{ request()->message }}</span>
+                                <br>
+                            </p>
+                            <p class="font-akshar" style="font-size: medium;">
+                                <span class="">Recuerda que la tarjeta de regalo es solo para uso personal.</span>
+                            </p>
+
+                        </div>
+                        <!--<label for="coupon-code" class="font-akshar label-card mb-2"> Correo de mi amigo</label>-->
+
+                        <!-- datos de quien regala-->
+                        <input type="hidden" name="sendFrom" value="{{ request()->nameFrom }}">
+
+                        <!-- datos de beneficiaro-->
+                        <input type="hidden" name="sendTo" value="{{ request()->nameFriend }}">
+                        <input type="hidden" name="reservedEmail" value="{{ request()->emailToFriend }}">
+                        <input type="hidden" name="sendMsg" value="{{ request()->message }}">
+
+                        <!-- datos de la tarjeta -->
+                        <input type="hidden" name="card_design" value="{{ request()->giveDigitalCard }}">
+                        <input type="hidden" name="sendEmailDate" value="{{ request()->sendEmailDate }}">
+                        <input type="hidden" name="sendDate" value="{{ request()->year }}-{{ request()->month }}-{{ request()->day }}">
+                        <input type="hidden" name="hour" value="{{ request()->hour }}">
+                        <!---->
+
+                    @endif
                     <hr>
-                    <ul class="font-akshar mt-3">
+                    <ul class="font-akshar mt-3" style="font-size: medium;">
                         <li class="mb-2">* IVA Incluido en el total.</li>
                         <li class="mb-2">* Cancela cuando quieras.</li>
                         <li class="mb-2">* No se aplican comisiones extra.</li>
@@ -68,29 +108,37 @@
             </div>
 
             <div class="col-md-6">
-                <div class="card shadow-sm p-4">
+                <div class="card shadow-sm p-4 w-100">
                     <h2 class="mb-3 font-akshar title-card">Resumen de compra</h2>
-                    <table class="table font-akshar">
+                    <table class="table font-akshar" style="border-collapse: collapse !important;">
                         <tbody>
                             <tr>
-                                <td>Membresía: <span class="fw-bold">{{ $concept->name }}</span></td>
-                                <td>${{ $concept->price }} MXN</td>
+                                <td class="font-akshar">Membresía:</td>
+                                <td class="font-akshar text-right">
+                                    <span class="text-danger ">{{ $concept->name }}</span>
+                                </td>
                             </tr>
                             <tr id="discount-row">
-                                <td>Descuento aplicado</td>
-                                <td id="discount-amount">-$0 MXN</td>
+                                <td class="font-akshar">Descuento aplicado</td>
+                                <td class="text-danger text-right" id="discount-amount">-$0 MXN</td>
+                            </tr>
+                            <tr>
+                                <td class="font-akshar">Subtotal</td>
+                                <td class="text-danger text-right">${{ $concept->price }} MXN</td>
                             </tr>
                             <tr class="total">
-                                <td>Total a pagar</td>
-                                <td class="fw-bold" id="total-amount">${{ $concept->price }} MXN</td>
+                                <td class="font-akshar">Total a pagar</td>
+                                <td class="text-danger text-right" id="total-amount">
+                                    ${{ $concept->price }} MXN
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-                    <div id="coupon-message" class="font-akshar mt-2"></div>
+                    <div id="coupon-message" style="font-size: smaller;" class="font-akshar mt-2"></div>
 
                     <hr>
                     <h2 class="font-akshar label-card">Beneficios de la membresía</h2>
-                    <ul class="font-akshar mt-1">
+                    <ul class="font-akshar mt-1" style="font-size: medium;">
                         <li class="mb-2">✅ Acceso ilimitado al contenido QD Play.</li>
                         <li class="mb-2">✅ Insignias por categorías.</li>
                         <li class="mb-2">✅ Certificados al terminar los cursos.</li>
@@ -200,7 +248,7 @@
 
     .title-card {
         font-size: 1.2rem;
-        font-weight: bold;
+        font-weight: 400;
         text-align: center;
     }
 
