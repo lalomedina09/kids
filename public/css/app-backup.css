@@ -11071,7 +11071,7 @@ input:-webkit-autofill:active {
 .article__category,
 .article__more {
     text-decoration: underline;
-    text-transform: capitalize;
+    text-transform: none;
 }
 
 .article__author {
