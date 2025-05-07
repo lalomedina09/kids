@@ -15,6 +15,7 @@
         color: #333;
         font-size: 20px;
         font-family: "Akshar", Helvetica;
+        margin-top: 1px
     }
 
     .form-control {
