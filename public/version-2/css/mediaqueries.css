@@ -823,10 +823,9 @@
 
     /********************** Landing Home - Seccion de nosotros ****************/
     .div-text-about-us {
-        /*margin-bottom: inherit;*/
+        margin-bottom: inherit;
     }
-
-    /**************************** Seccion de SOLUTIONS ********************/
+  /**************************** Seccion de SOLUTIONS ********************/
     #solucionesCarousel {
         display: none;
     }
@@ -856,17 +855,14 @@
     }
 
     /********************** Empieza seccion de contacto ********************************/
-    .img-ilus-contact {
-        width: 114%;
-        margin-top: 10rem;
-        margin-left: -5rem;
-    }
+                    /*margin-bottom: inherit;*/
+
 
     /********************** Termina seccion de contacto ********************************/
 
 
     .culturaf {
-        margin-top: 4rem;
+        margin-top: 6rem;
     }
 
     /* Imágenes flotantes */
@@ -909,7 +905,6 @@
         font-size: 3.3rem;
         line-height: 1.2;
     }
-
 
 }
 
@@ -2038,7 +2033,7 @@
     }
 
     .margin-title-solution {
-        margin-top: 6.4em;
+        margin-top: 664em;
         margin-bottom: 6rem;
     }
 
