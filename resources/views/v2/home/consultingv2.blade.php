@@ -26,8 +26,12 @@
     @include('v2.home.consulting.form')
 </section>
 
-{{-- <section>
+<section>
     @include('v2.home.consulting.products.movil')
-</section> --}}
+</section>
+
+<section>
+    @include('v2.home.consulting.products.desktop')
+</section>
 
 @endsection
