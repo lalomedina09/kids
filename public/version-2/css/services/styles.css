@@ -209,15 +209,35 @@
 /* Mancha amarilla en la parte inferior izquierda */
 
 .stackcapaone::after {
-    width: 550px;
-    height: 550px;
-    background-color: rgb(223 198 84);
-    bottom: 450px;
-    left: -50px;
-    box-shadow: 0 0 100px rgba(255, 255, 0, 0.3);
+    width: 610px;
+    height: 361px;
+    background-color: rgb(213, 188, 57);
+    position: absolute;
+    bottom: 545px;
+    left: -201px;
+    box-shadow: 0 0 120px rgba(255, 215, 0, 0.6);
     border-radius: 60%;
-    filter: blur(80px);
-    transform: rotate(45deg);
+    filter: blur(337px);
+    transform: rotate(70deg);
+    background-size: cover;
+    opacity: 1;
+    top: 484px;
+}
+
+.stackcapaone::before {
+    width: 200px;
+    height: 408px;
+    background-color: rgb(213, 188, 57);
+    position: absolute;
+    bottom: 545px;
+    left: 150px;
+    box-shadow: 0 0 120px rgba(255, 215, 0, 0.6);
+    border-radius: 60%;
+    filter: blur(337px);
+    transform: rotate(70deg);
+    background-size: cover;
+    opacity: 1;
+    top: 433px;
 }
 
 
@@ -227,10 +247,26 @@
     content: '';
     position: absolute;
     width: 650px;
-    height: 650px;
+    height: 394px;
     background-color: rgb(136 188 175);
     top: 50px;
-    right: -100px;
+    right: -200;
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba(0, 0, 255, 0.3);
+    z-index: 1;
+    border-radius: 60%;
+    filter: blur(80px);
+    transform: rotate(45deg);
+}
+
+.manchas-azul::after {
+    content: '';
+    position: absolute;
+    width: 409px;
+    height: 331px;
+    background-color: rgb(136, 188, 175);
+    top: 2px;
+    right: 236px;
     border-radius: 50%;
     box-shadow: 0 0 100px rgba(0, 0, 255, 0.3);
     z-index: 1;
@@ -326,7 +362,7 @@
 .main-pigeon {
     width: 245px;
     z-index: 2;
-    margin-top: 10rem;
+    margin-top: 9rem;
 }
 
 .banner-title-main {
