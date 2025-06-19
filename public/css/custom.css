@@ -1,0 +1,187 @@
+.mc-top-shape {
+    height: 50px;
+    background-image: url('../img/bg/main-cta-top-big.png');
+    background-size: auto;
+    background-repeat: repeat-x;
+    animation: waveAnimation 50s linear infinite;
+}
+
+@keyframes waveAnimation {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -1000px 0;
+        /* Adjust X value, keep Y at 0 */
+    }
+}
+
+/* --------------------------------------------
+    Backgrounds
+ ---------------------------------------------- */
+.ct-action {
+    background-color: var(--bg-white);
+}
+
+.work-process-section {
+    background-color: var(--bg-cream);
+}
+
+.bg-orange {
+    background-color: var(--bg-orange);
+}
+
+.bg-cream {
+    background-color: var(--bg-cream);
+}
+
+.bg-menta {
+    background-color: var(--bg-menta);
+}
+
+/* --------------------------------------------
+    Fonts & Fonts Styles
+ ---------------------------------------------- */
+.text-orange {
+    color: var(--bg-text-orange);
+}
+
+.text-purple {
+    color: var(--bg-text-purple);
+}
+
+.text-blue-sky {
+    color: var(--bg-blue-sky);
+}
+
+.text-menta {
+    color: var(--bg-menta);
+}
+
+
+.about-section p {
+    font-size: 1.2rem;
+}
+
+/* --------------------------------------------
+    Images
+ ---------------------------------------------- */
+.uniform-image {
+    height: 340px;
+    object-fit: contain;
+    width: 100%;
+}
+
+/* --------------------------------------------
+    Images Animated Clouds
+ ---------------------------------------------- */
+/*
+.img-animated-cloud-orange-top {
+    background-image: url('../img/bg/bg-orange-top.png');
+    width: auto;
+    height: 90%;
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: moveClouds 60s linear infinite;
+}
+
+.img-animated-cloud-white-top {
+    background-image: url('../img/bg/bg-white-top.png');
+    width: auto;
+    height: 90%;
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: moveClouds 60s linear infinite;
+}
+
+@keyframes moveClouds {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .img-animated-cloud-orange-top {
+        height: 80px;
+    }
+    .img-animated-cloud-white-top {
+        height: 80px;
+    }
+}
+*/
+/*
+.img-animated-cloud-orange-top,
+.img-animated-cloud-white-top {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 90%;
+}
+
+.img-animated-cloud-orange-top::before,
+.img-animated-cloud-white-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    
+    height: 100%;
+    background-image: inherit;
+    background-size: 100% auto;
+    background-repeat: repeat-x;
+    animation: moveClouds 60s linear infinite;
+}
+
+@keyframes moveClouds {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+*/
+.img-animated-cloud-cream-bottom {
+    background-image: url('../img/bg/bg-bottom-cream.png');
+    width: 100%;
+    height: 90%;
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: moveClouds 10s linear infinite;
+}
+
+
+.img-animated-cloud-orange-top {
+    background-image: url('../img/bg/bg-orange-top.png');
+    width: 100%;
+    height: 90%;
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: moveClouds 10s linear infinite;
+}
+
+
+.img-animated-cloud-white-top {
+    background-image: url('../img/bg/bg-white-top.png');
+    width: 100%;
+    height: 90%;
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: moveClouds 10s linear infinite;
+}
+
+@keyframes moveClouds {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}
