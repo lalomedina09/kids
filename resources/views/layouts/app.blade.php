@@ -3,16 +3,16 @@
 @section('base')
 
 <div id="app">
-    @include('partials.main.header')
+    {{--@include('layouts.components.main.header')--}}
 
     @yield('content')
 
-    @include('partials.main.footer')
+    {{--@include('layouts.components.main.footer')--}}
 
-    @include('partials.main.modals')
+    {{--@include('layouts.components.main.modals')--}}
 </div>
 
-@include('partials.main.scripts')
-@include('partials.main.messages')
-@include('partials.modals.adviceStatus')
+{{--@include('layouts.components.main.scripts')
+@include('layouts.components.main.messages')--}}
+
 @endsection

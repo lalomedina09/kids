@@ -16,6 +16,7 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        /*
         View::composer(
             ['layouts.app', 'layouts.landing', 'layouts.landingb', 'layouts.error', 'auth.register', 'articles.categories', 'articles.index', 'articles.tag', 'home.index', 'search.index'],
             CategoryViewComposer::class
@@ -38,6 +39,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             $view->with('auser', auth()->user());
         });
+        */
     }
 
     /**

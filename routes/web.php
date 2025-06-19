@@ -31,7 +31,7 @@ Route::get('i18n')
 |--------------------------------------------------------------------------
 */
 Route::get('/')
-    ->uses('HomeController@indexRedesign')
+    ->uses('HomeController@index')
     ->name('home');
 
 
