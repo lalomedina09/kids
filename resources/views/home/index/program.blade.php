@@ -1,21 +1,21 @@
 <section class="program-section section-padding pb-0 fix">
     <div class="top-shape">
-        <img src="assets/img/bg/bg-bottom-cream.png" alt="shape-img superior">
+        <img src="img/bg/bg-bottom-cream.png" alt="shape-img superior">
     </div>
     <div class="bottom-shape ">
-        <img src="assets/img/bg/bg-white-top.png" alt="shape-img inferior">
+        <img src="img/bg/bg-white-top.png" alt="shape-img inferior">
     </div>
     <div class="mask-shape float-bob-x">
-        <img src="assets/img/program/mask.png" alt="shape-img">
+        <img src="img/program/mask.png" alt="shape-img">
     </div>
     <div class="pencil-shape">
-        <img src="assets/img/program/pencil.png" alt="shape-img">
+        <img src="img/program/pencil.png" alt="shape-img">
     </div>
     <div class="mask-shape-2">
-        <img src="assets/img/circle-2.png" alt="shape-img" width="300px">
+        <img src="img/circle-2.png" alt="shape-img" width="300px">
     </div>
     <div class="compass-shape">
-        <img src="assets/img/program/compass.png" alt="shape-img">
+        <img src="img/program/compass.png" alt="shape-img">
     </div>
 
 
@@ -32,7 +32,7 @@
                 <div class="program-box-items">
                     <div class="program-bg bg-2"></div>
                     <div class="program-image">
-                        <img src="assets/img/program/02.jpg" alt="img">
+                        <img src="img/program/02.jpg" alt="img">
                     </div>
                     <div class="program-content text-center">
                         <h4>
@@ -52,7 +52,7 @@
                 <div class="program-box-items">
                     <div class="program-bg bg-2"></div>
                     <div class="program-image">
-                        <img src="assets/img/program/02.jpg" alt="img">
+                        <img src="img/program/02.jpg" alt="img">
                     </div>
                     <div class="program-content text-center">
                         <h4>
@@ -72,7 +72,7 @@
                 <div class="program-box-items">
                     <div class="program-bg bg-2"></div>
                     <div class="program-image">
-                        <img src="assets/img/program/02.jpg" alt="img">
+                        <img src="img/program/02.jpg" alt="img">
                     </div>
                     <div class="program-content text-center">
                         <h4>
@@ -92,7 +92,7 @@
                 <div class="program-box-items">
                     <div class="program-bg bg-2"></div>
                     <div class="program-image">
-                        <img src="assets/img/program/02.jpg" alt="img">
+                        <img src="img/program/02.jpg" alt="img">
                     </div>
                     <div class="program-content text-center">
                         <h4>

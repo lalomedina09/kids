@@ -3,18 +3,18 @@
     <div class=" py-5 bg-main-cta-section">
         <div class="main-cta-section">
             <div class="plane-shape float-bob-y mt-4">
-                <img src="assets/img/plane.png" alt="shape-img">
+                <img src="img/plane.png" alt="shape-img">
             </div>
             <div class="container">
                 <div class="main-cta-wrapper section-padding">
                     <div class="pencil-shape">
-                        <img src="assets/img/cta/pencil-2.png" alt="img">
+                        <img src="img/cta/pencil-2.png" alt="img">
                     </div>
                     <div class="plane-shape float-bob-y">
-                        <img src="assets/img/cta/plane.png" alt="img">
+                        <img src="img/cta/plane.png" alt="img">
                     </div>
                     <div class="cta-shape float-bob-x">
-                        <img src="assets/img/cta/shape.png" alt="img">
+                        <img src="img/cta/shape.png" alt="img">
                     </div>
                     <div class="cta-bg"></div>
                     <div class="section-title text-center">
@@ -39,10 +39,10 @@
     </div>
 
     <div class="bottom-shape bg-menta img-animated-cloud-white-top">
-        <img src="assets/img/bg/bg-white-top.png" alt="shape-img superior">
+        <img src="img/bg/bg-white-top.png" alt="shape-img superior">
     </div>
     <!--<div class="bottom-shape">
-        <img src="assets/img/bg/bg-white-top.png" alt="shape-img superior animated-cloud">
+        <img src="img/bg/bg-white-top.png" alt="shape-img superior animated-cloud">
     </div>-->
     <!--<div class="bottom-shape bg-menta img-animated-cloud-white-top"></div>-->
 </section>

@@ -1,27 +1,27 @@
 <section class="hero-section hero-1 fix">
     <div class="bottom-shape">
-        <img src="assets/img/hero/bottom.png" alt="shape-img">
+        <img src="img/hero/bottom.png" alt="shape-img">
     </div>
     <!--<div class="parasuit-shape float-bob-y">
-        <img src="assets/img/hero/parasuit.png" alt="shape-img">
+        <img src="img/hero/parasuit.png" alt="shape-img">
     </div>-->
     <div class="left-shape">
-        <!--<img src="assets/img/hero/left.png" alt="shape-img">-->
+        <!--<img src="img/hero/left.png" alt="shape-img">-->
     </div>
     <div class="book-shape float-bob-x">
-        <img src="assets/img/hero/icons/focus.png" alt="shape-img">
+        <img src="img/hero/icons/focus.png" alt="shape-img">
     </div>
     <div class="pencil-shape">
-        <img src="assets/img/hero/icons/medal.png" alt="shape-img">
+        <img src="img/hero/icons/medal.png" alt="shape-img">
     </div>
     <div class="bee-shape float-bob-y">
-        <img src="assets/img/hero/icons/shooting.png" alt="shape-img">
+        <img src="img/hero/icons/shooting.png" alt="shape-img">
     </div>
     <div class="right-shape">
-        <!--<img src="assets/img/hero/right.png" alt="shape-img">-->
+        <!--<img src="img/hero/right.png" alt="shape-img">-->
     </div>
     <div class="star-shape">
-        <img src="assets/img/hero/icons/coin.png" alt="shape-img">
+        <img src="img/hero/icons/coin.png" alt="shape-img">
     </div>
     <div class="container">
         <div class="row g-4 align-items-center">
@@ -54,9 +54,9 @@
             </div>
             <div class="col-lg-6">
                 <div class="hero-image wow fadeInUp" data-wow-delay=".4s">
-                    <img src="assets/img/hero/01-new.png" alt="hero-img">
+                    <img src="img/hero/01-new.png" alt="hero-img">
                     <div class="hero-shape">
-                        <img src="assets/img/hero/hero-shape.png" alt="shape-img">
+                        <img src="img/hero/hero-shape.png" alt="shape-img">
                     </div>
                 </div>
             </div>

@@ -1,12 +1,12 @@
 <section class="about-section section-padding">
     <div class="bus-shape float-bob-x">
-        <img src="assets/img/about/bus.png" alt="shape-img">
+        <img src="img/about/bus.png" alt="shape-img">
     </div>
     <div class="girl-shape float-bob-y">
-        <img src="assets/img/about/love.png" alt="shape-img">
+        <img src="img/about/love.png" alt="shape-img">
     </div>
     <div class="dot-shape">
-        <!--<img src="assets/img/about/dot.png" alt="shape-img">-->
+        <!--<img src="img/about/dot.png" alt="shape-img">-->
     </div>
     <div class="container">
         <div class="about-wrapper mb-40">
@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="about-image wow fadeInUp" data-wow-delay=".3s">
-                        <img src="assets/img/about/ilustracion-01.png" alt="about-img" class="img-fluid uniform-image">
+                        <img src="img/about/ilustracion-01.png" alt="about-img" class="img-fluid uniform-image">
                         <p class="mt-3 mt-md-0 wow fadeInUp mx-4 text-center" data-wow-delay=".5s">
                             El 70% de los adultos no aprendió sobre dinero en la escuela
                         </p>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="about-image wow fadeInUp" data-wow-delay=".3s">
-                        <img src="assets/img/about/ilustracion-02.png" alt="about-img" class="img-fluid uniform-image">
+                        <img src="img/about/ilustracion-02.png" alt="about-img" class="img-fluid uniform-image">
                         <p class="mt-3 mt-md-0 wow fadeInUp mx-4 text-center" data-wow-delay=".5s">
                             Los hábitos de gasto se forman antes de los 10 años
                         </p>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="about-image wow fadeInUp" data-wow-delay=".3s">
-                        <img src="assets/img/about/ilustracion-03.png" alt="about-img" class="img-fluid uniform-image">
+                        <img src="img/about/ilustracion-03.png" alt="about-img" class="img-fluid uniform-image">
                         <p class="mt-3 mt-md-0 wow fadeInUp mx-4 text-center" data-wow-delay=".5s">
                             Un niño que aprende a ahorrar, crece con responsabilidad
                         </p>

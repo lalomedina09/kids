@@ -1,16 +1,16 @@
 <section class="cta-section fix section-padding pt-3 bg-cover bg-orange">
     <!--<div class="top-shape">
-        <img src="assets/img/bg/bg-top-cream.png" alt="shape-img">
+        <img src="img/bg/bg-top-cream.png" alt="shape-img">
     </div>
     <div class="bottom-shape">
-        <img src="assets/img/section-top-shape.png" alt="shape-img">
+        <img src="img/section-top-shape.png" alt="shape-img">
     </div>-->
-    <!-- style="background-image: url('assets/img/cta/cta-bg.jpg');" -->
+    <!-- style="background-image: url('img/cta/cta-bg.jpg');" -->
     <div class="plane-shape">
-        <img src="assets/img/cta/plane.png" alt="img">
+        <img src="img/cta/plane.png" alt="img">
     </div>
     <!--<div class="pencil-shape">
-        <img src="assets/img/hero/circle.png" alt="img">
+        <img src="img/hero/circle.png" alt="img">
     </div>-->
     <div class="container">
         <div class="cta-wrapper">
@@ -36,9 +36,9 @@
                 </div>
                 <div class="col-lg-5 wow fadeInUp" data-wow-delay=".4s">
                     <div class="cta-image">
-                        <img src="assets/img/how-it-works/cover.png" alt="cta-img" class="img-fluid">
+                        <img src="img/how-it-works/cover.png" alt="cta-img" class="img-fluid">
                         <!--<div class="cta-shape">
-                            <img src="assets/img/cta/cta-shape.png" alt="img">
+                            <img src="img/cta/cta-shape.png" alt="img">
                         </div>-->
                     </div>
                 </div>
@@ -46,6 +46,6 @@
         </div>
     </div>
     <!--<div class="bottom-shape">
-        <img src="assets/img/section-top-shape.png" alt="shape-img">
+        <img src="img/section-top-shape.png" alt="shape-img">
     </div>-->
 </section>

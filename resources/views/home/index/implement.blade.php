@@ -1,9 +1,9 @@
 <section class="about-activities-section section-padding pt-0 pb-0 bg-white">
     <div class="pencil-shape">
-        <img src="assets/img/hero/icons/shooting.png" alt="shape-img">
+        <img src="img/hero/icons/shooting.png" alt="shape-img">
     </div>
     <div class="zebra-shape float-bob-y">
-        <img src="assets/img/hero/icons/focus.png" alt="shape-img">
+        <img src="img/hero/icons/focus.png" alt="shape-img">
     </div>
     <div class="container">
         <div class="about-activities-wrapper">
@@ -11,10 +11,10 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
                     <div class="activities-img-items">
                         <div class="activities-image">
-                            <img src="assets/img/implement/cover.png" alt="img">
+                            <img src="img/implement/cover.png" alt="img">
                         </div>
                         <!--<div class="radius-shape">
-                            <img src="assets/img/about/radius-shape-1.png" alt="img">
+                            <img src="img/about/radius-shape-1.png" alt="img">
                         </div>-->
                     </div>
                 </div>
@@ -83,6 +83,6 @@
     </div>
 
     <div class="bottom-shape img-animated-cloud-orange-top">
-        <img src="assets/img/bg/bg-orange-top.png" alt="shape-img">
+        <img src="img/bg/bg-orange-top.png" alt="shape-img">
     </div>
 </section>

@@ -1,11 +1,11 @@
 <section class="about-activities-section section-padding pt-0 pb-0 ct-action">
     <!--<div class="pencil-shape">
-        <img src="assets/img/about/pencil.png" alt="shape-img">
+        <img src="img/about/pencil.png" alt="shape-img">
     </div>
     <div class="zebra-shape float-bob-y">
-        <img src="assets/img/about/zebra.png" alt="shape-img">
+        <img src="img/about/zebra.png" alt="shape-img">
     </div>-->
-    
+
     <div class="container">
         <div class="about-activities-wrapper">
             <div class="row g-4 pt-5">
@@ -31,10 +31,10 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
                     <div class="activities-img-items">
                         <div class="activities-image">
-                            <img src="assets/img/ilustration/ilustrations-and-girl.png" alt="img"><!--510x485-->
+                            <img src="img/ilustration/ilustrations-and-girl.png" alt="img"><!--510x485-->
                         </div>
                         <div class="radius-shape">
-                            <img src="assets/img/about/radius-shape-1.png" alt="img">
+                            <img src="img/about/radius-shape-1.png" alt="img">
                         </div>
                     </div>
                 </div>

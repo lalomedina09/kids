@@ -1,5 +1,5 @@
 <section class="work-process-section fix fix pb-0">
-    
+
     <div class="container">
         <div class="process-work-wrapper">
             <div class="row g-4">
@@ -19,9 +19,9 @@
                 <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                     <div class="work-process-items text-center">
                         <div class="line-shape">
-                            <img src="assets/img/process/line-1-v2.png" alt="shape-img">
+                            <img src="img/process/line-1-v2.png" alt="shape-img">
                         </div>
-                        <div class="icon bg-cover" style="background-image: url('assets/img/process/icon-bg.png');">
+                        <div class="icon bg-cover" style="background-image: url('img/process/icon-bg.png');">
                             <i class="icon-icon-1"></i>
                         </div>
                         <div class="content">
@@ -35,9 +35,9 @@
                 <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                     <div class="work-process-items text-center style-2">
                         <div class="line-shape-2">
-                            <img src="assets/img/process/line-2-v2.png" alt="shape-img">
+                            <img src="img/process/line-2-v2.png" alt="shape-img">
                         </div>
-                        <div class="icon bg-cover" style="background-image: url('assets/img/process/icon-bg.png');">
+                        <div class="icon bg-cover" style="background-image: url('img/process/icon-bg.png');">
                             <i class="icon-icon-2"></i>
                         </div>
                         <div class="content">
@@ -51,9 +51,9 @@
                 <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                     <div class="work-process-items text-center">
                         <div class="line-shape">
-                            <img src="assets/img/process/line-1-v2.png" alt="shape-img">
+                            <img src="img/process/line-1-v2.png" alt="shape-img">
                         </div>
-                        <div class="icon bg-cover" style="background-image: url('assets/img/process/icon-bg.png');">
+                        <div class="icon bg-cover" style="background-image: url('img/process/icon-bg.png');">
                             <i class="icon-icon-3"></i>
                         </div>
                         <div class="content">
@@ -67,9 +67,9 @@
                 <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                     <div class="work-process-items text-center style-2">
                         <div class="line-shape-2">
-                            <img src="assets/img/process/line-2-v2.png" alt="shape-img">
+                            <img src="img/process/line-2-v2.png" alt="shape-img">
                         </div>
-                        <div class="icon bg-cover" style="background-image: url('assets/img/process/icon-bg.png');">
+                        <div class="icon bg-cover" style="background-image: url('img/process/icon-bg.png');">
                             <i class="icon-icon-2"></i>
                         </div>
                         <div class="content">
@@ -82,7 +82,7 @@
                 </div>
                 <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                     <div class="work-process-items text-center">
-                        <div class="icon bg-cover" style="background-image: url('assets/img/process/icon-bg.png');">
+                        <div class="icon bg-cover" style="background-image: url('img/process/icon-bg.png');">
                             <i class="icon-icon-3"></i>
                         </div>
                         <div class="content">

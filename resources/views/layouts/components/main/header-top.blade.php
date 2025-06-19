@@ -1,6 +1,6 @@
 <div class="header-top-section">
     <div class="header-top-shape">
-        <img src="assets/img/bg/header-top-shape.png" alt="shape-img">
+        <img src="img/bg/header-top-shape.png" alt="shape-img">
     </div>
     <div class="container-fluid">
         <div class="header-top-wrapper">
@@ -25,11 +25,11 @@
                 <div class="header-left">
                     <div class="logo">
                         <a href="index.html" class="header-logo">
-                            <img src="assets/img/logo/logo.png" alt="logo-img">
+                            <img src="img/logo/logo.png" alt="logo-img">
                         </a>
                     </div>
                     <!--<div class="category-oneadjust">
-                                <img src="assets/img/grid.svg" alt="img" class="me-2">
+                                <img src="img/grid.svg" alt="img" class="me-2">
                                 <select name="cate" class="category">
                                     <option value="1">
                                         Category

@@ -1,6 +1,6 @@
 <section class="news-section section-padding pt-0 pb-0 fix bg-cream">
     <div class="top-shape">
-        <img src="assets/img/bg/bg-orange-bottom.png" alt="shape-img">
+        <img src="img/bg/bg-orange-bottom.png" alt="shape-img">
     </div>
     <div class="container mt-5">
         <div class="section-title-area">
@@ -19,7 +19,7 @@
                 <div class="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
                     <div class="news-single-items">
                         <div class="news-image">
-                            <img src="assets/img/articles/metas-financieras.png" alt="news-img">
+                            <img src="img/articles/metas-financieras.png" alt="news-img">
                         </div>
                         <div class="news-content">
                             <ul>
@@ -39,7 +39,7 @@
                             <div class="post-author-items">
                                 <div class="post-items">
                                     <div class="thumb">
-                                        <img src="assets/img/articles/aut-1.png" alt="img">
+                                        <img src="img/articles/aut-1.png" alt="img">
                                     </div>
                                     <div class="content">
                                         <span>By Admin</span>
@@ -56,7 +56,7 @@
                 <div class="col-xl-6 col-lg-8 mt-5 mt-xl-0">
                     <div class="news-right-items wow fadeInUp" data-wow-delay=".4s">
                         <div class="news-thumb">
-                            <img src="assets/img/articles/dinero-para-ninos.png" alt="img">
+                            <img src="img/articles/dinero-para-ninos.png" alt="img">
                         </div>
                         <div class="news-content">
                             <ul>
@@ -75,7 +75,7 @@
                             </h3>
                             <div class="post-items">
                                 <div class="thumb">
-                                    <img src="assets/img/articles/qd.png" alt="img">
+                                    <img src="img/articles/qd.png" alt="img">
                                 </div>
                                 <div class="content">
                                     <span>By Admin</span>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="news-right-items wow fadeInUp" data-wow-delay=".6s">
                         <div class="news-thumb">
-                            <img src="assets/img/articles/regalos-financieros.png" alt="img">
+                            <img src="img/articles/regalos-financieros.png" alt="img">
                         </div>
                         <div class="news-content">
                             <ul>
@@ -105,7 +105,7 @@
                             </h3>
                             <div class="post-items">
                                 <div class="thumb">
-                                    <img src="assets/img/articles/aut-2.png" alt="img">
+                                    <img src="img/articles/aut-2.png" alt="img">
                                 </div>
                                 <div class="content">
                                     <span>By Admin</span>
@@ -119,6 +119,6 @@
         </div>
     </div>
     <div class="bottom-shape mt-5 bg-menta img-animated-cloud-cream-bottom">
-        <img src="assets/img/bg/bg-bottom-cream.png" alt="shape-img">
+        <img src="img/bg/bg-bottom-cream.png" alt="shape-img">
     </div>
 </section>
